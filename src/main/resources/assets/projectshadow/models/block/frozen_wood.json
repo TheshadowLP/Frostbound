@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "projectshadow:block/frozen_log",
+    "side": "projectshadow:block/frozen_log"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "ppp",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:aquanium_ingot"
+    }
+  },
+  "result": {
+    "item": "projectshadow:aquanium_block",
+    "count": 1
+  }
+}

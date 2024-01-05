@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 115,
+  "ingredient": {
+    "item": "projectshadow:frozen_cobblestone"
+  },
+  "result": "minecraft:cobblestone"
+}

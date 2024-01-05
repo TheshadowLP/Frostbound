@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ss ",
+    "ss ",
+    "ss "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:frozen_planks"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_door",
+    "count": 3
+  }
+}

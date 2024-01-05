@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/s/",
+    "/s/"
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:frozen_planks"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_fence_gate",
+    "count": 1
+  }
+}

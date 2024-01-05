@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "projectshadow:block/frozen_pressure_plate"
+    },
+    "powered=true": {
+      "model": "projectshadow:block/frozen_pressure_plate_down"
+    }
+  }
+}

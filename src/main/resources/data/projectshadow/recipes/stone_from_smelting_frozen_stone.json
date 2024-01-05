@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 125,
+  "ingredient": {
+    "item": "projectshadow:frozen_stone"
+  },
+  "result": "minecraft:stone"
+}

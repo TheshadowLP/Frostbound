@@ -1,0 +1,14 @@
+{
+  "type": "projectshadow:forging",
+  "ingredients": [
+    {
+      "item": "projectshadow:steel_ingot"
+    },
+    {
+      "item": "projectshadow:titanium_ingot"
+    }
+  ],
+  "output": {
+    "item": "projectshadow:platinum_ingot"
+  }
+}

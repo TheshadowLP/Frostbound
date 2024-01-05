@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 120,
+  "ingredient": {
+    "item": "projectshadow:frost_planks"
+  },
+  "result": "minecraft:oak_planks"
+}

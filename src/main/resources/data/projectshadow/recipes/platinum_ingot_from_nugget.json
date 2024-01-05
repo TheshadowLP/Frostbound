@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "ppp",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:platinum_nugget"
+    }
+  },
+  "result": {
+    "item": "projectshadow:platinum_ingot",
+    "count": 1
+  }
+}

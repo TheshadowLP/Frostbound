@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:frozen_cobblestone"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_cobblestone_wall",
+    "count": 6
+  }
+}

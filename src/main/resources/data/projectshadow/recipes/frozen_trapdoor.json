@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:frozen_planks"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_trapdoor",
+    "count": 2
+  }
+}

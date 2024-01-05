@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s",
+    "s",
+    "/"
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:platinum_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:platinum_sword",
+    "count": 1
+  }
+}

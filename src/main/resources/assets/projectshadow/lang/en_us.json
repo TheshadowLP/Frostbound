@@ -1,0 +1,113 @@
+{
+  "block.projectshadow.aquanium_ore": "Aquanium Ore",
+  "block.projectshadow.sand_aquanium_ore": "Sand Aquanium Ore",
+  "block.projectshadow.firerite_ore": "Firerite Ore",
+  "block.projectshadow.luminite_ore": "Luminite Ore",
+  "block.projectshadow.deepslate_luminite_ore": "Deepslate Luminite Ore",
+  "block.projectshadow.ruby_ore": "Ruby Ore",
+  "block.projectshadow.platinum_ore": "Platinum Ore",
+  "block.projectshadow.steel_ore": "Steel Ore",
+  "block.projectshadow.silver_ore": "Silver Ore",
+  "block.projectshadow.titanium_ore": "Titanium Ore",
+  "block.projectshadow.enderium_end_ore": "Enderium End Ore",
+
+
+  "block.projectshadow.steel_block": "Steel Block",
+  "block.projectshadow.titanium_block": "Titanium Block",
+  "block.projectshadow.platinum_block": "Platinum Block",
+  "block.projectshadow.aquanium_block": "Aquanium Block",
+  "block.projectshadow.luminite_block": "Luminite Block",
+  "block.projectshadow.ruby_block": "Ruby Block",
+  "block.projectshadow.firerite_block": "Firerite Block",
+  "block.projectshadow.silver_block": "Silver Block",
+  "block.projectshadow.enderium_block": "Enderium Block",
+
+
+  "block.projectshadow.frozen_log": "Frozen Log",
+  "block.projectshadow.frozen_wood": "Frosted Wood",
+  "block.projectshadow.frozen_slab": "Frozen Slab",
+  "block.projectshadow.frozen_stairs": "Frozen Stairs",
+  "block.projectshadow.frozen_button": "Frozen Button",
+  "block.projectshadow.frozen_pressure_plate": "Frozen Pressure Plate",
+  "block.projectshadow.frozen_fence": "Frosted Fence",
+  "block.projectshadow.frozen_fence_gate": "Frosted Fence Gate",
+  "block.projectshadow.frozen_door": "Frozen Door",
+  "block.projectshadow.frozen_trapdoor": "Frozen Trapdoor",
+  "block.projectshadow.frozen_cobblestone_wall": "Frozen Cobblestone Wall",
+  "block.projectshadow.stripped_frozen_log": "Stripped Frozen Log",
+  "block.projectshadow.stripped_frozen_wood": "Stripped Frozen Wood",
+  "block.projectshadow.frozen_planks": "Frosted Planks",
+  "block.projectshadow.frozen_sapling": "Frosted Sapling",
+  "block.projectshadow.frozen_leaves": "Frosted Leaves",
+  "block.projectshadow.frozen_stone": "Frozen Stone",
+  "block.projectshadow.frozen_cobblestone": "Frozen Cobblestone",
+
+
+  "item.projectshadow.aquanium_ingot": "Aquanium Ingot",
+  "item.projectshadow.luminite_ingot": "Luminite Ingot",
+  "item.projectshadow.enderium_ingot": "Enderium Ingot",
+  "item.projectshadow.silver_ingot": "Silver Ingot",
+  "item.projectshadow.steel_ingot": "Steel Ingot",
+  "item.projectshadow.titanium_ingot": "Titanium Ingot",
+  "item.projectshadow.platinum_ingot": "Platinum Ingot",
+
+
+  "item.projectshadow.aquanium_shard": "Aquanium Shard",
+  "item.projectshadow.ruby": "Ruby",
+
+
+  "block.projectshadow.winter_furnace": "Winter Furnace",
+
+
+  "item.projectshadow.raw_enderium": "Raw Enderium",
+  "item.projectshadow.raw_luminite": "Raw Luminite",
+
+
+  "item.projectshadow.silver_nugget": "Silver Nugget",
+  "item.projectshadow.steel_nugget": "Steel Nugget",
+  "item.projectshadow.titanium_nugget": "Titanium Nugget",
+  "item.projectshadow.copper_nugget": "Copper Nugget",
+  "item.projectshadow.aquanium_nugget": "Aquanium Nugget",
+  "item.projectshadow.platinum_nugget": "Platinum Nugget",
+  "item.projectshadow.enderium_nugget": "Enderium Nugget",
+  "item.projectshadow.luminite_nugget": "Luminite Nugget",
+
+
+  "item.projectshadow.platinum_axe": "Platinum Axe",
+  "item.projectshadow.steel_axe": "Steel Axe",
+  "item.projectshadow.silver_axe": "Silver Axe",
+  "item.projectshadow.titanium_axe": "Titanium Axe",
+
+
+  "item.projectshadow.platinum_hammer": "Platinum Hammer",
+  "item.projectshadow.steel_hammer": "Steel Hammer",
+  "item.projectshadow.silver_hammer": "Silver Hammer",
+  "item.projectshadow.titanium_hammer": "Titanium Hammer",
+
+
+  "item.projectshadow.platinum_hoe": "Platinum Hoe",
+  "item.projectshadow.steel_hoe": "Steel Hoe",
+  "item.projectshadow.silver_hoe": "Silver Hoe",
+  "item.projectshadow.titanium_hoe": "Titanium Hoe",
+
+
+  "item.projectshadow.platinum_pickaxe": "Platinum Pickaxe",
+  "item.projectshadow.steel_pickaxe": "Steel Pickaxe",
+  "item.projectshadow.silver_pickaxe": "Silver Pickaxe",
+  "item.projectshadow.titanium_pickaxe": "Titanium Pickaxe",
+
+
+  "item.projectshadow.platinum_shovel": "Platinum Shovel",
+  "item.projectshadow.steel_shovel": "Steel Shovel",
+  "item.projectshadow.silver_shovel": "Silver Shovel",
+  "item.projectshadow.titanium_shovel": "Titanium Shovel",
+
+
+  "item.projectshadow.platinum_sword": "Platinum Sword",
+  "item.projectshadow.steel_sword": "Steel Sword",
+  "item.projectshadow.silver_sword": "Silver Sword",
+  "item.projectshadow.titanium_sword": "Titanium Sword",
+
+  
+  "creativetab.dev_tab": "DEV"
+}

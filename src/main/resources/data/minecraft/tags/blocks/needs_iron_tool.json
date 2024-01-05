@@ -1,0 +1,16 @@
+{
+  "values": [
+    "projectshadow:aquanium_ore",
+    "projectshadow:luminite_ore",
+    "projectshadow:deepslate_luminite_ore",
+    "projectshadow:ruby_ore",
+    "projectshadow:steel_ore",
+    "projectshadow:titanium_ore",
+    "projectshadow:ruby_block",
+    "projectshadow:platinum_block",
+    "projectshadow:steel_block",
+    "projectshadow:titanium_block",
+    "projectshadow:aquanium_block",
+    "projectshadow:silver_block"
+  ]
+}

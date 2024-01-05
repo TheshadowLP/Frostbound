@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:titanium_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:titanium_pickaxe",
+    "count": 1
+  }
+}

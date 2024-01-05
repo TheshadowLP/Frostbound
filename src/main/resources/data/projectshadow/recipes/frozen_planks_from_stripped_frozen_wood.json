@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s  "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:stripped_frozen_wood"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_planks",
+    "count": 4
+  }
+}

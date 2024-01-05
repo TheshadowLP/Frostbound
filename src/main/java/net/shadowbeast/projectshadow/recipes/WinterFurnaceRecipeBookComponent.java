@@ -1,0 +1,15 @@
+package net.shadowbeast.projectshadow.recipes;
+
+import net.minecraft.client.gui.screens.recipebook.AbstractFurnaceRecipeBookComponent;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.shadowbeast.projectshadow.items.ModItems;
+
+import java.util.Set;
+
+public class WinterFurnaceRecipeBookComponent extends AbstractFurnaceRecipeBookComponent {
+    @Override
+    protected Set<Item> getFuelItems() {
+        return Set.of(ModItems.STEEL_INGOT.get(), Items.COPPER_INGOT,Items.IRON_INGOT);
+    }
+}
