@@ -32,37 +32,37 @@ public class  ModBlocks {
     //ORES
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.0f,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SAND_AQUANIUM_ORE = registerBlock("sand_aquanium_ore",
             ()-> new SandBlock(14406560, BlockBehaviour.Properties.copy(Blocks.SAND).mapColor(MapColor.SAND)
                     .strength(1.4F,1.2F).requiresCorrectToolForDrops().sound(SoundType.SAND)));
     public static final RegistryObject<Block> FIRERITE_ORE = registerBlock("firerite_ore",//TODO Nether gem ore
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(5.0f,4.3F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()));
+                    .strength(5.0F,4.3F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> LUMINITE_ORE = registerBlock("luminite_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.0f,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DEEPSLATE_LUMINITE_ORE = registerBlock("deepslate_luminite_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)
-                    .strength(4.5f,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
+                    .strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.1f,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(3.1F,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
             ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_EMERALD_ORE)
-                    .strength(4.5f,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(), UniformInt.of(3,7)));
+                    .strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(), UniformInt.of(3,7)));
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(2.6f,2.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(2.6F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> STEEL_ORE = registerBlock("steel_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.1f,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(3.1F,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.2f,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ENDERIUM_END_ORE = registerBlock("enderium_end_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(5.2f,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+                    .strength(5.2F,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     //Ores Blocks
     public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block",

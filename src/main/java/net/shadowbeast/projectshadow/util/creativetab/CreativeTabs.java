@@ -47,6 +47,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.RUBY.get());
                         pOutput.accept(ModBlocks.RUBY_BlOCK.get());
                         pOutput.accept(ModBlocks.PLATINUM_ORE.get());
+                        pOutput.accept(ModItems.RAW_PLATINUM.get());
                         pOutput.accept(ModItems.PLATINUM_INGOT.get());
                         pOutput.accept(ModItems.PLATINUM_NUGGET.get());
                         pOutput.accept(ModBlocks.PLATINUM_BlOCK.get());
@@ -68,6 +69,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.STEEL_SHOVEL.get());
                         pOutput.accept(ModItems.STEEL_SWORD.get());
                         pOutput.accept(ModBlocks.SILVER_ORE.get());
+                        pOutput.accept(ModItems.RAW_SILVER.get());
                         pOutput.accept(ModItems.SILVER_INGOT.get());
                         pOutput.accept(ModItems.SILVER_NUGGET.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
@@ -78,6 +80,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SILVER_SHOVEL.get());
                         pOutput.accept(ModItems.SILVER_SWORD.get());
                         pOutput.accept(ModBlocks.TITANIUM_ORE.get());
+                        pOutput.accept(ModItems.RAW_TITANIUM.get());
                         pOutput.accept(ModItems.TITANIUM_INGOT.get());
                         pOutput.accept(ModItems.TITANIUM_NUGGET.get());
                         pOutput.accept(ModBlocks.TITANIUM_BlOCK.get());
@@ -92,6 +95,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_INGOT.get());
                         pOutput.accept(ModItems.ENDERIUM_NUGGET.get());
                         pOutput.accept(ModBlocks.ENDERIUM_BlOCK.get());
+                        pOutput.accept(ModItems.ENDERIUM_AXE.get());
+                        pOutput.accept(ModItems.ENDERIUM_HOE.get());
+                        pOutput.accept(ModItems.ENDERIUM_PICKAXE.get());
+                        pOutput.accept(ModItems.ENDERIUM_SHOVEL.get());
+                        pOutput.accept(ModItems.ENDERIUM_SWORD.get());
                         pOutput.accept(ModBlocks.LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModItems.RAW_LUMINITE.get());

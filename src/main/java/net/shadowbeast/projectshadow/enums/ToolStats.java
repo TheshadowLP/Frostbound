@@ -11,7 +11,11 @@ public enum ToolStats implements Tier {
     STEEL(2, 826, 6.0F, 2.0F, 15, "steel_ingot"),
     PLATINUM(2, 510, 6.0F, 2.0F, 14, "platinum_ingot"),
     TITANIUM(2, 1120, 6.0F, 2.0F, 15, "titanium_ingot"),
-    SILVER(0, 210, 12.0F, 2.0F, 20, "silver_ingot");
+    SILVER(0, 210, 12.0F, 2.0F, 20, "silver_ingot"),
+    ENDERIUM(5, 2530, 10.0F, 5.0F, 215, "enderium_ingot"), //TODO
+    COPPER(0, 210, 12.0F, 2.0F, 20, "copper_ingot"), //TODO
+    LUMINITE(0, 210, 12.0F, 2.0F, 20, "luminite_ingot"), //TODO
+    AQUANIUM(0, 210, 12.0F, 2.0F, 20, "aquanium_ingot"); //TODO
 
     private final int harvestLevel;
     private final int maxUses;

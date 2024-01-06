@@ -37,6 +37,12 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_STEEL = ITEMS.register("raw_steel",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_PLATINUM= ITEMS.register("raw_platinum",
+            ()-> new Item(new Item.Properties()));
 
     //SHARDS
     public static final RegistryObject<Item> AQUANIUM_SHARD = ITEMS.register("aquanium_shard",
@@ -71,6 +77,8 @@ public class ModItems {
             ()-> new SwordItem(ToolStats.SILVER,1,-2.4F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_SWORD = ITEMS.register("titanium_sword",
             ()-> new SwordItem(ToolStats.TITANIUM,4,-2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERIUM_SWORD = ITEMS.register("enderium_sword",
+            ()-> new SwordItem(ToolStats.ENDERIUM,3,-2.6F, new Item.Properties()));
 
     //AXES
     public static final RegistryObject<Item> PLATINUM_AXE = ITEMS.register("platinum_axe",
@@ -81,6 +89,8 @@ public class ModItems {
             ()-> new AxeItem(ToolStats.SILVER,5.0F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_AXE = ITEMS.register("titanium_axe",
             ()-> new AxeItem(ToolStats.TITANIUM,6.0F,-3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERIUM_AXE = ITEMS.register("enderium_axe",
+            ()-> new AxeItem(ToolStats.ENDERIUM,5.0F,-3.2F, new Item.Properties()));
 
     //PICKAXES
     public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
@@ -91,6 +101,8 @@ public class ModItems {
             ()-> new PickaxeItem(ToolStats.SILVER,-1,-2.8F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe",
             ()-> new PickaxeItem(ToolStats.TITANIUM,2,-2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERIUM_PICKAXE = ITEMS.register("enderium_pickaxe",
+            ()-> new PickaxeItem(ToolStats.ENDERIUM,1,-3.0F, new Item.Properties()));
 
     //SHOVELS
     public static final RegistryObject<Item> PLATINUM_SHOVEL = ITEMS.register("platinum_shovel",
@@ -101,6 +113,8 @@ public class ModItems {
             ()-> new ShovelItem(ToolStats.SILVER,-0.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_SHOVEL = ITEMS.register("titanium_shovel",
             ()-> new ShovelItem(ToolStats.TITANIUM,2.5F,-3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERIUM_SHOVEL = ITEMS.register("enderium_shovel",
+            ()-> new ShovelItem(ToolStats.ENDERIUM,1.5F,-3.2F, new Item.Properties()));
 
     //HOES
     public static final RegistryObject<Item> PLATINUM_HOE = ITEMS.register("platinum_hoe",
@@ -108,9 +122,11 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe",
             ()-> new HoeItem(ToolStats.STEEL,-2,-1.0F, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_HOE = ITEMS.register("silver_hoe",
-            ()-> new HoeItem(ToolStats.SILVER,-2,-3.0F    , new Item.Properties()));
+            ()-> new HoeItem(ToolStats.SILVER,-2,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_HOE = ITEMS.register("titanium_hoe",
             ()-> new HoeItem(ToolStats.TITANIUM,-2,0.0F, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERIUM_HOE = ITEMS.register("enderium_hoe",
+            ()-> new HoeItem(ToolStats.ENDERIUM,-4,-0.2F, new Item.Properties()));
 
     //HAMMERS
     public static final RegistryObject<Item> STEEL_HAMMER = ITEMS.register("steel_hammer",
