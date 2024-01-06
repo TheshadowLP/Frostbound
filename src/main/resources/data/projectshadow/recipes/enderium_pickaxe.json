@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:enderium_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:enderium_pickaxe",
+    "count": 1
+  }
+}

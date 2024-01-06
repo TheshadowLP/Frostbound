@@ -82,6 +82,7 @@
   "item.projectshadow.silver_axe": "Silver Axe",
   "item.projectshadow.titanium_axe": "Titanium Axe",
   "item.projectshadow.enderium_axe": "Enderium Axe",
+  "item.projectshadow.copper_axe": "Copper Axe",
 
 
   "item.projectshadow.platinum_hammer": "Platinum Hammer",
@@ -95,6 +96,7 @@
   "item.projectshadow.silver_hoe": "Silver Hoe",
   "item.projectshadow.titanium_hoe": "Titanium Hoe",
   "item.projectshadow.enderium_hoe": "Enderium Hoe",
+  "item.projectshadow.copper_hoe": "Copper Hoe",
 
 
   "item.projectshadow.platinum_pickaxe": "Platinum Pickaxe",
@@ -102,6 +104,7 @@
   "item.projectshadow.silver_pickaxe": "Silver Pickaxe",
   "item.projectshadow.titanium_pickaxe": "Titanium Pickaxe",
   "item.projectshadow.enderium_pickaxe": "Enderium Pickaxe",
+  "item.projectshadow.copper_pickaxe": "Copper Pickaxe",
 
 
   "item.projectshadow.platinum_shovel": "Platinum Shovel",
@@ -109,6 +112,7 @@
   "item.projectshadow.silver_shovel": "Silver Shovel",
   "item.projectshadow.titanium_shovel": "Titanium Shovel",
   "item.projectshadow.enderium_shovel": "Enderium Shovel",
+  "item.projectshadow.copper_shovel": "Copper Shovel",
 
 
   "item.projectshadow.platinum_sword": "Platinum Sword",
@@ -116,6 +120,7 @@
   "item.projectshadow.silver_sword": "Silver Sword",
   "item.projectshadow.titanium_sword": "Titanium Sword",
   "item.projectshadow.enderium_sword": "Enderium Sword",
+  "item.projectshadow.copper_sword": "Copper Sword",
 
   
   "creativetab.dev_tab": "DEV"

@@ -108,6 +108,11 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.LUMINITE_BlOCK.get());
 
                         pOutput.accept(ModItems.COPPER_NUGGET.get());
+                        pOutput.accept(ModItems.COPPER_AXE.get());
+                        pOutput.accept(ModItems.COPPER_HOE.get());
+                        pOutput.accept(ModItems.COPPER_PICKAXE.get());
+                        pOutput.accept(ModItems.COPPER_SHOVEL.get());
+                        pOutput.accept(ModItems.COPPER_SWORD.get());
 
 
 
