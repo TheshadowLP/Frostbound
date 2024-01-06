@@ -35,6 +35,8 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_LUMINITE = ITEMS.register("raw_luminite",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_STEEL = ITEMS.register("raw_steel",
+            ()-> new Item(new Item.Properties()));
 
     //SHARDS
     public static final RegistryObject<Item> AQUANIUM_SHARD = ITEMS.register("aquanium_shard",

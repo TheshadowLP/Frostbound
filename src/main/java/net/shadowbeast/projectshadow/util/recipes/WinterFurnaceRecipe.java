@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.recipes;
+package net.shadowbeast.projectshadow.util.recipes;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

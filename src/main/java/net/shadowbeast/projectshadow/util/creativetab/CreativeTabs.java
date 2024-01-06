@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.creativetab;
+package net.shadowbeast.projectshadow.util.creativetab;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -57,6 +57,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.PLATINUM_SHOVEL.get());
                         pOutput.accept(ModItems.PLATINUM_SWORD.get());
                         pOutput.accept(ModBlocks.STEEL_ORE.get());
+                        pOutput.accept(ModItems.RAW_STEEL.get());
                         pOutput.accept(ModItems.STEEL_INGOT.get());
                         pOutput.accept(ModItems.STEEL_NUGGET.get());
                         pOutput.accept(ModBlocks.STEEL_BlOCK.get());

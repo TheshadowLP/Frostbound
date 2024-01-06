@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.screen;
+package net.shadowbeast.projectshadow.util.screen;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;

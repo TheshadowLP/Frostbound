@@ -1,11 +1,11 @@
-package net.shadowbeast.projectshadow.screen;
+package net.shadowbeast.projectshadow.util.screen;
 
 import net.minecraft.client.gui.screens.inventory.AbstractFurnaceScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.recipes.WinterFurnaceRecipeBookComponent;
+import net.shadowbeast.projectshadow.util.recipes.WinterFurnaceRecipeBookComponent;
 
 
 public class WinterFurnaceScreen extends AbstractFurnaceScreen<WinterFurnaceMenu> {

@@ -22,8 +22,8 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.recipes.FusionFurnaceRecipe;
-import net.shadowbeast.projectshadow.screen.FusionFurnaceMenu;
+import net.shadowbeast.projectshadow.util.recipes.FusionFurnaceRecipe;
+import net.shadowbeast.projectshadow.util.screen.FusionFurnaceMenu;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;

@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.recipes;
+package net.shadowbeast.projectshadow.util.recipes;
 
 import net.minecraft.client.gui.screens.recipebook.AbstractFurnaceRecipeBookComponent;
 import net.minecraft.world.item.Item;

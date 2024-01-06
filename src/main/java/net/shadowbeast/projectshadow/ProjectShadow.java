@@ -13,13 +13,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.creativetab.CreativeTabs;
+import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.recipes.ModRecipes;
-import net.shadowbeast.projectshadow.screen.FusionFurnaceScreen;
-import net.shadowbeast.projectshadow.screen.ModMenuTypes;
-import net.shadowbeast.projectshadow.screen.WinterFurnaceScreen;
+import net.shadowbeast.projectshadow.util.recipes.ModRecipes;
+import net.shadowbeast.projectshadow.util.screen.FusionFurnaceScreen;
+import net.shadowbeast.projectshadow.util.screen.ModMenuTypes;
+import net.shadowbeast.projectshadow.util.screen.WinterFurnaceScreen;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file

@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.screen;
+package net.shadowbeast.projectshadow.util.screen;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -11,7 +11,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.costum.FusionFurnaceBlockEntity;
-import net.shadowbeast.projectshadow.screen.slot.ModResultSlot;
+import net.shadowbeast.projectshadow.util.screen.slot.ModResultSlot;
 import org.jetbrains.annotations.NotNull;
 
 

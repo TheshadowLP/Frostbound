@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.screen.slot;
+package net.shadowbeast.projectshadow.util.screen.slot;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
