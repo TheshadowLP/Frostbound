@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.costum.HammerItem;
+import net.shadowbeast.projectshadow.items.costum.HealStaffItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -147,6 +148,13 @@ public class ModItems {
             ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
     public static final RegistryObject<Item> PLATINUM_HAMMER = ITEMS.register("platinum_hammer",
             ()-> new HammerItem(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020)));
+
+
+    // ADVANCED ITEMS
+
+    public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff",
+            ()-> new HealStaffItem(new Item.Properties()));
+
 
 
 

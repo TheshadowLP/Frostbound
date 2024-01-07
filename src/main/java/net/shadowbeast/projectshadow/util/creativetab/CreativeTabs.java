@@ -114,6 +114,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_SHOVEL.get());
                         pOutput.accept(ModItems.COPPER_SWORD.get());
 
+                        pOutput.accept(ModItems.HEAL_STAFF.get());
 
 
                         //TODO
