@@ -152,7 +152,7 @@ public class ModItems {
 
     // ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff",
-            ()-> new HealStaffItem(new Item.Properties()));
+            ()-> new HealStaffItem(new Item.Properties().durability(7)));
 
 
 

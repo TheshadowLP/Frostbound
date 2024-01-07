@@ -2,35 +2,66 @@ package net.shadowbeast.projectshadow.items.costum;
 
 
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.context.UseOnContext;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.level.Level;
 
 public class HealStaffItem extends Item {
     public HealStaffItem(Properties pProperties) {
         super(pProperties);
     }
-    @Override
-    public @NotNull InteractionResult useOn(UseOnContext pContext) { //Detect if the player is using the item
-        Player player = pContext.getPlayer(); //get the player
-        if(!pContext.getLevel().isClientSide()){ //check if the item is used on the server and not the client
+
+    private int timer;
+    private int timerMax = 1200; //The time you want for the timer in ticks
 
 
-            assert player != null;
-            player.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+
+        if (this.timer <= 0) //check if timer is less or equal than 0
+        {
+            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client
+            {
+                timer = timerMax;
+                pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
+
+
+                pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
+                        player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
+            }
+
+            pPlayer.playSound(SoundEvents.ALLAY_THROW, 1f, 1f);
+            pPlayer.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
+
+
         }
-        assert player != null;
-        player.playSound(SoundEvents.ALLAY_THROW, 1f, 1f);
-        player.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
+        else //if timer is more than 0
+        {
 
-        return InteractionResult.SUCCESS;
+            pPlayer.playSound(SoundEvents.CHEST_LOCKED, 0.1f, 2f);
+        }
+
+        return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
 
 
 
 
+    @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if(timer >= 0){
+            timer--;
+        }
+
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+    }
 }
+
+
+
