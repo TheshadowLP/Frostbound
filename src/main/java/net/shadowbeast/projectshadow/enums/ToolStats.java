@@ -12,8 +12,8 @@ public enum ToolStats implements Tier {
     PLATINUM(2, 510, 6.0F, 2.0F, 14, "platinum_ingot"),
     TITANIUM(2, 1120, 6.0F, 2.0F, 15, "titanium_ingot"),
     SILVER(0, 210, 12.0F, 2.0F, 20, "silver_ingot"),
-    ENDERIUM(5, 2530, 10.0F, 5.0F, 215, "enderium_ingot"),
-    COPPER(2, 185, 8.0F, 2.0F, 15, "copper_ingot"), //TODO
+    ENDERIUM(5, 2530, 10.0F, 5.0F, 15, "enderium_ingot"),
+    COPPER(2, 185, 8.0F, 2.0F, 15, "copper_ingot"),
     LUMINITE(0, 210, 12.0F, 2.0F, 20, "luminite_ingot"), //TODO
     AQUANIUM(0, 210, 12.0F, 2.0F, 20, "aquanium_ingot"); //TODO
 
