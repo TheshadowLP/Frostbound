@@ -44,11 +44,14 @@ public class HealStaffItem extends Item {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
     @Override
-    public void inventoryTick(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if(timer >= 0){
-            timer--;
-        }
+    public void inventoryTick(@NotNull ItemStack pStack, Level pLevel, @NotNull Entity pEntity, int pSlotId, boolean pIsSelected) {
 
+        if (!pLevel.isClientSide())
+        {
+            if(timer >= 0){
+                timer--;
+            }
+        }
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
     }
 }
