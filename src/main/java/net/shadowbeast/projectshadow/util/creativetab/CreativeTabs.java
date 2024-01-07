@@ -20,6 +20,7 @@ public class CreativeTabs {
                     .title(Component.translatable("creativetab.dev_tab"))
                     .displayItems((pParameters, pOutput) -> {
 
+
                         pOutput.accept(ModBlocks.FROZEN_LOG.get());
                         pOutput.accept(ModBlocks.FROZEN_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_FROZEN_LOG.get());
