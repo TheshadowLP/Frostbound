@@ -36,6 +36,9 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_BUTTON.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE.get());
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE.get());
+                        pOutput.accept(ModBlocks.FROZEN_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.FROZEN_COBBLESTONE_WALL.get());
+                        pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
 
 
                         pOutput.accept(ModBlocks.AQUANIUM_ORE.get());
@@ -137,10 +140,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FUSION_FURNACE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
-                        pOutput.accept(ModBlocks.FROZEN_COBBLESTONE_WALL.get());
-                        pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
-
-
                     })
                     .build());
 

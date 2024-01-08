@@ -103,7 +103,9 @@ public class  ModBlocks {
 
     //Natural Blocks
     public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F).requiresCorrectToolForDrops()));
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F).requiresCorrectToolForDrops()));
 

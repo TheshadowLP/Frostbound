@@ -40,6 +40,7 @@
   "block.projectshadow.frozen_sapling": "Frosted Sapling",
   "block.projectshadow.frozen_leaves": "Frosted Leaves",
   "block.projectshadow.frozen_stone": "Frozen Stone",
+  "block.projectshadow.frozen_stone_bricks": "Frozen Stone Bricks",
   "block.projectshadow.frozen_cobblestone": "Frozen Cobblestone",
 
 
@@ -137,8 +138,6 @@
 
 
   "item.projectshadow.heal_staff": "Heal Staff",
-
-
   "tooltip.projectshadow.heal_staff.shift": "This Magic Staff heals you! Cooldown 1 Minute.",
   "tooltip.projectshadow.heal_staff" : "Press §9SHIFT§r for more Information",
 

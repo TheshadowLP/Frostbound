@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ss ",
+    "s/ ",
+    " / "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:luminite_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:luminite_axe",
+    "count": 1
+  }
+}

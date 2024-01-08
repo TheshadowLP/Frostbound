@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s ",
+    "s/s",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:gold_powder"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:gold_stick",
+    "count": 1
+  }
+}
