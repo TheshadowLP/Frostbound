@@ -45,8 +45,10 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_PLATINUM= ITEMS.register("raw_platinum",
             ()-> new Item(new Item.Properties()));
 
-    //SHARDS
+    //SHARDS and STICKS
     public static final RegistryObject<Item> AQUANIUM_SHARD = ITEMS.register("aquanium_shard",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_STICK = ITEMS.register("gold_stick",
             ()-> new Item(new Item.Properties()));
 
     //NUGGETS
