@@ -1,6 +1,7 @@
 package net.shadowbeast.projectshadow.items.costum;
 
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -45,7 +46,6 @@ public class HealStaffItem extends Item {
         {
             pPlayer.playSound(SoundEvents.CHEST_LOCKED, 0.1f, 2f);
         }
-
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
     @Override
@@ -61,8 +61,12 @@ public class HealStaffItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff")); //in lang file
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+        if(Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff.shift"));
+        } else {
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff"));
+        }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }
