@@ -44,6 +44,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.AQUANIUM_INGOT.get());
                         pOutput.accept(ModItems.AQUANIUM_NUGGET.get());
                         pOutput.accept(ModBlocks.AQUANIUM_BlOCK.get());
+                        pOutput.accept(ModItems.AQUANIUM_AXE.get());
+                        pOutput.accept(ModItems.AQUANIUM_HOE.get());
+                        pOutput.accept(ModItems.AQUANIUM_PICKAXE.get());
+                        pOutput.accept(ModItems.AQUANIUM_SHOVEL.get());
+                        pOutput.accept(ModItems.AQUANIUM_SWORD.get());
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModItems.RUBY.get());
                         pOutput.accept(ModBlocks.RUBY_BlOCK.get());
@@ -107,6 +112,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_NUGGET.get());
                         pOutput.accept(ModItems.LUMINITE_INGOT.get());
                         pOutput.accept(ModBlocks.LUMINITE_BlOCK.get());
+                        pOutput.accept(ModItems.LUMINITE_AXE.get());
+                        pOutput.accept(ModItems.LUMINITE_HOE.get());
+                        pOutput.accept(ModItems.LUMINITE_PICKAXE.get());
+                        pOutput.accept(ModItems.LUMINITE_SHOVEL.get());
+                        pOutput.accept(ModItems.LUMINITE_SWORD.get());
 
                         pOutput.accept(ModItems.COPPER_NUGGET.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
@@ -116,6 +126,8 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_SWORD.get());
 
                         pOutput.accept(ModItems.HEAL_STAFF.get());
+                        pOutput.accept(ModItems.GOLD_POWDER.get());
+                        pOutput.accept(ModItems.GOLD_STICK.get());
 
 
                         //TODO

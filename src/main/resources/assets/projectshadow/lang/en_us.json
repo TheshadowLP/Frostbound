@@ -54,6 +54,8 @@
 
   "item.projectshadow.aquanium_shard": "Aquanium Shard",
   "item.projectshadow.ruby": "Ruby",
+  "item.projectshadow.gold_stick": "Golden Stick",
+  "item.projectshadow.gold_powder": "Golden Powder",
 
 
   "block.projectshadow.winter_furnace": "Winter Furnace",
@@ -83,6 +85,8 @@
   "item.projectshadow.titanium_axe": "Titanium Axe",
   "item.projectshadow.enderium_axe": "Enderium Axe",
   "item.projectshadow.copper_axe": "Copper Axe",
+  "item.projectshadow.aquanium_axe": "Aquanium Axe",
+  "item.projectshadow.luminite_axe": "Luminite Axe",
 
 
   "item.projectshadow.platinum_hammer": "Platinum Hammer",
@@ -97,6 +101,8 @@
   "item.projectshadow.titanium_hoe": "Titanium Hoe",
   "item.projectshadow.enderium_hoe": "Enderium Hoe",
   "item.projectshadow.copper_hoe": "Copper Hoe",
+  "item.projectshadow.aquanium_hoe": "Aquanium Hoe",
+  "item.projectshadow.luminite_hoe": "Luminite Hoe",
 
 
   "item.projectshadow.platinum_pickaxe": "Platinum Pickaxe",
@@ -105,6 +111,9 @@
   "item.projectshadow.titanium_pickaxe": "Titanium Pickaxe",
   "item.projectshadow.enderium_pickaxe": "Enderium Pickaxe",
   "item.projectshadow.copper_pickaxe": "Copper Pickaxe",
+  "item.projectshadow.aquanium_pickaxe": "Aquanium Pickaxe",
+  "item.projectshadow.luminite_pickaxe": "Luminite Pickaxe",
+
 
 
   "item.projectshadow.platinum_shovel": "Platinum Shovel",
@@ -113,6 +122,8 @@
   "item.projectshadow.titanium_shovel": "Titanium Shovel",
   "item.projectshadow.enderium_shovel": "Enderium Shovel",
   "item.projectshadow.copper_shovel": "Copper Shovel",
+  "item.projectshadow.aquanium_shovel": "Aquanium Shovel",
+  "item.projectshadow.luminite_shovel": "Luminite Shovel",
 
 
   "item.projectshadow.platinum_sword": "Platinum Sword",
@@ -121,6 +132,8 @@
   "item.projectshadow.titanium_sword": "Titanium Sword",
   "item.projectshadow.enderium_sword": "Enderium Sword",
   "item.projectshadow.copper_sword": "Copper Sword",
+  "item.projectshadow.aquanium_sword": "Aquanium Sword",
+  "item.projectshadow.luminite_sword": "Luminite Sword",
 
 
   "item.projectshadow.heal_staff": "Heal Staff",
