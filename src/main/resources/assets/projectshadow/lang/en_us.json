@@ -138,6 +138,8 @@
 
   "item.projectshadow.heal_staff": "Heal Staff",
 
+  "tooltip.projectshadow.heal_staff" : "Here's a custom tooltip!",
+
   
   "creativetab.dev_tab": "DEV"
 }
