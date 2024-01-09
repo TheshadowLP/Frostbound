@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 250,
+  "experience": 0.8,
+  "ingredient": {
+    "item": "projectshadow:raw_luminite"
+  },
+  "result": "projectshadow:luminite_ingot"
+}

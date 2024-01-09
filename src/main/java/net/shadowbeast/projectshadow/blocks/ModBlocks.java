@@ -95,7 +95,7 @@ public class  ModBlocks {
 
 
     //Entities
-    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace",
+    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
             ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
