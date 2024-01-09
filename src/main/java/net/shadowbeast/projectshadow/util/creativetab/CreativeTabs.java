@@ -38,6 +38,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICKS.get());
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE_WALL.get());
+                        pOutput.accept(ModBlocks.FROZEN_STONE_BRICK_WALL.get());
                         pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
 
 

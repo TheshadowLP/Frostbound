@@ -19,6 +19,7 @@
     "projectshadow:enderium_block",
     "projectshadow:frozen_stone",
     "projectshadow:frozen_cobblestone",
-    "projectshadow:frozen_stone_bricks"
+    "projectshadow:frozen_stone_bricks",
+    "projectshadow:frozen_stone_brick_wall"
   ]
 }

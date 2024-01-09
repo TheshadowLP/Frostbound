@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:frozen_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_stone_brick_wall",
+    "count": 6
+  }
+}

@@ -108,6 +108,10 @@ public class  ModBlocks {
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
+    public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
 
     //WOOD
@@ -122,8 +126,6 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FROZEN_PRESSURE_PLATE = registerBlock("frozen_pressure_plate",
             ()-> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
                     BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
-    public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall",
-            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_DOOR = registerBlock("frozen_door",
             ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR),BlockSetType.OAK));
     public static final RegistryObject<Block> FROZEN_TRAPDOOR = registerBlock("frozen_trapdoor",
