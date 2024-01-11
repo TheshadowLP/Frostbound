@@ -45,15 +45,42 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_PLATINUM= ITEMS.register("raw_platinum",
             ()-> new Item(new Item.Properties()));
 
-    //SHARDS and STICKS and POWDER
+    //SHARDS and STICKS
     public static final RegistryObject<Item> AQUANIUM_SHARD = ITEMS.register("aquanium_shard",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_SHARD = ITEMS.register("diamond_shard",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_STICK = ITEMS.register("gold_stick",
             ()-> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> GOLD_POWDER = ITEMS.register("gold_powder",
-            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             ()-> new Item(new Item.Properties()));
+
+    //POWDER
+    public static final RegistryObject<Item> GOLD_POWDER = ITEMS.register("gold_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_POWDER = ITEMS.register("iron_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_POWDER = ITEMS.register("copper_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_POWDER = ITEMS.register("diamond_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDER_PEARL_POWDER = ITEMS.register("ender_pearl_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AQUANIUM_POWDER = ITEMS.register("aquanium_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDERIUM_POWDER = ITEMS.register("enderium_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PLATINUM_POWDER = ITEMS.register("platinum_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LUMINITE_POWDER = ITEMS.register("luminite_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SILVER_POWDER = ITEMS.register("silver_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_POWDER = ITEMS.register("steel_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_POWDER = ITEMS.register("titanium_powder",
+            ()-> new Item(new Item.Properties()));
+
 
     //NUGGETS
     public static final RegistryObject<Item> AQUANIUM_NUGGET = ITEMS.register("aquanium_nugget",

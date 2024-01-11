@@ -55,9 +55,23 @@
 
 
   "item.projectshadow.aquanium_shard": "Aquanium Shard",
+  "item.projectshadow.diamond_shard": "Diamond Shard",
   "item.projectshadow.ruby": "Ruby",
   "item.projectshadow.gold_stick": "Golden Stick",
+
+
   "item.projectshadow.gold_powder": "Golden Powder",
+  "item.projectshadow.ender_pearl_powder": "Ender Pearl Powder",
+  "item.projectshadow.iron_powder": "Iron Powder",
+  "item.projectshadow.copper_powder": "Copper Powder",
+  "item.projectshadow.diamond_powder": "Diamond Powder",
+  "item.projectshadow.aquanium_powder": "Aquanium Powder",
+  "item.projectshadow.enderium_powder": "Enderium Powder",
+  "item.projectshadow.luminite_powder": "Luminite Powder",
+  "item.projectshadow.silver_powder": "Silver Powder",
+  "item.projectshadow.platinum_powder": "Platinum Powder",
+  "item.projectshadow.steel_powder": "Steel Powder",
+  "item.projectshadow.titanium_powder": "Titanium Powder",
 
 
   "block.projectshadow.winter_furnace": "Winter Furnace",

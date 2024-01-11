@@ -46,6 +46,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
                         pOutput.accept(ModItems.AQUANIUM_SHARD.get());
                         pOutput.accept(ModItems.AQUANIUM_INGOT.get());
+                        pOutput.accept(ModItems.AQUANIUM_POWDER.get());
                         pOutput.accept(ModItems.AQUANIUM_NUGGET.get());
                         pOutput.accept(ModBlocks.AQUANIUM_BlOCK.get());
                         pOutput.accept(ModItems.AQUANIUM_AXE.get());
@@ -59,6 +60,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.PLATINUM_ORE.get());
                         pOutput.accept(ModItems.RAW_PLATINUM.get());
                         pOutput.accept(ModItems.PLATINUM_INGOT.get());
+                        pOutput.accept(ModItems.PLATINUM_POWDER.get());
                         pOutput.accept(ModItems.PLATINUM_NUGGET.get());
                         pOutput.accept(ModBlocks.PLATINUM_BlOCK.get());
                         pOutput.accept(ModItems.PLATINUM_AXE.get());
@@ -70,6 +72,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_ORE.get());
                         pOutput.accept(ModItems.RAW_STEEL.get());
                         pOutput.accept(ModItems.STEEL_INGOT.get());
+                        pOutput.accept(ModItems.STEEL_POWDER.get());
                         pOutput.accept(ModItems.STEEL_NUGGET.get());
                         pOutput.accept(ModBlocks.STEEL_BlOCK.get());
                         pOutput.accept(ModItems.STEEL_AXE.get());
@@ -81,6 +84,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SILVER_ORE.get());
                         pOutput.accept(ModItems.RAW_SILVER.get());
                         pOutput.accept(ModItems.SILVER_INGOT.get());
+                        pOutput.accept(ModItems.SILVER_POWDER.get());
                         pOutput.accept(ModItems.SILVER_NUGGET.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
                         pOutput.accept(ModItems.SILVER_AXE.get());
@@ -92,6 +96,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.TITANIUM_ORE.get());
                         pOutput.accept(ModItems.RAW_TITANIUM.get());
                         pOutput.accept(ModItems.TITANIUM_INGOT.get());
+                        pOutput.accept(ModItems.TITANIUM_POWDER.get());
                         pOutput.accept(ModItems.TITANIUM_NUGGET.get());
                         pOutput.accept(ModBlocks.TITANIUM_BlOCK.get());
                         pOutput.accept(ModItems.TITANIUM_AXE.get());
@@ -103,6 +108,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
                         pOutput.accept(ModItems.RAW_ENDERIUM.get());
                         pOutput.accept(ModItems.ENDERIUM_INGOT.get());
+                        pOutput.accept(ModItems.ENDERIUM_POWDER.get());
                         pOutput.accept(ModItems.ENDERIUM_NUGGET.get());
                         pOutput.accept(ModBlocks.ENDERIUM_BlOCK.get());
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
@@ -115,6 +121,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.RAW_LUMINITE.get());
                         pOutput.accept(ModItems.LUMINITE_NUGGET.get());
                         pOutput.accept(ModItems.LUMINITE_INGOT.get());
+                        pOutput.accept(ModItems.LUMINITE_POWDER.get());
                         pOutput.accept(ModBlocks.LUMINITE_BlOCK.get());
                         pOutput.accept(ModItems.LUMINITE_AXE.get());
                         pOutput.accept(ModItems.LUMINITE_HOE.get());
@@ -122,6 +129,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_SHOVEL.get());
                         pOutput.accept(ModItems.LUMINITE_SWORD.get());
 
+                        pOutput.accept(ModItems.COPPER_POWDER.get());
                         pOutput.accept(ModItems.COPPER_NUGGET.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
                         pOutput.accept(ModItems.COPPER_HOE.get());
@@ -132,6 +140,10 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.HEAL_STAFF.get());
                         pOutput.accept(ModItems.GOLD_POWDER.get());
                         pOutput.accept(ModItems.GOLD_STICK.get());
+                        pOutput.accept(ModItems.ENDER_PEARL_POWDER.get());
+                        pOutput.accept(ModItems.IRON_POWDER.get());
+                        pOutput.accept(ModItems.DIAMOND_POWDER.get());
+                        pOutput.accept(ModItems.DIAMOND_SHARD.get());
 
 
                         //TODO
