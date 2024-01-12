@@ -148,7 +148,7 @@ public class CreativeTabs {
 
                         //TODO
 
-                        pOutput.accept(ModBlocks.FIRERITE_ORE.get());
+                        pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
                         pOutput.accept(ModBlocks.FUSION_FURNACE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());

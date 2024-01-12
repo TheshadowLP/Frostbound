@@ -1,7 +1,7 @@
 {
   "block.projectshadow.aquanium_ore": "Aquanium Ore",
   "block.projectshadow.sand_aquanium_ore": "Sand Aquanium Ore",
-  "block.projectshadow.firerite_ore": "Firerite Ore",
+  "block.projectshadow.nether_firerite_ore": "Firerite Ore",
   "block.projectshadow.luminite_ore": "Luminite Ore",
   "block.projectshadow.deepslate_luminite_ore": "Deepslate Luminite Ore",
   "block.projectshadow.ruby_ore": "Ruby Ore",
@@ -9,7 +9,7 @@
   "block.projectshadow.steel_ore": "Steel Ore",
   "block.projectshadow.silver_ore": "Silver Ore",
   "block.projectshadow.titanium_ore": "Titanium Ore",
-  "block.projectshadow.enderium_end_ore": "Enderium End Ore",
+  "block.projectshadow.enderium_end_ore": "Enderium Ore",
 
 
   "block.projectshadow.steel_block": "Steel Block",

@@ -36,7 +36,7 @@ public class  ModBlocks {
     public static final RegistryObject<Block> SAND_AQUANIUM_ORE = registerBlock("sand_aquanium_ore",
             ()-> new SandBlock(14406560, BlockBehaviour.Properties.copy(Blocks.SAND).mapColor(MapColor.SAND)
                     .strength(1.4F,1.2F).requiresCorrectToolForDrops().sound(SoundType.SAND)));
-    public static final RegistryObject<Block> FIRERITE_ORE = registerBlock("firerite_ore",//TODO Nether gem ore
+    public static final RegistryObject<Block> NETHER_FIRERITE_ORE = registerBlock("nether_firerite_ore",//TODO Nether gem ore
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(5.0F,4.3F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> LUMINITE_ORE = registerBlock("luminite_ore",
