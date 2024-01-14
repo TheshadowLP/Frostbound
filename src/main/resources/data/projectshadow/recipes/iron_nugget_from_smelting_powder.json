@@ -4,7 +4,7 @@
   "cookingtime": 150,
   "experience": 0.3,
   "ingredient": {
-    "item": "projectshadow:irom_powder"
+    "item": "projectshadow:iron_powder"
   },
   "result": "minecraft:iron_nugget"
 }
