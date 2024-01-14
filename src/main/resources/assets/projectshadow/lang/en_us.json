@@ -155,6 +155,9 @@
   "item.projectshadow.heal_staff": "Heal Staff",
   "tooltip.projectshadow.heal_staff.shift": "This Magic Staff heals you! Cooldown 1 Minute.",
   "tooltip.projectshadow.heal_staff" : "Press §9SHIFT§r for more Information",
+  "item.projectshadow.levitation_staff": "Levitation Staff",
+  "tooltip.projectshadow.levitation_staff.shift": "This Magic Staff lets you FLY  ! Cooldown 30 seconds.",
+  "tooltip.projectshadow.levitation_staff" : "Press §9SHIFT§r for more Information",
 
   
   "creativetab.dev_tab": "DEV"

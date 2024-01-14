@@ -20,8 +20,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class HealStaffItem extends Item {
-    public HealStaffItem(Properties pProperties) {
+public class LevitationStaffItem extends Item {
+    public LevitationStaffItem(Properties pProperties) {
         super(pProperties);
     }
     private int timer;
@@ -29,10 +29,10 @@ public class HealStaffItem extends Item {
 
         if (this.timer <= 0) //check if timer is less or equal than 0
         {
-            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client
+            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client TODO changing sound and maybe timer, duration and Amplifier
             {
-                timer = 1200; //The time you want for the timer in ticks
-                pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
+                timer = 600; //The time you want for the timer in ticks
+                pPlayer.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false)); //Apply the effect to the player
 
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
@@ -83,9 +83,9 @@ public class HealStaffItem extends Item {
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.levitation_staff.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.levitation_staff"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }

@@ -138,6 +138,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_SWORD.get());
 
                         pOutput.accept(ModItems.HEAL_STAFF.get());
+                        pOutput.accept(ModItems.LEVITATION_STAFF.get());
                         pOutput.accept(ModItems.GOLD_POWDER.get());
                         pOutput.accept(ModItems.GOLD_STICK.get());
                         pOutput.accept(ModItems.ENDER_PEARL_POWDER.get());

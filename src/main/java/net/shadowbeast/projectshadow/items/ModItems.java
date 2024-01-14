@@ -9,6 +9,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.costum.HammerItem;
 import net.shadowbeast.projectshadow.items.costum.HealStaffItem;
+import net.shadowbeast.projectshadow.items.costum.LevitationStaffItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -204,6 +205,8 @@ public class ModItems {
     // ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff",
             ()-> new HealStaffItem(new Item.Properties().durability(10)));
+    public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff",
+            ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
 
 
 
