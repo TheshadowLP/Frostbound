@@ -66,6 +66,21 @@ public class HealStaffItem extends Item {
     }
 
     @Override
+    public boolean isRepairable(ItemStack stack) {
+        return false;
+    }
+
+    @Override
+    public boolean isValidRepairItem(ItemStack pStack, ItemStack pRepairCandidate) {
+        return false;
+    }
+
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return false;
+    }
+
+    @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff.shift"));
