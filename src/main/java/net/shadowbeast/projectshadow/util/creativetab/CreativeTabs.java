@@ -145,12 +145,12 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.IRON_POWDER.get());
                         pOutput.accept(ModItems.DIAMOND_POWDER.get());
                         pOutput.accept(ModItems.DIAMOND_SHARD.get());
+                        pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
+                        pOutput.accept(ModItems.FIRERITE_GEM.get());
+                        pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
 
 
                         //TODO
-
-                        pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
-                        pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
                         pOutput.accept(ModBlocks.FUSION_FURNACE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());

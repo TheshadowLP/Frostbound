@@ -46,7 +46,7 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_PLATINUM= ITEMS.register("raw_platinum",
             ()-> new Item(new Item.Properties()));
 
-    //SHARDS and STICKS
+    //SHARDS and STICKS and GEMS
     public static final RegistryObject<Item> AQUANIUM_SHARD = ITEMS.register("aquanium_shard",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_SHARD = ITEMS.register("diamond_shard",
@@ -54,6 +54,8 @@ public class ModItems {
     public static final RegistryObject<Item> GOLD_STICK = ITEMS.register("gold_stick",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_GEM = ITEMS.register("firerite_gem",
             ()-> new Item(new Item.Properties()));
 
     //POWDER
