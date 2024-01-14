@@ -61,6 +61,11 @@ public class HealStaffItem extends Item {
     }
 
     @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return false;
+    }
+
+    @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff.shift"));
