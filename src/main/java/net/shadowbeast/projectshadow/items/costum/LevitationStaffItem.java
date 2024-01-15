@@ -38,10 +38,6 @@ public class LevitationStaffItem extends Item {
             pPlayer.playSound(SoundEvents.ALLAY_THROW, 1f, 1f);
             pPlayer.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
         }
-        else
-        {
-            pPlayer.playSound(SoundEvents.CHEST_LOCKED, 0.1f, 2f);
-        }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
     @Override
