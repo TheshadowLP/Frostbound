@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.items.costum;
+package net.shadowbeast.projectshadow.items.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

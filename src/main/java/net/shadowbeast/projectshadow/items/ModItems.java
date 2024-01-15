@@ -7,9 +7,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.enums.ToolStats;
-import net.shadowbeast.projectshadow.items.costum.HammerItem;
-import net.shadowbeast.projectshadow.items.costum.HealStaffItem;
-import net.shadowbeast.projectshadow.items.costum.LevitationStaffItem;
+import net.shadowbeast.projectshadow.items.custom.HammerItem;
+import net.shadowbeast.projectshadow.items.custom.HealStaffItem;
+import net.shadowbeast.projectshadow.items.custom.LevitationStaffItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =

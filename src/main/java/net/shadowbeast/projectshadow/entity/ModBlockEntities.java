@@ -7,8 +7,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.entity.costum.FusionFurnaceBlockEntity;
-import net.shadowbeast.projectshadow.entity.costum.WinterFurnaceEntity;
+import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.WinterFurnaceEntity;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =

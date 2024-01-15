@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.costum;
+package net.shadowbeast.projectshadow.blocks.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.entity.costum.FusionFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 

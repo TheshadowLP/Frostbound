@@ -8,7 +8,7 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.items.costum.HammerItem;
+import net.shadowbeast.projectshadow.items.custom.HammerItem;
 
 import java.util.HashSet;
 import java.util.Set;

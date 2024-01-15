@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.items.costum;
+package net.shadowbeast.projectshadow.items.custom;
 
 
 import net.minecraft.client.gui.screens.Screen;
@@ -19,18 +19,18 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LevitationStaffItem extends Item {
-    public LevitationStaffItem(Properties pProperties) {
+public class HealStaffItem extends Item {
+    public HealStaffItem(Properties pProperties) {
         super(pProperties);
     }
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
         if (pPlayer instanceof Player) {
-            pPlayer.getCooldowns().addCooldown(this, 300); //15 seconds
+            pPlayer.getCooldowns().addCooldown(this, 900); //45 seconds
 
-            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client TODO changing sound and maybe timer, duration and Amplifier
+            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client
             {
-                pPlayer.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false)); //Apply the effect to the player
+                pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
 
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
@@ -41,19 +41,27 @@ public class LevitationStaffItem extends Item {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
     @Override
-    public boolean isEnchantable(@NotNull ItemStack pStack) {return false;}
+    public boolean isEnchantable(@NotNull ItemStack pStack) {
+        return false;
+    }
     @Override
-    public boolean isRepairable(@NotNull ItemStack stack) {return false;}
+    public boolean isRepairable(@NotNull ItemStack stack) {
+        return false;
+    }
     @Override
-    public boolean isValidRepairItem(@NotNull ItemStack pStack, @NotNull ItemStack pRepairCandidate) {return false;}
+    public boolean isValidRepairItem(@NotNull ItemStack pStack, @NotNull ItemStack pRepairCandidate) {
+        return false;
+    }
     @Override
-    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {return false;}
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return false;
+    }
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.levitation_staff.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.levitation_staff"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }

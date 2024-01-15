@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.entity.costum;
+package net.shadowbeast.projectshadow.entity.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.entity.costum.FusionFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
 import net.shadowbeast.projectshadow.util.screen.slot.ModResultSlot;
 import org.jetbrains.annotations.NotNull;
 

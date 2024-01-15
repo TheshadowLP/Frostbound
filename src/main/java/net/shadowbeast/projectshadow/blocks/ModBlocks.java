@@ -18,9 +18,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blocks.costum.FusionFurnace;
-import net.shadowbeast.projectshadow.blocks.costum.ModFlammableRotatedPillarBlock;
-import net.shadowbeast.projectshadow.blocks.costum.WinterFurnace;
+import net.shadowbeast.projectshadow.blocks.custom.FusionFurnace;
+import net.shadowbeast.projectshadow.blocks.custom.ModFlammableRotatedPillarBlock;
+import net.shadowbeast.projectshadow.blocks.custom.WinterFurnace;
 import net.shadowbeast.projectshadow.items.ModItems;
 
 import java.util.function.Supplier;
