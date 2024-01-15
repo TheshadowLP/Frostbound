@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s ",
+    "s/s",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:silver_powder"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:silver_stick",
+    "count": 1
+  }
+}

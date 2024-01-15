@@ -53,6 +53,8 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_STICK = ITEMS.register("gold_stick",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SILVER_STICK = ITEMS.register("silver_stick",
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_GEM = ITEMS.register("firerite_gem",

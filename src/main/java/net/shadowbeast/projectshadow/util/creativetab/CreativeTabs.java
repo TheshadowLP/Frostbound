@@ -86,6 +86,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SILVER_INGOT.get());
                         pOutput.accept(ModItems.SILVER_POWDER.get());
                         pOutput.accept(ModItems.SILVER_NUGGET.get());
+                        pOutput.accept(ModItems.SILVER_STICK.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
                         pOutput.accept(ModItems.SILVER_AXE.get());
                         pOutput.accept(ModItems.SILVER_HAMMER.get());

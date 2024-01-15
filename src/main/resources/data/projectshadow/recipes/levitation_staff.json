@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " rd",
+    "ogr",
+    "go "
+  ],
+  "key": {
+    "g": {
+      "item": "projectshadow:silver_stick"
+    },
+    "o": {
+      "item": "minecraft:iron_ingot"
+    },
+    "r": {
+      "item": "projectshadow:iron_powder"
+    },
+    "d": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "projectshadow:levitation_staff",
+    "count": 1
+  }
+}

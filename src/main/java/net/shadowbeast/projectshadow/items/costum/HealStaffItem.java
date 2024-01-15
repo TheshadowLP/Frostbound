@@ -26,28 +26,24 @@ public class HealStaffItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
         if (pPlayer instanceof Player) {
-            pPlayer.getCooldowns().addCooldown(this, 1200);
+            pPlayer.getCooldowns().addCooldown(this, 900); //45 seconds
 
             if (!pLevel.isClientSide()) //check if the item is used on the server and not the client
             {
-
                 pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
 
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
             }
-
             pPlayer.playSound(SoundEvents.ALLAY_THROW, 1f, 1f);
             pPlayer.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
-
         }
-        else //if timer is more than 0
+        else
         {
             pPlayer.playSound(SoundEvents.CHEST_LOCKED, 0.1f, 2f);
         }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
-
     @Override
     public boolean isEnchantable(@NotNull ItemStack pStack) {
         return false;

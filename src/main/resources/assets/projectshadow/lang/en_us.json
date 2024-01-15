@@ -59,6 +59,7 @@
   "item.projectshadow.ruby": "Ruby",
   "item.projectshadow.firerite_gem": "Firerite Gem",
   "item.projectshadow.gold_stick": "Golden Stick",
+  "item.projectshadow.silver_stick": "Silver Stick",
 
 
   "item.projectshadow.gold_powder": "Golden Powder",
@@ -154,10 +155,10 @@
 
 
   "item.projectshadow.heal_staff": "Heal Staff",
-  "tooltip.projectshadow.heal_staff.shift": "This Magic Staff heals you! Cooldown 1 Minute.",
+  "tooltip.projectshadow.heal_staff.shift": "This magic staff heals you! Cooldown 45 seconds.",
   "tooltip.projectshadow.heal_staff" : "Press §9SHIFT§r for more Information",
   "item.projectshadow.levitation_staff": "Levitation Staff",
-  "tooltip.projectshadow.levitation_staff.shift": "This Magic Staff lets you FLY  ! Cooldown 30 seconds.",
+  "tooltip.projectshadow.levitation_staff.shift": "This magic staff lets you FLY! Cooldown 15 seconds.",
   "tooltip.projectshadow.levitation_staff" : "Press §9SHIFT§r for more Information",
 
   
