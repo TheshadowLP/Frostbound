@@ -8,7 +8,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,14 +23,13 @@ public class LevitationStaffItem extends Item {
     public LevitationStaffItem(Properties pProperties) {
         super(pProperties);
     }
-    private int timer;
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
-        if (this.timer <= 0) //check if timer is less or equal than 0
-        {
+        if (pPlayer instanceof Player) {
+            pPlayer.getCooldowns().addCooldown(this, 600);
+
             if (!pLevel.isClientSide()) //check if the item is used on the server and not the client TODO changing sound and maybe timer, duration and Amplifier
             {
-                timer = 600; //The time you want for the timer in ticks
                 pPlayer.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false)); //Apply the effect to the player
 
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
@@ -49,27 +47,13 @@ public class LevitationStaffItem extends Item {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
     @Override
-    public void inventoryTick(@NotNull ItemStack pStack, Level pLevel, @NotNull Entity pEntity, int pSlotId, boolean pIsSelected) {
-
-        if (!pLevel.isClientSide())
-        {
-            if(timer >= 0){
-                timer--;
-            }
-        }
-        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
-    }
-
-    @Override
     public boolean isEnchantable(@NotNull ItemStack pStack) {
         return false;
     }
-
     @Override
     public boolean isRepairable(@NotNull ItemStack stack) {
         return false;
     }
-
     @Override
     public boolean isValidRepairItem(@NotNull ItemStack pStack, @NotNull ItemStack pRepairCandidate) {
         return false;
@@ -79,7 +63,6 @@ public class LevitationStaffItem extends Item {
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
         return false;
     }
-
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
