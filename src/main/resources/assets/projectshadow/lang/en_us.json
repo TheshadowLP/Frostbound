@@ -155,11 +155,14 @@
 
 
   "item.projectshadow.heal_staff": "Heal Staff",
-  "tooltip.projectshadow.heal_staff.shift": "This magic staff heals you! Cooldown 45 seconds.",
+  "item.projectshadow.teleportation_staff": "Teleportation Staff",
+  "tooltip.projectshadow.heal_staff.shift": "This magic staff heals you! Cool down 45 seconds.",
   "tooltip.projectshadow.heal_staff" : "Press §9SHIFT§r for more Information",
   "item.projectshadow.levitation_staff": "Levitation Staff",
-  "tooltip.projectshadow.levitation_staff.shift": "This magic staff lets you FLY! Cooldown 15 seconds.",
+  "tooltip.projectshadow.levitation_staff.shift": "This magic staff lets you FLY! Cool down 15 seconds.",
   "tooltip.projectshadow.levitation_staff" : "Press §9SHIFT§r for more Information",
+
+  "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
   
   "creativetab.dev_tab": "DEV"
