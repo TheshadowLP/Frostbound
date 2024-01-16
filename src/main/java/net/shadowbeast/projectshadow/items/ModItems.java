@@ -62,7 +62,7 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
 
     // Other items
-    public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch",
+    public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch.json",
             () -> new Item(new Item.Properties()));
 
     //POWDER

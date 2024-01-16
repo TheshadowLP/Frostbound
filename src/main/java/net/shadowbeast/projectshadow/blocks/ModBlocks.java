@@ -225,9 +225,8 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FROZEN_SAPLING= registerBlock("frozen_sapling",
             ()-> new SaplingBlock(null,BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops()));
 
-
-
-
+    public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE)));
 
 
 

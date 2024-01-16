@@ -23,10 +23,16 @@ public class TeleportationStaff extends Item {
     }
 
     @Override
+    public boolean isEnchantable(@NotNull ItemStack pStack) { return false; }
+
+    @Override
+    public boolean isDamageable(ItemStack stack) { return true; }
+
+    @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         if(!pLevel.isClientSide && pPlayer instanceof ServerPlayer serverPlayerEntity) {
             ServerLevel serverWorld = (ServerLevel)  pLevel;
-            pPlayer.getCooldowns().addCooldown(this, 1200);
+            pPlayer.getCooldowns().addCooldown(this, 1200); //1 mun
 
             if (serverPlayerEntity.getRespawnPosition() != null) {
                 Optional<Vec3> respawnPosition = Player.findRespawnPositionAndUseSpawnBlock(
@@ -49,7 +55,7 @@ public class TeleportationStaff extends Item {
                                 serverPlayerEntity.getYRot(),
                                 serverPlayerEntity.getXRot());
                         serverPlayerEntity.level().playSound(null, serverPlayerEntity.blockPosition(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS);
-                        serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_THROW, SoundSource.PLAYERS, 1f, 1f);
+                        serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_HURT, SoundSource.PLAYERS, 1f, 1f);
                     }
                 } else {
                     serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport"), false);
