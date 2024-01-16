@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " UO",
+    " SU",
+    "D "
+  ],
+  "key": {
+    "O": {
+      "item": "minecraft:ender_pearl"
+    },
+    "U": {
+      "item": "projectshadow:ender_arch_fragment"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "projectshadow:teleportation_staff",
+    "count": 1
+  }
+}
