@@ -17,16 +17,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class TeleportationStaff extends Item {
-    public TeleportationStaff(Properties pProperties) {
+public class TeleportationStaffItem extends Item {
+    public TeleportationStaffItem(Properties pProperties) {
         super(pProperties);
     }
-
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         if(!pLevel.isClientSide && pPlayer instanceof ServerPlayer serverPlayerEntity) {
             ServerLevel serverWorld = (ServerLevel)  pLevel;
-            pPlayer.getCooldowns().addCooldown(this, 1200);
+            pPlayer.getCooldowns().addCooldown(this, 100);
 
             if (serverPlayerEntity.getRespawnPosition() != null) {
                 Optional<Vec3> respawnPosition = Player.findRespawnPositionAndUseSpawnBlock(
@@ -36,7 +35,6 @@ public class TeleportationStaff extends Item {
                         serverPlayerEntity.isRespawnForced(),
                         true
                 );
-
                 if (respawnPosition.isPresent()) {
                     ServerLevel respawnWorld = serverWorld.getServer().getLevel(serverPlayerEntity.getRespawnDimension());
 
@@ -62,5 +60,12 @@ public class TeleportationStaff extends Item {
         }
         return super.use(pLevel, pPlayer, pUsedHand);
     }
-
+    @Override
+    public boolean isEnchantable(@NotNull ItemStack pStack) {return false;}
+    @Override
+    public boolean isRepairable(@NotNull ItemStack stack) {return false;}
+    @Override
+    public boolean isValidRepairItem(@NotNull ItemStack pStack, @NotNull ItemStack pRepairCandidate) {return false;}
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {return false;}
 }
