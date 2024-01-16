@@ -29,7 +29,7 @@ public class TeleportationStaffItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         if(!pLevel.isClientSide && pPlayer instanceof ServerPlayer serverPlayerEntity) {
             ServerLevel serverWorld = (ServerLevel)  pLevel;
-            pPlayer.getCooldowns().addCooldown(this, 100);
+            pPlayer.getCooldowns().addCooldown(this, 1200);
 
             if (serverPlayerEntity.getRespawnPosition() != null) {
                 Optional<Vec3> respawnPosition = Player.findRespawnPositionAndUseSpawnBlock(
