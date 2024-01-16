@@ -64,6 +64,8 @@ public class ModItems {
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDER_ARCH_FRAGMENT = ITEMS.register("ender_arch_fragment",
+            () -> new Item(new Item.Properties()));
 
     //POWDER
     public static final RegistryObject<Item> GOLD_POWDER = ITEMS.register("gold_powder",
