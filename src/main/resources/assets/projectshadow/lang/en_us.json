@@ -162,6 +162,8 @@
   "item.projectshadow.levitation_staff": "Levitation Staff",
   "tooltip.projectshadow.levitation_staff.shift": "This magic staff lets you FLY! Cool down 15 seconds.",
   "tooltip.projectshadow.levitation_staff" : "Press §9SHIFT§r for more Information",
+  "tooltip.projectshadow.teleportation_staff.shift": "This magic staff teleports you Home! Cool down 1 minute.",
+  "tooltip.projectshadow.teleportation_staff" : "Press §9SHIFT§r for more Information",
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
