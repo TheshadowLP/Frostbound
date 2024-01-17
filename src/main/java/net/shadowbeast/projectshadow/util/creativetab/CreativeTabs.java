@@ -15,12 +15,10 @@ public class CreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ProjectShadow.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> DEV_TAB = CREATIVE_MODE_TABS.register("dev_tab",
+    public static final RegistryObject<CreativeModeTab> CREATIVE_TAB = CREATIVE_MODE_TABS.register("dev_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.AQUANIUM_ORE.get()))
-                    .title(Component.translatable("creativetab.dev_tab"))
+                    .title(Component.translatable("creativetab.projectshadow.creative_tab"))
                     .displayItems((pParameters, pOutput) -> {
-
-
                         pOutput.accept(ModBlocks.FROZEN_LOG.get());
                         pOutput.accept(ModBlocks.FROZEN_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_FROZEN_LOG.get());
