@@ -101,6 +101,9 @@ public class  ModBlocks {
                     .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
             ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     //Natural Blocks
     public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone",
