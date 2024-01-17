@@ -9,6 +9,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import org.jetbrains.annotations.NotNull;
 
 public class WinterFurnaceRecipe extends AbstractCookingRecipe {
     public WinterFurnaceRecipe(ResourceLocation pId, String pGroup,
@@ -16,18 +17,18 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
         super(Type.INSTANCE, pId, pGroup, pCategory, pIngredient, pResult, pExperience, pCookingTime);
     }
     @Override
-    public ItemStack getToastSymbol(){
+    public @NotNull ItemStack getToastSymbol(){
         return new ItemStack(ModBlocks.WINTER_FURNACE.get());
     }
 
 
     @Override
-    public RecipeType<?> getType(){
+    public @NotNull RecipeType<?> getType(){
         return Type.INSTANCE;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
 
@@ -43,7 +44,7 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
             this.defaultCookingTime = defaultCookingTime;
         }
 
-        public WinterFurnaceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public @NotNull WinterFurnaceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
             CookingBookCategory cookingbookcategory = CookingBookCategory.CODEC.byName(GsonHelper.getAsString(pJson, "category", (String)null), CookingBookCategory.MISC);
             JsonElement jsonelement = (JsonElement)(GsonHelper.isArrayNode(pJson, "ingredient") ? GsonHelper.getAsJsonArray(pJson, "ingredient") : GsonHelper.getAsJsonObject(pJson, "ingredient"));
