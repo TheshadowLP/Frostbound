@@ -52,6 +52,9 @@ public class TeleportationStaffItem extends Item {
                                 serverPlayerEntity.getXRot());
                         serverPlayerEntity.level().playSound(null, serverPlayerEntity.blockPosition(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS);
                         serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_THROW, SoundSource.PLAYERS, 1f, 1f);
+
+                        pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
+                                player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
                     }
                 } else {
                     serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport"), false);
