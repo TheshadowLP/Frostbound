@@ -99,8 +99,10 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
             ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
             ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
