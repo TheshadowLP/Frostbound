@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "projectshadow:item/json_sword"
+    "layer0": "projectshadow:item/aquanium_sword"
   }
 }
