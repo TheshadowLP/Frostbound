@@ -39,7 +39,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICKS.get());
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE_WALL.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICK_WALL.get());
-                        pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
                         pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
 
 
@@ -158,9 +157,9 @@ public class CreativeTabs {
                         //TODO
                         pOutput.accept(ModBlocks.FUSION_FURNACE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
+                        pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
 
                         //TODO Place in correct spot
-                        pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
                     })
                     .build());

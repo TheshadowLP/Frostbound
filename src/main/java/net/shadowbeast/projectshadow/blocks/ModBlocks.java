@@ -22,7 +22,6 @@ import net.shadowbeast.projectshadow.blocks.custom.FusionFurnace;
 import net.shadowbeast.projectshadow.blocks.custom.ModFlammableRotatedPillarBlock;
 import net.shadowbeast.projectshadow.blocks.custom.WinterFurnace;
 import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -222,7 +221,12 @@ public class  ModBlocks {
                 }
             });
     public static final RegistryObject<Block> FROZEN_SAPLING= registerBlock("frozen_sapling",
-            ()-> new SaplingBlock(new FrozenTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops()));
+            ()-> new SaplingBlock(null,BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.5F)));
+
+
 
 
 

@@ -44,28 +44,26 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
             this.defaultCookingTime = defaultCookingTime;
         }
 
-        public @NotNull WinterFurnaceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public @NotNull WinterFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
-            CookingBookCategory cookingbookcategory = CookingBookCategory.CODEC.byName(GsonHelper.getAsString(pJson, "category", (String)null), CookingBookCategory.MISC);
-            JsonElement jsonelement = (JsonElement)(GsonHelper.isArrayNode(pJson, "ingredient") ? GsonHelper.getAsJsonArray(pJson, "ingredient") : GsonHelper.getAsJsonObject(pJson, "ingredient"));
+            CookingBookCategory cookingbookcategory = CookingBookCategory.CODEC.byName(GsonHelper.getAsString(pJson, "category", null), CookingBookCategory.MISC);
+            JsonElement jsonelement = GsonHelper.isArrayNode(pJson, "ingredient") ? GsonHelper.getAsJsonArray(pJson, "ingredient") : GsonHelper.getAsJsonObject(pJson, "ingredient");
             Ingredient ingredient = Ingredient.fromJson(jsonelement, false);
-            //Forge: Check if primitive string to keep vanilla or a object which can contain a count field.
+            //Forge: Check if primitive string to keep vanilla or an object which can contain a count field.
             if (!pJson.has("result")) throw new com.google.gson.JsonSyntaxException("Missing result, expected to find a string or object");
             ItemStack itemstack;
             if (pJson.get("result").isJsonObject()) itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
             else {
                 String s1 = GsonHelper.getAsString(pJson, "result");
                 ResourceLocation resourcelocation = new ResourceLocation(s1);
-                itemstack = new ItemStack(BuiltInRegistries.ITEM.getOptional(resourcelocation).orElseThrow(() -> {
-                    return new IllegalStateException("Item: " + s1 + " does not exist");
-                }));
+                itemstack = new ItemStack(BuiltInRegistries.ITEM.getOptional(resourcelocation).orElseThrow(() -> new IllegalStateException("Item: " + s1 + " does not exist")));
             }
             float f = GsonHelper.getAsFloat(pJson, "experience", 0.0F);
             int i = GsonHelper.getAsInt(pJson, "cookingtime", this.defaultCookingTime);
             return new WinterFurnaceRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
         }
 
-        public WinterFurnaceRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public WinterFurnaceRecipe fromNetwork(@NotNull ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             String s = pBuffer.readUtf();
             CookingBookCategory cookingbookcategory = pBuffer.readEnum(CookingBookCategory.class);
             Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
