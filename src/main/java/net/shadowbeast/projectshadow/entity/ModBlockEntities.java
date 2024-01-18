@@ -22,8 +22,6 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("winter_furnace_entity", () ->
                     BlockEntityType.Builder.of(WinterFurnaceEntity::new,
                             ModBlocks.WINTER_FURNACE.get()).build(null));
-
-
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
