@@ -40,7 +40,7 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public @NotNull ItemStack assemble(@NotNull SimpleContainer p_44001_, @NotNull RegistryAccess p_267165_) {
+    public @NotNull ItemStack assemble(@NotNull SimpleContainer simpleContainer, @NotNull RegistryAccess registryAccess) {
         return output;
     }
 
@@ -56,8 +56,8 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public @NotNull ItemStack getResultItem(@NotNull RegistryAccess p_267052_) {
-        return output.copy();
+    public ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
+        return null;
     }
 
     @Override
@@ -108,9 +108,7 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
         @Override
         public @Nullable FusionFurnaceRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
-
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
-
             ItemStack output = buf.readItem();
             return new FusionFurnaceRecipe(id, output, inputs);
         }
