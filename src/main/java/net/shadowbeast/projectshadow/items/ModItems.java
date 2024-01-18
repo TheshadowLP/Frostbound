@@ -59,6 +59,8 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_GEM = ITEMS.register("firerite_gem",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_GEM = ITEMS.register("frozen_gem",
+            ()-> new Item(new Item.Properties()));
 
     // Other items
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch.json",

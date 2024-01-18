@@ -12,6 +12,7 @@
     "projectshadow:steel_block",
     "projectshadow:titanium_block",
     "projectshadow:aquanium_block",
-    "projectshadow:silver_block"
+    "projectshadow:silver_block",
+    "projectshadow:frozen_gem_block"
   ]
 }

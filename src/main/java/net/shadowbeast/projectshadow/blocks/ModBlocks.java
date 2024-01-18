@@ -86,6 +86,9 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FIRERITE_BlOCK = registerBlock("firerite_block",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
                     .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_GEM_BlOCK = registerBlock("frozen_gem_block",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
+                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SILVER_BlOCK = registerBlock("silver_block",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)
                     .strength(3.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
@@ -225,9 +228,6 @@ public class  ModBlocks {
 
     public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.5F)));
-
-
-
 
 
 
