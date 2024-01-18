@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class TeleportationStaff extends Item {
-    public TeleportationStaff(Properties pProperties) {
+public class TeleportationStaffItem extends Item {
+    public TeleportationStaffItem(Properties pProperties) {
         super(pProperties);
     }
 
