@@ -2,13 +2,13 @@
   "type": "projectshadow:alloy_crafting",
   "ingredients": [
     {
-      "item": "minecraft:copper"
+      "item": "minecraft:copper_powder"
     },
     {
-      "item": "projectshadow:titanium"
-    },
-    {
-      "item": "minecraft:iron"
+      "item": "projectshadow:titanium_powder"
     }
-  ]
+  ],
+  "output": {
+    "item": "projectshadow:platinum_ingot"
+  }
 }
