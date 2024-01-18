@@ -1,0 +1,14 @@
+{
+  "type": "projectshadow:alloy_crafting",
+  "ingredients": [
+    {
+      "item": "minecraft:copper"
+    },
+    {
+      "item": "projectshadow:titanium"
+    },
+    {
+      "item": "minecraft:iron"
+    }
+  ]
+}
