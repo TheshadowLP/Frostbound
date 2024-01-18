@@ -17,6 +17,7 @@ import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.util.recipes.ModRecipes;
+import net.shadowbeast.projectshadow.util.screen.AlloyBenchScreen;
 import net.shadowbeast.projectshadow.util.screen.FusionFurnaceScreen;
 import net.shadowbeast.projectshadow.util.screen.ModMenuTypes;
 import net.shadowbeast.projectshadow.util.screen.WinterFurnaceScreen;
@@ -46,23 +47,21 @@ public class ProjectShadow {
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
+    private void commonSetup(final FMLCommonSetupEvent event) { }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) { }
 
-    }
+
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
-    }
+    public void onServerStarting(ServerStartingEvent event) { }
 
     private void clientSetup(final FMLClientSetupEvent event) {
         MenuScreens.register(ModMenuTypes.FUSION_FURNACE_MENU.get(), FusionFurnaceScreen::new);
         MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
+        MenuScreens.register(ModMenuTypes.ALLOY_BENCH_MENU.get(), AlloyBenchScreen::new);
     }
+
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {

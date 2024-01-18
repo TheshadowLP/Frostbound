@@ -24,10 +24,10 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(WinterFurnaceEntity::new,
                             ModBlocks.WINTER_FURNACE.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<WinterFurnaceEntity>> ALLOY_BENCH_BLOCK_ENTITY =
+    public static final RegistryObject<BlockEntityType<AlloyBenchBlockEntity>> ALLOY_BENCH_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("alloy_bench_block_entity", () ->
-                    BlockEntityType.Builder.of(WinterFurnaceEntity::new,
-                            ModBlocks.WINTER_FURNACE.get()).build(null));
+                    BlockEntityType.Builder.of(AlloyBenchBlockEntity::new,
+                            ModBlocks.ALLOY_BENCH.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

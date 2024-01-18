@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.AlloyBenchBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,8 +34,8 @@ public class AlloyBench extends BaseEntityBlock {
     public void onRemove(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof FusionFurnaceBlockEntity) {
-                ((FusionFurnaceBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof AlloyBenchBlockEntity) {
+                ((AlloyBenchBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
@@ -46,8 +46,8 @@ public class AlloyBench extends BaseEntityBlock {
                                           @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof FusionFurnaceBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (FusionFurnaceBlockEntity)entity, pPos);
+            if(entity instanceof AlloyBenchBlockEntity) {
+                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (AlloyBenchBlockEntity)entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -59,12 +59,12 @@ public class AlloyBench extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
-        return new FusionFurnaceBlockEntity(pPos, pState);
+        return new AlloyBenchBlockEntity(pPos, pState);
     }
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level pLevel, @NotNull BlockState pState, @NotNull BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.FUSION_FURNACE_BLOCK_ENTITY.get(),
-                FusionFurnaceBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.ALLOY_BENCH_BLOCK_ENTITY.get(),
+                AlloyBenchBlockEntity::tick);
     }
 }

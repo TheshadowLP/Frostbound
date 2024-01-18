@@ -79,38 +79,38 @@ public class AlloyBenchRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
 
-    public static class Type implements RecipeType<FusionFurnaceRecipe> {
+    public static class Type implements RecipeType<AlloyBenchRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "alloy_crafting";
     }
 
-    public static class Serializer implements RecipeSerializer<FusionFurnaceRecipe> {
+    public static class Serializer implements RecipeSerializer<AlloyBenchRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
                 new ResourceLocation(ProjectShadow.MOD_ID, "alloy_crafting");
 
         @Override
-        public @NotNull FusionFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
+        public @NotNull AlloyBenchRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-            return new FusionFurnaceRecipe(pRecipeId, output, inputs);
+            return new AlloyBenchRecipe(pRecipeId, output, inputs);
         }
 
         @Override
-        public @Nullable FusionFurnaceRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
+        public @Nullable AlloyBenchRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
             ItemStack output = buf.readItem();
-            return new FusionFurnaceRecipe(id, output, inputs);
+            return new AlloyBenchRecipe(id, output, inputs);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, FusionFurnaceRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, AlloyBenchRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
