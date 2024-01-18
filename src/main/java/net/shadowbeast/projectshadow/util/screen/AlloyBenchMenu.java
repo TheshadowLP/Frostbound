@@ -21,7 +21,7 @@ public class AlloyBenchMenu extends AbstractContainerMenu {
     private final ContainerData data;
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public AlloyBenchMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+    public AlloyBenchMenu(int pContainerId, Inventory inv,@NotNull FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
