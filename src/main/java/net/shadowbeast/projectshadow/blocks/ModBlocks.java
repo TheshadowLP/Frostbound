@@ -94,7 +94,6 @@ public class  ModBlocks {
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
                     .strength(9.0F,12.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-
     //Entities
     public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
             ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
@@ -113,7 +112,6 @@ public class  ModBlocks {
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall",
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
-
 
     //WOOD
     public static final RegistryObject<Block> FROZEN_LOG = registerBlock("frozen_log",
