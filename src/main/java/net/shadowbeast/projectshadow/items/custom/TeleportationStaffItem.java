@@ -58,11 +58,11 @@ public class TeleportationStaffItem extends Item {
                         serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_HURT, SoundSource.PLAYERS, 1f, 1f);
                     }
                 } else {
-                    serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport"), false);
+                    serverPlayerEntity.displayClientMessage(Component.translatable("teleportation_staff.projectshadow.failure_to_teleport"), false);
                     serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_DEATH, SoundSource.PLAYERS, 1f, 1f);
                 }
             } else {
-                serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport"), false);
+                serverPlayerEntity.displayClientMessage(Component.translatable("teleportation_staff.projectshadow.failure_to_teleport"), false);
                 serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_DEATH, SoundSource.PLAYERS, 1f, 1f);
             }
         }
