@@ -18,6 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blocks.custom.AlloyBench;
 import net.shadowbeast.projectshadow.blocks.custom.FusionFurnace;
 import net.shadowbeast.projectshadow.blocks.custom.ModFlammableRotatedPillarBlock;
 import net.shadowbeast.projectshadow.blocks.custom.WinterFurnace;
@@ -224,7 +225,7 @@ public class  ModBlocks {
             ()-> new SaplingBlock(null,BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.5F)));
+            () -> new AlloyBench(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.5F)));
 
 
 
