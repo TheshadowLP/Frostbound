@@ -34,6 +34,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_TRAPDOOR.get());
                         pOutput.accept(ModBlocks.FROZEN_PRESSURE_PLATE.get());
                         pOutput.accept(ModBlocks.FROZEN_BUTTON.get());
+                        pOutput.accept(ModItems.FROZEN_GEM.get());
+                        pOutput.accept(ModBlocks.FROZEN_GEM_BlOCK.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE.get());
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICKS.get());
