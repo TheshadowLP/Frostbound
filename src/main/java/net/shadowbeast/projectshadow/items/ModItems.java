@@ -32,7 +32,6 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot",
             ()-> new Item(new Item.Properties()));
 
-
     //RAW INGOTS
     public static final RegistryObject<Item> RAW_ENDERIUM = ITEMS.register("raw_enderium",
             ()-> new Item(new Item.Properties()));
@@ -92,7 +91,6 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_POWDER = ITEMS.register("titanium_powder",
             ()-> new Item(new Item.Properties()));
-
 
     //NUGGETS
     public static final RegistryObject<Item> AQUANIUM_NUGGET = ITEMS.register("aquanium_nugget",
@@ -211,7 +209,6 @@ public class ModItems {
             ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
     public static final RegistryObject<Item> PLATINUM_HAMMER = ITEMS.register("platinum_hammer",
             ()-> new HammerItem(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020)));
-
 
     // ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff",
