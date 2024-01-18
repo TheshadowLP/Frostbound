@@ -125,9 +125,9 @@ public class ModItems {
             ()-> new SwordItem(ToolStats.ENDERIUM,3,-2.6F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword",
             ()-> new SwordItem(ToolStats.COPPER,3,-2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> AQUANIUM_SWORD = ITEMS.register("aquanium_sword", //TODO
+    public static final RegistryObject<Item> AQUANIUM_SWORD = ITEMS.register("aquanium_sword",
             ()-> new SwordItem(ToolStats.AQUANIUM,3,-2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> LUMINITE_SWORD = ITEMS.register("luminite_sword", //TODO
+    public static final RegistryObject<Item> LUMINITE_SWORD = ITEMS.register("luminite_sword",
             ()-> new SwordItem(ToolStats.LUMINITE,3,-2.4F, new Item.Properties()));
 
     //AXES
@@ -143,10 +143,10 @@ public class ModItems {
             ()-> new AxeItem(ToolStats.ENDERIUM,5.0F,-3.2F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe",
             ()-> new AxeItem(ToolStats.COPPER,6.0F,-3.1F, new Item.Properties()));
-    public static final RegistryObject<Item> AQUANIUM_AXE = ITEMS.register("aquanium_axe", //TODO
-            ()-> new AxeItem(ToolStats.AQUANIUM,6.0F,-3.1F, new Item.Properties()));
-    public static final RegistryObject<Item> LUMINITE_AXE = ITEMS.register("luminite_axe", //TODO
-            ()-> new AxeItem(ToolStats.LUMINITE,6.0F,-3.1F, new Item.Properties()));
+    public static final RegistryObject<Item> AQUANIUM_AXE = ITEMS.register("aquanium_axe",
+            ()-> new AxeItem(ToolStats.AQUANIUM,5.0F,-3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> LUMINITE_AXE = ITEMS.register("luminite_axe",
+            ()-> new AxeItem(ToolStats.LUMINITE,5.0F,-3.0F, new Item.Properties()));
 
     //PICKAXES
     public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
@@ -161,9 +161,9 @@ public class ModItems {
             ()-> new PickaxeItem(ToolStats.ENDERIUM,1,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
             ()-> new PickaxeItem(ToolStats.COPPER,1,-2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> AQUANIUM_PICKAXE = ITEMS.register("aquanium_pickaxe", //TODO
+    public static final RegistryObject<Item> AQUANIUM_PICKAXE = ITEMS.register("aquanium_pickaxe",
             ()-> new PickaxeItem(ToolStats.AQUANIUM,1,-2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> LUMINITE_PICKAXE = ITEMS.register("luminite_pickaxe", //TODO
+    public static final RegistryObject<Item> LUMINITE_PICKAXE = ITEMS.register("luminite_pickaxe",
             ()-> new PickaxeItem(ToolStats.LUMINITE,1,-2.8F, new Item.Properties()));
 
     //SHOVELS
@@ -179,9 +179,9 @@ public class ModItems {
             ()-> new ShovelItem(ToolStats.ENDERIUM,1.5F,-3.2F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel",
             ()-> new ShovelItem(ToolStats.COPPER,1.5F,-3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> AQUANIUM_SHOVEL = ITEMS.register("aquanium_shovel", //TODO
+    public static final RegistryObject<Item> AQUANIUM_SHOVEL = ITEMS.register("aquanium_shovel",
             ()-> new ShovelItem(ToolStats.AQUANIUM,1.5F,-3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> LUMINITE_SHOVEL = ITEMS.register("luminite_shovel", //TODO
+    public static final RegistryObject<Item> LUMINITE_SHOVEL = ITEMS.register("luminite_shovel",
             ()-> new ShovelItem(ToolStats.LUMINITE,1.5F,-3.0F, new Item.Properties()));
 
     //HOES
@@ -197,10 +197,10 @@ public class ModItems {
             ()-> new HoeItem(ToolStats.ENDERIUM,-4,-0.2F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe",
             ()-> new HoeItem(ToolStats.COPPER,-2,-1.0F, new Item.Properties()));
-    public static final RegistryObject<Item> AQUANIUM_HOE = ITEMS.register("aquanium_hoe", //TODO
-            ()-> new HoeItem(ToolStats.AQUANIUM,-2,-1.0F, new Item.Properties()));
-    public static final RegistryObject<Item> LUMINITE_HOE = ITEMS.register("luminite_hoe", //TODO
-            ()-> new HoeItem(ToolStats.LUMINITE,-2,-1.0F, new Item.Properties()));
+    public static final RegistryObject<Item> AQUANIUM_HOE = ITEMS.register("aquanium_hoe",
+            ()-> new HoeItem(ToolStats.AQUANIUM,-4,0.0F, new Item.Properties()));
+    public static final RegistryObject<Item> LUMINITE_HOE = ITEMS.register("luminite_hoe",
+            ()-> new HoeItem(ToolStats.LUMINITE,-3,0.0F, new Item.Properties()));
 
     //HAMMERS
     public static final RegistryObject<Item> STEEL_HAMMER = ITEMS.register("steel_hammer",
