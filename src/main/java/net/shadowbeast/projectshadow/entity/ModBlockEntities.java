@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.entity.custom.AlloyBenchBlockEntity;
 import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
 import net.shadowbeast.projectshadow.entity.custom.WinterFurnaceEntity;
 
@@ -20,6 +21,11 @@ public class ModBlockEntities {
                             ModBlocks.FUSION_FURNACE.get()).build(null));
     public static final RegistryObject<BlockEntityType<WinterFurnaceEntity>> WINTER_FURNACE_ENTITY =
             BLOCK_ENTITIES.register("winter_furnace_entity", () ->
+                    BlockEntityType.Builder.of(WinterFurnaceEntity::new,
+                            ModBlocks.WINTER_FURNACE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<WinterFurnaceEntity>> ALLOY_BENCH_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("alloy_bench_block_entity", () ->
                     BlockEntityType.Builder.of(WinterFurnaceEntity::new,
                             ModBlocks.WINTER_FURNACE.get()).build(null));
 

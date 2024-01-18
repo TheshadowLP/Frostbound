@@ -19,6 +19,8 @@ public class ModMenuTypes {
             registerMenuType(FusionFurnaceMenu::new, "fusion_furnace_menu");
     public static final RegistryObject<MenuType<WinterFurnaceMenu>> WINTER_FURNACE_MENU =
             registerMenuType(WinterFurnaceMenu::new, "winter_furnace_menu");
+    public static final RegistryObject<MenuType<AlloyBenchMenu>> ALLOY_BENCH_MENU =
+            registerMenuType(AlloyBenchMenu::new, "alloy_bench_menu");
 
 
 

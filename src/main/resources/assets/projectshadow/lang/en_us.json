@@ -81,6 +81,7 @@
   "block.projectshadow.winter_furnace": "Winter Furnace",
   "block.projectshadow.fusion_furnace": "Fusion Furnace",
   "block.projectshadow.alloy_bench": "Alloy Bench",
+  "alloy_bench.projectshadow.displayname": "Alloy Bench",
 
 
   "item.projectshadow.raw_enderium": "Raw Enderium",
