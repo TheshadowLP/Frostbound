@@ -16,12 +16,12 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
+public class AlloyBenchRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
 
-    public FusionFurnaceRecipe(ResourceLocation id, ItemStack output,
+    public AlloyBenchRecipe(ResourceLocation id, ItemStack output,
                                NonNullList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
@@ -44,7 +44,6 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
         return output;
     }
 
-
     @Override
     public @NotNull NonNullList<Ingredient> getIngredients() {
         return recipeItems;
@@ -55,6 +54,7 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
         return true;
     }
 
+    // do not add @NotNull
     @Override
     public ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
         return null;
@@ -82,26 +82,22 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
     public static class Type implements RecipeType<FusionFurnaceRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "forging";
+        public static final String ID = "alloy_crafting";
     }
-
 
     public static class Serializer implements RecipeSerializer<FusionFurnaceRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ProjectShadow.MOD_ID, "forging");
+                new ResourceLocation(ProjectShadow.MOD_ID, "alloy_crafting");
 
         @Override
         public @NotNull FusionFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
-
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-
             return new FusionFurnaceRecipe(pRecipeId, output, inputs);
         }
 
@@ -116,7 +112,6 @@ public class FusionFurnaceRecipe implements Recipe<SimpleContainer> {
         @Override
         public void toNetwork(FriendlyByteBuf buf, FusionFurnaceRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
-
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
             }

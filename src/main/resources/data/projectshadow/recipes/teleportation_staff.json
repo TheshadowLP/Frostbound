@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " UO",
-    " SU",
-    "D "
+    " uo",
+    " su",
+    "d  "
   ],
   "key": {
-    "O": {
+    "o": {
       "item": "minecraft:ender_pearl"
     },
-    "U": {
+    "u": {
       "item": "projectshadow:ender_arch_fragment"
     },
-    "S": {
+    "s": {
       "item": "minecraft:stick"
     },
-    "D": {
+    "d": {
       "item": "minecraft:diamond"
     }
   },

@@ -5,6 +5,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import org.jetbrains.annotations.NotNull;
 
 public enum ToolStats implements Tier {
 
@@ -66,7 +67,7 @@ public enum ToolStats implements Tier {
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
+    public @NotNull Ingredient getRepairIngredient() {
         return repairMaterial;
     }
 }
