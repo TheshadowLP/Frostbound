@@ -171,7 +171,5 @@
 
   "teleportation_staff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
-  "steelmaker.projectshadow.display_name": "Steel Maker",
-
-  "creativetab.dev_tab": "Projectshadow"
+  "creativetab.dev_tab": "Project Shadow"
 }
