@@ -220,7 +220,5 @@ public class ModItems {
     public static final RegistryObject<Item> TELEPORTATION_STAFF = ITEMS.register("teleportation_staff",
             () -> new TeleportationStaffItem(new Item.Properties()));
 
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
-    }
+    public static void register(IEventBus eventBus) { ITEMS.register(eventBus); }
 }
