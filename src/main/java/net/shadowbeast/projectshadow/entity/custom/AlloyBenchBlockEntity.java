@@ -138,7 +138,7 @@ public class AlloyBenchBlockEntity extends BlockEntity implements MenuProvider {
         }
     }
 
-    private static boolean hasRecipe( AlloyBenchBlockEntity entity) {
+    private static boolean hasRecipe(@NotNull AlloyBenchBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
@@ -154,12 +154,12 @@ public class AlloyBenchBlockEntity extends BlockEntity implements MenuProvider {
                 && hasItemInFuelSlot(entity);
     }
 
-    private static boolean hasItemInFuelSlot(AlloyBenchBlockEntity entity) {
+    private static boolean hasItemInFuelSlot(@NotNull AlloyBenchBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(0).getItem() == Items.LAVA_BUCKET;
 
     }
 
-    private static void craftItem(AlloyBenchBlockEntity entity) {
+    private static void craftItem(@NotNull AlloyBenchBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
@@ -182,15 +182,13 @@ public class AlloyBenchBlockEntity extends BlockEntity implements MenuProvider {
         }
     }
 
-    private void resetProgress() {
-        this.progress = 0;
-    }
+    private void resetProgress() { this.progress = 0; }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
+    private static boolean canInsertItemIntoOutputSlot(@NotNull SimpleContainer inventory,@NotNull ItemStack output) {
         return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
     }
 
-    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
+    private static boolean canInsertAmountIntoOutputSlot(@NotNull SimpleContainer inventory) {
         return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 }
