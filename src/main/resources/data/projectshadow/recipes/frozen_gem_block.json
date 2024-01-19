@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "ppp",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:frozen_gem"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_gem_block",
+    "count": 1
+  }
+}

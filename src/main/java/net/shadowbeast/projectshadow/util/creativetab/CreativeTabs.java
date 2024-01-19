@@ -34,6 +34,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_TRAPDOOR.get());
                         pOutput.accept(ModBlocks.FROZEN_PRESSURE_PLATE.get());
                         pOutput.accept(ModBlocks.FROZEN_BUTTON.get());
+                        pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModItems.FROZEN_GEM.get());
                         pOutput.accept(ModBlocks.FROZEN_GEM_BlOCK.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE.get());
@@ -43,7 +44,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICK_WALL.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
                         pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
-
 
                         pOutput.accept(ModBlocks.AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
