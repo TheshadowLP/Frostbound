@@ -9,6 +9,7 @@
   "block.projectshadow.steel_ore": "Steel Ore",
   "block.projectshadow.silver_ore": "Silver Ore",
   "block.projectshadow.titanium_ore": "Titanium Ore",
+  "block.projectshadow.frozen_gem_ore": "Frozen Gem Ore",
   "block.projectshadow.enderium_end_ore": "Enderium Ore",
 
 
@@ -20,6 +21,7 @@
   "block.projectshadow.ruby_block": "Ruby Block",
   "block.projectshadow.firerite_block": "Firerite Block",
   "block.projectshadow.silver_block": "Silver Block",
+  "block.projectshadow.frozen_gem_block": "Frozen Gem Block",
   "block.projectshadow.enderium_block": "Enderium Block",
 
 
@@ -57,6 +59,7 @@
   "item.projectshadow.aquanium_shard": "Aquanium Shard",
   "item.projectshadow.diamond_shard": "Diamond Shard",
   "item.projectshadow.ruby": "Ruby",
+  "item.projectshadow.frozen_gem": "Frozen Gem",
   "item.projectshadow.firerite_gem": "Firerite Gem",
   "item.projectshadow.gold_stick": "Golden Stick",
   "item.projectshadow.silver_stick": "Silver Stick",

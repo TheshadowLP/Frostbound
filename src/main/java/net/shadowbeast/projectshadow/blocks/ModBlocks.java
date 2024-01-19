@@ -64,6 +64,9 @@ public class  ModBlocks {
     public static final RegistryObject<Block> ENDERIUM_END_ORE = registerBlock("enderium_end_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS)
                     .strength(5.2F,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
+                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
 
     //Ores Blocks
     public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block",
@@ -85,6 +88,9 @@ public class  ModBlocks {
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
                     .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FIRERITE_BlOCK = registerBlock("firerite_block",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
+                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_GEM_BlOCK = registerBlock("frozen_gem_block",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
                     .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SILVER_BlOCK = registerBlock("silver_block",
@@ -226,9 +232,6 @@ public class  ModBlocks {
 
     public static final RegistryObject<Block> ALLOY_BENCH = registerBlock("alloy_bench",
             () -> new AlloyBench(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.5F)));
-
-
-
 
 
 
