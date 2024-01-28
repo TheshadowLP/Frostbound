@@ -11,6 +11,7 @@
   "block.projectshadow.titanium_ore": "Titanium Ore",
   "block.projectshadow.frozen_gem_ore": "Frozen Gem Ore",
   "block.projectshadow.enderium_end_ore": "Enderium Ore",
+  "block.projectshadow.sulfur_ore": "Sulfur Ore",
 
 
   "block.projectshadow.steel_block": "Steel Block",
@@ -54,7 +55,7 @@
   "item.projectshadow.steel_ingot": "Steel Ingot",
   "item.projectshadow.titanium_ingot": "Titanium Ingot",
   "item.projectshadow.platinum_ingot": "Platinum Ingot",
-
+  "item.projectshadow.sulfur": "Sulfur",
 
   "item.projectshadow.aquanium_shard": "Aquanium Shard",
   "item.projectshadow.diamond_shard": "Diamond Shard",
@@ -79,7 +80,7 @@
   "item.projectshadow.platinum_powder": "Platinum Powder",
   "item.projectshadow.steel_powder": "Steel Powder",
   "item.projectshadow.titanium_powder": "Titanium Powder",
-
+  "item.projectshadow.sulfur_powder": "Sulfur Powder",
 
   "block.projectshadow.winter_furnace": "Winter Furnace",
   "block.projectshadow.fusion_furnace": "Fusion Furnace",
@@ -173,6 +174,9 @@
   "tooltip.projectshadow.teleportation_staff" : "Press §9SHIFT§r for more Information",
 
   "teleportation_staff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
+  "creativetab.dev_tab": "Project Shadow"
+  "item.projectshadow.mud_ball": "Mud Ball",
+
 
   "creativetab.dev_tab": "Project Shadow"
 }

@@ -2,6 +2,8 @@ package net.shadowbeast.projectshadow;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -13,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
@@ -38,6 +41,7 @@ public class ProjectShadow {
         ModItems.register(modEventBus);
         CreativeTabs.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         modEventBus.addListener(this::clientSetup);
@@ -60,6 +64,7 @@ public class ProjectShadow {
         MenuScreens.register(ModMenuTypes.FUSION_FURNACE_MENU.get(), FusionFurnaceScreen::new);
         MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
         MenuScreens.register(ModMenuTypes.ALLOY_BENCH_MENU.get(), AlloyBenchScreen::new);
+        EntityRenderers.register(ModEntities.MUDBALL_PROJECTILE.get(), ThrownItemRenderer::new);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

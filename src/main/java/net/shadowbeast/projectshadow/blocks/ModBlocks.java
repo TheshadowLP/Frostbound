@@ -67,8 +67,11 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
+    public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
+                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
 
-    //Ores Blocks
+    //ORES BLOCKS
     public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
@@ -100,14 +103,14 @@ public class  ModBlocks {
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
                     .strength(9.0F,12.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-    //Entities
+    //ENTITIES
     public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
             ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
             ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
 
-    //Natural Blocks
+    //NATURAL BLOCKS
     public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks",
