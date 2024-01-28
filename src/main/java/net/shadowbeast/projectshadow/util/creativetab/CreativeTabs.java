@@ -155,6 +155,9 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModItems.FIRERITE_GEM.get());
                         pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
+                        pOutput.accept(ModBlocks.SULFUR_ORE.get());
+                        pOutput.accept(ModItems.SULFUR.get());
+                        pOutput.accept(ModItems.SULFUR_POWDER.get());
 
 
                         //TODO

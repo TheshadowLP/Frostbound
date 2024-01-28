@@ -61,6 +61,8 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FROZEN_GEM = ITEMS.register("frozen_gem",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SULFUR = ITEMS.register("sulfur",
+            ()-> new Item(new Item.Properties()));
 
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch",
@@ -92,6 +94,8 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_POWDER = ITEMS.register("steel_powder",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_POWDER = ITEMS.register("titanium_powder",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SULFUR_POWDER = ITEMS.register("sulfur_powder",
             ()-> new Item(new Item.Properties()));
 
     //NUGGETS

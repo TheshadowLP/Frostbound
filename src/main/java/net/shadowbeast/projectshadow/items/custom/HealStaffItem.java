@@ -26,9 +26,9 @@ public class HealStaffItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
         if (pPlayer instanceof Player) {
-            pPlayer.getCooldowns().addCooldown(this, 900); //45 seconds
+            pPlayer.getCooldowns().addCooldown(this, 900);
 
-            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client
+            if (!pLevel.isClientSide())
             {
                 pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
 

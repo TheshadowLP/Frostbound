@@ -67,6 +67,9 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
+    public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
+                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
 
     //Ores Blocks
     public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block",
