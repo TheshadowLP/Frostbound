@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
@@ -25,7 +26,6 @@ import net.shadowbeast.projectshadow.util.screen.ModMenuTypes;
 import net.shadowbeast.projectshadow.util.screen.WinterFurnaceScreen;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(ProjectShadow.MOD_ID)
 public class ProjectShadow {
     public static final String MOD_ID = "projectshadow";
@@ -40,6 +40,7 @@ public class ProjectShadow {
         ModItems.register(modEventBus);
         CreativeTabs.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModEffects.register(modEventBus);
         ModEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -50,18 +51,11 @@ public class ProjectShadow {
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
-    }
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-    }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
-    }
+    public void onServerStarting(ServerStartingEvent event) {}
 
     private void clientSetup(final FMLClientSetupEvent event) {
         MenuScreens.register(ModMenuTypes.FUSION_FURNACE_MENU.get(), FusionFurnaceScreen::new);
@@ -72,8 +66,6 @@ public class ProjectShadow {
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
+        public static void onClientSetup(FMLClientSetupEvent event) {}
     }
 }
