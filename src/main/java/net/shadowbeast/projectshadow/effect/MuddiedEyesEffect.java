@@ -15,8 +15,8 @@ public class MuddiedEyesEffect extends MobEffect {
     @Override
     public void applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
         if (!pLivingEntity.level().isClientSide()) {
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, false, false));
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 2, false, false));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, true, false));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 2, true, false));
         }
         super.applyEffectTick(pLivingEntity, pAmplifier);
     }

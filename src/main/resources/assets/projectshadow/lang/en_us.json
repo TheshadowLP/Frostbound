@@ -174,5 +174,7 @@
 
   "item.projectshadow.mud_ball": "Mud Ball",
 
-  "creativetab.dev_tab": "DEV"
+  "effect.projectshadow.muddied_eyes": "Muddied Eyes",
+
+  "creativetab.dev_tab": "Project Shadow"
 }

@@ -38,7 +38,7 @@ public class MudBallProjectileEntity extends ThrowableItemProjectile {
             return;
         }
         if(hitEntity instanceof LivingEntity livingHitEntity) {
-            livingHitEntity.addEffect(null, owner);
+            livingHitEntity.addEffect(new MobEffectInstance(ModEffects.MUDDIED_EYES.get(), 100), owner);
         }
     }
     protected void onHit(@NotNull HitResult pResult) {
