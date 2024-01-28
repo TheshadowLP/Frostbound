@@ -7,10 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.enums.ToolStats;
-import net.shadowbeast.projectshadow.items.custom.HammerItem;
-import net.shadowbeast.projectshadow.items.custom.HealStaffItem;
-import net.shadowbeast.projectshadow.items.custom.LevitationStaffItem;
-import net.shadowbeast.projectshadow.items.custom.TeleportationStaffItem;
+import net.shadowbeast.projectshadow.items.custom.*;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -226,7 +223,7 @@ public class ModItems {
 
     //PROJECTILES
     public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball",
-            () -> new Item(new Item.Properties()));
+            () -> new MudItem(new Item.Properties()));
 
 
 
