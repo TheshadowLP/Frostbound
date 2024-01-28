@@ -30,7 +30,7 @@ public class HealStaffItem extends Item {
 
             if (!pLevel.isClientSide())
             {
-                pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false)); //Apply the effect to the player
+                pPlayer.addEffect(new MobEffectInstance(MobEffects.HEAL, 1, 20, false, false));
 
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));

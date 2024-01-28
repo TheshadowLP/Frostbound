@@ -26,9 +26,9 @@ public class LevitationStaffItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
         if (pPlayer instanceof Player) {
-            pPlayer.getCooldowns().addCooldown(this, 300); //15 seconds
+            pPlayer.getCooldowns().addCooldown(this, 300);
 
-            if (!pLevel.isClientSide()) //check if the item is used on the server and not the client TODO changing sound and maybe timer, duration and Amplifier
+            if (!pLevel.isClientSide())
             {
                 pPlayer.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false)); //Apply the effect to the player
 
