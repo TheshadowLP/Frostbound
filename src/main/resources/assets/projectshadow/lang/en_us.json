@@ -172,6 +172,8 @@
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
+  "item.projectshadow.mud_ball": "Mud Ball",
+
   
   "creativetab.dev_tab": "DEV"
 }

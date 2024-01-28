@@ -167,6 +167,7 @@ public class CreativeTabs {
                         //TODO Place in correct spot
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
+                        pOutput.accept(ModItems.MUD_BALL.get());
                     })
                     .build());
 

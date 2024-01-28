@@ -46,7 +46,7 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_PLATINUM = ITEMS.register("raw_platinum",
             ()-> new Item(new Item.Properties()));
 
-    //SHARDS and STICKS and GEMS
+    //SHARDS STICKS GEMS
     public static final RegistryObject<Item> AQUANIUM_SHARD = ITEMS.register("aquanium_shard",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_SHARD = ITEMS.register("diamond_shard",
@@ -216,13 +216,17 @@ public class ModItems {
     public static final RegistryObject<Item> PLATINUM_HAMMER = ITEMS.register("platinum_hammer",
             ()-> new HammerItem(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020)));
 
-    // ADVANCED ITEMS
+    //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff",
             ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff",
             ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
     public static final RegistryObject<Item> TELEPORTATION_STAFF = ITEMS.register("teleportation_staff",
             () -> new TeleportationStaffItem(new Item.Properties().durability(8)));
+
+    //PROJECTILES
+    public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball",
+            () -> new Item(new Item.Properties()));
 
 
 
