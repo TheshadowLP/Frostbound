@@ -17,8 +17,9 @@ public class MuddiedEyesEffect extends MobEffect {
         if (!pLivingEntity.level().isClientSide()) {
             // pAmbient does something, don't know what
             // Also, leave pVisible to "false" so it does not show particles
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 1, false, false));
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2, false, false));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, pAmplifier, false, false));
+
+
         }
         super.applyEffectTick(pLivingEntity, pAmplifier);
     }
