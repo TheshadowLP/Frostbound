@@ -225,6 +225,11 @@ public class ModItems {
     public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball",
             () -> new MudItem(new Item.Properties()));
 
+    //TODO Put in correct sections
+    public static final RegistryObject<Item> MOLTEN_SULFUR_BUCKET = ITEMS.register("molten_sulfur_bucket",
+            () -> new Item(new Item.Properties()));
+
+
 
 
 
