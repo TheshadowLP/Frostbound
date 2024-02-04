@@ -228,6 +228,8 @@ public class ModItems {
     //TODO Put in correct sections
     public static final RegistryObject<Item> MOLTEN_SULFUR_BUCKET = ITEMS.register("molten_sulfur_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MILK_BOTTLE = ITEMS.register("milk_bottle",
+            () -> new MilkBottle(new Item.Properties()));
 
 
 

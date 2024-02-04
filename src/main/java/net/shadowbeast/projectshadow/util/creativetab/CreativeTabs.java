@@ -169,6 +169,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDER_ARCH.get());
                         pOutput.accept(ModItems.MUD_BALL.get());
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
+                        pOutput.accept(ModItems.MILK_BOTTLE.get());
                     })
                     .build());
 
