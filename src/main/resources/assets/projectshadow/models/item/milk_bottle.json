@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "projectshadow:milk_bottle"
+    "layer0": "projectshadow:item/milk_bottle"
   }
 }
