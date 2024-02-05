@@ -25,7 +25,7 @@ public class MilkBottle extends Item {
             ((ServerPlayer) pEntityLiving).awardStat(Stats.ITEM_USED.get(this));
         }
         if (!pLevel.isClientSide) {
-            pEntityLiving.curePotionEffects(pStack);
+            pEntityLiving.removeAllEffects();
         }
         if (pStack.isEmpty()) {
             pStack.shrink(1);
@@ -41,6 +41,7 @@ public class MilkBottle extends Item {
             return pStack;
         }
     }
+
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
