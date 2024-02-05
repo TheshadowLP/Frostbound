@@ -121,16 +121,16 @@ public class  ModBlocks {
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
     public static final RegistryObject<Block> COPPER_BRICK = registerBlock("copper_brick",
             ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED,
-                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> EXPOSED_COPPER_BRICK = registerBlock("exposed_copper_brick",
             ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED,
-                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WEATHERED_COPPER_BRICK = registerBlock("weathered_copper_brick",
             ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED,
-                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> OXIDIZED_COPPER_BRICK = registerBlock("oxidized_copper_brick",
             ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED,
-                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WAXED_COPPER_BRICK = registerBlock("waxed_copper_brick",
             ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED,
                     BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));

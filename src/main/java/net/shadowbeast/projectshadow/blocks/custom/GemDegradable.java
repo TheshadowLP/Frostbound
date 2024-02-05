@@ -55,6 +55,6 @@ public interface GemDegradable extends ChangeOverTimeBlock<GemDegradable.GemDegr
         UNAFFECTED,
         EXPOSED,
         WEATHERED,
-        DEGRADED;
+        DEGRADED
     }
 }
