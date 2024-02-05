@@ -32,7 +32,7 @@ public class WinterFurnace extends AbstractFurnaceBlock {
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, Player pPlayer, InteractionHand pHand, @NotNull BlockHitResult pHit) {
+    public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         if(pLevel.isClientSide()) {
             return InteractionResult.SUCCESS;
         }else {
@@ -52,7 +52,7 @@ public class WinterFurnace extends AbstractFurnaceBlock {
     public void animateTick(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
         if (pState.getValue(LIT)) {
             double d0 = (double)pPos.getX() + 0.5D;
-            double d1 = (double)pPos.getY();
+            double d1 = pPos.getY();
             double d2 = (double)pPos.getZ() + 0.5D;
             if (pRandom.nextDouble() < 0.1D) {
                 pLevel.playLocalSound(d0, d1, d2, SoundEvents.FURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0F, 1.0F, false);

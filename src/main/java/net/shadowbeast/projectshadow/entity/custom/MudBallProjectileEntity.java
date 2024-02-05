@@ -1,8 +1,6 @@
 package net.shadowbeast.projectshadow.entity.custom;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,7 +25,7 @@ public class MudBallProjectileEntity extends ThrowableItemProjectile {
         super(ModEntities.MUDBALL_PROJECTILE.get(), livingEntity, pLevel);
     }
     @Override
-    protected Item getDefaultItem() { return null; }
+    protected @NotNull Item getDefaultItem() { return null; }
     @Override
     protected void onHitEntity(@NotNull EntityHitResult hitResult) {
         super.onHitEntity(hitResult);

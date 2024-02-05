@@ -23,7 +23,6 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(WinterFurnaceEntity::new,
                             ModBlocks.WINTER_FURNACE.get()).build(null));
 
-
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

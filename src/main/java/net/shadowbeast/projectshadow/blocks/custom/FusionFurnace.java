@@ -19,8 +19,7 @@ import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-
-
+@SuppressWarnings("deprecated")
 public class FusionFurnace extends BaseEntityBlock {
     public FusionFurnace(Properties pProperties) {
         super(pProperties);
@@ -63,7 +62,7 @@ public class FusionFurnace extends BaseEntityBlock {
     }
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, @NotNull BlockState pState, @NotNull BlockEntityType<T> pBlockEntityType) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level pLevel, @NotNull BlockState pState, @NotNull BlockEntityType<T> pBlockEntityType) {
         return createTickerHelper(pBlockEntityType, ModBlockEntities.FUSION_FURNACE_BLOCK_ENTITY.get(),
                 FusionFurnaceBlockEntity::tick);
     }

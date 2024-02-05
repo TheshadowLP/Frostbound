@@ -12,11 +12,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.util.recipes.WinterFurnaceRecipe;
 import net.shadowbeast.projectshadow.util.screen.WinterFurnaceMenu;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
 public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
-    private Map<Item, Integer> BURN_DURATION_MAP =
+    private final Map<Item, Integer> BURN_DURATION_MAP =
             Map.of(Items.OAK_LOG, 300,
                     Items.BIRCH_LOG,300,
                     Items.DARK_OAK_LOG,300,
@@ -31,12 +32,12 @@ public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
     }
 
     @Override
-    protected Component getDefaultName() {
+    protected @NotNull Component getDefaultName() {
         return Component.translatable("block.projectshadow.winter_furnace");
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory) {
+    protected @NotNull AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory) {
         return new WinterFurnaceMenu(pContainerId, pInventory, this, dataAccess);
     }
 

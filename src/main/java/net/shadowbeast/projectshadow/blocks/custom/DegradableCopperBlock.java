@@ -6,6 +6,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+
+@SuppressWarnings("deprecated")
 public class DegradableCopperBlock extends Block implements GemDegradable {
     private final GemDegradationLevel degradationLevel;
     public DegradableCopperBlock(GemDegradationLevel degradationLevel, Properties pProperties) {

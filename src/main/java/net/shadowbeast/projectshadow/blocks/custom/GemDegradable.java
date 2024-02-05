@@ -7,20 +7,17 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChangeOverTimeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 import java.util.function.Supplier;
 
 public interface GemDegradable extends ChangeOverTimeBlock<GemDegradable.GemDegradationLevel> {
-    Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> {
-        return ImmutableBiMap.<Block, Block>builder()
-                .put(ModBlocks.COPPER_BRICK.get(), ModBlocks.EXPOSED_COPPER_BRICK.get())
-                .put(ModBlocks.EXPOSED_COPPER_BRICK.get(), ModBlocks.WEATHERED_COPPER_BRICK.get())
-                .put(ModBlocks.WEATHERED_COPPER_BRICK.get(), ModBlocks.OXIDIZED_COPPER_BRICK.get()).build();
-    });
-    Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> {
-        return NEXT_BY_BLOCK.get().inverse();
-    });
+    Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder()
+            .put(ModBlocks.COPPER_BRICK.get(), ModBlocks.EXPOSED_COPPER_BRICK.get())
+            .put(ModBlocks.EXPOSED_COPPER_BRICK.get(), ModBlocks.WEATHERED_COPPER_BRICK.get())
+            .put(ModBlocks.WEATHERED_COPPER_BRICK.get(), ModBlocks.OXIDIZED_COPPER_BRICK.get()).build());
+    Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> NEXT_BY_BLOCK.get().inverse());
     static Optional<Block> getPrevious(Block pBlock) {
         return Optional.ofNullable(PREVIOUS_BY_BLOCK.get().get(pBlock));
     }
@@ -32,21 +29,17 @@ public interface GemDegradable extends ChangeOverTimeBlock<GemDegradable.GemDegr
         }
         return block;
     }
-    static Optional<BlockState> getPrevious(BlockState pState) {
-        return getPrevious(pState.getBlock()).map((p_154903_) -> {
-            return p_154903_.withPropertiesOf(pState);
-        });
+    static Optional<BlockState> getPrevious(@NotNull BlockState pState) {
+        return getPrevious(pState.getBlock()).map((p_154903_) -> p_154903_.withPropertiesOf(pState));
     }
     static Optional<Block> getNext(Block pBlock) {
         return Optional.ofNullable(NEXT_BY_BLOCK.get().get(pBlock));
     }
-    static BlockState getFirst(BlockState pState) {
+    static @NotNull BlockState getFirst(@NotNull BlockState pState) {
         return getFirst(pState.getBlock()).withPropertiesOf(pState);
     }
-    default Optional<BlockState> getNext(BlockState pState) {
-        return getNext(pState.getBlock()).map((p_154896_) -> {
-            return p_154896_.withPropertiesOf(pState);
-        });
+    default @NotNull Optional<BlockState> getNext(@NotNull BlockState pState) {
+        return getNext(pState.getBlock()).map((p_154896_) -> p_154896_.withPropertiesOf(pState));
     }
     default float getChanceModifier() {
         return this.getAge() == GemDegradationLevel.UNAFFECTED ? 0.75F : 1.0F;
