@@ -1,15 +1,12 @@
 package net.shadowbeast.projectshadow.items.custom;
 
-
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -18,23 +15,19 @@ import org.jetbrains.annotations.NotNull;
 
 public class MilkBottle extends Item {
     private static final int DRINK_DURATION = 28;
-
     public MilkBottle(Properties pProperties) {
         super(pProperties);
     }
-
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull LivingEntity pEntityLiving) {
         super.finishUsingItem(pStack, pLevel, pEntityLiving);
         if (pEntityLiving instanceof ServerPlayer) {
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) pEntityLiving, pStack);
             ((ServerPlayer) pEntityLiving).awardStat(Stats.ITEM_USED.get(this));
         }
-
         if (!pLevel.isClientSide) {
             pEntityLiving.curePotionEffects(pStack);
         }
         if (pStack.isEmpty()) {
-            // I don't think this will ever go empty, but here just in case
             pStack.shrink(1);
             return new ItemStack(Items.GLASS_BOTTLE);
         } else {
@@ -48,28 +41,22 @@ public class MilkBottle extends Item {
             return pStack;
         }
     }
-
-
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
-
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack pStack) {
         return UseAnim.DRINK;
     }
-
     @Override
     public int getUseDuration(@NotNull ItemStack pStack) {
         return 28;
     }
-
     @Override
     public @NotNull SoundEvent getDrinkingSound() {
         return SoundEvents.GENERIC_DRINK;
     }
-
     @Override
     public @NotNull SoundEvent getEatingSound() {
         return SoundEvents.GENERIC_DRINK;

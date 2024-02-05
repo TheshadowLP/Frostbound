@@ -18,9 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blocks.custom.FusionFurnace;
-import net.shadowbeast.projectshadow.blocks.custom.ModFlammableRotatedPillarBlock;
-import net.shadowbeast.projectshadow.blocks.custom.WinterFurnace;
+import net.shadowbeast.projectshadow.blocks.custom.*;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
 
@@ -121,6 +119,30 @@ public class  ModBlocks {
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall",
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+    public static final RegistryObject<Block> COPPER_BRICK = registerBlock("copper_brick",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> EXPOSED_COPPER_BRICK = registerBlock("exposed_copper_brick",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WEATHERED_COPPER_BRICK = registerBlock("weathered_copper_brick",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OXIDIZED_COPPER_BRICK = registerBlock("oxidized_copper_brick",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_COPPER_BRICK = registerBlock("waxed_copper_brick",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_COPPER_BRICK_STAGE_1 = registerBlock("waxed_copper_brick_stage_1",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_COPPER_BRICK_STAGE_2 = registerBlock("waxed_copper_brick_stage_2",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_COPPER_BRICK_STAGE_3 = registerBlock("waxed_copper_brick_stage_3",
+            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED,
+                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(6.0F).requiresCorrectToolForDrops()));
 
     //WOOD
     public static final RegistryObject<Block> FROZEN_LOG = registerBlock("frozen_log",
