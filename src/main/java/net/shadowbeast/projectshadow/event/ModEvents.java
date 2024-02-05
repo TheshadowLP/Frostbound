@@ -2,6 +2,9 @@ package net.shadowbeast.projectshadow.event;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -22,16 +25,20 @@ public class ModEvents {
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
     @SubscribeEvent
-    public static void addMilkToBottle(@NotNull PlayerInteractEvent event) {
-        Player player = event.getEntity();
-        if (player.getMainHandItem().is(Items.GLASS_BOTTLE)) {
-            player.getMainHandItem().shrink(1);
-            player.addItem(new ItemStack(ModItems.MILK_BOTTLE.get(), 1));
+    public static void milkCow(@NotNull PlayerInteractEvent.EntityInteract event) {
+        if (event.getTarget() instanceof LivingEntity targetEntity) {
+            if (targetEntity instanceof Cow) {
+                if (event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).getItem() == Items.GLASS_BOTTLE) {
+                    event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+                    event.getEntity().addItem(new ItemStack(ModItems.MILK_BOTTLE.get(), 1));
+                    event.setCanceled(true); // Cancel the event to prevent default interaction
+                }
+            }
         }
     }
 
     @SubscribeEvent
-    public static void onHammerUsage(@NotNull BlockEvent.BreakEvent event) {
+    public static void onHammerUsage(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();
 
