@@ -14,7 +14,6 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class MilkBottle extends Item {
-    private static final int DRINK_DURATION = 28;
     public MilkBottle(Properties pProperties) {
         super(pProperties);
     }
