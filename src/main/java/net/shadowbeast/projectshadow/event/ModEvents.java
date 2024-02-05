@@ -2,6 +2,7 @@ package net.shadowbeast.projectshadow.event;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Cow;
@@ -29,6 +30,7 @@ public class ModEvents {
         if (event.getTarget() instanceof LivingEntity targetEntity) {
             if (targetEntity instanceof Cow) {
                 if (event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).getItem() == Items.GLASS_BOTTLE) {
+                    event.getEntity().playSound(SoundEvents.COW_MILK);
                     event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
                     event.getEntity().addItem(new ItemStack(ModItems.MILK_BOTTLE.get(), 1));
                     event.setCanceled(true); // Cancel the event to prevent default interaction
