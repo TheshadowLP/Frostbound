@@ -4,23 +4,34 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.items.custom.HammerItem;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = ProjectShadow.MOD_ID)
 public class ModEvents {
-
-    // Done with the help of https://github.com/CoFH/CoFHCore/blob/1.19.x/src/main/java/cofh/core/event/AreaEffectEvents.java
-    // Don't be a jerk License
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
+
     @SubscribeEvent
-    public static void onHammerUsage(BlockEvent.BreakEvent event) {
+    public static void addMilkToBottle(@NotNull PlayerInteractEvent event) {
+        Player player = event.getEntity();
+        if (player.getMainHandItem().is(Items.GLASS_BOTTLE)) {
+            player.getMainHandItem().shrink(1);
+            player.addItem(new ItemStack(ModItems.MILK_BOTTLE.get(), 1));
+        }
+    }
+
+    @SubscribeEvent
+    public static void onHammerUsage(@NotNull BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();
 
