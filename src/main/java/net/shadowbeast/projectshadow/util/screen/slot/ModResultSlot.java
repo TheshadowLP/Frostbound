@@ -3,6 +3,7 @@ package net.shadowbeast.projectshadow.util.screen.slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class ModResultSlot extends SlotItemHandler {
     public ModResultSlot(IItemHandler itemHandler, int index, int x, int y) {
@@ -10,7 +11,7 @@ public class ModResultSlot extends SlotItemHandler {
     }
 
     @Override
-    public boolean mayPlace(ItemStack stack) {
+    public boolean mayPlace(@NotNull ItemStack stack) {
         return false;
     }
 }

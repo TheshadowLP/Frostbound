@@ -20,7 +20,7 @@ public class FusionFurnaceMenu extends AbstractContainerMenu {
     private final Level level;
     private final ContainerData data;
 
-    public FusionFurnaceMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+    public FusionFurnaceMenu(int pContainerId, Inventory inv,@NotNull FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 

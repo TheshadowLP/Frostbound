@@ -8,6 +8,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.projectshadow.util.recipes.WinterFurnaceRecipe;
+import org.jetbrains.annotations.NotNull;
 
 public class WinterFurnaceMenu extends AbstractFurnaceMenu {
     protected WinterFurnaceMenu(int pContainerId, Inventory pPlayerInventory, FriendlyByteBuf friendlyByteBuf) {
@@ -22,7 +23,7 @@ public class WinterFurnaceMenu extends AbstractFurnaceMenu {
     }
 
     @Override
-    protected boolean isFuel(ItemStack pStack) {
+    protected boolean isFuel(@NotNull ItemStack pStack) {
         return true;
     }
 }
