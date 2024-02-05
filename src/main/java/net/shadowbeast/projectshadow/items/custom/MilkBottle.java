@@ -27,6 +27,9 @@ public class MilkBottle extends Item {
         if (!pLevel.isClientSide) {
             pEntityLiving.curePotionEffects(pStack);
         }
+        if (!pLevel.isClientSide) {
+            pEntityLiving.removeAllEffects();
+        }
         if (pStack.isEmpty()) {
             pStack.shrink(1);
             return new ItemStack(Items.GLASS_BOTTLE);
