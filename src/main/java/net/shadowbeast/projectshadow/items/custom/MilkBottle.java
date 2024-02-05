@@ -25,9 +25,6 @@ public class MilkBottle extends Item {
             ((ServerPlayer) pEntityLiving).awardStat(Stats.ITEM_USED.get(this));
         }
         if (!pLevel.isClientSide) {
-            pEntityLiving.curePotionEffects(pStack);
-        }
-        if (!pLevel.isClientSide) {
             pEntityLiving.removeAllEffects();
         }
         if (pStack.isEmpty()) {
