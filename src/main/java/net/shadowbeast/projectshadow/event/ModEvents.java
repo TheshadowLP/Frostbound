@@ -4,15 +4,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.shadowbeast.projectshadow.Config;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.items.custom.HammerItem;
@@ -40,7 +44,20 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void onHammerUsage(BlockEvent.BreakEvent event) {
+    public static void onProjectileImpact(@NotNull ProjectileImpactEvent event) {
+        if (Config.snowballsDoDamage) {
+            if (event.getProjectile() instanceof Snowball) {
+                float damageAmount = 1.0f;
+                Entity target = event.getEntity();
+                if (target != null) {
+                    target.hurt(target.damageSources().mobProjectile(event.getEntity(), null), damageAmount);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onHammerUsage(@NotNull BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();
 
