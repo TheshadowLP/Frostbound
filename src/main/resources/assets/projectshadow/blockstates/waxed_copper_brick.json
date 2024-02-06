@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "projectshadow:block/waxed_copper_brick"
+      "model": "projectshadow:block/copper_brick"
     }
   }
 }

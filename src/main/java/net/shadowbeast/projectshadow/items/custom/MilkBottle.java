@@ -40,7 +40,6 @@ public class MilkBottle extends Item {
             return pStack;
         }
     }
-
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);

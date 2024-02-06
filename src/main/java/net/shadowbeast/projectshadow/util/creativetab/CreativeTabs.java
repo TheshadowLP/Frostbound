@@ -170,6 +170,14 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.MUD_BALL.get());
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());
+                        pOutput.accept(ModBlocks.COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.EXPOSED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WEATHERED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.OXIDIZED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_EXPOSED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_WEATHERED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BRICK.get());
                     })
                     .build());
 
