@@ -44,7 +44,7 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void onProjectileImpact(@NotNull ProjectileImpactEvent event) {
+    public static void snowballDamageEntity(@NotNull ProjectileImpactEvent event) {
         if (Config.snowballsDoDamage) {
             if (event.getProjectile() instanceof Snowball) {
                 float damageAmount = 1.0f;
@@ -55,6 +55,7 @@ public class ModEvents {
             }
         }
     }
+
 
     @SubscribeEvent
     public static void onHammerUsage(@NotNull BlockEvent.BreakEvent event) {

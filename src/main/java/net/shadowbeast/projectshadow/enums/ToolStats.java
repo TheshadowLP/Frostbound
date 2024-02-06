@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("deprecated")
 public enum ToolStats implements Tier {
 
     STEEL(2, 826, 6.0F, 2.0F, 15, "steel_ingot"),
