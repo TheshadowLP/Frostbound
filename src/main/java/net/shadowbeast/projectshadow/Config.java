@@ -19,19 +19,19 @@ import java.util.stream.Collectors;
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    private static final ForgeConfigSpec.BooleanValue SNOWBALLS_DO_DAMAGE = BUILDER
+    private static final ForgeConfigSpec.BooleanValue SNOWBALLS_DOES_DAMAGE = BUILDER
             .comment("Whether snowballs do damage")
-            .define("snowballsDoDamage", true);
+            .define("snowballsDoesDamage", true);
 
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
-    public static boolean snowballsDoDamage;
+    public static boolean snowballsDoesDamage;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
-        snowballsDoDamage = SNOWBALLS_DO_DAMAGE.get();
+        snowballsDoesDamage = SNOWBALLS_DOES_DAMAGE.get();
 
     }
 }
