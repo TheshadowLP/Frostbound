@@ -45,7 +45,7 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void snowballDamageEntity(@NotNull ProjectileImpactEvent event) {
-        if (Config.snowballsDoDamage) {
+        if (Config.snowballsDoesDamage) {
             if (event.getProjectile() instanceof Snowball) {
                 float damageAmount = 1.0f;
                 Entity target = event.getEntity();
