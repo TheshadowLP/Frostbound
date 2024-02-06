@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "projectshadow:block/waxed_copper_brick_stage_2"
+    "all": "projectshadow:block/oxidized_copper_brick"
   }
 }

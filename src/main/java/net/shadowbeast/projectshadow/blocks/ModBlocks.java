@@ -64,10 +64,10 @@ public class  ModBlocks {
                     .strength(5.2F,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
+                    .strength(4.7F,3.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops())); //TODO strength, resistance
+                    .strength(3.2F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     //ORES BLOCKS
     public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block",
@@ -132,17 +132,13 @@ public class  ModBlocks {
             ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED,
                     BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WAXED_COPPER_BRICK = registerBlock("waxed_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED,
-                    BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK).requiresCorrectToolForDrops()));
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_BRICK = registerBlock("waxed_exposed_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED,
-                    BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER).requiresCorrectToolForDrops()));
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_BRICK = registerBlock("waxed_weathered_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED,
-                    BlockBehaviour.Properties.copy(Blocks.WAXED_WEATHERED_COPPER).requiresCorrectToolForDrops()));
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_WEATHERED_COPPER).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_BRICK = registerBlock("waxed_oxidized_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED,
-                    BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
 
     //WOOD
     public static final RegistryObject<Block> FROZEN_LOG = registerBlock("frozen_log",
