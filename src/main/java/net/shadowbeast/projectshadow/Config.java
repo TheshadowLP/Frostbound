@@ -29,9 +29,7 @@ public class Config {
     public static boolean snowballsDoesDamage;
 
     @SubscribeEvent
-    static void onLoad(final ModConfigEvent event)
-    {
+    static void onLoad(final ModConfigEvent event) {
         snowballsDoesDamage = SNOWBALLS_DOES_DAMAGE.get();
-
     }
 }
