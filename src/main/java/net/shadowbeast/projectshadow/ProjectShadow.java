@@ -56,6 +56,7 @@ public class ProjectShadow {
     private void commonSetup(final FMLCommonSetupEvent event) {}
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
+
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {}
 
