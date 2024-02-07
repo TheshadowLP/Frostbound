@@ -19,7 +19,6 @@ public class ModEffects {
             () -> new MuddiedEyesEffect(MobEffectCategory.HARMFUL, 3124687)
                     .addAttributeModifier(Attributes.MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890",
                             -0.30F, AttributeModifier.Operation.MULTIPLY_TOTAL));
-
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }
