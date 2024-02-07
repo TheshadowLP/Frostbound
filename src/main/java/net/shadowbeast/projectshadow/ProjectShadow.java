@@ -37,7 +37,6 @@ public class ProjectShadow {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
-
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         CreativeTabs.register(modEventBus);
