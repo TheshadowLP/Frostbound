@@ -5,7 +5,6 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.CycleButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.shadowbeast.projectshadow.Config;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -13,7 +12,7 @@ public class ConfigScreen extends Screen {
     private final Screen previous;
 
     public ConfigScreen(Screen previous) {
-        super(Component.literal("Mouse Tweaks Options"));
+        super(Component.literal("Project Shadow Configuration"));
         this.previous = previous;
     }
 
