@@ -48,7 +48,19 @@
   "block.projectshadow.frozen_stone_bricks": "Frozen Stone Bricks",
   "block.projectshadow.frozen_cobblestone": "Frozen Cobblestone",
 
+
   "block.projectshadow.fusion_furnace": "Fusion Furnace",
+
+
+  "block.projectshadow.copper_brick": "Copper Brick",
+  "block.projectshadow.exposed_copper_brick": "Exposed Copper Brick",
+  "block.projectshadow.weathered_copper_brick": "Weathered Copper Brick",
+  "block.projectshadow.oxidized_copper_brick": "Oxidized Copper Brick",
+  "block.projectshadow.waxed_copper_brick": "Waxed Copper Brick",
+  "block.projectshadow.waxed_exposed_copper_brick": "Waxed Exposed Copper Brick",
+  "block.projectshadow.waxed_weathered_copper_brick": "Waxed Weathered Copper Brick",
+  "block.projectshadow.waxed_oxidized_copper_brick": "Waxed Oxidized Copper Brick",
+
 
   "item.projectshadow.aquanium_ingot": "Aquanium Ingot",
   "item.projectshadow.luminite_ingot": "Luminite Ingot",
