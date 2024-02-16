@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -33,6 +34,13 @@ import java.util.Optional;
 
 
 public class FusionFurnaceBlockEntity extends BlockEntity implements MenuProvider {
+    public static class FusionFurnaceSlot {
+        public static final int FUEL_SLOT = 0;
+        public static final int INPUT_SLOT_1 = 1;
+        public static final int INPUT_SLOT_2 = 2;
+        public static final int OUTPUT_SLOT = 3;
+        private FusionFurnaceSlot() {}
+    }
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -42,9 +50,9 @@ public class FusionFurnaceBlockEntity extends BlockEntity implements MenuProvide
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    protected final ContainerData data;
+    public final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 200;
+    private int maxProgress = 260;
 
     public  FusionFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.FUSION_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -157,7 +165,7 @@ public class FusionFurnaceBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private static boolean hasItemInFuelSlot(FusionFurnaceBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(0).getItem() == Items.LAVA_BUCKET;
+        return entity.itemHandler.getStackInSlot(FusionFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
 
     }
 
@@ -173,15 +181,22 @@ public class FusionFurnaceBlockEntity extends BlockEntity implements MenuProvide
                 .getRecipeFor(FusionFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if(match.isPresent()) {
-            entity.itemHandler.extractItem(0,1, false);
-            entity.itemHandler.extractItem(1,1, false);
-            entity.itemHandler.extractItem(2,1, false);
+            clearItem(FusionFurnaceSlot.FUEL_SLOT, entity.itemHandler);
+            clearItem(FusionFurnaceSlot.INPUT_SLOT_1, entity.itemHandler);
+            clearItem(FusionFurnaceSlot.INPUT_SLOT_2, entity.itemHandler);
 
-            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+            setItem(match.get().getResultItem().getItem(), FusionFurnaceSlot.OUTPUT_SLOT, entity.itemHandler);
+            setItem(Items.BUCKET, FusionFurnaceSlot.FUEL_SLOT, entity.itemHandler);
 
             entity.resetProgress();
         }
+    }
+    private static void clearItem(int Slot, @NotNull ItemStackHandler handler) {
+        handler.extractItem(Slot, 1, false);
+    }
+    private static void setItem(@NotNull Item pItem, int Slot, @NotNull ItemStackHandler handler) {
+        handler.setStackInSlot(Slot, new ItemStack(pItem,
+                handler.getStackInSlot(Slot).getCount() + 1));
     }
 
     private void resetProgress() {
@@ -189,10 +204,12 @@ public class FusionFurnaceBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+        return inventory.getItem(FusionFurnaceSlot.OUTPUT_SLOT).getItem() == output.getItem() 
+                || inventory.getItem(FusionFurnaceSlot.OUTPUT_SLOT).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
+        return inventory.getItem(FusionFurnaceSlot.OUTPUT_SLOT).getMaxStackSize()
+                > inventory.getItem(FusionFurnaceSlot.OUTPUT_SLOT).getCount();
     }
 }

@@ -35,10 +35,14 @@ public class FusionFurnaceMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 18, 50));
-            this.addSlot(new SlotItemHandler(handler, 1, 66, 16));
-            this.addSlot(new SlotItemHandler(handler, 2, 66, 50));
-            this.addSlot(new ModResultSlot(handler, 3, 114, 33));
+            this.addSlot(new SlotItemHandler(handler,
+                    FusionFurnaceBlockEntity.FusionFurnaceSlot.FUEL_SLOT, 18, 50));
+            this.addSlot(new SlotItemHandler(handler,
+                    FusionFurnaceBlockEntity.FusionFurnaceSlot.INPUT_SLOT_1, 66, 16));
+            this.addSlot(new SlotItemHandler(handler,
+                    FusionFurnaceBlockEntity.FusionFurnaceSlot.INPUT_SLOT_2, 66, 50));
+            this.addSlot(new ModResultSlot(handler,
+                    FusionFurnaceBlockEntity.FusionFurnaceSlot.OUTPUT_SLOT, 114, 33));
         });
 
         addDataSlots(data);

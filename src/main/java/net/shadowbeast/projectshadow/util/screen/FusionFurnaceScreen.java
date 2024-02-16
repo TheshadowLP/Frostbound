@@ -10,7 +10,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import org.jetbrains.annotations.NotNull;
 
-
 public class FusionFurnaceScreen extends AbstractContainerScreen<FusionFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/fusion_furnace_gui.png");
@@ -25,7 +24,6 @@ public class FusionFurnaceScreen extends AbstractContainerScreen<FusionFurnaceMe
         super.render(pPoseStack, mouseX, mouseY, delta);
         renderTooltip(pPoseStack, mouseX, mouseY);
     }
-
     @Override
     protected void renderBg(@NotNull GuiGraphics guiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -38,6 +36,7 @@ public class FusionFurnaceScreen extends AbstractContainerScreen<FusionFurnaceMe
 
         if (menu.isCrafting()) {
             guiGraphics.blit(TEXTURE, x + 84, y + 23, 176, 14, menu.getScaledProgress(), 36);
+            guiGraphics.blit(TEXTURE, x + 19, y + 34, 176, 0, 13, 13);
         }
     }
 }
