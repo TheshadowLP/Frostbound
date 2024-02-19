@@ -1,5 +1,5 @@
 {
-	"rendertype": "minecraft:cutout",
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "block/anvil",
 		"4": "projectshadow:block/special_furnace_side_two",
