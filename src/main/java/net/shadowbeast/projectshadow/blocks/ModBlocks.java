@@ -28,6 +28,13 @@ public class  ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ProjectShadow.MOD_ID);
 
+    //TODO Put in correct spot
+
+    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
+    // make
+
     //ORES
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
