@@ -163,6 +163,7 @@ public class CreativeTabs {
                         //TODO
                         pOutput.accept(ModBlocks.FUSION_FURNACE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
+                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
 
                         //TODO Place in correct spot
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
