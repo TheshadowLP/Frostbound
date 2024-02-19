@@ -28,12 +28,15 @@ public class  ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ProjectShadow.MOD_ID);
 
-    //TODO Put in correct spot
-
+    // Block Entities
+    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
+            ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
+            ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-
-    // make
+            () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     //ORES
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore",
@@ -107,13 +110,6 @@ public class  ModBlocks {
     public static final RegistryObject<Block> ENDERIUM_BlOCK = registerBlock("enderium_block",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
                     .strength(9.0F,12.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-
-    //ENTITIES
-    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
-            ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
-            ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
 
     //NATURAL BLOCKS
     public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone",
