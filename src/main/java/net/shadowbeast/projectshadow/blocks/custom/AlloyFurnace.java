@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings("depriction")
 @ParametersAreNonnullByDefault
 public class AlloyFurnace extends BaseEntityBlock {
     public AlloyFurnace(Properties pProperties) {
@@ -31,6 +31,12 @@ public class AlloyFurnace extends BaseEntityBlock {
         pBuilder.add(FACING);
     }
 
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+    }
+
 
 
     @Nullable
@@ -41,11 +47,7 @@ public class AlloyFurnace extends BaseEntityBlock {
     //TODO - the gui
 
 
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
-    }
+
 
     @Override
     public @NotNull RenderShape getRenderShape(BlockState pState) {
