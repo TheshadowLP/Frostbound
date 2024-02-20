@@ -1,7 +1,8 @@
 {
   "variants": {
-    "": {
-      "model": "projectshadow:block/alloy_furnace"
-    }
+    "facing=north": { "model": "projectshadow:block/alloy_furnace" },
+    "facing=east": { "model": "projectshadow:block/alloy_furnace", "y": 90},
+    "facing=south": { "model": "projectshadow:block/alloy_furnace", "y": 180},
+    "facing=west": { "model": "projectshadow:block/alloy_furnace", "y": 270}
   }
 }
