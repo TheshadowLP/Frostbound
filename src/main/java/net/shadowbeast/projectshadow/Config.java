@@ -14,7 +14,6 @@ public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     private static final Properties defaultValues = new Properties();
-    private String fileName;
 
     private static final ForgeConfigSpec.BooleanValue SNOWBALLS_DOES_DAMAGE = BUILDER
             .comment("Whether snowballs do damage")
