@@ -11,7 +11,7 @@ import net.minecraft.world.item.crafting.*;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings("deprecation")
 public class WinterFurnaceRecipe extends AbstractCookingRecipe {
     public WinterFurnaceRecipe(ResourceLocation pId, String pGroup,
                                CookingBookCategory pCategory, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {

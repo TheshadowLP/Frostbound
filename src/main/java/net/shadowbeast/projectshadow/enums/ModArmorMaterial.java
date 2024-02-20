@@ -1,5 +1,6 @@
 package net.shadowbeast.projectshadow.enums;
 
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -10,6 +11,7 @@ import net.shadowbeast.projectshadow.items.ModItems;
 
 import java.util.function.Supplier;
 
+@MethodsReturnNonnullByDefault
 public enum ModArmorMaterial implements ArmorMaterial {
     STEEL("steel", 35, new int[] {3, 8, 5, 4}, ToolStats.STEEL.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_GOLD, 1.0f,

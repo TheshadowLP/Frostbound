@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings("deprecation")
 public class DegradableCopperBlock extends Block implements GemDegradable {
     private final GemDegradationLevel degradationLevel;
     public DegradableCopperBlock(GemDegradationLevel degradationLevel, Properties pProperties) {
