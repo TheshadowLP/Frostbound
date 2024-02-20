@@ -84,6 +84,10 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.STEEL_PICKAXE.get());
                         pOutput.accept(ModItems.STEEL_SHOVEL.get());
                         pOutput.accept(ModItems.STEEL_SWORD.get());
+                        pOutput.accept(ModItems.STEEL_HELMET.get());
+                        pOutput.accept(ModItems.STEEL_CHESTPLATE.get());
+                        pOutput.accept(ModItems.STEEL_LEGGINGS.get());
+                        pOutput.accept(ModItems.STEEL_BOOTS.get());
                         pOutput.accept(ModBlocks.SILVER_ORE.get());
                         pOutput.accept(ModItems.RAW_SILVER.get());
                         pOutput.accept(ModItems.SILVER_INGOT.get());

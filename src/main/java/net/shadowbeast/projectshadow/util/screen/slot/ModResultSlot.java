@@ -6,8 +6,8 @@ import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class ModResultSlot extends SlotItemHandler {
-    public ModResultSlot(IItemHandler itemHandler, int index, int x, int y) {
-        super(itemHandler, index, x, y);
+    public ModResultSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
+        super(itemHandler, index, xPosition, yPosition);
     }
 
     @Override

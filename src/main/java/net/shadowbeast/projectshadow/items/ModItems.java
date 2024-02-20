@@ -1,13 +1,22 @@
 package net.shadowbeast.projectshadow.items;
 
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.enums.ModArmorMaterial;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -212,6 +221,28 @@ public class ModItems {
             ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
     public static final RegistryObject<Item> PLATINUM_HAMMER = ITEMS.register("platinum_hammer",
             ()-> new HammerItem(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020)));
+    //ARMOR
+    //STEEL
+    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
+            () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
+                    ModArmorMaterial.STEEL, ArmorItem.Type.HELMET,
+                    Component.translatable("tooltip.projectshadow.steel_set.shift"),
+                    Component.translatable("tooltip.projectshadow.steel_set")));
+    public static final RegistryObject<Item> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate",
+            () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
+                    ModArmorMaterial.STEEL, ArmorItem.Type.CHESTPLATE,
+                    Component.translatable("tooltip.projectshadow.steel_set.shift"),
+                    Component.translatable("tooltip.projectshadow.steel_set")));
+    public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",
+            () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
+                    ModArmorMaterial.STEEL, ArmorItem.Type.LEGGINGS,
+                    Component.translatable("tooltip.projectshadow.steel_set.shift"),
+                    Component.translatable("tooltip.projectshadow.steel_set")));
+    public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots",
+            () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
+                    ModArmorMaterial.STEEL, ArmorItem.Type.BOOTS,
+                    Component.translatable("tooltip.projectshadow.steel_set.shift"),
+                    Component.translatable("tooltip.projectshadow.steel_set")));
 
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff",
@@ -236,5 +267,26 @@ public class ModItems {
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+
+    private static @NotNull ModArmorItem registerItemWithTooltips(@NotNull Item.Properties pProperties,
+                                                                  @NotNull ModArmorMaterial material,
+                                                                  @NotNull ArmorItem.Type type,
+                                                                  @Nullable Component ShiftOn,
+                                                                  @NotNull Component ShiftOff) {
+        return new ModArmorItem(material, type, pProperties) {
+            @Override
+            public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel,
+                                        @NotNull List<Component> pTooltipComponents,
+                                        @NotNull TooltipFlag pIsAdvanced) {
+                if(Screen.hasShiftDown()) {
+                    if(ShiftOn != null) {
+                        pTooltipComponents.add(ShiftOn);
+                    }
+                } else {
+                    pTooltipComponents.add(ShiftOff);
+                }
+            }
+        };
     }
 }
