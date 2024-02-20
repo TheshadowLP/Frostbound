@@ -37,7 +37,7 @@ public class  ModBlocks {
             ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+            () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     //ORES
