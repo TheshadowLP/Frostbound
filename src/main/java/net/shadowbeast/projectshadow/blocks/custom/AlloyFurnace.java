@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 
-@SuppressWarnings("depriction")
+@SuppressWarnings("depiction")
 @ParametersAreNonnullByDefault
 public class AlloyFurnace extends BaseEntityBlock {
     public AlloyFurnace(Properties pProperties) {
