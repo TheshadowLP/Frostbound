@@ -22,7 +22,7 @@ public class ModArmorItem extends ArmorItem {
         super(pMaterial, pType, pProperties);
     }
 
-    @SuppressWarnings("removel")
+    @SuppressWarnings("removal")
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if(!world.isClientSide()) {
