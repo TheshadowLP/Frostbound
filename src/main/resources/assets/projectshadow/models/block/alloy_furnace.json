@@ -2,10 +2,10 @@
 	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "block/anvil",
-		"4": "projectshadow:block/special_furnace_side_two",
-		"5": "projectshadow:block/special_furnace_side",
+		"4": "projectshadow:block/alloy_furnace/special_furnace_side_two",
+		"5": "projectshadow:block/alloy_furnace/special_furnace_side",
 		"8": "block/fire_0",
-		"particle": "projectshadow:block/special_furnace_side"
+		"particle": "projectshadow:block/alloy_furnace/special_furnace_side"
 	},
 	"elements": [
 		{
