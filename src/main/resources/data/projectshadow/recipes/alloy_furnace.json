@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ddd",
+    "ses",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "e": {
+      "item": "minecraft:blast_furnace"
+    },
+    "d": {
+      "item": "projectshadow:iron_plate"
+    }
+  },
+  "result": {
+    "item": "projectshadow:alloy_furnace",
+    "count": 1
+  }
+}
