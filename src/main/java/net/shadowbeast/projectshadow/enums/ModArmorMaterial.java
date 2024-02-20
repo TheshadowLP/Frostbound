@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 public enum ModArmorMaterial implements ArmorMaterial {
     STEEL("steel", 35, new int[] {3, 8, 5, 4}, ToolStats.STEEL.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_GOLD, 1.0f,
-            0.0f, () -> Ingredient.of(ModItems.STEEL_INGOT.get()));
+            0.0f, ToolStats.STEEL::getRepairIngredient);
 
     private final String name;
     private final int durabilityMultiplier;

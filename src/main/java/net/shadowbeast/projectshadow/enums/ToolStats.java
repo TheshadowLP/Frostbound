@@ -5,12 +5,13 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecated")
 public enum ToolStats implements Tier {
 
-    STEEL(2, 826, 6.0F, 2.0F, 15, "steel_ingot"),
+    STEEL(2, 826, 6.0F, 2.0F, 15, ModItems.STEEL_INGOT.get()),
     PLATINUM(2, 510, 6.0F, 2.0F, 14, "platinum_ingot"),
     TITANIUM(2, 1120, 6.0F, 2.0F, 15, "titanium_ingot"),
     SILVER(0, 210, 12.0F, 2.0F, 20, "silver_ingot"),
