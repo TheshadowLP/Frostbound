@@ -32,10 +32,8 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
             ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
             ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
-
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace",
             () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops()));

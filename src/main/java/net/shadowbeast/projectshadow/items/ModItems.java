@@ -221,6 +221,7 @@ public class ModItems {
             ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
     public static final RegistryObject<Item> PLATINUM_HAMMER = ITEMS.register("platinum_hammer",
             ()-> new HammerItem(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020)));
+
     //ARMOR
     //STEEL
     public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
@@ -262,13 +263,6 @@ public class ModItems {
     public static final RegistryObject<Item> MILK_BOTTLE = ITEMS.register("milk_bottle",
             () -> new MilkBottle(new Item.Properties().stacksTo(1)));
 
-
-
-
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
-    }
-
     private static @NotNull ModArmorItem registerItemWithTooltips(@NotNull Item.Properties pProperties,
                                                                   @NotNull ModArmorMaterial material,
                                                                   @NotNull ArmorItem.Type type,
@@ -288,5 +282,8 @@ public class ModItems {
                 }
             }
         };
+    }
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
 }
