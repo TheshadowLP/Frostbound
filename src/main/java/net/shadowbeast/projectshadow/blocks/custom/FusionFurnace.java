@@ -19,7 +19,7 @@ import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings("deprecation")
 public class FusionFurnace extends BaseEntityBlock {
     public FusionFurnace(Properties pProperties) {
         super(pProperties);
