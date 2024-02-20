@@ -24,7 +24,6 @@ public class AlloyFurnace extends BaseEntityBlock {
     }
     //TODO - the gui
 
-
     @Override
     public @NotNull RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
