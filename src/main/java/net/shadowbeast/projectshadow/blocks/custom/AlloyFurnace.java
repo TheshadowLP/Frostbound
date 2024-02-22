@@ -20,9 +20,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @SuppressWarnings("depiction")
 @ParametersAreNonnullByDefault
 public class AlloyFurnace extends BaseEntityBlock {
-    public AlloyFurnace(Properties pProperties) {
-        super(pProperties);
-    }
+    public AlloyFurnace(Properties pProperties) { super(pProperties); }
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
@@ -37,20 +35,11 @@ public class AlloyFurnace extends BaseEntityBlock {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
-
-
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return null;
-    }
+    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) { return null; }
     //TODO - the gui
 
-
-
-
     @Override
-    public @NotNull RenderShape getRenderShape(BlockState pState) {
-        return RenderShape.MODEL;
-    }
+    public @NotNull RenderShape getRenderShape(BlockState pState) { return RenderShape.MODEL; }
 }
