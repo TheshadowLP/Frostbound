@@ -8,7 +8,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings("depriction")
 public enum ToolStats implements Tier {
 
     STEEL(2, 826, 6.0F, 2.0F, 15, ModItems.STEEL_INGOT.get()),
