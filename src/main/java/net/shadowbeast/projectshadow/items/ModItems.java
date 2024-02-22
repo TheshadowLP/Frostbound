@@ -124,6 +124,10 @@ public class ModItems {
     public static final RegistryObject<Item> LUMINITE_NUGGET = ITEMS.register("luminite_nugget",
             ()-> new Item(new Item.Properties()));
 
+    //SHIELDS
+    public static final RegistryObject<Item> STEEL_SHIELD = ITEMS.register("steel_shield",
+            ()-> new ShieldItem(new Item.Properties().durability(200)));
+
     //SWORDS
     public static final RegistryObject<Item> PLATINUM_SWORD = ITEMS.register("platinum_sword",
             ()-> new SwordItem(ToolStats.PLATINUM,3,-2.4F, new Item.Properties()));

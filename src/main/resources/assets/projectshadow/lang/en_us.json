@@ -175,6 +175,8 @@
   "item.projectshadow.aquanium_sword": "Aquanium Sword",
   "item.projectshadow.luminite_sword": "Luminite Sword",
 
+  "item.projectshadow.steel_shield": "Steel Shield",
+
 
   "item.projectshadow.heal_staff": "Heal Staff",
   "item.projectshadow.teleportation_staff": "Teleportation Staff",
@@ -191,7 +193,7 @@
   "item.projectshadow.steel_leggings": "Steel Leggings",
   "item.projectshadow.steel_boots": "Steel Boots",
   "tooltip.projectshadow.steel_set": "Press [§9SHIFT§r] for more Information",
-  "tooltip.projectshadow.steel_set.shift": "4 set will make you slow!",
+  "tooltip.projectshadow.steel_set.shift": "Full set will make you slow!",
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 

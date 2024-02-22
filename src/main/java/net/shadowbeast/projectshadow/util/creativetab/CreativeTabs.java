@@ -78,6 +78,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.STEEL_POWDER.get());
                         pOutput.accept(ModItems.STEEL_NUGGET.get());
                         pOutput.accept(ModBlocks.STEEL_BlOCK.get());
+                        pOutput.accept(ModItems.STEEL_SHIELD.get());
                         pOutput.accept(ModItems.STEEL_AXE.get());
                         pOutput.accept(ModItems.STEEL_HAMMER.get());
                         pOutput.accept(ModItems.STEEL_HOE.get());
