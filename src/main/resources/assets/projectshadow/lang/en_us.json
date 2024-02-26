@@ -12,6 +12,7 @@
   "block.projectshadow.frozen_gem_ore": "Frozen Gem Ore",
   "block.projectshadow.enderium_end_ore": "Enderium Ore",
   "block.projectshadow.sulfur_ore": "Sulfur Ore",
+  "block.projectshadow.bone_ore": "Bone Ore",
   "item.projectshadow.molten_sulfur_bucket": "Molten Sulfur Bucket",
 
   "block.projectshadow.alloy_furnace": "Alloy Furnace",
@@ -202,5 +203,7 @@
 
   "effect.projectshadow.muddied_eyes": "Muddied Eyes",
 
-  "creativetab.dev_tab": "Project Shadow"
+  "creativetab.dev_tab": "Project Shadow",
+  "creativetab.combat": "Combat",
+  "creativetab.tools": "Tools & Utilities"
 }

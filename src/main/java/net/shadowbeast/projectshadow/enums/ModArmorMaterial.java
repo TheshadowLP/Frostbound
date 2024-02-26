@@ -7,7 +7,6 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.items.ModItems;
 
 import java.util.function.Supplier;
 
