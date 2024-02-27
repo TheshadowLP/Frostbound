@@ -1,7 +1,6 @@
 package net.shadowbeast.projectshadow.event;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -49,7 +48,7 @@ public class ModEvents {
     public static void snowballDamageEntity(@NotNull ProjectileImpactEvent event) {
         if (Config.snowballsDoesDamage) {
             if (event.getProjectile() instanceof Snowball) {
-                float damageAmount = 1.0f;
+                float damageAmount = 1.0F;
                 Entity target = event.getEntity();
                 if (target != null) {
                     target.hurt(target.damageSources().mobProjectile(event.getEntity(), null), damageAmount);
@@ -57,7 +56,6 @@ public class ModEvents {
             }
         }
     }
-
     @SubscribeEvent
     public static void bakedPotatoesDamageEntity(TickEvent.PlayerTickEvent event) {
         if (Config.bakedPotatoesDoDamage) {
@@ -65,12 +63,10 @@ public class ModEvents {
             ItemStack mainHandItem = player.getMainHandItem();
 
             if (mainHandItem.getItem().equals(Items.BAKED_POTATO)) {
-                player.hurt(player.damageSources().onFire(), 1);
+                player.hurt(player.damageSources().onFire(), 0.5F);
             }
         }
     }
-
-
     @SubscribeEvent
     public static void onHammerUsage(@NotNull BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();

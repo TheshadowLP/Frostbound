@@ -11,9 +11,9 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import java.util.function.Supplier;
 
 @MethodsReturnNonnullByDefault
-public enum ModArmorMaterial implements ArmorMaterial {
+public enum ArmorStats implements ArmorMaterial {
     STEEL("steel", 35, new int[] {3, 8, 5, 4}, ToolStats.STEEL.getEnchantmentValue(),
-            SoundEvents.ARMOR_EQUIP_GOLD, 1.0f,
+            SoundEvents.ARMOR_EQUIP_IRON, 1.0f,
             0.0f, ToolStats.STEEL::getRepairIngredient);
 
     private final String name;
@@ -27,7 +27,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
 
-    ModArmorMaterial(String name, int durabilityMultiplier, int[] protectAmounts, int enchantmentValue,
+    ArmorStats(String name, int durabilityMultiplier, int[] protectAmounts, int enchantmentValue,
                      SoundEvent equipSound, float toughness, float knockbackResistance,
                      Supplier<Ingredient> repairIngredient) {
         this.name = name;

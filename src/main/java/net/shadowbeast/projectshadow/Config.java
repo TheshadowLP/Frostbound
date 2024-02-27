@@ -7,8 +7,6 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 
 import java.util.Properties;
 
-
-
 @Mod.EventBusSubscriber(modid = ProjectShadow.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();

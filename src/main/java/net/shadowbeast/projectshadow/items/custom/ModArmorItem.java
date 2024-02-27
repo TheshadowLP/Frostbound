@@ -8,7 +8,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.shadowbeast.projectshadow.enums.ModArmorMaterial;
+import net.shadowbeast.projectshadow.enums.ArmorStats;
 
 import java.util.Map;
 
@@ -16,7 +16,7 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterial.STEEL, new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200,
+                    .put(ArmorStats.STEEL, new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200,
                             1, false, false, false)).build();
     public ModArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);

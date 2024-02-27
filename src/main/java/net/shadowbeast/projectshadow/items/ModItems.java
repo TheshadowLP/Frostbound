@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.enums.ModArmorMaterial;
+import net.shadowbeast.projectshadow.enums.ArmorStats;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
 import org.jetbrains.annotations.NotNull;
@@ -231,22 +231,22 @@ public class ModItems {
     //STEEL
     public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
             () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
-                    ModArmorMaterial.STEEL, ArmorItem.Type.HELMET,
+                    ArmorStats.STEEL, ArmorItem.Type.HELMET,
                     Component.translatable("tooltip.projectshadow.steel_set.shift"),
                     Component.translatable("tooltip.projectshadow.steel_set")));
     public static final RegistryObject<Item> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate",
             () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
-                    ModArmorMaterial.STEEL, ArmorItem.Type.CHESTPLATE,
+                    ArmorStats.STEEL, ArmorItem.Type.CHESTPLATE,
                     Component.translatable("tooltip.projectshadow.steel_set.shift"),
                     Component.translatable("tooltip.projectshadow.steel_set")));
     public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",
             () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
-                    ModArmorMaterial.STEEL, ArmorItem.Type.LEGGINGS,
+                    ArmorStats.STEEL, ArmorItem.Type.LEGGINGS,
                     Component.translatable("tooltip.projectshadow.steel_set.shift"),
                     Component.translatable("tooltip.projectshadow.steel_set")));
     public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots",
             () -> registerItemWithTooltips(new Item.Properties().stacksTo(1),
-                    ModArmorMaterial.STEEL, ArmorItem.Type.BOOTS,
+                    ArmorStats.STEEL, ArmorItem.Type.BOOTS,
                     Component.translatable("tooltip.projectshadow.steel_set.shift"),
                     Component.translatable("tooltip.projectshadow.steel_set")));
 
@@ -269,7 +269,7 @@ public class ModItems {
             () -> new MilkBottle(new Item.Properties().stacksTo(1)));
 
     private static @NotNull ModArmorItem registerItemWithTooltips(@NotNull Item.Properties pProperties,
-                                                                  @NotNull ModArmorMaterial material,
+                                                                  @NotNull ArmorStats material,
                                                                   @NotNull ArmorItem.Type type,
                                                                   @Nullable Component ShiftOn,
                                                                   @NotNull Component ShiftOff) {
