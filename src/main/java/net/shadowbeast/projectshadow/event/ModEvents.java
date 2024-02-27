@@ -50,6 +50,7 @@ public class ModEvents {
             if (event.getProjectile() instanceof Snowball) {
                 float damageAmount = 1.0F;
                 Entity target = event.getEntity();
+
                 if (target != null) {
                     target.hurt(target.damageSources().mobProjectile(event.getEntity(), null), damageAmount);
                 }
