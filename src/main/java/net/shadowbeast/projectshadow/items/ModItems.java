@@ -21,6 +21,12 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ProjectShadow.MOD_ID);
 
+    //FOOD
+    public static final RegistryObject<Item> STACKED_POTATO = ITEMS.register("stacked_potato",
+            () -> new Item(new Item.Properties().food(ModFood.STACKED_POTATO)));
+    public static final RegistryObject<Item> STACKED_BAKED_POTATO = ITEMS.register("stacked_baked_potato",
+            () -> new Item(new Item.Properties().food(ModFood.STACKED_BAKED_POTATO)));
+
     //INGOTS
     public static final RegistryObject<Item> AQUANIUM_INGOT = ITEMS.register("aquanium_ingot",
             ()-> new Item(new Item.Properties()));

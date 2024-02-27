@@ -205,5 +205,9 @@
 
   "creativetab.dev_tab": "Project Shadow",
   "creativetab.combat": "Combat",
-  "creativetab.tools": "Tools & Utilities"
+  "creativetab.tools": "Tools & Utilities",
+  "creativetab.drinks": "Food & Drinks",
+
+  "item.projectshadow.stacked_potato": "Stacked Potato",
+  "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato"
 }

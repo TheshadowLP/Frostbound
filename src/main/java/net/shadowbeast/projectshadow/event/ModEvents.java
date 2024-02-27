@@ -68,6 +68,17 @@ public class ModEvents {
         }
     }
     @SubscribeEvent
+    public static void stackedBakedPotatoesDamageEntity(TickEvent.PlayerTickEvent event) {
+        if (Config.bakedPotatoesDoDamage) {
+            Player player = event.player;
+            ItemStack mainHandItem = player.getMainHandItem();
+
+            if (mainHandItem.getItem().equals(ModItems.STACKED_BAKED_POTATO.get())) {
+                player.hurt(player.damageSources().onFire(), 0.7F);
+            }
+        }
+    }
+    @SubscribeEvent
     public static void onHammerUsage(@NotNull BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();

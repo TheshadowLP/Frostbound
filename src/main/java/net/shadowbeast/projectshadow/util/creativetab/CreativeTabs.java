@@ -227,6 +227,15 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
                     })
                     .build());
+    public static final RegistryObject<CreativeModeTab> DRINKS = CREATIVE_MODE_TABS.register("drinks",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))
+                    .title(Component.translatable("creativetab.tools"))
+                    .displayItems((pParameters, pOutput) ->{
+                        pOutput.accept(ModItems.STACKED_POTATO.get());
+                        pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
+                        pOutput.accept(ModItems.MILK_BOTTLE.get());
+                    })
+                    .build());
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
