@@ -22,6 +22,10 @@ public class ConfigScreen extends Screen {
                 // Do NOT touch the width. That took way to long to figure out
                 .create(this.width / 2 - 75, this.height / 6, 150, 20,
                         Component.literal("Do Snowballs Do Damage"), (button, value) -> Config.snowballsDoesDamage = value));
+
+        this.addRenderableWidget(CycleButton.onOffBuilder(Config.bakedPotatoesDoDamage)
+                .create(this.width / 2 - 75, this.height / 8, 150, 20,
+                        Component.literal("Baked Potatoes Do Damage"), (button, value) -> Config.bakedPotatoesDoDamage = value));
     }
 
     @Override

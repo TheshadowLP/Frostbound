@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -53,6 +54,18 @@ public class ModEvents {
                 if (target != null) {
                     target.hurt(target.damageSources().mobProjectile(event.getEntity(), null), damageAmount);
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void bakedPotatoesDamageEntity(TickEvent.PlayerTickEvent event) {
+        if (Config.bakedPotatoesDoDamage) {
+            Player player = event.player;
+            ItemStack mainHandItem = player.getMainHandItem();
+
+            if (mainHandItem.getItem().equals(Items.BAKED_POTATO)) {
+                player.hurt(player.damageSources().onFire(), 1);
             }
         }
     }
