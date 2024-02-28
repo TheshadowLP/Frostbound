@@ -229,11 +229,12 @@ public class CreativeTabs {
                     .build());
     public static final RegistryObject<CreativeModeTab> DRINKS = CREATIVE_MODE_TABS.register("drinks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))
-                    .title(Component.translatable("creativetab.tools"))
+                    .title(Component.translatable("creativetab.drinks"))
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());
+                        pOutput.accept(ModItems.PEPPER_SEEDS.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {

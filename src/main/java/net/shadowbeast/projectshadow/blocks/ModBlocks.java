@@ -18,6 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blocks.crops.PepperCropBlock;
 import net.shadowbeast.projectshadow.blocks.custom.*;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
@@ -37,6 +38,10 @@ public class  ModBlocks {
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace",
             () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+
+    //CROPS
+    public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop",
+            () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     //ORES
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore",

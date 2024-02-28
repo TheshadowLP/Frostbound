@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.enums.ArmorStats;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
@@ -26,6 +27,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFood.STACKED_POTATO)));
     public static final RegistryObject<Item> STACKED_BAKED_POTATO = ITEMS.register("stacked_baked_potato",
             () -> new Item(new Item.Properties().food(ModFood.STACKED_BAKED_POTATO)));
+    public static final RegistryObject<Item> PEPPER_SEEDS = ITEMS.register("pepper_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.PEPPER_CROP.get(), new Item.Properties()));
 
     //INGOTS
     public static final RegistryObject<Item> AQUANIUM_INGOT = ITEMS.register("aquanium_ingot",

@@ -1,21 +1,19 @@
 package net.shadowbeast.projectshadow.injection;
 
+import net.minecraftforge.client.event.ScreenEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import org.jetbrains.annotations.NotNull;
 
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
-import net.shadowbeast.projectshadow.blocks.ModBlocks;
-
-
-public class PauseScreenButtonInjector extends Button {
-
-    private static final ItemStack ICON = new ItemStack(ModBlocks.ALLOY_FURNACE.get().asItem());
-
-    protected PauseScreenButtonInjector(int pX, int pY, int pWidth, int pHeight, Component pMessage, OnPress pOnPress, CreateNarration pCreateNarration) {
-        super(pX, pY, 20, 20, Component.empty(), PauseScreenButtonInjector::click, pCreateNarration);
+public class PauseScreenButtonInjector {
+    public static void init() {
+        MinecraftForge.EVENT_BUS.register(PauseScreenButtonInjector.class);
     }
 
-    private static void click(Button button) {
-    }
+    @SubscribeEvent
+    public static void onInitGuiPost(@NotNull ScreenEvent event) {
+        if (event.getScreen().isPauseScreen()) {
 
+        }
+    }
 }
