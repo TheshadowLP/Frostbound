@@ -233,8 +233,9 @@ public class CreativeTabs {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
-                        pOutput.accept(ModItems.MILK_BOTTLE.get());
+                        pOutput.accept(ModItems.PEPPER.get());
                         pOutput.accept(ModItems.PEPPER_SEEDS.get());
+                        pOutput.accept(ModItems.MILK_BOTTLE.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {

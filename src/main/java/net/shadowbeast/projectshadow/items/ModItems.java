@@ -27,6 +27,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFood.STACKED_POTATO)));
     public static final RegistryObject<Item> STACKED_BAKED_POTATO = ITEMS.register("stacked_baked_potato",
             () -> new Item(new Item.Properties().food(ModFood.STACKED_BAKED_POTATO)));
+    public static final RegistryObject<Item> PEPPER = ITEMS.register("pepper",
+            () -> new Item(new Item.Properties().food(ModFood.PEPPER)));
     public static final RegistryObject<Item> PEPPER_SEEDS = ITEMS.register("pepper_seeds",
             () -> new ItemNameBlockItem(ModBlocks.PEPPER_CROP.get(), new Item.Properties()));
 

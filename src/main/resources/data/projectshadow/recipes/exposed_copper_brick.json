@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s/ ",
+    "/s "
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:copper_ingot"
+    },
+    "s": {
+      "item": "minecraft:exposed_copper"
+    }
+  },
+  "result": {
+    "item": "projectshadow:exposed_copper_brick",
+    "count": 2
+  }
+}

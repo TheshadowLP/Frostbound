@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "p  "
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:pepper"
+    }
+  },
+  "result": {
+    "item": "projectshadow:pepper_seeds",
+    "count": 1
+  }
+}
