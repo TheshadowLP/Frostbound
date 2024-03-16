@@ -30,94 +30,62 @@ public class  ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ProjectShadow.MOD_ID);
 
     // Block Entities
-    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", //TODO Maybe deleting it, or rework
-            ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace",
-            ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace",
-            () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops())); //TODO DELETING
+    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 
     //CROPS
-    public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop",
-            () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop", () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     //ORES
-    public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> SAND_AQUANIUM_ORE = registerBlock("sand_aquanium_ore",
-            ()-> new SandBlock(14406560, BlockBehaviour.Properties.copy(Blocks.SAND).mapColor(MapColor.SAND)
-                    .strength(1.4F,1.2F).requiresCorrectToolForDrops().sound(SoundType.SAND)));
-    public static final RegistryObject<Block> NETHER_FIRERITE_ORE = registerBlock("nether_firerite_ore",//TODO Nether gem ore
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(5.0F,4.3F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> LUMINITE_ORE = registerBlock("luminite_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> DEEPSLATE_LUMINITE_ORE = registerBlock("deepslate_luminite_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)
-                    .strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.1F,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
-            ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_EMERALD_ORE)
-                    .strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(), UniformInt.of(3,7)));
-    public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(2.6F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> STEEL_ORE = registerBlock("steel_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.1F,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ENDERIUM_END_ORE = registerBlock("enderium_end_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(5.2F,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(4.7F,3.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
-                    .strength(3.2F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> BONE_ORE = registerBlock("bone_ore",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(2.0F,6.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BONE_ORE = registerBlock("bone_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> DEEPSLATE_LUMINITE_ORE = registerBlock("deepslate_luminite_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE).strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ENDERIUM_END_ORE = registerBlock("enderium_end_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS).strength(5.2F,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(4.7F,3.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> LUMINITE_ORE = registerBlock("luminite_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NETHER_FIRERITE_ORE = registerBlock("nether_firerite_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(5.0F,4.3F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.1F,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_EMERALD_ORE).strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(), UniformInt.of(3,7)));
+    public static final RegistryObject<Block> SAND_AQUANIUM_ORE = registerBlock("sand_aquanium_ore", ()-> new SandBlock(14406560, BlockBehaviour.Properties.copy(Blocks.SAND).mapColor(MapColor.SAND).strength(1.4F,1.2F).requiresCorrectToolForDrops().sound(SoundType.SAND)));
+    public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(2.6F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> STEEL_ORE = registerBlock("steel_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.1F,3.1F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     //ORES BLOCKS
-    public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> STEEL_BlOCK = registerBlock("steel_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TITANIUM_BlOCK = registerBlock("titanium_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> AQUANIUM_BlOCK = registerBlock("aquanium_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> LUMINITE_BlOCK = registerBlock("luminite_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> RUBY_BlOCK = registerBlock("ruby_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FIRERITE_BlOCK = registerBlock("firerite_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_GEM_BlOCK = registerBlock("frozen_gem_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)
-                    .strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> SILVER_BlOCK = registerBlock("silver_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)
-                    .strength(3.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ENDERIUM_BlOCK = registerBlock("enderium_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
-                    .strength(9.0F,12.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AQUANIUM_BlOCK = registerBlock("aquanium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ENDERIUM_BlOCK = registerBlock("enderium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(9.0F,12.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FIRERITE_BlOCK = registerBlock("firerite_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_GEM_BlOCK = registerBlock("frozen_gem_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> LUMINITE_BlOCK = registerBlock("luminite_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PLATINUM_BlOCK = registerBlock("platinum_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RUBY_BlOCK = registerBlock("ruby_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SILVER_BlOCK = registerBlock("silver_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).strength(3.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> STEEL_BlOCK = registerBlock("steel_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TITANIUM_BlOCK = registerBlock("titanium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+    //COPPER BLOCKS
+    public static final RegistryObject<Block> COPPER_BRICK = registerBlock("copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> EXPOSED_COPPER_BRICK = registerBlock("exposed_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WEATHERED_COPPER_BRICK = registerBlock("weathered_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OXIDIZED_COPPER_BRICK = registerBlock("oxidized_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_COPPER_BRICK = registerBlock("waxed_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_BRICK = registerBlock("waxed_exposed_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_BRICK = registerBlock("waxed_weathered_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_WEATHERED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_BRICK = registerBlock("waxed_oxidized_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUT_COPPER_BRICK = registerBlock("cut_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.CUT_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> EXPOSED_CUT_COPPER_BRICK = registerBlock("exposed_cut_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_CUT_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WEATHERED_CUT_COPPER_BRICK = registerBlock("weathered_cut_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_CUT_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OXIDIZED_CUT_COPPER_BRICK = registerBlock("oxidized_cut_copper_brick", ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_CUT_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_CUT_COPPER_BRICK = registerBlock("waxed_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_EXPOSED_CUT_COPPER_BRICK = registerBlock("waxed_exposed_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_WEATHERED_CUT_COPPER_BRICK = registerBlock("waxed_weathered_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_WEATHERED_COPPER).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WAXED_OXIDIZED_CUT_COPPER_BRICK = registerBlock("waxed_oxidized_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
+
+
+
+
 
     //NATURAL BLOCKS
     public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone",
@@ -130,26 +98,7 @@ public class  ModBlocks {
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall",
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
-    public static final RegistryObject<Block> COPPER_BRICK = registerBlock("copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.UNAFFECTED,
-                    BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> EXPOSED_COPPER_BRICK = registerBlock("exposed_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.EXPOSED,
-                    BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WEATHERED_COPPER_BRICK = registerBlock("weathered_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.WEATHERED,
-                    BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> OXIDIZED_COPPER_BRICK = registerBlock("oxidized_copper_brick",
-            ()-> new DegradableCopperBlock(GemDegradable.GemDegradationLevel.DEGRADED,
-                    BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WAXED_COPPER_BRICK = registerBlock("waxed_copper_brick",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_BRICK = registerBlock("waxed_exposed_copper_brick",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_BRICK = registerBlock("waxed_weathered_copper_brick",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_WEATHERED_COPPER).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_BRICK = registerBlock("waxed_oxidized_copper_brick",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
+
 
     //WOOD
     public static final RegistryObject<Block> FROZEN_LOG = registerBlock("frozen_log",

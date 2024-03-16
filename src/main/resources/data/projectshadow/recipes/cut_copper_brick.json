@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pp ",
+    "pp "
+  ],
+  "key": {
+    "p": {
+      "item": "projectshadow:copper_brick"
+    }
+  },
+  "result": {
+    "item": "projectshadow:cut_copper_brick",
+    "count": 4
+  }
+}

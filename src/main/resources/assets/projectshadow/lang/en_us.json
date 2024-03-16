@@ -62,6 +62,14 @@
   "block.projectshadow.waxed_exposed_copper_brick": "Waxed Exposed Copper Brick",
   "block.projectshadow.waxed_weathered_copper_brick": "Waxed Weathered Copper Brick",
   "block.projectshadow.waxed_oxidized_copper_brick": "Waxed Oxidized Copper Brick",
+  "block.projectshadow.cut_copper_brick": "Cut Copper Brick",
+  "block.projectshadow.exposed_cut_copper_brick": "Exposed Cut Copper Brick",
+  "block.projectshadow.weathered_cut_copper_brick": "Weathered Cut Copper Brick",
+  "block.projectshadow.oxidized_cut_copper_brick": "Oxidized Cut Copper Brick",
+  "block.projectshadow.waxed_cut_copper_brick": "Waxed Cut Copper Brick",
+  "block.projectshadow.waxed_exposed_cut_copper_brick": "Waxed Exposed Cut Copper Brick",
+  "block.projectshadow.waxed_weathered_cut_copper_brick": "Waxed Weathered Cut Copper Brick",
+  "block.projectshadow.waxed_oxidized_cut_copper_brick": "Waxed Oxidized Cut Copper Brick",
 
 
   "item.projectshadow.aquanium_ingot": "Aquanium Ingot",

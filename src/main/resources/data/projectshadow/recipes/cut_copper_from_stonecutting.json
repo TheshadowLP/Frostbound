@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "projectshadow:copper_brick"
+  },
+  "result": "projectshadow:cut_copper_brick"
+}

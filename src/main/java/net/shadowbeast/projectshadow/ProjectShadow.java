@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.entity.ModEntities;
+import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
@@ -66,6 +68,7 @@ public class ProjectShadow {
     public void onServerStarting(ServerStartingEvent event) {}
 
     private void clientSetup(final FMLClientSetupEvent event) {
+        Sheets.addWoodType(ModWoodTypes.FROZEN);
         MenuScreens.register(ModMenuTypes.FUSION_FURNACE_MENU.get(), FusionFurnaceScreen::new);
         MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
         EntityRenderers.register(ModEntities.MUDBALL_PROJECTILE.get(), ThrownItemRenderer::new);

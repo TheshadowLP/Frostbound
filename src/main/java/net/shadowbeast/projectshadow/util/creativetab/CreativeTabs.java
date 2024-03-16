@@ -131,6 +131,14 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.WAXED_EXPOSED_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.WAXED_WEATHERED_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.EXPOSED_CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WEATHERED_CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.OXIDIZED_CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_EXPOSED_CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_WEATHERED_CUT_COPPER_BRICK.get());
+                        pOutput.accept(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.BONE_ORE.get());
                     })
                     .build());
