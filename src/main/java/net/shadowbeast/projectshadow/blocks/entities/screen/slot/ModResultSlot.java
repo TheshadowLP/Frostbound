@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.util.screen.slot;
+package net.shadowbeast.projectshadow.blocks.entities.screen.slot;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
@@ -9,7 +9,6 @@ public class ModResultSlot extends SlotItemHandler {
     public ModResultSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
         super(itemHandler, index, xPosition, yPosition);
     }
-
     @Override
     public boolean mayPlace(@NotNull ItemStack stack) {
         return false;

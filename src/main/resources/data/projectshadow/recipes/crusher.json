@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sdf",
+    "sef",
+    "sdf"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:smooth_stone"
+    },
+    "e": {
+      "item": "projectshadow:iron_plate"
+    },
+    "d": {
+      "item": "minecraft:smooth_stone_slab"
+    },
+    "f": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "projectshadow:crusher",
+    "count": 1
+  }
+}

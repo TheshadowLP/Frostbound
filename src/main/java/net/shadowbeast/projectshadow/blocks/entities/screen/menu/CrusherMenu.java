@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.util.screen;
+package net.shadowbeast.projectshadow.blocks.entities.screen.menu;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -10,24 +10,25 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
-import net.shadowbeast.projectshadow.util.screen.slot.ModResultSlot;
+import net.shadowbeast.projectshadow.blocks.entities.screen.ModMenuTypes;
+import net.shadowbeast.projectshadow.blocks.entities.screen.slot.ModResultSlot;
+import net.shadowbeast.projectshadow.entity.custom.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 
 
-public class FusionFurnaceMenu extends AbstractContainerMenu {
-    private final FusionFurnaceBlockEntity blockEntity;
+public class CrusherMenu extends AbstractContainerMenu {
+    private final CrusherBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public FusionFurnaceMenu(int pContainerId, Inventory inv,@NotNull FriendlyByteBuf extraData) {
+    public CrusherMenu(int pContainerId, Inventory inv,@NotNull FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public FusionFurnaceMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.FUSION_FURNACE_MENU.get(), pContainerId);
+    public CrusherMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.CRUSHER_MENU.get(), pContainerId);
         checkContainerSize(inv, 4);
-        blockEntity = ((FusionFurnaceBlockEntity) entity);
+        blockEntity = ((CrusherBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
@@ -36,13 +37,13 @@ public class FusionFurnaceMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler,
-                    FusionFurnaceBlockEntity.FusionFurnaceSlot.FUEL_SLOT, 18, 50));
+                    CrusherBlockEntity.CrusherSlot.FUEL_SLOT, 18, 50));
             this.addSlot(new SlotItemHandler(handler,
-                    FusionFurnaceBlockEntity.FusionFurnaceSlot.INPUT_SLOT_1, 66, 16));
+                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT_1, 66, 16));
             this.addSlot(new SlotItemHandler(handler,
-                    FusionFurnaceBlockEntity.FusionFurnaceSlot.INPUT_SLOT_2, 66, 50));
+                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT_2, 66, 50));
             this.addSlot(new ModResultSlot(handler,
-                    FusionFurnaceBlockEntity.FusionFurnaceSlot.OUTPUT_SLOT, 114, 33));
+                    CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 114, 33));
         });
 
         addDataSlots(data);
@@ -107,7 +108,7 @@ public class FusionFurnaceMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(@NotNull Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocks.FUSION_FURNACE.get());
+                pPlayer, ModBlocks.CRUSHER.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

@@ -1,52 +1,53 @@
-package net.shadowbeast.projectshadow.blocks.custom;
+package net.shadowbeast.projectshadow.blocks.entities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
-public class FusionFurnace extends BaseEntityBlock {
-    public FusionFurnace(Properties pProperties) {
+public class Crusher extends BaseEntityBlock {
+    public Crusher(Properties pProperties) {
         super(pProperties);
     }
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     @Override
-    public @NotNull RenderShape getRenderShape(@NotNull BlockState pState) {
-        return RenderShape.MODEL;
-    }
-
+    public @NotNull RenderShape getRenderShape(@NotNull BlockState pState) { return RenderShape.MODEL; }
     @Override
-    public void onRemove(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof FusionFurnaceBlockEntity) {
-                ((FusionFurnaceBlockEntity) blockEntity).drops();
-            }
-        }
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(FACING);
     }
-
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+    }
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos,
                                           @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof FusionFurnaceBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (FusionFurnaceBlockEntity)entity, pPos);
+            if(entity instanceof CrusherBlockEntity) {
+                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (CrusherBlockEntity)entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -54,16 +55,15 @@ public class FusionFurnace extends BaseEntityBlock {
 
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
-
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
-        return new FusionFurnaceBlockEntity(pPos, pState);
+        return new CrusherBlockEntity(pPos, pState);
     }
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level pLevel, @NotNull BlockState pState, @NotNull BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.FUSION_FURNACE_BLOCK_ENTITY.get(),
-                FusionFurnaceBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.CRUSHER_BLOCK_ENTITY.get(),
+                CrusherBlockEntity::tick);
     }
 }

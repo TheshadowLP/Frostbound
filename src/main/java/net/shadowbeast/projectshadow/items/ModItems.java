@@ -33,6 +33,7 @@ public class ModItems {
 
     //INGOTS
     public static final RegistryObject<Item> AQUANIUM_INGOT = ITEMS.register("aquanium_ingot", ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDER_INGOT = ITEMS.register("ender_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDERIUM_INGOT = ITEMS.register("enderium_ingot", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register("platinum_ingot", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LUMINITE_INGOT = ITEMS.register("luminite_ingot", ()-> new Item(new Item.Properties()));

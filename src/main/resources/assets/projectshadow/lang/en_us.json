@@ -16,6 +16,7 @@
   "item.projectshadow.molten_sulfur_bucket": "Molten Sulfur Bucket",
 
   "block.projectshadow.alloy_furnace": "Alloy Furnace",
+  "block.projectshadow.crusher": "Crusher",
 
   "block.projectshadow.steel_block": "Steel Block",
   "block.projectshadow.titanium_block": "Titanium Block",
@@ -51,9 +52,6 @@
   "block.projectshadow.frozen_cobblestone": "Frozen Cobblestone",
 
 
-  "block.projectshadow.fusion_furnace": "Fusion Furnace",
-
-
   "block.projectshadow.copper_brick": "Copper Brick",
   "block.projectshadow.exposed_copper_brick": "Exposed Copper Brick",
   "block.projectshadow.weathered_copper_brick": "Weathered Copper Brick",
@@ -75,6 +73,7 @@
   "item.projectshadow.aquanium_ingot": "Aquanium Ingot",
   "item.projectshadow.luminite_ingot": "Luminite Ingot",
   "item.projectshadow.enderium_ingot": "Enderium Ingot",
+  "item.projectshadow.ender_ingot": "Ender Ingot",
   "item.projectshadow.silver_ingot": "Silver Ingot",
   "item.projectshadow.steel_ingot": "Steel Ingot",
   "item.projectshadow.titanium_ingot": "Titanium Ingot",

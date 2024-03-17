@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.custom;
+package net.shadowbeast.projectshadow.blocks.entities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -30,7 +30,6 @@ public class WinterFurnace extends AbstractFurnaceBlock {
     public WinterFurnace(Properties pProperties){
         super(pProperties);
     }
-
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         if(pLevel.isClientSide()) {
@@ -40,7 +39,6 @@ public class WinterFurnace extends AbstractFurnaceBlock {
             return InteractionResult.CONSUME;
         }
     }
-
     @Override
     protected void openContainer(Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer){
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
@@ -57,7 +55,6 @@ public class WinterFurnace extends AbstractFurnaceBlock {
             if (pRandom.nextDouble() < 0.1D) {
                 pLevel.playLocalSound(d0, d1, d2, SoundEvents.FURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0F, 1.0F, false);
             }
-
             Direction direction = pState.getValue(FACING);
             Direction.Axis direction$axis = direction.getAxis();
             double d4 = pRandom.nextDouble() * 0.6D - 0.3D;
@@ -73,7 +70,6 @@ public class WinterFurnace extends AbstractFurnaceBlock {
     public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState){
         return new WinterFurnaceEntity(pPos, pState);
     }
-
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level pLevel, @NotNull BlockState pState, @NotNull BlockEntityType<T> pBlockEntityType) {

@@ -114,13 +114,14 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SULFUR.get());
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
                         //TODO
-                        pOutput.accept(ModBlocks.FUSION_FURNACE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
+                        pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModItems.IRON_PLATE.get());
                         //TODO Place in correct spot
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
+                        pOutput.accept(ModItems.ENDER_INGOT.get());
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());
                         pOutput.accept(ModBlocks.COPPER_BRICK.get());

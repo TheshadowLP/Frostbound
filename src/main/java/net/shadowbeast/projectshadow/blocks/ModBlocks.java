@@ -20,6 +20,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.crops.PepperCropBlock;
 import net.shadowbeast.projectshadow.blocks.custom.*;
+import net.shadowbeast.projectshadow.blocks.entities.AlloyFurnace;
+import net.shadowbeast.projectshadow.blocks.entities.Crusher;
+import net.shadowbeast.projectshadow.blocks.entities.WinterFurnace;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
 
@@ -30,9 +33,9 @@ public class  ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ProjectShadow.MOD_ID);
 
     // Block Entities
-    public static final RegistryObject<Block> FUSION_FURNACE = registerBlock("fusion_furnace", ()-> new FusionFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.5F).sound(SoundType.METAL).requiresCorrectToolForDrops())); //TODO DELETING
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new Crusher(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 
     //CROPS
     public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop", () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));

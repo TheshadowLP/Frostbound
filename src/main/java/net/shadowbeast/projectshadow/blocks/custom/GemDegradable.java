@@ -14,12 +14,12 @@ import java.util.function.Supplier;
 
 public interface GemDegradable extends ChangeOverTimeBlock<GemDegradable.GemDegradationLevel> {
     Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder()
-            //.put(ModBlocks.COPPER_BRICK.get(), ModBlocks.EXPOSED_COPPER_BRICK.get())
-            .put(ModBlocks.EXPOSED_COPPER_BRICK.get(), ModBlocks.WEATHERED_COPPER_BRICK.get()).build());
-            //.put(ModBlocks.WEATHERED_COPPER_BRICK.get(), ModBlocks.OXIDIZED_COPPER_BRICK.get())
-            //.put(ModBlocks.CUT_COPPER_BRICK.get(), ModBlocks.EXPOSED_CUT_COPPER_BRICK.get())
-            //.put(ModBlocks.EXPOSED_CUT_COPPER_BRICK.get(), ModBlocks.WEATHERED_CUT_COPPER_BRICK.get())
-            //.put(ModBlocks.WEATHERED_CUT_COPPER_BRICK.get(), ModBlocks.OXIDIZED_CUT_COPPER_BRICK.get())
+            .put(ModBlocks.COPPER_BRICK.get(), ModBlocks.EXPOSED_COPPER_BRICK.get())
+            .put(ModBlocks.EXPOSED_COPPER_BRICK.get(), ModBlocks.WEATHERED_COPPER_BRICK.get())
+            .put(ModBlocks.WEATHERED_COPPER_BRICK.get(), ModBlocks.OXIDIZED_COPPER_BRICK.get())
+            .put(ModBlocks.CUT_COPPER_BRICK.get(), ModBlocks.EXPOSED_CUT_COPPER_BRICK.get())
+            .put(ModBlocks.EXPOSED_CUT_COPPER_BRICK.get(), ModBlocks.WEATHERED_CUT_COPPER_BRICK.get())
+            .put(ModBlocks.WEATHERED_CUT_COPPER_BRICK.get(), ModBlocks.OXIDIZED_CUT_COPPER_BRICK.get()).build());
     Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> NEXT_BY_BLOCK.get().inverse());
     static Optional<Block> getPrevious(Block pBlock) {
         return Optional.ofNullable(PREVIOUS_BY_BLOCK.get().get(pBlock));
@@ -47,10 +47,5 @@ public interface GemDegradable extends ChangeOverTimeBlock<GemDegradable.GemDegr
     default float getChanceModifier() {
         return this.getAge() == GemDegradationLevel.UNAFFECTED ? 0.75F : 1.0F;
     }
-    public static enum GemDegradationLevel {
-        UNAFFECTED,
-        EXPOSED,
-        WEATHERED,
-        DEGRADED
-    }
+    public static enum GemDegradationLevel {UNAFFECTED, EXPOSED, WEATHERED, DEGRADED}
 }

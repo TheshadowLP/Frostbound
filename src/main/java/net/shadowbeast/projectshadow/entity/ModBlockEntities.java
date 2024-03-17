@@ -7,22 +7,25 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.entity.custom.FusionFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.AlloyFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.CrusherBlockEntity;
 import net.shadowbeast.projectshadow.entity.custom.WinterFurnaceEntity;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ProjectShadow.MOD_ID);
-
-    public static final RegistryObject<BlockEntityType<FusionFurnaceBlockEntity>> FUSION_FURNACE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("fusion_furnace_block_entity", () ->
-                    BlockEntityType.Builder.of(FusionFurnaceBlockEntity::new,
-                            ModBlocks.FUSION_FURNACE.get()).build(null));
     public static final RegistryObject<BlockEntityType<WinterFurnaceEntity>> WINTER_FURNACE_ENTITY =
             BLOCK_ENTITIES.register("winter_furnace_entity", () ->
                     BlockEntityType.Builder.of(WinterFurnaceEntity::new,
                             ModBlocks.WINTER_FURNACE.get()).build(null));
-
+    public static final RegistryObject<BlockEntityType<AlloyFurnaceBlockEntity>> ALLOY_FURNACE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("alloy_furnace_block_entity", () ->
+                    BlockEntityType.Builder.of(AlloyFurnaceBlockEntity::new,
+                            ModBlocks.ALLOY_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<CrusherBlockEntity>> CRUSHER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("crusher_block_entity", () ->
+                    BlockEntityType.Builder.of(CrusherBlockEntity::new,
+                            ModBlocks.CRUSHER.get()).build(null));
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

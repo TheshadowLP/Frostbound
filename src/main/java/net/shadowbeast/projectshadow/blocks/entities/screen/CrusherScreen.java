@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.util.screen;
+package net.shadowbeast.projectshadow.blocks.entities.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
@@ -8,16 +8,16 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blocks.entities.screen.menu.CrusherMenu;
 import org.jetbrains.annotations.NotNull;
 
-public class FusionFurnaceScreen extends AbstractContainerScreen<FusionFurnaceMenu> {
+public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/fusion_furnace_gui.png");
 
-    public FusionFurnaceScreen(FusionFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public CrusherScreen(CrusherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
-
     @Override
     public void render(@NotNull GuiGraphics pPoseStack, int mouseX, int mouseY, float delta) {
         renderBackground(pPoseStack);

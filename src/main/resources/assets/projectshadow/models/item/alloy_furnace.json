@@ -1,3 +1,22 @@
 {
-  "parent": "projectshadow:block/alloy_furnace"
+  "parent": "projectshadow:block/alloy_furnace",
+  "display": {
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        2,
+        4,
+        2
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  }
 }
