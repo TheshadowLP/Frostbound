@@ -34,24 +34,34 @@ public class CrusherMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler,
-                    CrusherBlockEntity.CrusherSlot.FUEL_SLOT, 18, 50));
+                    CrusherBlockEntity.CrusherSlot.FUEL_SLOT, 26, 46));
             this.addSlot(new SlotItemHandler(handler,
-                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT, 66, 16));
+                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT, 80, 17));
             this.addSlot(new ModResultSlot(handler,
-                    CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 114, 33));
+                    CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 80, 55));
         });
         addDataSlots(data);
     }
-    public boolean isCrafting() {
-        return data.get(0) > 0;
-    }
-    public int getScaledProgress() {
-        int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 36; // This is the height in pixels of your arrow
 
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+
+
+    public int getBurnProgress() {
+        int i = this.data.get(0);
+        int j = this.data.get(1);
+        return j != 0 && i != 0 ? i * 24 / j : 0;
     }
+    public int getLitProgress() {
+        int i = this.data.get(1);
+        if (i == 0) {
+            i = 200;
+        }
+        return this.data.get(0) * 13 / i;
+    }
+    public boolean isLit() {
+        return this.data.get(0) > 0;
+    }
+
+
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;

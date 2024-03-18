@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/fusion_furnace_gui.png");
+            new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/crusher_gui.png");
     public CrusherScreen(CrusherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
@@ -24,18 +24,19 @@ public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
         renderTooltip(pPoseStack, mouseX, mouseY);
     }
     @Override
-    protected void renderBg(@NotNull GuiGraphics guiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
+    protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
-        int x = (width - imageWidth) / 2;
-        int y = (height - imageHeight) / 2;
+        int i = this.leftPos;
+        int j = this.topPos;
+        pGuiGraphics.blit(TEXTURE, i, j, 0, 0,this.imageWidth, this.imageHeight);
 
-        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
-
-        if (menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 84, y + 23, 176, 14, menu.getScaledProgress(), 36);
-            guiGraphics.blit(TEXTURE, x + 19, y + 34, 176, 0, 13, 13);
+        if (this.menu.isLit()) {
+            int k = this.menu.getLitProgress();
+            pGuiGraphics.blit(TEXTURE, i + 19, j + 34 + 12 - k, 176, 12 - k,14, k + 1);
         }
+        int l = this.menu.getBurnProgress();
+        pGuiGraphics.blit(TEXTURE, i + 81, j + 35, 176, 14,l + 1, 18); //36
     }
 }

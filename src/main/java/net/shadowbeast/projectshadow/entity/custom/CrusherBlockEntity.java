@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -108,14 +107,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("crushing.progress");
     }
-    public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(i, itemHandler.getStackInSlot(i));
-        }
-        assert this.level != null;
-        Containers.dropContents(this.level, this.worldPosition, inventory);
-    }
+
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  CrusherBlockEntity pBlockEntity) {
         if(hasRecipe(pBlockEntity)) {
             pBlockEntity.progress++;
