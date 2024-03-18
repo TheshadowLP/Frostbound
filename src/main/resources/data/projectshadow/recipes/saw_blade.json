@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s ",
+    "s/s",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:titanium_ingot"
+    },
+    "/": {
+      "item": "projectshadow:iron_plate"
+    }
+  },
+  "result": {
+    "item": "projectshadow:saw_blade",
+    "count": 3
+  }
+}

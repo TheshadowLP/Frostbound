@@ -15,19 +15,16 @@ import net.shadowbeast.projectshadow.blocks.entities.screen.slot.ModResultSlot;
 import net.shadowbeast.projectshadow.entity.custom.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 
-
 public class CrusherMenu extends AbstractContainerMenu {
     private final CrusherBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
-
     public CrusherMenu(int pContainerId, Inventory inv,@NotNull FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
-
     public CrusherMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.CRUSHER_MENU.get(), pContainerId);
-        checkContainerSize(inv, 4);
+        checkContainerSize(inv, 3);
         blockEntity = ((CrusherBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -39,20 +36,15 @@ public class CrusherMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler,
                     CrusherBlockEntity.CrusherSlot.FUEL_SLOT, 18, 50));
             this.addSlot(new SlotItemHandler(handler,
-                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT_1, 66, 16));
-            this.addSlot(new SlotItemHandler(handler,
-                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT_2, 66, 50));
+                    CrusherBlockEntity.CrusherSlot.INPUT_SLOT, 66, 16));
             this.addSlot(new ModResultSlot(handler,
                     CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 114, 33));
         });
-
         addDataSlots(data);
     }
-
     public boolean isCrafting() {
         return data.get(0) > 0;
     }
-
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
@@ -60,7 +52,6 @@ public class CrusherMenu extends AbstractContainerMenu {
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
-
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -68,11 +59,8 @@ public class CrusherMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-
-    // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
-
-    @Override
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    // @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
         if (!sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
@@ -104,13 +92,11 @@ public class CrusherMenu extends AbstractContainerMenu {
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
-
     @Override
     public boolean stillValid(@NotNull Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
                 pPlayer, ModBlocks.CRUSHER.get());
     }
-
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
@@ -118,7 +104,6 @@ public class CrusherMenu extends AbstractContainerMenu {
             }
         }
     }
-
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));

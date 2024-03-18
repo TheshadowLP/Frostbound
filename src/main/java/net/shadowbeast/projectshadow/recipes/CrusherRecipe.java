@@ -14,107 +14,79 @@ import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
-
 public class CrusherRecipe implements Recipe<SimpleContainer> {
-    private final ResourceLocation id;
+    private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
-    private final NonNullList<Ingredient> recipeItems;
-
-    public CrusherRecipe(ResourceLocation id, ItemStack output,
-                              NonNullList<Ingredient> recipeItems) {
-        this.id = id;
+    private final ResourceLocation id;
+    public CrusherRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> inputItems) {
+        this.inputItems = inputItems;
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.id = id;
     }
-
     @Override
     public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
-        if (pLevel.isClientSide()) { return false; }
-
-        if (recipeItems.get(0).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
+        if(pLevel.isClientSide()) {
+            return false;
         }
-
-        return false;
+        return inputItems.get(0).test(pContainer.getItem(0));
     }
-
     @Override
     public @NotNull ItemStack assemble(@NotNull SimpleContainer p_44001_, @NotNull RegistryAccess p_267165_) {
-        return output;
+        return output.copy();
     }
-
-
-    @Override
-    public @NotNull NonNullList<Ingredient> getIngredients() {
-        return recipeItems;
-    }
-
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
         return true;
     }
-
     @Override
     public @NotNull ItemStack getResultItem(@NotNull RegistryAccess p_267052_) {
         return output.copy();
     }
-
+    @Override
+    public @NotNull NonNullList<Ingredient> getIngredients() {
+        return this.inputItems;
+    }
     @Override
     public @NotNull ResourceLocation getId() {
         return id;
     }
-
     @Override
     public @NotNull RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
-
     @Override
     public @NotNull RecipeType<?> getType() {
         return Type.INSTANCE;
     }
-
     public ItemStack getResultItem() {
         return output.copy();
     }
-
     public static class Type implements RecipeType<CrusherRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "crushing";
     }
-
-
     public static class Serializer implements RecipeSerializer<CrusherRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ProjectShadow.MOD_ID, "crushing");
-
+                new ResourceLocation(ProjectShadow.MOD_ID,"crushing");
         @Override
-        public @NotNull CrusherRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-
-            JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
-
+        public @NotNull CrusherRecipe fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json) {
+            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
+            JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredient");
+            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-
-            return new CrusherRecipe(pRecipeId, output, inputs);
+            return new CrusherRecipe(id, output, inputs);
         }
-
         @Override
-        public @Nullable CrusherRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
+        public CrusherRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
-
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
-
             ItemStack output = buf.readItem();
             return new CrusherRecipe(id, output, inputs);
         }
-
         @Override
         public void toNetwork(FriendlyByteBuf buf, CrusherRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());

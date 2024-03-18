@@ -113,6 +113,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SULFUR_ORE.get());
                         pOutput.accept(ModItems.SULFUR.get());
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
+                        pOutput.accept(ModItems.SAW_BLADE.get());
                         //TODO
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
