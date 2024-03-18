@@ -42,14 +42,6 @@ public class CrusherMenu extends AbstractContainerMenu {
         });
         addDataSlots(data);
     }
-
-
-
-    public int getBurnProgress() {
-        int i = this.data.get(0);
-        int j = this.data.get(1);
-        return j != 0 && i != 0 ? i * 24 / j : 0;
-    }
     public int getLitProgress() {
         int i = this.data.get(1);
         if (i == 0) {
@@ -60,8 +52,6 @@ public class CrusherMenu extends AbstractContainerMenu {
     public boolean isLit() {
         return this.data.get(0) > 0;
     }
-
-
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;

@@ -34,9 +34,9 @@ public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
 
         if (this.menu.isLit()) {
             int k = this.menu.getLitProgress();
-            pGuiGraphics.blit(TEXTURE, i + 19, j + 34 + 12 - k, 176, 12 - k,14, k + 1);
+            pGuiGraphics.blit(TEXTURE, i + 27, j + 40 - k, 176, 13 - k,14, k + 1);
         }
-        int l = this.menu.getBurnProgress();
-        pGuiGraphics.blit(TEXTURE, i + 81, j + 35, 176, 14,l + 1, 18); //36
+        int l = this.menu.getLitProgress();
+        pGuiGraphics.blit(TEXTURE, i + 81, j + 35 - l, 176, 14,l + 1, 18); //36 52
     }
 }
