@@ -1,0 +1,11 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "projectshadow:platinum_ingot"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:platinum_powder"
+  }
+}

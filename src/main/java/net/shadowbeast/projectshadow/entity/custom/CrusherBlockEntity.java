@@ -46,7 +46,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     public final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 140;
+    private int maxProgress = 300;
     public  CrusherBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.CRUSHER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {

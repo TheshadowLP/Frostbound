@@ -1,0 +1,11 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:diamond_powder"
+  }
+}

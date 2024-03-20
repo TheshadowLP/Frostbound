@@ -1,0 +1,11 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:gold_powder"
+  }
+}

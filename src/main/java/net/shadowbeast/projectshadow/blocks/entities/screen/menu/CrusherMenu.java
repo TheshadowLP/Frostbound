@@ -49,6 +49,9 @@ public class CrusherMenu extends AbstractContainerMenu {
         }
         return this.data.get(0) * 13 / i;
     }
+    public int getBrewingTicks() {
+        return this.data.get(0);
+    }
     public boolean isLit() {
         return this.data.get(0) > 0;
     }

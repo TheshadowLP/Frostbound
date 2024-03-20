@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/crusher_gui.png");
+    private static final int[] BUBBLELENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
     public CrusherScreen(CrusherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
@@ -36,7 +37,16 @@ public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
             int k = this.menu.getLitProgress();
             pGuiGraphics.blit(TEXTURE, i + 27, j + 40 - k, 176, 13 - k,14, k + 1);
         }
-        int l = this.menu.getLitProgress();
-        pGuiGraphics.blit(TEXTURE, i + 81, j + 35 - l, 176, 14,l + 1, 18); //36 52
+        int i1 = this.menu.getBrewingTicks();
+        if (i1 > 0) {
+            int j1 = (int)(32.0F * (1.0F - (float)i1 / 308.0F));
+            if (j1 > 0) {
+                pGuiGraphics.blit(TEXTURE, i + 42, j + 27, 203, 0, 37, j1);
+            }
+            j1 = BUBBLELENGTHS[i1 / 2 % 7];
+            if (j1 > 0) {
+                pGuiGraphics.blit(TEXTURE, i + 81, j + 54 - j1, 190, 19 - j1, 13, j1);
+            }
+        }
     }
 }

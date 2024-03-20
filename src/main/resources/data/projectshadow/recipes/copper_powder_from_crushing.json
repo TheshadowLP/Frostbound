@@ -1,0 +1,11 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:copper_powder"
+  }
+}
