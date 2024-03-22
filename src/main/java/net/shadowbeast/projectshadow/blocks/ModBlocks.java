@@ -35,7 +35,7 @@ public class  ModBlocks {
     // Block Entities
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
-    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new Crusher(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new Crusher(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion().requiresCorrectToolForDrops()));
 
     //CROPS
     public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop", () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));

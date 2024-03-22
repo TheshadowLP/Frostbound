@@ -172,6 +172,7 @@ public class ModItems {
     public static final RegistryObject<Item> FIRERITE_CHESTPLATE = registerItemWithTooltips("firerite_chestplate", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
     public static final RegistryObject<Item> FIRERITE_LEGGINGS = registerItemWithTooltips("firerite_leggings", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
     public static final RegistryObject<Item> FIRERITE_BOOTS = registerItemWithTooltips("firerite_boots", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
+
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));

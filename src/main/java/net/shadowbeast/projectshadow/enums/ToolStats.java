@@ -5,7 +5,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("depriction")
