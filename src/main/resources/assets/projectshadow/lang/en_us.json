@@ -136,6 +136,7 @@
   "item.projectshadow.copper_axe": "Copper Axe",
   "item.projectshadow.aquanium_axe": "Aquanium Axe",
   "item.projectshadow.luminite_axe": "Luminite Axe",
+  "item.projectshadow.firerite_axe": "Firerite Axe",
 
 
   "item.projectshadow.platinum_hammer": "Platinum Hammer",
@@ -152,6 +153,7 @@
   "item.projectshadow.copper_hoe": "Copper Hoe",
   "item.projectshadow.aquanium_hoe": "Aquanium Hoe",
   "item.projectshadow.luminite_hoe": "Luminite Hoe",
+  "item.projectshadow.firerite_hoe": "Firerite Hoe",
 
 
   "item.projectshadow.platinum_pickaxe": "Platinum Pickaxe",
@@ -162,6 +164,7 @@
   "item.projectshadow.copper_pickaxe": "Copper Pickaxe",
   "item.projectshadow.aquanium_pickaxe": "Aquanium Pickaxe",
   "item.projectshadow.luminite_pickaxe": "Luminite Pickaxe",
+  "item.projectshadow.firerite_pickaxe": "Firerite Pickaxe",
 
 
 
@@ -173,6 +176,7 @@
   "item.projectshadow.copper_shovel": "Copper Shovel",
   "item.projectshadow.aquanium_shovel": "Aquanium Shovel",
   "item.projectshadow.luminite_shovel": "Luminite Shovel",
+  "item.projectshadow.firerite_shovel": "Firerite Shovel",
 
 
   "item.projectshadow.platinum_sword": "Platinum Sword",
@@ -183,6 +187,7 @@
   "item.projectshadow.copper_sword": "Copper Sword",
   "item.projectshadow.aquanium_sword": "Aquanium Sword",
   "item.projectshadow.luminite_sword": "Luminite Sword",
+  "item.projectshadow.firerite_sword": "Firerite Sword",
 
   "item.projectshadow.steel_shield": "Steel Shield",
 
@@ -204,6 +209,13 @@
   "tooltip.projectshadow.steel_set": "Press [§9SHIFT§r] for more Information",
   "tooltip.projectshadow.steel_set.shift": "The full set will slow you down",
 
+  "item.projectshadow.firerite_helmet": "Firerite Helmet",
+  "item.projectshadow.firerite_chestplate": "Firerite Chestplate",
+  "item.projectshadow.firerite_leggings": "Firerite Leggings",
+  "item.projectshadow.firerite_boots": "Firerite Boots",
+  "tooltip.projectshadow.firerite_set": "Press [§9SHIFT§r] for more Information",
+  "tooltip.projectshadow.firerite_set.shift": "The full set will make you not scared of the fire",
+
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
   "item.projectshadow.mud_ball": "Mud Ball",
@@ -212,9 +224,9 @@
   "effect.projectshadow.muddied_eyes": "Muddied Eyes",
 
   "creativetab.dev_tab": "Project Shadow",
-  "creativetab.combat": "Combat",
-  "creativetab.tools": "Tools & Utilities",
-  "creativetab.drinks": "Food & Drinks",
+  "creativetab.combat": "Project Shadow - Combat",
+  "creativetab.tools": "Project Shadow - Tools & Utilities",
+  "creativetab.drinks": "Project Shadow - Food & Drinks",
 
   "item.projectshadow.stacked_potato": "Stacked Potato",
   "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato",

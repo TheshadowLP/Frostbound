@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s s",
+    "s s"
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:firerite_gem"
+    }
+  },
+  "result": {
+    "item": "projectshadow:firerite_boots",
+    "count": 1
+  }
+}

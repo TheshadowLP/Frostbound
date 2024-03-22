@@ -7,14 +7,18 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.items.ModItems;
 
 import java.util.function.Supplier;
 
 @MethodsReturnNonnullByDefault
 public enum ArmorStats implements ArmorMaterial {
-    STEEL("steel", 35, new int[] {3, 8, 5, 4}, ToolStats.STEEL.getEnchantmentValue(),
+    STEEL("steel", 35, new int[] {3, 8, 5, 4}, 15,
             SoundEvents.ARMOR_EQUIP_IRON, 1.0f,
-            0.0f, ToolStats.STEEL::getRepairIngredient);
+            0.0f, () -> Ingredient.of(ModItems.STEEL_INGOT.get())),
+    FIRERITE("firerite", 10, new int[] {1, 4, 3, 2}, 15,
+            SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
+            0.0f, () -> Ingredient.of(ModItems.FIRERITE_GEM.get()));
 
     private final String name;
     private final int durabilityMultiplier;

@@ -156,6 +156,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_SWORD.get());
                         pOutput.accept(ModItems.AQUANIUM_SWORD.get());
                         pOutput.accept(ModItems.ENDERIUM_SWORD.get());
+                        pOutput.accept(ModItems.FIRERITE_SWORD.get());
 
                         pOutput.accept(ModItems.SILVER_AXE.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
@@ -165,6 +166,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_AXE.get());
                         pOutput.accept(ModItems.AQUANIUM_AXE.get());
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
+                        pOutput.accept(ModItems.FIRERITE_AXE.get());
 
                         pOutput.accept(ModItems.SILVER_HAMMER.get());
                         pOutput.accept(ModItems.PLATINUM_HAMMER.get());
@@ -181,6 +183,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.STEEL_CHESTPLATE.get());
                         pOutput.accept(ModItems.STEEL_LEGGINGS.get());
                         pOutput.accept(ModItems.STEEL_BOOTS.get());
+
+                        pOutput.accept(ModItems.FIRERITE_HELMET.get());
+                        pOutput.accept(ModItems.FIRERITE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.FIRERITE_LEGGINGS.get());
+                        pOutput.accept(ModItems.FIRERITE_BOOTS.get());
 
                         pOutput.accept(ModItems.MUD_BALL.get());
                     })
@@ -233,6 +240,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_PICKAXE.get());
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
                         pOutput.accept(ModItems.ENDERIUM_HOE.get());
+
+                        pOutput.accept(ModItems.FIRERITE_SHOVEL.get());
+                        pOutput.accept(ModItems.FIRERITE_PICKAXE.get());
+                        pOutput.accept(ModItems.FIRERITE_AXE.get());
+                        pOutput.accept(ModItems.FIRERITE_HOE.get());
 
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
                     })
