@@ -18,7 +18,8 @@ public enum ToolStats implements Tier {
     COPPER(2, 185, 8.0F, 2.0F, 15, "copper_ingot"),
     LUMINITE(3, 1720, 9.0F, 3.0F, 10, "luminite_ingot"),
     AQUANIUM(4, 2210, 10.0F, 4.0F, 15, "aquanium_ingot"),
-    FIRERITE(3, 379, 6.0F, 2.0F, 15, "firerite_gem");
+    FIRERITE(3, 379, 6.0F, 2.0F, 15, "firerite_gem"),
+    FROZEN(3, 379, 6.0F, 2.0F, 15, "frozen_gem");
 
     private final int harvestLevel;
     private final int maxUses;

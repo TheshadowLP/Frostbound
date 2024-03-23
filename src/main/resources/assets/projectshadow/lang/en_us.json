@@ -137,6 +137,7 @@
   "item.projectshadow.aquanium_axe": "Aquanium Axe",
   "item.projectshadow.luminite_axe": "Luminite Axe",
   "item.projectshadow.firerite_axe": "Firerite Axe",
+  "item.projectshadow.frozen_axe": "Frozen Axe",
 
 
   "item.projectshadow.platinum_hammer": "Platinum Hammer",
@@ -154,6 +155,7 @@
   "item.projectshadow.aquanium_hoe": "Aquanium Hoe",
   "item.projectshadow.luminite_hoe": "Luminite Hoe",
   "item.projectshadow.firerite_hoe": "Firerite Hoe",
+  "item.projectshadow.frozen_hoe": "Frozen Hoe",
 
 
   "item.projectshadow.platinum_pickaxe": "Platinum Pickaxe",
@@ -165,7 +167,7 @@
   "item.projectshadow.aquanium_pickaxe": "Aquanium Pickaxe",
   "item.projectshadow.luminite_pickaxe": "Luminite Pickaxe",
   "item.projectshadow.firerite_pickaxe": "Firerite Pickaxe",
-
+  "item.projectshadow.frozen_pickaxe": "Frozen Pickaxe",
 
 
   "item.projectshadow.platinum_shovel": "Platinum Shovel",
@@ -177,6 +179,7 @@
   "item.projectshadow.aquanium_shovel": "Aquanium Shovel",
   "item.projectshadow.luminite_shovel": "Luminite Shovel",
   "item.projectshadow.firerite_shovel": "Firerite Shovel",
+  "item.projectshadow.frozen_shovel": "Frozen Shovel",
 
 
   "item.projectshadow.platinum_sword": "Platinum Sword",
@@ -188,6 +191,8 @@
   "item.projectshadow.aquanium_sword": "Aquanium Sword",
   "item.projectshadow.luminite_sword": "Luminite Sword",
   "item.projectshadow.firerite_sword": "Firerite Sword",
+  "item.projectshadow.frozen_sword": "Frozen Sword",
+
 
   "item.projectshadow.steel_shield": "Steel Shield",
 
@@ -215,6 +220,11 @@
   "item.projectshadow.firerite_boots": "Firerite Boots",
   "tooltip.projectshadow.firerite_set": "Press [§9SHIFT§r] for more Information",
   "tooltip.projectshadow.firerite_set.shift": "The full set will make you not scared of the fire",
+
+  "item.projectshadow.frozen_helmet": "Frozen Helmet",
+  "item.projectshadow.frozen_chestplate": "Frozen Chestplate",
+  "item.projectshadow.frozen_leggings": "Frozen Leggings",
+  "item.projectshadow.frozen_boots": "Frozen Boots",
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 

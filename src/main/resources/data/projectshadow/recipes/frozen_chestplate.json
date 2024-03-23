@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s s",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "projectshadow:frozen_gem"
+    }
+  },
+  "result": {
+    "item": "projectshadow:frozen_chestplate",
+    "count": 1
+  }
+}
