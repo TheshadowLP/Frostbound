@@ -18,7 +18,10 @@ public enum ArmorStats implements ArmorMaterial {
             0.0f, () -> Ingredient.of(ModItems.STEEL_INGOT.get())),
     FIRERITE("firerite", 10, new int[] {1, 4, 3, 2}, 15,
             SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
-            0.0f, () -> Ingredient.of(ModItems.FIRERITE_GEM.get()));
+            0.0f, () -> Ingredient.of(ModItems.FIRERITE_GEM.get())),
+    FROZEN("frozen", 10, new int[] {1, 4, 3, 2}, 15,
+    SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
+            0.0f, () -> Ingredient.of(ModItems.FROZEN_GEM.get()));
 
     private final String name;
     private final int durabilityMultiplier;
