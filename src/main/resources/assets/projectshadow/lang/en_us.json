@@ -225,6 +225,8 @@
   "item.projectshadow.frozen_chestplate": "Frozen Chestplate",
   "item.projectshadow.frozen_leggings": "Frozen Leggings",
   "item.projectshadow.frozen_boots": "Frozen Boots",
+  "tooltip.projectshadow.frozen_set": "Press [§9SHIFT§r] for more Information",
+  "tooltip.projectshadow.frozen_set.shift": "PLACEHOLDER",
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 

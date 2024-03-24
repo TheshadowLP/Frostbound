@@ -58,7 +58,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_STICK = ITEMS.register("silver_stick", ()-> new Item(new Item.Properties()));
 
     //GEMS & MORE
-            public static final RegistryObject<Item> FIRERITE_GEM = ITEMS.register("firerite_gem", ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_GEM = ITEMS.register("firerite_gem", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FROZEN_GEM = ITEMS.register("frozen_gem", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SULFUR = ITEMS.register("sulfur", ()-> new Item(new Item.Properties()));
@@ -110,6 +110,7 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register("steel_sword", ()-> new SwordItem(ToolStats.STEEL,3,-2.6F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_SWORD = ITEMS.register("titanium_sword", ()-> new SwordItem(ToolStats.TITANIUM,4,-2.4F, new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_SWORD = ITEMS.register("firerite_sword", () -> new SwordItem(ToolStats.FIRERITE, 3, -2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_SWORD = ITEMS.register("frozen_sword", () -> new SwordItem(ToolStats.FROZEN, 3, -2.4F, new Item.Properties()));
 
     //AXES
     public static final RegistryObject<Item> AQUANIUM_AXE = ITEMS.register("aquanium_axe", ()-> new AxeItem(ToolStats.AQUANIUM,5.0F,-3.0F, new Item.Properties()));
@@ -121,6 +122,7 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_AXE = ITEMS.register("steel_axe", ()-> new AxeItem(ToolStats.STEEL,6F,-3.2F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_AXE = ITEMS.register("titanium_axe", ()-> new AxeItem(ToolStats.TITANIUM,6.0F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_AXE = ITEMS.register("firerite_axe", ()-> new AxeItem(ToolStats.FIRERITE,5.0F,-2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_AXE = ITEMS.register("frozen_axe", ()-> new AxeItem(ToolStats.FROZEN,5.0F,-2.8F, new Item.Properties()));
 
     //PICKAXES
     public static final RegistryObject<Item> AQUANIUM_PICKAXE = ITEMS.register("aquanium_pickaxe", ()-> new PickaxeItem(ToolStats.AQUANIUM,1,-2.8F, new Item.Properties()));
@@ -132,6 +134,7 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", ()-> new PickaxeItem(ToolStats.STEEL,1,-3F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe", ()-> new PickaxeItem(ToolStats.TITANIUM,2,-2.8F, new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_PICKAXE = ITEMS.register("firerite_pickaxe", ()-> new PickaxeItem(ToolStats.FIRERITE,1,-2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_PICKAXE = ITEMS.register("frozen_pickaxe", ()-> new PickaxeItem(ToolStats.FROZEN,1,-2.8F, new Item.Properties()));
 
     //SHOVELS
     public static final RegistryObject<Item> AQUANIUM_SHOVEL = ITEMS.register("aquanium_shovel", ()-> new ShovelItem(ToolStats.AQUANIUM,1.5F,-3.0F, new Item.Properties()));
@@ -143,6 +146,7 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_SHOVEL = ITEMS.register("steel_shovel", ()-> new ShovelItem(ToolStats.STEEL,1.5F,-3F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_SHOVEL = ITEMS.register("titanium_shovel", ()-> new ShovelItem(ToolStats.TITANIUM,2.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_SHOVEL = ITEMS.register("firerite_shovel", ()-> new ShovelItem(ToolStats.FIRERITE,1.5F,-3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_SHOVEL = ITEMS.register("frozen_shovel", ()-> new ShovelItem(ToolStats.FROZEN,1.5F,-3.0F, new Item.Properties()));
 
     //HOES
     public static final RegistryObject<Item> AQUANIUM_HOE = ITEMS.register("aquanium_hoe", ()-> new HoeItem(ToolStats.AQUANIUM,-4,0.0F, new Item.Properties()));
@@ -154,6 +158,7 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe", ()-> new HoeItem(ToolStats.STEEL,-2,-1.0F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_HOE = ITEMS.register("titanium_hoe", ()-> new HoeItem(ToolStats.TITANIUM,-2,0.0F, new Item.Properties()));
     public static final RegistryObject<Item> FIRERITE_HOE = ITEMS.register("firerite_hoe", ()-> new HoeItem(ToolStats.FIRERITE,-2,0.0F, new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_HOE = ITEMS.register("frozen_hoe", ()-> new HoeItem(ToolStats.FROZEN,-2,0.0F, new Item.Properties()));
 
     //HAMMERS
     public static final RegistryObject<Item> PLATINUM_HAMMER = ITEMS.register("platinum_hammer", ()-> new HammerItem(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020)));
@@ -173,6 +178,12 @@ public class ModItems {
     public static final RegistryObject<Item> FIRERITE_LEGGINGS = registerItemWithTooltips("firerite_leggings", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
     public static final RegistryObject<Item> FIRERITE_BOOTS = registerItemWithTooltips("firerite_boots", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
 
+    //FROZEN ARMOR
+    public static final RegistryObject<Item> FROZEN_HELMET = registerItemWithTooltips("frozen_helmet", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
+    public static final RegistryObject<Item> FROZEN_CHESTPLATE = registerItemWithTooltips("frozen_chestplate", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
+    public static final RegistryObject<Item> FROZEN_LEGGINGS = registerItemWithTooltips("frozen_leggings", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
+    public static final RegistryObject<Item> FROZEN_BOOTS = registerItemWithTooltips("frozen_boots", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
+
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
@@ -180,6 +191,10 @@ public class ModItems {
 
     //PROJECTILES
     public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball", () -> new MudItem(new Item.Properties()));
+
+    //SIGNS
+    public static final RegistryObject<Item> FROZEN_SIGN = ITEMS.register("frozen_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.FROZEN_SIGN.get(), ModBlocks.FROZEN_WALL_SIGN.get()));
+    public static final RegistryObject<Item> FROZEN_HANGING_SIGN = ITEMS.register("frozen_hanging_sign", () -> new HangingSignItem(ModBlocks.FROZEN_HANGING_SIGN.get(), ModBlocks.FROZEN_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
 
     private static @NotNull RegistryObject<Item> registerItemWithTooltips(@NotNull String name, @NotNull Item.Properties pProperties, @NotNull ArmorStats material, @NotNull ArmorItem.Type type, @NotNull Component ShiftOn, @NotNull Component ShiftOff) {
