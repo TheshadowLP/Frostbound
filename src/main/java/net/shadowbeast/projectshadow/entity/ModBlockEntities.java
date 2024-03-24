@@ -7,10 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.entity.custom.AlloyFurnaceBlockEntity;
-import net.shadowbeast.projectshadow.entity.custom.CrusherBlockEntity;
-import net.shadowbeast.projectshadow.entity.custom.WinterFurnaceEntity;
-
+import net.shadowbeast.projectshadow.entity.custom.*;
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ProjectShadow.MOD_ID);
@@ -26,6 +23,14 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("crusher_block_entity", () ->
                     BlockEntityType.Builder.of(CrusherBlockEntity::new,
                             ModBlocks.CRUSHER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =
+            BLOCK_ENTITIES.register("mod_sign", () ->
+                    BlockEntityType.Builder.of(ModSignBlockEntity::new,
+                            ModBlocks.FROZEN_SIGN.get(), ModBlocks.FROZEN_WALL_SIGN.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ModHangingSignBlockEntity>> MOD_HANGING_SIGN =
+            BLOCK_ENTITIES.register("mod_hanging_sign", () ->
+                    BlockEntityType.Builder.of(ModHangingSignBlockEntity::new,
+                            ModBlocks.FROZEN_HANGING_SIGN.get(), ModBlocks.FROZEN_WALL_HANGING_SIGN.get()).build(null));
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

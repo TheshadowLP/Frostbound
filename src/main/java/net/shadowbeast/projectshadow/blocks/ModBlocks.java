@@ -24,6 +24,7 @@ import net.shadowbeast.projectshadow.blocks.entities.AlloyFurnace;
 import net.shadowbeast.projectshadow.blocks.entities.Crusher;
 import net.shadowbeast.projectshadow.blocks.entities.WinterFurnace;
 import net.shadowbeast.projectshadow.items.ModItems;
+import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
 
 import java.util.function.Supplier;
@@ -91,16 +92,17 @@ public class  ModBlocks {
 
 
     //NATURAL BLOCKS
-    public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall",
-            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
-    public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall",
-            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+    public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
+    public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+
+    public static final RegistryObject<Block> FROZEN_SIGN = BLOCKS.register("frozen_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.FROZEN));
+    public static final RegistryObject<Block> FROZEN_WALL_SIGN = BLOCKS.register("frozen_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.FROZEN));
+    public static final RegistryObject<Block> FROZEN_HANGING_SIGN = BLOCKS.register("frozen_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.FROZEN));
+    public static final RegistryObject<Block> FROZEN_WALL_HANGING_SIGN = BLOCKS.register("frozen_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.FROZEN));
+
 
 
     //WOOD
