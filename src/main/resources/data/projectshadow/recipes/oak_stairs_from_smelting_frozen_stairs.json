@@ -3,7 +3,7 @@
   "category": "misc",
   "cookingtime": 120,
   "ingredient": {
-    "item": "projectshadow:frost_stairs"
+    "item": "projectshadow:frozen_stairs"
   },
   "result": "minecraft:oak_stairs"
 }

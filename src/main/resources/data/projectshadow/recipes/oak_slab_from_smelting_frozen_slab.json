@@ -3,7 +3,7 @@
   "category": "misc",
   "cookingtime": 120,
   "ingredient": {
-    "item": "projectshadow:frost_planks"
+    "item": "projectshadow:frozen_slab"
   },
-  "result": "minecraft:oak_planks"
+  "result": "minecraft:oak_slab"
 }

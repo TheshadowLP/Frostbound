@@ -26,6 +26,22 @@
     "projectshadow:frozen_stone_brick_wall",
     "projectshadow:alloy_furnace",
     "projectshadow:crusher",
-    "projectshadow:bone_ore"
+    "projectshadow:bone_ore",
+    "projectshadow:copper_brick",
+    "projectshadow:exposed_copper_brick",
+    "projectshadow:oxidized_copper_brick",
+    "projectshadow:weathered_copper_brick",
+    "projectshadow:waxed_copper_brick",
+    "projectshadow:waxed_exposed_copper_brick",
+    "projectshadow:waxed_oxidized_copper_brick",
+    "projectshadow:waxed_weathered_copper_brick",
+    "projectshadow:cut_copper_brick",
+    "projectshadow:exposed_cut_copper_brick",
+    "projectshadow:oxidized_cut_copper_brick",
+    "projectshadow:weathered_cut_copper_brick",
+    "projectshadow:waxed_cut_copper_brick",
+    "projectshadow:waxed_exposed_cut_copper_brick",
+    "projectshadow:waxed_oxidized_cut_copper_brick",
+    "projectshadow:waxed_weathered_cut_copper_brick"
   ]
 }
