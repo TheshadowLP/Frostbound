@@ -99,7 +99,7 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget", ()-> new Item(new Item.Properties()));
 
     //SHIELDS
-    public static final RegistryObject<Item> STEEL_SHIELD = ITEMS.register("steel_shield", ()-> new ShieldItem(new Item.Properties().durability(200)));
+    public static final RegistryObject<Item> STEEL_SHIELD = ITEMS.register("steel_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
 
     //SWORDS
     public static final RegistryObject<Item> AQUANIUM_SWORD = ITEMS.register("aquanium_sword", ()-> new SwordItem(ToolStats.AQUANIUM,3,-2.4F, new Item.Properties()));

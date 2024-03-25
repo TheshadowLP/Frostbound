@@ -14,6 +14,5 @@ public class ModEventBusEvents {
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.FROZEN_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.FROZEN_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
-
     }
 }
