@@ -13,7 +13,7 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "projectshadow:frost_door",
+              "block": "projectshadow:frozen_door",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"

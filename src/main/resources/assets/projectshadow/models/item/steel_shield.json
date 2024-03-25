@@ -1,6 +1,5 @@
 {
 	"texture_size": [64, 64],
-	"gui_light": "front",
 	"textures": {
 		"0": "projectshadow:item/steel_shield",
 		"particle": "projectshadow:item/steel_shield"

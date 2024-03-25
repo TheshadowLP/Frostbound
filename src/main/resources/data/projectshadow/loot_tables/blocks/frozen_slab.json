@@ -11,7 +11,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "projectshadow:frost_slab",
+                  "block": "projectshadow:frozen_slab",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "type": "double"

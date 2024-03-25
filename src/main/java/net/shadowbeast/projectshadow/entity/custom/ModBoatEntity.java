@@ -18,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 import java.util.function.IntFunction;
-
 public class ModBoatEntity extends Boat {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(ModBoatEntity.class, EntityDataSerializers.INT);
     public ModBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
