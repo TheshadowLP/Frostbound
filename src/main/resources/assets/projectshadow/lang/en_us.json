@@ -94,6 +94,9 @@
   "item.projectshadow.ender_arch": "Ender Arch",
   "item.projectshadow.ender_arch_fragment": "Ender Arch Fragment",
 
+  "item.projectshadow.frozen_boat": "Frozen Boat",
+  "item.projectshadow.frozen_chest_boat": "Frozen Chest Boat",
+
 
   "item.projectshadow.gold_powder": "Golden Powder",
   "item.projectshadow.ender_pearl_powder": "Ender Pearl Powder",
@@ -236,6 +239,8 @@
   "item.projectshadow.milk_bottle": "Milk Bottle",
 
   "effect.projectshadow.muddied_eyes": "Muddied Eyes",
+
+  "entity.projectshadow.mod_chest_boat": "Boat with Chest",
 
   "creativetab.dev_tab": "Project Shadow",
   "creativetab.combat": "Project Shadow - Combat",

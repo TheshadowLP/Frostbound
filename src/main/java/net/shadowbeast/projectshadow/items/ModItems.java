@@ -10,6 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ArmorStats;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
@@ -195,6 +196,10 @@ public class ModItems {
     //SIGNS
     public static final RegistryObject<Item> FROZEN_SIGN = ITEMS.register("frozen_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.FROZEN_SIGN.get(), ModBlocks.FROZEN_WALL_SIGN.get()));
     public static final RegistryObject<Item> FROZEN_HANGING_SIGN = ITEMS.register("frozen_hanging_sign", () -> new HangingSignItem(ModBlocks.FROZEN_HANGING_SIGN.get(), ModBlocks.FROZEN_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+    //BOATS
+    public static final RegistryObject<Item> FROZEN_BOAT = ITEMS.register("frozen_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> FROZEN_CHEST_BOAT = ITEMS.register("frozen_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
 
 
     private static @NotNull RegistryObject<Item> registerItemWithTooltips(@NotNull String name, @NotNull Item.Properties pProperties, @NotNull ArmorStats material, @NotNull ArmorItem.Type type, @NotNull Component ShiftOn, @NotNull Component ShiftOff) {
