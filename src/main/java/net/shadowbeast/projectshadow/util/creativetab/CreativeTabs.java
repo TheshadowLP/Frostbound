@@ -42,6 +42,10 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICK_WALL.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
                         pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
+                        pOutput.accept(ModItems.FROZEN_SIGN.get());
+                        pOutput.accept(ModItems.FROZEN_HANGING_SIGN.get());
+                        pOutput.accept(ModItems.FROZEN_BOAT.get());
+                        pOutput.accept(ModItems.FROZEN_CHEST_BOAT.get());
 
                         pOutput.accept(ModBlocks.AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
@@ -142,8 +146,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.WAXED_WEATHERED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.BONE_ORE.get());
-                        pOutput.accept(ModItems.FROZEN_SIGN.get());
-                        pOutput.accept(ModItems.FROZEN_HANGING_SIGN.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
