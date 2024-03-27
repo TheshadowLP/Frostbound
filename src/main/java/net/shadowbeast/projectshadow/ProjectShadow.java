@@ -25,6 +25,7 @@ import net.shadowbeast.projectshadow.blocks.entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
 import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.entity.ModEntities;
+import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
@@ -72,6 +73,7 @@ public class ProjectShadow {
         EntityRenderers.register(ModEntities.MUDBALL_PROJECTILE.get(), ThrownItemRenderer::new);
         EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
         EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
+        ModItemProperties.addCustomItemProperties();
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
