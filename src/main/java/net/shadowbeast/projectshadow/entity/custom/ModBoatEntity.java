@@ -30,7 +30,6 @@ public class ModBoatEntity extends Boat {
         this.yo = pY;
         this.zo = pZ;
     }
-
     @Override
     public @NotNull Item getDropItem() {
         if (Objects.requireNonNull(getModVariant()) == Type.FROZEN) {
@@ -48,17 +47,14 @@ public class ModBoatEntity extends Boat {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, Type.FROZEN.ordinal());
     }
-
     protected void addAdditionalSaveData(CompoundTag pCompound) {
         pCompound.putString("Type", this.getModVariant().getSerializedName());
     }
-
     protected void readAdditionalSaveData(CompoundTag pCompound) {
         if (pCompound.contains("Type", 8)) {
             this.setVariant(ModBoatEntity.Type.byName(pCompound.getString("Type")));
         }
     }
-
     public static enum Type implements StringRepresentable {
         FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
         private final String name;
@@ -70,7 +66,6 @@ public class ModBoatEntity extends Boat {
             this.planks = pPlanks;
         }
         public @NotNull String getSerializedName() { return this.name; }
-
         public String getName() { return this.name; }
         public Block getPlanks() { return this.planks; }
         public String toString() { return this.name; }
