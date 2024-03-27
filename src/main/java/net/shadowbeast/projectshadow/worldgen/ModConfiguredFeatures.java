@@ -19,11 +19,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_KEY = registerKey("frozen");
-
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
-
-        register(context, FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        register(context, FROZEN_KEY, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()),
                 new StraightTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()),
@@ -33,6 +31,6 @@ public class ModConfiguredFeatures {
     public static @NotNull ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(ProjectShadow.MOD_ID, name));
     }
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(@NotNull BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {context.register(key, new ConfiguredFeature<>(feature, configuration));
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(@NotNull BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, FC configuration) {context.register(key, new ConfiguredFeature<>((F) Feature.TREE, configuration));
     }
 }

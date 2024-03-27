@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "sss",
-    "s/s",
-    " / "
-  ],
+  "category": "equipment",
   "key": {
-    "s": {
+    "X": {
       "item": "projectshadow:titanium_ingot"
     },
-    "/": {
+    "#": {
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "XXX",
+    "X#X",
+    " # "
+  ],
   "result": {
-    "item": "projectshadow:titanium_hammer",
-    "count": 1
+    "item": "projectshadow:titanium_hammer"
   }
 }

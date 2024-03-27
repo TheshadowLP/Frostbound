@@ -1,26 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " rd",
-    "ogr",
-    "go "
-  ],
+  "category": "equipment",
   "key": {
-    "g": {
+    "#": {
       "item": "projectshadow:gold_stick"
     },
-    "o": {
+    "G": {
       "item": "minecraft:gold_ingot"
     },
-    "r": {
+    "R": {
       "item": "minecraft:redstone"
     },
-    "d": {
+    "D": {
       "item": "minecraft:diamond"
     }
   },
+  "pattern": [
+    " RD",
+    "G#R",
+    "#G "
+  ],
   "result": {
-    "item": "projectshadow:heal_staff",
-    "count": 1
+    "item": "projectshadow:heal_staff"
   }
 }

@@ -1,26 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " uo",
-    " su",
-    "d  "
-  ],
+  "category": "equipment",
   "key": {
-    "o": {
+    "E": {
       "item": "minecraft:ender_pearl"
     },
-    "u": {
+    "X": {
       "item": "projectshadow:ender_arch_fragment"
     },
-    "s": {
+    "S": {
       "item": "minecraft:stick"
     },
-    "d": {
+    "#": {
       "item": "minecraft:diamond"
     }
   },
+  "pattern": [
+    " XE",
+    " SX",
+    "#  "
+  ],
   "result": {
-    "item": "projectshadow:teleportation_staff",
-    "count": 1
+    "item": "projectshadow:teleportation_staff"
   }
 }

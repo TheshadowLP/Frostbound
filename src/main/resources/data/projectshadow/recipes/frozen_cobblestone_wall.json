@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ppp",
-    "ppp"
-  ],
+  "category": "misc",
   "key": {
-    "p": {
+    "#": {
       "item": "projectshadow:frozen_cobblestone"
     }
   },
+  "pattern": [
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:frozen_cobblestone_wall",
-    "count": 6
+    "count": 6,
+    "item": "projectshadow:frozen_cobblestone_wall"
   }
 }

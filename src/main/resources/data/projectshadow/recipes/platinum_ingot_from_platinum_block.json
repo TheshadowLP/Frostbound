@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "platinum_ingot",
+  "ingredients": [
+    {
+      "item": "projectshadow:platinum_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "projectshadow:platinum_ingot"
+  }
+}

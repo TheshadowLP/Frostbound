@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "enderium_ingot",
+  "key": {
+    "#": {
+      "item": "projectshadow:enderium_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "projectshadow:enderium_ingot"
+  }
+}

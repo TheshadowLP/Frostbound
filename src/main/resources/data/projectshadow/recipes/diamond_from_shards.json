@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ppp",
-    "ppp",
-    "ppp"
-  ],
+  "category": "misc",
   "key": {
-    "p": {
+    "#": {
       "item": "projectshadow:diamond_shard"
     }
   },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "minecraft:diamond",
-    "count": 1
+    "item": "minecraft:diamond"
   }
 }

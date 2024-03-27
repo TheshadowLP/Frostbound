@@ -27,7 +27,6 @@ public enum ToolStats implements Tier {
     private final float attackDamage;
     private final int enchantability;
     private final Ingredient repairMaterial;
-
     ToolStats(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability) {
         this(harvestLevel, maxUses, efficiency, attackDamage, enchantability, Items.AIR);
     }
@@ -43,32 +42,26 @@ public enum ToolStats implements Tier {
         this.enchantability = enchantabilityIn;
         this.repairMaterial = Ingredient.of(repairMaterialIn);
     }
-
     @Override
     public int getUses() {
         return maxUses;
     }
-
     @Override
     public float getSpeed() {
         return efficiency;
     }
-
     @Override
     public float getAttackDamageBonus() {
         return attackDamage;
     }
-
     @Override
     public int getLevel() {
         return harvestLevel;
     }
-
     @Override
     public int getEnchantmentValue() {
         return enchantability;
     }
-
     @Override
     public @NotNull Ingredient getRepairIngredient() {
         return repairMaterial;

@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/fusion_furnace_gui.png");
-
     public AlloyFurnaceScreen(AlloyFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }

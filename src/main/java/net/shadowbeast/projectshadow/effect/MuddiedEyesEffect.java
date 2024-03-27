@@ -11,7 +11,6 @@ public class MuddiedEyesEffect extends MobEffect {
     public MuddiedEyesEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }
-
     @Override
     public void applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
         if (!pLivingEntity.level().isClientSide()) {

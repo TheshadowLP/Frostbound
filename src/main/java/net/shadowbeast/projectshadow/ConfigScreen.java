@@ -10,12 +10,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class ConfigScreen extends Screen {
     private final Screen previous;
-
     public ConfigScreen(Screen previous) {
         super(Component.literal("Project Shadow Configuration"));
         this.previous = previous;
     }
-
     @Override
     protected void init() {
         this.addRenderableWidget(CycleButton.onOffBuilder(Config.snowballsDoesDamage)
@@ -27,13 +25,11 @@ public class ConfigScreen extends Screen {
                 .create(this.width / 2 - 75, this.height / 4, 155, 20,
                         Component.literal("Baked Potatoes Do Damage"), (button, value) -> Config.bakedPotatoesDoDamage = value));
     }
-
     @Override
     public void onClose() {
         assert this.minecraft != null;
         this.minecraft.setScreen(previous);
     }
-
     @Override
     public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
         this.renderDirtBackground(pGuiGraphics);

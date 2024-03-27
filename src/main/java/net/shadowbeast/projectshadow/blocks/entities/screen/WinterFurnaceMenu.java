@@ -14,14 +14,12 @@ public class WinterFurnaceMenu extends AbstractFurnaceMenu {
     protected WinterFurnaceMenu(int pContainerId, Inventory pPlayerInventory, FriendlyByteBuf friendlyByteBuf) {
         this(pContainerId, pPlayerInventory);
     }
-
     public WinterFurnaceMenu(int pContainerId, Inventory pPlayerInventory, Container container, ContainerData data) {
         super(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory, container, data);
     }
     public WinterFurnaceMenu(int pContainerId, Inventory pPlayerInventory) {
         super(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory);
     }
-
     @Override
     protected boolean isFuel(@NotNull ItemStack pStack) {
         return true;

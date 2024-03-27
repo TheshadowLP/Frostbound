@@ -1,17 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "s  ",
-    "ss ",
-    "sss"
-  ],
+  "category": "building",
+  "group": "wooden_stairs",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_planks"
     }
   },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:frozen_stairs",
-    "count": 4
+    "count": 4,
+    "item": "projectshadow:frozen_stairs"
   }
 }

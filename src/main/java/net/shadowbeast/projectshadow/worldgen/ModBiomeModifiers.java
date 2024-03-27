@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_FROZEN = registerKey("add_tree_frozen");
-
     public static void bootstrap(@NotNull BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -24,8 +23,6 @@ public class ModBiomeModifiers {
                 biomes.getOrThrow(Tags.Biomes.IS_COLD),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FROZEN_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
-
-
     }
     private static @NotNull ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(ProjectShadow.MOD_ID, name));

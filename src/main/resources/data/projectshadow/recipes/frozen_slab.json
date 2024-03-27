@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "sss"
-  ],
+  "category": "building",
+  "group": "wooden_slab",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_planks"
     }
   },
+  "pattern": [
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:frozen_slab",
-    "count": 6
+    "count": 6,
+    "item": "projectshadow:frozen_slab"
   }
 }

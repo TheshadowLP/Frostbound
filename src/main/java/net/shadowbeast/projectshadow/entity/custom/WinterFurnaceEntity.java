@@ -30,17 +30,14 @@ public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
     public WinterFurnaceEntity(BlockPos pPos, BlockState pBlockState){
         super(ModBlockEntities.WINTER_FURNACE_ENTITY.get(), pPos, pBlockState, WinterFurnaceRecipe.Type.INSTANCE);
     }
-
     @Override
     protected @NotNull Component getDefaultName() {
         return Component.translatable("block.projectshadow.winter_furnace");
     }
-
     @Override
     protected @NotNull AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory) {
         return new WinterFurnaceMenu(pContainerId, pInventory, this, dataAccess);
     }
-
     @Override
     protected int getBurnDuration(ItemStack pFuel) {
         return BURN_DURATION_MAP.getOrDefault(pFuel.getItem(),0);

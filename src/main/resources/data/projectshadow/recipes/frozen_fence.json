@@ -1,19 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "s/s",
-    "s/s"
-  ],
+  "category": "misc",
+  "group": "wooden_fence",
   "key": {
-    "s": {
+    "X": {
       "item": "projectshadow:frozen_planks"
     },
-    "/": {
+    "#": {
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "X#X",
+    "X#X"
+  ],
   "result": {
-    "item": "projectshadow:frozen_fence",
-    "count": 3
+    "count": 3,
+    "item": "projectshadow:frozen_fence"
   }
 }

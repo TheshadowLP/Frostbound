@@ -29,25 +29,20 @@ public class ModBoatRenderer extends BoatRenderer {
     private static String getTextureLocation(ModBoatEntity.Type pType, boolean pChestBoat) {
         return pChestBoat ? "textures/entity/chest_boat/" + pType.getName() + ".png" : "textures/entity/boat/" + pType.getName() + ".png";
     }
-
     private ListModel<Boat> createBoatModel(EntityRendererProvider.Context pContext, ModBoatEntity.Type pType, boolean pChestBoat) {
         ModelLayerLocation modellayerlocation = pChestBoat ? ModBoatRenderer.createChestBoatModelName(pType) : ModBoatRenderer.createBoatModelName(pType);
         ModelPart modelpart = pContext.bakeLayer(modellayerlocation);
         return pChestBoat ? new ChestBoatModel(modelpart) : new BoatModel(modelpart);
     }
-
     public static ModelLayerLocation createBoatModelName(ModBoatEntity.Type pType) {
         return createLocation("boat/" + pType.getName());
     }
-
     public static ModelLayerLocation createChestBoatModelName(ModBoatEntity.Type pType) {
         return createLocation("chest_boat/" + pType.getName());
     }
-
     private static ModelLayerLocation createLocation(String pPath) {
         return new ModelLayerLocation(new ResourceLocation(ProjectShadow.MOD_ID, pPath), "main");
     }
-
     public @NotNull Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(@NotNull Boat boat) {
         if(boat instanceof ModBoatEntity modBoat) {
             return this.boatResources.get(modBoat.getModVariant());

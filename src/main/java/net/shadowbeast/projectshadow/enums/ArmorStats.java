@@ -31,9 +31,7 @@ public enum ArmorStats implements ArmorMaterial {
     private final float toughness;
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
-
     private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
-
     ArmorStats(String name, int durabilityMultiplier, int[] protectAmounts, int enchantmentValue,
                      SoundEvent equipSound, float toughness, float knockbackResistance,
                      Supplier<Ingredient> repairIngredient) {
@@ -46,42 +44,34 @@ public enum ArmorStats implements ArmorMaterial {
         this.knockbackResistance = knockbackResistance;
         this.repairIngredient = repairIngredient;
     }
-
     @Override
     public int getDurabilityForType(ArmorItem.Type pType) {
         return BASE_DURABILITY[pType.ordinal()] * this.durabilityMultiplier;
     }
-
     @Override
     public int getDefenseForType(ArmorItem.Type pType) {
         return this.protectAmounts[pType.ordinal()];
     }
-
     @Override
     public int getEnchantmentValue() {
         return this.enchantmentValue;
     }
-
     @Override
     public SoundEvent getEquipSound() {
         return this.equipSound;
     }
-
     @Override
     public Ingredient getRepairIngredient() {
         return this.repairIngredient.get();
     }
-
     @Override
     public String getName() {
         return ProjectShadow.MOD_ID + ":" + this.name;
     }
-
     @Override
     public float getToughness() {
         return this.toughness;
     }
-
     @Override
     public float getKnockbackResistance() {
         return this.knockbackResistance;

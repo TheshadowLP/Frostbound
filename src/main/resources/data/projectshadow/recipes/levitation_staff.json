@@ -1,26 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " rd",
-    "ogr",
-    "go "
-  ],
+  "category": "equipment",
   "key": {
-    "g": {
+    "#": {
       "item": "projectshadow:silver_stick"
     },
-    "o": {
+    "X": {
       "item": "minecraft:iron_ingot"
     },
-    "r": {
+    "P": {
       "item": "projectshadow:iron_powder"
     },
-    "d": {
+    "D": {
       "item": "minecraft:feather"
     }
   },
+  "pattern": [
+    " PD",
+    "X#P",
+    "#X "
+  ],
   "result": {
-    "item": "projectshadow:levitation_staff",
-    "count": 1
+    "item": "projectshadow:levitation_staff"
   }
 }

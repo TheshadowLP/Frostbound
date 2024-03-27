@@ -35,11 +35,11 @@ public class  ModBlocks {
 
     // Block Entities
     public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
-    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new Crusher(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion().requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).noOcclusion()));
+    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new Crusher(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 
     //CROPS
-    public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop", () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop", () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
     //ORES
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
@@ -87,144 +87,44 @@ public class  ModBlocks {
     public static final RegistryObject<Block> WAXED_WEATHERED_CUT_COPPER_BRICK = registerBlock("waxed_weathered_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_WEATHERED_COPPER).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WAXED_OXIDIZED_CUT_COPPER_BRICK = registerBlock("waxed_oxidized_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
 
-
-
-
-
     //NATURAL BLOCKS
-    public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F)));
     public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
+    //SIGNS
     public static final RegistryObject<Block> FROZEN_SIGN = BLOCKS.register("frozen_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.FROZEN));
     public static final RegistryObject<Block> FROZEN_WALL_SIGN = BLOCKS.register("frozen_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.FROZEN));
     public static final RegistryObject<Block> FROZEN_HANGING_SIGN = BLOCKS.register("frozen_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.FROZEN));
     public static final RegistryObject<Block> FROZEN_WALL_HANGING_SIGN = BLOCKS.register("frozen_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.FROZEN));
 
+    //WOOD STUFF
+    public static final RegistryObject<Block> FROZEN_LOG = registerBlock("frozen_log", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> FROZEN_WOOD = registerBlock("frozen_wood", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_FROZEN_LOG = registerBlock("stripped_frozen_log", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_FROZEN_WOOD = registerBlock("stripped_frozen_wood", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> FROZEN_PRESSURE_PLATE = registerBlock("frozen_pressure_plate", ()-> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final RegistryObject<Block> FROZEN_DOOR = registerBlock("frozen_door", ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR),BlockSetType.OAK));
+    public static final RegistryObject<Block> FROZEN_TRAPDOOR = registerBlock("frozen_trapdoor", ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR),BlockSetType.OAK));
+    public static final RegistryObject<Block> FROZEN_BUTTON = registerBlock("frozen_button", ()-> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK,30,true));
+    public static final RegistryObject<Block> FROZEN_STAIRS = registerBlock("frozen_stairs", ()-> new StairBlock(() -> ModBlocks.FROZEN_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 20;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 5;}});
+    public static final RegistryObject<Block> FROZEN_FENCE = registerBlock("frozen_fence", ()-> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 20;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 5;}});
+    public static final RegistryObject<Block> FROZEN_FENCE_GATE = registerBlock("frozen_fence_gate", ()-> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN,SoundEvents.FENCE_GATE_CLOSE){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 20;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 5;}});
+    public static final RegistryObject<Block> FROZEN_SLAB = registerBlock("frozen_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 20;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 5;}});
+    public static final RegistryObject<Block> FROZEN_PLANKS = registerBlock("frozen_planks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 20;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 5;}});
+    public static final RegistryObject<Block> FROZEN_SAPLING= registerBlock("frozen_sapling", ()-> new SaplingBlock(new FrozenTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops()));
+
+    //LEAVES
+    public static final RegistryObject<Block> FROZEN_LEAVES = registerBlock("frozen_leaves", ()-> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 30;}});
 
 
-    //WOOD
-    public static final RegistryObject<Block> FROZEN_LOG = registerBlock("frozen_log",
-            ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
-    public static final RegistryObject<Block> FROZEN_WOOD = registerBlock("frozen_wood",
-            ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
-    public static final RegistryObject<Block> STRIPPED_FROZEN_LOG = registerBlock("stripped_frozen_log",
-            ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
-    public static final RegistryObject<Block> STRIPPED_FROZEN_WOOD = registerBlock("stripped_frozen_wood",
-            ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
-    public static final RegistryObject<Block> FROZEN_PRESSURE_PLATE = registerBlock("frozen_pressure_plate",
-            ()-> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
-                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
-    public static final RegistryObject<Block> FROZEN_DOOR = registerBlock("frozen_door",
-            ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR),BlockSetType.OAK));
-    public static final RegistryObject<Block> FROZEN_TRAPDOOR = registerBlock("frozen_trapdoor",
-            ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR),BlockSetType.OAK));
-    public static final RegistryObject<Block> FROZEN_BUTTON = registerBlock("frozen_button",
-            ()-> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK,30,true));
-    public static final RegistryObject<Block> FROZEN_STAIRS = registerBlock("frozen_stairs",
-            ()-> new StairBlock(() -> ModBlocks.FROZEN_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 20;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-    public static final RegistryObject<Block> FROZEN_FENCE = registerBlock("frozen_fence",
-            ()-> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 20;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-    public static final RegistryObject<Block> FROZEN_FENCE_GATE = registerBlock("frozen_fence_gate",
-            ()-> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN,SoundEvents.FENCE_GATE_CLOSE){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 20;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-    public static final RegistryObject<Block> FROZEN_SLAB = registerBlock("frozen_slab",
-            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 20;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-    public static final RegistryObject<Block> FROZEN_PLANKS = registerBlock("frozen_planks",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 20;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-    public static final RegistryObject<Block> FROZEN_LEAVES = registerBlock("frozen_leaves",
-            ()-> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-            });
-    public static final RegistryObject<Block> FROZEN_SAPLING= registerBlock("frozen_sapling",
-            ()-> new SaplingBlock(new FrozenTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops()));
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
-        return toReturn;
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn);return toReturn;
     }
-    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-    public static void register(IEventBus eventBus){
-        BLOCKS.register(eventBus);
+    public static void register(IEventBus eventBus){BLOCKS.register(eventBus);
     }
 }

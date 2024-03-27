@@ -21,22 +21,17 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
     public @NotNull ItemStack getToastSymbol(){
         return new ItemStack(ModBlocks.WINTER_FURNACE.get());
     }
-
-
     @Override
     public @NotNull RecipeType<?> getType(){
         return Type.INSTANCE;
     }
-
     @Override
     public @NotNull RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
-
     public static class Type implements RecipeType<WinterFurnaceRecipe>{
         public static final Type INSTANCE = new Type();
     }
-
     public static class Serializer implements RecipeSerializer<WinterFurnaceRecipe>{
         private final int defaultCookingTime;
         public static final WinterFurnaceRecipe.Serializer INSTANCE = new Serializer(50);
@@ -44,7 +39,6 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
 
             this.defaultCookingTime = defaultCookingTime;
         }
-
         public @NotNull WinterFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
             CookingBookCategory cookingbookcategory = CookingBookCategory.CODEC.byName(GsonHelper.getAsString(pJson, "category", null), CookingBookCategory.MISC);
@@ -63,7 +57,6 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
             int i = GsonHelper.getAsInt(pJson, "cookingtime", this.defaultCookingTime);
             return new WinterFurnaceRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
         }
-
         public WinterFurnaceRecipe fromNetwork(@NotNull ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             String s = pBuffer.readUtf();
             CookingBookCategory cookingbookcategory = pBuffer.readEnum(CookingBookCategory.class);
@@ -73,7 +66,6 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
             int i = pBuffer.readVarInt();
             return new WinterFurnaceRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
         }
-
         public void toNetwork(FriendlyByteBuf pBuffer, WinterFurnaceRecipe pRecipe) {
             pBuffer.writeUtf(pRecipe.group);
             pBuffer.writeEnum(pRecipe.category());

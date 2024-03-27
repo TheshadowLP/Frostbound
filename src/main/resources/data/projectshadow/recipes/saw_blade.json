@@ -1,20 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " s ",
-    "s/s",
-    " s "
-  ],
+  "category": "misc",
   "key": {
-    "s": {
+    "X": {
       "item": "projectshadow:titanium_ingot"
     },
-    "/": {
+    "#": {
       "item": "projectshadow:iron_plate"
     }
   },
+  "pattern": [
+    " X ",
+    "X#X",
+    " X "
+  ],
   "result": {
-    "item": "projectshadow:saw_blade",
-    "count": 3
+    "count": 3,
+    "item": "projectshadow:saw_blade"
   }
 }

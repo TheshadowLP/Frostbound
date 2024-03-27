@@ -1,7 +1,10 @@
 {
   "values": [
+    "projectshadow:bone_ore",
     "projectshadow:sand_aquanium_ore",
     "projectshadow:silver_ore",
+    "projectshadow:sulfur_ore",
+
     "projectshadow:copper_brick",
     "projectshadow:exposed_copper_brick",
     "projectshadow:oxidized_copper_brick",

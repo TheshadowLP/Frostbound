@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "   ",
-    "sss",
-    "sss"
-  ],
+  "category": "redstone",
+  "group": "wooden_trapdoor",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_planks"
     }
   },
+  "pattern": [
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:frozen_trapdoor",
-    "count": 2
+    "count": 2,
+    "item": "projectshadow:frozen_trapdoor"
   }
 }

@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "s/ ",
-    "/s "
-  ],
+  "category": "building",
   "key": {
-    "/": {
+    "X": {
       "item": "minecraft:copper_ingot"
     },
-    "s": {
+    "#": {
       "item": "minecraft:copper_block"
     }
   },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
   "result": {
     "item": "projectshadow:copper_brick",
     "count": 2

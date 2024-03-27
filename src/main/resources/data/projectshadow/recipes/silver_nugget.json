@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " p "
-  ],
-  "key": {
-    "p": {
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
       "item": "projectshadow:silver_ingot"
     }
-  },
+  ],
   "result": {
-    "item": "projectshadow:silver_nugget",
-    "count": 9
+    "count": 9,
+    "item": "projectshadow:silver_nugget"
   }
 }

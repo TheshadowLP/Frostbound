@@ -107,7 +107,6 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("crushing.progress");
     }
-
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  CrusherBlockEntity pBlockEntity) {
         if(hasRecipe(pBlockEntity)) {
             pBlockEntity.progress++;

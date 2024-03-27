@@ -9,9 +9,7 @@ import net.shadowbeast.projectshadow.recipes.WinterFurnaceRecipeBookComponent;
 
 
 public class WinterFurnaceScreen extends AbstractFurnaceScreen<WinterFurnaceMenu> {
-
     private static final ResourceLocation TEXTURE = new ResourceLocation(ProjectShadow.MOD_ID,"textures/gui/winter_furnace.png");
-
     public WinterFurnaceScreen(WinterFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, new WinterFurnaceRecipeBookComponent(), pPlayerInventory, pTitle, TEXTURE);
     }

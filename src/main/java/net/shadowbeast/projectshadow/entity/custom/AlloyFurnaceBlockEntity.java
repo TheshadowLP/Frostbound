@@ -30,9 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
-
-
-
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     public static class AlloyFurnaceSlot {
         public static final int FUEL_SLOT = 0;
@@ -47,13 +44,10 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             setChanged();
         }
     };
-
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-
     public final ContainerData data;
     private int progress = 0;
     private int maxProgress = 260;
-
     public  AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -64,77 +58,64 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                     default -> 0;
                 };
             }
-
             public void set(int index, int value) {
                 switch (index) {
                     case 0 -> AlloyFurnaceBlockEntity.this.progress = value;
                     case 1 -> AlloyFurnaceBlockEntity.this.maxProgress = value;
                 }
             }
-
             public int getCount() {
                 return 2;
             }
         };
     }
-
     @Override
     public @NotNull Component getDisplayName() {
         return Component.literal("Alloy Furnace");
     }
-
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory, @NotNull Player pPlayer) {
         return new AlloyFurnaceMenu(pContainerId, pInventory, this, this.data);
     }
-
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             return lazyItemHandler.cast();
         }
-
         return super.getCapability(cap, side);
     }
-
     @Override
     public void onLoad() {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
-
     @Override
     public void invalidateCaps()  {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
-
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
         tag.putInt("alloy_furnace.progress", progress);
         super.saveAdditional(tag);
     }
-
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("alloy_furnace.progress");
     }
-
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
-
         assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  AlloyFurnaceBlockEntity pBlockEntity) {
         if(hasRecipe(pBlockEntity)) {
             pBlockEntity.progress++;
@@ -147,14 +128,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             setChanged(pLevel, pPos, pState);
         }
     }
-
     private static boolean hasRecipe( AlloyFurnaceBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
-
         assert level != null;
         Optional<AlloyFurnaceRecipe> match = level.getRecipeManager()
                 .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
@@ -163,14 +142,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
                 && hasItemInFuelSlot(entity);
     }
-
     private static boolean hasItemInFuelSlot(AlloyFurnaceBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
 
     }
 
-    private static void craftItem(AlloyFurnaceBlockEntity entity) {
-        Level level = entity.level;
+    private static void craftItem(AlloyFurnaceBlockEntity entity) {Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
@@ -198,16 +175,13 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         handler.setStackInSlot(Slot, new ItemStack(pItem,
                 handler.getStackInSlot(Slot).getCount() + 1));
     }
-
     private void resetProgress() {
         this.progress = 0;
     }
-
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
         return inventory.getItem(AlloyFurnaceSlot.OUTPUT_SLOT).getItem() == output.getItem()
                 || inventory.getItem(AlloyFurnaceSlot.OUTPUT_SLOT).isEmpty();
     }
-
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
         return inventory.getItem(AlloyFurnaceSlot.OUTPUT_SLOT).getMaxStackSize()
                 > inventory.getItem(AlloyFurnaceSlot.OUTPUT_SLOT).getCount();

@@ -39,7 +39,6 @@ import org.slf4j.Logger;
 public class ProjectShadow {
     public static final String MOD_ID = "projectshadow";
     private static final Logger LOGGER = LogUtils.getLogger();
-
     public ProjectShadow() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -61,14 +60,10 @@ public class ProjectShadow {
         modEventBus.addListener(this::addCreative);
 
     }
-
     private void commonSetup(final FMLCommonSetupEvent event) {}
-
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
-
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {}
-
     private void clientSetup(final FMLClientSetupEvent event) {
         Sheets.addWoodType(ModWoodTypes.FROZEN);
         MenuScreens.register(ModMenuTypes.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
