@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "category": "misc",
-  "cookingtime": 120,
-  "ingredient": {
-    "item": "projectshadow:frozen_stairs"
-  },
-  "result": "minecraft:oak_stairs"
-}

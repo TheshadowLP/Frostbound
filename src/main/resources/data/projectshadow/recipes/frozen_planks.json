@@ -1,15 +1,14 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "s  "
-  ],
-  "key": {
-    "s": {
-      "item": "projectshadow:stripped_frozen_log"
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "projectshadow:frozen_logs"
     }
-  },
+  ],
   "result": {
-    "item": "projectshadow:frozen_planks",
-    "count": 4
+    "count": 4,
+    "item": "projectshadow:frozen_planks"
   }
 }
