@@ -40,13 +40,13 @@ public class ModChestBoatEntity extends ChestBoat {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, ModBoatEntity.Type.FROZEN.ordinal());
     }
-    protected void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putString("Type", this.getModVariant().getSerializedName());
+    protected void addAdditionalSaveData(@NotNull CompoundTag pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        this.addChestVehicleSaveData(pCompound);
     }
-    protected void readAdditionalSaveData(CompoundTag pCompound) {
-        if (pCompound.contains("Type", 8)) {
-            this.setVariant(ModBoatEntity.Type.byName(pCompound.getString("Type")));
-        }
+    protected void readAdditionalSaveData(@NotNull CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        this.readChestVehicleSaveData(pCompound);
     }
     public ModBoatEntity.Type getModVariant() {
         return ModBoatEntity.Type.byId(this.entityData.get(DATA_ID_TYPE));
