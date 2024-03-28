@@ -50,7 +50,7 @@ public class SteelArmor extends ArmorItem {
     private void addStatusEffectForMaterial(Player player, MobEffectInstance pEffect) {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
-        if(hasCorrectArmorOn(player) && !hasPlayerEffect && player.hasEffect(MobEffects.DAMAGE_BOOST)) {
+        if(hasCorrectArmorOn(player) && !hasPlayerEffect) {
             player.addEffect(pEffect);
         }
     }
