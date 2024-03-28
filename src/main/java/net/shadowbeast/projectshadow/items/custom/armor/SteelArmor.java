@@ -38,7 +38,6 @@ public class SteelArmor extends ArmorItem {
             }
         }
     }
-
     private void evaluateArmorEffects(Player player) {
         for(Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             MobEffectInstance mapStatusEffect = entry.getValue();
@@ -48,7 +47,6 @@ public class SteelArmor extends ArmorItem {
             }
         }
     }
-
     private void addStatusEffectForMaterial(Player player, MobEffectInstance pEffect) {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
@@ -56,7 +54,6 @@ public class SteelArmor extends ArmorItem {
             player.addEffect(pEffect);
         }
     }
-
     private boolean hasCorrectArmorOn(Player player) {
         for(ItemStack armorStack : player.getInventory().armor) {
             if(!(armorStack.getItem() instanceof ArmorItem)) {
@@ -71,7 +68,6 @@ public class SteelArmor extends ArmorItem {
         return helmet.getMaterial() == ArmorStats.STEEL && chestplate.getMaterial() == ArmorStats.STEEL
                 && leggings.getMaterial() == ArmorStats.STEEL && boots.getMaterial() == ArmorStats.STEEL;
     }
-
     private boolean hasFullSuitOfArmorOn(Player player) {
         ItemStack helmet = player.getInventory().getArmor(0);
         ItemStack chestplate = player.getInventory().getArmor(1);
@@ -81,7 +77,6 @@ public class SteelArmor extends ArmorItem {
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
-
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
@@ -89,8 +84,7 @@ public class SteelArmor extends ArmorItem {
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set"));
         }
-    }
-    public static SteelArmor getInstance(Type ptype) {
+    }public static SteelArmor getInstance(Type ptype) {
         return new SteelArmor(ArmorStats.STEEL, ptype, new Properties().stacksTo(1));
     }
 }

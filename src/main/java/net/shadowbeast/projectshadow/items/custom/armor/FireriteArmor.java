@@ -40,7 +40,6 @@ public class FireriteArmor extends ArmorItem {
             }
         }
     }
-
     private void evaluateArmorEffects(Player player) {
         for(Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             MobEffectInstance mapStatusEffect = entry.getValue();
@@ -50,7 +49,6 @@ public class FireriteArmor extends ArmorItem {
             }
         }
     }
-
     private void addStatusEffectForMaterial(Player player, MobEffectInstance pEffect) {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
@@ -58,7 +56,6 @@ public class FireriteArmor extends ArmorItem {
             player.addEffect(pEffect);
         }
     }
-
     private boolean hasCorrectArmorOn(Player player) {
         for(ItemStack armorStack : player.getInventory().armor) {
             if(!(armorStack.getItem() instanceof ArmorItem)) {
@@ -73,7 +70,6 @@ public class FireriteArmor extends ArmorItem {
         return helmet.getMaterial() == ArmorStats.FIRERITE && chestplate.getMaterial() == ArmorStats.FIRERITE
                 && leggings.getMaterial() == ArmorStats.FIRERITE && boots.getMaterial() == ArmorStats.FIRERITE;
     }
-
     private boolean hasFullSuitOfArmorOn(Player player) {
         ItemStack helmet = player.getInventory().getArmor(0);
         ItemStack chestplate = player.getInventory().getArmor(1);
@@ -83,7 +79,6 @@ public class FireriteArmor extends ArmorItem {
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
-
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {

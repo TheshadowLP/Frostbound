@@ -38,7 +38,6 @@ public class FrozenArmor extends ArmorItem {
             }
         }
     }
-
     private void evaluateArmorEffects(Player player) {
         for(Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             MobEffectInstance mapStatusEffect = entry.getValue();
@@ -48,7 +47,6 @@ public class FrozenArmor extends ArmorItem {
             }
         }
     }
-
     private void addStatusEffectForMaterial(Player player, MobEffectInstance pEffect) {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
@@ -56,7 +54,6 @@ public class FrozenArmor extends ArmorItem {
             // player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for frozen armor
         }
     }
-
     private boolean hasCorrectArmorOn(Player player) {
         for(ItemStack armorStack : player.getInventory().armor) {
             if(!(armorStack.getItem() instanceof ArmorItem)) {
@@ -68,10 +65,9 @@ public class FrozenArmor extends ArmorItem {
         ArmorItem leggings = ((ArmorItem) player.getInventory().getArmor(2).getItem());
         ArmorItem boots = ((ArmorItem) player.getInventory().getArmor(3).getItem());
 
-        return helmet.getMaterial() == ArmorStats.FIRERITE && chestplate.getMaterial() == ArmorStats.FIRERITE
-                && leggings.getMaterial() == ArmorStats.FIRERITE && boots.getMaterial() == ArmorStats.FIRERITE;
+        return helmet.getMaterial() == ArmorStats.FROZEN && chestplate.getMaterial() == ArmorStats.FROZEN
+                && leggings.getMaterial() == ArmorStats.FROZEN && boots.getMaterial() == ArmorStats.FROZEN;
     }
-
     private boolean hasFullSuitOfArmorOn(Player player) {
         ItemStack helmet = player.getInventory().getArmor(0);
         ItemStack chestplate = player.getInventory().getArmor(1);
@@ -80,17 +76,14 @@ public class FrozenArmor extends ArmorItem {
 
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
-    }
-
-    @Override
+    }@Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.frozen_set.shift"));
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.frozen_set"));
         }
-    }
-    public static FrozenArmor getInstance(Type ptype) {
+    }public static FrozenArmor getInstance(Type ptype) {
         return new FrozenArmor(ArmorStats.FROZEN, ptype, new Properties().stacksTo(1));
     }
 }
