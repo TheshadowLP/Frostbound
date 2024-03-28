@@ -2,17 +2,13 @@ package net.shadowbeast.projectshadow.items;
 
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.*;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
-import net.shadowbeast.projectshadow.items.custom.armor.FireriteArmor;
-import net.shadowbeast.projectshadow.items.custom.armor.FrozenArmor;
-import net.shadowbeast.projectshadow.items.custom.armor.SteelArmor;
+import net.shadowbeast.projectshadow.items.custom.armor.*;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -163,7 +159,7 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_HAMMER = ITEMS.register("titanium_hammer", ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
 
     //STEEL ARMOR
-    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helemt", () -> SteelArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet", () -> SteelArmor.getInstance(ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate", () -> SteelArmor.getInstance(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",() -> SteelArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots", () -> SteelArmor.getInstance(ArmorItem.Type.BOOTS));

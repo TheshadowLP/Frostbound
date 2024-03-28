@@ -87,9 +87,9 @@ public class FireriteArmor extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.firerite_set"));
-        } else {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.firerite_set.shift"));
+        } else {
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.firerite_set"));
         }
     }
 }

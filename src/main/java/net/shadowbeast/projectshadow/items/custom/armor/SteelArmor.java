@@ -85,9 +85,9 @@ public class SteelArmor extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set"));
-        } else {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set.shift"));
+        } else {
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set"));
         }
     }
     public static SteelArmor getInstance(Type ptype) {

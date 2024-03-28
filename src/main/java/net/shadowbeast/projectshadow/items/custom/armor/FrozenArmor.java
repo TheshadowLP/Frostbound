@@ -85,9 +85,9 @@ public class FrozenArmor extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.frozen_set"));
-        } else {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.frozen_set.shift"));
+        } else {
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.frozen_set"));
         }
     }
     public static FrozenArmor getInstance(Type ptype) {
