@@ -24,8 +24,8 @@ import java.util.Map;
 public class FrozenArmor extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ArmorStats.FROZEN, new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200,
-                            0, false, false, false)).build();
+                    .put(ArmorStats.FROZEN, new MobEffectInstance(MobEffects.DOLPHINS_GRACE // PLACEHOLDER
+                            , 200, 0, false, false, false)).build();
     private FrozenArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
