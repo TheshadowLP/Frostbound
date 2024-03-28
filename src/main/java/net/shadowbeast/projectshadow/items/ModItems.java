@@ -1,9 +1,6 @@
 package net.shadowbeast.projectshadow.items;
 
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,13 +8,11 @@ import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
-import net.shadowbeast.projectshadow.enums.ArmorStats;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
+import net.shadowbeast.projectshadow.items.custom.armor.FireriteArmor;
+import net.shadowbeast.projectshadow.items.custom.armor.FrozenArmor;
+import net.shadowbeast.projectshadow.items.custom.armor.SteelArmor;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -168,22 +163,22 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_HAMMER = ITEMS.register("titanium_hammer", ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
 
     //STEEL ARMOR
-    public static final RegistryObject<Item> STEEL_HELMET = registerItemWithTooltips("steel_helmet", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
-    public static final RegistryObject<Item> STEEL_CHESTPLATE = registerItemWithTooltips("steel_chestplate", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
-    public static final RegistryObject<Item> STEEL_LEGGINGS = registerItemWithTooltips("steel_leggings", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
-    public static final RegistryObject<Item> STEEL_BOOTS = registerItemWithTooltips("steel_boots", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
+    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helemt", () -> SteelArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate", () -> SteelArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",() -> SteelArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots", () -> SteelArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //FIRERITE ARMOR
-    public static final RegistryObject<Item> FIRERITE_HELMET = registerItemWithTooltips("firerite_helmet", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
-    public static final RegistryObject<Item> FIRERITE_CHESTPLATE = registerItemWithTooltips("firerite_chestplate", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
-    public static final RegistryObject<Item> FIRERITE_LEGGINGS = registerItemWithTooltips("firerite_leggings", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
-    public static final RegistryObject<Item> FIRERITE_BOOTS = registerItemWithTooltips("firerite_boots", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
+    public static final RegistryObject<Item> FIRERITE_HELMET = ITEMS.register("firerite_helmet",() -> FireriteArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> FIRERITE_CHESTPLATE = ITEMS.register("firerite_chestplate", () -> FireriteArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> FIRERITE_LEGGINGS = ITEMS.register("firerite_leggings", () -> FireriteArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> FIRERITE_BOOTS = ITEMS.register("firerite_boots", () -> FireriteArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //FROZEN ARMOR
-    public static final RegistryObject<Item> FROZEN_HELMET = registerItemWithTooltips("frozen_helmet", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
-    public static final RegistryObject<Item> FROZEN_CHESTPLATE = registerItemWithTooltips("frozen_chestplate", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
-    public static final RegistryObject<Item> FROZEN_LEGGINGS = registerItemWithTooltips("frozen_leggings", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
-    public static final RegistryObject<Item> FROZEN_BOOTS = registerItemWithTooltips("frozen_boots", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
+    public static final RegistryObject<Item> FROZEN_HELMET = ITEMS.register("frozen_helmet", () -> FrozenArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> FROZEN_CHESTPLATE = ITEMS.register("frozen_chestplate", () -> FrozenArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> FROZEN_LEGGINGS = ITEMS.register("frozen_leggings", () -> FrozenArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> FROZEN_BOOTS = ITEMS.register("frozen_boots", () -> FrozenArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
@@ -200,20 +195,6 @@ public class ModItems {
     //BOATS
     public static final RegistryObject<Item> FROZEN_BOAT = ITEMS.register("frozen_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> FROZEN_CHEST_BOAT = ITEMS.register("frozen_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
-
-
-    private static @NotNull RegistryObject<Item> registerItemWithTooltips(@NotNull String name, @NotNull Item.Properties pProperties, @NotNull ArmorStats material, @NotNull ArmorItem.Type type, @NotNull Component ShiftOn, @NotNull Component ShiftOff) {
-        return ITEMS.register(name, () -> new ModArmorItem(material, type, pProperties) {
-            @Override
-            public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
-                if(Screen.hasShiftDown()) {
-                    pTooltipComponents.add(ShiftOn);
-                } else {
-                    pTooltipComponents.add(ShiftOff);
-                }
-            }
-        } );
-    }
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
