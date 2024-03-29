@@ -199,7 +199,18 @@
   "item.projectshadow.frozen_sword": "Frozen Sword",
 
 
+  "item.projectshadow.silver_shield": "Silver Shield",
+  "item.projectshadow.copper_shield": "Copper Shield",
+  "item.projectshadow.gold_shield": "Gold Shield",
+  "item.projectshadow.platinum_shield": "Platinum Shield",
   "item.projectshadow.steel_shield": "Steel Shield",
+  "item.projectshadow.titanium_shield": "Titanium Shield",
+  "item.projectshadow.luminite_shield": "Steel Shield",
+  "item.projectshadow.aquanium_shield": "Aquanium Shield",
+  "item.projectshadow.frozen_shield": "Frozen Shield",
+  "item.projectshadow.firerite_shield": "Firerite Shield",
+  "item.projectshadow.enderium_shield": "Enderium Shield",
+
 
 
   "item.projectshadow.heal_staff": "Heal Staff",
