@@ -182,7 +182,9 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LEVITATION_STAFF.get());
                         pOutput.accept(ModItems.TELEPORTATION_STAFF.get());
 
+                        pOutput.accept(ModItems.SILVER_SHIELD.get());
                         pOutput.accept(ModItems.GOLD_SHIELD.get());
+                        pOutput.accept(ModItems.COPPER_SHIELD.get());
                         pOutput.accept(ModItems.PLATINUM_SHIELD.get());
                         pOutput.accept(ModItems.STEEL_SHIELD.get());
                         pOutput.accept(ModItems.TITANIUM_SHIELD.get());
@@ -291,9 +293,11 @@ public class CreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))
                     .title(Component.translatable("creativetab.drinks"))
                     .displayItems((pParameters, pOutput) ->{
+                        pOutput.accept(ModItems.KOHLRABI.get());
+                        pOutput.accept(ModItems.PEPPER.get());
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
-                        pOutput.accept(ModItems.PEPPER.get());
+                        pOutput.accept(ModItems.KOHLRABI_SEEDS.get());
                         pOutput.accept(ModItems.PEPPER_SEEDS.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());
                     })

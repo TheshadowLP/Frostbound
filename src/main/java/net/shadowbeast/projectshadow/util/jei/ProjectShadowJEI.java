@@ -25,23 +25,20 @@ public class ProjectShadowJEI implements IModPlugin {
     public ResourceLocation getPluginUid() {
         return new ResourceLocation(ProjectShadow.MOD_ID, "jei_plugin");
     }
-
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new CrushingCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new AlloyingCategory(registration.getJeiHelpers().getGuiHelper()));
     }
-
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         CrusherRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
         AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
     }
-
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(CrusherScreen.class, 83, 21, 30, 41,
+        registration.addRecipeClickArea(CrusherScreen.class, 80, 17, 16, 16,
                 CrushingCategory.CRUSHER_RECIPE_TYPE);
         registration.addRecipeClickArea(AlloyFurnaceScreen.class, 83, 19, 30, 45,
                 AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE);

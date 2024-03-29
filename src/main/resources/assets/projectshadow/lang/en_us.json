@@ -205,7 +205,7 @@
   "item.projectshadow.platinum_shield": "Platinum Shield",
   "item.projectshadow.steel_shield": "Steel Shield",
   "item.projectshadow.titanium_shield": "Titanium Shield",
-  "item.projectshadow.luminite_shield": "Steel Shield",
+  "item.projectshadow.luminite_shield": "Luminite Shield",
   "item.projectshadow.aquanium_shield": "Aquanium Shield",
   "item.projectshadow.frozen_shield": "Frozen Shield",
   "item.projectshadow.firerite_shield": "Firerite Shield",
@@ -274,6 +274,8 @@
   "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato",
   "item.projectshadow.pepper": "Pepper",
   "item.projectshadow.pepper_seeds": "Pepper Seeds",
+  "item.projectshadow.kohlrabi": "Kohlrabi",
+  "item.projectshadow.kohlrabi_seeds": "Kohlrabi Seeds",
 
   "tooltip.projectshadow.shift_for_info" : "Press [§9SHIFT§r] for more Information"
 }

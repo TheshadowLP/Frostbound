@@ -18,9 +18,11 @@ public class ModItems {
     public static final RegistryObject<Item> MILK_BOTTLE = ITEMS.register("milk_bottle", () -> new MilkBottle(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> STACKED_BAKED_POTATO = ITEMS.register("stacked_baked_potato", () -> new Item(new Item.Properties().food(ModFood.STACKED_BAKED_POTATO)));
     public static final RegistryObject<Item> STACKED_POTATO = ITEMS.register("stacked_potato", () -> new Item(new Item.Properties().food(ModFood.STACKED_POTATO)));
+    public static final RegistryObject<Item> KOHLRABI = ITEMS.register("kohlrabi", () -> new Item(new Item.Properties().food(ModFood.KOHLRABI)));
     public static final RegistryObject<Item> PEPPER = ITEMS.register("pepper", () -> new Item(new Item.Properties().food(ModFood.PEPPER)));
 
     //SEEDS
+    public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register("kohlrabi_seeds", () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
     public static final RegistryObject<Item> PEPPER_SEEDS = ITEMS.register("pepper_seeds", () -> new ItemNameBlockItem(ModBlocks.PEPPER_CROP.get(), new Item.Properties()));
 
     //INGOTS
