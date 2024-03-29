@@ -55,13 +55,14 @@ public class ModBoatEntity extends Boat {
             this.setVariant(ModBoatEntity.Type.byName(pCompound.getString("Type")));
         }
     }
-    public static enum Type implements StringRepresentable {
+    public enum Type implements StringRepresentable {
         FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
         private final String name;
         private final Block planks;
+        @SuppressWarnings("deprecation")
         public static final StringRepresentable.EnumCodec<ModBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ModBoatEntity.Type::values);
         private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
-        private Type(Block pPlanks, String pName) {
+        Type(Block pPlanks, String pName) {
             this.name = pName;
             this.planks = pPlanks;
         }

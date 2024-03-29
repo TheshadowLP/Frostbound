@@ -25,7 +25,7 @@ public class SteelArmor extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ArmorStats.STEEL, new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200,
-                            0, false, false, false)).build();
+                            2, false, false, false)).build();
     private SteelArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
@@ -82,7 +82,7 @@ public class SteelArmor extends ArmorItem {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
     }public static SteelArmor getInstance(Type ptype) {
         return new SteelArmor(ArmorStats.STEEL, ptype, new Properties().stacksTo(1));

@@ -205,33 +205,39 @@
   "item.projectshadow.heal_staff": "Heal Staff",
   "item.projectshadow.teleportation_staff": "Teleportation Staff",
   "tooltip.projectshadow.heal_staff.shift": "This magic staff heals you! Cool down 45 seconds.",
-  "tooltip.projectshadow.heal_staff" : "Press [§9SHIFT§r] for more Information",
   "item.projectshadow.levitation_staff": "Levitation Staff",
   "tooltip.projectshadow.levitation_staff.shift": "This magic staff lets you FLY! Cool down 15 seconds.",
-  "tooltip.projectshadow.levitation_staff" : "Press [§9SHIFT§r] for more Information",
   "tooltip.projectshadow.teleportation_staff.shift": "This magic staff teleports you Home! Cool down 1 minute.",
-  "tooltip.projectshadow.teleportation_staff" : "Press [§9SHIFT§r] for more Information",
 
   "item.projectshadow.steel_helmet": "Steel Helmet",
   "item.projectshadow.steel_chestplate": "Steel Chestplate",
   "item.projectshadow.steel_leggings": "Steel Leggings",
   "item.projectshadow.steel_boots": "Steel Boots",
-  "tooltip.projectshadow.steel_set": "Press [§9SHIFT§r] for more Information",
   "tooltip.projectshadow.steel_set.shift": "The full set will slow you down",
 
   "item.projectshadow.firerite_helmet": "Firerite Helmet",
   "item.projectshadow.firerite_chestplate": "Firerite Chestplate",
   "item.projectshadow.firerite_leggings": "Firerite Leggings",
   "item.projectshadow.firerite_boots": "Firerite Boots",
-  "tooltip.projectshadow.firerite_set": "Press [§9SHIFT§r] for more Information",
   "tooltip.projectshadow.firerite_set.shift": "The full set will make you not scared of the fire",
 
   "item.projectshadow.frozen_helmet": "Frozen Helmet",
   "item.projectshadow.frozen_chestplate": "Frozen Chestplate",
   "item.projectshadow.frozen_leggings": "Frozen Leggings",
   "item.projectshadow.frozen_boots": "Frozen Boots",
-  "tooltip.projectshadow.frozen_set": "Press [§9SHIFT§r] for more Information",
   "tooltip.projectshadow.frozen_set.shift": "PLACEHOLDER",
+
+  "item.projectshadow.aquanium_helmet": "Aquanium Helmet",
+  "item.projectshadow.aquanium_chestplate": "Aquanium Chestplate",
+  "item.projectshadow.aquanium_leggings": "Aquanium Leggings",
+  "item.projectshadow.aquanium_boots": "Aquanium Boots",
+  "tooltip.projectshadow.aquanium_set.shift": "PLACEHOLDER",
+
+  "item.projectshadow.copper_helmet": "Copper Helmet",
+  "item.projectshadow.copper_chestplate": "Copper Chestplate",
+  "item.projectshadow.copper_leggings": "Copper Leggings",
+  "item.projectshadow.copper_boots": "Copper Boots",
+  "tooltip.projectshadow.copper_set.shift": "PLACEHOLDER",
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
@@ -250,5 +256,7 @@
   "item.projectshadow.stacked_potato": "Stacked Potato",
   "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato",
   "item.projectshadow.pepper": "Pepper",
-  "item.projectshadow.pepper_seeds": "Pepper Seeds"
+  "item.projectshadow.pepper_seeds": "Pepper Seeds",
+
+  "tooltip.projectshadow.shift_for_info" : "Press [§9SHIFT§r] for more Information"
 }

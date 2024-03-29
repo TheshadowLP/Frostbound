@@ -176,6 +176,18 @@ public class ModItems {
     public static final RegistryObject<Item> FROZEN_LEGGINGS = ITEMS.register("frozen_leggings", () -> FrozenArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> FROZEN_BOOTS = ITEMS.register("frozen_boots", () -> FrozenArmor.getInstance(ArmorItem.Type.BOOTS));
 
+    //AQUANIUM ARMOR
+    public static final RegistryObject<Item> AQUANIUM_HELMET = ITEMS.register("aquanium_helmet", () -> AquaniumArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> AQUANIUM_CHESTPLATE = ITEMS.register("aquanium_chestplate", () -> AquaniumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> AQUANIUM_LEGGINGS = ITEMS.register("aquanium_leggings", () -> AquaniumArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> AQUANIUM_BOOTS = ITEMS.register("aquanium_boots", () -> AquaniumArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //COPPER ARMOR
+    public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () -> CopperArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings", () -> CopperArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () -> CopperArmor.getInstance(ArmorItem.Type.BOOTS));
+
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));

@@ -7,22 +7,24 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.items.ModItems;
-
-import java.util.function.Supplier;
 
 @MethodsReturnNonnullByDefault
 public enum ArmorStats implements ArmorMaterial {
     STEEL("steel", 35, new int[] {3, 8, 5, 4}, 15,
             SoundEvents.ARMOR_EQUIP_IRON, 1.0f,
-            0.0f, () -> Ingredient.of(ModItems.STEEL_INGOT.get())),
+            0.0f, ToolStats.STEEL.getRepairIngredient()),
     FIRERITE("firerite", 10, new int[] {1, 4, 3, 2}, 15,
             SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
-            0.0f, () -> Ingredient.of(ModItems.FIRERITE_GEM.get())),
+            0.0f, ToolStats.FIRERITE.getRepairIngredient()),
     FROZEN("frozen", 10, new int[] {1, 4, 3, 2}, 15,
-    SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
-            0.0f, () -> Ingredient.of(ModItems.FROZEN_GEM.get()));
-
+            SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
+            0.0f, ToolStats.FROZEN.getRepairIngredient()),
+    AQUANIUM("aquanium", 10, new int[] {2, 5, 4, 3}, 15,
+            SoundEvents.ARMOR_EQUIP_TURTLE, 0.0f,
+            0.0f, ToolStats.AQUANIUM.getRepairIngredient()),
+    COPPER("copper", 5, new int[] {1, 4, 3, 2}, 15,
+            SoundEvents.ARMOR_EQUIP_GENERIC, 0.0f,
+            0.0f, ToolStats.COPPER.getRepairIngredient());
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectAmounts;
@@ -30,11 +32,11 @@ public enum ArmorStats implements ArmorMaterial {
     private final SoundEvent equipSound;
     private final float toughness;
     private final float knockbackResistance;
-    private final Supplier<Ingredient> repairIngredient;
+    private final Ingredient repairIngredient;
     private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
     ArmorStats(String name, int durabilityMultiplier, int[] protectAmounts, int enchantmentValue,
                      SoundEvent equipSound, float toughness, float knockbackResistance,
-                     Supplier<Ingredient> repairIngredient) {
+                     Ingredient repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectAmounts = protectAmounts;
@@ -62,7 +64,7 @@ public enum ArmorStats implements ArmorMaterial {
     }
     @Override
     public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
+        return this.repairIngredient;
     }
     @Override
     public String getName() {

@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.enums.ArmorStats;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -21,13 +22,13 @@ import java.util.Map;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class FrozenArmor extends ArmorItem {
+public class AquaniumArmor extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ArmorStats.FROZEN, new MobEffectInstance(MobEffects.DOLPHINS_GRACE/*PLACEHOLDER*/,
+                    .put(ArmorStats.AQUANIUM, new MobEffectInstance(MobEffects.DOLPHINS_GRACE/*PLACEHOLDER*/,
                             200,
                             0, false, false, false)).build();
-    private FrozenArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
+    private AquaniumArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
     @SuppressWarnings("removal")
@@ -50,8 +51,9 @@ public class FrozenArmor extends ArmorItem {
     }
     private void addStatusEffectForMaterial(Player player, MobEffectInstance pEffect) {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
+
         if(hasCorrectArmorOn(player) && !hasPlayerEffect) {
-            // player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for frozen armor
+            // player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for this armor
         }
     }
     private boolean hasCorrectArmorOn(Player player) {
@@ -65,8 +67,8 @@ public class FrozenArmor extends ArmorItem {
         ArmorItem leggings = ((ArmorItem) player.getInventory().getArmor(2).getItem());
         ArmorItem boots = ((ArmorItem) player.getInventory().getArmor(3).getItem());
 
-        return helmet.getMaterial() == ArmorStats.FROZEN && chestplate.getMaterial() == ArmorStats.FROZEN
-                && leggings.getMaterial() == ArmorStats.FROZEN && boots.getMaterial() == ArmorStats.FROZEN;
+        return helmet.getMaterial() == ArmorStats.AQUANIUM && chestplate.getMaterial() == ArmorStats.AQUANIUM
+                && leggings.getMaterial() == ArmorStats.AQUANIUM && boots.getMaterial() == ArmorStats.AQUANIUM;
     }
     private boolean hasFullSuitOfArmorOn(Player player) {
         ItemStack helmet = player.getInventory().getArmor(0);
@@ -76,14 +78,16 @@ public class FrozenArmor extends ArmorItem {
 
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
-    }@Override
+    }
+    @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.frozen_set.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.aquanium_set.shift"));
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
-    }public static FrozenArmor getInstance(Type ptype) {
-        return new FrozenArmor(ArmorStats.FROZEN, ptype, new Properties().stacksTo(1));
+    }
+    public static AquaniumArmor getInstance(Type ptype) {
+        return new AquaniumArmor(ArmorStats.AQUANIUM, ptype, new Properties().stacksTo(1));
     }
 }

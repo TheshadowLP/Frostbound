@@ -200,6 +200,16 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FROZEN_LEGGINGS.get());
                         pOutput.accept(ModItems.FROZEN_BOOTS.get());
 
+                        pOutput.accept(ModItems.AQUANIUM_HELMET.get());
+                        pOutput.accept(ModItems.AQUANIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.AQUANIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.AQUANIUM_BOOTS.get());
+
+                        pOutput.accept(ModItems.COPPER_HELMET.get());
+                        pOutput.accept(ModItems.COPPER_CHESTPLATE.get());
+                        pOutput.accept(ModItems.COPPER_LEGGINGS.get());
+                        pOutput.accept(ModItems.COPPER_BOOTS.get());
+
                         pOutput.accept(ModItems.MUD_BALL.get());
                     })
                     .build());

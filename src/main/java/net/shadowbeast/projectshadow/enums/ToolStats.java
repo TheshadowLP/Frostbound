@@ -5,21 +5,22 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("depriction")
 public enum ToolStats implements Tier {
 
-    STEEL(2, 826, 6.0F, 2.0F, 15, "steel_ingot"),
-    PLATINUM(2, 510, 6.0F, 2.0F, 14, "platinum_ingot"),
-    TITANIUM(2, 1120, 6.0F, 2.0F, 15, "titanium_ingot"),
-    SILVER(0, 210, 12.0F, 2.0F, 20, "silver_ingot"),
-    ENDERIUM(5, 2530, 11.0F, 5.0F, 15, "enderium_ingot"),
-    COPPER(2, 185, 8.0F, 2.0F, 15, "copper_ingot"),
-    LUMINITE(3, 1720, 9.0F, 3.0F, 10, "luminite_ingot"),
-    AQUANIUM(4, 2210, 10.0F, 4.0F, 15, "aquanium_ingot"),
-    FIRERITE(3, 379, 6.0F, 2.0F, 15, "firerite_gem"),
-    FROZEN(3, 379, 6.0F, 2.0F, 15, "frozen_gem");
+    STEEL(2, 826, 6.0F, 2.0F, 15, ModItems.STEEL_INGOT.get()),
+    PLATINUM(2, 510, 6.0F, 2.0F, 14, ModItems.PLATINUM_INGOT.get()),
+    TITANIUM(2, 1120, 6.0F, 2.0F, 15, ModItems.TITANIUM_INGOT.get()),
+    SILVER(0, 210, 12.0F, 2.0F, 20, ModItems.SILVER_INGOT.get()),
+    ENDERIUM(5, 2530, 11.0F, 5.0F, 15, ModItems.ENDERIUM_INGOT.get()),
+    COPPER(2, 185, 8.0F, 2.0F, 15, Items.COPPER_INGOT),
+    LUMINITE(3, 1720, 9.0F, 3.0F, 10, ModItems.LUMINITE_INGOT.get()),
+    AQUANIUM(4, 2210, 10.0F, 4.0F, 15, ModItems.AQUANIUM_INGOT.get()),
+    FIRERITE(3, 379, 6.0F, 2.0F, 15, ModItems.FIRERITE_GEM.get()),
+    FROZEN(3, 379, 6.0F, 2.0F, 15, ModItems.FROZEN_GEM.get());
 
     private final int harvestLevel;
     private final int maxUses;

@@ -84,7 +84,7 @@ public class FireriteArmor extends ArmorItem {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.firerite_set.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.firerite_set"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
     }
 }
