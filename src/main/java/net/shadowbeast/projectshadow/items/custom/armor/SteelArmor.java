@@ -25,7 +25,7 @@ public class SteelArmor extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ArmorStats.STEEL, new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200,
-                            2, false, false, false)).build();
+                            0, false, false, false)).build();
     private SteelArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
