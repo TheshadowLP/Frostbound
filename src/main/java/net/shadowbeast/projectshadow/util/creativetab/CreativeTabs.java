@@ -207,6 +207,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.AQUANIUM_LEGGINGS.get());
                         pOutput.accept(ModItems.AQUANIUM_BOOTS.get());
 
+                        pOutput.accept(ModItems.ENDERIUM_HELMET.get());
+                        pOutput.accept(ModItems.ENDERIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.ENDERIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
+
                         pOutput.accept(ModItems.FROZEN_HELMET.get());
                         pOutput.accept(ModItems.FROZEN_CHESTPLATE.get());
                         pOutput.accept(ModItems.FROZEN_LEGGINGS.get());

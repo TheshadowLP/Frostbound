@@ -239,6 +239,12 @@
   "item.projectshadow.copper_boots": "Copper Boots",
   "tooltip.projectshadow.copper_set.shift": "PLACEHOLDER",
 
+  "item.projectshadow.enderium_helmet": "Enderium Helmet",
+  "item.projectshadow.enderium_chestplate": "Enderium Chestplate",
+  "item.projectshadow.enderium_leggings": "Enderium Leggings",
+  "item.projectshadow.enderium_boots": "Enderium Boots",
+  "tooltip.projectshadow.enderium_set.shift": "PLACEHOLDER",
+
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
   "item.projectshadow.mud_ball": "Mud Ball",
