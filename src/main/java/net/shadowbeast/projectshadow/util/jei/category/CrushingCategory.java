@@ -41,7 +41,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
 
     @Override
     public Component getTitle() {
-        return Component.translatable("block.projectshadow.crusher");
+        return Component.literal("Crushing");
     }
 
     @Override

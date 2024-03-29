@@ -8,6 +8,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +18,11 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.recipes.AlloyFurnaceRecipe;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
     public static final ResourceLocation UID = new ResourceLocation(ProjectShadow.MOD_ID, "alloying");
     public static final ResourceLocation TEXTURES = new ResourceLocation(ProjectShadow.MOD_ID,
@@ -38,7 +44,7 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
 
     @Override
     public Component getTitle() {
-        return Component.translatable("block.projectshadow.alloy_furnace");
+        return Component.literal("Alloying");
     }
 
     @Override

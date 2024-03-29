@@ -10,6 +10,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blocks.entities.screen.AlloyFurnaceScreen;
 import net.shadowbeast.projectshadow.blocks.entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.recipes.CrusherRecipe;
@@ -40,5 +41,7 @@ public class ProjectShadowJEI implements IModPlugin {
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(CrusherScreen.class, 83, 21, 30, 41,
                 CrushingCategory.CRUSHER_RECIPE_TYPE);
+        registration.addRecipeClickArea(AlloyFurnaceScreen.class, 83, 19, 30, 45,
+                AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE);
     }
 }
