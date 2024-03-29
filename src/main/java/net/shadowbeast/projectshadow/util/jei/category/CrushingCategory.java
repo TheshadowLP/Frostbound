@@ -17,6 +17,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.recipes.CrusherRecipe;
+import org.jetbrains.annotations.NotNull;
 
 @MethodsReturnNonnullByDefault
 public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
@@ -55,7 +56,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, CrusherRecipe recipe, IFocusGroup focuses) {
+    public void setRecipe(IRecipeLayoutBuilder builder, CrusherRecipe recipe, @NotNull IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 17).addIngredients(recipe.getIngredients().get(0));
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(Ingredient.of(ModItems.SAW_BLADE.get()));
 

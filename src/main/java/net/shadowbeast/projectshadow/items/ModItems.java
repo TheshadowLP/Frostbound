@@ -197,6 +197,7 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () -> CopperArmor.getInstance(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings", () -> CopperArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () -> CopperArmor.getInstance(ArmorItem.Type.BOOTS));
+
     //ENDERIUM ARMOR
     public static final RegistryObject<Item> ENDERIUM_HELMET = ITEMS.register("enderium_helmet", () -> EnderiumArmor.getInstance(ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> ENDERIUM_CHESTPLATE = ITEMS.register("enderium_chestplate", () -> EnderiumArmor.getInstance(ArmorItem.Type.CHESTPLATE));

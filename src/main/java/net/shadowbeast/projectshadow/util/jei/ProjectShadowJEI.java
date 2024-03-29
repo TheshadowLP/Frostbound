@@ -16,6 +16,7 @@ import net.shadowbeast.projectshadow.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
 import net.shadowbeast.projectshadow.util.jei.category.CrushingCategory;
+import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 @MethodsReturnNonnullByDefault
@@ -32,7 +33,8 @@ public class ProjectShadowJEI implements IModPlugin {
     }
 
     @Override
-    public void registerRecipes(IRecipeRegistration registration) {
+    public void registerRecipes(@NotNull IRecipeRegistration registration) {
+        assert Minecraft.getInstance().level != null;
         CrusherRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
         AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
     }
