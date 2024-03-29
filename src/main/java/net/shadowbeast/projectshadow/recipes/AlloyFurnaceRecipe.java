@@ -2,6 +2,7 @@ package net.shadowbeast.projectshadow.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -12,9 +13,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
@@ -71,6 +74,10 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "alloying";
+    }
+    public static void addAllRecipes(RecipeManager recipeManager, IRecipeRegistration registration) {
+        List<AlloyFurnaceRecipe> alloyFurnaceRecipes = recipeManager.getAllRecipesFor(AlloyFurnaceRecipe.Type.INSTANCE);
+        registration.addRecipes(AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE, alloyFurnaceRecipes);
     }
     public static class Serializer implements RecipeSerializer<AlloyFurnaceRecipe> {
         public static final Serializer INSTANCE = new Serializer();

@@ -11,6 +11,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.items.ModItems;
 
+@SuppressWarnings("unused")
 public class CreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ProjectShadow.MOD_ID);
@@ -118,12 +119,10 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SULFUR.get());
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
                         pOutput.accept(ModItems.SAW_BLADE.get());
-                        //TODO
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModItems.IRON_PLATE.get());
-                        //TODO Place in correct spot
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
                         pOutput.accept(ModItems.ENDER_INGOT.get());
@@ -183,17 +182,15 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LEVITATION_STAFF.get());
                         pOutput.accept(ModItems.TELEPORTATION_STAFF.get());
 
-                        pOutput.accept(ModItems.SILVER_SHIELD.get());
-                        pOutput.accept(ModItems.COPPER_SHIELD.get());
-                        pOutput.accept(ModItems.GOLD_SHIELD.get());
-                        pOutput.accept(ModItems.PLATINUM_SHIELD.get());
+                     /* pOutput.accept(ModItems.GOLD_SHIELD.get());
+                        pOutput.accept(ModItems.PLATINUM_SHIELD.get()); */
                         pOutput.accept(ModItems.STEEL_SHIELD.get());
-                        pOutput.accept(ModItems.TITANIUM_SHIELD.get());
+                     /* pOutput.accept(ModItems.TITANIUM_SHIELD.get());
                         pOutput.accept(ModItems.LUMINITE_SHIELD.get());
                         pOutput.accept(ModItems.AQUANIUM_SHIELD.get());
                         pOutput.accept(ModItems.FROZEN_SHIELD.get());
                         pOutput.accept(ModItems.FIRERITE_SHIELD.get());
-                        pOutput.accept(ModItems.ENDERIUM_SHIELD.get());
+                        pOutput.accept(ModItems.ENDERIUM_SHIELD.get()); */
 
                         pOutput.accept(ModItems.COPPER_HELMET.get());
                         pOutput.accept(ModItems.COPPER_CHESTPLATE.get());

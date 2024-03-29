@@ -2,6 +2,8 @@ package net.shadowbeast.projectshadow.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import mezz.jei.api.registration.IRecipeRegistration;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -12,7 +14,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.util.jei.category.CrushingCategory;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class CrusherRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
@@ -65,6 +70,10 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "crushing";
+    }
+    public static void addAllRecipes(RecipeManager recipeManager, IRecipeRegistration registration) {
+        List<CrusherRecipe> crusherRecipes = recipeManager.getAllRecipesFor(CrusherRecipe.Type.INSTANCE);
+        registration.addRecipes(CrushingCategory.CRUSHER_RECIPE_TYPE, crusherRecipes);
     }
     public static class Serializer implements RecipeSerializer<CrusherRecipe> {
         public static final Serializer INSTANCE = new Serializer();
