@@ -119,7 +119,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SULFUR.get());
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
                         pOutput.accept(ModItems.SAW_BLADE.get());
-                        pOutput.accept(ModBlocks.WINTER_FURNACE.get());
+                        //pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
                         //pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModItems.IRON_PLATE.get());
