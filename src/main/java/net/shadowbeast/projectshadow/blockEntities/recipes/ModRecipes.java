@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.recipes;
+package net.shadowbeast.projectshadow.blockEntities.recipes;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;

@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.entity.custom;
+package net.shadowbeast.projectshadow.blockEntities.entities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -10,8 +10,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.recipes.WinterFurnaceRecipe;
-import net.shadowbeast.projectshadow.blocks.entities.screen.WinterFurnaceMenu;
+import net.shadowbeast.projectshadow.blockEntities.recipes.WinterFurnaceRecipe;
+import net.shadowbeast.projectshadow.blockEntities.screen.WinterFurnaceMenu;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;

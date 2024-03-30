@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.entities.screen;
+package net.shadowbeast.projectshadow.blockEntities.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blocks.entities.screen.menu.AlloyFurnaceMenu;
+import net.shadowbeast.projectshadow.blockEntities.menu.AlloyFurnaceMenu;
 import org.jetbrains.annotations.NotNull;
 
 public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu> {

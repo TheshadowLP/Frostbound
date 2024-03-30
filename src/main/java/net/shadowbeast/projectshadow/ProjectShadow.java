@@ -21,7 +21,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.blocks.entities.screen.CrusherScreen;
+import net.shadowbeast.projectshadow.blockEntities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
 import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.entity.ModEntities;
@@ -30,10 +30,10 @@ import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.recipes.ModRecipes;
-import net.shadowbeast.projectshadow.blocks.entities.screen.AlloyFurnaceScreen;
-import net.shadowbeast.projectshadow.blocks.entities.screen.ModMenuTypes;
-import net.shadowbeast.projectshadow.blocks.entities.screen.WinterFurnaceScreen;
+import net.shadowbeast.projectshadow.blockEntities.recipes.ModRecipes;
+import net.shadowbeast.projectshadow.blockEntities.screen.AlloyFurnaceScreen;
+import net.shadowbeast.projectshadow.blockEntities.screen.ModMenuTypes;
+import net.shadowbeast.projectshadow.blockEntities.screen.WinterFurnaceScreen;
 import org.slf4j.Logger;
 
 @Mod(ProjectShadow.MOD_ID)

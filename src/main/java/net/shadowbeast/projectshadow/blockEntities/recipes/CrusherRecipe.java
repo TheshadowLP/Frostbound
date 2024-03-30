@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.recipes;
+package net.shadowbeast.projectshadow.blockEntities.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -13,39 +13,30 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
+import net.shadowbeast.projectshadow.util.jei.category.CrushingCategory;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
-public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
-    private final ResourceLocation id;
+public class CrusherRecipe implements Recipe<SimpleContainer> {
+    private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
-    private final NonNullList<Ingredient> recipeItems;
-    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output,
-                               NonNullList<Ingredient> recipeItems) {
-        this.id = id;
+    private final ResourceLocation id;
+    public CrusherRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> inputItems) {
+        this.inputItems = inputItems;
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.id = id;
     }
     @Override
     public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
-        if (pLevel.isClientSide()) { return false; }
-
-        if (recipeItems.get(0).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
+        if(pLevel.isClientSide()) {
+            return false;
         }
-
-        return false;
+        return inputItems.get(0).test(pContainer.getItem(0));
     }
     @Override
     public @NotNull ItemStack assemble(@NotNull SimpleContainer p_44001_, @NotNull RegistryAccess p_267165_) {
-        return output;
-    }
-    @Override
-    public @NotNull NonNullList<Ingredient> getIngredients() {
-        return recipeItems;
+        return output.copy();
     }
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
@@ -54,6 +45,10 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     @Override
     public @NotNull ItemStack getResultItem(@NotNull RegistryAccess p_267052_) {
         return output.copy();
+    }
+    @Override
+    public @NotNull NonNullList<Ingredient> getIngredients() {
+        return this.inputItems;
     }
     @Override
     public @NotNull ResourceLocation getId() {
@@ -70,43 +65,38 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     public ItemStack getResultItem() {
         return output.copy();
     }
-    public static class Type implements RecipeType<AlloyFurnaceRecipe> {
+    public static class Type implements RecipeType<CrusherRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "alloying";
+        public static final String ID = "crushing";
     }
     public static void addAllRecipes(RecipeManager recipeManager, IRecipeRegistration registration) {
-        List<AlloyFurnaceRecipe> alloyFurnaceRecipes = recipeManager.getAllRecipesFor(AlloyFurnaceRecipe.Type.INSTANCE);
-        registration.addRecipes(AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE, alloyFurnaceRecipes);
+        List<CrusherRecipe> crusherRecipes = recipeManager.getAllRecipesFor(CrusherRecipe.Type.INSTANCE);
+        registration.addRecipes(CrushingCategory.CRUSHER_RECIPE_TYPE, crusherRecipes);
     }
-    public static class Serializer implements RecipeSerializer<AlloyFurnaceRecipe> {
+    public static class Serializer implements RecipeSerializer<CrusherRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ProjectShadow.MOD_ID, "alloying");
+                new ResourceLocation(ProjectShadow.MOD_ID,"crushing");
         @Override
-        public @NotNull AlloyFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-
-            JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
-
+        public @NotNull CrusherRecipe fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json) {
+            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
+            JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredient");
+            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-
-            return new AlloyFurnaceRecipe(pRecipeId, output, inputs);
+            return new CrusherRecipe(id, output, inputs);
         }
         @Override
-        public @Nullable AlloyFurnaceRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
+        public CrusherRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
-
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
-
             ItemStack output = buf.readItem();
-            return new AlloyFurnaceRecipe(id, output, inputs);
+            return new CrusherRecipe(id, output, inputs);
         }
         @Override
-        public void toNetwork(FriendlyByteBuf buf, AlloyFurnaceRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, CrusherRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
 
             for (Ingredient ing : recipe.getIngredients()) {

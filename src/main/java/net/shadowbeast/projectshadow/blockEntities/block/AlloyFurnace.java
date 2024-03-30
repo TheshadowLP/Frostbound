@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.entities;
+package net.shadowbeast.projectshadow.blockEntities.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.entity.custom.AlloyFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.blockEntities.entities.AlloyFurnaceBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

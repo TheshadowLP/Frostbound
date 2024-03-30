@@ -16,7 +16,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.blockEntities.recipes.AlloyFurnaceRecipe;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 

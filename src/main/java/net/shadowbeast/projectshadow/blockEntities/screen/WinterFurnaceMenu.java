@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.entities.screen;
+package net.shadowbeast.projectshadow.blockEntities.screen;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
@@ -7,7 +7,7 @@ import net.minecraft.world.inventory.AbstractFurnaceMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.ItemStack;
-import net.shadowbeast.projectshadow.recipes.WinterFurnaceRecipe;
+import net.shadowbeast.projectshadow.blockEntities.recipes.WinterFurnaceRecipe;
 import org.jetbrains.annotations.NotNull;
 
 public class WinterFurnaceMenu extends AbstractFurnaceMenu {

@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.entities;
+package net.shadowbeast.projectshadow.blockEntities.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.entity.custom.WinterFurnaceEntity;
+import net.shadowbeast.projectshadow.blockEntities.entities.WinterFurnaceEntity;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;

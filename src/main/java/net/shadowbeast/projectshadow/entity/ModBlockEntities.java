@@ -6,6 +6,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blockEntities.entities.AlloyFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.blockEntities.entities.CrusherBlockEntity;
+import net.shadowbeast.projectshadow.blockEntities.entities.WinterFurnaceEntity;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.custom.*;
 public class ModBlockEntities {

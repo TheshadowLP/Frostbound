@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.entities.screen.menu;
+package net.shadowbeast.projectshadow.blockEntities.menu;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -9,10 +9,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import net.shadowbeast.projectshadow.blockEntities.slot.ModResultSlot;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.blocks.entities.screen.ModMenuTypes;
-import net.shadowbeast.projectshadow.blocks.entities.screen.slot.ModResultSlot;
-import net.shadowbeast.projectshadow.entity.custom.CrusherBlockEntity;
+import net.shadowbeast.projectshadow.blockEntities.screen.ModMenuTypes;
+import net.shadowbeast.projectshadow.blockEntities.entities.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class CrusherMenu extends AbstractContainerMenu {

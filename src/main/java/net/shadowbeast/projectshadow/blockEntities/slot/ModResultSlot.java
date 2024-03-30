@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blocks.entities.screen.slot;
+package net.shadowbeast.projectshadow.blockEntities.slot;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;

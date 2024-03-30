@@ -262,6 +262,12 @@
   "item.projectshadow.luminite_boots": "Luminite Boots",
   "tooltip.projectshadow.luminite_set.shift": "PLACEHOLDER",
 
+  "item.projectshadow.platinum_helmet": "Luminite Helmet",
+  "item.projectshadow.platinum_chestplate": "Luminite Chestplate",
+  "item.projectshadow.platinum_leggings": "Luminite Leggings",
+  "item.projectshadow.platinum_boots": "Luminite Boots",
+  "tooltip.projectshadow.platinum_set.shift": "PLACEHOLDER",
+
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
   "item.projectshadow.mud_ball": "Mud Ball",
