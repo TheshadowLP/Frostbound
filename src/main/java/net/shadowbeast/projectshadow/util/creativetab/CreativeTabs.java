@@ -120,7 +120,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
                         pOutput.accept(ModItems.SAW_BLADE.get());
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
-                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
+                        //pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModItems.IRON_PLATE.get());
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
@@ -199,6 +199,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_LEGGINGS.get());
                         pOutput.accept(ModItems.COPPER_BOOTS.get());
 
+                        pOutput.accept(ModItems.PLATINUM_HELMET.get());
+                        pOutput.accept(ModItems.PLATINUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.PLATINUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.PLATINUM_BOOTS.get());
+
                         pOutput.accept(ModItems.STEEL_HELMET.get());
                         pOutput.accept(ModItems.STEEL_CHESTPLATE.get());
                         pOutput.accept(ModItems.STEEL_LEGGINGS.get());
@@ -218,11 +223,6 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_CHESTPLATE.get());
                         pOutput.accept(ModItems.LUMINITE_LEGGINGS.get());
                         pOutput.accept(ModItems.LUMINITE_BOOTS.get());
-
-                        pOutput.accept(ModItems.PLATINUM_HELMET.get());
-                        pOutput.accept(ModItems.PLATINUM_CHESTPLATE.get());
-                        pOutput.accept(ModItems.PLATINUM_LEGGINGS.get());
-                        pOutput.accept(ModItems.PLATINUM_BOOTS.get());
 
                         pOutput.accept(ModItems.FROZEN_HELMET.get());
                         pOutput.accept(ModItems.FROZEN_CHESTPLATE.get());
@@ -305,8 +305,8 @@ public class CreativeTabs {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.KOHLRABI.get());
                         pOutput.accept(ModItems.KOHLRABI_SEEDS.get());
-                        pOutput.accept(ModItems.PEPPER.get());
-                        pOutput.accept(ModItems.PEPPER_SEEDS.get());
+                        //pOutput.accept(ModItems.PEPPER.get()); //TODO will be avaible in the second mod version
+                        //pOutput.accept(ModItems.PEPPER_SEEDS.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());
