@@ -182,15 +182,15 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LEVITATION_STAFF.get());
                         pOutput.accept(ModItems.TELEPORTATION_STAFF.get());
 
-                     /* pOutput.accept(ModItems.GOLD_SHIELD.get());
-                        pOutput.accept(ModItems.PLATINUM_SHIELD.get()); */
+                        pOutput.accept(ModItems.GOLD_SHIELD.get());
+                        pOutput.accept(ModItems.PLATINUM_SHIELD.get());
                         pOutput.accept(ModItems.STEEL_SHIELD.get());
-                     /* pOutput.accept(ModItems.TITANIUM_SHIELD.get());
+                        pOutput.accept(ModItems.TITANIUM_SHIELD.get());
                         pOutput.accept(ModItems.LUMINITE_SHIELD.get());
                         pOutput.accept(ModItems.AQUANIUM_SHIELD.get());
                         pOutput.accept(ModItems.FROZEN_SHIELD.get());
                         pOutput.accept(ModItems.FIRERITE_SHIELD.get());
-                        pOutput.accept(ModItems.ENDERIUM_SHIELD.get()); */
+                        pOutput.accept(ModItems.ENDERIUM_SHIELD.get());
 
                         pOutput.accept(ModItems.COPPER_HELMET.get());
                         pOutput.accept(ModItems.COPPER_CHESTPLATE.get());
