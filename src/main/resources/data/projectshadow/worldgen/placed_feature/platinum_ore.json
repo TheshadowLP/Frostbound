@@ -1,19 +1,19 @@
 {
-  "feature": "projectshadow:aquanium_ore",
+  "feature": "projectshadow:platinum_ore",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 9
+      "count": 12
     },
     {
       "type": "minecraft:height_range",
       "height": {
         "type": "minecraft:uniform",
         "min_inclusive": {
-          "absolute": 30
+          "absolute": -45
         },
         "max_inclusive": {
-          "absolute": 85
+          "absolute": 40
         }
       }
     },
