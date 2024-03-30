@@ -205,6 +205,11 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERIUM_CHESTPLATE = ITEMS.register("enderium_chestplate", () -> EnderiumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> ENDERIUM_LEGGINGS = ITEMS.register("enderium_leggings", () -> EnderiumArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> ENDERIUM_BOOTS = ITEMS.register("enderium_boots", () -> EnderiumArmor.getInstance(ArmorItem.Type.BOOTS));
+    //LUMINITE ARMOR
+    public static final RegistryObject<Item> LUMINITE_HELMET = ITEMS.register("luminite_helmet", () -> LuminiteArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> LUMINITE_CHESTPLATE = ITEMS.register("luminite_chestplate", () -> LuminiteArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> LUMINITE_LEGGINGS = ITEMS.register("luminite_leggings", () -> LuminiteArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> LUMINITE_BOOTS = ITEMS.register("luminite_boots", () -> LuminiteArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));

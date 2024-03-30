@@ -1,14 +1,13 @@
 package net.shadowbeast.projectshadow.enums;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("depriction")
+@SuppressWarnings({"depriction", "deprecation"})
 public enum ToolStats implements Tier {
 
     STEEL(2, 826, 6.0F, 2.0F, 15, ModItems.STEEL_INGOT.get()),
@@ -28,12 +27,7 @@ public enum ToolStats implements Tier {
     private final float attackDamage;
     private final int enchantability;
     private final Ingredient repairMaterial;
-    ToolStats(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability) {
-        this(harvestLevel, maxUses, efficiency, attackDamage, enchantability, Items.AIR);
-    }
-    ToolStats(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, String repairMaterial) {
-        this(harvestLevel, maxUses, efficiency, attackDamage, enchantability, ForgeRegistries.ITEMS.getValue(new ResourceLocation(ProjectShadow.MOD_ID, repairMaterial)));
-    }
+
     ToolStats(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Item repairMaterialIn)
     {
         this.harvestLevel = harvestLevelIn;

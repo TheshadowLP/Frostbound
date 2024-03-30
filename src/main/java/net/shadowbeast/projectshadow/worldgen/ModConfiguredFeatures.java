@@ -17,6 +17,8 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
+
+@SuppressWarnings("unchecked")
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_KEY = registerKey("frozen");
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {

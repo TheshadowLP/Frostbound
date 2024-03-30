@@ -10,24 +10,27 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 
 @MethodsReturnNonnullByDefault
 public enum ArmorStats implements ArmorMaterial {
-    STEEL("steel", 35, new int[] {3, 8, 5, 4}, 15,
+    STEEL("steel", 35, new int[] {3, 8, 5, 4}, ToolStats.STEEL.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_IRON, 3.0f,
             0.0f, ToolStats.STEEL.getRepairIngredient()),
-    FIRERITE("firerite", 10, new int[] {1, 4, 3, 2}, 15,
+    FIRERITE("firerite", 10, new int[] {1, 4, 3, 2}, ToolStats.FIRERITE.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
             0.0f, ToolStats.FIRERITE.getRepairIngredient()),
-    FROZEN("frozen", 10, new int[] {1, 4, 3, 2}, 15,
+    FROZEN("frozen", 10, new int[] {1, 4, 3, 2}, ToolStats.FROZEN.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_CHAIN, 0.0f,
             0.0f, ToolStats.FROZEN.getRepairIngredient()),
-    AQUANIUM("aquanium", 10, new int[] {2, 5, 4, 3}, 15,
+    AQUANIUM("aquanium", 10, new int[] {2, 5, 4, 3}, ToolStats.AQUANIUM.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_TURTLE, 0.0f,
             0.0f, ToolStats.AQUANIUM.getRepairIngredient()),
-    COPPER("copper", 5, new int[] {1, 4, 3, 2}, 15,
+    COPPER("copper", 5, new int[] {1, 4, 3, 2}, ToolStats.COPPER.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_GENERIC, 0.0f,
             0.0f, ToolStats.COPPER.getRepairIngredient()),
-    ENDERIUM("enderium", 20, new int[] {2, 6, 4, 2}, 15,
+    ENDERIUM("enderium", 20, new int[] {2, 6, 4, 2}, ToolStats.ENDERIUM.getEnchantmentValue(),
+    SoundEvents.ARMOR_EQUIP_ELYTRA, 1.0f,
+            0.1f, ToolStats.ENDERIUM.getRepairIngredient()),
+    LUMINITE("luminite", 20, new int[] {2, 5, 4, 1}, ToolStats.LUMINITE.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_ELYTRA, 1.0f,
-            0.1f, ToolStats.ENDERIUM.getRepairIngredient());
+            0.1f, ToolStats.LUMINITE.getRepairIngredient());
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectAmounts;
