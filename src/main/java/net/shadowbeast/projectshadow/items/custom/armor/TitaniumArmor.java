@@ -81,9 +81,9 @@ public class TitaniumArmor extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.titanium_set.shift"));
+            //pTooltipComponents.add(Component.translatable("tooltip.projectshadow.titanium_set.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
+            //pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
     }
     public static TitaniumArmor getInstance(Type ptype) {

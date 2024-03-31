@@ -81,9 +81,9 @@ public class SilverArmor extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.silver_set.shift"));
+            //pTooltipComponents.add(Component.translatable("tooltip.projectshadow.silver_set.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
+            //pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
     }
     public static SilverArmor getInstance(Type ptype) {

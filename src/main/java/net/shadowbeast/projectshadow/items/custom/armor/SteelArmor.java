@@ -51,7 +51,7 @@ public class SteelArmor extends ArmorItem {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
         if(hasCorrectArmorOn(player) && !hasPlayerEffect && !(player.hasEffect(MobEffects.DAMAGE_BOOST))) {
-            player.addEffect(pEffect);
+            //player.addEffect(pEffect);
         }
     }
     private boolean hasCorrectArmorOn(Player player) {
@@ -80,9 +80,9 @@ public class SteelArmor extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set.shift"));
+            //pTooltipComponents.add(Component.translatable("tooltip.projectshadow.steel_set.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
+           // pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
     }public static SteelArmor getInstance(Type ptype) {
         return new SteelArmor(ArmorStats.STEEL, ptype, new Properties().stacksTo(1));
