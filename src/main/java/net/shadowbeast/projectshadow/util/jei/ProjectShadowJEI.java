@@ -1,21 +1,14 @@
 package net.shadowbeast.projectshadow.util.jei;
 
-
-import mezz.jei.api.IModPlugin;
-import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.IGuiHandlerRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.*;
+import mezz.jei.api.registration.*;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blockEntities.screen.AlloyFurnaceScreen;
-import net.shadowbeast.projectshadow.blockEntities.screen.CrusherScreen;
-import net.shadowbeast.projectshadow.blockEntities.recipes.AlloyFurnaceRecipe;
-import net.shadowbeast.projectshadow.blockEntities.recipes.CrusherRecipe;
-import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
-import net.shadowbeast.projectshadow.util.jei.category.CrushingCategory;
+import net.shadowbeast.projectshadow.blockEntities.recipes.*;
+import net.shadowbeast.projectshadow.blockEntities.screen.*;
+import net.shadowbeast.projectshadow.util.jei.category.*;
 import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
@@ -28,13 +21,15 @@ public class ProjectShadowJEI implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new CrushingCategory(registration.getJeiHelpers().getGuiHelper()));
-        registration.addRecipeCategories(new AlloyingCategory(registration.getJeiHelpers().getGuiHelper()));
+        //registration.addRecipeCategories(new AlloyingCategory(registration.getJeiHelpers().getGuiHelper()));
+        //TODO will be avaible in the second mod version
     }
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         CrusherRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
-        AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
+        //AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
+        //TODO will be avaible in the second mod version
     }
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {

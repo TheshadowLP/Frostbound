@@ -28,11 +28,14 @@ public enum ArmorStats implements ArmorMaterial {
     ENDERIUM("enderium", 20, new int[] {2, 6, 4, 2}, ToolStats.ENDERIUM.getEnchantmentValue(),
     SoundEvents.ARMOR_EQUIP_TURTLE, 1.0f,
             0.1f, ToolStats.ENDERIUM.getRepairIngredient()),
-    LUMINITE("luminite", 20, new int[] {2, 5, 4, 1}, ToolStats.LUMINITE.getEnchantmentValue(),
+    LUMINITE("luminite", 15, new int[] {2, 5, 4, 1}, ToolStats.LUMINITE.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_ELYTRA, 1.0f,
             0.1f, ToolStats.LUMINITE.getRepairIngredient()),
     PLATINUM("platinum", 15, new int[] {2, 4, 3, 1}, ToolStats.PLATINUM.getEnchantmentValue(),
     SoundEvents.ARMOR_EQUIP_GOLD, 0f,
+            0f, ToolStats.PLATINUM.getRepairIngredient()),
+    SILVER("silver", 15, new int[] {1, 3, 2, 2}, ToolStats.PLATINUM.getEnchantmentValue(),
+            SoundEvents.ARMOR_EQUIP_GOLD, 0f,
             0f, ToolStats.PLATINUM.getRepairIngredient());
     private final String name;
     private final int durabilityMultiplier;

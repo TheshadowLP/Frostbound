@@ -218,6 +218,12 @@ public class ModItems {
     public static final RegistryObject<Item> PLATINUM_LEGGINGS = ITEMS.register("platinum_leggings", () -> PlatinumArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> PLATINUM_BOOTS = ITEMS.register("platinum_boots", () -> PlatinumArmor.getInstance(ArmorItem.Type.BOOTS));
 
+    // SILVER ARMOR
+    public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet", () -> SilverArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate", () -> SilverArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> SILVER_LEGGINGS = ITEMS.register("silver_leggings", () -> SilverArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots", () -> SilverArmor.getInstance(ArmorItem.Type.BOOTS));
+
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
