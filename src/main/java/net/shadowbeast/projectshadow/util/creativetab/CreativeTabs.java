@@ -194,10 +194,20 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FIRERITE_SHIELD.get());
                         pOutput.accept(ModItems.ENDERIUM_SHIELD.get());
 
+                        pOutput.accept(ModItems.SILVER_HELMET.get());
+                        pOutput.accept(ModItems.SILVER_CHESTPLATE.get());
+                        pOutput.accept(ModItems.SILVER_LEGGINGS.get());
+                        pOutput.accept(ModItems.SILVER_BOOTS.get());
+
                         pOutput.accept(ModItems.COPPER_HELMET.get());
                         pOutput.accept(ModItems.COPPER_CHESTPLATE.get());
                         pOutput.accept(ModItems.COPPER_LEGGINGS.get());
                         pOutput.accept(ModItems.COPPER_BOOTS.get());
+
+                        pOutput.accept(ModItems.PLATINUM_HELMET.get());
+                        pOutput.accept(ModItems.PLATINUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.PLATINUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.PLATINUM_BOOTS.get());
 
                         pOutput.accept(ModItems.STEEL_HELMET.get());
                         pOutput.accept(ModItems.STEEL_CHESTPLATE.get());
@@ -218,16 +228,6 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_CHESTPLATE.get());
                         pOutput.accept(ModItems.LUMINITE_LEGGINGS.get());
                         pOutput.accept(ModItems.LUMINITE_BOOTS.get());
-
-                        pOutput.accept(ModItems.PLATINUM_HELMET.get());
-                        pOutput.accept(ModItems.PLATINUM_CHESTPLATE.get());
-                        pOutput.accept(ModItems.PLATINUM_LEGGINGS.get());
-                        pOutput.accept(ModItems.PLATINUM_BOOTS.get());
-
-                        pOutput.accept(ModItems.SILVER_HELMET.get());
-                        pOutput.accept(ModItems.SILVER_CHESTPLATE.get());
-                        pOutput.accept(ModItems.SILVER_LEGGINGS.get());
-                        pOutput.accept(ModItems.SILVER_BOOTS.get());
 
                         pOutput.accept(ModItems.FROZEN_HELMET.get());
                         pOutput.accept(ModItems.FROZEN_CHESTPLATE.get());
