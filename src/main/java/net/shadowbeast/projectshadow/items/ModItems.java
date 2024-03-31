@@ -10,6 +10,8 @@ import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
 import net.shadowbeast.projectshadow.items.custom.armor.*;
 
+
+@SuppressWarnings("unused")
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ProjectShadow.MOD_ID);
@@ -219,10 +221,17 @@ public class ModItems {
     public static final RegistryObject<Item> PLATINUM_BOOTS = ITEMS.register("platinum_boots", () -> PlatinumArmor.getInstance(ArmorItem.Type.BOOTS));
 
     // SILVER ARMOR
+
     public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet", () -> SilverArmor.getInstance(ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate", () -> SilverArmor.getInstance(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> SILVER_LEGGINGS = ITEMS.register("silver_leggings", () -> SilverArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots", () -> SilverArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //
+    public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet", () -> TitaniumArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> TITANIUM_CHESTPLATE = ITEMS.register("titanium_chestplate", () -> TitaniumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> TITANIUM_LEGGINGS = ITEMS.register("titanium_leggings", () -> TitaniumArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> TITANIUM_BOOTS = ITEMS.register("titanium_boots", () -> TitaniumArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));

@@ -274,6 +274,12 @@
   "item.projectshadow.silver_boots": "Silver Boots",
   "tooltip.projectshadow.silver_set.shift": "PLACEHOLDER",
 
+  "item.projectshadow.titanium_helmet": "Titanium Helmet",
+  "item.projectshadow.titanium_chestplate": "Titanium Chestplate",
+  "item.projectshadow.titanium_leggings": "Titanium Leggings",
+  "item.projectshadow.titanium_boots": "Titanium Boots",
+  "tooltip.projectshadow.titanium_set.shift": "PLACEHOLDER",
+
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 
   "item.projectshadow.mud_ball": "Mud Ball",

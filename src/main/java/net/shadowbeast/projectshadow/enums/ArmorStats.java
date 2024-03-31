@@ -34,9 +34,12 @@ public enum ArmorStats implements ArmorMaterial {
     PLATINUM("platinum", 15, new int[] {2, 4, 3, 1}, ToolStats.PLATINUM.getEnchantmentValue(),
     SoundEvents.ARMOR_EQUIP_IRON, 0f,
             0f, ToolStats.PLATINUM.getRepairIngredient()),
-    SILVER("silver", 15, new int[] {1, 3, 2, 2}, ToolStats.PLATINUM.getEnchantmentValue(),
+    SILVER("silver", 15, new int[] {1, 3, 2, 2}, ToolStats.SILVER.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_GOLD, 0f,
-            0f, ToolStats.PLATINUM.getRepairIngredient());
+            0f, ToolStats.SILVER.getRepairIngredient()),
+    TITANIUM("titanium", 15, new int[] {3, 5, 4, 2}, ToolStats.TITANIUM.getEnchantmentValue(),
+            SoundEvents.ARMOR_EQUIP_GOLD, 0f,
+            0f, ToolStats.TITANIUM.getRepairIngredient());
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectAmounts;
