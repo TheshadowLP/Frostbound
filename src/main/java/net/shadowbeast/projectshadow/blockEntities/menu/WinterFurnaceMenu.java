@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blockEntities.screen;
+package net.shadowbeast.projectshadow.blockEntities.menu;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;

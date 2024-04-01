@@ -33,7 +33,7 @@ import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.blockEntities.recipes.ModRecipes;
 import net.shadowbeast.projectshadow.blockEntities.screen.AlloyFurnaceScreen;
-import net.shadowbeast.projectshadow.blockEntities.screen.ModMenuTypes;
+import net.shadowbeast.projectshadow.blockEntities.menu.ModMenuTypes;
 import net.shadowbeast.projectshadow.blockEntities.screen.WinterFurnaceScreen;
 import org.slf4j.Logger;
 

@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blockEntities.menu.WinterFurnaceMenu;
 import net.shadowbeast.projectshadow.blockEntities.recipes.WinterFurnaceRecipeBookComponent;
 
 

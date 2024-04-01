@@ -12,11 +12,9 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.blockEntities.recipes.CrusherRecipe;
+import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 @MethodsReturnNonnullByDefault
 public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
