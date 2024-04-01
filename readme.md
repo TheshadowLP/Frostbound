@@ -1,7 +1,7 @@
 # Project Shadow
 A Forge 1.20.1 mod
 
-![CurseForge Downloads](https://img.shields.io/curseforge/dt/:projectId) \
+![CurseForge Downloads](https://img.shields.io/curseforge/dt/996245) \
 ![Modrinth Downloads](https://img.shields.io/modrinth/dt/:projectId) \
 <a href="https://discord.gg/nkTkMsBDmg"><img src="https://img.shields.io/discord/1188804461762723891?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 
