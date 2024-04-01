@@ -22,14 +22,12 @@ public class ProjectShadowJEI implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new CrushingCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new AlloyingCategory(registration.getJeiHelpers().getGuiHelper()));
-        //TODO will be avaible in the second mod version
     }
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         CrusherRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
         AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
-        //TODO will be avaible in the second mod version
     }
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {

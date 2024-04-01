@@ -49,7 +49,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, CrusherRecipe recipe, @NotNull IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 17).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(Ingredient.of(ModItems.SAW_BLADE.get()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(recipe.getFuelItem());
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 55).addItemStack(recipe.getResultItem());
     }

@@ -9,7 +9,9 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.ProjectShadow;
@@ -69,6 +71,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     }
     public ItemStack getResultItem() {
         return output.copy();
+    }
+    public Ingredient getFuelItem() {
+        return Ingredient.of(Items.LAVA_BUCKET);
     }
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         private Type() { }
