@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_cut_copper_brick",
+  "ingredients": [
+    {
+      "item": "projectshadow:oxidized_cut_copper_brick"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:waxed_oxidized_cut_copper_brick"
+  }
+}

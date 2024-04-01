@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ss ",
-    "ss "
-  ],
+  "category": "building",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_stone"
     }
   },
+  "pattern": [
+    "##",
+    "##"
+  ],
   "result": {
-    "item": "projectshadow:frozen_stone_bricks",
-    "count": 4
+    "count": 4,
+    "item": "projectshadow:frozen_stone_bricks"
   }
 }

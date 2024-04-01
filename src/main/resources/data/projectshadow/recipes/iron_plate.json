@@ -1,15 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "PPP"
-  ],
+  "category": "misc",
   "key": {
-    "P": {
+    "#": {
       "item": "minecraft:iron_ingot"
     }
   },
+  "pattern": [
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:iron_plate",
-    "count": 2
+    "count": 2,
+    "item": "projectshadow:iron_plate"
   }
 }

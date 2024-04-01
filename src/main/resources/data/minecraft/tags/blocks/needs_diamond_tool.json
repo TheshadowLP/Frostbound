@@ -1,7 +1,8 @@
 {
   "values": [
-    "projectshadow:nether_firerite_ore",
     "projectshadow:enderium_end_ore",
+    "projectshadow:nether_firerite_ore",
+
     "projectshadow:enderium_block"
   ]
 }

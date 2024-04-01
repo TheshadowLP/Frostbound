@@ -1,26 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "sdf",
-    "sef",
-    "sdf"
-  ],
+  "category": "misc",
   "key": {
-    "s": {
+    "#": {
       "item": "minecraft:smooth_stone"
     },
-    "e": {
+    "X": {
       "item": "projectshadow:iron_plate"
     },
-    "d": {
+    "S": {
       "item": "minecraft:smooth_stone_slab"
     },
-    "f": {
+    "I": {
       "item": "minecraft:iron_ingot"
     }
   },
+  "pattern": [
+    "#SI",
+    "#XI",
+    "#SI"
+  ],
   "result": {
-    "item": "projectshadow:crusher",
-    "count": 1
+    "item": "projectshadow:crusher"
   }
 }

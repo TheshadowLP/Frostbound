@@ -11,6 +11,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.items.ModItems;
 
+@SuppressWarnings("unused")
 public class CreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ProjectShadow.MOD_ID);
@@ -42,6 +43,10 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICK_WALL.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
                         pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
+                        pOutput.accept(ModItems.FROZEN_SIGN.get());
+                        pOutput.accept(ModItems.FROZEN_HANGING_SIGN.get());
+                        pOutput.accept(ModItems.FROZEN_BOAT.get());
+                        pOutput.accept(ModItems.FROZEN_CHEST_BOAT.get());
 
                         pOutput.accept(ModBlocks.AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
@@ -114,12 +119,10 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SULFUR.get());
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
                         pOutput.accept(ModItems.SAW_BLADE.get());
-                        //TODO
-                        pOutput.accept(ModBlocks.WINTER_FURNACE.get());
-                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
+                        //pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
+                        //pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModItems.IRON_PLATE.get());
-                        //TODO Place in correct spot
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
                         pOutput.accept(ModItems.ENDER_INGOT.get());
@@ -142,8 +145,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.WAXED_WEATHERED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.BONE_ORE.get());
-                        pOutput.accept(ModItems.FROZEN_SIGN.get());
-                        pOutput.accept(ModItems.FROZEN_HANGING_SIGN.get());
+
+                        pOutput.accept(ModBlocks.COPPER_BARS.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
@@ -157,9 +160,9 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TITANIUM_SWORD.get());
                         pOutput.accept(ModItems.LUMINITE_SWORD.get());
                         pOutput.accept(ModItems.AQUANIUM_SWORD.get());
-                        pOutput.accept(ModItems.ENDERIUM_SWORD.get());
-                        pOutput.accept(ModItems.FIRERITE_SWORD.get());
                         pOutput.accept(ModItems.FROZEN_SWORD.get());
+                        pOutput.accept(ModItems.FIRERITE_SWORD.get());
+                        pOutput.accept(ModItems.ENDERIUM_SWORD.get());
 
                         pOutput.accept(ModItems.SILVER_AXE.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
@@ -168,9 +171,9 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TITANIUM_AXE.get());
                         pOutput.accept(ModItems.LUMINITE_AXE.get());
                         pOutput.accept(ModItems.AQUANIUM_AXE.get());
-                        pOutput.accept(ModItems.ENDERIUM_AXE.get());
-                        pOutput.accept(ModItems.FIRERITE_AXE.get());
                         pOutput.accept(ModItems.FROZEN_AXE.get());
+                        pOutput.accept(ModItems.FIRERITE_AXE.get());
+                        pOutput.accept(ModItems.ENDERIUM_AXE.get());
 
                         pOutput.accept(ModItems.SILVER_HAMMER.get());
                         pOutput.accept(ModItems.PLATINUM_HAMMER.get());
@@ -181,22 +184,68 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LEVITATION_STAFF.get());
                         pOutput.accept(ModItems.TELEPORTATION_STAFF.get());
 
+                        pOutput.accept(ModItems.SILVER_SHIELD.get());
+                        pOutput.accept(ModItems.GOLD_SHIELD.get());
+                        pOutput.accept(ModItems.COPPER_SHIELD.get());
+                        pOutput.accept(ModItems.PLATINUM_SHIELD.get());
                         pOutput.accept(ModItems.STEEL_SHIELD.get());
+                        pOutput.accept(ModItems.TITANIUM_SHIELD.get());
+                        pOutput.accept(ModItems.LUMINITE_SHIELD.get());
+                        pOutput.accept(ModItems.AQUANIUM_SHIELD.get());
+                        pOutput.accept(ModItems.FROZEN_SHIELD.get());
+                        pOutput.accept(ModItems.FIRERITE_SHIELD.get());
+                        pOutput.accept(ModItems.ENDERIUM_SHIELD.get());
+
+                        pOutput.accept(ModItems.SILVER_HELMET.get());
+                        pOutput.accept(ModItems.SILVER_CHESTPLATE.get());
+                        pOutput.accept(ModItems.SILVER_LEGGINGS.get());
+                        pOutput.accept(ModItems.SILVER_BOOTS.get());
+
+                        pOutput.accept(ModItems.COPPER_HELMET.get());
+                        pOutput.accept(ModItems.COPPER_CHESTPLATE.get());
+                        pOutput.accept(ModItems.COPPER_LEGGINGS.get());
+                        pOutput.accept(ModItems.COPPER_BOOTS.get());
+
+                        pOutput.accept(ModItems.PLATINUM_HELMET.get());
+                        pOutput.accept(ModItems.PLATINUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.PLATINUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.PLATINUM_BOOTS.get());
 
                         pOutput.accept(ModItems.STEEL_HELMET.get());
                         pOutput.accept(ModItems.STEEL_CHESTPLATE.get());
                         pOutput.accept(ModItems.STEEL_LEGGINGS.get());
                         pOutput.accept(ModItems.STEEL_BOOTS.get());
 
-                        pOutput.accept(ModItems.FIRERITE_HELMET.get());
-                        pOutput.accept(ModItems.FIRERITE_CHESTPLATE.get());
-                        pOutput.accept(ModItems.FIRERITE_LEGGINGS.get());
-                        pOutput.accept(ModItems.FIRERITE_BOOTS.get());
+                        pOutput.accept(ModItems.TITANIUM_HELMET.get());
+                        pOutput.accept(ModItems.TITANIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.TITANIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.TITANIUM_BOOTS.get());
+
+                        pOutput.accept(ModItems.LUMINITE_HELMET.get());
+                        pOutput.accept(ModItems.LUMINITE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.LUMINITE_LEGGINGS.get());
+                        pOutput.accept(ModItems.LUMINITE_BOOTS.get());
+
+                        pOutput.accept(ModItems.AQUANIUM_HELMET.get());
+                        pOutput.accept(ModItems.AQUANIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.AQUANIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.AQUANIUM_BOOTS.get());
 
                         pOutput.accept(ModItems.FROZEN_HELMET.get());
                         pOutput.accept(ModItems.FROZEN_CHESTPLATE.get());
                         pOutput.accept(ModItems.FROZEN_LEGGINGS.get());
                         pOutput.accept(ModItems.FROZEN_BOOTS.get());
+
+                        pOutput.accept(ModItems.FIRERITE_HELMET.get());
+                        pOutput.accept(ModItems.FIRERITE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.FIRERITE_LEGGINGS.get());
+                        pOutput.accept(ModItems.FIRERITE_BOOTS.get());
+
+                        pOutput.accept(ModItems.ENDERIUM_HELMET.get());
+                        pOutput.accept(ModItems.ENDERIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.ENDERIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
+
 
                         pOutput.accept(ModItems.MUD_BALL.get());
                     })
@@ -245,20 +294,20 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.AQUANIUM_AXE.get());
                         pOutput.accept(ModItems.AQUANIUM_HOE.get());
 
-                        pOutput.accept(ModItems.ENDERIUM_SHOVEL.get());
-                        pOutput.accept(ModItems.ENDERIUM_PICKAXE.get());
-                        pOutput.accept(ModItems.ENDERIUM_AXE.get());
-                        pOutput.accept(ModItems.ENDERIUM_HOE.get());
+                        pOutput.accept(ModItems.FROZEN_SHOVEL.get());
+                        pOutput.accept(ModItems.FROZEN_PICKAXE.get());
+                        pOutput.accept(ModItems.FROZEN_AXE.get());
+                        pOutput.accept(ModItems.FROZEN_HOE.get());
 
                         pOutput.accept(ModItems.FIRERITE_SHOVEL.get());
                         pOutput.accept(ModItems.FIRERITE_PICKAXE.get());
                         pOutput.accept(ModItems.FIRERITE_AXE.get());
                         pOutput.accept(ModItems.FIRERITE_HOE.get());
 
-                        pOutput.accept(ModItems.FROZEN_SHOVEL.get());
-                        pOutput.accept(ModItems.FROZEN_PICKAXE.get());
-                        pOutput.accept(ModItems.FROZEN_AXE.get());
-                        pOutput.accept(ModItems.FROZEN_HOE.get());
+                        pOutput.accept(ModItems.ENDERIUM_SHOVEL.get());
+                        pOutput.accept(ModItems.ENDERIUM_PICKAXE.get());
+                        pOutput.accept(ModItems.ENDERIUM_AXE.get());
+                        pOutput.accept(ModItems.ENDERIUM_HOE.get());
 
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
                     })
@@ -267,10 +316,12 @@ public class CreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))
                     .title(Component.translatable("creativetab.drinks"))
                     .displayItems((pParameters, pOutput) ->{
+                        pOutput.accept(ModItems.KOHLRABI.get());
+                        pOutput.accept(ModItems.KOHLRABI_SEEDS.get());
+                        //pOutput.accept(ModItems.PEPPER.get()); //TODO will be avaible in the second mod version
+                        //pOutput.accept(ModItems.PEPPER_SEEDS.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
-                        pOutput.accept(ModItems.PEPPER.get());
-                        pOutput.accept(ModItems.PEPPER_SEEDS.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());
                     })
                     .build());

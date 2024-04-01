@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " p "
-  ],
-  "key": {
-    "p": {
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
       "item": "minecraft:copper_ingot"
     }
-  },
+  ],
   "result": {
-    "item": "projectshadow:copper_nugget",
-    "count": 9
+    "count": 9,
+    "item": "projectshadow:copper_nugget"
   }
 }

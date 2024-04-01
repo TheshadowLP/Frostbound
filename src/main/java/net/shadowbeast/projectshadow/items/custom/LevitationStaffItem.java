@@ -53,7 +53,7 @@ public class LevitationStaffItem extends Item {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.levitation_staff.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.levitation_staff"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }

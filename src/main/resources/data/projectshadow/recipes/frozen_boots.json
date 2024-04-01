@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "s s",
-    "s s"
-  ],
+  "category": "equipment",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_gem"
     }
   },
+  "pattern": [
+    "# #",
+    "# #"
+  ],
   "result": {
-    "item": "projectshadow:frozen_boots",
-    "count": 1
+    "item": "projectshadow:frozen_boots"
   }
 }

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "s s",
-    "sss",
-    "sss"
-  ],
+  "category": "equipment",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:firerite_gem"
     }
   },
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:firerite_chestplate",
-    "count": 1
+    "item": "projectshadow:firerite_chestplate"
   }
 }

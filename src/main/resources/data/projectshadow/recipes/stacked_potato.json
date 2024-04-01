@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "p  ",
-    "p  "
-  ],
+  "category": "misc",
   "key": {
-    "p": {
+    "#": {
       "item": "minecraft:potato"
     }
   },
+  "pattern": [
+    "#",
+    "#"
+  ],
   "result": {
-    "item": "projectshadow:stacked_potato",
-    "count": 2
+    "count": 2,
+    "item": "projectshadow:stacked_potato"
   }
 }

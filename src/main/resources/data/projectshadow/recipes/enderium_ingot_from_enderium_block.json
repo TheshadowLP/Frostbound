@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "enderium_ingot",
+  "ingredients": [
+    {
+      "item": "projectshadow:enderium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "projectshadow:enderium_ingot"
+  }
+}

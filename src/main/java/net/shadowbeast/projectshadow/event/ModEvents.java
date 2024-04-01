@@ -29,7 +29,6 @@ import java.util.Set;
 @Mod.EventBusSubscriber(modid = ProjectShadow.MOD_ID)
 public class ModEvents {
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
-
     @SubscribeEvent
     public static void milkCow(@NotNull PlayerInteractEvent.EntityInteract event) {
         if (event.getTarget() instanceof LivingEntity targetEntity) {
@@ -43,7 +42,6 @@ public class ModEvents {
             }
         }
     }
-
     @SubscribeEvent
     public static void snowballDamageEntity(@NotNull ProjectileImpactEvent event) {
         if (Config.snowballsDoesDamage) {

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "features": "projectshadow:frozen_gem_ore",
+  "biomes": "#minecraft:snowy_plains",
+  "step": "underground_ores"
+}

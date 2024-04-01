@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "features": "projectshadow:luminite_ore",
+  "biomes": "#minecraft:is_mountain",
+  "step": "underground_ores"
+}

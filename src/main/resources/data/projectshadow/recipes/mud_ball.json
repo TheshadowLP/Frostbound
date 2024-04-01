@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "p  "
-  ],
-  "key": {
-    "p": {
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
       "item": "minecraft:mud"
     }
-  },
+  ],
   "result": {
-    "item": "projectshadow:mud_ball",
-    "count": 4
+    "count": 4,
+    "item": "projectshadow:mud_ball"
   }
 }

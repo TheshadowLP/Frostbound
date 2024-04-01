@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ppp",
-    "ppp",
-    "ppp"
-  ],
+  "category": "building",
   "key": {
-    "p": {
+    "#": {
       "item": "projectshadow:frozen_gem"
     }
   },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:frozen_gem_block",
-    "count": 1
+    "item": "projectshadow:frozen_gem_block"
   }
 }

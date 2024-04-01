@@ -1,24 +1,17 @@
 package net.shadowbeast.projectshadow.items;
 
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.*;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
-import net.shadowbeast.projectshadow.enums.ArmorStats;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.items.custom.*;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import net.shadowbeast.projectshadow.items.custom.armor.*;
 
-import java.util.List;
 
+@SuppressWarnings("unused")
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ProjectShadow.MOD_ID);
@@ -27,9 +20,11 @@ public class ModItems {
     public static final RegistryObject<Item> MILK_BOTTLE = ITEMS.register("milk_bottle", () -> new MilkBottle(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> STACKED_BAKED_POTATO = ITEMS.register("stacked_baked_potato", () -> new Item(new Item.Properties().food(ModFood.STACKED_BAKED_POTATO)));
     public static final RegistryObject<Item> STACKED_POTATO = ITEMS.register("stacked_potato", () -> new Item(new Item.Properties().food(ModFood.STACKED_POTATO)));
+    public static final RegistryObject<Item> KOHLRABI = ITEMS.register("kohlrabi", () -> new Item(new Item.Properties().food(ModFood.KOHLRABI)));
     public static final RegistryObject<Item> PEPPER = ITEMS.register("pepper", () -> new Item(new Item.Properties().food(ModFood.PEPPER)));
 
     //SEEDS
+    public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register("kohlrabi_seeds", () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
     public static final RegistryObject<Item> PEPPER_SEEDS = ITEMS.register("pepper_seeds", () -> new ItemNameBlockItem(ModBlocks.PEPPER_CROP.get(), new Item.Properties()));
 
     //INGOTS
@@ -99,7 +94,17 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget", ()-> new Item(new Item.Properties()));
 
     //SHIELDS
+    public static final RegistryObject<Item> AQUANIUM_SHIELD = ITEMS.register("aquanium_shield", () -> new ShieldItem(new Item.Properties().durability(1105)));
+    public static final RegistryObject<Item> COPPER_SHIELD = ITEMS.register("copper_shield", () -> new ShieldItem(new Item.Properties().durability(185)));
+    public static final RegistryObject<Item> ENDERIUM_SHIELD = ITEMS.register("enderium_shield", () -> new ShieldItem(new Item.Properties().durability(1265)));
+    public static final RegistryObject<Item> FIRERITE_SHIELD = ITEMS.register("firerite_shield", () -> new ShieldItem(new Item.Properties().durability(890)));
+    public static final RegistryObject<Item> FROZEN_SHIELD = ITEMS.register("frozen_shield", () -> new ShieldItem(new Item.Properties().durability(910)));
+    public static final RegistryObject<Item> GOLD_SHIELD = ITEMS.register("gold_shield", () -> new ShieldItem(new Item.Properties().durability(220)));
+    public static final RegistryObject<Item> LUMINITE_SHIELD = ITEMS.register("luminite_shield", () -> new ShieldItem(new Item.Properties().durability(860)));
+    public static final RegistryObject<Item> PLATINUM_SHIELD = ITEMS.register("platinum_shield", () -> new ShieldItem(new Item.Properties().durability(255)));
+    public static final RegistryObject<Item> SILVER_SHIELD = ITEMS.register("silver_shield", () -> new ShieldItem(new Item.Properties().durability(210)));
     public static final RegistryObject<Item> STEEL_SHIELD = ITEMS.register("steel_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
+    public static final RegistryObject<Item> TITANIUM_SHIELD = ITEMS.register("titanium_shield", () -> new ShieldItem(new Item.Properties().durability(560)));
 
     //SWORDS
     public static final RegistryObject<Item> AQUANIUM_SWORD = ITEMS.register("aquanium_sword", ()-> new SwordItem(ToolStats.AQUANIUM,3,-2.4F, new Item.Properties()));
@@ -168,22 +173,65 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_HAMMER = ITEMS.register("titanium_hammer", ()-> new HammerItem(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240)));
 
     //STEEL ARMOR
-    public static final RegistryObject<Item> STEEL_HELMET = registerItemWithTooltips("steel_helmet", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
-    public static final RegistryObject<Item> STEEL_CHESTPLATE = registerItemWithTooltips("steel_chestplate", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
-    public static final RegistryObject<Item> STEEL_LEGGINGS = registerItemWithTooltips("steel_leggings", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
-    public static final RegistryObject<Item> STEEL_BOOTS = registerItemWithTooltips("steel_boots", new Item.Properties().stacksTo(1), ArmorStats.STEEL, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.steel_set.shift"), Component.translatable("tooltip.projectshadow.steel_set"));
+    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet", () -> SteelArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate", () -> SteelArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",() -> SteelArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots", () -> SteelArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //FIRERITE ARMOR
-    public static final RegistryObject<Item> FIRERITE_HELMET = registerItemWithTooltips("firerite_helmet", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
-    public static final RegistryObject<Item> FIRERITE_CHESTPLATE = registerItemWithTooltips("firerite_chestplate", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
-    public static final RegistryObject<Item> FIRERITE_LEGGINGS = registerItemWithTooltips("firerite_leggings", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
-    public static final RegistryObject<Item> FIRERITE_BOOTS = registerItemWithTooltips("firerite_boots", new Item.Properties().stacksTo(1), ArmorStats.FIRERITE, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.firerite_set.shift"), Component.translatable("tooltip.projectshadow.firerite_set"));
+    public static final RegistryObject<Item> FIRERITE_HELMET = ITEMS.register("firerite_helmet",() -> FireriteArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> FIRERITE_CHESTPLATE = ITEMS.register("firerite_chestplate", () -> FireriteArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> FIRERITE_LEGGINGS = ITEMS.register("firerite_leggings", () -> FireriteArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> FIRERITE_BOOTS = ITEMS.register("firerite_boots", () -> FireriteArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //FROZEN ARMOR
-    public static final RegistryObject<Item> FROZEN_HELMET = registerItemWithTooltips("frozen_helmet", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.HELMET, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
-    public static final RegistryObject<Item> FROZEN_CHESTPLATE = registerItemWithTooltips("frozen_chestplate", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.CHESTPLATE, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
-    public static final RegistryObject<Item> FROZEN_LEGGINGS = registerItemWithTooltips("frozen_leggings", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.LEGGINGS, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
-    public static final RegistryObject<Item> FROZEN_BOOTS = registerItemWithTooltips("frozen_boots", new Item.Properties().stacksTo(1), ArmorStats.FROZEN, ArmorItem.Type.BOOTS, Component.translatable("tooltip.projectshadow.frozen_set.shift"), Component.translatable("tooltip.projectshadow.frozen_set"));
+    public static final RegistryObject<Item> FROZEN_HELMET = ITEMS.register("frozen_helmet", () -> FrozenArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> FROZEN_CHESTPLATE = ITEMS.register("frozen_chestplate", () -> FrozenArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> FROZEN_LEGGINGS = ITEMS.register("frozen_leggings", () -> FrozenArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> FROZEN_BOOTS = ITEMS.register("frozen_boots", () -> FrozenArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //AQUANIUM ARMOR
+    public static final RegistryObject<Item> AQUANIUM_HELMET = ITEMS.register("aquanium_helmet", () -> AquaniumArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> AQUANIUM_CHESTPLATE = ITEMS.register("aquanium_chestplate", () -> AquaniumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> AQUANIUM_LEGGINGS = ITEMS.register("aquanium_leggings", () -> AquaniumArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> AQUANIUM_BOOTS = ITEMS.register("aquanium_boots", () -> AquaniumArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //COPPER ARMOR
+    public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () -> CopperArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings", () -> CopperArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () -> CopperArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //ENDERIUM ARMOR
+    public static final RegistryObject<Item> ENDERIUM_HELMET = ITEMS.register("enderium_helmet", () -> EnderiumArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> ENDERIUM_CHESTPLATE = ITEMS.register("enderium_chestplate", () -> EnderiumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> ENDERIUM_LEGGINGS = ITEMS.register("enderium_leggings", () -> EnderiumArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> ENDERIUM_BOOTS = ITEMS.register("enderium_boots", () -> EnderiumArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //LUMINITE ARMOR
+    public static final RegistryObject<Item> LUMINITE_HELMET = ITEMS.register("luminite_helmet", () -> LuminiteArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> LUMINITE_CHESTPLATE = ITEMS.register("luminite_chestplate", () -> LuminiteArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> LUMINITE_LEGGINGS = ITEMS.register("luminite_leggings", () -> LuminiteArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> LUMINITE_BOOTS = ITEMS.register("luminite_boots", () -> LuminiteArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //PLATINUM ARMOR
+    public static final RegistryObject<Item> PLATINUM_HELMET = ITEMS.register("platinum_helmet", () -> PlatinumArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> PLATINUM_CHESTPLATE = ITEMS.register("platinum_chestplate", () -> PlatinumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> PLATINUM_LEGGINGS = ITEMS.register("platinum_leggings", () -> PlatinumArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> PLATINUM_BOOTS = ITEMS.register("platinum_boots", () -> PlatinumArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    // SILVER ARMOR
+
+    public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet", () -> SilverArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate", () -> SilverArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> SILVER_LEGGINGS = ITEMS.register("silver_leggings", () -> SilverArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots", () -> SilverArmor.getInstance(ArmorItem.Type.BOOTS));
+
+    //
+    public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet", () -> TitaniumArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> TITANIUM_CHESTPLATE = ITEMS.register("titanium_chestplate", () -> TitaniumArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> TITANIUM_LEGGINGS = ITEMS.register("titanium_leggings", () -> TitaniumArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> TITANIUM_BOOTS = ITEMS.register("titanium_boots", () -> TitaniumArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //ADVANCED ITEMS
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
@@ -201,19 +249,6 @@ public class ModItems {
     public static final RegistryObject<Item> FROZEN_BOAT = ITEMS.register("frozen_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> FROZEN_CHEST_BOAT = ITEMS.register("frozen_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
 
-
-    private static @NotNull RegistryObject<Item> registerItemWithTooltips(@NotNull String name, @NotNull Item.Properties pProperties, @NotNull ArmorStats material, @NotNull ArmorItem.Type type, @NotNull Component ShiftOn, @NotNull Component ShiftOff) {
-        return ITEMS.register(name, () -> new ModArmorItem(material, type, pProperties) {
-            @Override
-            public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
-                if(Screen.hasShiftDown()) {
-                    pTooltipComponents.add(ShiftOn);
-                } else {
-                    pTooltipComponents.add(ShiftOff);
-                }
-            }
-        } );
-    }
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

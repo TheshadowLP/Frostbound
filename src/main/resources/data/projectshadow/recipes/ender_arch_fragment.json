@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " d ",
-    "ses",
-    " d "
-  ],
+  "category": "misc",
   "key": {
-    "s": {
+    "X": {
       "item": "projectshadow:ender_pearl_powder"
     },
-    "e": {
+    "E": {
       "item": "minecraft:ender_pearl"
     },
-  "d": {
-    "item": "projectshadow:diamond_shard"
-  }
+    "#": {
+      "item": "projectshadow:diamond_shard"
+    }
   },
+  "pattern": [
+    " # ",
+    "XEX",
+    " # "
+  ],
   "result": {
-    "item": "projectshadow:ender_arch_fragment",
-    "count": 1
+    "item": "projectshadow:ender_arch_fragment"
   }
 }

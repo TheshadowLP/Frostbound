@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ppp",
-    "ppp",
-    "ppp"
-  ],
+  "category": "building",
   "key": {
-    "p": {
+    "#": {
       "item": "projectshadow:platinum_ingot"
     }
   },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "projectshadow:platinum_block",
-    "count": 1
+    "item": "projectshadow:platinum_block"
   }
 }

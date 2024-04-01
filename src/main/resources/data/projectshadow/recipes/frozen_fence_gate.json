@@ -1,19 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "/s/",
-    "/s/"
-  ],
+  "category": "redstone",
+  "group": "wooden_fence_gate",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_planks"
     },
-    "/": {
+    "X": {
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "X#X",
+    "X#X"
+  ],
   "result": {
-    "item": "projectshadow:frozen_fence_gate",
-    "count": 1
+    "item": "projectshadow:frozen_fence_gate"
   }
 }

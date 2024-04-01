@@ -61,7 +61,7 @@ public class HealStaffItem extends Item {
         if(Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.heal_staff"));
+            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }

@@ -1,21 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "pattern": [
-    "s",
-    "s",
-    "/"
-  ],
   "key": {
-    "s": {
+    "X": {
       "item": "projectshadow:aquanium_ingot"
     },
-    "/": {
+    "#": {
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
   "result": {
-    "item": "projectshadow:aquanium_sword",
-    "count": 1
+    "item": "projectshadow:aquanium_sword"
   }
 }

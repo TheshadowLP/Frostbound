@@ -1,20 +1,22 @@
 {
   "values": [
     "projectshadow:aquanium_ore",
-    "projectshadow:luminite_ore",
     "projectshadow:deepslate_luminite_ore",
+    "projectshadow:frozen_gem_ore",
+    "projectshadow:luminite_ore",
+    "projectshadow:platinum_ore",
     "projectshadow:ruby_ore",
     "projectshadow:steel_ore",
     "projectshadow:titanium_ore",
-    "projectshadow:platinum_ore",
-    "projectshadow:sulfur_ore",
-    "projectshadow:ruby_block",
-    "projectshadow:platinum_block",
-    "projectshadow:steel_block",
-    "projectshadow:titanium_block",
+
     "projectshadow:aquanium_block",
+    "projectshadow:firerite_block",
+    "projectshadow:frozen_gem_block",
+    "projectshadow:luminite_block",
+    "projectshadow:platinum_block",
+    "projectshadow:ruby_block",
     "projectshadow:silver_block",
-    "projectshadow:frozen_gem_ore",
-    "projectshadow:frozen_gem_block"
+    "projectshadow:steel_block",
+    "projectshadow:titanium_block"
   ]
 }

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "sss",
-    "s s",
-    "s s"
-  ],
+  "category": "equipment",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:steel_ingot"
     }
   },
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
   "result": {
-    "item": "projectshadow:steel_leggings",
-    "count": 1
+    "item": "projectshadow:steel_leggings"
   }
 }

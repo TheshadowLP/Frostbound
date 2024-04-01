@@ -1,16 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ss ",
-    "ss "
-  ],
+  "category": "building",
+  "group": "bark",
   "key": {
-    "s": {
+    "#": {
       "item": "projectshadow:frozen_log"
     }
   },
+  "pattern": [
+    "##",
+    "##"
+  ],
   "result": {
-    "item": "projectshadow:frozen_wood",
-    "count": 3
+    "count": 3,
+    "item": "projectshadow:frozen_wood"
   }
 }

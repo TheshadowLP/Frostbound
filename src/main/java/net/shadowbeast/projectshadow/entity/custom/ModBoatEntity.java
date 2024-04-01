@@ -30,7 +30,6 @@ public class ModBoatEntity extends Boat {
         this.yo = pY;
         this.zo = pZ;
     }
-
     @Override
     public @NotNull Item getDropItem() {
         if (Objects.requireNonNull(getModVariant()) == Type.FROZEN) {
@@ -48,29 +47,26 @@ public class ModBoatEntity extends Boat {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, Type.FROZEN.ordinal());
     }
-
     protected void addAdditionalSaveData(CompoundTag pCompound) {
         pCompound.putString("Type", this.getModVariant().getSerializedName());
     }
-
     protected void readAdditionalSaveData(CompoundTag pCompound) {
         if (pCompound.contains("Type", 8)) {
             this.setVariant(ModBoatEntity.Type.byName(pCompound.getString("Type")));
         }
     }
-
-    public static enum Type implements StringRepresentable {
+    public enum Type implements StringRepresentable {
         FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
         private final String name;
         private final Block planks;
+        @SuppressWarnings("deprecation")
         public static final StringRepresentable.EnumCodec<ModBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ModBoatEntity.Type::values);
         private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
-        private Type(Block pPlanks, String pName) {
+        Type(Block pPlanks, String pName) {
             this.name = pName;
             this.planks = pPlanks;
         }
         public @NotNull String getSerializedName() { return this.name; }
-
         public String getName() { return this.name; }
         public Block getPlanks() { return this.planks; }
         public String toString() { return this.name; }
