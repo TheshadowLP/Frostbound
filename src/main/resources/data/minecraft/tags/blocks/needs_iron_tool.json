@@ -17,6 +17,11 @@
     "projectshadow:ruby_block",
     "projectshadow:silver_block",
     "projectshadow:steel_block",
-    "projectshadow:titanium_block"
+    "projectshadow:titanium_block",
+
+    "projectshadow:copper_bars",
+    "projectshadow:platinum_bars",
+    "projectshadow:steel_bars",
+    "projectshadow:titanium_bars"
   ]
 }

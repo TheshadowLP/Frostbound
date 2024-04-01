@@ -147,6 +147,9 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.BONE_ORE.get());
 
                         pOutput.accept(ModBlocks.COPPER_BARS.get());
+                        pOutput.accept(ModBlocks.PLATINUM_BARS.get());
+                        pOutput.accept(ModBlocks.STEEL_BARS.get());
+                        pOutput.accept(ModBlocks.TITANIUM_BARS.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",

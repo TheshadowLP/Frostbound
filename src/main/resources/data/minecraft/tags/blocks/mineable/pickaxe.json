@@ -31,6 +31,11 @@
     "projectshadow:alloy_furnace",
     "projectshadow:crusher",
 
+    "projectshadow:copper_bars",
+    "projectshadow:platinum_bars",
+    "projectshadow:steel_bars",
+    "projectshadow:titanium_bars",
+
     "projectshadow:copper_brick",
     "projectshadow:exposed_copper_brick",
     "projectshadow:oxidized_copper_brick",

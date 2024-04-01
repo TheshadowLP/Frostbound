@@ -43,19 +43,6 @@ public class ModEvents {
         }
     }
     @SubscribeEvent
-    public static void snowballDamageEntity(@NotNull ProjectileImpactEvent event) {
-        if (Config.snowballsDoesDamage) {
-            if (event.getProjectile() instanceof Snowball) {
-                float damageAmount = 1.0F;
-                Entity target = event.getEntity();
-
-                if (target != null) {
-                    target.hurt(target.damageSources().mobProjectile(event.getEntity(), null), damageAmount);
-                }
-            }
-        }
-    }
-    @SubscribeEvent
     public static void bakedPotatoesDamageEntity(TickEvent.PlayerTickEvent event) {
         if (Config.bakedPotatoesDoDamage) {
             Player player = event.player;
