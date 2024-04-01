@@ -7,10 +7,16 @@ A Forge 1.20.1 mod
 
 # Where to find?
 Project Shadow is **ONLY** found on
-[CurseForge](insert link here) and [Modrinth](the other link)
+[CurseForge](insert link here) and [Modrinth](the other link) \
+Anywhere else is not official, and not us. Only download using the above links
 
 # About the Mod
-Project Shadow is
+Project Shadow improves your Minecraft vanilla experience! \
+This mod is not just a mod that does boring stuff, it's a lot of fun stuff for you and others to enjoy with. 
+
+# Dependencies
+Optional Dependencies: 
+- [JEI](https://www.curseforge.com/minecraft/mc-mods/jei/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1)
 
 # Developers
 **Shadowbeast_lp** - Owner \
