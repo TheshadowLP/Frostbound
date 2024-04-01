@@ -288,14 +288,13 @@
   "item.projectshadow.mud_ball": "Mud Ball",
   "item.projectshadow.milk_bottle": "Milk Bottle",
 
-  "effect.projectshadow.muddied_eyes": "Muddied Eyes",
-
   "entity.projectshadow.mod_chest_boat": "Boat with Chest",
 
-  "creativetab.dev_tab": "Project Shadow",
+  "creativetab.blocks": "Project Shadow - Blocks",
   "creativetab.combat": "Project Shadow - Combat",
   "creativetab.tools": "Project Shadow - Tools & Utilities",
   "creativetab.drinks": "Project Shadow - Food & Drinks",
+  "creativetab.ingredients": "Project Shadow - Ingredients",
 
   "item.projectshadow.stacked_potato": "Stacked Potato",
   "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato",
