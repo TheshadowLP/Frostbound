@@ -23,7 +23,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_FROZEN_LOG.get());
                         pOutput.accept(ModBlocks.STRIPPED_FROZEN_WOOD.get());
-                        pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
                         pOutput.accept(ModBlocks.FROZEN_PLANKS.get());
                         pOutput.accept(ModBlocks.FROZEN_STAIRS.get());
                         pOutput.accept(ModBlocks.FROZEN_SLAB.get());
@@ -36,6 +35,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FROZEN_SIGN.get());
                         pOutput.accept(ModItems.FROZEN_HANGING_SIGN.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
+                        pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
 
                         pOutput.accept(ModBlocks.FROZEN_STONE.get());
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE.get());
