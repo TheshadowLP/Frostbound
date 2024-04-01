@@ -219,20 +219,15 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TITANIUM_LEGGINGS.get());
                         pOutput.accept(ModItems.TITANIUM_BOOTS.get());
 
-                        pOutput.accept(ModItems.AQUANIUM_HELMET.get());
-                        pOutput.accept(ModItems.AQUANIUM_CHESTPLATE.get());
-                        pOutput.accept(ModItems.AQUANIUM_LEGGINGS.get());
-                        pOutput.accept(ModItems.AQUANIUM_BOOTS.get());
-
-                        pOutput.accept(ModItems.ENDERIUM_HELMET.get());
-                        pOutput.accept(ModItems.ENDERIUM_CHESTPLATE.get());
-                        pOutput.accept(ModItems.ENDERIUM_LEGGINGS.get());
-                        pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
-
                         pOutput.accept(ModItems.LUMINITE_HELMET.get());
                         pOutput.accept(ModItems.LUMINITE_CHESTPLATE.get());
                         pOutput.accept(ModItems.LUMINITE_LEGGINGS.get());
                         pOutput.accept(ModItems.LUMINITE_BOOTS.get());
+
+                        pOutput.accept(ModItems.AQUANIUM_HELMET.get());
+                        pOutput.accept(ModItems.AQUANIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.AQUANIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.AQUANIUM_BOOTS.get());
 
                         pOutput.accept(ModItems.FROZEN_HELMET.get());
                         pOutput.accept(ModItems.FROZEN_CHESTPLATE.get());
@@ -243,6 +238,12 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FIRERITE_CHESTPLATE.get());
                         pOutput.accept(ModItems.FIRERITE_LEGGINGS.get());
                         pOutput.accept(ModItems.FIRERITE_BOOTS.get());
+
+                        pOutput.accept(ModItems.ENDERIUM_HELMET.get());
+                        pOutput.accept(ModItems.ENDERIUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.ENDERIUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
+
 
                         pOutput.accept(ModItems.MUD_BALL.get());
                     })

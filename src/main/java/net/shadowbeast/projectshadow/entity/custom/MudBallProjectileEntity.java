@@ -1,6 +1,7 @@
 package net.shadowbeast.projectshadow.entity.custom;
 
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +36,7 @@ public class MudBallProjectileEntity extends ThrowableItemProjectile {
             return;
         }
         if(hitEntity instanceof LivingEntity livingHitEntity) {
-            livingHitEntity.addEffect(new MobEffectInstance(ModEffects.MUDDIED_EYES.get(), 100, 1, true, true), owner);
+            livingHitEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,350,2));
         }
     }
     protected void onHit(@NotNull HitResult pResult) {

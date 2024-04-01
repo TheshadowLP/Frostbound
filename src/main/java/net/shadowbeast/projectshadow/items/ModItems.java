@@ -94,17 +94,17 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget", ()-> new Item(new Item.Properties()));
 
     //SHIELDS
-    public static final RegistryObject<Item> AQUANIUM_SHIELD = ITEMS.register("aquanium_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> COPPER_SHIELD = ITEMS.register("copper_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> ENDERIUM_SHIELD = ITEMS.register("enderium_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> FIRERITE_SHIELD = ITEMS.register("firerite_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> FROZEN_SHIELD = ITEMS.register("frozen_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> GOLD_SHIELD = ITEMS.register("gold_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> LUMINITE_SHIELD = ITEMS.register("luminite_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> PLATINUM_SHIELD = ITEMS.register("platinum_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> SILVER_SHIELD = ITEMS.register("silver_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
+    public static final RegistryObject<Item> AQUANIUM_SHIELD = ITEMS.register("aquanium_shield", () -> new ShieldItem(new Item.Properties().durability(1105)));
+    public static final RegistryObject<Item> COPPER_SHIELD = ITEMS.register("copper_shield", () -> new ShieldItem(new Item.Properties().durability(185)));
+    public static final RegistryObject<Item> ENDERIUM_SHIELD = ITEMS.register("enderium_shield", () -> new ShieldItem(new Item.Properties().durability(1265)));
+    public static final RegistryObject<Item> FIRERITE_SHIELD = ITEMS.register("firerite_shield", () -> new ShieldItem(new Item.Properties().durability(890)));
+    public static final RegistryObject<Item> FROZEN_SHIELD = ITEMS.register("frozen_shield", () -> new ShieldItem(new Item.Properties().durability(910)));
+    public static final RegistryObject<Item> GOLD_SHIELD = ITEMS.register("gold_shield", () -> new ShieldItem(new Item.Properties().durability(220)));
+    public static final RegistryObject<Item> LUMINITE_SHIELD = ITEMS.register("luminite_shield", () -> new ShieldItem(new Item.Properties().durability(860)));
+    public static final RegistryObject<Item> PLATINUM_SHIELD = ITEMS.register("platinum_shield", () -> new ShieldItem(new Item.Properties().durability(255)));
+    public static final RegistryObject<Item> SILVER_SHIELD = ITEMS.register("silver_shield", () -> new ShieldItem(new Item.Properties().durability(210)));
     public static final RegistryObject<Item> STEEL_SHIELD = ITEMS.register("steel_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> TITANIUM_SHIELD = ITEMS.register("titanium_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
+    public static final RegistryObject<Item> TITANIUM_SHIELD = ITEMS.register("titanium_shield", () -> new ShieldItem(new Item.Properties().durability(560)));
 
     //SWORDS
     public static final RegistryObject<Item> AQUANIUM_SWORD = ITEMS.register("aquanium_sword", ()-> new SwordItem(ToolStats.AQUANIUM,3,-2.4F, new Item.Properties()));

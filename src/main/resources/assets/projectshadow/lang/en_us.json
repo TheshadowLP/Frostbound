@@ -224,7 +224,6 @@
   "item.projectshadow.steel_chestplate": "Steel Chestplate",
   "item.projectshadow.steel_leggings": "Steel Leggings",
   "item.projectshadow.steel_boots": "Steel Boots",
-  "tooltip.projectshadow.steel_set.shift": "The full set will slow you down",
 
   "item.projectshadow.firerite_helmet": "Firerite Helmet",
   "item.projectshadow.firerite_chestplate": "Firerite Chestplate",
@@ -236,7 +235,6 @@
   "item.projectshadow.frozen_chestplate": "Frozen Chestplate",
   "item.projectshadow.frozen_leggings": "Frozen Leggings",
   "item.projectshadow.frozen_boots": "Frozen Boots",
-  "tooltip.projectshadow.frozen_set.shift": "PLACEHOLDER",
 
   "item.projectshadow.aquanium_helmet": "Aquanium Helmet",
   "item.projectshadow.aquanium_chestplate": "Aquanium Chestplate",
@@ -248,7 +246,7 @@
   "item.projectshadow.copper_chestplate": "Copper Chestplate",
   "item.projectshadow.copper_leggings": "Copper Leggings",
   "item.projectshadow.copper_boots": "Copper Boots",
-  "tooltip.projectshadow.copper_set.shift": "PLACEHOLDER",
+
 
   "item.projectshadow.enderium_helmet": "Enderium Helmet",
   "item.projectshadow.enderium_chestplate": "Enderium Chestplate",
@@ -260,25 +258,25 @@
   "item.projectshadow.luminite_chestplate": "Luminite Chestplate",
   "item.projectshadow.luminite_leggings": "Luminite Leggings",
   "item.projectshadow.luminite_boots": "Luminite Boots",
-  "tooltip.projectshadow.luminite_set.shift": "PLACEHOLDER",
+
 
   "item.projectshadow.platinum_helmet": "Platinum Helmet",
   "item.projectshadow.platinum_chestplate": "Platinum Chestplate",
   "item.projectshadow.platinum_leggings": "Platinum Leggings",
   "item.projectshadow.platinum_boots": "Platinum Boots",
-  "tooltip.projectshadow.platinum_set.shift": "PLACEHOLDER",
+
 
   "item.projectshadow.silver_helmet": "Silver Helmet",
   "item.projectshadow.silver_chestplate": "Silver Chestplate",
   "item.projectshadow.silver_leggings": "Silver Leggings",
   "item.projectshadow.silver_boots": "Silver Boots",
-  "tooltip.projectshadow.silver_set.shift": "PLACEHOLDER",
+
 
   "item.projectshadow.titanium_helmet": "Titanium Helmet",
   "item.projectshadow.titanium_chestplate": "Titanium Chestplate",
   "item.projectshadow.titanium_leggings": "Titanium Leggings",
   "item.projectshadow.titanium_boots": "Titanium Boots",
-  "tooltip.projectshadow.titanium_set.shift": "PLACEHOLDER",
+
 
   "teleportationstaff.projectshadow.failure_to_teleport": "Your home is missing, obstructed, or in another dimension",
 

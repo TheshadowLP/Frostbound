@@ -23,7 +23,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.blockEntities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
-import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
@@ -48,7 +47,6 @@ public class ProjectShadow {
         ModItems.register(modEventBus);
         CreativeTabs.register(modEventBus);
         ModBlockEntities.register(modEventBus);
-        ModEffects.register(modEventBus);
         ModEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
