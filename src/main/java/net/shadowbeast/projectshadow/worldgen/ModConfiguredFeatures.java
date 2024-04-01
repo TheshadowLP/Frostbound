@@ -26,7 +26,6 @@ import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import java.util.List;
 
 
-@SuppressWarnings("unchecked")
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_KEY = registerKey("frozen");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AQUANIUM_ORE_KEY = registerKey("aquanium_ore");

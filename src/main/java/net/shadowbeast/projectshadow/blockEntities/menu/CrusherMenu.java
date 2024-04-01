@@ -11,7 +11,6 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.projectshadow.blockEntities.slot.ModResultSlot;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.blockEntities.screen.ModMenuTypes;
 import net.shadowbeast.projectshadow.blockEntities.entities.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 

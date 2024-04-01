@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.blockEntities.screen;
+package net.shadowbeast.projectshadow.blockEntities.menu;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -9,8 +9,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blockEntities.menu.AlloyFurnaceMenu;
-import net.shadowbeast.projectshadow.blockEntities.menu.CrusherMenu;
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
