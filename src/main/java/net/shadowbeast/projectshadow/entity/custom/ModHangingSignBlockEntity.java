@@ -11,9 +11,6 @@ public class ModHangingSignBlockEntity extends HangingSignBlockEntity {
     public ModHangingSignBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(blockPos, blockState);
     }
-
     @Override
     public @NotNull BlockEntityType<?> getType() { return ModBlockEntities.MOD_HANGING_SIGN.get(); }
-    public int getTextLineHeight() {return 9;}
-    public int getMaxTextLineWidth() {return 60;}
 }
