@@ -14,8 +14,8 @@ Anywhere else is not official, and not us. Only download using the above links <
 Project Shadow improves your Minecraft vanilla experience! <br>
 This mod is not just a mod that does boring stuff, it's a lot of fun stuff for you and others to enjoy with.
 
-# Feedback 
-You are free to join our official discord server [here](https://discord.gg/nkTkMsBDmg)! We appreciate the bug reports, and your suggestions. Join the discord today to give us your opinion, and to hang out with new people (and your friends)!
+# Feedback
+You are free to join our official discord server [here](https://discord.gg/nkTkMsBDmg)! We appreciate the bug reports and your suggestions. Join the discord today to give us your opinion, and to hang out with new people (and your friends)!
 
 
 # Dependencies
