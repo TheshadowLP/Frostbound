@@ -196,16 +196,16 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.MUD_BALL.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDERIUM_SWORD.get()))
-                    .title(Component.translatable("creativetab.combat"))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_INGOT.get()))
+                    .title(Component.translatable("creativetab.ingredients"))
                     .displayItems((pParameters, pOutput) ->{
-                        pOutput.accept(ModItems.SULFUR.get());
                         pOutput.accept(ModItems.RAW_SILVER.get());
                         pOutput.accept(ModItems.RAW_PLATINUM.get());
                         pOutput.accept(ModItems.RAW_STEEL.get());
                         pOutput.accept(ModItems.RAW_TITANIUM.get());
                         pOutput.accept(ModItems.RAW_LUMINITE.get());
                         pOutput.accept(ModItems.RAW_ENDERIUM.get());
+                        pOutput.accept(ModItems.SULFUR.get());
 
                         pOutput.accept(ModItems.FROZEN_GEM.get());
                         pOutput.accept(ModItems.FIRERITE_GEM.get());
