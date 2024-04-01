@@ -145,6 +145,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.WAXED_WEATHERED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_BRICK.get());
                         pOutput.accept(ModBlocks.BONE_ORE.get());
+
+                        pOutput.accept(ModBlocks.COPPER_BARS.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
