@@ -3,7 +3,6 @@ package net.shadowbeast.projectshadow.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
-import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import org.jetbrains.annotations.NotNull;
