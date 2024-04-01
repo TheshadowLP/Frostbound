@@ -3,8 +3,7 @@ A Forge 1.20.1 mod
 
 ![CurseForge Downloads](https://img.shields.io/curseforge/dt/:projectId) \
 ![Modrinth Downloads](https://img.shields.io/modrinth/dt/:projectId) \
-![Discord](https://img.shields.io/discord/1188804461762723891)
-
+<a href="https://discord.gg/nkTkMsBDmg"><img src="https://img.shields.io/discord/1188804461762723891?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 
 # Where to find?
 Project Shadow is **ONLY** found on
