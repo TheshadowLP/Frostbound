@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.util.emi;
+/* package net.shadowbeast.projectshadow.util.emi;
 
 
 import dev.emi.emi.api.EmiEntrypoint;
@@ -16,3 +16,4 @@ public class ProjectShadowEMIPlugin implements EmiPlugin {
         AlloyFurnaceEMIRecipe.register(registry);
     }
 }
+*/

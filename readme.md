@@ -8,7 +8,7 @@ A Forge 1.20.1 mod
 # Where to find?
 Project Shadow is **ONLY** found on
 [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/projectshadow)
-or our **OFFICIAL** [Github](https://github.com/TheshadowLP/Forge-Shadow-1.20.1).
+or our **OFFICIAL** [GitHub](https://github.com/TheshadowLP/Forge-Shadow-1.20.1).
 Anywhere else is not official, and not us. Only download using the above links. <br>
 **Project Distribution does allow 3rd parties.**
 
@@ -22,7 +22,7 @@ You are free to join our official discord server [here](https://discord.gg/nkTkM
 
 # Dependencies
 Optional Dependencies:
-- [JEI](https://www.curseforge.com/minecraft/mc-mods/jei/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1)
+- [JEI](https://www.curseforge.com/minecraft/mc-mods/jei/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1) 
 - [EMI](https://www.curseforge.com/minecraft/mc-mods/emi/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1)
 
 # Developers

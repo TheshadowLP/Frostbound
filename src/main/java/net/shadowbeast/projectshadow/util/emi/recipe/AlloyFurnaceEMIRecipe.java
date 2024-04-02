@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.util.emi.recipe;
+/* package net.shadowbeast.projectshadow.util.emi.recipe;
 
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipe;
@@ -88,3 +88,4 @@ public class AlloyFurnaceEMIRecipe implements EmiRecipe {
         }
     }
 }
+ */
