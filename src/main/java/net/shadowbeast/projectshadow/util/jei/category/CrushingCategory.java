@@ -1,7 +1,6 @@
 package net.shadowbeast.projectshadow.util.jei.category;
 
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
-import dev.emi.emi.api.EmiRegistry;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -13,12 +12,11 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeManager;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blockEntities.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.util.emi.recipe.CrusherEMIRecipe;
 import org.jetbrains.annotations.NotNull;
+
 @MethodsReturnNonnullByDefault
 public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     public static final ResourceLocation UID = new ResourceLocation(ProjectShadow.MOD_ID, "crushing");
