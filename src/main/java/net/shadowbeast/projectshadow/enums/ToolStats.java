@@ -7,7 +7,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("depriction")
 public enum ToolStats implements Tier {
 
     STEEL(2, 826, 6.0F, 2.0F, 15, ModItems.STEEL_INGOT.get()),
