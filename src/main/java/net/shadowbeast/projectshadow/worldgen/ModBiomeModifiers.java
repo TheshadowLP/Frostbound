@@ -15,7 +15,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import org.jetbrains.annotations.NotNull;
 
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_TREE_FROZEN = registerKey("add_tree_frozen");
+    public static final ResourceKey<BiomeModifier> ADD_FROZEN_TREE = registerKey("frozen_tree");
     public static final ResourceKey<BiomeModifier> ADD_AQUANIUM_ORE = registerKey("aquanium_ore");
     public static final ResourceKey<BiomeModifier> ADD_BONE_ORE = registerKey("bone_ore");
     public static final ResourceKey<BiomeModifier> ADD_ENDERIUM_END_ORE = registerKey("enderium_end_ore");
@@ -103,7 +103,7 @@ public class ModBiomeModifiers {
 
 
 
-        context.register(ADD_TREE_FROZEN, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_COLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FROZEN_PLACED_KEY)), GenerationStep.Decoration.VEGETAL_DECORATION));
+    context.register(ADD_FROZEN_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_SNOWY), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FROZEN_PLACED_KEY)), GenerationStep.Decoration.VEGETAL_DECORATION));
 
 
     }

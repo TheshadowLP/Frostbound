@@ -27,7 +27,7 @@ import java.util.List;
 
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_KEY = registerKey("frozen");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_KEY = registerKey("frozen_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AQUANIUM_ORE_KEY = registerKey("aquanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BONE_ORE_KEY = registerKey("bone_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENDERIUM_END_ORE_ORE_KEY = registerKey("enderium_end_ore");
