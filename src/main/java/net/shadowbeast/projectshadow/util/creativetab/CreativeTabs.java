@@ -48,8 +48,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_BARS.get());
                         pOutput.accept(ModBlocks.TITANIUM_BARS.get());
 
-                        //pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
-                        //pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.CRUSHER.get());
 
                         pOutput.accept(ModBlocks.RUBY_BlOCK.get());
@@ -322,8 +322,8 @@ public class CreativeTabs {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.KOHLRABI.get());
                         pOutput.accept(ModItems.KOHLRABI_SEEDS.get());
-                        //pOutput.accept(ModItems.PEPPER.get()); //TODO will be avaible in the second mod version
-                        //pOutput.accept(ModItems.PEPPER_SEEDS.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModItems.PEPPER.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModItems.PEPPER_SEEDS.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());

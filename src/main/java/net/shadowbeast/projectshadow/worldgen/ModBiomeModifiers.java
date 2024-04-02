@@ -108,6 +108,6 @@ public class ModBiomeModifiers {
 
     }
     private static @NotNull ResourceKey<BiomeModifier> registerKey(String name) {
-        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(ProjectShadow.MOD_ID, "add_tree_frozen"));
+        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(ProjectShadow.MOD_ID, name));
     }
 }
