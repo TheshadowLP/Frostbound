@@ -74,11 +74,7 @@ public class ProjectShadow {
         EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
         EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
         ModItemProperties.addCustomItemProperties();
-        // ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_BARS.get(), RenderType.translucent());
-        // ItemBlockRenderTypes.setRenderLayer(ModBlocks.PLATINUM_BARS.get(), RenderType.translucent());
-        // ItemBlockRenderTypes.setRenderLayer(ModBlocks.STEEL_BARS.get(), RenderType.translucent());
-        // ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANIUM_BARS.get(), RenderType.translucent());
-    }
+w    }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
