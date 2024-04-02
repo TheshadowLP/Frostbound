@@ -100,10 +100,9 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TITANIUM_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
-
-
-
-    context.register(ADD_FROZEN_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_SNOWY), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FROZEN_PLACED_KEY)), GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_FROZEN_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_SNOWY), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FROZEN_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
 
 
     }
