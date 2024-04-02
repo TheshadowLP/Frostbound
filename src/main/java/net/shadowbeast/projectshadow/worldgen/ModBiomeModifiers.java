@@ -35,7 +35,6 @@ public class ModBiomeModifiers {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-
         context.register(ADD_AQUANIUM_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OCEAN),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.AQUANIUM_ORE_PLACED_KEY)),

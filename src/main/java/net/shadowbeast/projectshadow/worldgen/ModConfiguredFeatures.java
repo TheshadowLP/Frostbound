@@ -22,7 +22,6 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 
-
 import java.util.List;
 
 
