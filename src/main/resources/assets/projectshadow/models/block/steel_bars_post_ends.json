@@ -1,5 +1,6 @@
 {
   "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
   "textures": {
     "particle": "projectshadow:block/steel_bars",
     "edge": "projectshadow:block/steel_bars"

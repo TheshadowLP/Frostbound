@@ -1,5 +1,6 @@
 {
   "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
   "textures": {
     "particle": "projectshadow:block/titanium_bars",
     "bars": "projectshadow:block/titanium_bars",
