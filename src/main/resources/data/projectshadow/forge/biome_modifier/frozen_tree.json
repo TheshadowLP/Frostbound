@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:snowy_plains",
+  "features": "projectshadow:frozen_tree",
+  "step": "vegetal_decoration"
+}

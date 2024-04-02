@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> FROZEN_PLACED_KEY = registerKey("frozen");
+    public static final ResourceKey<PlacedFeature> FROZEN_PLACED_KEY = registerKey("frozen_tree");
     public static final ResourceKey<PlacedFeature> AQUANIUM_ORE_PLACED_KEY = registerKey("aquanium_ore");
     public static final ResourceKey<PlacedFeature> BONE_ORE_PLACED_KEY = registerKey("bone_ore");
     public static final ResourceKey<PlacedFeature> ENDERIUM_END_ORE_PLACED_KEY = registerKey("enderium_end_ore");
