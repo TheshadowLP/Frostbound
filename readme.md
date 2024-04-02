@@ -9,8 +9,8 @@ A Forge 1.20.1 mod
 Project Shadow is **ONLY** found on
 [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/projectshadow)
 or our **OFFICIAL** [Github](https://github.com/TheshadowLP/Forge-Shadow-1.20.1).
-Anywhere else is not official, and not us. Only download using the above links <br>
-**Project Distribution does allow 3rd parties**
+Anywhere else is not official, and not us. Only download using the above links. <br>
+**Project Distribution does allow 3rd parties.**
 
 # About the Mod
 Project Shadow improves your Minecraft vanilla experience! <br>
