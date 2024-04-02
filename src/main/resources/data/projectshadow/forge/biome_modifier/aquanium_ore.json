@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "features": "projectshadow:aquanium_ore",
-  "biomes": "#minecraft:is_ocean",
-  "step": "underground_ores"
-}
