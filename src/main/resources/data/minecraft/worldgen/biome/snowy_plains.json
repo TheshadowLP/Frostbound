@@ -72,8 +72,6 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_snowy",
-      "minecraft:flower_default",
       "minecraft:patch_grass_badlands",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
@@ -105,9 +103,9 @@
       },
       {
         "type": "minecraft:polar_bear",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 1
+        "maxCount": 12,
+        "minCount": 7,
+        "weight": 2
       }
     ],
     "misc": [],
