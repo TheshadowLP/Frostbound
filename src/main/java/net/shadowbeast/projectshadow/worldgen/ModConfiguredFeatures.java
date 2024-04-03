@@ -38,7 +38,6 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAND_AQUANIUM_ORE_KEY = registerKey("sand_aquanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_ORE_KEY = registerKey("silver_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> STEEL_ORE_KEY = registerKey("steel_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfur_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TITANIUM_ORE_KEY = registerKey("titanium_ore");
 
@@ -59,7 +58,6 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> RubyOre = List.of(OreConfiguration.target(deepslateReplaceabeles, ModBlocks.RUBY_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> SandAquaniumOre = List.of(OreConfiguration.target(sandReplaceabeles, ModBlocks.SAND_AQUANIUM_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> SilverOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SILVER_ORE.get().defaultBlockState()));
-        List<OreConfiguration.TargetBlockState> SteelOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.STEEL_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> SulfurOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SULFUR_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> TitaniumOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.TITANIUM_ORE.get().defaultBlockState()));
 
@@ -73,7 +71,6 @@ public class ModConfiguredFeatures {
         register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(RubyOre, 4));
         register(context, SAND_AQUANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(SandAquaniumOre, 6));
         register(context, SILVER_ORE_KEY, Feature.ORE, new OreConfiguration(SilverOre, 11));
-        register(context, STEEL_ORE_KEY, Feature.ORE, new OreConfiguration(SteelOre, 7));
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(SulfurOre, 7));
         register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(TitaniumOre, 6));
 

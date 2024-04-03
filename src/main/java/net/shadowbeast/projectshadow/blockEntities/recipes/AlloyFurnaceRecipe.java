@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
 import org.jetbrains.annotations.NotNull;
@@ -72,7 +73,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(Items.LAVA_BUCKET);
+        return Ingredient.of(Items.LAVA_BUCKET, Blocks.COAL_BLOCK.asItem(), Items.COAL, Items.CHARCOAL, Blocks.OAK_LOG.asItem());
     }
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         private Type() { }

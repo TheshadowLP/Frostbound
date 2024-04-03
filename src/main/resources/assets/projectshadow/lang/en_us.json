@@ -6,7 +6,6 @@
   "block.projectshadow.deepslate_luminite_ore": "Deepslate Luminite Ore",
   "block.projectshadow.ruby_ore": "Ruby Ore",
   "block.projectshadow.platinum_ore": "Platinum Ore",
-  "block.projectshadow.steel_ore": "Steel Ore",
   "block.projectshadow.silver_ore": "Silver Ore",
   "block.projectshadow.titanium_ore": "Titanium Ore",
   "block.projectshadow.frozen_gem_ore": "Frozen Gem Ore",
@@ -308,8 +307,7 @@
   "emi.category.projectshadow.crusher": "Crushing",
   "emi.category.projectshadow.alloy_furnace": "Alloying",
 
-  "item.projectshadow.stronghold_compass": "Stronghold Compass",
-  "item.projectshadow.stronghold_compass.description": "It locates strongholds nearest to you!",
-
-  "tag.projectshadow.frozen_logs": "Frozen Logs"
+  "tag.projectshadow.frozen_logs": "Frozen Logs",
+  "jei.projectshadow.alloying": "Alloying",
+  "jei.projectshadow.macerating": "Macerating"
 }

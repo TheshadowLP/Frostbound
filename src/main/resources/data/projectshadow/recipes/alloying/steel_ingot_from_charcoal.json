@@ -1,0 +1,14 @@
+{
+  "type": "projectshadow:alloying",
+  "ingredients": [
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "output": {
+    "item": "projectshadow:steel_ingot"
+  }
+}
