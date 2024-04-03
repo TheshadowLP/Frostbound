@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "compass",
+  "pattern": [
+    "beb",
+    "pcp",
+    "#a#"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:ender_eye"
+    },
+    "c": {
+      "item": "minecraft:compass"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    },
+    "p": {
+      "item": "minecraft:ender_pearl"
+    },
+    "#": {
+      "item": "projectshadow:ender_pearl_powder"
+    },
+    "a": {
+      "item": "projectshadow:ender_ingot"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "projectshadow:stripped_frozen_wood"
+  }
+}
