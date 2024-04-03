@@ -35,7 +35,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     }
     @Override
     public Component getTitle() {
-        return Component.literal("Crushing");
+        return Component.translatable("jei.projectshadow.macerating");
     }
     @Override
     public IDrawable getBackground() {

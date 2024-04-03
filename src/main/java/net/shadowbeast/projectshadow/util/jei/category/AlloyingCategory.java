@@ -42,7 +42,7 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
 
     @Override
     public Component getTitle() {
-        return Component.literal("Alloying");
+        return Component.translatable("jei.projectshadow.alloying");
     }
 
     @Override

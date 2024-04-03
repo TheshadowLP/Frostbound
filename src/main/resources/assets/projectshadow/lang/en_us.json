@@ -308,5 +308,7 @@
   "emi.category.projectshadow.crusher": "Crushing",
   "emi.category.projectshadow.alloy_furnace": "Alloying",
 
-  "tag.projectshadow.frozen_logs": "Frozen Logs"
+  "tag.projectshadow.frozen_logs": "Frozen Logs",
+  "jei.projectshadow.alloying": "Alloying",
+  "jei.projectshadow.macerating": "Macerating"
 }
