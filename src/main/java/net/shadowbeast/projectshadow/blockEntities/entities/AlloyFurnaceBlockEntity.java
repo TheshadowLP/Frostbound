@@ -15,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -29,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Optional;
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     public static class AlloyFurnaceSlot {
@@ -38,6 +40,40 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         public static final int OUTPUT_SLOT = 3;
         private AlloyFurnaceSlot() {}
     }
+
+    static List<Item> sFuel = List.of(Blocks.ACACIA_LOG.asItem(), Blocks.BIRCH_LOG.asItem(),
+            Blocks.OAK_LOG.asItem(), Blocks.JUNGLE_LOG.asItem(), Blocks.SPRUCE_LOG.asItem(),
+            Blocks.CHERRY_LOG.asItem(), Blocks.DARK_OAK_LOG.asItem(), Blocks.MANGROVE_LOG.asItem(),
+            Blocks.STRIPPED_ACACIA_LOG.asItem(), Blocks.STRIPPED_BIRCH_LOG.asItem(),
+            Blocks.STRIPPED_OAK_LOG.asItem(), Blocks.STRIPPED_JUNGLE_LOG.asItem(), Blocks.STRIPPED_SPRUCE_LOG.asItem(),
+            Blocks.STRIPPED_CHERRY_LOG.asItem(), Blocks.STRIPPED_DARK_OAK_LOG.asItem(), Blocks.STRIPPED_MANGROVE_LOG.asItem(),
+            Blocks.ACACIA_WOOD.asItem(), Blocks.BIRCH_WOOD.asItem(),
+            Blocks.OAK_WOOD.asItem(), Blocks.JUNGLE_WOOD.asItem(), Blocks.SPRUCE_WOOD.asItem(),
+            Blocks.CHERRY_WOOD.asItem(), Blocks.DARK_OAK_WOOD.asItem(), Blocks.MANGROVE_WOOD.asItem(),
+            Blocks.STRIPPED_ACACIA_WOOD.asItem(), Blocks.STRIPPED_BIRCH_WOOD.asItem(),
+            Blocks.STRIPPED_OAK_WOOD.asItem(), Blocks.STRIPPED_JUNGLE_WOOD.asItem(), Blocks.STRIPPED_SPRUCE_WOOD.asItem(),
+            Blocks.STRIPPED_CHERRY_WOOD.asItem(), Blocks.STRIPPED_DARK_OAK_WOOD.asItem(), Blocks.STRIPPED_MANGROVE_WOOD.asItem());
+    static List<Item> mFuel = List.of(Items.COAL, Items.CHARCOAL);
+    static List<Item> lFuel = List.of(Blocks.COAL_BLOCK.asItem());
+
+    private enum FuelTypes {
+        SMALL, MEDIUM, LARGE, NONE
+    }
+
+    private static FuelTypes getFuelItemInSlot(AlloyFurnaceBlockEntity entity) {
+        FuelTypes type;
+        if (sFuel.contains(entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem())) {
+            return FuelTypes.SMALL;
+        } else if (mFuel.contains(entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem())) {
+            return FuelTypes.MEDIUM;
+        } else if (lFuel.contains(entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem())) {
+            return FuelTypes.LARGE;
+        } else {
+            return FuelTypes.NONE;
+        }
+
+    }
+
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -49,7 +85,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int progress = 0;
     private int maxProgress = 260;
     private int fuel = 0;
-    private int maxFuel = 1000;
+    private int maxFuel = 4000;
     public  AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -125,10 +161,25 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  AlloyFurnaceBlockEntity pBlockEntity) {
-        if (hasItemInFuelSlot(pBlockEntity) && pBlockEntity.fuel == 0) {
+        if (hasLavaBucketInFuelSlot(pBlockEntity) && pBlockEntity.maxFuel - pBlockEntity.fuel >= 4000) {
             clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
             setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
-            pBlockEntity.fuel = 1000;
+            pBlockEntity.fuel += 4000;
+        }
+        FuelTypes currentFuel = getFuelItemInSlot(pBlockEntity);
+        if (currentFuel != FuelTypes.NONE && pBlockEntity.maxFuel - pBlockEntity.fuel >= 100) {
+            if (currentFuel == FuelTypes.SMALL && pBlockEntity.maxFuel - pBlockEntity.fuel >= 100) {
+                clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
+                pBlockEntity.fuel += 100;
+            } else if (currentFuel == FuelTypes.MEDIUM && pBlockEntity.maxFuel - pBlockEntity.fuel >= 200) {
+                clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
+                pBlockEntity.fuel += 200;
+            } else if (currentFuel == FuelTypes.LARGE && pBlockEntity.maxFuel - pBlockEntity.fuel >= 2000) {
+                clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
+                pBlockEntity.fuel += 2000;
+            } else {
+                throw new IllegalStateException("what did you do");
+            }
         }
 
         if(hasRecipe(pBlockEntity) && hasEnoughFuel(pBlockEntity)) {
@@ -156,7 +207,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
                 && hasEnoughFuel(entity);
     }
-    private static boolean hasItemInFuelSlot(AlloyFurnaceBlockEntity entity) {
+    private static boolean hasLavaBucketInFuelSlot(AlloyFurnaceBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
     }
 
