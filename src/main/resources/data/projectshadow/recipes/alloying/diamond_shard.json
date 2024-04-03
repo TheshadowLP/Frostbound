@@ -1,0 +1,14 @@
+{
+  "type": "projectshadow:alloying",
+  "ingredients": [
+    {
+      "item": "projectshadow:diamond_powder"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "output": {
+    "item": "projectshadow:diamond_shard"
+  }
+}
