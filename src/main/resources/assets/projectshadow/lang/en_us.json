@@ -308,5 +308,8 @@
   "emi.category.projectshadow.crusher": "Crushing",
   "emi.category.projectshadow.alloy_furnace": "Alloying",
 
+  "item.projectshadow.stronghold_compass": "Stronghold Compass",
+  "item.projectshadow.stronghold_compass.description": "It locates strongholds nearest to you!",
+
   "tag.projectshadow.frozen_logs": "Frozen Logs"
 }
