@@ -75,7 +75,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(Items.LAVA_BUCKET, Blocks.COAL_BLOCK.asItem(), Items.COAL, Items.CHARCOAL, Blocks.OAK_LOG.asItem());
+        return Ingredient.of(Items.LAVA_BUCKET, Blocks.COAL_BLOCK.asItem(), Items.COAL, Items.CHARCOAL, Blocks.OAK_LOG.asItem(), Blocks.OAK_WOOD.asItem());
     }
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         private Type() { }
