@@ -71,7 +71,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 }
             }
             public int getCount() {
-                return 2;
+                return 4;
             }
         };
     }
@@ -106,6 +106,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     protected void saveAdditional(@NotNull CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
         tag.putInt("alloy_furnace.progress", progress);
+        tag.putInt("alloy_furnace.fuel", fuel);
         super.saveAdditional(tag);
     }
     @Override
@@ -113,6 +114,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("alloy_furnace.progress");
+        fuel = nbt.getInt("alloy_furnace.fuel");
     }
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
@@ -158,7 +160,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         return entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
     }
 
-    private static boolean hasEnoughFuel(AlloyFurnaceBlockEntity entity) {
+    public static boolean hasEnoughFuel(AlloyFurnaceBlockEntity entity) {
         return entity.fuel >= 200;
     }
 
