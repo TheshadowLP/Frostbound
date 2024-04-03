@@ -19,6 +19,7 @@ import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
@@ -32,8 +33,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         this.recipeItems = recipeItems;
     }
     @Override
-    public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
-        if (pLevel.isClientSide()) { return false; }
+    @ParametersAreNonnullByDefault
+    public boolean matches(SimpleContainer pContainer, Level pLevel) {
+        if (pLevel.isClientSide()) return false;
 
         if (recipeItems.get(0).test(pContainer.getItem(1))) {
             return recipeItems.get(1).test(pContainer.getItem(2));
