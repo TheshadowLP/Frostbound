@@ -84,7 +84,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SULFUR_ORE.get());
                         pOutput.accept(ModBlocks.SILVER_ORE.get());
                         pOutput.accept(ModBlocks.PLATINUM_ORE.get());
-                        pOutput.accept(ModBlocks.STEEL_ORE.get());
                         pOutput.accept(ModBlocks.TITANIUM_ORE.get());
                         pOutput.accept(ModBlocks.LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.AQUANIUM_ORE.get());
