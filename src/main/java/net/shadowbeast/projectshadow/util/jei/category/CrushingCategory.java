@@ -16,6 +16,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blockEntities.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import org.jetbrains.annotations.NotNull;
+
 @MethodsReturnNonnullByDefault
 public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     public static final ResourceLocation UID = new ResourceLocation(ProjectShadow.MOD_ID, "crushing");

@@ -8,6 +8,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
+
+
 public class PepperCropBlock extends CropBlock {
     public static final int MAX_AGE = 7; //TODO missing crop stage texture
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);

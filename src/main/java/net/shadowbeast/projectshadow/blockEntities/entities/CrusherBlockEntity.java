@@ -33,7 +33,7 @@ import java.util.Optional;
 public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     public static class CrusherSlot {
         public static final int INPUT_SLOT = 0;
-        public static final int FUEL_SLOT = 1;
+        public static final int SHREDBLADE_SLOT = 1;
         public static final int OUTPUT_SLOT = 2;
         private CrusherSlot() {}
     }
@@ -70,7 +70,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     }
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.literal("Crusher");
+        return Component.translatable("block.projectshadow.crusher");
     }
     @Nullable
     @Override
@@ -133,7 +133,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
                 && hasItemInFuelSlot(entity);
     }
     private static boolean hasItemInFuelSlot(CrusherBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(CrusherSlot.FUEL_SLOT).getItem() == ModItems.SAW_BLADE.get();
+        return entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem() == ModItems.SAW_BLADE.get();
     }
     private static void craftItem(CrusherBlockEntity entity) {
         Level level = entity.level;
@@ -145,7 +145,6 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         Optional<CrusherRecipe> match = level.getRecipeManager()
                 .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level);
         if(match.isPresent()) {
-            clearItem(CrusherSlot.FUEL_SLOT, entity.itemHandler);
             clearItem(CrusherSlot.INPUT_SLOT, entity.itemHandler);
             setItem(match.get().getResultItem().getItem(), entity.itemHandler);
             entity.resetProgress();

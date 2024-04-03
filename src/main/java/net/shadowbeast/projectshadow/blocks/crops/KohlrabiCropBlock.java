@@ -30,7 +30,7 @@ public class KohlrabiCropBlock extends CropBlock {
         return MAX_AGE;
     }
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(@NotNull StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(AGE);
     }
 }

@@ -48,6 +48,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     public final ContainerData data;
     private int progress = 0;
     private int maxProgress = 260;
+    private int fuel = 0;
+    private int maxFuel = 1000;
     public  AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -55,6 +57,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 return switch (index) {
                     case 0 -> AlloyFurnaceBlockEntity.this.progress;
                     case 1 -> AlloyFurnaceBlockEntity.this.maxProgress;
+                    case 2 -> AlloyFurnaceBlockEntity.this.fuel;
+                    case 3 -> AlloyFurnaceBlockEntity.this.maxFuel;
                     default -> 0;
                 };
             }
@@ -62,6 +66,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 switch (index) {
                     case 0 -> AlloyFurnaceBlockEntity.this.progress = value;
                     case 1 -> AlloyFurnaceBlockEntity.this.maxProgress = value;
+                    case 2 -> AlloyFurnaceBlockEntity.this.fuel = value;
+                    case 3 -> AlloyFurnaceBlockEntity.this.maxFuel = value;
                 }
             }
             public int getCount() {
@@ -71,7 +77,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.literal("Alloy Furnace");
+        return Component.translatable("block.projectshadow.alloy_furnace");
     }
     @Nullable
     @Override
@@ -117,7 +123,13 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  AlloyFurnaceBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity)) {
+        if (hasItemInFuelSlot(pBlockEntity) && pBlockEntity.fuel == 0) {
+            clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
+            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
+            pBlockEntity.fuel = 1000;
+        }
+
+        if(hasRecipe(pBlockEntity) && hasEnoughFuel(pBlockEntity)) {
             pBlockEntity.progress++;
             setChanged(pLevel, pPos, pState);
             if(pBlockEntity.progress > pBlockEntity.maxProgress) {
@@ -140,11 +152,14 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
-                && hasItemInFuelSlot(entity);
+                && hasEnoughFuel(entity);
     }
     private static boolean hasItemInFuelSlot(AlloyFurnaceBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
+    }
 
+    private static boolean hasEnoughFuel(AlloyFurnaceBlockEntity entity) {
+        return entity.fuel >= 200;
     }
 
     private static void craftItem(AlloyFurnaceBlockEntity entity) {Level level = entity.level;
@@ -158,12 +173,11 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if(match.isPresent()) {
-            clearItem(AlloyFurnaceSlot.FUEL_SLOT, entity.itemHandler);
             clearItem(AlloyFurnaceSlot.INPUT_SLOT_1, entity.itemHandler);
             clearItem(AlloyFurnaceSlot.INPUT_SLOT_2, entity.itemHandler);
 
             setItem(match.get().getResultItem().getItem(), AlloyFurnaceSlot.OUTPUT_SLOT, entity.itemHandler);
-            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, entity.itemHandler);
+            entity.fuel -= 200;
 
             entity.resetProgress();
         }

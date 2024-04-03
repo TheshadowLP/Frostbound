@@ -33,7 +33,7 @@ public class CrusherMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler,
-                    CrusherBlockEntity.CrusherSlot.FUEL_SLOT, 26, 46));
+                    CrusherBlockEntity.CrusherSlot.SHREDBLADE_SLOT, 26, 46));
             this.addSlot(new SlotItemHandler(handler,
                     CrusherBlockEntity.CrusherSlot.INPUT_SLOT, 80, 17));
             this.addSlot(new ModResultSlot(handler,

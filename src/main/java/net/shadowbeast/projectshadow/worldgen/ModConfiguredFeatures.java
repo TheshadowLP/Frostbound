@@ -22,12 +22,12 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 
-
 import java.util.List;
 
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_KEY = registerKey("frozen_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_FROZEN_KEY = registerKey("big_frozen_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AQUANIUM_ORE_KEY = registerKey("aquanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BONE_ORE_KEY = registerKey("bone_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENDERIUM_END_ORE_ORE_KEY = registerKey("enderium_end_ore");
@@ -78,6 +78,7 @@ public class ModConfiguredFeatures {
         register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(TitaniumOre, 6));
 
         register(context, FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
+        register(context, BIG_FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
 
     }
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(ProjectShadow.MOD_ID, name));
