@@ -51,6 +51,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.CRUSHER.get());
+                        pOutput.accept(ModBlocks.SULFURIC_TNT.get());
 
                         pOutput.accept(ModBlocks.RUBY_BlOCK.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
