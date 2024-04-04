@@ -13,8 +13,11 @@ import net.shadowbeast.projectshadow.blockEntities.screen.*;
 import net.shadowbeast.projectshadow.util.jei.category.*;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @JeiPlugin
 @MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class ProjectShadowJEI implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
@@ -27,7 +30,7 @@ public class ProjectShadowJEI implements IModPlugin {
         //TODO will be available in the second mod version
     }
     @Override
-    public void registerRecipes(@NotNull IRecipeRegistration registration) {
+    public void registerRecipes(IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         CrusherRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
         AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
