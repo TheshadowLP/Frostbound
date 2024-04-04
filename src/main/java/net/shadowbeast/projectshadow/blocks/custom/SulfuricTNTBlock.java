@@ -14,6 +14,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
+@SuppressWarnings("deprecation")
 public class SulfuricTNTBlock extends Block {
     public SulfuricTNTBlock(Properties pProperties) {
         super(pProperties);
@@ -21,7 +22,8 @@ public class SulfuricTNTBlock extends Block {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pPlayer.getItemInHand(pHand).equals(new ItemStack(Items.FLINT_AND_STEEL))) {
+        ItemStack handItem = pPlayer.getItemInHand(pHand);
+        if (handItem.is(Items.FLINT_AND_STEEL)) {
             pLevel.explode(pPlayer, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5, 7.5f, true, Level.ExplosionInteraction.TNT);
             return InteractionResult.SUCCESS;
         } else {
