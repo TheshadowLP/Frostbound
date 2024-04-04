@@ -309,5 +309,7 @@
 
   "tag.projectshadow.frozen_logs": "Frozen Logs",
   "jei.projectshadow.alloying": "Alloying",
-  "jei.projectshadow.macerating": "Macerating"
+  "jei.projectshadow.macerating": "Macerating",
+
+  "item.minecraft.baked_potato": "Hot Baked Potato"
 }
