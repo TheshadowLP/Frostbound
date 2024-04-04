@@ -289,11 +289,11 @@
 
   "entity.projectshadow.mod_chest_boat": "Boat with Chest",
 
-  "creativetab.blocks": "Project Shadow - Blocks",
-  "creativetab.combat": "Project Shadow - Combat",
-  "creativetab.tools": "Project Shadow - Tools & Utilities",
-  "creativetab.drinks": "Project Shadow - Food & Drinks",
-  "creativetab.ingredients": "Project Shadow - Ingredients",
+  "creativetab.projectshadow.blocks": "Project Shadow - Blocks",
+  "creativetab.projectshadow.combat": "Project Shadow - Combat",
+  "creativetab.projectshadow.tools": "Project Shadow - Tools & Utilities",
+  "creativetab.projectshadow.drinks": "Project Shadow - Food & Drinks",
+  "creativetab.projectshadow.ingredients": "Project Shadow - Ingredients",
 
   "item.projectshadow.stacked_potato": "Stacked Potato",
   "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato",

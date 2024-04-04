@@ -30,4 +30,5 @@ public class SulfuricTNTBlock extends Block {
             return InteractionResult.FAIL;
         }
     }
+
 }
