@@ -40,6 +40,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         if (recipeItems.get(0).test(pContainer.getItem(1))) {
             return recipeItems.get(1).test(pContainer.getItem(2));
         }
+        if (recipeItems.get(0).test(pContainer.getItem(2))) {
+            return recipeItems.get(1).test(pContainer.getItem(1));
+        }
 
         return false;
     }
