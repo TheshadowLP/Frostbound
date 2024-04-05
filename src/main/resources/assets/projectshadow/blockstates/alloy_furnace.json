@@ -1,8 +1,34 @@
 {
   "variants": {
-    "facing=north": { "model": "projectshadow:block/alloy_furnace" },
-    "facing=east": { "model": "projectshadow:block/alloy_furnace", "y": 90},
-    "facing=south": { "model": "projectshadow:block/alloy_furnace", "y": 180},
-    "facing=west": { "model": "projectshadow:block/alloy_furnace", "y": 270}
+    "facing=north,active=false": {
+      "model": "projectshadow:block/alloy_furnace/off"
+    },
+    "facing=east,active=false": {
+      "model": "projectshadow:block/alloy_furnace/off",
+      "y": 90
+    },
+    "facing=south,active=false": {
+      "model": "projectshadow:block/alloy_furnace/off",
+      "y": 180
+    },
+    "facing=west,active=false": {
+      "model": "projectshadow:block/alloy_furnace/off",
+      "y": 270
+    },
+    "facing=north,active=true": {
+      "model": "projectshadow:block/alloy_furnace/on"
+    },
+    "facing=east,active=true": {
+      "model": "projectshadow:block/alloy_furnace/on",
+      "y": 90
+    },
+    "facing=south,active=true": {
+      "model": "projectshadow:block/alloy_furnace/on",
+      "y": 180
+    },
+    "facing=west,active=true": {
+      "model": "projectshadow:block/alloy_furnace/on",
+      "y": 270
+    }
   }
 }
