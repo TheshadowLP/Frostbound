@@ -16,9 +16,11 @@
 
   "block.projectshadow.alloy_furnace": "Alloy Furnace",
   "block.projectshadow.crusher": "Crusher",
+  "block.projectshadow.winter_furnace": "Winter Furnace",
   "block.projectshadow.sulfuric_tnt": "Sulfuric TNT",
 
   "block.projectshadow.steel_block": "Steel Block",
+  "block.projectshadow.sulfur_block": "Sulfur Block",
   "block.projectshadow.titanium_block": "Titanium Block",
   "block.projectshadow.platinum_block": "Platinum Block",
   "block.projectshadow.aquanium_block": "Aquanium Block",
@@ -117,8 +119,6 @@
   "item.projectshadow.titanium_powder": "Titanium Powder",
   "item.projectshadow.sulfur_powder": "Sulfur Powder",
 
-  "block.projectshadow.winter_furnace": "Winter Furnace",
-
 
   "item.projectshadow.raw_enderium": "Raw Enderium",
   "item.projectshadow.raw_luminite": "Raw Luminite",
@@ -215,7 +215,6 @@
   "item.projectshadow.frozen_shield": "Frozen Shield",
   "item.projectshadow.firerite_shield": "Firerite Shield",
   "item.projectshadow.enderium_shield": "Enderium Shield",
-
 
 
   "item.projectshadow.heal_staff": "Heal Staff",

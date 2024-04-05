@@ -54,6 +54,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SULFURIC_TNT.get());
 
                         pOutput.accept(ModBlocks.RUBY_BlOCK.get());
+                        pOutput.accept(ModBlocks.SULFUR_BlOCK.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
                         pOutput.accept(ModBlocks.PLATINUM_BlOCK.get());
                         pOutput.accept(ModBlocks.STEEL_BlOCK.get());
