@@ -196,6 +196,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         }
         pState = pState.setValue(ACTIVE, setActive);
         pLevel.setBlockAndUpdate(pPos, pState);
+        setChanged(pLevel, pPos, pState);
     }
     private static boolean hasRecipe( AlloyFurnaceBlockEntity entity) {
         Level level = entity.level;
