@@ -162,7 +162,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  AlloyFurnaceBlockEntity pBlockEntity) {
-        boolean setActive = false;
+        boolean setActive;
         if (hasLavaBucketInFuelSlot(pBlockEntity) && pBlockEntity.maxFuel - pBlockEntity.fuel >= 4000) {
             clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
             setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
@@ -179,8 +179,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             } else if (currentFuel == FuelTypes.LARGE && pBlockEntity.maxFuel - pBlockEntity.fuel >= 2000) {
                 clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
                 pBlockEntity.fuel += 2000;
-            } else {
-                throw new IllegalStateException("what did you do");
             }
         }
 
@@ -192,6 +190,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 craftItem(pBlockEntity);
             }
         } else {
+            setActive = false;
             pBlockEntity.resetProgress();
             setChanged(pLevel, pPos, pState);
         }
