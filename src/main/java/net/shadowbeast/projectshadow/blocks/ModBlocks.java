@@ -21,9 +21,9 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.crops.KohlrabiCropBlock;
 import net.shadowbeast.projectshadow.blocks.crops.PepperCropBlock;
 import net.shadowbeast.projectshadow.blocks.custom.*;
-import net.shadowbeast.projectshadow.blockEntities.block.AlloyFurnace;
-import net.shadowbeast.projectshadow.blockEntities.block.Crusher;
-import net.shadowbeast.projectshadow.blockEntities.block.WinterFurnace;
+import net.shadowbeast.projectshadow.blockEntities.block.AlloyFurnaceBlock;
+import net.shadowbeast.projectshadow.blockEntities.block.CrusherBlock;
+import net.shadowbeast.projectshadow.blockEntities.block.WinterFurnaceBlock;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
@@ -35,9 +35,12 @@ public class  ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ProjectShadow.MOD_ID);
 
     // Block Entities
-    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnace(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).noOcclusion()));
-    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new Crusher(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).noOcclusion()));
+    public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new CrusherBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+
+    //tuh un tuh
+    public static final RegistryObject<Block> SULFURIC_TNT = registerBlock("sulfuric_tnt", () -> new SulfuricTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT)));
 
     //CROPS
     public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop", () -> new KohlrabiCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));

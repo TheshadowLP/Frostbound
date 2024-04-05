@@ -26,8 +26,8 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class WinterFurnace extends AbstractFurnaceBlock {
-    public WinterFurnace(Properties pProperties){
+public class WinterFurnaceBlock extends AbstractFurnaceBlock {
+    public WinterFurnaceBlock(Properties pProperties){
         super(pProperties);
     }
     @Override

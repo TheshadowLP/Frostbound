@@ -19,6 +19,7 @@ import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
@@ -32,8 +33,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         this.recipeItems = recipeItems;
     }
     @Override
-    public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
-        if (pLevel.isClientSide()) { return false; }
+    @ParametersAreNonnullByDefault
+    public boolean matches(SimpleContainer pContainer, Level pLevel) {
+        if (pLevel.isClientSide()) return false;
 
         if (recipeItems.get(0).test(pContainer.getItem(1))) {
             return recipeItems.get(1).test(pContainer.getItem(2));
@@ -73,7 +75,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(Items.LAVA_BUCKET, Blocks.COAL_BLOCK.asItem(), Items.COAL, Items.CHARCOAL, Blocks.OAK_LOG.asItem());
+        return Ingredient.of(Items.LAVA_BUCKET, Blocks.COAL_BLOCK.asItem(), Items.COAL, Items.CHARCOAL, Blocks.OAK_LOG.asItem(), Blocks.OAK_WOOD.asItem());
     }
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         private Type() { }

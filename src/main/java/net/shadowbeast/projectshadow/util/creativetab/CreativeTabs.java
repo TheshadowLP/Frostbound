@@ -17,7 +17,7 @@ public class CreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ProjectShadow.MOD_ID);
     public static final RegistryObject<CreativeModeTab> BLOCKS = CREATIVE_MODE_TABS.register("blocks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.FROZEN_COBBLESTONE.get()))
-                    .title(Component.translatable("creativetab.blocks"))
+                    .title(Component.translatable("creativetab.projectshadow.blocks"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.FROZEN_LOG.get());
                         pOutput.accept(ModBlocks.FROZEN_WOOD.get());
@@ -51,6 +51,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
                         pOutput.accept(ModBlocks.CRUSHER.get());
+                        pOutput.accept(ModBlocks.SULFURIC_TNT.get());
 
                         pOutput.accept(ModBlocks.RUBY_BlOCK.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
@@ -97,7 +98,7 @@ public class CreativeTabs {
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDERIUM_SWORD.get()))
-                    .title(Component.translatable("creativetab.combat"))
+                    .title(Component.translatable("creativetab.projectshadow.combat"))
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.SILVER_SWORD.get());
                         pOutput.accept(ModItems.COPPER_SWORD.get());
@@ -196,7 +197,7 @@ public class CreativeTabs {
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_INGOT.get()))
-                    .title(Component.translatable("creativetab.ingredients"))
+                    .title(Component.translatable("creativetab.projectshadow.ingredients"))
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.RAW_SILVER.get());
                         pOutput.accept(ModItems.RAW_PLATINUM.get());
@@ -254,7 +255,7 @@ public class CreativeTabs {
                     }).build());
     public static final RegistryObject<CreativeModeTab> TOOLS = CREATIVE_MODE_TABS.register("tools",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.AQUANIUM_PICKAXE.get()))
-                    .title(Component.translatable("creativetab.tools"))
+                    .title(Component.translatable("creativetab.projectshadow.tools"))
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.SILVER_SHOVEL.get());
                         pOutput.accept(ModItems.SILVER_PICKAXE.get());
@@ -317,7 +318,7 @@ public class CreativeTabs {
                     }).build());
     public static final RegistryObject<CreativeModeTab> DRINKS = CREATIVE_MODE_TABS.register("drinks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))
-                    .title(Component.translatable("creativetab.drinks"))
+                    .title(Component.translatable("creativetab.projectshadow.drinks"))
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.KOHLRABI.get());
                         pOutput.accept(ModItems.KOHLRABI_SEEDS.get());

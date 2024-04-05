@@ -16,6 +16,7 @@
 
   "block.projectshadow.alloy_furnace": "Alloy Furnace",
   "block.projectshadow.crusher": "Crusher",
+  "block.projectshadow.sulfuric_tnt": "Sulfuric TNT",
 
   "block.projectshadow.steel_block": "Steel Block",
   "block.projectshadow.titanium_block": "Titanium Block",
@@ -289,11 +290,11 @@
 
   "entity.projectshadow.mod_chest_boat": "Boat with Chest",
 
-  "creativetab.blocks": "Project Shadow - Blocks",
-  "creativetab.combat": "Project Shadow - Combat",
-  "creativetab.tools": "Project Shadow - Tools & Utilities",
-  "creativetab.drinks": "Project Shadow - Food & Drinks",
-  "creativetab.ingredients": "Project Shadow - Ingredients",
+  "creativetab.projectshadow.blocks": "Project Shadow - Blocks",
+  "creativetab.projectshadow.combat": "Project Shadow - Combat",
+  "creativetab.projectshadow.tools": "Project Shadow - Tools & Utilities",
+  "creativetab.projectshadow.drinks": "Project Shadow - Food & Drinks",
+  "creativetab.projectshadow.ingredients": "Project Shadow - Ingredients",
 
   "item.projectshadow.stacked_potato": "Stacked Potato",
   "item.projectshadow.stacked_baked_potato": "Hot Baked Stacked Potato",
@@ -304,10 +305,9 @@
 
   "tooltip.projectshadow.shift_for_info" : "Press [§9SHIFT§r] for more Information",
 
-  "emi.category.projectshadow.crusher": "Crushing",
-  "emi.category.projectshadow.alloy_furnace": "Alloying",
-
   "tag.projectshadow.frozen_logs": "Frozen Logs",
   "jei.projectshadow.alloying": "Alloying",
-  "jei.projectshadow.macerating": "Macerating"
+  "jei.projectshadow.macerating": "Macerating",
+
+  "item.minecraft.baked_potato": "Hot Baked Potato"
 }
