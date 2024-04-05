@@ -71,6 +71,7 @@ public class  ModBlocks {
     public static final RegistryObject<Block> RUBY_BlOCK = registerBlock("ruby_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SILVER_BlOCK = registerBlock("silver_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).strength(3.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> STEEL_BlOCK = registerBlock("steel_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SULFUR_BlOCK = registerBlock("sulfur_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,3.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TITANIUM_BlOCK = registerBlock("titanium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     //COPPER BLOCKS

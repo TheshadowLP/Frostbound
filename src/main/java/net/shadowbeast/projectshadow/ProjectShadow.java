@@ -35,7 +35,7 @@ import net.shadowbeast.projectshadow.blockEntities.screen.WinterFurnaceScreen;
 @Mod(ProjectShadow.MOD_ID)
 public class ProjectShadow {
     public static final String MOD_ID = "projectshadow";
-    // private static final Logger LOGGER = LogUtils.getLogger();
+    // public static final Logger LOGGER = LogUtils.getLogger();
     public ProjectShadow() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
