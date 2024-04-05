@@ -1,7 +1,9 @@
 package net.shadowbeast.projectshadow.blockEntities.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +27,10 @@ import net.shadowbeast.projectshadow.blockEntities.entities.AlloyFurnaceBlockEnt
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @SuppressWarnings("deprecation")
+@ParametersAreNonnullByDefault
 public class AlloyFurnaceBlock extends BaseEntityBlock {
     public AlloyFurnaceBlock(Properties pProperties) {
         super(pProperties);
@@ -44,6 +49,15 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite()).setValue(ACTIVE, false);
     }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        if (pState.getValue(ACTIVE)) {
+            pLevel.addParticle(ParticleTypes.LAVA, pPos.getX() + 0.5, pPos.getY() + 1, pPos.getZ() + 0.5,
+                    0, 0, 0);
+        }
+    }
+
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos,
                                           @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
@@ -67,6 +81,18 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level pLevel, @NotNull BlockState pState, @NotNull BlockEntityType<T> pBlockEntityType) {
         return createTickerHelper(pBlockEntityType, ModBlockEntities.ALLOY_FURNACE_BLOCK_ENTITY.get(),
-                AlloyFurnaceBlockEntity::tick);
+                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
+        if (pState.getBlock() != pNewState.getBlock()) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof AlloyFurnaceBlockEntity) {
+                ((AlloyFurnaceBlockEntity) blockEntity).drops();
+            }
+        }
+
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
     }
 }

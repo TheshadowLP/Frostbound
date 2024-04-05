@@ -2,6 +2,7 @@ package net.shadowbeast.projectshadow.blockEntities.entities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
@@ -33,6 +34,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     public static class AlloyFurnaceSlot {
         public static final int FUEL_SLOT = 0;
@@ -161,48 +164,46 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  AlloyFurnaceBlockEntity pBlockEntity) {
-        boolean setActive;
-        if (hasLavaBucketInFuelSlot(pBlockEntity) && pBlockEntity.maxFuel - pBlockEntity.fuel >= 4000) {
-            clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
-            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
-            pBlockEntity.fuel += 4000;
+    public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
+        boolean isActive = false;
+        if (hasLavaBucketInFuelSlot() && this.maxFuel - this.fuel >= 4000) {
+            clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+            this.fuel += 4000;
         }
-        FuelTypes currentFuel = getFuelItemInSlot(pBlockEntity);
-        if (currentFuel != FuelTypes.NONE && pBlockEntity.maxFuel - pBlockEntity.fuel >= 100) {
-            if (currentFuel == FuelTypes.SMALL && pBlockEntity.maxFuel - pBlockEntity.fuel >= 100) {
-                clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
-                pBlockEntity.fuel += 100;
-            } else if (currentFuel == FuelTypes.MEDIUM && pBlockEntity.maxFuel - pBlockEntity.fuel >= 200) {
-                clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
-                pBlockEntity.fuel += 200;
-            } else if (currentFuel == FuelTypes.LARGE && pBlockEntity.maxFuel - pBlockEntity.fuel >= 2000) {
-                clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
-                pBlockEntity.fuel += 2000;
+        FuelTypes currentFuel = getFuelItemInSlot(this);
+        if (currentFuel != FuelTypes.NONE && this.maxFuel - this.fuel >= 100) {
+            if (currentFuel == FuelTypes.SMALL && this.maxFuel - this.fuel >= 100) {
+                clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+                this.fuel += 100;
+            } else if (currentFuel == FuelTypes.MEDIUM && this.maxFuel - this.fuel >= 200) {
+                clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+                this.fuel += 200;
+            } else if (currentFuel == FuelTypes.LARGE && this.maxFuel - this.fuel >= 2000) {
+                clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+                this.fuel += 2000;
             }
         }
 
-        if(hasRecipe(pBlockEntity) && hasEnoughFuel(pBlockEntity)) {
-            setActive = true;
-            pBlockEntity.progress++;
+        if(hasRecipe() && hasEnoughFuel()) {
+            this.progress++;
             setChanged(pLevel, pPos, pState);
-            if(pBlockEntity.progress > pBlockEntity.maxProgress) {
-                craftItem(pBlockEntity);
+            isActive = true;
+            if(this.progress > this.maxProgress) {
+                craftItem();
             }
         } else {
-            setActive = false;
-            pBlockEntity.resetProgress();
+            resetProgress();
             setChanged(pLevel, pPos, pState);
         }
-        pState = pState.setValue(ACTIVE, setActive);
-        pLevel.setBlockAndUpdate(pPos, pState);
-        setChanged(pLevel, pPos, pState);
+        pState = pState.setValue(ACTIVE, isActive);
+        level.setBlockAndUpdate(pPos, pState);
     }
-    private static boolean hasRecipe( AlloyFurnaceBlockEntity entity) {
-        Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+    private boolean hasRecipe() {
+        Level level = this.level;
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
         assert level != null;
         Optional<AlloyFurnaceRecipe> match = level.getRecipeManager()
@@ -210,20 +211,21 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
-                && hasEnoughFuel(entity);
+                && hasEnoughFuel();
     }
-    private static boolean hasLavaBucketInFuelSlot(AlloyFurnaceBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
-    }
-
-    public static boolean hasEnoughFuel(AlloyFurnaceBlockEntity entity) {
-        return entity.fuel >= 200;
+    private boolean hasLavaBucketInFuelSlot() {
+        return this.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
     }
 
-    private static void craftItem(AlloyFurnaceBlockEntity entity) {Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+    public boolean hasEnoughFuel() {
+        return this.fuel >= 200;
+    }
+
+    private void craftItem() {
+        Level level = this.level;
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
         assert level != null;
@@ -231,13 +233,13 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if(match.isPresent()) {
-            clearItem(AlloyFurnaceSlot.INPUT_SLOT_1, entity.itemHandler);
-            clearItem(AlloyFurnaceSlot.INPUT_SLOT_2, entity.itemHandler);
+            clearItem(AlloyFurnaceSlot.INPUT_SLOT_1, this.itemHandler);
+            clearItem(AlloyFurnaceSlot.INPUT_SLOT_2, this.itemHandler);
 
-            setItem(match.get().getResultItem().getItem(), AlloyFurnaceSlot.OUTPUT_SLOT, entity.itemHandler);
-            entity.fuel -= 200;
+            setItem(match.get().getResultItem().getItem(), AlloyFurnaceSlot.OUTPUT_SLOT, this.itemHandler);
+            this.fuel -= 200;
 
-            entity.resetProgress();
+            this.resetProgress();
         }
     }
     private static void clearItem(int Slot, @NotNull ItemStackHandler handler) {
