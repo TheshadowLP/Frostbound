@@ -26,6 +26,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.blockEntities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.blockEntities.menu.AlloyFurnaceMenu;
+import static net.shadowbeast.projectshadow.blockEntities.block.AlloyFurnaceBlock.ACTIVE;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
@@ -161,6 +162,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  AlloyFurnaceBlockEntity pBlockEntity) {
+        boolean setActive = false;
         if (hasLavaBucketInFuelSlot(pBlockEntity) && pBlockEntity.maxFuel - pBlockEntity.fuel >= 4000) {
             clearItem(AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
             setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, pBlockEntity.itemHandler);
@@ -183,6 +185,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         }
 
         if(hasRecipe(pBlockEntity) && hasEnoughFuel(pBlockEntity)) {
+            setActive = true;
             pBlockEntity.progress++;
             setChanged(pLevel, pPos, pState);
             if(pBlockEntity.progress > pBlockEntity.maxProgress) {
@@ -192,6 +195,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             pBlockEntity.resetProgress();
             setChanged(pLevel, pPos, pState);
         }
+        pState = pState.setValue(ACTIVE, setActive);
+        pLevel.setBlockAndUpdate(pPos, pState);
     }
     private static boolean hasRecipe( AlloyFurnaceBlockEntity entity) {
         Level level = entity.level;
