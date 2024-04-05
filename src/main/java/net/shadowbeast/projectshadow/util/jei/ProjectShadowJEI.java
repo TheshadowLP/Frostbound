@@ -8,8 +8,9 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blockEntities.recipes.*;
 import net.shadowbeast.projectshadow.blockEntities.screen.*;
+import net.shadowbeast.projectshadow.blockEntities.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.blockEntities.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.util.jei.category.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,20 +25,20 @@ public class ProjectShadowJEI implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new CrushingCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new AlloyingCategory(registration.getJeiHelpers().getGuiHelper()));
-        //TODO will be available in the second mod version
+        //TODO
     }
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         CrusherRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
         AlloyFurnaceRecipe.addAllRecipes(Minecraft.getInstance().level.getRecipeManager(), registration);
-        //TODO will be available in the second mod version
+        //TODO
     }
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(CrusherScreen.class, 98, 17, 16, 16,
+        registration.addRecipeClickArea(CrusherScreen.class, 82, 35, 11, 18,
                 CrushingCategory.CRUSHER_RECIPE_TYPE);
         registration.addRecipeClickArea(AlloyFurnaceScreen.class, 83, 19, 30, 45,
-                AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE);
+                AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE); //TODO
     }
 }
