@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 @OnlyIn(Dist.CLIENT)
 public class ConfigScreen extends Screen {
     private final Screen previous;
+    @OnlyIn(Dist.CLIENT)
     public ConfigScreen(Screen previous) {
         super(Component.literal("Project Shadow Configuration"));
         this.previous = previous;
