@@ -46,7 +46,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     public final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 300;
+    private int maxProgress = 200;
     public  CrusherBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.CRUSHER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -107,15 +107,15 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("crushing.progress");
     }
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState,  CrusherBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity)) {
-            pBlockEntity.progress++;
+    public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
+        if(hasRecipe(this)) {
+            this.progress++;
             setChanged(pLevel, pPos, pState);
-            if(pBlockEntity.progress > pBlockEntity.maxProgress) {
-                craftItem(pBlockEntity);
+            if(this.progress > this.maxProgress) {
+                craftItem();
             }
         } else {
-            pBlockEntity.resetProgress();
+            this.resetProgress();
             setChanged(pLevel, pPos, pState);
         }
     }
@@ -135,19 +135,32 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     private static boolean hasItemInFuelSlot(CrusherBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem() == ModItems.SAW_BLADE.get();
     }
-    private static void craftItem(CrusherBlockEntity entity) {
-        Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+    private void craftItem() {
+        Level level = this.level;
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
         assert level != null;
         Optional<CrusherRecipe> match = level.getRecipeManager()
                 .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level);
         if(match.isPresent()) {
-            clearItem(CrusherSlot.INPUT_SLOT, entity.itemHandler);
-            setItem(match.get().getResultItem().getItem(), entity.itemHandler);
-            entity.resetProgress();
+            ItemStack stack = this.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT);
+            CompoundTag damage = stack.getTagElement("Damage");
+            if (damage == null) {
+                CompoundTag newDamage = stack.getOrCreateTagElement("Damage");
+                newDamage.putInt("Damage", 1);
+            } else {
+                CompoundTag newDamage = stack.getOrCreateTagElement("Damage");
+                damage = stack.getTagElement("Damage");
+                newDamage.putInt("Damage", damage.getInt("Damage") + 1);
+                if (damage.getInt("Damage") + 1 > 256) {
+                    clearItem(1, this.itemHandler);
+                }
+            }
+            clearItem(CrusherSlot.INPUT_SLOT, this.itemHandler);
+            setItem(match.get().getResultItem().getItem(), this.itemHandler);
+            this.resetProgress();
         }
     }
     private static void clearItem(int Slot, @NotNull ItemStackHandler handler) {
