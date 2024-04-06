@@ -52,8 +52,8 @@ public class CrusherBlock extends BaseEntityBlock {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
     @Override
-    public  InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
-                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
+                                          Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof CrusherBlockEntity) {
