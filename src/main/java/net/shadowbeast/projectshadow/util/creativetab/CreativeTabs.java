@@ -95,6 +95,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
+                        pOutput.accept(ModBlocks.BAUXITE.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",

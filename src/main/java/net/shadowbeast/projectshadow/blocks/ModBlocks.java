@@ -60,6 +60,7 @@ public class  ModBlocks {
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(2.6F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BAUXITE = registerBlock("bauxite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     //ORES BLOCKS
     public static final RegistryObject<Block> AQUANIUM_BlOCK = registerBlock("aquanium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));

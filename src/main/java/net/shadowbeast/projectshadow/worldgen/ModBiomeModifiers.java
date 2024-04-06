@@ -29,6 +29,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SILVER_ORE = registerKey("silver_ore");
     public static final ResourceKey<BiomeModifier> ADD_SULFUR_ORE = registerKey("sulfur_ore");
     public static final ResourceKey<BiomeModifier> ADD_TITANIUM_ORE = registerKey("titanium_ore");
+    public static final ResourceKey<BiomeModifier> ADD_BAUXITE = registerKey("bauxite");
 
     public static void bootstrap(@NotNull BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -67,6 +68,11 @@ public class ModBiomeModifiers {
         context.register(ADD_PLATINUM_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PLATINUM_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_BAUXITE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BAUXITE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_RUBY_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
