@@ -194,7 +194,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 craftItem();
                 assert level != null;
                 level.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
-                        SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.0F, 1.0F, 16);
+                        SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.1F, 1.0F, 16);
             }
         } else {
             resetProgress();

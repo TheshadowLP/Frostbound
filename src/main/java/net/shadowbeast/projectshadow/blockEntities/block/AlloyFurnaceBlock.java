@@ -69,7 +69,10 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
                 pLevel.addParticle(ParticleTypes.FLAME, x - 0.1, pPos.getY() + 0.2, z - 0.1,
                         0, 0, 0);
             }
-
+            if (pRandom.nextInt(4) == 0) {
+                pLevel.addParticle(ParticleTypes.LAVA, pPos.getX() + 0.5, pPos.getY() + 0.8, pPos.getZ() + 0.5,
+                        0, 0, 0);
+            }
             if (pRandom.nextInt(4) == 0) {
                 pLevel.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
                         SoundEvents.BLASTFURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1, 1, 16);
