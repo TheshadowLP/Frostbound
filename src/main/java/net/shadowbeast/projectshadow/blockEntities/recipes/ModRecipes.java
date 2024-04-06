@@ -1,5 +1,6 @@
 package net.shadowbeast.projectshadow.blockEntities.recipes;
 
+import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,17 +18,8 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<CrusherRecipe>> CRUSHING_SERIALIZER =
             SERIALIZERS.register("crushing", () -> CrusherRecipe.Serializer.INSTANCE);
 
-
-    public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, ProjectShadow.MOD_ID);
-  public static final RegistryObject<RecipeType<WinterFurnaceRecipe>> WINTER_FURNACE_TYPE =
-            SERIALIZERS.register("winter_furnace", () -> WinterFurnaceRecipe.Type.INSTANCE);
-    public static final RegistryObject<RecipeType<AlloyFurnaceRecipe>> ALLOYING_TYPE =
-            SERIALIZERS.register("alloying", () -> AlloyFurnaceRecipe.Type.INSTANCE);
-    public static final RegistryObject<RecipeType<CrusherRecipe>> CRUSHING_TYPE =
-            SERIALIZERS.register("crushing", () -> CrusherRecipe.Type.INSTANCE);
     
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
-        RECIPE_TYPES.register(eventBus);
     }
 }
