@@ -192,6 +192,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         if(hasRecipe() && hasEnoughFuel()) {
             this.progress++;
             setChanged(pLevel, pPos, pState);
+            ambient(pPos);
             isActive = true;
             if(this.progress > this.maxProgress) {
                 craftItem();
@@ -223,6 +224,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private boolean hasLavaBucketInFuelSlot() {
         return this.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
     }
+
+    private void ambient(BlockPos pPos) {
+        Level pLevel = this.level;
+        if (new Random().nextInt(40) == 0) {
+            pLevel.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
+                    SoundEvents.BLASTFURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1, 1, 16);
+        }
+    }
+
 
     public boolean hasEnoughFuel() {
         return this.fuel >= 200;
