@@ -2,11 +2,8 @@ package net.shadowbeast.projectshadow.blockEntities.entities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
@@ -48,7 +45,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         public static final int OUTPUT_SLOT = 3;
         private AlloyFurnaceSlot() {}
     }
-
     static List<Item> sFuel = List.of(Blocks.ACACIA_LOG.asItem(), Blocks.BIRCH_LOG.asItem(),
             Blocks.OAK_LOG.asItem(), Blocks.JUNGLE_LOG.asItem(), Blocks.SPRUCE_LOG.asItem(),
             Blocks.CHERRY_LOG.asItem(), Blocks.DARK_OAK_LOG.asItem(), Blocks.MANGROVE_LOG.asItem(),
@@ -196,14 +192,16 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             isActive = true;
             if(this.progress > this.maxProgress) {
                 craftItem();
+                assert level != null;
                 level.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
-                        SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1.0F, 16);
+                        SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.0F, 1.0F, 16);
             }
         } else {
             resetProgress();
             setChanged(pLevel, pPos, pState);
         }
         pState = pState.setValue(ACTIVE, isActive);
+        assert level != null;
         level.setBlockAndUpdate(pPos, pState);
         setChanged(pLevel, pPos, pState);
     }
@@ -228,6 +226,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private void ambient(BlockPos pPos) {
         Level pLevel = this.level;
         if (new Random().nextInt(40) == 0) {
+            assert pLevel != null;
             pLevel.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
                     SoundEvents.BLASTFURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1, 1, 16);
         }
