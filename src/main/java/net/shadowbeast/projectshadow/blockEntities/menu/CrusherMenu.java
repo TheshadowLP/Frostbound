@@ -16,7 +16,6 @@ import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.blockEntities.entities.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 
-@OnlyIn(Dist.CLIENT)
 public class CrusherMenu extends AbstractContainerMenu {
     private final CrusherBlockEntity blockEntity;
     private final Level level;
