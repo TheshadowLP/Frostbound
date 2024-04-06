@@ -1,0 +1,14 @@
+{
+  "type": "projectshadow:alloying",
+  "ingredients": [
+    {
+      "item": "projectshadow:bauxite"
+    },
+    {
+      "tag": "mincraft:coals"
+    }
+  ],
+  "output": {
+    "item": "projectshadow:aluminium_ingot"
+  }
+}
