@@ -26,6 +26,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.blockEntities.entities.AlloyFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.util.MathUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,11 +56,26 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
     @Override
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
         if (pState.getValue(ACTIVE)) {
-            pLevel.addParticle(ParticleTypes.LAVA, pPos.getX() + 0.5, pPos.getY() + 1, pPos.getZ() + 0.5,
-                    0, 0, 0);
+            float radius = 0.2f;
+            double xE;
+            double zE;
+            double x;
+            double z;
+            for (int i = 0; i <= 360; i += 45) {
+                x = MathUtils.getRelative("x", i, 90, radius) + pPos.getX() + 0.5;
+                z = MathUtils.getRelative("z", i, 90, radius) + pPos.getZ() + 0.5;
+                pLevel.addParticle(ParticleTypes.FLAME, x, pPos.getY() + 0.2, z,
+                        0, 0, 0);
+                pLevel.addParticle(ParticleTypes.FLAME, x - 0.1, pPos.getY() + 0.2, z - 0.1,
+                        0, 0, 0);
+            }
+            if (pRandom.nextInt(2) == 0) {
+                pLevel.addParticle(ParticleTypes.LAVA, pPos.getX() + 0.5, pPos.getY() + 1, pPos.getZ() + 0.5,
+                        0, 0, 0);
+            }
             if (pRandom.nextInt(4) == 0) {
                 pLevel.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
-                        SoundEvents.BLASTFURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1, pRandom.nextFloat(), 16);
+                        SoundEvents.BLASTFURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1, 1, 16);
             }
         }
     }
