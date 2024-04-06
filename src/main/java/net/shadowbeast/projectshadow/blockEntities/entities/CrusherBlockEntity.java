@@ -153,6 +153,9 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
             } else {
                 CompoundTag newDamage = stack.getOrCreateTagElement("Damage");
                 damage = stack.getTagElement("Damage");
+
+                assert damage != null;
+
                 newDamage.putInt("Damage", damage.getInt("Damage") + 1);
                 if (damage.getInt("Damage") + 1 > 256) {
                     clearItem(1, this.itemHandler);
