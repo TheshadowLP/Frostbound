@@ -7,10 +7,13 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blockEntities.menu.CrusherMenu;
 import org.jetbrains.annotations.NotNull;
 
+@OnlyIn(Dist.CLIENT)
 public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/crusher_gui.png");

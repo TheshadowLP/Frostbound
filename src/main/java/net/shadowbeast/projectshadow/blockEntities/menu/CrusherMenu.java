@@ -7,6 +7,8 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.projectshadow.blockEntities.slot.ModResultSlot;
@@ -14,6 +16,7 @@ import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.blockEntities.entities.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 
+@OnlyIn(Dist.CLIENT)
 public class CrusherMenu extends AbstractContainerMenu {
     private final CrusherBlockEntity blockEntity;
     private final Level level;

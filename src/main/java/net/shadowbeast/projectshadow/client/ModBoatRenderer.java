@@ -43,7 +43,7 @@ public class ModBoatRenderer extends BoatRenderer {
     private static ModelLayerLocation createLocation(String pPath) {
         return new ModelLayerLocation(new ResourceLocation(ProjectShadow.MOD_ID, pPath), "main");
     }
-    public @NotNull Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(@NotNull Boat boat) {
+    public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(@NotNull Boat boat) {
         if(boat instanceof ModBoatEntity modBoat) {
             return this.boatResources.get(modBoat.getModVariant());
         } else if(boat instanceof ModChestBoatEntity modChestBoatEntity) {
