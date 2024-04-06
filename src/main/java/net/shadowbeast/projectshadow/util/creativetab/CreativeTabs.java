@@ -228,6 +228,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.PLATINUM_INGOT.get());
                         pOutput.accept(ModItems.STEEL_INGOT.get());
                         pOutput.accept(ModItems.TITANIUM_INGOT.get());
+                        pOutput.accept(ModItems.ALUMINIUM_INGOT.get());
                         pOutput.accept(ModItems.LUMINITE_INGOT.get());
                         pOutput.accept(ModItems.AQUANIUM_INGOT.get());
                         pOutput.accept(ModItems.ENDERIUM_INGOT.get());
