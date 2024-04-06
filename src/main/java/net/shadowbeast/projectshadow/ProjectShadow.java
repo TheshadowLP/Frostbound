@@ -62,7 +62,7 @@ public class ProjectShadow {
     private void commonSetup(final FMLCommonSetupEvent event) {}
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
