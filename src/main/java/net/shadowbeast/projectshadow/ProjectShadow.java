@@ -1,5 +1,6 @@
 package net.shadowbeast.projectshadow;
 
+import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.Screen;
@@ -31,11 +32,12 @@ import net.shadowbeast.projectshadow.blockEntities.recipes.ModRecipes;
 import net.shadowbeast.projectshadow.blockEntities.screen.AlloyFurnaceScreen;
 import net.shadowbeast.projectshadow.blockEntities.menu.ModMenuTypes;
 import net.shadowbeast.projectshadow.blockEntities.screen.WinterFurnaceScreen;
+import org.slf4j.Logger;
 
 @Mod(ProjectShadow.MOD_ID)
 public class ProjectShadow {
     public static final String MOD_ID = "projectshadow";
-    // public static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public ProjectShadow() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -57,8 +59,7 @@ public class ProjectShadow {
     }
     private void commonSetup(final FMLCommonSetupEvent event) {}
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {}
+
     private void clientSetup(final FMLClientSetupEvent event) {
         Sheets.addWoodType(ModWoodTypes.FROZEN);
         MenuScreens.register(ModMenuTypes.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
