@@ -63,7 +63,7 @@ public class ModItems {
     //TECH STUFF
     public static final RegistryObject<Item> IRON_PLATE = ITEMS.register("iron_plate", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_SULFUR_BUCKET = ITEMS.register("molten_sulfur_bucket", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SAW_BLADE = ITEMS.register("saw_blade", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAW_BLADE = ITEMS.register("saw_blade", () -> new Item(new Item.Properties().stacksTo(1).durability(256)));
     public static final RegistryObject<Item> STRONGHOLD_COMPASS = ITEMS.register("stronghold_compass", () -> new Item(new Item.Properties().stacksTo(1)));
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch", () -> new Item(new Item.Properties()));
