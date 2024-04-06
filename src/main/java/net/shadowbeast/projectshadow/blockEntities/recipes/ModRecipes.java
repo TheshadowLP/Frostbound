@@ -1,5 +1,6 @@
 package net.shadowbeast.projectshadow.blockEntities.recipes;
 
+import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,6 +17,8 @@ public class ModRecipes {
             SERIALIZERS.register("alloying", () -> AlloyFurnaceRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<CrusherRecipe>> CRUSHING_SERIALIZER =
             SERIALIZERS.register("crushing", () -> CrusherRecipe.Serializer.INSTANCE);
+
+    
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }
