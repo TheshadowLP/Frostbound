@@ -3,6 +3,8 @@ package net.shadowbeast.projectshadow.blockEntities.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -55,6 +57,10 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
         if (pState.getValue(ACTIVE)) {
             pLevel.addParticle(ParticleTypes.LAVA, pPos.getX() + 0.5, pPos.getY() + 1, pPos.getZ() + 0.5,
                     0, 0, 0);
+            if (pRandom.nextInt(4) == 0) {
+                pLevel.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
+                        SoundEvents.BLASTFURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1, pRandom.nextFloat(), 16);
+            }
         }
     }
 
