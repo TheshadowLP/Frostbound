@@ -52,7 +52,7 @@ public class ModPlacedFeatures {
         register(context, SILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILVER_ORE_KEY), ModOrePlacement.commonOrePlacement(14, HeightRangePlacement.uniform(VerticalAnchor.absolute(65), VerticalAnchor.absolute(90))));
         register(context, SULFUR_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SULFUR_ORE_KEY), ModOrePlacement.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.absolute(60))));
         register(context, TITANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_KEY), ModOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.absolute(70))));
-        register(context, BAUXITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BAUXITE_KEY), ModOrePlacement.commonOrePlacement(32, HeightRangePlacement.uniform(VerticalAnchor.absolute(20), VerticalAnchor.absolute(70))));
+        register(context, BAUXITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BAUXITE_KEY), ModOrePlacement.rareOrePlacement(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(50))));
 
         register(context, FROZEN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FROZEN_KEY), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), ModBlocks.FROZEN_SAPLING.get()));
         register(context, BIG_FROZEN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BIG_FROZEN_KEY), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), ModBlocks.FROZEN_SAPLING.get()));

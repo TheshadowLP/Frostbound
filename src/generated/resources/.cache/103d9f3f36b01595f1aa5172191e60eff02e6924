@@ -1,4 +1,4 @@
-// 1.20.1	2024-04-06T09:10:33.6899959	Registries
+// 1.20.1	2024-04-06T09:18:39.3825439	Registries
 a8112f16fe5be25f974a195453a08e34706ce34c data/projectshadow/forge/biome_modifier/aquanium_ore.json
 c1c23e002ace097a4f0dbf973bcf1b92d50027ae data/projectshadow/forge/biome_modifier/bauxite.json
 165e14730bfd937d62cec564fe961eb966e1b475 data/projectshadow/forge/biome_modifier/big_frozen_tree.json
@@ -30,7 +30,7 @@ c7447fb31e07560091a1f013f74605facc105efb data/projectshadow/worldgen/configured_
 f54e1b0f81339661492227e5e46916b2eadfc66d data/projectshadow/worldgen/configured_feature/sulfur_ore.json
 619f6dee298bd5f148619c9329ef73fcc2a55127 data/projectshadow/worldgen/configured_feature/titanium_ore.json
 10e2d38472c376d6467616481eeb5343b77d65ce data/projectshadow/worldgen/placed_feature/aquanium_ore.json
-9dd17451f38f633a31b24dbc384fb10cf6cb1e66 data/projectshadow/worldgen/placed_feature/bauxite.json
+41dd3d047893d8d64df873a1d7aa381313d89232 data/projectshadow/worldgen/placed_feature/bauxite.json
 530392b330e58642cec545e8d18b72b1a3c09c1c data/projectshadow/worldgen/placed_feature/big_frozen_tree.json
 b8ff4055d122fa9f51ba4fd88c3fbea53172cfea data/projectshadow/worldgen/placed_feature/bone_ore.json
 391900076eb25800452b830419bd3b6cc3c35c4f data/projectshadow/worldgen/placed_feature/enderium_end_ore.json
