@@ -39,7 +39,7 @@ public class  ModBlocks {
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).noOcclusion()));
     public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new CrusherBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 
-    //tuh un tuh
+    //TNT
     public static final RegistryObject<Block> SULFURIC_TNT = registerBlock("sulfuric_tnt", () -> new SulfuricTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT)));
 
     //CROPS

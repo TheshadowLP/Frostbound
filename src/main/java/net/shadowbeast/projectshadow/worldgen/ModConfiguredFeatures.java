@@ -64,6 +64,7 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> Bauxite = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.BAUXITE.get().defaultBlockState()));
 
         register(context, AQUANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(AquaniumOre, 8));
+        register(context, BAUXITE_KEY, Feature.ORE, new OreConfiguration(Bauxite, 40));
         register(context, BONE_ORE_KEY, Feature.ORE, new OreConfiguration(BoneOre, 9));
         register(context, LUMINITE_ORE_KEY, Feature.ORE, new OreConfiguration(LuminiteOre, 6));
         register(context, ENDERIUM_END_ORE_ORE_KEY, Feature.ORE, new OreConfiguration(EnderiumEndOre, 3));
@@ -75,7 +76,6 @@ public class ModConfiguredFeatures {
         register(context, SILVER_ORE_KEY, Feature.ORE, new OreConfiguration(SilverOre, 11));
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(SulfurOre, 7));
         register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(TitaniumOre, 6));
-        register(context, BAUXITE_KEY, Feature.ORE, new OreConfiguration(Bauxite, 40));
 
         register(context, FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
         register(context, BIG_FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
