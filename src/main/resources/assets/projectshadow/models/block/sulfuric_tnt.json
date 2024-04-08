@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "top": "projectshadow:block/sulfuric_tnt_top",
+    "top": "projectshadow:block/sulfuric_tnt_bottom",
     "side": "projectshadow:block/sulfuric_tnt_side",
     "bottom": "projectshadow:block/sulfuric_tnt_bottom"
   }
