@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_taiga",
+  "biomes": "minecraft:snowy_plains",
   "features": "projectshadow:frozen_gem_ore",
   "step": "underground_ores"
 }

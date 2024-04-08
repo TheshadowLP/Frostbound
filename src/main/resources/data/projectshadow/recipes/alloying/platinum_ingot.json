@@ -9,8 +9,6 @@
     }
   ],
   "output": {
-    "item": "projectshadow:platinum_ingot",
-    "count": 2,
-    "amount": 2
+    "item": "projectshadow:platinum_ingot"
   }
 }
