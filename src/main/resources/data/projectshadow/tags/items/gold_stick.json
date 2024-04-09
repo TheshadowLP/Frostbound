@@ -1,6 +1,7 @@
 {
   "values": [
     "forge:rods",
-    "minecraft:piglin_loved"
+    "minecraft:piglin_loved",
+    "forge:rods/gold"
   ]
 }
