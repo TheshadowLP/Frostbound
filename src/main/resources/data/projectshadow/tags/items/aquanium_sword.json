@@ -1,9 +1,0 @@
-{
-  "values": [
-    "forge:tools",
-    "minecraft:tools",
-    "minecraft:swords",
-    "forge:tools/aquanium",
-    "forge:tools/swords/aquanium"
-  ]
-}
