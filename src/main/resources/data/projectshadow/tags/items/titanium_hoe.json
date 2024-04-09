@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:hoes",
-    "forge:tools/titanium"
+    "forge:tools/titanium",
+    "forge:tools/hoes/titanium"
   ]
 }

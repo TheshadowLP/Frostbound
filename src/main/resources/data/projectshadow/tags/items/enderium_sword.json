@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:swords",
-    "forge:tools/enderium"
+    "forge:tools/enderium",
+    "forge:tools/swords/enderium"
   ]
 }

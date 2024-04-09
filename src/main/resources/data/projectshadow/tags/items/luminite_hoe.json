@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:hoes",
-    "forge:tools/luminite"
+    "forge:tools/luminite",
+    "forge:tools/hoes/luminite"
   ]
 }

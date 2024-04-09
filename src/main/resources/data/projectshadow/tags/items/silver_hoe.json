@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:hoes",
-    "forge:tools/silver"
+    "forge:tools/silver",
+    "forge:tools/hoes/silver"
   ]
 }

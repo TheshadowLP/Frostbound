@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:swords",
-    "forge:tools/frozen"
+    "forge:tools/frozen",
+    "forge:tools/swords/frozen"
   ]
 }

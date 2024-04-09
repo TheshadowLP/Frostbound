@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:swords",
-    "forge:tools/platinum"
+    "forge:tools/platinum",
+    "forge:tools/swords/platinum"
   ]
 }

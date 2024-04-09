@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:hoes",
-    "forge:tools/aquanium"
+    "forge:tools/aquanium",
+    "forge:tools/hoes/aquanium"
   ]
 }

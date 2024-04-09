@@ -3,6 +3,7 @@
     "forge:tools",
     "minecraft:tools",
     "minecraft:hoes",
-    "forge:tools/firerite"
+    "forge:tools/firerite",
+    "forge:tools/hoes/firerite"
   ]
 }
