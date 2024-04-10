@@ -1,18 +1,13 @@
 package net.shadowbeast.projectshadow;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -22,18 +17,19 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.blockEntities.screen.CrusherScreen;
+import net.shadowbeast.projectshadow.block_entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
+import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
-import net.shadowbeast.projectshadow.util.creativetab.CreativeTabs;
+import net.shadowbeast.projectshadow.creativetab.CreativeTabs;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.blockEntities.recipes.ModRecipes;
-import net.shadowbeast.projectshadow.blockEntities.screen.AlloyFurnaceScreen;
-import net.shadowbeast.projectshadow.blockEntities.menu.ModMenuTypes;
-import net.shadowbeast.projectshadow.blockEntities.screen.WinterFurnaceScreen;
+import net.shadowbeast.projectshadow.block_entities.recipes.ModRecipes;
+import net.shadowbeast.projectshadow.block_entities.screen.AlloyFurnaceScreen;
+import net.shadowbeast.projectshadow.block_entities.menu.ModMenuTypes;
+import net.shadowbeast.projectshadow.block_entities.screen.WinterFurnaceScreen;
 import org.slf4j.Logger;
 
 @Mod(ProjectShadow.MOD_ID)
@@ -60,7 +56,6 @@ public class ProjectShadow {
     }
     private void commonSetup(final FMLCommonSetupEvent event) {}
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
-
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
@@ -69,7 +64,6 @@ public class ProjectShadow {
             MenuScreens.register(ModMenuTypes.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
         }
-
         @SubscribeEvent
         public static void registerRenderers(FMLClientSetupEvent event) {
             Sheets.addWoodType(ModWoodTypes.FROZEN);

@@ -7,6 +7,7 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
+import net.shadowbeast.projectshadow.food.ModFood;
 import net.shadowbeast.projectshadow.items.custom.*;
 import net.shadowbeast.projectshadow.items.custom.armor.*;
 

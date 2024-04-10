@@ -13,7 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blockEntities.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;

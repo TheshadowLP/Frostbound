@@ -8,11 +8,10 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blockEntities.screen.*;
-import net.shadowbeast.projectshadow.blockEntities.recipes.AlloyFurnaceRecipe;
-import net.shadowbeast.projectshadow.blockEntities.recipes.CrusherRecipe;
+import net.shadowbeast.projectshadow.block_entities.screen.*;
+import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.block_entities.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.util.jei.category.*;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
