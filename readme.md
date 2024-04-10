@@ -25,7 +25,7 @@ You are free to join our official discord server [here](https://discord.gg/nkTkM
 # Dependencies
 Optional Dependencies:
 - [JEI](https://www.curseforge.com/minecraft/mc-mods/jei/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1) 
-- [EMI](https://www.curseforge.com/minecraft/mc-mods/emi/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1)
+
 
 # Developers
 **Shadowbeast_lp** - Owner <br>
