@@ -162,16 +162,16 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
                 }
             }
             clearItem(CrusherSlot.INPUT_SLOT, this.itemHandler);
-            setItem(match.get().getResultItem().getItem(), this.itemHandler);
+            setItem(match.get().getResultItem().getItem(), this.itemHandler, match.get().getResultItem().getCount());
             this.resetProgress();
         }
     }
     private static void clearItem(int Slot, @NotNull ItemStackHandler handler) {
         handler.extractItem(Slot, 1, false);
     }
-    private static void setItem(@NotNull Item pItem, @NotNull ItemStackHandler handler) {
+    private static void setItem(@NotNull Item pItem, @NotNull ItemStackHandler handler, int count) {
         handler.setStackInSlot(CrusherSlot.OUTPUT_SLOT, new ItemStack(pItem,
-                handler.getStackInSlot(CrusherSlot.OUTPUT_SLOT).getCount() + 1));
+                handler.getStackInSlot(CrusherSlot.OUTPUT_SLOT).getCount() + count));
     }
     private void resetProgress() {
         this.progress = 0;

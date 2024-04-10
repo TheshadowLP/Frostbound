@@ -168,7 +168,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         boolean isActive = false;
         if (hasLavaBucketInFuelSlot() && this.maxFuel - this.fuel >= 4000) {
             clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
-            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler, 1);
             this.fuel += 4000;
         }
         FuelTypes currentFuel = getFuelItemInSlot(this);
@@ -252,7 +252,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             clearItem(AlloyFurnaceSlot.INPUT_SLOT_1, this.itemHandler);
             clearItem(AlloyFurnaceSlot.INPUT_SLOT_2, this.itemHandler);
 
-            setItem(match.get().getResultItem().getItem(), AlloyFurnaceSlot.OUTPUT_SLOT, this.itemHandler);
+            setItem(match.get().getResultItem().getItem(), AlloyFurnaceSlot.OUTPUT_SLOT, this.itemHandler, match.get().getResultItem().getCount());
             this.fuel -= 200;
 
             this.resetProgress();
@@ -261,9 +261,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private static void clearItem(int Slot, @NotNull ItemStackHandler handler) {
         handler.extractItem(Slot, 1, false);
     }
-    private static void setItem(@NotNull Item pItem, int Slot, @NotNull ItemStackHandler handler) {
+    private static void setItem(@NotNull Item pItem, int Slot, @NotNull ItemStackHandler handler, int count) {
         handler.setStackInSlot(Slot, new ItemStack(pItem,
-                handler.getStackInSlot(Slot).getCount() + 1));
+                handler.getStackInSlot(Slot).getCount() + count));
     }
     private void resetProgress() {
         this.progress = 0;
