@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class StrongholdCompass extends Item {
+    // this should not be hard, yet it is
     public StrongholdCompass(Properties pProperties) {
         super(pProperties);
     }
