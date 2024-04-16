@@ -42,10 +42,7 @@ public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
         }
         int i1 = this.menu.getBrewingTicks();
         if (i1 > 0) {
-            int j1 = (int)(32.0F * (1.0F - (float)i1 / 308.0F));
-            if (j1 > 0) {
-                pGuiGraphics.blit(TEXTURE, i + 42, j + 27, 203, 0, 37, j1);
-            }
+            int j1;
             j1 = BUBBLELENGTHS[i1 / 2 % 7];
             if (j1 > 0) {
                 pGuiGraphics.blit(TEXTURE, i + 81, j + 54 - j1, 190, 19 - j1, 13, j1);
