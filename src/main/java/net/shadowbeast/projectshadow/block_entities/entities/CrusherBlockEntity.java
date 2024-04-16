@@ -146,13 +146,13 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
                 .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level);
         if(match.isPresent()) {
             ItemStack stack = this.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT);
-            CompoundTag damage = stack.getTagElement("Damage");
+            CompoundTag damage = stack.getTagElement("DamageData");
             if (damage == null) {
-                CompoundTag newDamage = stack.getOrCreateTagElement("Damage");
+                CompoundTag newDamage = stack.getOrCreateTagElement("DamageData");
                 newDamage.putInt("Damage", 1);
             } else {
-                CompoundTag newDamage = stack.getOrCreateTagElement("Damage");
-                damage = stack.getTagElement("Damage");
+                CompoundTag newDamage = stack.getOrCreateTagElement("DamageData");
+                damage = stack.getTagElement("DamageData");
 
                 assert damage != null;
 
