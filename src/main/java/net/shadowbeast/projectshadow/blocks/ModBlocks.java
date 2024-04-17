@@ -3,6 +3,7 @@ package net.shadowbeast.projectshadow.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -94,9 +95,9 @@ public class  ModBlocks {
     public static final RegistryObject<Block> WAXED_OXIDIZED_CUT_COPPER_BRICK = registerBlock("waxed_oxidized_cut_copper_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_COPPER).requiresCorrectToolForDrops()));
 
     //NATURAL BLOCKS
-    public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F)));
-    public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F)));
+    public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F)));
+    public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_COBBLESTONE = registerBlock("frozen_cobblestone", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(2.2F)));
     public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
