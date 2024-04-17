@@ -133,6 +133,13 @@ public class  ModBlocks {
     public static final RegistryObject<Block> FROZEN_LEAVES = registerBlock("frozen_leaves", ()-> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 30;}});
 
 
+    //TARGET BLOCKS
+    //TARGET BLOCKS
+    public static final RegistryObject<Block> BLUE_TARGET = registerBlock("blue_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> YELLOW_TARGET = registerBlock("yellow_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> GREEN_TARGET = registerBlock("green_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> BLACK_TARGET = registerBlock("black_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn);return toReturn;
     }

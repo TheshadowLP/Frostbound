@@ -96,6 +96,11 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.BAUXITE.get());
+
+                        pOutput.accept(ModBlocks.BLUE_TARGET.get());
+                        pOutput.accept(ModBlocks.BLACK_TARGET.get());
+                        pOutput.accept(ModBlocks.GREEN_TARGET.get());
+                        pOutput.accept(ModBlocks.YELLOW_TARGET.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
