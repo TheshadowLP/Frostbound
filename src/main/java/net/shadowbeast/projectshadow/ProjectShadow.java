@@ -21,6 +21,7 @@ import net.shadowbeast.projectshadow.block_entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
 import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.entity.ModEntities;
+import net.shadowbeast.projectshadow.entity.client.DungeonIceRenderer;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.creativetab.CreativeTabs;
@@ -63,6 +64,7 @@ public class ProjectShadow {
             MenuScreens.register(ModMenuTypes.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
             MenuScreens.register(ModMenuTypes.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
+            EntityRenderers.register(ModEntities.DUNGEON_ICE.get(), DungeonIceRenderer::new);
         }
         @SubscribeEvent
         public static void registerRenderers(FMLClientSetupEvent event) {

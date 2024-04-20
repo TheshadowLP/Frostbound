@@ -134,7 +134,6 @@ public class  ModBlocks {
 
 
     //TARGET BLOCKS
-    //TARGET BLOCKS
     public static final RegistryObject<Block> BLUE_TARGET = registerBlock("blue_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
     public static final RegistryObject<Block> YELLOW_TARGET = registerBlock("yellow_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
     public static final RegistryObject<Block> GREEN_TARGET = registerBlock("green_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));

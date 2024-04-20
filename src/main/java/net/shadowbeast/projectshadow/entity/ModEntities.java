@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.entity.custom.DungeonIceEntity;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.entity.custom.ModChestBoatEntity;
 import net.shadowbeast.projectshadow.entity.custom.MudBallProjectileEntity;
@@ -29,6 +30,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<ModChestBoatEntity>> MOD_CHEST_BOAT =
             ENTITY_TYPES.register("mod_chest_boat", () -> EntityType.Builder.<ModChestBoatEntity>of(ModChestBoatEntity::new, MobCategory.MISC)
                     .sized(1.375f, 0.5625f).build("mod_chest_boat"));
+
+    public static final RegistryObject<EntityType<DungeonIceEntity>> DUNGEON_ICE =
+            ENTITY_TYPES.register("dungeonice", () -> EntityType.Builder.of(DungeonIceEntity::new, MobCategory.MONSTER)
+                    .sized(1f, 1f).build("dungeonice"));
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

@@ -1,10 +1,12 @@
 package net.shadowbeast.projectshadow.items;
 
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.*;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.food.ModFood;
@@ -250,6 +252,9 @@ public class ModItems {
     //BOATS
     public static final RegistryObject<Item> FROZEN_BOAT = ITEMS.register("frozen_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> FROZEN_CHEST_BOAT = ITEMS.register("frozen_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.FROZEN, new Item.Properties().stacksTo(1)));
+
+    //SPAWN EGGS
+    public static final RegistryObject<ForgeSpawnEggItem> DUNGEON_ICE_SPAWN_EGG = ITEMS.register("dungeon_ice_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.DUNGEON_ICE, 0x34dbeb, 0xFFFFFF, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
