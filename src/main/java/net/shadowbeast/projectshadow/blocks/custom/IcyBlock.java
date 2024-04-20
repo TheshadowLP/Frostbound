@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @SuppressWarnings("deprecation")
 public class IcyBlock extends Block {
     public IcyBlock(Properties pProperties) {
-        super(pProperties);
+        super(pProperties.friction(0.9f));
     }
 
     @Override

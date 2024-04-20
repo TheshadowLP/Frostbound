@@ -31,12 +31,12 @@ import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
 
 import java.util.function.Supplier;
 
-public class  ModBlocks {
+public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ProjectShadow.MOD_ID);
 
     // Block Entities
-    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WINTER_FURNACE = registerBlock("winter_furnace", ()-> new WinterFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().friction(0.9f)));
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).noOcclusion()));
     public static final RegistryObject<Block> CRUSHER = registerBlock("crusher", () -> new CrusherBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 
@@ -144,6 +144,7 @@ public class  ModBlocks {
     }
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-    public static void register(IEventBus eventBus){BLOCKS.register(eventBus);
+    public static void register(IEventBus eventBus){
+        BLOCKS.register(eventBus);
     }
 }
