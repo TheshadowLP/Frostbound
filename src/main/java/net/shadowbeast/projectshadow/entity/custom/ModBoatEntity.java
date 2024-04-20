@@ -56,7 +56,7 @@ public class ModBoatEntity extends Boat {
         }
     }
     public enum Type implements StringRepresentable {
-        FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
+            FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
         private final String name;
         private final Block planks;
         @SuppressWarnings("deprecation")
