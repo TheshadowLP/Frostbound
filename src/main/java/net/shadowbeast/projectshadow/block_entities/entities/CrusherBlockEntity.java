@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.projectshadow.block_entities.menu.CrusherMenu;
@@ -133,8 +134,12 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
                 && hasItemInFuelSlot(entity);
     }
     private static boolean hasItemInFuelSlot(CrusherBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem() == ModItems.SAW_BLADE.get();
+        Item item = entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem();
+
+        // New Saws Go Here
+        return item == ModItems.SAW_BLADE.get() || item == ModItems.PLATINUM_SAW_BLADE.get() || item == ModItems.DIAMOND_SAW_BLADE.get() || item == ModItems.IRON_SAW_BLADE.get();
     }
+
     private void craftItem() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
