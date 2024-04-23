@@ -67,6 +67,9 @@ public class ModItems {
     public static final RegistryObject<Item> IRON_PLATE = ITEMS.register("iron_plate", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_SULFUR_BUCKET = ITEMS.register("molten_sulfur_bucket", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAW_BLADE = ITEMS.register("saw_blade", () -> new SawbladeItem(new Item.Properties().stacksTo(1), 256));
+    public static final RegistryObject<Item> PLATINUM_SAW_BLADE = ITEMS.register("platinum_saw_blade", () -> new SawbladeItem(new Item.Properties().stacksTo(1), 384)); //Increments of 64 change if unbalanced
+    public static final RegistryObject<Item> IRON_SAW_BLADE = ITEMS.register("iron_saw_blade", () -> new SawbladeItem(new Item.Properties().stacksTo(1), 320)); //Increments of 64 change if unbalanced
+    public static final RegistryObject<Item> DIAMOND_SAW_BLADE = ITEMS.register("diamond_saw_blade", () -> new SawbladeItem(new Item.Properties().stacksTo(1), 512)); //Increments of 64 change if unbalanced
     public static final RegistryObject<Item> STRONGHOLD_COMPASS = ITEMS.register("stronghold_compass", () -> new Item(new Item.Properties().stacksTo(1)));
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch", () -> new Item(new Item.Properties()));

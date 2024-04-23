@@ -259,6 +259,9 @@ public class CreativeTabs {
 
                         pOutput.accept(ModItems.IRON_PLATE.get());
                         pOutput.accept(ModItems.SAW_BLADE.get());
+                        pOutput.accept(ModItems.PLATINUM_SAW_BLADE.get());
+                        pOutput.accept(ModItems.DIAMOND_SAW_BLADE.get());
+                        pOutput.accept(ModItems.IRON_SAW_BLADE.get());
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
                     }).build());
