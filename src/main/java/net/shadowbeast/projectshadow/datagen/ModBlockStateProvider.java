@@ -3,7 +3,6 @@ package net.shadowbeast.projectshadow.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
@@ -18,7 +17,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //eg blockWithItem(ModBlocks.MOTHERTRUCKER);
+        //eg (there are different things aswell just ask what) blockWithItem(ModBlocks.MOTHERTRUCKER);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
