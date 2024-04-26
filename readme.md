@@ -5,6 +5,7 @@ A Forge 1.20.1 mod
 
 ![CurseForge Downloads](https://img.shields.io/curseforge/dt/996245)
 ![Static Badge](https://img.shields.io/badge/Official_Github-%2520?color=46cfb3&link=https%3A%2F%2Fgithub.com%2FTheshadowLP%2FForge-Shadow-1.20.1)
+![GitHub Repo stars](https://img.shields.io/github/stars/TheshadowLP/Forge-Shadow-1.20.1)
 <a href="https://discord.gg/nkTkMsBDmg" rel="nofollow"><img src="https://img.shields.io/discord/1188804461762723891?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 
 # Where to find?

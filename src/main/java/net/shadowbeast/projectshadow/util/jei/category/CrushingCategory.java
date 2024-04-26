@@ -12,9 +12,11 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.block_entities.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
 @MethodsReturnNonnullByDefault
@@ -48,7 +50,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, CrusherRecipe recipe, @NotNull IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 17).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(recipe.getFuelItem());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(Ingredient.of(ModTags.Items.SAW_BLADES));
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 55).addItemStack(recipe.getResultItem());
     }

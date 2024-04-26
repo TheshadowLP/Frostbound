@@ -2,31 +2,24 @@ package net.shadowbeast.projectshadow.entity.custom;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.BossEvent;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
-import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 public class DungeonIceEntity extends Monster {
     private final ServerBossEvent bossEvent =
-            new ServerBossEvent(Component.literal("Test"), BossEvent.BossBarColor.BLUE, BossEvent.BossBarOverlay.NOTCHED_12);
+            new ServerBossEvent(Component.translatable("mob.projectshadow.dungeonice"), BossEvent.BossBarColor.BLUE, BossEvent.BossBarOverlay.NOTCHED_12);
     public DungeonIceEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setHealth(this.getMaxHealth());
@@ -49,13 +42,13 @@ public class DungeonIceEntity extends Monster {
                 .add(Attributes.FOLLOW_RANGE, 24D);
     }
     @Override
-    public void startSeenByPlayer(ServerPlayer pServerPlayer) {
+    public void startSeenByPlayer(@NotNull ServerPlayer pServerPlayer) {
         super.startSeenByPlayer(pServerPlayer);
         this.bossEvent.addPlayer(pServerPlayer);
     }
 
     @Override
-    public void stopSeenByPlayer(ServerPlayer pServerPlayer) {
+    public void stopSeenByPlayer(@NotNull ServerPlayer pServerPlayer) {
         super.stopSeenByPlayer(pServerPlayer);
         this.bossEvent.removePlayer(pServerPlayer);
     }

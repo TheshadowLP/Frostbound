@@ -1,4 +1,4 @@
-// 1.20.1	2024-04-08T14:51:16.2010671	Registries
+// 1.20.1	2024-04-26T16:29:42.500416	Registries
 a8112f16fe5be25f974a195453a08e34706ce34c data/projectshadow/forge/biome_modifier/aquanium_ore.json
 c1c23e002ace097a4f0dbf973bcf1b92d50027ae data/projectshadow/forge/biome_modifier/bauxite.json
 165e14730bfd937d62cec564fe961eb966e1b475 data/projectshadow/forge/biome_modifier/big_frozen_tree.json
@@ -9,7 +9,7 @@ d80279b9b70d269f862c4a861a467da72dcafd03 data/projectshadow/forge/biome_modifier
 08d95e2c59732dbc4c8650895c7d2d8f42fcb6cf data/projectshadow/forge/biome_modifier/luminite_ore.json
 95e4adea7a029ad0a96513250cd8d86fdbfaa847 data/projectshadow/forge/biome_modifier/nether_firerite_ore.json
 c2337d2b9aa02ab45e38fa45924825b691e1c112 data/projectshadow/forge/biome_modifier/platinum_ore.json
-ad96f55e167cd0dd6f46d141a7fdbef5d3af87b6 data/projectshadow/forge/biome_modifier/ruby_ore_placed.json
+3700eabd15a37814512b4bd7bca7d486790d02a2 data/projectshadow/forge/biome_modifier/ruby_ore_placed.json
 39da7021468556bf73c5588016b1e87acda563a6 data/projectshadow/forge/biome_modifier/sand_aquanium_ore.json
 fdd68e04605ca02232c406b9c1893a46564a687c data/projectshadow/forge/biome_modifier/silver_ore.json
 e44938ba6cb3e9bbe4260ab29b0cff598690271a data/projectshadow/forge/biome_modifier/sulfur_ore.json
@@ -39,7 +39,7 @@ be8baf6c5bc6eb8b0653c9cbdeb2979492339f58 data/projectshadow/worldgen/placed_feat
 18eef266bd9a79db2559ef3fc0211337eb8709f0 data/projectshadow/worldgen/placed_feature/luminite_ore.json
 158477163df2aff6d6a0494fb6282840afc179cc data/projectshadow/worldgen/placed_feature/nether_firerite_ore.json
 90cee228fbb3aef7db03c97276fa3647dd76f71e data/projectshadow/worldgen/placed_feature/platinum_ore.json
-2b38316fdc4f40497cf1414ad651ca36d3ee344f data/projectshadow/worldgen/placed_feature/ruby_ore_placed.json
+2b38316fdc4f40497cf1414ad651ca36d3ee344f data/projectshadow/worldgen/placed_feature/ruby_ore.json
 fbdabf486e0c3f15c1834c615c14a316e091c22c data/projectshadow/worldgen/placed_feature/sand_aquanium_ore.json
 cca5d078bf7b709b2bbc51370ed6cffbf58b4ccd data/projectshadow/worldgen/placed_feature/silver_ore.json
 0057a57f93e9f7185220c8dc33ad86f3242ff4f5 data/projectshadow/worldgen/placed_feature/sulfur_ore.json

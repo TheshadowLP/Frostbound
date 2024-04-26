@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.items.ModItems;
+import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -67,6 +68,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.TITANIUM_CHESTPLATE.get(),
                         ModItems.TITANIUM_LEGGINGS.get(),
                         ModItems.TITANIUM_BOOTS.get());
+        this.tag(ModTags.Items.SAW_BLADES)
+                .add(ModItems.SAW_BLADE.get())
+                .add(ModItems.DIAMOND_SAW_BLADE.get())
+                .add(ModItems.IRON_SAW_BLADE.get())
+                .add(ModItems.PLATINUM_SAW_BLADE.get());
     }
     @Override
     public @NotNull String getName() {
