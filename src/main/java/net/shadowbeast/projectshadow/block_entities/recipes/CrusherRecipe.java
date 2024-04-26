@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.items.ModItems;
+import net.shadowbeast.projectshadow.util.ModTags;
 import net.shadowbeast.projectshadow.util.jei.category.CrushingCategory;
 import org.jetbrains.annotations.NotNull;
 
@@ -67,7 +67,7 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(ModItems.SAW_BLADE.get());
+        return Ingredient.of(ModTags.Items.SAW_BLADES);
     }
     public static class Type implements RecipeType<CrusherRecipe> {
         private Type() { }

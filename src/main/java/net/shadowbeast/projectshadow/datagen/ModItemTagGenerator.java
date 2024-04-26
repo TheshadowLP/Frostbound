@@ -69,10 +69,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.TITANIUM_LEGGINGS.get(),
                         ModItems.TITANIUM_BOOTS.get());
         this.tag(ModTags.Items.SAW_BLADES)
-                .add(ModItems.SAW_BLADE.get())
-                .add(ModItems.DIAMOND_SAW_BLADE.get())
-                .add(ModItems.IRON_SAW_BLADE.get())
-                .add(ModItems.PLATINUM_SAW_BLADE.get());
+                .add(ModItems.SAW_BLADE.get(),
+                    ModItems.DIAMOND_SAW_BLADE.get(),
+                    ModItems.IRON_SAW_BLADE.get(),
+                    ModItems.PLATINUM_SAW_BLADE.get());
     }
     @Override
     public @NotNull String getName() {

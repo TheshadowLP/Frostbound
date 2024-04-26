@@ -1,11 +1,10 @@
 # Project Shadow
 A Forge 1.20.1 mod
 
-![Project Shadow Icon](https://raw.githubusercontent.com/TheshadowLP/Forge-Shadow-1.20.1/main/long_logo.png)
-
-![CurseForge Downloads](https://img.shields.io/curseforge/dt/996245)
-![Static Badge](https://img.shields.io/badge/Official_Github-%2520?color=46cfb3&link=https%3A%2F%2Fgithub.com%2FTheshadowLP%2FForge-Shadow-1.20.1)
-![GitHub Repo stars](https://img.shields.io/github/stars/TheshadowLP/Forge-Shadow-1.20.1)
+[![Project Shadow Icon](https://raw.githubusercontent.com/TheshadowLP/Forge-Shadow-1.20.1/main/long_logo.png)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/996245)](https://www.curseforge.com/minecraft/mc-mods/arcanemysteries)
+[![Github](https://img.shields.io/badge/Official_Github-%2520?color=46cfb3&link=https%3A%2F%2Fgithub.com%2FTheshadowLP%2FForge-Shadow-1.20.1)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
+[![GitHub Repo stars](https://img.shields.io/github/stars/TheshadowLP/Forge-Shadow-1.20.1)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
 <a href="https://discord.gg/nkTkMsBDmg" rel="nofollow"><img src="https://img.shields.io/discord/1188804461762723891?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 
 # Where to find?
