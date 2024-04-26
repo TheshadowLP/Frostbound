@@ -21,7 +21,7 @@ import net.shadowbeast.projectshadow.block_entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
 import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.entity.ModEntities;
-import net.shadowbeast.projectshadow.entity.client.DungeonIceRenderer;
+import net.shadowbeast.projectshadow.mob.client.DungeonIceRenderer;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.creativetab.CreativeTabs;

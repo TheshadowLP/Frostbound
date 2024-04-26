@@ -9,8 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.client.layers.ModModelLayers;
 import net.shadowbeast.projectshadow.entity.ModEntities;
-import net.shadowbeast.projectshadow.entity.client.DungeonIceModel;
-import net.shadowbeast.projectshadow.entity.custom.DungeonIceEntity;
+import net.shadowbeast.projectshadow.mob.DungeonIceEntity;
 
 @Mod.EventBusSubscriber(modid = ProjectShadow.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {

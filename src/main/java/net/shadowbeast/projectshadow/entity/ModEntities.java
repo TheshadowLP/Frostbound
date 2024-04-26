@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.entity.custom.DungeonIceEntity;
+import net.shadowbeast.projectshadow.mob.DungeonIceEntity;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.entity.custom.ModChestBoatEntity;
 import net.shadowbeast.projectshadow.entity.custom.MudBallProjectileEntity;

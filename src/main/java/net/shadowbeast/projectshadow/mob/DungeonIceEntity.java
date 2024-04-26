@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.entity.custom;
+package net.shadowbeast.projectshadow.mob;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
