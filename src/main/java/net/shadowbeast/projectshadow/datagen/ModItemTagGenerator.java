@@ -4,7 +4,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.items.ModItems;
@@ -73,6 +75,13 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                     ModItems.DIAMOND_SAW_BLADE.get(),
                     ModItems.IRON_SAW_BLADE.get(),
                     ModItems.PLATINUM_SAW_BLADE.get());
+        this.tag(ModTags.Items.ALLOYING_FUEL)
+                .add(Items.LAVA_BUCKET,
+                        Blocks.COAL_BLOCK.asItem(),
+                        Items.COAL,
+                        Items.CHARCOAL,
+                        Blocks.OAK_LOG.asItem(),
+                        Blocks.OAK_WOOD.asItem());
     }
     @Override
     public @NotNull String getName() {

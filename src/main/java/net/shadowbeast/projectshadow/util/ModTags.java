@@ -11,6 +11,7 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> FROZEN_LOGS = tag("frozen_logs");
         public static final TagKey<Item> SAW_BLADES = tag("saw_blades");
+        public static final TagKey<Item> ALLOYING_FUEL = tag("alloying_fuel");
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(ProjectShadow.MOD_ID, name));
         }
