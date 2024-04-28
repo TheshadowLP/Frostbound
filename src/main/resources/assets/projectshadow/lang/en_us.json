@@ -268,5 +268,10 @@
 
   "mob.projectshadow.dungeonice": "Dungeon Ice",
 
-  "item.projectshadow.stronghold_compass.description": "Stronghold Compass"
+  "item.projectshadow.stronghold_compass.description": "Stronghold Compass",
+
+  "advancement.projectshadow.root": "Welcome to Project Shadow!",
+  "advancement.projectshadow.root.description": "Start to play Project Shadow!",
+  "advancement.projectshadow.steel": "Steel!",
+  "advancement.projectshadow.steel.description": "Get a steel ingot!"
 }

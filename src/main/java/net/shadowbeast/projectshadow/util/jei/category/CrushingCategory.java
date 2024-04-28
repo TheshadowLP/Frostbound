@@ -59,7 +59,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     @Override
     public void draw(@NotNull CrusherRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics pGuiGraphics, double mouseX, double mouseY) {
         pGuiGraphics.blit(TEXTURES, 0, 0, 0, 0, this.background.getWidth(), this.background.getHeight());
-        if(renderProgress % 3 == 0){
+        if(renderProgress % 2 == 0){
             pGuiGraphics.blit(TEXTURES, 27, 40 - renderProgress, 176, 13 - renderProgress, 14, renderProgress + 1);
         } else {
             pGuiGraphics.blit(TEXTURES, 27, 40 - (renderProgress - 1), 176, 13 - (renderProgress - 1), 14, (renderProgress - 1) + 1);
@@ -69,7 +69,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
             pGuiGraphics.blit(TEXTURES, 81, 54 - j1, 190, 19 - j1, 13, j1);
         }
         renderProgress++;
-        if (renderProgress >= 30) {
+        if (renderProgress >= 50) {
             renderProgress = 0;
         }
     }
