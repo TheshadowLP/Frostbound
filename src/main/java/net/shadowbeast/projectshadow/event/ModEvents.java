@@ -92,17 +92,17 @@ public class ModEvents {
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         if(event.getType() == VillagerProfession.TOOLSMITH) {
-            trades.get(3)
-                    .add((pEntity, pSource) -> new MerchantOffer(
-                            new ItemStack(Items.EMERALD, 27),
-                            new ItemStack(ModItems.ENDERIUM_PICKAXE.get(), 1),
-                            2, 17, 0.2f));
-            trades.get(5)
-                    .add((pEntity, pSource) -> new MerchantOffer(
-                            new ItemStack(Items.EMERALD, 48),
-                            new ItemStack(ModItems.ENDERIUM_SWORD.get(), 1),
-                            10, 30, 0.33f
-                    ));
+//            trades.get(3)
+//                    .add((pEntity, pSource) -> new MerchantOffer(
+//                            new ItemStack(Items.EMERALD, 27),
+//                            new ItemStack(ModItems.ENDERIUM_PICKAXE.get(), 1),
+//                            2, 17, 0.2f));
+//            trades.get(5)
+//                    .add((pEntity, pSource) -> new MerchantOffer(
+//                            new ItemStack(Items.EMERALD, 48),
+//                            new ItemStack(ModItems.ENDERIUM_SWORD.get(), 1),
+//                            10, 30, 0.33f
+//                    ));
         }
     }
 }
