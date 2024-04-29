@@ -69,7 +69,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
             pGuiGraphics.blit(TEXTURES, 81, 54 - j1, 190, 19 - j1, 13, j1);
         }
         renderProgress++;
-        if (renderProgress >= 50) {
+        if (renderProgress >= 70) {
             renderProgress = 0;
         }
     }
