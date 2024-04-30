@@ -30,7 +30,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     private int renderProgress = 0;
     private static final int[] BUBBLELENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
     public CrushingCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURES, 0, 0,175, 85);
+        this.background = helper.createDrawable(TEXTURES, 23, 14,76, 60);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.CRUSHER.get()));
     }
     @Override
@@ -51,10 +51,10 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     }
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, CrusherRecipe recipe, @NotNull IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 80, 17).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(recipe.getFuelItem());
+        builder.addSlot(RecipeIngredientRole.INPUT, 57, 3).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 3, 32).addIngredients(recipe.getFuelItem());
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 55).addItemStack(recipe.getResultItem());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 57, 41).addItemStack(recipe.getResultItem());
     }
     @Override
     public void draw(@NotNull CrusherRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics pGuiGraphics, double mouseX, double mouseY) {
