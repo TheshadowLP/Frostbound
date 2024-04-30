@@ -101,6 +101,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.BLACK_TARGET.get());
                         pOutput.accept(ModBlocks.GREEN_TARGET.get());
                         pOutput.accept(ModBlocks.YELLOW_TARGET.get());
+                        pOutput.accept(ModBlocks.END_LANTERN.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
