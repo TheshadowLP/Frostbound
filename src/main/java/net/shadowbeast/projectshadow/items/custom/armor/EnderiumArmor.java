@@ -78,14 +78,6 @@ public class EnderiumArmor extends ArmorItem {
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.enderium_set.shift"));
-        } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
-        }
-    }
     public static EnderiumArmor getInstance(Type ptype) {
         return new EnderiumArmor(ArmorStats.ENDERIUM, ptype, new Properties().stacksTo(1));
     }
