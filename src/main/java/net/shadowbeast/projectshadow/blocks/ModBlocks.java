@@ -102,7 +102,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
     //END BLOCKS
-    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> {return 15;}).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> {return 14;}).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
 
     //BARS
