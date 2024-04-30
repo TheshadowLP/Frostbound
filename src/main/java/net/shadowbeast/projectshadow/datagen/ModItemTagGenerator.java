@@ -71,9 +71,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.TITANIUM_LEGGINGS.get(),
                         ModItems.TITANIUM_BOOTS.get());
         this.tag(ModTags.Items.SAW_BLADES)
-                .add(ModItems.SAW_BLADE.get(),
+                .add(ModItems.IRON_SAW_BLADE.get(),
                     ModItems.DIAMOND_SAW_BLADE.get(),
-                    ModItems.IRON_SAW_BLADE.get(),
+                    ModItems.TITANIUM_SAW_BLADE.get(),
                     ModItems.PLATINUM_SAW_BLADE.get());
         this.tag(ModTags.Items.ALLOYING_FUEL)
                 .add(Items.LAVA_BUCKET,

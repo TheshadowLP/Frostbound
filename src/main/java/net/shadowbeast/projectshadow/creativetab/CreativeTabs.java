@@ -209,7 +209,6 @@ public class CreativeTabs {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.RAW_SILVER.get());
                         pOutput.accept(ModItems.RAW_PLATINUM.get());
-                        pOutput.accept(ModItems.RAW_STEEL.get());
                         pOutput.accept(ModItems.RAW_TITANIUM.get());
                         pOutput.accept(ModItems.RAW_LUMINITE.get());
                         pOutput.accept(ModItems.RAW_ENDERIUM.get());
@@ -245,12 +244,12 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_POWDER.get());
                         pOutput.accept(ModItems.IRON_POWDER.get());
                         pOutput.accept(ModItems.PLATINUM_POWDER.get());
-                        pOutput.accept(ModItems.STEEL_POWDER.get());
+                        //pOutput.accept(ModItems.STEEL_POWDER.get());
                         pOutput.accept(ModItems.TITANIUM_POWDER.get());
                         pOutput.accept(ModItems.DIAMOND_POWDER.get());
-                        pOutput.accept(ModItems.LUMINITE_POWDER.get());
-                        pOutput.accept(ModItems.AQUANIUM_POWDER.get());
-                        pOutput.accept(ModItems.ENDERIUM_POWDER.get());
+                        //pOutput.accept(ModItems.LUMINITE_POWDER.get());
+                        //pOutput.accept(ModItems.AQUANIUM_POWDER.get());
+                        //pOutput.accept(ModItems.ENDERIUM_POWDER.get());
                         pOutput.accept(ModItems.SULFUR_POWDER.get());
                         pOutput.accept(ModItems.ENDER_PEARL_POWDER.get());
 
@@ -258,10 +257,10 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.GOLD_STICK.get());
 
                         pOutput.accept(ModItems.IRON_PLATE.get());
-                        pOutput.accept(ModItems.SAW_BLADE.get());
+                        pOutput.accept(ModItems.IRON_SAW_BLADE.get());
                         pOutput.accept(ModItems.PLATINUM_SAW_BLADE.get());
                         pOutput.accept(ModItems.DIAMOND_SAW_BLADE.get());
-                        pOutput.accept(ModItems.IRON_SAW_BLADE.get());
+                        pOutput.accept(ModItems.TITANIUM_SAW_BLADE.get());
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
                     }).build());
