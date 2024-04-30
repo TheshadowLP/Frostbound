@@ -52,7 +52,7 @@ public class AquaniumArmor extends ArmorItem {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
         if(hasCorrectArmorOn(player) && !hasPlayerEffect) {
-            // player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for this armor
+            player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for this armor
         }
     }
     private boolean hasCorrectArmorOn(Player player) {
@@ -77,14 +77,6 @@ public class AquaniumArmor extends ArmorItem {
 
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
-    }
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.aquanium_set.shift"));
-        } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
-        }
     }
     public static AquaniumArmor getInstance(Type ptype) {
         return new AquaniumArmor(ArmorStats.AQUANIUM, ptype, new Properties().stacksTo(1));
