@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "projectshadow:block/cross_crop",
   "render_type": "minecraft:cutout",
   "textures": {
     "crop": "projectshadow:block/kohlrabi_crop_stage1"
