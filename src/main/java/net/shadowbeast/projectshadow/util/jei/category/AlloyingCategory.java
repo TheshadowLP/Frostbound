@@ -31,7 +31,7 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
     private final IDrawable icon;
 
     public AlloyingCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURES, 0, 0, 176, 81);
+        this.background = helper.createDrawable(TEXTURES, 44, 22, 87, 59);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.ALLOY_FURNACE.get()));
     }
 
@@ -57,11 +57,9 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, AlloyFurnaceRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 54, 23).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 106, 23).addIngredients(recipe.getIngredients().get(1));
-
-        builder.addSlot(RecipeIngredientRole.INPUT, 80, 32).addIngredients(recipe.getFuelItem());
-
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 59).addItemStack(recipe.getResultItem());
+        builder.addSlot(RecipeIngredientRole.INPUT, 10, 1).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 62, 1).addIngredients(recipe.getIngredients().get(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 36, 10).addIngredients(recipe.getFuelItem());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 36, 37).addItemStack(recipe.getResultItem());
     }
 }
