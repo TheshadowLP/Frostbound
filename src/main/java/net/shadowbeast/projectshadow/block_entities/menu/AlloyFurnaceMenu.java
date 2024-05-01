@@ -33,13 +33,13 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 18, 50));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 80, 32));
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 66, 16));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 59, 14));
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 66, 50));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 101, 14));
             this.addSlot(new ModResultSlot(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 114, 33));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 80, 59));
         });
 
         addDataSlots(data);

@@ -37,8 +37,8 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
         if (menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 84, y + 22, 176, 14, menu.getScaledProgress(), 37);
+            guiGraphics.blit(TEXTURE, x + 66, y + 32, 176, 14, menu.getScaledProgress(), 26);
         }
-        guiGraphics.blit(TEXTURE, x + 19, y + 34, 176, 0, 13, menu.getScaledFuel());
+        guiGraphics.blit(TEXTURE, x + 81, y + 16, 176, 0, 13, menu.getScaledFuel());
     }
 }
