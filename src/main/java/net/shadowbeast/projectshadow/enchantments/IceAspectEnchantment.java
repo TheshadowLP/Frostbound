@@ -1,11 +1,15 @@
 package net.shadowbeast.projectshadow.enchantments;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.enchantment.*;
+import net.minecraft.world.level.levelgen.feature.SnowAndFreezeFeature;
+import net.shadowbeast.projectshadow.effect.ModEffects;
 
 import java.beans.EventHandler;
 
@@ -30,7 +34,7 @@ public class IceAspectEnchantment extends Enchantment {
         return 1;
     }
 
-   @Override
+    @Override
     public boolean checkCompatibility(Enchantment pEnch) {
         return super.checkCompatibility(pEnch) && pEnch != Enchantments.FIRE_ASPECT;
     }
@@ -38,11 +42,12 @@ public class IceAspectEnchantment extends Enchantment {
     @Override
     public void doPostAttack(LivingEntity user, Entity target, int level) {
         if (target instanceof LivingEntity) {
-            LivingEntity livingTarget = (LivingEntity) target;
-            livingTarget.setIsInPowderSnow(true);
+            ((LivingEntity) target).addEffect(new MobEffectInstance(ModEffects.FREEZE.get(), 200, level - 1));
         }
     }
 }
+
+
 
 
 
