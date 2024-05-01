@@ -12,13 +12,10 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 public class ModEnchantments {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS =
             DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, ProjectShadow.MOD_ID);
-
     public static RegistryObject<Enchantment> ICE_ASPECT =
             ENCHANTMENTS.register("ice_aspect",
                     () -> new IceAspectEnchantment(Enchantment.Rarity.UNCOMMON,
                             EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
-
-
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);
     }
