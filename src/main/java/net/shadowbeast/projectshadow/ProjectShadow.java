@@ -5,6 +5,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,6 +21,7 @@ import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.block_entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
 import net.shadowbeast.projectshadow.config.Config;
+import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.mob.client.DungeonIceRenderer;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
@@ -48,6 +50,7 @@ public class ProjectShadow {
         ModEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModEnchantments.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         //  ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((Minecraft mcInstance, Screen returnTo) -> new ConfigScreen(returnTo)));
 
