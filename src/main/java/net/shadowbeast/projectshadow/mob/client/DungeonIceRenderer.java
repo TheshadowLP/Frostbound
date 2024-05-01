@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DungeonIceRenderer extends MobRenderer<DungeonIceEntity, DungeonIceModel<DungeonIceEntity>> {
     public DungeonIceRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new DungeonIceModel<>(pContext.bakeLayer(ModModelLayers.DUNGEONICE_LAYER)), 0.5f);
+        super(pContext, new DungeonIceModel<>(pContext.bakeLayer(ModModelLayers.DUNGEONICE_LAYER)), 1.2f);
     }
 
     @Override

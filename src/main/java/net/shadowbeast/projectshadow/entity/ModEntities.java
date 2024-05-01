@@ -33,7 +33,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<DungeonIceEntity>> DUNGEON_ICE =
             ENTITY_TYPES.register("dungeonice", () -> EntityType.Builder.of(DungeonIceEntity::new, MobCategory.MONSTER)
-                    .sized(1f, 2f).build("dungeonice"));
+                    .sized(2.3f, 4.3f).build("dungeonice"));
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

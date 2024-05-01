@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.block.PowderSnowBlock;
 
 public class FreezeEffect extends MobEffect {
     public FreezeEffect(MobEffectCategory mobEffectCategory, int color) {
@@ -22,3 +23,4 @@ public class FreezeEffect extends MobEffect {
     @Override
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {return true;}
 }
+
