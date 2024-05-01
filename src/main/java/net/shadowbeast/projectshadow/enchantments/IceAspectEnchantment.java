@@ -31,7 +31,7 @@ public class IceAspectEnchantment extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 2;
     }
 
     @Override
@@ -42,9 +42,11 @@ public class IceAspectEnchantment extends Enchantment {
     @Override
     public void doPostAttack(LivingEntity user, Entity target, int level) {
         if (target instanceof LivingEntity) {
-            ((LivingEntity) target).addEffect(new MobEffectInstance(ModEffects.FREEZE.get(), 200, level - 1));
+            int duration = 100 * level; //Rn level 1 is 6-7 seconds (dk fully) and level 2 is 10 seconds, we can always change tho
+            ((LivingEntity) target).addEffect(new MobEffectInstance(ModEffects.FREEZE.get(), duration, level - 1));
         }
     }
+
 }
 
 
