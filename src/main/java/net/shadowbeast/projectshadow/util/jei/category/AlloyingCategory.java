@@ -57,8 +57,8 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, AlloyFurnaceRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 59, 14).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 101, 14).addIngredients(recipe.getIngredients().get(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 54, 23).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 106, 23).addIngredients(recipe.getIngredients().get(1));
 
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 32).addIngredients(recipe.getFuelItem());
 
