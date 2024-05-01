@@ -137,7 +137,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         Item item = entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem();
 
         // New Saws Go Here
-        return item == ModItems.SAW_BLADE.get() || item == ModItems.PLATINUM_SAW_BLADE.get() || item == ModItems.DIAMOND_SAW_BLADE.get() || item == ModItems.IRON_SAW_BLADE.get();
+        return item == ModItems.IRON_SAW_BLADE.get() || item == ModItems.PLATINUM_SAW_BLADE.get() || item == ModItems.DIAMOND_SAW_BLADE.get() || item == ModItems.TITANIUM_SAW_BLADE.get();
     }
 
     private void craftItem() {

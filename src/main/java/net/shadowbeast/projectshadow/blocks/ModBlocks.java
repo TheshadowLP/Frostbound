@@ -3,7 +3,6 @@ package net.shadowbeast.projectshadow.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -14,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -101,6 +101,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
+    //END BLOCKS
+    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> {return 14;}).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+
     //BARS
     public static final RegistryObject<Block> COPPER_BARS = registerBlock("copper_bars", ()-> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> PLATINUM_BARS = registerBlock("platinum_bars", ()-> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().requiresCorrectToolForDrops()));
@@ -148,3 +152,5 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 }
+
+

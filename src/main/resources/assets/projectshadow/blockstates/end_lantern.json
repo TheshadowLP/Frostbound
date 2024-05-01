@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "projectshadow:block/end_lantern"
+    },
+    "hanging=true": {
+      "model": "projectshadow:block/end_lantern_hanging"
+    }
+  }
+}

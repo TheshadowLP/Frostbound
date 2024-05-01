@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "projectshadow:item/saw_blade"
+    "layer0": "projectshadow:item/iron_saw_blade"
   }
 }

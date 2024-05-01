@@ -46,7 +46,6 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_LUMINITE = ITEMS.register("raw_luminite", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_PLATINUM = ITEMS.register("raw_platinum", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver", ()-> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_STEEL = ITEMS.register("raw_steel", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium", ()-> new Item(new Item.Properties()));
 
     //SHARDS
@@ -66,27 +65,28 @@ public class ModItems {
     //TECH STUFF
     public static final RegistryObject<Item> IRON_PLATE = ITEMS.register("iron_plate", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_SULFUR_BUCKET = ITEMS.register("molten_sulfur_bucket", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SAW_BLADE = ITEMS.register("saw_blade", () -> new SawbladeItem(256));
-    public static final RegistryObject<Item> PLATINUM_SAW_BLADE = ITEMS.register("platinum_saw_blade", () -> new SawbladeItem(384)); //Increments of 64 change if unbalanced
-    public static final RegistryObject<Item> IRON_SAW_BLADE = ITEMS.register("iron_saw_blade", () -> new SawbladeItem(320)); //Increments of 64 change if unbalanced
-    public static final RegistryObject<Item> DIAMOND_SAW_BLADE = ITEMS.register("diamond_saw_blade", () -> new SawbladeItem(512)); //Increments of 64 change if unbalanced
+    public static final RegistryObject<Item> IRON_SAW_BLADE = ITEMS.register("iron_saw_blade", () -> new SawbladeItem(28));
+    public static final RegistryObject<Item> PLATINUM_SAW_BLADE = ITEMS.register("platinum_saw_blade", () -> new SawbladeItem(43)); //Increments of 64 change if unbalanced
+    public static final RegistryObject<Item> TITANIUM_SAW_BLADE = ITEMS.register("titanium_saw_blade", () -> new SawbladeItem(36)); //Increments of 64 change if unbalanced
+    public static final RegistryObject<Item> DIAMOND_SAW_BLADE = ITEMS.register("diamond_saw_blade", () -> new SawbladeItem(57)); //Increments of 64 change if unbalanced
     public static final RegistryObject<Item> STRONGHOLD_COMPASS = ITEMS.register("stronghold_compass", () -> new Item(new Item.Properties().stacksTo(1)));
+
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_ARCH_FRAGMENT = ITEMS.register("ender_arch_fragment", () -> new Item(new Item.Properties()));
 
     //POWDER
-    public static final RegistryObject<Item> AQUANIUM_POWDER = ITEMS.register("aquanium_powder", ()-> new Item(new Item.Properties()));
+    //public static final RegistryObject<Item> AQUANIUM_POWDER = ITEMS.register("aquanium_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COPPER_POWDER = ITEMS.register("copper_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_POWDER = ITEMS.register("diamond_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_PEARL_POWDER = ITEMS.register("ender_pearl_powder", ()-> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ENDERIUM_POWDER = ITEMS.register("enderium_powder", ()-> new Item(new Item.Properties()));
+    //public static final RegistryObject<Item> ENDERIUM_POWDER = ITEMS.register("enderium_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_POWDER = ITEMS.register("gold_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> IRON_POWDER = ITEMS.register("iron_powder", ()-> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> LUMINITE_POWDER = ITEMS.register("luminite_powder", ()-> new Item(new Item.Properties()));
+    //public static final RegistryObject<Item> LUMINITE_POWDER = ITEMS.register("luminite_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_POWDER = ITEMS.register("platinum_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_POWDER = ITEMS.register("silver_powder", ()-> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> STEEL_POWDER = ITEMS.register("steel_powder", ()-> new Item(new Item.Properties()));
+    //public static final RegistryObject<Item> STEEL_POWDER = ITEMS.register("steel_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SULFUR_POWDER = ITEMS.register("sulfur_powder", ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_POWDER = ITEMS.register("titanium_powder", ()-> new Item(new Item.Properties()));
 
