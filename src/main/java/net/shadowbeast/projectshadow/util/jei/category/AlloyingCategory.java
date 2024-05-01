@@ -17,8 +17,6 @@ import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-
-
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
@@ -29,32 +27,26 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
             new RecipeType<>(UID, AlloyFurnaceRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;
-
     public AlloyingCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURES, 44, 22, 87, 59);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.ALLOY_FURNACE.get()));
     }
-
     @Override
     public RecipeType<AlloyFurnaceRecipe> getRecipeType() {
         return ALLOY_FURNACE_RECIPE_TYPE;
     }
-
     @Override
     public Component getTitle() {
         return Component.translatable("jei.projectshadow.alloying");
     }
-
     @Override
     public IDrawable getBackground() {
         return background;
     }
-
     @Override
     public IDrawable getIcon() {
         return icon;
     }
-
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, AlloyFurnaceRecipe recipe, IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 10, 1).addIngredients(recipe.getIngredients().get(0));
