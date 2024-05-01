@@ -35,9 +35,9 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler,
                     AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 80, 32));
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 59, 14));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 54, 23));
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 101, 14));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 106, 23));
             this.addSlot(new ModResultSlot(handler,
                     AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 80, 59));
         });

@@ -17,8 +17,6 @@ import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-
-
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
@@ -29,39 +27,31 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
             new RecipeType<>(UID, AlloyFurnaceRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;
-
     public AlloyingCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURES, 0, 0, 176, 81);
+        this.background = helper.createDrawable(TEXTURES, 44, 22, 87, 59);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.ALLOY_FURNACE.get()));
     }
-
     @Override
     public RecipeType<AlloyFurnaceRecipe> getRecipeType() {
         return ALLOY_FURNACE_RECIPE_TYPE;
     }
-
     @Override
     public Component getTitle() {
         return Component.translatable("jei.projectshadow.alloying");
     }
-
     @Override
     public IDrawable getBackground() {
         return background;
     }
-
     @Override
     public IDrawable getIcon() {
         return icon;
     }
-
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, AlloyFurnaceRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 59, 14).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 101, 14).addIngredients(recipe.getIngredients().get(1));
-
-        builder.addSlot(RecipeIngredientRole.INPUT, 80, 32).addIngredients(recipe.getFuelItem());
-
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 59).addItemStack(recipe.getResultItem());
+        builder.addSlot(RecipeIngredientRole.INPUT, 10, 1).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 62, 1).addIngredients(recipe.getIngredients().get(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 36, 10).addIngredients(recipe.getFuelItem());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 36, 37).addItemStack(recipe.getResultItem());
     }
 }

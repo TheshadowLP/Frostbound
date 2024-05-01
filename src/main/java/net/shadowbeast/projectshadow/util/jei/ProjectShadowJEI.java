@@ -40,8 +40,10 @@ public class ProjectShadowJEI implements IModPlugin {
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(CrusherScreen.class, 82, 35, 11, 18,
                 CrushingCategory.CRUSHER_RECIPE_TYPE);
-        registration.addRecipeClickArea(AlloyFurnaceScreen.class, 81, 16, 13, 13,
-                AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE); //TODO
+        registration.addRecipeClickArea(AlloyFurnaceScreen.class, 55, 43, 13, 13,
+                AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE);
+        registration.addRecipeClickArea(AlloyFurnaceScreen.class, 107, 43, 13, 13,
+                AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE);
     }
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
