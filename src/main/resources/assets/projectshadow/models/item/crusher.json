@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "projectshadow:block/crusher"
-  }
+  "parent": "projectshadow:block/crusher"
 }
