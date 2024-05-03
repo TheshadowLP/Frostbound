@@ -2,8 +2,8 @@
   "credit": "Made with Blockbench",
   "texture_size": [32, 32],
   "textures": {
-    "0": "projectshadow:item/health_staff_3d",
-    "particle": "projectshadow:item/health_staff_3d"
+    "0": "projectshadow:item/heal_staff_3d",
+    "particle": "projectshadow:item/heal_staff_3d"
   },
   "elements": [
     {

@@ -2,17 +2,17 @@
   "parent": "minecraft:item/handheld",
   "loader": "forge:separate_transforms",
   "base": {
-    "parent": "projectshadow:item/health_staff_3d"
+    "parent": "projectshadow:item/heal_staff_3d"
   },
   "perspectives": {
     "gui": {
-      "parent": "projectshadow:item/health_staff_2d"
+      "parent": "projectshadow:item/heal_staff_2d"
     },
     "ground": {
-      "parent": "projectshadow:item/health_staff_2d"
+      "parent": "projectshadow:item/heal_staff_2d"
     },
     "fixed": {
-      "parent": "projectshadow:item/health_staff_2d"
+      "parent": "projectshadow:item/heal_staff_2d"
     }
   }
 }

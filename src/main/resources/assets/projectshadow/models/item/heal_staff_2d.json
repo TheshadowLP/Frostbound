@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "projectshadow:item/health_staff"
+    "layer0": "projectshadow:item/heal_staff"
   }
 }
