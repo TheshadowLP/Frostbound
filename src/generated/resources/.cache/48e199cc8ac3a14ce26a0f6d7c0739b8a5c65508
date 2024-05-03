@@ -1,4 +1,7 @@
-// 1.20.1	2024-04-30T14:29:49.3514645	Item Tags
+// 1.20.1	2024-05-03T17:51:02.5138158	Item Tags
 4a3fc2f752b5fdc577229a280911919011116c2e data/minecraft/tags/items/trimmable_armor.json
-928b5842d8d7b2d37063523c10cf9b70c98657ff data/projectshadow/tags/items/alloying_fuel.json
+3244920c86cd1bfe4ab2d212e87aaa25fe7c3b1a data/projectshadow/tags/items/alloying_fuel.json
+150da1135a6d5d7b9cb1ec65250c0aceaa835dff data/projectshadow/tags/items/alloying_fuel_large.json
+50e13739c5004ff1f5177fb29ecff7b5d3d45cd3 data/projectshadow/tags/items/alloying_fuel_medium.json
+2162efe30e26544d4af391e058fae93cdeee8a3d data/projectshadow/tags/items/alloying_fuel_small.json
 e1def8f536a119856e4fdb3be768fa770a42df75 data/projectshadow/tags/items/saw_blades.json

@@ -7,9 +7,6 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.level.levelgen.structure.structures.RuinedPortalStructure;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.block_entities.menu.AlloyFurnaceMenu;
 import org.jetbrains.annotations.NotNull;
@@ -36,11 +33,22 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
-        if (menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 48, y + 30, 176, 14, menu.getScaledProgress(), 41);
+        if(!menu.hasFuelInSlot()) {
+            guiGraphics.blit(TEXTURE, x + 82, y + 30, 176, 32, 13, 13);
         }
-        guiGraphics.blit(TEXTURE, x + 55, y + 43, 176, 0, 13, menu.getScaledFuel());
-        guiGraphics.blit(TEXTURE, x + 107, y + 43, 176, 0, 13, menu.getScaledFuel());
+        if (menu.isCrafting()) {
+            if(menu.getScaledProgress() < 10) {
+                guiGraphics.blit(TEXTURE, x + 67, y + 42, 176, 14, 42, menu.getScaledProgress());
+            } else if (menu.getScaledProgress() < 21) {
+                guiGraphics.blit(TEXTURE, x + 67, y + 42, 176, 14, 42, 8);
+                guiGraphics.blit(TEXTURE, x + 70, y + 48, 176, 23, menu.getScaledProgress() - 9, 3);
+            } else {
+                guiGraphics.blit(TEXTURE, x + 67, y + 42, 176, 14, 42, 8);
+                guiGraphics.blit(TEXTURE, x + 70, y + 48, 176, 23, 15, 3);
+                guiGraphics.blit(TEXTURE, x + 85, y + 48, 176, 26, 42, menu.getScaledProgress() - 21);
+            }
+            guiGraphics.blit(TEXTURE, x + 81, y + 12, 176, 0, 14, menu.getScaledFuel());
+        }
     }
 }
 
