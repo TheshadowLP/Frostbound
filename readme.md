@@ -1,5 +1,4 @@
 # Arcane Mysteries - Secrets of the World
-A Forge 1.20.1 mod
 
 [![Project Shadow Icon](https://raw.githubusercontent.com/TheshadowLP/Forge-Shadow-1.20.1/main/long_logo.png)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/996245)](https://www.curseforge.com/minecraft/mc-mods/arcanemysteries)
