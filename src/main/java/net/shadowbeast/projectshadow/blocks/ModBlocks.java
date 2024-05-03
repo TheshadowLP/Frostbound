@@ -143,6 +143,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_TARGET = registerBlock("green_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
     public static final RegistryObject<Block> BLACK_TARGET = registerBlock("black_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
 
+    //BEDROCK
+    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock.json", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(15.0F, 3600000.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn);return toReturn;
     }

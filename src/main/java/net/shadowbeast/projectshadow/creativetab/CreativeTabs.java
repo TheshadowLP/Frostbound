@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.items.ModItems;
 
 @SuppressWarnings("unused")
@@ -102,6 +103,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.GREEN_TARGET.get());
                         pOutput.accept(ModBlocks.YELLOW_TARGET.get());
                         pOutput.accept(ModBlocks.END_LANTERN.get());
+                        pOutput.accept(ModBlocks.BEDROCK.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
@@ -203,6 +205,12 @@ public class CreativeTabs {
 
                         pOutput.accept(ModItems.MUD_BALL.get());
                         pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get());
+
+                        pOutput.accept(ModItems.BEDROCK_SWORD.get());
+                        pOutput.accept(ModItems.BEDROCK_AXE.get());
+                        pOutput.accept(ModItems.BEDROCK_PICKAXE.get());
+                        pOutput.accept(ModItems.BEDROCK_SHOVEL.get());
+                        pOutput.accept(ModItems.BEDROCK_HOE.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_INGOT.get()))
@@ -264,6 +272,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TITANIUM_SAW_BLADE.get());
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
+                        pOutput.accept(ModItems.BEDROCK_CHUNK.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TOOLS = CREATIVE_MODE_TABS.register("tools",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.AQUANIUM_PICKAXE.get()))

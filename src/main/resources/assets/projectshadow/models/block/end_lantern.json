@@ -1,5 +1,4 @@
 {
-  "render_type": "minecraft:translucent",
   "parent": "minecraft:block/template_lantern",
   "textures": {
     "lantern": "projectshadow:block/end_lantern"

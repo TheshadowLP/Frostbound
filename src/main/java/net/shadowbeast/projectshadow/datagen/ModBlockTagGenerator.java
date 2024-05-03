@@ -2,9 +2,12 @@ package net.shadowbeast.projectshadow.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.blocks.ModBlocks;
+import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,6 +20,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     }
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+        this.tag(ModTags.Blocks.NEEDS_BEDROCK_TOOL)
+                .add(ModBlocks.BEDROCK.get());
 
     }
     @Override

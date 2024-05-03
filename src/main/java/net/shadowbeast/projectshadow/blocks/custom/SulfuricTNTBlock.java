@@ -10,6 +10,8 @@ import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
@@ -19,8 +21,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 @SuppressWarnings("deprecation")
 public class SulfuricTNTBlock extends Block {
-    public SulfuricTNTBlock(Properties pProperties) {
-        super(pProperties);
+    public SulfuricTNTBlock(Properties properties) {
+        super(properties);
     }
 
     @Override

@@ -18,7 +18,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
