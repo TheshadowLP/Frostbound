@@ -27,14 +27,15 @@ public class LevitationStaffItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
         if (pPlayer instanceof Player) {
-            pPlayer.getCooldowns().addCooldown(this, 300);
+            if (!pPlayer.getAbilities().instabuild){
+                pPlayer.getCooldowns().addCooldown(this, 300);}
 
             if (!pLevel.isClientSide())
             {
                 List<LivingEntity> entities = pLevel.getEntitiesOfClass(LivingEntity.class, pPlayer.getBoundingBox().inflate(1));
                 for (LivingEntity livingEntity : entities) {
                     float max_health = livingEntity.getMaxHealth();
-                    if (max_health < 40F) {
+                    if (max_health < 30F) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false));
                     }
                 }
