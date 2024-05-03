@@ -28,10 +28,13 @@ Optional Dependencies:
 
 
 # Developers
-**Shadowbeast_lp** - Owner <br>
+**Shadowbeast_lp** - Project Owner <br>
 **Wolfieboy09** - Programmer <br>
-**Okamiz** - Texture Maker, Programmer <br>
+**Okamiz** - Texture Maker <br>
 **mckeith_1776** - Programmer <br>
 **siepert** - Programmer <br>
-**TheUnknownDad** - Block Modeler, Texture Maker <br>
+**Tejty** - Texture Maker <br>
+**Cebularz** - Texture Maker <br>
+**CrownSheep** - Texture Maker & Programmer <br>
+**TheUnknownDad** - Created the Alloy Furnace Texture & Model <br>
 **Paulanerpaul** - Thinker of Ideas <br>
