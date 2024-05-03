@@ -8,11 +8,11 @@ A Forge 1.20.1 mod
 <a href="https://discord.gg/nkTkMsBDmg" rel="nofollow"><img src="https://img.shields.io/discord/1188804461762723891?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 
 # Where to find?
-Project Shadow is **ONLY** found on
+Arcane Mysteries - Secrets of the World is **ONLY** found on
 [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/projectshadow)
 or our **OFFICIAL** [GitHub](https://github.com/TheshadowLP/Forge-Shadow-1.20.1).
 Anywhere else is not official, and not us. Only download using the above links. <br>
-**Project Distribution does allow 3rd parties.**
+**Arcane Mysteries - Secrets of the World Distribution does allow 3rd parties.**
 
 # About the Mod
 Arcane Mysteries - Secrets of the World is a meticulously crafted mod designed to
