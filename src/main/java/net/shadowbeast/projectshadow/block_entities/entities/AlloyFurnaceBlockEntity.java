@@ -49,27 +49,25 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         SMALL, MEDIUM, LARGE, NONE
     }
 
-    private static FuelTypes getFuelItemTypeInSlot(AlloyFurnaceBlockEntity entity) {
-        if (entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).is(ModTags.Items.ALLOYING_FUEL_SMALL)) {
+    private static FuelTypes getFuelItemTypeInSlot(@NotNull AlloyFurnaceBlockEntity entity) {
+        int fuelSlot = AlloyFurnaceSlot.FUEL_SLOT;
+        ItemStack stackSlot = entity.itemHandler.getStackInSlot(fuelSlot);
+        if (stackSlot.is(ModTags.Items.ALLOYING_FUEL_SMALL)) {
             return FuelTypes.SMALL;
-        } else if (entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).is(ModTags.Items.ALLOYING_FUEL_MEDIUM)) {
+        } else if (stackSlot.is(ModTags.Items.ALLOYING_FUEL_MEDIUM)) {
             return FuelTypes.MEDIUM;
-        } else if (entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).is(ModTags.Items.ALLOYING_FUEL_LARGE)) {
+        } else if (stackSlot.is(ModTags.Items.ALLOYING_FUEL_LARGE)) {
             return FuelTypes.LARGE;
         } else {
             return FuelTypes.NONE;
         }
     }
 
-    public static boolean isFuelItem(ItemStack itemStack) {
-        return itemStack.is(ModTags.Items.ALLOYING_FUEL);
-    }
+    public static boolean isFuelItem(@NotNull ItemStack itemStack) { return itemStack.is(ModTags.Items.ALLOYING_FUEL); }
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
-        protected void onContentsChanged(int slot) {
-            setChanged();
-        }
+        protected void onContentsChanged(int slot) { setChanged(); }
     };
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     public final ContainerData data;
