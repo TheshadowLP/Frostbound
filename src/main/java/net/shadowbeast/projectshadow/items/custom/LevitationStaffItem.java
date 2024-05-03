@@ -8,6 +8,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -30,8 +31,13 @@ public class LevitationStaffItem extends Item {
 
             if (!pLevel.isClientSide())
             {
-                pPlayer.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false)); //Apply the effect to the player
-
+                List<LivingEntity> entities = pLevel.getEntitiesOfClass(LivingEntity.class, pPlayer.getBoundingBox().inflate(1));
+                for (LivingEntity livingEntity : entities) {
+                    float max_health = livingEntity.getMaxHealth();
+                    if (max_health < 40F) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false));
+                    }
+                }
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
             }
