@@ -28,6 +28,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     private final IDrawable background;
     private final IDrawable icon;
     private int renderProgress = 0;
+    private static final int RENDER_NUMBER = 40;
     private static final int[] BUBBLELENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
     public CrushingCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURES, 0, 0,175, 85);
@@ -58,19 +59,17 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     }
     @Override
     public void draw(@NotNull CrusherRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics pGuiGraphics, double mouseX, double mouseY) {
-        pGuiGraphics.blit(TEXTURES, 0, 0, 0, 0, this.background.getWidth(), this.background.getHeight());
-        if(renderProgress % 2 == 0){
-            pGuiGraphics.blit(TEXTURES, 27, 40 - renderProgress, 176, 13 - renderProgress, 14, renderProgress + 1);
-        } else {
-            pGuiGraphics.blit(TEXTURES, 27, 40 - (renderProgress - 1), 176, 13 - (renderProgress - 1), 14, (renderProgress - 1) + 1);
-        }
-        int j1 = BUBBLELENGTHS[renderProgress / 2 % 7];
+        pGuiGraphics.blit(TEXTURES, 27, 40 - getRenderNum(), 176, 13 - getRenderNum(), 14, getRenderNum() + 1);
+        int j1 = BUBBLELENGTHS[getRenderNum() / 2 % 7];
         if (j1 > 0) {
             pGuiGraphics.blit(TEXTURES, 81, 54 - j1, 190, 19 - j1, 13, j1);
         }
         renderProgress++;
-        if (renderProgress >= 70) {
+        if (renderProgress >= 100) {
             renderProgress = 0;
         }
+    }
+    private int getRenderNum() {
+        return renderProgress - renderProgress % RENDER_NUMBER;
     }
 }
