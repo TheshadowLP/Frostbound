@@ -15,8 +15,8 @@ Anywhere else is not official, and not us. Only download using the above links. 
 **Project Distribution does allow 3rd parties.**
 
 # About the Mod
-Project Shadow improves your Minecraft vanilla experience! <br>
-This mod is not just a mod that does boring stuff, it's a lot of fun stuff for you and others to enjoy with.
+Arcane Mysteries - Secrets of the World is a meticulously crafted mod designed to
+immerse players in a world brimming with exciting possibilities. From the discovery of rare ores to encountering formidable new mobs, exploring intricate structures, delving into treacherous dungeons, challenging powerful bosses, and acquiring advanced tools and armor, this mod offers a comprehensive expansion of Minecraft's universe. Our relentless pursuit is to enrich the gaming experience by continuously introducing captivating and diverse content, ensuring players are continually engaged and enthralled.
 
 # Feedback
 You are free to join our official discord server [here](https://discord.gg/nkTkMsBDmg)! We appreciate the bug reports and your suggestions. Join the discord today to give us your opinion, and to hang out with new people (and your friends)!
