@@ -31,10 +31,6 @@
     "minecraft:stripped_spruce_wood",
     "minecraft:stripped_cherry_wood",
     "minecraft:stripped_dark_oak_wood",
-    "minecraft:stripped_mangrove_wood",
-    "minecraft:coal",
-    "minecraft:charcoal",
-    "minecraft:coal_block",
-    "minecraft:lava_bucket"
+    "minecraft:stripped_mangrove_wood"
   ]
 }

@@ -5,14 +5,19 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import net.shadowbeast.projectshadow.block_entities.entities.AlloyFurnaceBlockEntity;
+import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.block_entities.slot.ModResultSlot;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.block_entities.entities.AlloyFurnaceBlockEntity;
 import org.jetbrains.annotations.NotNull;
+
+import static net.minecraftforge.common.ForgeHooks.getBurnTime;
+import static net.shadowbeast.projectshadow.block_entities.entities.AlloyFurnaceBlockEntity.isFuelItem;
 
 public class AlloyFurnaceMenu extends AbstractContainerMenu {
     private final AlloyFurnaceBlockEntity blockEntity;
@@ -33,13 +38,17 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 80, 32));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 80, 28) {
+                public boolean mayPlace(ItemStack pStack) {
+                    return isFuelItem(pStack);
+                }
+            });
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 54, 23));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 59, 23));
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 106, 23));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 101, 23));
             this.addSlot(new ModResultSlot(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 80, 59));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 80, 60));
         });
 
         addDataSlots(data);
@@ -50,16 +59,20 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 28; // This is the height in pixels of your arrow
+        int progressArrowSize = 26; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public boolean hasFuelInSlot() {
+        return blockEntity.hasFuelInSlot();
     }
 
     public int getScaledFuel() {
         int fuel = this.data.get(2);
         int maxFuel = this.data.get(3);  // Max Progress
-        int fuelFlameSize = 13; // This is the height in pixels of your arrow
-        return maxFuel != 0 && fuel != 0 ? 13 - (fuel * fuelFlameSize / maxFuel) : 13;
+        int fuelFlameSize = 14; // This is the height in pixels of your arrow
+        return maxFuel != 0 && fuel != 0 ? 14 - (fuel * fuelFlameSize / maxFuel) : 14;
     }
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
