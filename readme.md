@@ -40,4 +40,4 @@ Optional Dependencies:
 
 
 # Contributors
-**TheUnknownDad** - Created the Alloy Furnace Texture & Model <br>
+**TheUnknownDad** - Created the Alloy Furnace Texture & Model
