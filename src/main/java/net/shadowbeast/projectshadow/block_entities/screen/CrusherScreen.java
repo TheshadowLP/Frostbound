@@ -7,17 +7,14 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.block_entities.menu.CrusherMenu;
 import org.jetbrains.annotations.NotNull;
 
-@OnlyIn(Dist.CLIENT)
 public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/crusher_gui.png");
-    private static final int[] BUBBLELENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
+    private static final int[] BUBBLE_LENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
     public CrusherScreen(CrusherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
@@ -43,7 +40,7 @@ public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
         int i1 = this.menu.getBrewingTicks();
         if (i1 > 0) {
             int j1;
-            j1 = BUBBLELENGTHS[i1 / 2 % 7];
+            j1 = BUBBLE_LENGTHS[i1 / 2 % 7];
             if (j1 > 0) {
                 pGuiGraphics.blit(TEXTURE, i + 81, j + 54 - j1, 190, 19 - j1, 13, j1);
             }

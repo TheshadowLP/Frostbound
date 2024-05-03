@@ -14,7 +14,6 @@ import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.block_entities.menu.AlloyFurnaceMenu;
 import org.jetbrains.annotations.NotNull;
 
-@OnlyIn(Dist.CLIENT)
 public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ProjectShadow.MOD_ID, "textures/gui/fusion_furnace_gui.png");
