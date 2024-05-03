@@ -1,6 +1,6 @@
 # Arcane Mysteries - Secrets of the World
 
-[![Project Shadow Icon](https://raw.githubusercontent.com/TheshadowLP/Forge-Shadow-1.20.1/main/long_logo.png)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
+[![Project Shadow Icon](https://raw.githubusercontent.com/TheshadowLP/Forge-Shadow-1.20.1/main/long_logo.png)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1) <br>
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/996245)](https://www.curseforge.com/minecraft/mc-mods/arcanemysteries)
 [![Github](https://img.shields.io/badge/Official_Github-%2520?color=46cfb3&link=https%3A%2F%2Fgithub.com%2FTheshadowLP%2FForge-Shadow-1.20.1)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
 [![GitHub Repo stars](https://img.shields.io/github/stars/TheshadowLP/Forge-Shadow-1.20.1)](https://github.com/TheshadowLP/Forge-Shadow-1.20.1)
