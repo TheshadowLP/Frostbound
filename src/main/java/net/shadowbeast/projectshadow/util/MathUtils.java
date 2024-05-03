@@ -2,8 +2,7 @@ package net.shadowbeast.projectshadow.util;
 
 public class MathUtils {
     public static double toRadians(double degrees) {
-        double pi = 3.14159265359;
-        return degrees * pi / 180;
+        return degrees * Math.PI / 180;
     }
     public static double toDegrees(double radians) {
         return radians * 57.2957795f;

@@ -31,12 +31,15 @@
     "projectshadow:frozen_stone_brick_wall",
 
     "projectshadow:alloy_furnace",
+    "projectshadow:winter_furnace",
     "projectshadow:crusher",
 
     "projectshadow:copper_bars",
     "projectshadow:platinum_bars",
     "projectshadow:steel_bars",
     "projectshadow:titanium_bars",
+
+    "projectshadow:end_lantern",
 
     "projectshadow:copper_brick",
     "projectshadow:exposed_copper_brick",

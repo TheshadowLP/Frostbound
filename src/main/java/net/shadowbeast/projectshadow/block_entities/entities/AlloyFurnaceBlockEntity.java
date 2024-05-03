@@ -17,7 +17,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -29,11 +28,12 @@ import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.block_entities.menu.AlloyFurnaceMenu;
 import static net.shadowbeast.projectshadow.block_entities.blocks.furnace.AlloyFurnaceBlock.ACTIVE;
+
+import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -43,39 +43,26 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         public static final int INPUT_SLOT_1 = 1;
         public static final int INPUT_SLOT_2 = 2;
         public static final int OUTPUT_SLOT = 3;
-        private AlloyFurnaceSlot() {}
     }
-    static List<Item> sFuel = List.of(Blocks.ACACIA_LOG.asItem(), Blocks.BIRCH_LOG.asItem(),
-            Blocks.OAK_LOG.asItem(), Blocks.JUNGLE_LOG.asItem(), Blocks.SPRUCE_LOG.asItem(),
-            Blocks.CHERRY_LOG.asItem(), Blocks.DARK_OAK_LOG.asItem(), Blocks.MANGROVE_LOG.asItem(),
-            Blocks.STRIPPED_ACACIA_LOG.asItem(), Blocks.STRIPPED_BIRCH_LOG.asItem(),
-            Blocks.STRIPPED_OAK_LOG.asItem(), Blocks.STRIPPED_JUNGLE_LOG.asItem(), Blocks.STRIPPED_SPRUCE_LOG.asItem(),
-            Blocks.STRIPPED_CHERRY_LOG.asItem(), Blocks.STRIPPED_DARK_OAK_LOG.asItem(), Blocks.STRIPPED_MANGROVE_LOG.asItem(),
-            Blocks.ACACIA_WOOD.asItem(), Blocks.BIRCH_WOOD.asItem(),
-            Blocks.OAK_WOOD.asItem(), Blocks.JUNGLE_WOOD.asItem(), Blocks.SPRUCE_WOOD.asItem(),
-            Blocks.CHERRY_WOOD.asItem(), Blocks.DARK_OAK_WOOD.asItem(), Blocks.MANGROVE_WOOD.asItem(),
-            Blocks.STRIPPED_ACACIA_WOOD.asItem(), Blocks.STRIPPED_BIRCH_WOOD.asItem(),
-            Blocks.STRIPPED_OAK_WOOD.asItem(), Blocks.STRIPPED_JUNGLE_WOOD.asItem(), Blocks.STRIPPED_SPRUCE_WOOD.asItem(),
-            Blocks.STRIPPED_CHERRY_WOOD.asItem(), Blocks.STRIPPED_DARK_OAK_WOOD.asItem(), Blocks.STRIPPED_MANGROVE_WOOD.asItem());
-    static List<Item> mFuel = List.of(Items.COAL, Items.CHARCOAL);
-    static List<Item> lFuel = List.of(Blocks.COAL_BLOCK.asItem());
 
     private enum FuelTypes {
         SMALL, MEDIUM, LARGE, NONE
     }
 
-    private static FuelTypes getFuelItemInSlot(AlloyFurnaceBlockEntity entity) {
-        FuelTypes type;
-        if (sFuel.contains(entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem())) {
+    private static FuelTypes getFuelItemTypeInSlot(AlloyFurnaceBlockEntity entity) {
+        if (entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).is(ModTags.Items.ALLOYING_FUEL_SMALL)) {
             return FuelTypes.SMALL;
-        } else if (mFuel.contains(entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem())) {
+        } else if (entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).is(ModTags.Items.ALLOYING_FUEL_MEDIUM)) {
             return FuelTypes.MEDIUM;
-        } else if (lFuel.contains(entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem())) {
+        } else if (entity.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).is(ModTags.Items.ALLOYING_FUEL_LARGE)) {
             return FuelTypes.LARGE;
         } else {
             return FuelTypes.NONE;
         }
+    }
 
+    public static boolean isFuelItem(ItemStack itemStack) {
+        return itemStack.is(ModTags.Items.ALLOYING_FUEL);
     }
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
@@ -166,22 +153,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
         boolean isActive = false;
-        if (hasLavaBucketInFuelSlot() && this.maxFuel - this.fuel >= 4000) {
-            clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
-            setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler, 1);
-            this.fuel += 4000;
+        if (hasLavaBucketInFuelSlot()) {
+            addFuelTime(4000, true);
         }
-        FuelTypes currentFuel = getFuelItemInSlot(this);
-        if (currentFuel != FuelTypes.NONE && this.maxFuel - this.fuel >= 100) {
-            if (currentFuel == FuelTypes.SMALL && this.maxFuel - this.fuel >= 100) {
-                clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
-                this.fuel += 100;
-            } else if (currentFuel == FuelTypes.MEDIUM && this.maxFuel - this.fuel >= 200) {
-                clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
-                this.fuel += 200;
-            } else if (currentFuel == FuelTypes.LARGE && this.maxFuel - this.fuel >= 2000) {
-                clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
-                this.fuel += 2000;
+        FuelTypes currentFuel = getFuelItemTypeInSlot(this);
+        if (canAddFuelTime(100)) {
+            switch (currentFuel) {
+                case SMALL -> addFuelTime(100, false);
+                case MEDIUM -> addFuelTime(200, false);
+                case LARGE -> addFuelTime(2000, false);
             }
         }
 
@@ -205,6 +185,25 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         level.setBlockAndUpdate(pPos, pState);
         setChanged(pLevel, pPos, pState);
     }
+
+    private void addFuelTime(int addedFuelTime, boolean isLava) {
+        if(canAddFuelTime(addedFuelTime)) {
+            clearItem(AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler);
+            if(isLava) {
+                setItem(Items.BUCKET, AlloyFurnaceSlot.FUEL_SLOT, this.itemHandler, 1);
+            }
+            this.fuel += addedFuelTime;
+        }
+    }
+
+    private boolean canAddFuelTime(int addedFuelTime) {
+        return this.maxFuel - this.fuel >= addedFuelTime;
+    }
+
+    public boolean hasFuelInSlot() {
+        return !itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).isEmpty();
+    }
+
     private boolean hasRecipe() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
