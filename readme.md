@@ -35,5 +35,9 @@ Optional Dependencies:
 **Tejty** - Texture Maker <br>
 **Cebularz** - Texture Maker & Programmer <br>
 **CrownSheep** - Texture Maker & Programmer <br>
-**TheUnknownDad** - Created the Alloy Furnace Texture & Model <br>
 **Paulanerpaul** - Thinker of Ideas <br>
+**luhcartimods** - Programmer
+
+
+# Contributors
+**TheUnknownDad** - Created the Alloy Furnace Texture & Model
