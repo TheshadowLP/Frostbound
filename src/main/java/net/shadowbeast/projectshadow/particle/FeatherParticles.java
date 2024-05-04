@@ -3,6 +3,7 @@ package net.shadowbeast.projectshadow.particle;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
+import org.jetbrains.annotations.NotNull;
 
 public class FeatherParticles extends TextureSheetParticle {
     protected FeatherParticles(ClientLevel pLevel, double pX, double pY, double pZ,
@@ -24,7 +25,7 @@ public class FeatherParticles extends TextureSheetParticle {
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
+    public @NotNull ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
 
@@ -35,7 +36,7 @@ public class FeatherParticles extends TextureSheetParticle {
             this.spriteSet = spriteSet;
         }
 
-        public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double pX, double pY, double pZ,
+        public Particle createParticle(@NotNull SimpleParticleType particleType, @NotNull ClientLevel level, double pX, double pY, double pZ,
                                        double pXSpeed, double pYSpeed, double pZSpeed) {
             return new FeatherParticles(level, pX, pY, pZ, this.spriteSet, pXSpeed, pYSpeed, pZSpeed);
         }
