@@ -27,8 +27,7 @@ public enum ToolStats implements Tier {
     LUMINITE(3, 1720, 9.0F, 3.0F, 10, ModItems.LUMINITE_INGOT.get()),
     AQUANIUM(4, 2210, 10.0F, 4.0F, 15, ModItems.AQUANIUM_INGOT.get()),
     FIRERITE(3, 1780, 10.0F, 3.0F, 15, ModItems.FIRERITE_GEM.get()),
-    FROZEN(3, 1820, 10.0F, 3.0F, 15, ModItems.FROZEN_GEM.get()),
-    BEDROCK(5,2530, 11.0F, 5.0F, 15, ModItems.BEDROCK_CHUNK.get());
+    FROZEN(3, 1820, 10.0F, 3.0F, 15, ModItems.FROZEN_GEM.get());
 
     private final int harvestLevel;
     private final int maxUses;
