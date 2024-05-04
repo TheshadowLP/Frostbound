@@ -47,6 +47,7 @@ public class LevitationStaffItem extends Item {
         }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
+
     @Override
     public boolean isEnchantable(@NotNull ItemStack pStack) {return false;}
     @Override
