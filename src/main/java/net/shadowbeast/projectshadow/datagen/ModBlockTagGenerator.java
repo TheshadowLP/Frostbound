@@ -22,7 +22,6 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
         this.tag(ModTags.Blocks.NEEDS_BEDROCK_TOOL)
                 .add(ModBlocks.BEDROCK.get());
-
     }
     @Override
     public String getName() {

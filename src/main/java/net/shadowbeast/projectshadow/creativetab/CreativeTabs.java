@@ -104,6 +104,21 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.YELLOW_TARGET.get());
                         pOutput.accept(ModBlocks.END_LANTERN.get());
                         pOutput.accept(ModBlocks.BEDROCK.get());
+                        pOutput.accept(ModBlocks.END_OBSIDIAN.get());
+                        pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get());
+                        pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
+                        pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
+                        pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
+                        pOutput.accept(ModBlocks.TILED_END_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.POLISHED_END_STONE.get());
+                        pOutput.accept(ModBlocks.RUNIC_END_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.CHISELED_PURPUR.get());
+                        pOutput.accept(ModBlocks.POLISHED_PURPUR.get());
+                        pOutput.accept(ModBlocks.BRICKED_PURPUR.get());
+                        pOutput.accept(ModBlocks.BRICKED_PURPUR_PILLAR.get());
+                        pOutput.accept(ModBlocks.TILED_PURPUR.get());
+                        pOutput.accept(ModBlocks.TILED_PURPUR_PILLAR.get());
+                        pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
