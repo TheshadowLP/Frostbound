@@ -2,6 +2,7 @@ package net.shadowbeast.projectshadow.items.custom;
 
 
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -35,6 +36,12 @@ public class HealStaffItem extends Item {
 
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
+            }
+            for(int i = 0; i < pPlayer.getRandom().nextIntBetweenInclusive(5, 10); i++) {
+                double d0 = pPlayer.getRandom().nextGaussian() * 0.02D;
+                double d1 = pPlayer.getRandom().nextGaussian() * 0.02D;
+                double d2 = pPlayer.getRandom().nextGaussian() * 0.02D;
+                pLevel.addParticle(ParticleTypes.HEART, pPlayer.getRandomX(1.0D), pPlayer.getRandomY() + 0.5D, pPlayer.getRandomZ(1.0D), d0, d1, d2);
             }
             pPlayer.playSound(SoundEvents.ALLAY_THROW, 1f, 1f);
             pPlayer.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
