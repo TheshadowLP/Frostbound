@@ -135,6 +135,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FROZEN_SWORD.get());
                         pOutput.accept(ModItems.FIRERITE_SWORD.get());
                         pOutput.accept(ModItems.ENDERIUM_SWORD.get());
+                        pOutput.accept(ModItems.BEDROCK_SWORD.get());
 
                         pOutput.accept(ModItems.SILVER_AXE.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
@@ -146,6 +147,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FROZEN_AXE.get());
                         pOutput.accept(ModItems.FIRERITE_AXE.get());
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
+                        pOutput.accept(ModItems.BEDROCK_AXE.get());
 
                         pOutput.accept(ModItems.SILVER_HAMMER.get());
                         pOutput.accept(ModItems.PLATINUM_HAMMER.get());
@@ -220,12 +222,6 @@ public class CreativeTabs {
 
                         pOutput.accept(ModItems.MUD_BALL.get());
                         pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get());
-
-                        pOutput.accept(ModItems.BEDROCK_SWORD.get());
-                        pOutput.accept(ModItems.BEDROCK_AXE.get());
-                        pOutput.accept(ModItems.BEDROCK_PICKAXE.get());
-                        pOutput.accept(ModItems.BEDROCK_SHOVEL.get());
-                        pOutput.accept(ModItems.BEDROCK_HOE.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_INGOT.get()))
@@ -346,6 +342,11 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_PICKAXE.get());
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
                         pOutput.accept(ModItems.ENDERIUM_HOE.get());
+
+                        pOutput.accept(ModItems.BEDROCK_SHOVEL.get());
+                        pOutput.accept(ModItems.BEDROCK_PICKAXE.get());
+                        pOutput.accept(ModItems.BEDROCK_AXE.get());
+                        pOutput.accept(ModItems.BEDROCK_HOE.get());
 
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
 
