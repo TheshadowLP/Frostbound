@@ -6,15 +6,12 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.*;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.food.ModFood;
 import net.shadowbeast.projectshadow.items.custom.*;
 import net.shadowbeast.projectshadow.items.custom.armor.*;
-
-import static net.shadowbeast.projectshadow.enchantments.ModEnchantments.*;
 
 
 @SuppressWarnings("unused")
