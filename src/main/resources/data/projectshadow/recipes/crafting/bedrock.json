@@ -1,11 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "count": 4,
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
       "item": "projectshadow:bedrock_chunk"
     }
+  },
+  "pattern": [
+    "##",
+    "##"
   ],
   "result": {
     "count": 2,
