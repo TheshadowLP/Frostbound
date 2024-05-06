@@ -61,6 +61,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(2.6F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> END_GOLD_ORE = registerBlock("end_gold_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.8F,4.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BAUXITE = registerBlock("bauxite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     //ORES BLOCKS
@@ -158,7 +159,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_TARGET = registerBlock("black_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
 
     //BEDROCK
-    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(15.0F, 3600000.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(7.0F, 3600000.0F).requiresCorrectToolForDrops()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn);return toReturn;
     }

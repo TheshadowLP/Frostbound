@@ -119,6 +119,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.TILED_PURPUR_PILLAR.get());
                         pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
                         pOutput.accept(ModBlocks.END_GLASS.get());
+                        pOutput.accept(ModBlocks.END_GOLD_ORE.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
