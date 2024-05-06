@@ -352,6 +352,7 @@ public class CreativeTabs {
 
                         pOutput.accept(ModItems.FROZEN_BOAT.get());
                         pOutput.accept(ModItems.FROZEN_CHEST_BOAT.get());
+                        pOutput.accept(ModItems.STRONGHOLD_COMPASS.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> DRINKS = CREATIVE_MODE_TABS.register("drinks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))
