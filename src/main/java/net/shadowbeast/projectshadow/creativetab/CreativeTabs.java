@@ -9,7 +9,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.items.ModItems;
 
 @SuppressWarnings("unused")
@@ -119,6 +118,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.TILED_PURPUR.get());
                         pOutput.accept(ModBlocks.TILED_PURPUR_PILLAR.get());
                         pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
+                        pOutput.accept(ModBlocks.END_GLASS.get());
+                        pOutput.accept(ModBlocks.END_GOLD_ORE.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
@@ -352,6 +353,7 @@ public class CreativeTabs {
 
                         pOutput.accept(ModItems.FROZEN_BOAT.get());
                         pOutput.accept(ModItems.FROZEN_CHEST_BOAT.get());
+                        pOutput.accept(ModItems.STRONGHOLD_COMPASS.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> DRINKS = CREATIVE_MODE_TABS.register("drinks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))

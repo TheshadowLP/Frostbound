@@ -1,17 +1,10 @@
 package net.shadowbeast.projectshadow.enums;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.ForgeTier;
-import net.minecraftforge.common.TierSortingRegistry;
-import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

@@ -6,15 +6,12 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.*;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
 import net.shadowbeast.projectshadow.food.ModFood;
 import net.shadowbeast.projectshadow.items.custom.*;
 import net.shadowbeast.projectshadow.items.custom.armor.*;
-
-import static net.shadowbeast.projectshadow.enchantments.ModEnchantments.*;
 
 
 @SuppressWarnings("unused")
@@ -73,7 +70,7 @@ public class ModItems {
     public static final RegistryObject<Item> PLATINUM_SAW_BLADE = ITEMS.register("platinum_saw_blade", () -> new SawbladeItem(43)); //Increments of 64 change if unbalanced
     public static final RegistryObject<Item> TITANIUM_SAW_BLADE = ITEMS.register("titanium_saw_blade", () -> new SawbladeItem(36)); //Increments of 64 change if unbalanced
     public static final RegistryObject<Item> DIAMOND_SAW_BLADE = ITEMS.register("diamond_saw_blade", () -> new SawbladeItem(57)); //Increments of 64 change if unbalanced
-    public static final RegistryObject<Item> STRONGHOLD_COMPASS = ITEMS.register("stronghold_compass", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> STRONGHOLD_COMPASS = ITEMS.register("stronghold_compass", () -> new StrongholdCompass(new Item.Properties().stacksTo(1)));
 
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch", () -> new Item(new Item.Properties()));
