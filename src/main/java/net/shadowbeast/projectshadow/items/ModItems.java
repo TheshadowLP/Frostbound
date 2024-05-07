@@ -265,6 +265,9 @@ public class ModItems {
 
     //SPAWN EGGS
     public static final RegistryObject<ForgeSpawnEggItem> DUNGEON_ICE_SPAWN_EGG = ITEMS.register("dungeon_ice_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.DUNGEON_ICE, 0x34dbeb, 0xFFFFFF, new Item.Properties()));
+
+    //MISC
+    public static final RegistryObject<Item> ICE_BEAM = ITEMS.register("ice_beam",() -> new IceBeam(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
