@@ -223,6 +223,7 @@ public class CreativeTabs {
 
                         pOutput.accept(ModItems.MUD_BALL.get());
                         pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.ICE_BEAM.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_INGOT.get()))

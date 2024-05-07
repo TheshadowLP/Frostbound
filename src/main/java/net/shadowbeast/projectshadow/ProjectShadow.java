@@ -76,6 +76,7 @@ public class ProjectShadow {
         public static void registerRenderers(FMLClientSetupEvent event) {
             Sheets.addWoodType(ModWoodTypes.FROZEN);
             EntityRenderers.register(ModEntities.MUDBALL_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.ICE_BEAM_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
             EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
             ModItemProperties.addCustomItemProperties();
