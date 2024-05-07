@@ -92,6 +92,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
+                        pOutput.accept(ModBlocks.END_GOLD_ORE.get());
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
@@ -119,7 +120,6 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.TILED_PURPUR_PILLAR.get());
                         pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
                         pOutput.accept(ModBlocks.END_GLASS.get());
-                        pOutput.accept(ModBlocks.END_GOLD_ORE.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
@@ -258,6 +258,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_INGOT.get());
                         pOutput.accept(ModItems.AQUANIUM_INGOT.get());
                         pOutput.accept(ModItems.ENDERIUM_INGOT.get());
+                        pOutput.accept(ModItems.END_GOLD_INGOT.get());
                         pOutput.accept(ModItems.ENDER_INGOT.get());
 
                         pOutput.accept(ModItems.SILVER_POWDER.get());
