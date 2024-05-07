@@ -31,7 +31,7 @@ public class LevitationStaffItem extends Item {
             if (!pPlayer.getAbilities().instabuild){
                 pPlayer.getCooldowns().addCooldown(this, 300);}
             if(pLevel.isClientSide()){
-                for (int i = 0; i < 20; i++) {
+                for (int i = 5; i < 20; i++) {
                     double x = pPlayer.getX() + (pLevel.random.nextDouble() - 0.5) * 2;
                     double y = pPlayer.getY() + pLevel.random.nextDouble() * 2;
                     double z = pPlayer.getZ() + (pLevel.random.nextDouble() - 0.5) * 2;

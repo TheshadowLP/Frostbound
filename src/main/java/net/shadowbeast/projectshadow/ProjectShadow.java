@@ -5,6 +5,8 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.block_entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.client.ModBoatRenderer;
+import net.shadowbeast.projectshadow.client.StrongholdCompassItemPropertyFunction;
 import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
@@ -59,7 +62,6 @@ public class ProjectShadow {
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-
     }
     private void commonSetup(final FMLCommonSetupEvent event) {}
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
@@ -71,6 +73,10 @@ public class ProjectShadow {
             MenuScreens.register(ModMenuTypes.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(ModEntities.DUNGEON_ICE.get(), DungeonIceRenderer::new);
+
+            event.enqueueWork(() -> {
+                ItemProperties.register(StrongholdCompassItemPropertyFunction.COMPASS_ITEM, new ResourceLocation("angle"), new StrongholdCompassItemPropertyFunction());
+            });
         }
         @SubscribeEvent
         public static void registerRenderers(FMLClientSetupEvent event) {
