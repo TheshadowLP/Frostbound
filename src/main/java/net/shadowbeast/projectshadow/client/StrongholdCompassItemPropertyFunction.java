@@ -10,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.projectshadow.items.ModItems;
@@ -29,22 +30,24 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
         } else {
             boolean entityExists = pEntity != null;
             Entity entity = entityExists ? pEntity : pStack.getFrame();
-            if (pLevel == null && entity.level() instanceof ClientLevel) {
-                pLevel = (ClientLevel) entity.level();
+            ClientLevel localLevel = pLevel;
+            if (localLevel == null && entity.level() instanceof ClientLevel) {
+                localLevel = (ClientLevel) entity.level();
             }
 
             double rotation = entityExists ? (double) entity.getYRot() : getItemFrameRotation((ItemFrame) entity);
             rotation = rotation % 360;
-            double adjusted = Math.PI - ((rotation - 90) * DEG_TO_RAD - getAngle(pLevel, entity, pStack));
+            double adjusted = Math.PI - ((rotation - 90) * DEG_TO_RAD - getAngle(localLevel, entity, pStack));
 
             if (entityExists) {
-                adjusted = getRandomlySpinningRotation(pLevel, adjusted);
+                adjusted = getRandomlySpinningRotation(localLevel, adjusted);
             }
 
             float f = (float) (adjusted / (Math.PI * 2));
             return Mth.positiveModulo(f, 1);
         }
     }
+
 
     private double getRandomlySpinningRotation(ClientLevel pLevel, double pAmount) {
         long gameTime = pLevel.getGameTime();
@@ -68,13 +71,31 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
     }
 
     private double getAngle(ClientLevel pLevel, Entity pEntity, ItemStack pStack) {
-        if (pStack.getItem() == COMPASS_ITEM) {
-            // Block position you are looking for, currently set to 0 0 (y value is always ignored)
-            BlockPos blockPos = new BlockPos(0, 0, 0);
-
-            // Calculates the direction (in radians) from entity's position to the block position
-            return Math.atan2((double) blockPos.getZ() - pEntity.position().z(), (double) blockPos.getX() - pEntity.position().x());
+        if (pStack.getItem() == ModItems.STRONGHOLD_COMPASS.get()) {
+            BlockPos nearestEndPortalFramePos = findNearestEndPortalFrame(pLevel, pEntity.blockPosition());
+            if (nearestEndPortalFramePos != null) {
+                return Math.atan2((double) nearestEndPortalFramePos.getZ() - pEntity.position().z(), (double) nearestEndPortalFramePos.getX() - pEntity.position().x());
+            }
+            return 0;
         }
         return 0;
+    }
+
+    private BlockPos findNearestEndPortalFrame(ClientLevel pLevel, BlockPos entityPos) {
+        double minDistanceSquared = Double.MAX_VALUE;
+        BlockPos nearestPos = null;
+
+        for (BlockPos pos : BlockPos.betweenClosed(entityPos.offset(-100, -100, -100), entityPos.offset(100, 100, 100))) {
+            if (pLevel.getBlockState(pos).is(Blocks.END_PORTAL_FRAME)) {
+                double distanceSquared = pos.distSqr(entityPos);
+
+                if (distanceSquared < minDistanceSquared) {
+                    minDistanceSquared = distanceSquared;
+                    nearestPos = pos.immutable();
+                }
+            }
+        }
+
+        return nearestPos;
     }
 }
