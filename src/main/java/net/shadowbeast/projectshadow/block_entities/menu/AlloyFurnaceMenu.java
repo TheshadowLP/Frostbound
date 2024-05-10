@@ -36,17 +36,17 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 80, 28) {
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.FUEL_SLOT, 80, 26) {
                 public boolean mayPlace(ItemStack pStack) {
                     return isFuelItem(pStack);
                 }
             });
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 59, 23));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_1, 59, 21));
             this.addSlot(new SlotItemHandler(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 101, 23));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.INPUT_SLOT_2, 101, 21));
             this.addSlot(new ModResultSlot(handler,
-                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 80, 60));
+                    AlloyFurnaceBlockEntity.AlloyFurnaceSlot.OUTPUT_SLOT, 80, 58));
         });
 
         addDataSlots(data);
@@ -57,21 +57,22 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the height in pixels of your arrow
+        int progressArrowSize = 30; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-    }
-
-    public boolean hasFuelInSlot() {
-        return blockEntity.hasFuelInSlot();
     }
 
     public int getScaledFuel() {
         int fuel = this.data.get(2);
         int maxFuel = this.data.get(3);  // Max Progress
         int fuelFlameSize = 14; // This is the height in pixels of your arrow
-        return maxFuel != 0 && fuel != 0 ? 14 - (fuel * fuelFlameSize / maxFuel) : 14;
+        return maxFuel != 0 && fuel != 0 ? fuel * fuelFlameSize / maxFuel : -1;
     }
+
+    public boolean hasFuelInSlot() {
+        return blockEntity.hasFuelInSlot();
+    }
+
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -116,13 +117,13 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
     }
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
 }
