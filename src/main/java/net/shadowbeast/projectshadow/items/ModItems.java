@@ -124,7 +124,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_SWORD = ITEMS.register("silver_sword", ()-> new SwordItem(ToolStats.SILVER,1,-2.4F, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register("steel_sword", ()-> new SwordItem(ToolStats.STEEL,3,-2.6F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_SWORD = ITEMS.register("titanium_sword", ()-> new SwordItem(ToolStats.TITANIUM,4,-2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> FIRERITE_SWORD = ITEMS.register("firerite_sword", () -> new SwordItem(ToolStats.FIRERITE, 3, -2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_SWORD = ITEMS.register("firerite_sword", () -> new SwordItem(ToolStats.FIRERITE, 3, -2.4F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FROZEN_SWORD = ITEMS.register("frozen_sword", () -> new SwordItem(ToolStats.FROZEN, 3, -2.4F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BEDROCK_SWORD = ITEMS.register("bedrock_sword", ()-> new SwordItem(BedrockToolTier.BEDROCK,3,-2.6F, new Item.Properties()));
 
@@ -137,7 +137,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_AXE = ITEMS.register("silver_axe", ()-> new AxeItem(ToolStats.SILVER,5.0F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_AXE = ITEMS.register("steel_axe", ()-> new AxeItem(ToolStats.STEEL,6F,-3.2F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_AXE = ITEMS.register("titanium_axe", ()-> new AxeItem(ToolStats.TITANIUM,6.0F,-3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> FIRERITE_AXE = ITEMS.register("firerite_axe", ()-> new AxeItem(ToolStats.FIRERITE,5.0F,-2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_AXE = ITEMS.register("firerite_axe", ()-> new AxeItem(ToolStats.FIRERITE,5.0F,-2.8F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FROZEN_AXE = ITEMS.register("frozen_axe", ()-> new AxeItem(ToolStats.FROZEN,5.0F,-2.8F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BEDROCK_AXE = ITEMS.register("bedrock_axe", ()-> new AxeItem(BedrockToolTier.BEDROCK,5.0F,-3.2F, new Item.Properties()));
 
@@ -150,7 +150,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_PICKAXE = ITEMS.register("silver_pickaxe", ()-> new PickaxeItem(ToolStats.SILVER,-1,-2.8F, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", ()-> new PickaxeItem(ToolStats.STEEL,1,-3F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe", ()-> new PickaxeItem(ToolStats.TITANIUM,2,-2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> FIRERITE_PICKAXE = ITEMS.register("firerite_pickaxe", ()-> new PickaxeItem(ToolStats.FIRERITE,1,-2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_PICKAXE = ITEMS.register("firerite_pickaxe", ()-> new PickaxeItem(ToolStats.FIRERITE,1,-2.8F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FROZEN_PICKAXE = ITEMS.register("frozen_pickaxe", ()-> new PickaxeItem(ToolStats.FROZEN,1,-2.8F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BEDROCK_PICKAXE = ITEMS.register("bedrock_pickaxe", ()-> new PickaxeItem(BedrockToolTier.BEDROCK,1,-3.0F, new Item.Properties()));
 
@@ -163,7 +163,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_SHOVEL = ITEMS.register("silver_shovel", ()-> new ShovelItem(ToolStats.SILVER,-0.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_SHOVEL = ITEMS.register("steel_shovel", ()-> new ShovelItem(ToolStats.STEEL,1.5F,-3F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_SHOVEL = ITEMS.register("titanium_shovel", ()-> new ShovelItem(ToolStats.TITANIUM,2.5F,-3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> FIRERITE_SHOVEL = ITEMS.register("firerite_shovel", ()-> new ShovelItem(ToolStats.FIRERITE,1.5F,-3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_SHOVEL = ITEMS.register("firerite_shovel", ()-> new ShovelItem(ToolStats.FIRERITE,1.5F,-3.0F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FROZEN_SHOVEL = ITEMS.register("frozen_shovel", ()-> new ShovelItem(ToolStats.FROZEN,1.5F,-3.0F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BEDROCK_SHOVEL = ITEMS.register("bedrock_shovel", ()-> new ShovelItem(BedrockToolTier.BEDROCK,1.5F,-3.2F, new Item.Properties()));
 
@@ -176,7 +176,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_HOE = ITEMS.register("silver_hoe", ()-> new HoeItem(ToolStats.SILVER,-2,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe", ()-> new HoeItem(ToolStats.STEEL,-2,-1.0F, new Item.Properties()));
     public static final RegistryObject<Item> TITANIUM_HOE = ITEMS.register("titanium_hoe", ()-> new HoeItem(ToolStats.TITANIUM,-2,0.0F, new Item.Properties()));
-    public static final RegistryObject<Item> FIRERITE_HOE = ITEMS.register("firerite_hoe", ()-> new HoeItem(ToolStats.FIRERITE,-2,0.0F, new Item.Properties()));
+    public static final RegistryObject<Item> FIRERITE_HOE = ITEMS.register("firerite_hoe", ()-> new HoeItem(ToolStats.FIRERITE,-2,0.0F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FROZEN_HOE = ITEMS.register("frozen_hoe", ()-> new HoeItem(ToolStats.FROZEN,-2,0.0F, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BEDROCK_HOE = ITEMS.register("bedrock_hoe", ()-> new HoeItem(BedrockToolTier.BEDROCK,-4,-0.2F, new Item.Properties()));
 
