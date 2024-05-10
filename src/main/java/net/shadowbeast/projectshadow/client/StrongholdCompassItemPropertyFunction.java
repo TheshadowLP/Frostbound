@@ -1,101 +1,120 @@
 package net.shadowbeast.projectshadow.client;
 
+import javax.annotation.Nullable;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
+import net.minecraft.client.renderer.item.CompassItemPropertyFunction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.core.GlobalPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.decoration.ItemFrame;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.shadowbeast.projectshadow.items.ModItems;
 
 @OnlyIn(Dist.CLIENT)
 public class StrongholdCompassItemPropertyFunction implements ClampedItemPropertyFunction {
-    public static final Item COMPASS_ITEM = ModItems.STRONGHOLD_COMPASS.get();
-    private static final double DEG_TO_RAD = 0.01745329238474369D;
-    private double rotation;
-    private double deltaRotation;
-    private long lastUpdateTick;
+    public static final int DEFAULT_ROTATION = 0;
+    private final StrongholdCompassItemPropertyFunction.CompassWobble wobble = new CompassWobble();
+    private final StrongholdCompassItemPropertyFunction.CompassWobble wobbleRandom = new CompassWobble();
+    public final net.minecraft.client.renderer.item.CompassItemPropertyFunction.CompassTarget compassTarget;
 
-    @Override
-    public float unclampedCall(ItemStack pStack, ClientLevel pLevel, LivingEntity pEntity, int pSeed) {
-        if (pEntity == null && !pStack.isFramed()) {
-            return 0;
+    public StrongholdCompassItemPropertyFunction(StrongholdCompassItemPropertyFunction.CompassTarget pCompassTarget) {
+        this.compassTarget = (CompassItemPropertyFunction.CompassTarget) pCompassTarget;
+    }
+
+    public float unclampedCall(ItemStack pStack, @Nullable ClientLevel pLevel, @Nullable LivingEntity pEntity, int pSeed) {
+        Entity entity = (Entity)(pEntity != null ? pEntity : pStack.getEntityRepresentation());
+        if (entity == null) {
+            return 0.0F;
         } else {
-            boolean entityExists = pEntity != null;
-            Entity entity = entityExists ? pEntity : pStack.getFrame();
-            ClientLevel localLevel = pLevel;
-            if (localLevel == null && entity.level() instanceof ClientLevel) {
-                localLevel = (ClientLevel) entity.level();
-            }
-
-            double rotation = entityExists ? (double) entity.getYRot() : getItemFrameRotation((ItemFrame) entity);
-            rotation = rotation % 360;
-            double adjusted = Math.PI - ((rotation - 90) * DEG_TO_RAD - getAngle(localLevel, entity, pStack));
-
-            if (entityExists) {
-                adjusted = getRandomlySpinningRotation(localLevel, adjusted);
-            }
-
-            float f = (float) (adjusted / (Math.PI * 2));
-            return Mth.positiveModulo(f, 1);
+            pLevel = this.tryFetchLevelIfMissing(entity, pLevel);
+            return pLevel == null ? 0.0F : this.getCompassRotation(pStack, pLevel, pSeed, entity);
         }
     }
 
+    private float getCompassRotation(ItemStack pStack, ClientLevel pLevel, int pSeed, Entity pEntity) {
+        GlobalPos globalpos = this.compassTarget.getPos(pLevel, pStack, pEntity);
+        long i = pLevel.getGameTime();
+        return !this.isValidCompassTargetPos(pEntity, globalpos) ? this.getRandomlySpinningRotation(pSeed, i) : this.getRotationTowardsCompassTarget(pEntity, i, globalpos.pos());
+    }
 
-    private double getRandomlySpinningRotation(ClientLevel pLevel, double pAmount) {
-        long gameTime = pLevel.getGameTime();
-        if (gameTime != lastUpdateTick) {
-            lastUpdateTick = gameTime;
-            double d0 = pAmount - rotation;
-            d0 = Mth.positiveModulo(d0 + Math.PI, Math.PI * 2) - Math.PI;
-            d0 = Mth.clamp(d0, -1, 1);
-            deltaRotation += d0 * 0.1;
-            deltaRotation *= 0.8;
-            rotation += deltaRotation;
+    private float getRandomlySpinningRotation(int pSeed, long pTicks) {
+        if (this.wobbleRandom.shouldUpdate(pTicks)) {
+            this.wobbleRandom.update(pTicks, Math.random());
         }
 
-        return rotation;
+        double d0 = this.wobbleRandom.rotation + (double)((float)this.hash(pSeed) / (float)Integer.MAX_VALUE);
+        return Mth.positiveModulo((float)d0, 1.0F);
     }
 
-    private double getItemFrameRotation(ItemFrame itemFrame) {
-        Direction direction = itemFrame.getDirection();
-        int i = direction.getAxis().isVertical() ? 90 * direction.getAxisDirection().getStep() : 0;
-        return Mth.wrapDegrees(180 + direction.get2DDataValue() * 90 + itemFrame.getRotation() * 45 + i);
-    }
-
-    private double getAngle(ClientLevel pLevel, Entity pEntity, ItemStack pStack) {
-        if (pStack.getItem() == ModItems.STRONGHOLD_COMPASS.get()) {
-            BlockPos nearestEndPortalFramePos = findNearestEndPortalFrame(pLevel, pEntity.blockPosition());
-            if (nearestEndPortalFramePos != null) {
-                return Math.atan2((double) nearestEndPortalFramePos.getZ() - pEntity.position().z(), (double) nearestEndPortalFramePos.getX() - pEntity.position().x());
-            }
-            return 0;
-        }
-        return 0;
-    }
-
-    private BlockPos findNearestEndPortalFrame(ClientLevel pLevel, BlockPos entityPos) {
-        double minDistanceSquared = Double.MAX_VALUE;
-        BlockPos nearestPos = null;
-
-        for (BlockPos pos : BlockPos.betweenClosed(entityPos.offset(-100, -100, -100), entityPos.offset(100, 100, 100))) {
-            if (pLevel.getBlockState(pos).is(Blocks.END_PORTAL_FRAME)) {
-                double distanceSquared = pos.distSqr(entityPos);
-
-                if (distanceSquared < minDistanceSquared) {
-                    minDistanceSquared = distanceSquared;
-                    nearestPos = pos.immutable();
+    private float getRotationTowardsCompassTarget(Entity pEntity, long pTicks, BlockPos pPos) {
+        double d0 = this.getAngleFromEntityToPos(pEntity, pPos);
+        double d1 = this.getWrappedVisualRotationY(pEntity);
+        if (pEntity instanceof Player player) {
+            if (player.isLocalPlayer()) {
+                if (this.wobble.shouldUpdate(pTicks)) {
+                    this.wobble.update(pTicks, 0.5D - (d1 - 0.25D));
                 }
+
+                double d3 = d0 + this.wobble.rotation;
+                return Mth.positiveModulo((float)d3, 1.0F);
             }
         }
 
-        return nearestPos;
+        double d2 = 0.5D - (d1 - 0.25D - d0);
+        return Mth.positiveModulo((float)d2, 1.0F);
+    }
+
+    @Nullable
+    private ClientLevel tryFetchLevelIfMissing(Entity pEntity, @Nullable ClientLevel pLevel) {
+        return pLevel == null && pEntity.level() instanceof ClientLevel ? (ClientLevel)pEntity.level() : pLevel;
+    }
+
+    private boolean isValidCompassTargetPos(Entity pEntity, @Nullable GlobalPos pPos) {
+        return pPos != null && pPos.dimension() == pEntity.level().dimension() && !(pPos.pos().distToCenterSqr(pEntity.position()) < (double)1.0E-5F);
+    }
+
+    private double getAngleFromEntityToPos(Entity pEntity, BlockPos pPos) {
+        Vec3 vec3 = Vec3.atCenterOf(pPos);
+        return Math.atan2(vec3.z() - pEntity.getZ(), vec3.x() - pEntity.getX()) / (double)((float)Math.PI * 2F);
+    }
+
+    private double getWrappedVisualRotationY(Entity pEntity) {
+        return Mth.positiveModulo((double)(pEntity.getVisualRotationYInDegrees() / 360.0F), 1.0D);
+    }
+
+    private int hash(int pValue) {
+        return pValue * 1327217883;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public interface CompassTarget {
+        @Nullable
+        GlobalPos getPos(ClientLevel pLevel, ItemStack pStack, Entity pEntity);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    static class CompassWobble {
+        double rotation;
+        private double deltaRotation;
+        private long lastUpdateTick;
+
+        boolean shouldUpdate(long pTicks) {
+            return this.lastUpdateTick != pTicks;
+        }
+
+        void update(long pTicks, double pRotation) {
+            this.lastUpdateTick = pTicks;
+            double d0 = pRotation - this.rotation;
+            d0 = Mth.positiveModulo(d0 + 0.5D, 1.0D) - 0.5D;
+            this.deltaRotation += d0 * 0.1D;
+            this.deltaRotation *= 0.8D;
+            this.rotation = Mth.positiveModulo(this.rotation + this.deltaRotation, 1.0D);
+        }
     }
 }
+

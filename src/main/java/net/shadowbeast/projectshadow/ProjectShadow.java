@@ -75,7 +75,6 @@ public class ProjectShadow {
             EntityRenderers.register(ModEntities.DUNGEON_ICE.get(), DungeonIceRenderer::new);
 
             event.enqueueWork(() -> {
-                ItemProperties.register(StrongholdCompassItemPropertyFunction.COMPASS_ITEM, new ResourceLocation("angle"), new StrongholdCompassItemPropertyFunction());
             });
         }
         @SubscribeEvent
