@@ -16,7 +16,7 @@ public class CreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ProjectShadow.MOD_ID);
     public static final RegistryObject<CreativeModeTab> BLOCKS = CREATIVE_MODE_TABS.register("blocks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.FROZEN_COBBLESTONE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.END_OBSIDIAN.get()))
                     .title(Component.translatable("creativetab.projectshadow.blocks"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.FROZEN_LOG.get());
@@ -48,8 +48,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_BARS.get());
                         pOutput.accept(ModBlocks.TITANIUM_BARS.get());
 
-                        pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
-                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModBlocks.WINTER_FURNACE.get());
+                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModBlocks.SULFURIC_TNT.get());
 
@@ -92,7 +92,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
-                        pOutput.accept(ModBlocks.END_GOLD_ORE.get());
+                        //pOutput.accept(ModBlocks.END_GOLD_ORE.get()); //TODO
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
@@ -260,7 +260,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_INGOT.get());
                         pOutput.accept(ModItems.AQUANIUM_INGOT.get());
                         pOutput.accept(ModItems.ENDERIUM_INGOT.get());
-                        pOutput.accept(ModItems.END_GOLD_INGOT.get());
+                        //pOutput.accept(ModItems.END_GOLD_INGOT.get()); //TODO
                         pOutput.accept(ModItems.ENDER_INGOT.get());
 
                         pOutput.accept(ModItems.SILVER_POWDER.get());
