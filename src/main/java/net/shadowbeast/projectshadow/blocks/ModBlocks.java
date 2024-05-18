@@ -25,6 +25,7 @@ import net.shadowbeast.projectshadow.blocks.custom.*;
 import net.shadowbeast.projectshadow.block_entities.blocks.furnace.AlloyFurnaceBlock;
 import net.shadowbeast.projectshadow.block_entities.blocks.crusher.CrusherBlock;
 import net.shadowbeast.projectshadow.block_entities.blocks.furnace.WinterFurnaceBlock;
+import net.shadowbeast.projectshadow.fluid.ModFluids;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
 import net.shadowbeast.projectshadow.worldgen.tree.FrozenTreeGrower;
@@ -159,7 +160,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_TARGET = registerBlock("black_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
 
     //BEDROCK
-    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(7.0F, 3600000.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(7.0F, 3600000.0F)));
+
+    //FLUIDS
+    public static final RegistryObject<EndLavaBlock> END_LAVA_BLOCK = BLOCKS.register("end_lava_block", () -> new EndLavaBlock(ModFluids.END_LAVA_FLUID.get(), BlockBehaviour.Properties.copy(Blocks.LAVA).noCollission().noOcclusion().noLootTable()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn);return toReturn;
     }

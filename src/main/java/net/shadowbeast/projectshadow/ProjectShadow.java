@@ -23,6 +23,8 @@ import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.entity.ModEntities;
+import net.shadowbeast.projectshadow.fluid.ModFluidTypes;
+import net.shadowbeast.projectshadow.fluid.ModFluids;
 import net.shadowbeast.projectshadow.mob.client.DungeonIceRenderer;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.particle.ModParticles;
@@ -51,6 +53,8 @@ public class ProjectShadow {
         ModEffects.register(modEventBus);
         ModParticles.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModEnchantments.register(modEventBus);

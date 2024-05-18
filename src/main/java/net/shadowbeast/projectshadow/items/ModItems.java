@@ -9,6 +9,7 @@ import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
+import net.shadowbeast.projectshadow.fluid.ModFluids;
 import net.shadowbeast.projectshadow.food.ModFood;
 import net.shadowbeast.projectshadow.items.custom.*;
 import net.shadowbeast.projectshadow.items.custom.armor.*;
@@ -268,6 +269,7 @@ public class ModItems {
 
     //MISC
     public static final RegistryObject<Item> ICE_BEAM = ITEMS.register("ice_beam",() -> new IceBeam(new Item.Properties()));
+    public static final RegistryObject<Item> END_LAVA_BUCKET = ITEMS.register("end_lava_bucket", () -> new BucketItem(ModFluids.END_LAVA_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
