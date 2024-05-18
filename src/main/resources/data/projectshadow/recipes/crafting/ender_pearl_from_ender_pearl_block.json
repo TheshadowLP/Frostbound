@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "ender_ingot",
+  "ingredients": [
+    {
+      "item": "projectshadow:ender_pearl_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:ender_pearl"
+  }
+}

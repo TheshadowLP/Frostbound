@@ -2,11 +2,11 @@
   "type": "projectshadow:crushing",
   "ingredient": [
     {
-      "item": "projectshadow:aquanium_ingot"
+      "item": "minecraft:raw_iron"
     }
   ],
   "result": {
-    "item": "projectshadow:aquanium_powder",
+    "item": "projectshadow:iron_powder",
     "count": 9
   }
 }

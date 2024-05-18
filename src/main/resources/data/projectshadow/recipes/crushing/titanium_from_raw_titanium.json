@@ -2,11 +2,11 @@
   "type": "projectshadow:crushing",
   "ingredient": [
     {
-      "item": "projectshadow:enderium_ingot"
+      "item": "projectshadow:raw_titanium"
     }
   ],
   "result": {
-    "item": "projectshadow:enderium_powder",
+    "item": "projectshadow:titanium_powder",
     "count": 9
   }
 }

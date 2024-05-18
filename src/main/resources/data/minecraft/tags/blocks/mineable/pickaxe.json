@@ -14,6 +14,18 @@
     "projectshadow:titanium_ore",
     "projectshadow:end_gold_ore",
 
+    "projectshadow:end_stone_pillar",
+    "projectshadow:tiled_end_stone_bricks",
+    "projectshadow:polished_end_stone",
+    "projectshadow:runic_end_stone_bricks",
+    "projectshadow:chiseled_purpur",
+    "projectshadow:polished_purpur",
+    "projectshadow:bricked_purpur",
+    "projectshadow:bricked_purpur_pillar",
+    "projectshadow:tiled_purpur",
+    "projectshadow:tiled_purpur_pillar",
+    "projectshadow:runic_purpur",
+
     "projectshadow:bauxite",
 
     "projectshadow:ruby_block",
@@ -25,6 +37,7 @@
     "projectshadow:silver_block",
     "projectshadow:enderium_block",
     "projectshadow:frozen_gem_block",
+    "projectshadow:ender_pearl_block",
 
     "projectshadow:frozen_stone",
     "projectshadow:frozen_cobblestone",

@@ -23,7 +23,7 @@ public class KohlrabiCropBlock extends CropBlock {
         super(pProperties);
     }
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
         return SHAPE_BY_AGE[this.getAge(pState)];
     }
     @Override
