@@ -89,7 +89,7 @@ public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
         add(map, Blocks.MANGROVE_ROOTS, 300);
         return map;
     }
-    private static boolean isNeverAFurnaceFuel(Item pItem) {
+    private static boolean isNeverAFurnaceFuel(@NotNull Item pItem) {
         return pItem.builtInRegistryHolder().is(ItemTags.NON_FLAMMABLE_WOOD);
     }
     private static void add(Map<Item, Integer> pMap, TagKey<Item> pItemTag, int pBurnTime) {
@@ -100,11 +100,11 @@ public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
         }
 
     }
-    private static void add(Map<Item, Integer> pMap, ItemLike pItem, int pBurnTime) {
+    private static void add(Map<Item, Integer> pMap, @NotNull ItemLike pItem, int pBurnTime) {
         Item item = pItem.asItem();
         if (isNeverAFurnaceFuel(item)) {
-            if (SharedConstants.IS_RUNNING_IN_IDE) {
-                throw (IllegalStateException) Util.pauseInIde(new IllegalStateException("A developer tried to explicitly make fire resistant item " + item.getName((ItemStack)null).getString() + " a furnace fuel. That will not work!"));
+            if (SharedConstants.IS_RUNNING_IN_IDE) {                                                                                //     it works. No touching
+                throw Util.pauseInIde(new IllegalStateException("A developer tried to explicitly make fire resistant item " + item.getName((ItemStack) null).getString() + " a furnace fuel. That will not work!"));
             }
         } else {
             pMap.put(item, pBurnTime);

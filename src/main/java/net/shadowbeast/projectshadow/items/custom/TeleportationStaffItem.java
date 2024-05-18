@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class TeleportationStaffItem extends Item {
-    public TeleportationStaffItem(Properties pProperties) {
-        super(pProperties);
-    }
+    public TeleportationStaffItem(Properties pProperties) { super(pProperties); }
+
+
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         if(!pLevel.isClientSide && pPlayer instanceof ServerPlayer serverPlayerEntity) {
