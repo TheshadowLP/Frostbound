@@ -1,5 +1,6 @@
 {
   "type": "projectshadow:alloying",
+  "cookingtime": 375,
   "ingredients": [
     {
       "item": "projectshadow:bauxite"

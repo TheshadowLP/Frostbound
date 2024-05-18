@@ -1,5 +1,6 @@
 {
   "type": "projectshadow:crushing",
+  "cookingtime": 350,
   "ingredient": [
     {
       "item": "minecraft:diamond"

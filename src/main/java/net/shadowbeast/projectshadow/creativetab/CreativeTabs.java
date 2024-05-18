@@ -48,7 +48,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_BARS.get());
                         pOutput.accept(ModBlocks.TITANIUM_BARS.get());
 
-                        pOutput.accept(ModBlocks.WINTER_FURNACE.get());
+                        //pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModBlocks.SULFURIC_TNT.get());
@@ -104,8 +104,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.YELLOW_TARGET.get());
                         pOutput.accept(ModBlocks.END_LANTERN.get());
                         //pOutput.accept(ModBlocks.BEDROCK.get()); //TODO
-                        pOutput.accept(ModBlocks.END_OBSIDIAN.get());
-                        pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get());
+                        //pOutput.accept(ModBlocks.END_OBSIDIAN.get()); //TODO
+                        //pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get()); //TODO
                         pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
                         pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
                         pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
@@ -350,8 +350,8 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.BEDROCK_PICKAXE.get());
                         pOutput.accept(ModItems.BEDROCK_AXE.get());
                         pOutput.accept(ModItems.BEDROCK_HOE.get());
-                        pOutput.accept(ModItems.END_LAVA_BUCKET.get());
-                        pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
+                        //pOutput.accept(ModItems.END_LAVA_BUCKET.get()); //TODO
+                        //pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get()); //TODO
 
                         pOutput.accept(ModItems.FROZEN_BOAT.get());
                         pOutput.accept(ModItems.FROZEN_CHEST_BOAT.get());
@@ -363,8 +363,8 @@ public class CreativeTabs {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ModItems.KOHLRABI.get());
                         pOutput.accept(ModItems.KOHLRABI_SEEDS.get());
-                        pOutput.accept(ModItems.PEPPER.get()); //TODO will be avaible in the second mod version
-                        pOutput.accept(ModItems.PEPPER_SEEDS.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModItems.PEPPER.get());
+                        pOutput.accept(ModItems.PEPPER_SEEDS.get());
                         pOutput.accept(ModItems.STACKED_POTATO.get());
                         pOutput.accept(ModItems.STACKED_BAKED_POTATO.get());
                         pOutput.accept(ModItems.MILK_BOTTLE.get());

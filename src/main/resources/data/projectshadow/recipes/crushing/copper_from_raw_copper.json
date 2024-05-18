@@ -1,5 +1,6 @@
 {
   "type": "projectshadow:crushing",
+  "cookingtime": 300,
   "ingredient": [
     {
       "item": "minecraft:raw_copper"
