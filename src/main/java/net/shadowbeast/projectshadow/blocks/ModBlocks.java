@@ -120,6 +120,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> END_OBSIDIAN = registerBlock("end_obsidian", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ENDER_PEARL_BLOCK = registerBlock("ender_pearl_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> END_GLASS = registerBlock("end_glass", ()-> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn((state, reader, pos, type) -> false).isRedstoneConductor((state, reader, pos) -> false).isSuffocating((state, reader, pos) -> false).isViewBlocking((state, reader, pos) -> false)));
+    public static final RegistryObject<Block> END_GLASS_PANE = registerBlock("end_glass_pane", ()->  new IronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
 
     //BARS
     public static final RegistryObject<Block> COPPER_BARS = registerBlock("copper_bars", ()-> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().requiresCorrectToolForDrops()));
