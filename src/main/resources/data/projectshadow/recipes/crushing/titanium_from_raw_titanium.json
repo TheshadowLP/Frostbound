@@ -1,0 +1,12 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "projectshadow:raw_titanium"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:titanium_powder",
+    "count": 9
+  }
+}

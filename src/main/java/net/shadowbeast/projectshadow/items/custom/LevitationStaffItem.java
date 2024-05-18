@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.shadowbeast.projectshadow.particle.ModParticles;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,6 +30,14 @@ public class LevitationStaffItem extends Item {
         if (pPlayer instanceof Player) {
             if (!pPlayer.getAbilities().instabuild){
                 pPlayer.getCooldowns().addCooldown(this, 300);}
+            if(pLevel.isClientSide()){
+                for (int i = 5; i < 20; i++) {
+                    double x = pPlayer.getX() + (pLevel.random.nextDouble() - 0.5) * 2;
+                    double y = pPlayer.getY() + pLevel.random.nextDouble() * 2;
+                    double z = pPlayer.getZ() + (pLevel.random.nextDouble() - 0.5) * 2;
+                    pLevel.addParticle(ModParticles.FEATHER_PARTICLES.get(), x, y, z, 0, 0, 0);
+                }
+            }
 
             if (!pLevel.isClientSide())
             {

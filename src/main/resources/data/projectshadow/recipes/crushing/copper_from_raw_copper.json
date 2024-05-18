@@ -1,0 +1,12 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:raw_copper"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:copper_powder",
+    "count": 9
+  }
+}

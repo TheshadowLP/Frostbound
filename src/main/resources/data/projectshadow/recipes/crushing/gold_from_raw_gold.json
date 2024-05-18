@@ -1,0 +1,12 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:raw_gold"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:gold_powder",
+    "count": 9
+  }
+}

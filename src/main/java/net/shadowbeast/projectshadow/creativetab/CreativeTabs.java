@@ -9,7 +9,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.items.ModItems;
 
 @SuppressWarnings("unused")
@@ -17,7 +16,7 @@ public class CreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ProjectShadow.MOD_ID);
     public static final RegistryObject<CreativeModeTab> BLOCKS = CREATIVE_MODE_TABS.register("blocks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.FROZEN_COBBLESTONE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.END_OBSIDIAN.get()))
                     .title(Component.translatable("creativetab.projectshadow.blocks"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.FROZEN_LOG.get());
@@ -49,8 +48,8 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_BARS.get());
                         pOutput.accept(ModBlocks.TITANIUM_BARS.get());
 
-                        pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO will be avaible in the second mod version
-                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get()); //TODO will be avaible in the second mod version
+                        pOutput.accept(ModBlocks.WINTER_FURNACE.get());
+                        pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModBlocks.SULFURIC_TNT.get());
 
@@ -66,22 +65,22 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
                         pOutput.accept(ModBlocks.ENDERIUM_BlOCK.get());
 
-                        pOutput.accept(ModBlocks.COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.EXPOSED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WEATHERED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.OXIDIZED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_EXPOSED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_WEATHERED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.EXPOSED_CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WEATHERED_CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.OXIDIZED_CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_EXPOSED_CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_WEATHERED_CUT_COPPER_BRICK.get());
-                        pOutput.accept(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.EXPOSED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WEATHERED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.OXIDIZED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_EXPOSED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_WEATHERED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.EXPOSED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WEATHERED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.OXIDIZED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_EXPOSED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_WEATHERED_CUT_COPPER_BRICK.get());
+                        //pOutput.accept(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_BRICK.get());
 
                         pOutput.accept(ModBlocks.BONE_ORE.get());
                         pOutput.accept(ModBlocks.SULFUR_ORE.get());
@@ -93,6 +92,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
+                        //pOutput.accept(ModBlocks.END_GOLD_ORE.get()); //TODO
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
@@ -103,7 +103,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.GREEN_TARGET.get());
                         pOutput.accept(ModBlocks.YELLOW_TARGET.get());
                         pOutput.accept(ModBlocks.END_LANTERN.get());
-                        pOutput.accept(ModBlocks.BEDROCK.get());
+                        //pOutput.accept(ModBlocks.BEDROCK.get()); //TODO
                         pOutput.accept(ModBlocks.END_OBSIDIAN.get());
                         pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get());
                         pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
@@ -119,6 +119,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.TILED_PURPUR.get());
                         pOutput.accept(ModBlocks.TILED_PURPUR_PILLAR.get());
                         pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
+                        pOutput.accept(ModBlocks.END_GLASS.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = CREATIVE_MODE_TABS.register("combat",
@@ -135,6 +136,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FROZEN_SWORD.get());
                         pOutput.accept(ModItems.FIRERITE_SWORD.get());
                         pOutput.accept(ModItems.ENDERIUM_SWORD.get());
+                        pOutput.accept(ModItems.BEDROCK_SWORD.get());
 
                         pOutput.accept(ModItems.SILVER_AXE.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
@@ -146,6 +148,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.FROZEN_AXE.get());
                         pOutput.accept(ModItems.FIRERITE_AXE.get());
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
+                        pOutput.accept(ModItems.BEDROCK_AXE.get());
 
                         pOutput.accept(ModItems.SILVER_HAMMER.get());
                         pOutput.accept(ModItems.PLATINUM_HAMMER.get());
@@ -219,13 +222,8 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
 
                         pOutput.accept(ModItems.MUD_BALL.get());
-                        pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get());
-
-                        pOutput.accept(ModItems.BEDROCK_SWORD.get());
-                        pOutput.accept(ModItems.BEDROCK_AXE.get());
-                        pOutput.accept(ModItems.BEDROCK_PICKAXE.get());
-                        pOutput.accept(ModItems.BEDROCK_SHOVEL.get());
-                        pOutput.accept(ModItems.BEDROCK_HOE.get());
+                        //pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
+                        //pOutput.accept(ModItems.ICE_BEAM.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_INGOT.get()))
@@ -237,6 +235,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.RAW_LUMINITE.get());
                         pOutput.accept(ModItems.RAW_ENDERIUM.get());
                         pOutput.accept(ModItems.SULFUR.get());
+                        pOutput.accept(ModItems.BEDROCK_CHUNK.get());
 
                         pOutput.accept(ModItems.FROZEN_GEM.get());
                         pOutput.accept(ModItems.FIRERITE_GEM.get());
@@ -261,6 +260,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.LUMINITE_INGOT.get());
                         pOutput.accept(ModItems.AQUANIUM_INGOT.get());
                         pOutput.accept(ModItems.ENDERIUM_INGOT.get());
+                        //pOutput.accept(ModItems.END_GOLD_INGOT.get()); //TODO
                         pOutput.accept(ModItems.ENDER_INGOT.get());
 
                         pOutput.accept(ModItems.SILVER_POWDER.get());
@@ -287,7 +287,6 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TITANIUM_SAW_BLADE.get());
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
-                        pOutput.accept(ModItems.BEDROCK_CHUNK.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TOOLS = CREATIVE_MODE_TABS.register("tools",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.AQUANIUM_PICKAXE.get()))
@@ -347,10 +346,16 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_AXE.get());
                         pOutput.accept(ModItems.ENDERIUM_HOE.get());
 
+                        pOutput.accept(ModItems.BEDROCK_SHOVEL.get());
+                        pOutput.accept(ModItems.BEDROCK_PICKAXE.get());
+                        pOutput.accept(ModItems.BEDROCK_AXE.get());
+                        pOutput.accept(ModItems.BEDROCK_HOE.get());
+
                         pOutput.accept(ModItems.MOLTEN_SULFUR_BUCKET.get());
 
                         pOutput.accept(ModItems.FROZEN_BOAT.get());
                         pOutput.accept(ModItems.FROZEN_CHEST_BOAT.get());
+                        //pOutput.accept(ModItems.STRONGHOLD_COMPASS.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> DRINKS = CREATIVE_MODE_TABS.register("drinks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STACKED_BAKED_POTATO.get()))

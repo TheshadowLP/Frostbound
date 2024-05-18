@@ -2,21 +2,16 @@ package net.shadowbeast.projectshadow.items.custom.armor;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.enums.ArmorStats;
-import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.List;
 import java.util.Map;
 
 @MethodsReturnNonnullByDefault
@@ -24,7 +19,7 @@ import java.util.Map;
 public class EnderiumArmor extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ArmorStats.ENDERIUM, new MobEffectInstance(MobEffects.DOLPHINS_GRACE/*PLACEHOLDER*/,
+                    .put(ArmorStats.FROZEN, new MobEffectInstance(MobEffects.SLOW_FALLING/*PLACEHOLDER*/,
                             200,
                             0, false, false, false)).build();
     private EnderiumArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
@@ -52,7 +47,7 @@ public class EnderiumArmor extends ArmorItem {
         boolean hasPlayerEffect = player.hasEffect(pEffect.getEffect());
 
         if(hasCorrectArmorOn(player) && !hasPlayerEffect) {
-            // player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for this armor
+            player.addEffect(pEffect); // Rewrite this code when we decided which effect we add for this armor
         }
     }
     private boolean hasCorrectArmorOn(Player player) {
@@ -66,8 +61,8 @@ public class EnderiumArmor extends ArmorItem {
         ArmorItem leggings = ((ArmorItem) player.getInventory().getArmor(2).getItem());
         ArmorItem boots = ((ArmorItem) player.getInventory().getArmor(3).getItem());
 
-        return helmet.getMaterial() == ArmorStats.ENDERIUM && chestplate.getMaterial() == ArmorStats.ENDERIUM
-                && leggings.getMaterial() == ArmorStats.ENDERIUM && boots.getMaterial() == ArmorStats.ENDERIUM;
+        return helmet.getMaterial() == ArmorStats.FROZEN && chestplate.getMaterial() == ArmorStats.FROZEN
+                && leggings.getMaterial() == ArmorStats.FROZEN && boots.getMaterial() == ArmorStats.FROZEN;
     }
     private boolean hasFullSuitOfArmorOn(Player player) {
         ItemStack helmet = player.getInventory().getArmor(0);
@@ -79,6 +74,6 @@ public class EnderiumArmor extends ArmorItem {
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
     public static EnderiumArmor getInstance(Type ptype) {
-        return new EnderiumArmor(ArmorStats.ENDERIUM, ptype, new Properties().stacksTo(1));
+        return new EnderiumArmor(ArmorStats.FROZEN, ptype, new Properties().stacksTo(1));
     }
 }

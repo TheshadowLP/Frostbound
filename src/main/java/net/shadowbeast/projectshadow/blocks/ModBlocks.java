@@ -6,7 +6,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -62,6 +61,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(2.6F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> END_GOLD_ORE = registerBlock("end_gold_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.8F,4.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BAUXITE = registerBlock("bauxite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.2F,3.2F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     //ORES BLOCKS
@@ -104,20 +104,21 @@ public class ModBlocks {
 
     //END BLOCKS
     public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> {return 14;}).noOcclusion().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> END_STONE_PILLAR = registerBlock("end_stone_pillar", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> END_STONE_PILLAR = registerBlock("end_stone_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> TILED_END_STONE_BRICKS = registerBlock("tiled_end_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_END_STONE = registerBlock("polished_end_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> RUNIC_END_STONE_BRICKS = registerBlock("runic_end_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> CHISELED_PURPUR = registerBlock("chiseled_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> POLISHED_PURPUR = registerBlock("polished_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> BRICKED_PURPUR = registerBlock("bricked_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> BRICKED_PURPUR_PILLAR = registerBlock("bricked_purpur_pillar", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
+    public static final RegistryObject<Block> BRICKED_PURPUR_PILLAR = registerBlock("bricked_purpur_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> TILED_PURPUR = registerBlock("tiled_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> TILED_PURPUR_PILLAR = registerBlock("tiled_purpur_pillar", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
+    public static final RegistryObject<Block> TILED_PURPUR_PILLAR = registerBlock("tiled_purpur_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> RUNIC_PURPUR = registerBlock("runic_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> DRAGON_SCALE_BLOCK = registerBlock("dragon_scale_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
+    public static final RegistryObject<Block> DRAGON_SCALE_BLOCK = registerBlock("dragon_scale_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
     public static final RegistryObject<Block> END_OBSIDIAN = registerBlock("end_obsidian", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
-    public static final RegistryObject<Block> ENDER_PEARL_BLOCK = registerBlock("ender_pearl_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
+    public static final RegistryObject<Block> ENDER_PEARL_BLOCK = registerBlock("ender_pearl_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> END_GLASS = registerBlock("end_glass", ()-> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn((state, reader, pos, type) -> false).isRedstoneConductor((state, reader, pos) -> false).isSuffocating((state, reader, pos) -> false).isViewBlocking((state, reader, pos) -> false)));
 
     //BARS
     public static final RegistryObject<Block> COPPER_BARS = registerBlock("copper_bars", ()-> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().requiresCorrectToolForDrops()));
@@ -158,7 +159,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_TARGET = registerBlock("black_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
 
     //BEDROCK
-    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(15.0F, 3600000.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(7.0F, 3600000.0F).requiresCorrectToolForDrops()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn);return toReturn;
     }

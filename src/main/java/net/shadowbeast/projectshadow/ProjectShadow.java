@@ -59,7 +59,6 @@ public class ProjectShadow {
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-
     }
     private void commonSetup(final FMLCommonSetupEvent event) {}
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
@@ -71,11 +70,15 @@ public class ProjectShadow {
             MenuScreens.register(ModMenuTypes.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(ModEntities.DUNGEON_ICE.get(), DungeonIceRenderer::new);
+
+            event.enqueueWork(() -> {
+            });
         }
         @SubscribeEvent
         public static void registerRenderers(FMLClientSetupEvent event) {
             Sheets.addWoodType(ModWoodTypes.FROZEN);
             EntityRenderers.register(ModEntities.MUDBALL_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.ICE_BEAM_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
             EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
             ModItemProperties.addCustomItemProperties();

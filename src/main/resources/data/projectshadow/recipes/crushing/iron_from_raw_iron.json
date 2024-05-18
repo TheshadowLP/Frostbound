@@ -1,0 +1,12 @@
+{
+  "type": "projectshadow:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:raw_iron"
+    }
+  ],
+  "result": {
+    "item": "projectshadow:iron_powder",
+    "count": 9
+  }
+}

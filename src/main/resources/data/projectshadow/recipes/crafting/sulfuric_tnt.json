@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:gunpowder"
+    },
+    "E": {
+      "item": "minecraft:tnt"
+    },
+    "#": {
+      "item": "projectshadow:sulfur"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#E#",
+    "SSS"
+  ],
+  "result": {
+    "item": "projectshadow:sulfuric_tnt"
+  }
+}
