@@ -28,6 +28,7 @@ import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.block_entities.menu.AlloyFurnaceMenu;
 import static net.shadowbeast.projectshadow.block_entities.blocks.furnace.AlloyFurnaceBlock.ACTIVE;
+import static net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe.DEFAULT_COOK_TIME;
 
 import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
@@ -75,7 +76,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int maxProgress = 260;
     private int fuel = 0;
     private int maxFuel = 4000;
-    public  AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             public int get(int index) {
@@ -164,6 +165,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         }
 
         if(hasRecipe() && hasEnoughFuel()) {
+            this.maxProgress = getRecipe().map(AlloyFurnaceRecipe::getCookingTime).orElse(DEFAULT_COOK_TIME);
             this.progress++;
             setChanged(pLevel, pPos, pState);
             ambient(pPos);
@@ -182,6 +184,17 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         assert level != null;
         level.setBlockAndUpdate(pPos, pState);
         setChanged(pLevel, pPos, pState);
+    }
+
+    private Optional<AlloyFurnaceRecipe> getRecipe() {
+        Level level = this.level;
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+        assert level != null;
+        return level.getRecipeManager()
+                .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
     }
 
     private void addFuelTime(int addedFuelTime, boolean isLava) {
@@ -203,19 +216,16 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean hasRecipe() {
-        Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
         for (int i = 0; i < this.itemHandler.getSlots(); i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
-        assert level != null;
-        Optional<AlloyFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
+        return getRecipe().isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, getRecipe().get().getResultItem())
                 && hasEnoughFuel();
     }
+
     private boolean hasLavaBucketInFuelSlot() {
         return this.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
     }

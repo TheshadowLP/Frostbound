@@ -23,10 +23,13 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ResourceLocation id;
-    public CrusherRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> inputItems) {
+    public final static int DEFAULT_COOK_TIME = 200;
+    protected final int cookingTime;
+    public CrusherRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> inputItems, int cookingTime) {
         this.inputItems = inputItems;
         this.output = output;
         this.id = id;
+        this.cookingTime = cookingTime;
     }
     @Override
     public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
@@ -90,14 +93,16 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-            return new CrusherRecipe(id, output, inputs);
+            int i = GsonHelper.getAsInt(json, "cookingtime", DEFAULT_COOK_TIME);
+            return new CrusherRecipe(id, output, inputs, i);
         }
         @Override
         public CrusherRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
             ItemStack output = buf.readItem();
-            return new CrusherRecipe(id, output, inputs);
+            int i = buf.readVarInt();
+            return new CrusherRecipe(id, output, inputs, i);
         }
         @Override
         public void toNetwork(FriendlyByteBuf buf, CrusherRecipe recipe) {
@@ -107,6 +112,7 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
+            buf.writeVarInt(recipe.cookingTime);
         }
     }
 }

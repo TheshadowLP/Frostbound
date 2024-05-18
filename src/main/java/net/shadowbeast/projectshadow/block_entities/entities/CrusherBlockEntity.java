@@ -21,6 +21,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.projectshadow.block_entities.menu.CrusherMenu;
+import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.block_entities.recipes.CrusherRecipe;
@@ -30,12 +31,13 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
+import static net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe.DEFAULT_COOK_TIME;
+
 public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     public static class CrusherSlot {
         public static final int INPUT_SLOT = 0;
         public static final int SHREDBLADE_SLOT = 1;
         public static final int OUTPUT_SLOT = 2;
-        private CrusherSlot() {}
     }
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
@@ -114,6 +116,15 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
             if(this.progress > this.maxProgress) {
                 craftItem();
             }
+            Level level = this.level;
+            SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+            for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+                inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+            }
+            assert level != null;
+
+            this.maxProgress = level.getRecipeManager()
+                    .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level).map(AlloyFurnaceRecipe::getCookingTime).orElse(DEFAULT_COOK_TIME);
         } else {
             this.resetProgress();
             setChanged(pLevel, pPos, pState);

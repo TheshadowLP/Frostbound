@@ -29,9 +29,8 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     private final IDrawable icon;
     private int renderProgress = 0;
     private static final int RENDER_NUMBER = 40;
-    private static final int[] BUBBLELENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
     public CrushingCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURES, 0, 0,175, 85);
+        this.background = helper.createDrawable(TEXTURES, 16, 11, 92, 68);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.CRUSHER.get()));
     }
     @Override
@@ -52,24 +51,21 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     }
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, CrusherRecipe recipe, @NotNull IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 80, 17).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 46).addIngredients(recipe.getFuelItem());
+        builder.addSlot(RecipeIngredientRole.INPUT, 64, 6).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 10, 35).addIngredients(recipe.getFuelItem());
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 55).addItemStack(recipe.getResultItem());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 64, 44).addItemStack(recipe.getResultItem());
     }
     @Override
     public void draw(@NotNull CrusherRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics pGuiGraphics, double mouseX, double mouseY) {
-        pGuiGraphics.blit(TEXTURES, 27, 40 - getRenderNum(), 176, 13 - getRenderNum(), 14, getRenderNum() + 1);
-        int j1 = BUBBLELENGTHS[getRenderNum() / 2 % 7];
-        if (j1 > 0) {
-            pGuiGraphics.blit(TEXTURES, 81, 54 - j1, 190, 19 - j1, 13, j1);
-        }
+//        pGuiGraphics.blit(TEXTURES, 11, 29 - getRenderNum(), 176, 13 - getRenderNum(), 14, getRenderNum() + 1);
+        pGuiGraphics.blit(TEXTURES, 65, 43 - getRenderNum(), 190, 19 - getRenderNum(), 13, getRenderNum());
         renderProgress++;
-        if (renderProgress >= 100) {
+        if (renderProgress >= 400) {
             renderProgress = 0;
         }
     }
     private int getRenderNum() {
-        return renderProgress - renderProgress % RENDER_NUMBER;
+        return renderProgress / 20;
     }
 }

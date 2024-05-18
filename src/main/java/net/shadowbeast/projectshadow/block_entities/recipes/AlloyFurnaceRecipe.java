@@ -25,11 +25,14 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
+    public final static int DEFAULT_COOK_TIME = 260;
+    protected final int cookingTime;
     public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output,
-                               NonNullList<Ingredient> recipeItems) {
+                               NonNullList<Ingredient> recipeItems, int cookingTime) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
+        this.cookingTime = cookingTime;
     }
     @Override
     @ParametersAreNonnullByDefault
@@ -79,6 +82,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     public Ingredient getFuelItem() {
         return Ingredient.of(ModTags.Items.ALLOYING_FUEL);
     }
+    public int getCookingTime() {
+        return this.cookingTime;
+    }
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
@@ -102,8 +108,8 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-
-            return new AlloyFurnaceRecipe(pRecipeId, output, inputs);
+            int i = GsonHelper.getAsInt(pSerializedRecipe, "cookingtime", DEFAULT_COOK_TIME);
+            return new AlloyFurnaceRecipe(pRecipeId, output, inputs, i);
         }
         @Override
         public @Nullable AlloyFurnaceRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
@@ -112,7 +118,8 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
             ItemStack output = buf.readItem();
-            return new AlloyFurnaceRecipe(id, output, inputs);
+            int i = buf.readVarInt();
+            return new AlloyFurnaceRecipe(id, output, inputs, i);
         }
         @Override
         public void toNetwork(FriendlyByteBuf buf, AlloyFurnaceRecipe recipe) {
@@ -122,6 +129,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
+            buf.writeVarInt(recipe.cookingTime);
         }
     }
 }
