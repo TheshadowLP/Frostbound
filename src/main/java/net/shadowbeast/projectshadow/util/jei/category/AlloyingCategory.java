@@ -61,7 +61,7 @@ public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
     @Override
     public void draw(AlloyFurnaceRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         int scaledRenderProgress = renderProgress / 20;
-        guiGraphics.blit(TEXTURES, 58, 3, 176, 0, 14, 14);
+        guiGraphics.blit(TEXTURES, 57, 3, 176, 0, 14, 14);
         if (scaledRenderProgress < 10) {
             guiGraphics.blit(TEXTURES, 43, 33, 176, 14, 42, scaledRenderProgress);
         } else if (scaledRenderProgress < 24) {
