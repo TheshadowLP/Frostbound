@@ -111,26 +111,25 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     }
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
         if(hasRecipe(this)) {
+            Level level = this.level;
+            SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
+            for (int i = 0; i < itemHandler.getSlots(); i++) {
+                inventory.setItem(i, itemHandler.getStackInSlot(i));
+            }
+            assert level != null;
+            this.maxProgress = level.getRecipeManager()
+                    .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCookingTime).orElse(DEFAULT_COOK_TIME);
             this.progress++;
             setChanged(pLevel, pPos, pState);
             if(this.progress > this.maxProgress) {
                 craftItem();
             }
-            Level level = this.level;
-            SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-            for (int i = 0; i < this.itemHandler.getSlots(); i++) {
-                inventory.setItem(i, this.itemHandler.getStackInSlot(i));
-            }
-            assert level != null;
-
-            this.maxProgress = level.getRecipeManager()
-                    .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level).map(AlloyFurnaceRecipe::getCookingTime).orElse(DEFAULT_COOK_TIME);
         } else {
             this.resetProgress();
             setChanged(pLevel, pPos, pState);
         }
     }
-    private static boolean hasRecipe( CrusherBlockEntity entity) {
+    private static boolean hasRecipe(CrusherBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {

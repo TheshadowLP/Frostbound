@@ -72,6 +72,9 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
     public Ingredient getFuelItem() {
         return Ingredient.of(ModTags.Items.SAW_BLADES);
     }
+    public int getCookingTime() {
+        return this.cookingTime;
+    }
     public static class Type implements RecipeType<CrusherRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
