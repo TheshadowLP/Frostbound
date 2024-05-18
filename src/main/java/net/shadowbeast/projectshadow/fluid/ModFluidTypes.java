@@ -19,7 +19,7 @@ public class ModFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, ProjectShadow.MOD_ID);
 
-    public static final RegistryObject<FluidType> END_LAVA_FLUID_TYPE = register("end_water_fluid",
+    public static final RegistryObject<FluidType> END_LAVA_FLUID_TYPE = register("end_lava_fluid",
             FluidType.Properties.create().lightLevel(2).density(15).viscosity(5).sound(SoundAction.get("drink"),
                     SoundEvents.HONEY_DRINK));
 
