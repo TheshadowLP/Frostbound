@@ -252,7 +252,6 @@ public class ModItems {
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
     public static final RegistryObject<Item> TELEPORTATION_STAFF = ITEMS.register("teleportation_staff", () -> new TeleportationStaffItem(new Item.Properties().durability(8)));
-    public static final RegistryObject<Item> ICE_STAFF = ITEMS.register("ice_staff", () -> new IceStaffItem(new Item.Properties().durability(19)));
 
     //PROJECTILES
     public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball", () -> new MudItem(new Item.Properties()));
