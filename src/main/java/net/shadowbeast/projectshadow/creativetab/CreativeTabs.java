@@ -64,6 +64,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.FROZEN_GEM_BlOCK.get());
                         pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
                         pOutput.accept(ModBlocks.ENDERIUM_BlOCK.get());
+                        pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
 
                         //pOutput.accept(ModBlocks.COPPER_BRICK.get());
                         //pOutput.accept(ModBlocks.EXPOSED_COPPER_BRICK.get());
@@ -106,8 +107,6 @@ public class CreativeTabs {
                         //pOutput.accept(ModBlocks.BEDROCK.get()); //TODO
                         //pOutput.accept(ModBlocks.END_OBSIDIAN.get()); //TODO
                         //pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get()); //TODO
-                        pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
-                        pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
                         pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
                         pOutput.accept(ModBlocks.TILED_END_STONE_BRICKS.get());
                         pOutput.accept(ModBlocks.POLISHED_END_STONE.get());
