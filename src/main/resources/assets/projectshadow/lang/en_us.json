@@ -298,6 +298,8 @@
 
   "effect.projectshadow.freeze": "Freeze",
 
+  "sounds.projectshadow.milking_sound_bottle": "Milk Bottle Filled",
+
   "fluid_type.projectshadow.end_lava_fluid": "End Lava Fluid",
 
   "item.projectshadow.stronghold_compass.description": "Stronghold Compass",
