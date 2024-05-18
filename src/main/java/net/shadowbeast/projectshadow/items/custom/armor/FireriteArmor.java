@@ -21,7 +21,7 @@ public class FireriteArmor extends ArmorItem {
                     .put(ArmorStats.FIRERITE, new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200,
                             0, false, false, false)).build();
     private FireriteArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
-        super(pMaterial, pType, pProperties);
+        super(pMaterial, pType, pProperties.fireResistant());
     }
     public static FireriteArmor getInstance(Type ptype) {
         return new FireriteArmor(ArmorStats.FIRERITE, ptype, new Properties().stacksTo(1));

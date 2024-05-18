@@ -23,7 +23,7 @@ public class FrozenArmor extends ArmorItem {
                             200,
                             0, false, false, false)).build();
     private FrozenArmor(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
-        super(pMaterial, pType, pProperties);
+        super(pMaterial, pType, pProperties.fireResistant());
     }
     @SuppressWarnings("removal")
     @Override
