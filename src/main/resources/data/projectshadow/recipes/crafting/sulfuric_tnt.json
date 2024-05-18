@@ -13,12 +13,15 @@
     },
     "S": {
       "item": "minecraft:sand"
+    },
+    "P": {
+      "item": "projectshadow:sulfur_powder"
     }
   },
   "pattern": [
     "X#X",
     "#E#",
-    "SSS"
+    "SPS"
   ],
   "result": {
     "item": "projectshadow:sulfuric_tnt"
