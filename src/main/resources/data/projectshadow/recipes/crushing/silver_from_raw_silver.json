@@ -2,11 +2,11 @@
   "type": "projectshadow:crushing",
   "ingredient": [
     {
-      "item": "projectshadow:steel_ingot"
+      "item": "projectshadow:raw_silver"
     }
   ],
   "result": {
-    "item": "projectshadow:steel_powder",
+    "item": "projectshadow:silver_powder",
     "count": 9
   }
 }
