@@ -14,6 +14,6 @@ public class EndLavaBlock extends LiquidBlock {
 
     @Override
     public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
-        entity.setSecondsOnFire(5);
+        entity.setSecondsOnFire(15);
     }
 }

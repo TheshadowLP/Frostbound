@@ -287,6 +287,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TITANIUM_SAW_BLADE.get());
                         pOutput.accept(ModItems.ENDER_ARCH_FRAGMENT.get());
                         pOutput.accept(ModItems.ENDER_ARCH.get());
+                        pOutput.accept(ModItems.END_LAVA_BUCKET.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TOOLS = CREATIVE_MODE_TABS.register("tools",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.AQUANIUM_PICKAXE.get()))
