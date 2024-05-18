@@ -298,6 +298,8 @@
 
   "effect.projectshadow.freeze": "Freeze",
 
+  "fluid_type.projectshadow.end_lava_fluid": "End Lava Fluid",
+
   "item.projectshadow.stronghold_compass.description": "Stronghold Compass",
 
   "advancement.projectshadow.root": "Welcome to Project Shadow!",

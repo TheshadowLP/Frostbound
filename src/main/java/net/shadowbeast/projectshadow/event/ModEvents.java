@@ -10,8 +10,11 @@ import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -20,6 +23,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.items.custom.HammerItem;
 import org.jetbrains.annotations.NotNull;
@@ -90,7 +94,18 @@ public class ModEvents {
     @SubscribeEvent
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-        if(event.getType() == VillagerProfession.TOOLSMITH) {
+        ItemStack enchantedBook = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(ModEnchantments.ICE_ASPECT.get(), 1));
+        if(event.getType() == VillagerProfession.LIBRARIAN) {
+            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 30),
+                    enchantedBook,
+                    2, 8, 0.02f
+            ));
+        }
+    }
+}
+
+//Toolsmith Trades
 //            trades.get(3)
 //                    .add((pEntity, pSource) -> new MerchantOffer(
 //                            new ItemStack(Items.EMERALD, 27),
@@ -102,6 +117,3 @@ public class ModEvents {
 //                            new ItemStack(ModItems.ENDERIUM_SWORD.get(), 1),
 //                            10, 30, 0.33f
 //                    ));
-        }
-    }
-}
