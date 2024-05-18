@@ -9,6 +9,7 @@ import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.entity.ModEntities;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.enums.ToolStats;
+import net.shadowbeast.projectshadow.fluid.ModFluids;
 import net.shadowbeast.projectshadow.food.ModFood;
 import net.shadowbeast.projectshadow.items.custom.*;
 import net.shadowbeast.projectshadow.items.custom.armor.*;
@@ -251,6 +252,7 @@ public class ModItems {
     public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
     public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
     public static final RegistryObject<Item> TELEPORTATION_STAFF = ITEMS.register("teleportation_staff", () -> new TeleportationStaffItem(new Item.Properties().durability(8)));
+    public static final RegistryObject<Item> ICE_STAFF = ITEMS.register("ice_staff", () -> new IceStaffItem(new Item.Properties().durability(19)));
 
     //PROJECTILES
     public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball", () -> new MudItem(new Item.Properties()));
@@ -268,6 +270,7 @@ public class ModItems {
 
     //MISC
     public static final RegistryObject<Item> ICE_BEAM = ITEMS.register("ice_beam",() -> new IceBeam(new Item.Properties()));
+    public static final RegistryObject<Item> END_LAVA_BUCKET = ITEMS.register("end_lava_bucket", () -> new BucketItem(ModFluids.END_LAVA_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
