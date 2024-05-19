@@ -1,5 +1,7 @@
 {
   "type": "projectshadow:winter_furnace",
+  "category": "misc",
+  "cookingtime": 150,
   "experience": 0.5,
   "ingredient": {
     "item": "projectshadow:frozen_stairs"
