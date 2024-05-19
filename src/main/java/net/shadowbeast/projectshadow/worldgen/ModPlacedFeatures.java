@@ -36,6 +36,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SULFUR_ORE_PLACED_KEY = registerKey("sulfur_ore");
     public static final ResourceKey<PlacedFeature> TITANIUM_ORE_PLACED_KEY = registerKey("titanium_ore");
     public static final ResourceKey<PlacedFeature> BAUXITE_PLACED_KEY = registerKey("bauxite");
+    public static final ResourceKey<PlacedFeature> FROZEN_STONE_PLACED_KEY = registerKey("frozen_stone");
 
     public static void bootstrap(@NotNull BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -53,6 +54,7 @@ public class ModPlacedFeatures {
         register(context, SILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILVER_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(45), VerticalAnchor.absolute(60))));
         register(context, SULFUR_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SULFUR_ORE_KEY), ModOrePlacement.commonOrePlacement(7, HeightRangePlacement.uniform(VerticalAnchor.absolute(35), VerticalAnchor.absolute(50))));
         register(context, TITANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(25), VerticalAnchor.absolute(40))));
+        register(context, FROZEN_STONE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FROZEN_STONE_KEY), ModOrePlacement.commonOrePlacement(128, HeightRangePlacement.uniform(VerticalAnchor.absolute(30), VerticalAnchor.absolute(90))));
 
         register(context, FROZEN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FROZEN_KEY), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), ModBlocks.FROZEN_SAPLING.get()));
         register(context, BIG_FROZEN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BIG_FROZEN_KEY), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), ModBlocks.FROZEN_SAPLING.get()));

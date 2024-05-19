@@ -41,6 +41,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfur_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TITANIUM_ORE_KEY = registerKey("titanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BAUXITE_KEY = registerKey("bauxite");
+    public static final ResourceKey<ConfiguredFeature<?, ?>>FROZEN_STONE_KEY = registerKey("frozen_stone_key");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceabeles = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -61,6 +62,7 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> SilverOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SILVER_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> SulfurOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SULFUR_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> TitaniumOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.TITANIUM_ORE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> FrozenStone = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.FROZEN_STONE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabeles, ModBlocks.FROZEN_STONE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> Bauxite = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.BAUXITE.get().defaultBlockState()));
 
         register(context, AQUANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(AquaniumOre, 8));
@@ -76,6 +78,7 @@ public class ModConfiguredFeatures {
         register(context, SILVER_ORE_KEY, Feature.ORE, new OreConfiguration(SilverOre, 11));
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(SulfurOre, 7));
         register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(TitaniumOre, 6));
+        register(context, FROZEN_STONE_KEY, Feature.ORE, new OreConfiguration(FrozenStone, 64));
 
         register(context, FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
         register(context, BIG_FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
