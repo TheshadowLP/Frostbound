@@ -48,7 +48,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_BARS.get());
                         pOutput.accept(ModBlocks.TITANIUM_BARS.get());
 
-                        pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO
+                        pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModBlocks.SULFURIC_TNT.get());
@@ -222,7 +222,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
 
                         pOutput.accept(ModItems.MUD_BALL.get());
-                        pOutput.accept(ModItems.ENDER_ELYTRA.get());
+                        //pOutput.accept(ModItems.ENDER_ELYTRA.get()); //TODO
                         //pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
                         //pOutput.accept(ModItems.ICE_BEAM.get()); //TODO
                     }).build());
