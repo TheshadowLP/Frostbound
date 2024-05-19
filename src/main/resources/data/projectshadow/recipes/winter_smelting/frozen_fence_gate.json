@@ -1,0 +1,8 @@
+{
+  "type": "projectshadow:winter_furnace",
+  "experience": 0.5,
+  "ingredient": {
+    "item": "projectshadow:frozen_fence_gate"
+  },
+  "result": "minecraft:oak_fence_gate"
+}

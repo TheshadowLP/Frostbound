@@ -1,0 +1,8 @@
+{
+  "type": "projectshadow:winter_furnace",
+  "experience": 0.5,
+  "ingredient": {
+    "item": "projectshadow:stripped_frozen_wood"
+  },
+  "result": "minecraft:stripped_oak_wood"
+}

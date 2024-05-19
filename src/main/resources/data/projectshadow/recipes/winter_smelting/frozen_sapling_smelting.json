@@ -2,7 +2,7 @@
   "type": "projectshadow:winter_furnace",
   "experience": 0.5,
   "ingredient": {
-    "item": "minecraft:coal"
+    "item": "projectshadow:frozen_sapling"
   },
-  "result": "minecraft:diamond"
+  "result": "minecraft:oak_sapling"
 }

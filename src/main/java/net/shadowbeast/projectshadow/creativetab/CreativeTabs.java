@@ -48,7 +48,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.STEEL_BARS.get());
                         pOutput.accept(ModBlocks.TITANIUM_BARS.get());
 
-                        //pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO
+                        pOutput.accept(ModBlocks.WINTER_FURNACE.get()); //TODO
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
                         pOutput.accept(ModBlocks.SULFURIC_TNT.get());

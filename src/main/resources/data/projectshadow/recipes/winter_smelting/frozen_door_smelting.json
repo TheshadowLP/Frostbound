@@ -1,0 +1,8 @@
+{
+  "type": "projectshadow:winter_furnace",
+  "experience": 0.5,
+  "ingredient": {
+    "item": "projectshadow:frozen_door"
+  },
+  "result": "minecraft:oak_door"
+}
