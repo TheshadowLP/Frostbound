@@ -13,6 +13,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.trading.MerchantOffer;
@@ -41,12 +42,14 @@ public class ModEvents {
     public static void milkCow(@NotNull PlayerInteractEvent.EntityInteract event) {
         if (event.getTarget() instanceof LivingEntity targetEntity) {
             if (targetEntity instanceof Cow) {
-                if (event.getItemStack().is(Items.GLASS_BOTTLE)) {
+                ItemStack interactionStack = event.getItemStack();
+                Player player = event.getEntity();
+                if (interactionStack.is(Items.GLASS_BOTTLE)) {
                     if (event.getLevel().isClientSide()) {
-                        event.getEntity().playSound(ModSounds.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
+                        player.playSound(ModSounds.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
                     } else {
-                        event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
-                        event.getEntity().addItem(new ItemStack(ModItems.MILK_BOTTLE.get(), 1));
+                        ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ModItems.MILK_BOTTLE.get().getDefaultInstance());
+                        player.setItemInHand(event.getHand(), milkBottleStack);
                     }
                     event.setCanceled(true);
                 }
