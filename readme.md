@@ -14,8 +14,7 @@ Anywhere else is not official, and not us. Only download using the above links. 
 **Arcane Mysteries - Secrets of the World Distribution does allow 3rd parties.**
 
 # About the Mod
-Arcane Mysteries - Secrets of the World is a meticulously crafted mod designed to
-immerse players in a world brimming with exciting possibilities. From the discovery of rare ores to encountering formidable new mobs, exploring intricate structures, delving into treacherous dungeons, challenging powerful bosses, and acquiring advanced tools and armor, this mod offers a comprehensive expansion of Minecraft's universe. Our relentless pursuit is to enrich the gaming experience by continuously introducing captivating and diverse content, ensuring players are continually engaged and enthralled.
+Arcane Mysteries - Secrets of the World is a carefully made mod that plunges players into a world full of thrilling adventures. This mod significantly expands Minecraft's universe from finding rare ores to facing off against tough new mobs, exploring intricate structures, tackling dangerous dungeons, battling powerful bosses, and obtaining advanced tools and armor. Our goal is to keep players hooked by regularly adding exciting and diverse content, ensuring endless enjoyment and excitement.
 
 # Feedback
 You are free to join our official discord server [here](https://discord.gg/nkTkMsBDmg)! We appreciate the bug reports and your suggestions. Join the discord today to give us your opinion, and to hang out with new people (and your friends)!
