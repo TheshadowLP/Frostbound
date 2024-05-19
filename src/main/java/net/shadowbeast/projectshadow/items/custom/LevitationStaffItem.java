@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.particle.ModParticles;
+import net.shadowbeast.projectshadow.sound.ModSounds;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,8 +52,7 @@ public class LevitationStaffItem extends Item {
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
             }
-            pPlayer.playSound(SoundEvents.ALLAY_THROW, 1f, 1f);
-            pPlayer.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
+            pPlayer.playSound(ModSounds.LEVITATION_STAFF.get(), 1f, 1f);
         }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }

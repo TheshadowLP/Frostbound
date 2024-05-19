@@ -77,6 +77,8 @@ public class ModItems {
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_ARCH_FRAGMENT = ITEMS.register("ender_arch_fragment", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDER_ELYTRA = ITEMS.register("ender_elytra", ()-> new ElytraItem(new Item.Properties().durability(600).rarity(Rarity.RARE)));
+
 
     //POWDER
     //public static final RegistryObject<Item> AQUANIUM_POWDER = ITEMS.register("aquanium_powder", ()-> new Item(new Item.Properties()));
@@ -249,9 +251,9 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_BOOTS = ITEMS.register("titanium_boots", () -> TitaniumArmor.getInstance(ArmorItem.Type.BOOTS));
 
     //ADVANCED ITEMS
-    public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10)));
-    public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18)));
-    public static final RegistryObject<Item> TELEPORTATION_STAFF = ITEMS.register("teleportation_staff", () -> new TeleportationStaffItem(new Item.Properties().durability(8)));
+    public static final RegistryObject<Item> HEAL_STAFF = ITEMS.register("heal_staff", ()-> new HealStaffItem(new Item.Properties().durability(10).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> LEVITATION_STAFF = ITEMS.register("levitation_staff", ()-> new LevitationStaffItem(new Item.Properties().durability(18).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> TELEPORTATION_STAFF = ITEMS.register("teleportation_staff", () -> new TeleportationStaffItem(new Item.Properties().durability(8).rarity(Rarity.RARE)));
 
     //PROJECTILES
     public static final RegistryObject<Item> MUD_BALL = ITEMS.register("mud_ball", () -> new MudItem(new Item.Properties()));

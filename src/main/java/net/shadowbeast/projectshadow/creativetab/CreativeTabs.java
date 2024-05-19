@@ -222,6 +222,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.ENDERIUM_BOOTS.get());
 
                         pOutput.accept(ModItems.MUD_BALL.get());
+                        pOutput.accept(ModItems.ENDER_ELYTRA.get());
                         //pOutput.accept(ModItems.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
                         //pOutput.accept(ModItems.ICE_BEAM.get()); //TODO
                     }).build());
