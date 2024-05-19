@@ -303,10 +303,5 @@
 
   "fluid_type.projectshadow.end_lava_fluid": "End Lava Fluid",
 
-  "item.projectshadow.stronghold_compass.description": "Stronghold Compass",
-
-  "advancement.projectshadow.root": "Welcome to Project Shadow!",
-  "advancement.projectshadow.root.description": "Start to play Project Shadow!",
-  "advancement.projectshadow.steel": "Steel!",
-  "advancement.projectshadow.steel.description": "Get a steel ingot!"
+  "item.projectshadow.stronghold_compass.description": "Stronghold Compass"
 }
