@@ -4,6 +4,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,11 +17,11 @@ public enum ToolStats implements Tier {
     TITANIUM(2, 1120, 6.0F, 2.0F, 15, ModItems.TITANIUM_INGOT.get()),
     SILVER(0, 210, 12.0F, 2.0F, 20, ModItems.SILVER_INGOT.get()),
     ENDERIUM(5, 2530, 11.0F, 5.0F, 15, ModItems.ENDERIUM_INGOT.get()),
+    BEDROCK(5, 2530, 11.0F, 5.0F, 15, ModItems.BEDROCK_CHUNK.get()),
     COPPER(2, 185, 8.0F, 2.0F, 15, Items.COPPER_INGOT),
     LUMINITE(3, 1720, 9.0F, 3.0F, 10, ModItems.LUMINITE_INGOT.get()),
     AQUANIUM(4, 2210, 10.0F, 4.0F, 15, ModItems.AQUANIUM_INGOT.get()),
     FIRERITE(3, 1780, 10.0F, 3.0F, 15, ModItems.FIRERITE_GEM.get()),
-
     FROZEN(3, 1820, 10.0F, 3.0F, 15, ModItems.FROZEN_GEM.get());
 
     private final int harvestLevel;

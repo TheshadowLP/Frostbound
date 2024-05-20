@@ -161,7 +161,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_TARGET = registerBlock("black_target", () -> new NewTargetBlock(BlockBehaviour.Properties.copy(Blocks.TARGET).sound(SoundType.GRASS)));
 
     //BEDROCK
-    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(7.0F, 3600000.0F)));
+    public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(13.0F, 3600000.0F).requiresCorrectToolForDrops()));
 
     //FLUIDS
     public static final RegistryObject<EndLavaBlock> END_LAVA_BLOCK = BLOCKS.register("end_lava_block", () -> new EndLavaBlock(ModFluids.END_LAVA_FLUID.get(), BlockBehaviour.Properties.copy(Blocks.LAVA).noCollission().noOcclusion().noLootTable()));
