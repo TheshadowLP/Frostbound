@@ -7,11 +7,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.entity.custom.IceBeamProjectileEntity;
-import net.shadowbeast.projectshadow.mob.DungeonIceEntity;
-import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
-import net.shadowbeast.projectshadow.entity.custom.ModChestBoatEntity;
-import net.shadowbeast.projectshadow.entity.custom.MudBallProjectileEntity;
+import net.shadowbeast.projectshadow.entity.custom.*;
+import net.shadowbeast.projectshadow.entity.mob.custom.DungeonIceEntity;
+import net.shadowbeast.projectshadow.entity.mob.custom.YakEntity;
 
 public class ModEntities {
 
@@ -33,12 +31,16 @@ public class ModEntities {
                     .sized(1.375f, 0.5625f).build("mod_chest_boat"));
 
     public static final RegistryObject<EntityType<DungeonIceEntity>> DUNGEON_ICE =
-            ENTITY_TYPES.register("dungeonice", () -> EntityType.Builder.of(DungeonIceEntity::new, MobCategory.MONSTER)
+            ENTITY_TYPES.register("dungeonice", () -> EntityType.Builder.of(DungeonIceEntity::new, MobCategory.MISC)
                     .sized(2.3f, 4.3f).build("dungeonice"));
 
     public static final RegistryObject<EntityType<IceBeamProjectileEntity>> ICE_BEAM_PROJECTILE =
-            ENTITY_TYPES.register("ice_beam_projectile", () -> EntityType.Builder.<IceBeamProjectileEntity>of(IceBeamProjectileEntity::new, MobCategory.MONSTER)
+            ENTITY_TYPES.register("ice_beam_projectile", () -> EntityType.Builder.<IceBeamProjectileEntity>of(IceBeamProjectileEntity::new, MobCategory.MISC)
                     .sized(2.3f, 4.3f).build("ice_beam_projectile"));
+
+    public static final RegistryObject<EntityType<YakEntity>> YAK =
+            ENTITY_TYPES.register("yak", () -> EntityType.Builder.of(YakEntity::new, MobCategory.CREATURE)
+                    .sized(1.5F, 2.1F).clientTrackingRange(10).build("yak"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

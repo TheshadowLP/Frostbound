@@ -23,9 +23,10 @@ import net.shadowbeast.projectshadow.config.Config;
 import net.shadowbeast.projectshadow.effect.ModEffects;
 import net.shadowbeast.projectshadow.enchantments.ModEnchantments;
 import net.shadowbeast.projectshadow.entity.ModEntities;
+import net.shadowbeast.projectshadow.entity.mob.client.YakRenderer;
 import net.shadowbeast.projectshadow.fluid.ModFluidTypes;
 import net.shadowbeast.projectshadow.fluid.ModFluids;
-import net.shadowbeast.projectshadow.mob.client.DungeonIceRenderer;
+import net.shadowbeast.projectshadow.entity.mob.client.DungeonIceRenderer;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
 import net.shadowbeast.projectshadow.particle.ModParticles;
 import net.shadowbeast.projectshadow.sound.ModSounds;
@@ -76,6 +77,7 @@ public class ProjectShadow {
             MenuScreens.register(ModMenuTypes.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(ModEntities.DUNGEON_ICE.get(), DungeonIceRenderer::new);
+            EntityRenderers.register(ModEntities.YAK.get(), YakRenderer::new);
 
             event.enqueueWork(() -> {
             });
