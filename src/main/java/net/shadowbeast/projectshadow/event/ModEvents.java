@@ -45,13 +45,9 @@ public class ModEvents {
                 ItemStack interactionStack = event.getItemStack();
                 Player player = event.getEntity();
                 if (interactionStack.is(Items.GLASS_BOTTLE)) {
-                    if (event.getLevel().isClientSide()) {
-                        player.playSound(ModSounds.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
-                    } else {
-                        ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ModItems.MILK_BOTTLE.get().getDefaultInstance());
-                        player.setItemInHand(event.getHand(), milkBottleStack);
-                    }
-                    event.setCanceled(true);
+                    player.playSound(ModSounds.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
+                    ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ModItems.MILK_BOTTLE.get().getDefaultInstance());
+                    player.setItemInHand(event.getHand(), milkBottleStack);;
                 }
             }
         }

@@ -19,28 +19,18 @@ public class MilkBottle extends Item {
     public MilkBottle(Properties pProperties) {
         super(pProperties);
     }
-    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull LivingEntity pEntityLiving) {
-        super.finishUsingItem(pStack, pLevel, pEntityLiving);
-        if (pEntityLiving instanceof ServerPlayer) {
-            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) pEntityLiving, pStack);
-            ((ServerPlayer) pEntityLiving).awardStat(Stats.ITEM_USED.get(this));
+    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {
+        if (!pLevel.isClientSide) pEntityLiving.removeAllEffects();
+        if (pEntityLiving instanceof ServerPlayer serverplayer) {
+            CriteriaTriggers.CONSUME_ITEM.trigger(serverplayer, pStack);
+            serverplayer.awardStat(Stats.ITEM_USED.get(this));
         }
-        if (!pLevel.isClientSide) {
-            pEntityLiving.removeAllEffects();
-        }
-        if (pStack.isEmpty()) {
+
+        if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild) {
             pStack.shrink(1);
-            return new ItemStack(Items.GLASS_BOTTLE);
-        } else {
-            if (pEntityLiving instanceof Player && !((Player) pEntityLiving).getAbilities().instabuild) {
-                pStack.shrink(1);
-                ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
-                if (!((Player) pEntityLiving).getInventory().add(itemStack)) {
-                    ((Player) pEntityLiving).drop(itemStack, false);
-                }
-            }
-            return pStack;
         }
+
+        return pStack.isEmpty() ? new ItemStack(Items.GLASS_BOTTLE) : pStack;
     }
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
