@@ -9,7 +9,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.client.layers.ModModelLayers;
 import net.shadowbeast.projectshadow.entity.ModEntities;
-import net.shadowbeast.projectshadow.mob.DungeonIceEntity;
+import net.shadowbeast.projectshadow.entity.mob.custom.DungeonIceEntity;
+import net.shadowbeast.projectshadow.entity.mob.custom.YakEntity;
 
 @Mod.EventBusSubscriber(modid = ProjectShadow.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -18,9 +19,11 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(ModModelLayers.FROZEN_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.FROZEN_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
+
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.DUNGEON_ICE.get(), DungeonIceEntity.createAttributes().build());
+        event.put(ModEntities.YAK.get(), YakEntity.createAttributes().build());
     }
 }
 

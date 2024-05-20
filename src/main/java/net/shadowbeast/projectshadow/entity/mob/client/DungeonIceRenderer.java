@@ -1,11 +1,11 @@
-package net.shadowbeast.projectshadow.mob.client;
+package net.shadowbeast.projectshadow.entity.mob.client;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.client.layers.ModModelLayers;
-import net.shadowbeast.projectshadow.mob.DungeonIceEntity;
+import net.shadowbeast.projectshadow.entity.mob.custom.DungeonIceEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class DungeonIceRenderer extends MobRenderer<DungeonIceEntity, DungeonIceModel<DungeonIceEntity>> {
