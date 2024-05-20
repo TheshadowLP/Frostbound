@@ -47,7 +47,7 @@ public class ModEvents {
                 if (interactionStack.is(Items.GLASS_BOTTLE)) {
                     player.playSound(ModSounds.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
                     ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ModItems.MILK_BOTTLE.get().getDefaultInstance());
-                    player.setItemInHand(event.getHand(), milkBottleStack);;
+                    player.setItemInHand(event.getHand(), milkBottleStack);
                 }
             }
         }
