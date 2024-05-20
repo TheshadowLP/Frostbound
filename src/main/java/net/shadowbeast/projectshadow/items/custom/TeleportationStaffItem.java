@@ -1,6 +1,7 @@
 package net.shadowbeast.projectshadow.items.custom;
 
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -58,11 +59,11 @@ public class TeleportationStaffItem extends Item {
                                 player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
                     }
                 } else {
-                    serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport"), false);
+                    serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport").withStyle(ChatFormatting.RED), false);
                     serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_DEATH, SoundSource.PLAYERS, 1f, 1f);
                 }
             } else {
-                serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport"), false);
+                serverPlayerEntity.displayClientMessage(Component.translatable("teleportationstaff.projectshadow.failure_to_teleport").withStyle(ChatFormatting.RED), false);
                 serverPlayerEntity.playNotifySound(SoundEvents.ALLAY_DEATH, SoundSource.PLAYERS, 1f, 1f);
             }
         }
