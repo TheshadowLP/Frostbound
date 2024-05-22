@@ -14,6 +14,7 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.shadowbeast.projectshadow.ProjectShadow;
 import net.shadowbeast.projectshadow.entity.custom.ModBoatEntity;
 import net.shadowbeast.projectshadow.entity.custom.ModChestBoatEntity;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -26,30 +27,33 @@ public class ModBoatRenderer extends BoatRenderer {
         this.boatResources = Stream.of(ModBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap((type) -> type,
                 (type) -> Pair.of(new ResourceLocation(ProjectShadow.MOD_ID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat))));
     }
-    private static String getTextureLocation(ModBoatEntity.Type pType, boolean pChestBoat) {
+    private static @NotNull String getTextureLocation(ModBoatEntity.Type pType, boolean pChestBoat) {
         return pChestBoat ? "textures/entity/chest_boat/" + pType.getName() + ".png" : "textures/entity/boat/" + pType.getName() + ".png";
     }
-    private ListModel<Boat> createBoatModel(EntityRendererProvider.Context pContext, ModBoatEntity.Type pType, boolean pChestBoat) {
+    private @NotNull ListModel<Boat> createBoatModel(EntityRendererProvider.@NotNull Context pContext, ModBoatEntity.Type pType, boolean pChestBoat) {
         ModelLayerLocation modellayerlocation = pChestBoat ? ModBoatRenderer.createChestBoatModelName(pType) : ModBoatRenderer.createBoatModelName(pType);
         ModelPart modelpart = pContext.bakeLayer(modellayerlocation);
         return pChestBoat ? new ChestBoatModel(modelpart) : new BoatModel(modelpart);
     }
-    public static ModelLayerLocation createBoatModelName(ModBoatEntity.Type pType) {
+    @Contract("_ -> new")
+    public static @NotNull ModelLayerLocation createBoatModelName(ModBoatEntity.@NotNull Type pType) {
         return createLocation("boat/" + pType.getName());
     }
-    public static ModelLayerLocation createChestBoatModelName(ModBoatEntity.Type pType) {
+    @Contract("_ -> new")
+    public static @NotNull ModelLayerLocation createChestBoatModelName(ModBoatEntity.@NotNull Type pType) {
         return createLocation("chest_boat/" + pType.getName());
     }
-    private static ModelLayerLocation createLocation(String pPath) {
+    @Contract("_ -> new")
+    private static @NotNull ModelLayerLocation createLocation(String pPath) {
         return new ModelLayerLocation(new ResourceLocation(ProjectShadow.MOD_ID, pPath), "main");
     }
+
     public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(@NotNull Boat boat) {
         if(boat instanceof ModBoatEntity modBoat) {
             return this.boatResources.get(modBoat.getModVariant());
         } else if(boat instanceof ModChestBoatEntity modChestBoatEntity) {
             return this.boatResources.get(modChestBoatEntity.getModVariant());
-        } else {
-            return null;
         }
+        return null;
     }
 }

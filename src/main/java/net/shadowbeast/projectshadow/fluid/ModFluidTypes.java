@@ -1,6 +1,5 @@
 package net.shadowbeast.projectshadow.fluid;
 
-import org.joml.Vector3f;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.common.SoundAction;
@@ -10,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.projectshadow.ProjectShadow;
+import org.joml.Vector3f;
 
 public class ModFluidTypes {
     public static final ResourceLocation END_LAVA_STILL_RL = new ResourceLocation(ProjectShadow.MOD_ID, "block/end_lava_still");

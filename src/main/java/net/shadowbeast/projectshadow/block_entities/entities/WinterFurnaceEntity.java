@@ -18,9 +18,9 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.block_entities.recipes.WinterFurnaceRecipe;
 import net.shadowbeast.projectshadow.block_entities.menu.WinterFurnaceMenu;
+import net.shadowbeast.projectshadow.block_entities.recipes.WinterFurnaceRecipe;
+import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;

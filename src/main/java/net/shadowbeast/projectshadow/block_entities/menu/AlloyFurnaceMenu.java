@@ -14,7 +14,6 @@ import net.shadowbeast.projectshadow.block_entities.slot.ModResultSlot;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
-import static net.minecraftforge.common.ForgeHooks.getBurnTime;
 import static net.shadowbeast.projectshadow.block_entities.entities.AlloyFurnaceBlockEntity.isFuelItem;
 
 public class AlloyFurnaceMenu extends AbstractContainerMenu {

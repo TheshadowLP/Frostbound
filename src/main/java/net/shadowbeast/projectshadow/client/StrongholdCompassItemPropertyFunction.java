@@ -1,6 +1,5 @@
 package net.shadowbeast.projectshadow.client;
 
-import javax.annotation.Nullable;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.item.CompassItemPropertyFunction;
@@ -14,6 +13,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
 public class StrongholdCompassItemPropertyFunction implements ClampedItemPropertyFunction {
@@ -26,7 +28,7 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
         this.compassTarget = (CompassItemPropertyFunction.CompassTarget) pCompassTarget;
     }
 
-    public float unclampedCall(ItemStack pStack, @Nullable ClientLevel pLevel, @Nullable LivingEntity pEntity, int pSeed) {
+    public float unclampedCall(@NotNull ItemStack pStack, @Nullable ClientLevel pLevel, @Nullable LivingEntity pEntity, int pSeed) {
         Entity entity = (Entity)(pEntity != null ? pEntity : pStack.getEntityRepresentation());
         if (entity == null) {
             return 0.0F;
@@ -78,12 +80,12 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
         return pPos != null && pPos.dimension() == pEntity.level().dimension() && !(pPos.pos().distToCenterSqr(pEntity.position()) < (double)1.0E-5F);
     }
 
-    private double getAngleFromEntityToPos(Entity pEntity, BlockPos pPos) {
+    private double getAngleFromEntityToPos(@NotNull Entity pEntity, BlockPos pPos) {
         Vec3 vec3 = Vec3.atCenterOf(pPos);
         return Math.atan2(vec3.z() - pEntity.getZ(), vec3.x() - pEntity.getX()) / (double)((float)Math.PI * 2F);
     }
 
-    private double getWrappedVisualRotationY(Entity pEntity) {
+    private double getWrappedVisualRotationY(@NotNull Entity pEntity) {
         return Mth.positiveModulo((double)(pEntity.getVisualRotationYInDegrees() / 360.0F), 1.0D);
     }
 

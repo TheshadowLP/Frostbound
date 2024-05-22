@@ -4,11 +4,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.shadowbeast.projectshadow.items.ModItems;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public enum ToolStats implements Tier {
 

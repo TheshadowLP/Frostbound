@@ -4,10 +4,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.*;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.shadowbeast.projectshadow.effect.ModEffects;
-
-import java.beans.EventHandler;
+import org.jetbrains.annotations.NotNull;
 
 
 public class IceAspectEnchantment extends Enchantment {
@@ -31,14 +32,14 @@ public class IceAspectEnchantment extends Enchantment {
     }
 
     @Override
-    public boolean checkCompatibility(Enchantment pEnch) {
+    public boolean checkCompatibility(@NotNull Enchantment pEnch) {
         return super.checkCompatibility(pEnch) && pEnch != Enchantments.FIRE_ASPECT;
     }
 
     @Override
-    public void doPostAttack(LivingEntity user, Entity target, int level) {
+    public void doPostAttack(@NotNull LivingEntity user, @NotNull Entity target, int level) {
         if (target instanceof LivingEntity) {
-            int duration = 100 * level; //Rn level 1 is 6-7 seconds (dk fully) and level 2 is 10 seconds, we can always change tho
+            int duration = 100 * level; //TODO Rn level 1 is 6-7 seconds (dk fully) and level 2 is 10 seconds, we can always change tho
             ((LivingEntity) target).addEffect(new MobEffectInstance(ModEffects.FREEZE.get(), duration, level - 1));
         }
     }

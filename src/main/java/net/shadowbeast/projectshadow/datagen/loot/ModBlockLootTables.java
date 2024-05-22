@@ -10,8 +10,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.shadowbeast.projectshadow.blocks.ModBlocks;
 import net.minecraftforge.registries.RegistryObject;
+import net.shadowbeast.projectshadow.blocks.ModBlocks;
 
 import java.util.Set;
 

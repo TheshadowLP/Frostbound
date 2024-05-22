@@ -11,8 +11,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.projectshadow.entity.custom.IceBeamProjectileEntity;
 
-import java.util.Properties;
-
 public class IceBeam extends Item {
     public IceBeam(Properties pProperties) {
         super(pProperties);

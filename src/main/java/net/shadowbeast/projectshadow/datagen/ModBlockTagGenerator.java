@@ -23,7 +23,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.BEDROCK.get());
     }
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Block Tags";
     }
 }

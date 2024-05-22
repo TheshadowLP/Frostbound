@@ -9,9 +9,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import net.shadowbeast.projectshadow.block_entities.entities.CrusherBlockEntity;
 import net.shadowbeast.projectshadow.block_entities.slot.ModResultSlot;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.block_entities.entities.CrusherBlockEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class CrusherMenu extends AbstractContainerMenu {

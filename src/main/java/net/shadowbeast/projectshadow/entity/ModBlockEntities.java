@@ -10,7 +10,8 @@ import net.shadowbeast.projectshadow.block_entities.entities.AlloyFurnaceBlockEn
 import net.shadowbeast.projectshadow.block_entities.entities.CrusherBlockEntity;
 import net.shadowbeast.projectshadow.block_entities.entities.WinterFurnaceEntity;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.entity.custom.*;
+import net.shadowbeast.projectshadow.entity.custom.ModHangingSignBlockEntity;
+import net.shadowbeast.projectshadow.entity.custom.ModSignBlockEntity;
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ProjectShadow.MOD_ID);

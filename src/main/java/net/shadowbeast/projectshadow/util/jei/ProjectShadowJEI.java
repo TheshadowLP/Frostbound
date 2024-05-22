@@ -1,17 +1,23 @@
 package net.shadowbeast.projectshadow.util.jei;
 
-import mezz.jei.api.*;
+import mezz.jei.api.IModPlugin;
+import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.*;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.projectshadow.ProjectShadow;
-import net.shadowbeast.projectshadow.block_entities.menu.*;
-import net.shadowbeast.projectshadow.block_entities.screen.*;
-import net.shadowbeast.projectshadow.block_entities.recipes.*;
+import net.shadowbeast.projectshadow.block_entities.menu.AlloyFurnaceMenu;
+import net.shadowbeast.projectshadow.block_entities.menu.CrusherMenu;
+import net.shadowbeast.projectshadow.block_entities.menu.ModMenuTypes;
+import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.block_entities.recipes.CrusherRecipe;
+import net.shadowbeast.projectshadow.block_entities.screen.AlloyFurnaceScreen;
+import net.shadowbeast.projectshadow.block_entities.screen.CrusherScreen;
 import net.shadowbeast.projectshadow.blocks.ModBlocks;
-import net.shadowbeast.projectshadow.util.jei.category.*;
+import net.shadowbeast.projectshadow.util.jei.category.AlloyingCategory;
+import net.shadowbeast.projectshadow.util.jei.category.CrushingCategory;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 

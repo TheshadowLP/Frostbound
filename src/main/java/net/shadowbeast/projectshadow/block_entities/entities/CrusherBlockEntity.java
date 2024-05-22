@@ -21,10 +21,9 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.projectshadow.block_entities.menu.CrusherMenu;
-import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.block_entities.recipes.CrusherRecipe;
 import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.block_entities.recipes.CrusherRecipe;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;

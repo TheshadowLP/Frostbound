@@ -24,12 +24,9 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.shadowbeast.projectshadow.entity.ModBlockEntities;
-import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.projectshadow.block_entities.menu.AlloyFurnaceMenu;
-import static net.shadowbeast.projectshadow.block_entities.blocks.furnace.AlloyFurnaceBlock.ACTIVE;
-import static net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe.DEFAULT_COOK_TIME;
-
+import net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe;
+import net.shadowbeast.projectshadow.entity.ModBlockEntities;
 import net.shadowbeast.projectshadow.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,6 +34,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
+
+import static net.shadowbeast.projectshadow.block_entities.blocks.furnace.AlloyFurnaceBlock.ACTIVE;
+import static net.shadowbeast.projectshadow.block_entities.recipes.AlloyFurnaceRecipe.DEFAULT_COOK_TIME;
 
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     public static class AlloyFurnaceSlot {
