@@ -25,7 +25,7 @@ public class MudBallProjectileEntity extends ThrowableItemProjectile {
         super(ModEntities.MUDBALL_PROJECTILE.get(), livingEntity, pLevel);
     }
     @Override
-    protected @NotNull Item getDefaultItem() { return null; }
+    protected Item getDefaultItem() { return null; }
     @Override
     protected void onHitEntity(@NotNull EntityHitResult hitResult) {
         super.onHitEntity(hitResult);
