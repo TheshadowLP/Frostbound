@@ -79,7 +79,7 @@ public class ModItems {
     //ENDER ITEMS
     public static final RegistryObject<Item> ENDER_ARCH = ITEMS.register("ender_arch", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_ARCH_FRAGMENT = ITEMS.register("ender_arch_fragment", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ENDER_ELYTRA = ITEMS.register("ender_elytra", ()-> new ElytraItem(new Item.Properties().durability(600).rarity(Rarity.RARE)));
+    // public static final RegistryObject<Item> ENDER_ELYTRA = ITEMS.register("ender_elytra", ()-> new ElytraItem(new Item.Properties().durability(600).rarity(Rarity.RARE)));
 
 
     //POWDER
