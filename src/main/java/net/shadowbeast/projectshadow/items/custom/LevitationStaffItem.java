@@ -14,6 +14,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.shadowbeast.projectshadow.levitation_staff.PlayerLevitationTagProvider;
+import net.shadowbeast.projectshadow.networking.ModMessages;
+import net.shadowbeast.projectshadow.networking.packet.AddLevitationTagC2SPacket;
 import net.shadowbeast.projectshadow.particle.ModParticles;
 import net.shadowbeast.projectshadow.sound.ModSounds;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +32,7 @@ public class LevitationStaffItem extends Item {
 
         if (pPlayer instanceof Player) {
             if (!pPlayer.getAbilities().instabuild){
-                pPlayer.getCooldowns().addCooldown(this, 300);}
+                pPlayer.getCooldowns().addCooldown(this, 0);}
             if(pLevel.isClientSide()){
                 for (int i = 5; i < 20; i++) {
                     double x = pPlayer.getX() + (pLevel.random.nextDouble() - 0.5) * 2;
@@ -45,9 +48,10 @@ public class LevitationStaffItem extends Item {
                 for (LivingEntity livingEntity : entities) {
                     float max_health = livingEntity.getMaxHealth();
                     if (max_health < 30F) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 15, 20, false, false));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, livingEntity.isShiftKeyDown() ? 8 : 15, 20, false, false));
                     }
                 }
+                ModMessages.sendToServer(new AddLevitationTagC2SPacket());
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
             }

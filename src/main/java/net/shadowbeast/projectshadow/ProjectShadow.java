@@ -35,6 +35,7 @@ import net.shadowbeast.projectshadow.fluid.ModFluidTypes;
 import net.shadowbeast.projectshadow.fluid.ModFluids;
 import net.shadowbeast.projectshadow.items.ModItems;
 import net.shadowbeast.projectshadow.items.custom.ModItemProperties;
+import net.shadowbeast.projectshadow.networking.ModMessages;
 import net.shadowbeast.projectshadow.particle.ModParticles;
 import net.shadowbeast.projectshadow.sound.ModSounds;
 import net.shadowbeast.projectshadow.util.ModWoodTypes;
@@ -67,7 +68,9 @@ public class ProjectShadow {
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
     }
-    private void commonSetup(final FMLCommonSetupEvent event) {}
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(ModMessages::register);
+    }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
