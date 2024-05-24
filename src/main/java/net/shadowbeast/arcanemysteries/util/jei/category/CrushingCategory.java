@@ -16,13 +16,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
-import net.shadowbeast.arcanemysteries.blocks.ModBlocks;
+import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 @MethodsReturnNonnullByDefault
 public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MOD_ID, "crushing");
-    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MOD_ID,
+    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MODID, "crushing");
+    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MODID,
             "textures/gui/crusher_gui.png");
     public static final RecipeType<CrusherRecipe> CRUSHER_RECIPE_TYPE = new RecipeType<>(UID, CrusherRecipe.class);
     private final IDrawable background;
@@ -58,7 +58,7 @@ public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
     }
     @Override
     public void draw(@NotNull CrusherRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics pGuiGraphics, double mouseX, double mouseY) {
-//        pGuiGraphics.blit(TEXTURES, 11, 29 - getRenderNum(), 176, 13 - getRenderNum(), 14, getRenderNum() + 1);
+      //pGuiGraphics.blit(TEXTURES, 11, 29 - getRenderNum(), 176, 13 - getRenderNum(), 14, getRenderNum() + 1);
         pGuiGraphics.blit(TEXTURES, 65, 43 - getRenderNum(), 190, 19 - getRenderNum(), 13, getRenderNum());
         renderProgress++;
         if (renderProgress >= 400) {

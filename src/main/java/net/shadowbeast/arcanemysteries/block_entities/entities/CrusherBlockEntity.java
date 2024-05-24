@@ -21,17 +21,15 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
+import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
-import net.shadowbeast.arcanemysteries.entity.ModBlockEntities;
-import net.shadowbeast.arcanemysteries.items.ModItems;
+import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
+import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
-
-import static net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe.DEFAULT_COOK_TIME;
-
 public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     public static class CrusherSlot {
         public static final int INPUT_SLOT = 0;
@@ -49,7 +47,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     private int progress = 0;
     private int maxProgress = 200;
     public  CrusherBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(ModBlockEntities.CRUSHER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(EntityRegistry.CRUSHER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             public int get(int index) {
                 return switch (index) {
@@ -80,7 +78,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     }
     @Nonnull
     @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             return lazyItemHandler.cast();
         }
@@ -117,7 +115,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
             }
             assert level != null;
             this.maxProgress = level.getRecipeManager()
-                    .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCookingTime).orElse(DEFAULT_COOK_TIME);
+                    .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCookingTime).orElse(AlloyFurnaceRecipe.DEFAULT_COOK_TIME);
             this.progress++;
             setChanged(pLevel, pPos, pState);
             if(this.progress > this.maxProgress) {
@@ -145,9 +143,8 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         Item item = entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem();
 
         // New Saws Go Here
-        return item == ModItems.IRON_SAW_BLADE.get() || item == ModItems.PLATINUM_SAW_BLADE.get() || item == ModItems.DIAMOND_SAW_BLADE.get() || item == ModItems.TITANIUM_SAW_BLADE.get();
+        return item == ItemRegistry.iron_saw_blade.get() || item == ItemRegistry.platinum_saw_blade.get() || item == ItemRegistry.diamond_saw_blade.get() || item == ItemRegistry.titanium_saw_blade.get();
     }
-
     private void craftItem() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());

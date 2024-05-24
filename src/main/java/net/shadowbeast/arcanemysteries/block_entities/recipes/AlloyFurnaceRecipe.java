@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.util.ModTags;
+import net.shadowbeast.arcanemysteries.util.TagsMod;
 import net.shadowbeast.arcanemysteries.util.jei.category.AlloyingCategory;
 import org.jetbrains.annotations.NotNull;
 
@@ -80,7 +80,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(ModTags.Items.ALLOYING_FUEL);
+        return Ingredient.of(TagsMod.Items.ALLOYING_FUEL);
     }
     public int getCookingTime() {
         return this.cookingTime;
@@ -91,13 +91,13 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         public static final String ID = "alloying";
     }
     public static void addAllRecipes(RecipeManager recipeManager, IRecipeRegistration registration) {
-        List<AlloyFurnaceRecipe> alloyFurnaceRecipes = recipeManager.getAllRecipesFor(AlloyFurnaceRecipe.Type.INSTANCE);
+        List<AlloyFurnaceRecipe> alloyFurnaceRecipes = recipeManager.getAllRecipesFor(Type.INSTANCE);
         registration.addRecipes(AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE, alloyFurnaceRecipes);
     }
     public static class Serializer implements RecipeSerializer<AlloyFurnaceRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ArcaneMysteries.MOD_ID, "alloying");
+                new ResourceLocation(ArcaneMysteries.MODID, "alloying");
         @Override
         public @NotNull AlloyFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/crusher_gui.png");
+            new ResourceLocation(ArcaneMysteries.MODID, "textures/gui/crusher_gui.png");
     private static final int[] BUBBLE_LENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
     public CrusherScreen(CrusherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);

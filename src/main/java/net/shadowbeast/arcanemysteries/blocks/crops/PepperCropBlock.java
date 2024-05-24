@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.shadowbeast.arcanemysteries.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -22,13 +21,13 @@ public class PepperCropBlock extends CropBlock {
         super(pProperties);
     }
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
         return SHAPE_BY_AGE[this.getAge(pState)];
     }
-    @Override
-    protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.PEPPER_SEEDS.get();
-    }
+    //@Override
+   // protected @NotNull ItemLike getBaseSeedId() {
+     //   return ItemRegistry.PEPPER_SEEDS.get();
+    //}
     @Override
     public @NotNull IntegerProperty getAgeProperty() {
         return AGE;

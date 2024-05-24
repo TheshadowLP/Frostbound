@@ -16,14 +16,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
-import net.shadowbeast.arcanemysteries.blocks.ModBlocks;
+import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MOD_ID, "alloying");
-    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MOD_ID,
+    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MODID, "alloying");
+    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MODID,
             "textures/gui/fusion_furnace_gui.png");
     public static final RecipeType<AlloyFurnaceRecipe> ALLOY_FURNACE_RECIPE_TYPE =
             new RecipeType<>(UID, AlloyFurnaceRecipe.class);

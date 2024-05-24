@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.util.ModTags;
+import net.shadowbeast.arcanemysteries.util.TagsMod;
 import net.shadowbeast.arcanemysteries.util.jei.category.CrushingCategory;
 import org.jetbrains.annotations.NotNull;
 
@@ -70,7 +70,7 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(ModTags.Items.SAW_BLADES);
+        return Ingredient.of(TagsMod.Items.SAW_BLADES);
     }
     public int getCookingTime() {
         return this.cookingTime;
@@ -81,13 +81,13 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
         public static final String ID = "crushing";
     }
     public static void addAllRecipes(RecipeManager recipeManager, IRecipeRegistration registration) {
-        List<CrusherRecipe> crusherRecipes = recipeManager.getAllRecipesFor(CrusherRecipe.Type.INSTANCE);
+        List<CrusherRecipe> crusherRecipes = recipeManager.getAllRecipesFor(Type.INSTANCE);
         registration.addRecipes(CrushingCategory.CRUSHER_RECIPE_TYPE, crusherRecipes);
     }
     public static class Serializer implements RecipeSerializer<CrusherRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ArcaneMysteries.MOD_ID,"crushing");
+                new ResourceLocation(ArcaneMysteries.MODID,"crushing");
         @Override
         public @NotNull CrusherRecipe fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));

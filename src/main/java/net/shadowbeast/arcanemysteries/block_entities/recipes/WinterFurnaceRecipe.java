@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
-import net.shadowbeast.arcanemysteries.blocks.ModBlocks;
+import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
@@ -34,7 +34,7 @@ public class WinterFurnaceRecipe extends AbstractCookingRecipe {
     }
     public static class Serializer implements RecipeSerializer<WinterFurnaceRecipe>{
         private final int defaultCookingTime;
-        public static final WinterFurnaceRecipe.Serializer INSTANCE = new Serializer(50);
+        public static final Serializer INSTANCE = new Serializer(50);
         public Serializer(int defaultCookingTime) {
 
             this.defaultCookingTime = defaultCookingTime;

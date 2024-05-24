@@ -9,7 +9,7 @@ import net.shadowbeast.arcanemysteries.block_entities.menu.WinterFurnaceMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.WinterFurnaceRecipeBookComponent;
 
 public class WinterFurnaceScreen extends AbstractFurnaceScreen<WinterFurnaceMenu> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(ArcaneMysteries.MOD_ID,"textures/gui/winter_furnace.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(ArcaneMysteries.MODID,"textures/gui/winter_furnace.png");
     public WinterFurnaceScreen(WinterFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, new WinterFurnaceRecipeBookComponent(), pPlayerInventory, pTitle, TEXTURE);
     }

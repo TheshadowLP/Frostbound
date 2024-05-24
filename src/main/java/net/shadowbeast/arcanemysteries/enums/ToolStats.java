@@ -4,23 +4,20 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.shadowbeast.arcanemysteries.items.ModItems;
+import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
-
 public enum ToolStats implements Tier {
-
-    STEEL(2, 826, 6.0F, 2.0F, 15, ModItems.STEEL_INGOT.get()),
-    PLATINUM(2, 510, 6.0F, 2.0F, 14, ModItems.PLATINUM_INGOT.get()),
-    TITANIUM(2, 1120, 6.0F, 2.0F, 15, ModItems.TITANIUM_INGOT.get()),
-    SILVER(0, 210, 12.0F, 2.0F, 20, ModItems.SILVER_INGOT.get()),
-    ENDERIUM(5, 2530, 11.0F, 5.0F, 15, ModItems.ENDERIUM_INGOT.get()),
-    BEDROCK(5, 2530, 11.0F, 5.0F, 15, ModItems.BEDROCK_CHUNK.get()),
+    STEEL(2, 826, 6.0F, 2.0F, 15, ItemRegistry.steel_ingot.get()),
+    PLATINUM(2, 510, 6.0F, 2.0F, 14, ItemRegistry.platinum_ingot.get()),
+    TITANIUM(2, 1120, 6.0F, 2.0F, 15, ItemRegistry.titanium_ingot.get()),
+    SILVER(0, 210, 12.0F, 2.0F, 20, ItemRegistry.silver_ingot.get()),
+    ENDERIUM(5, 2530, 11.0F, 5.0F, 15, ItemRegistry.enderium_ingot.get()),
+    BEDROCK(5, 2530, 11.0F, 5.0F, 15, ItemRegistry.bedrock_chunk.get()),
     COPPER(2, 185, 8.0F, 2.0F, 15, Items.COPPER_INGOT),
-    LUMINITE(3, 1720, 9.0F, 3.0F, 10, ModItems.LUMINITE_INGOT.get()),
-    AQUANIUM(4, 2210, 10.0F, 4.0F, 15, ModItems.AQUANIUM_INGOT.get()),
-    FIRERITE(3, 1780, 10.0F, 3.0F, 15, ModItems.FIRERITE_GEM.get()),
-    FROZEN(3, 1820, 10.0F, 3.0F, 15, ModItems.FROZEN_GEM.get());
-
+    LUMINITE(3, 1720, 9.0F, 3.0F, 10, ItemRegistry.luminite_ingot.get()),
+    AQUANIUM(4, 2210, 10.0F, 4.0F, 15, ItemRegistry.aquanium_ingot.get()),
+    FIRERITE(3, 1780, 10.0F, 3.0F, 15, ItemRegistry.firerite_gem.get()),
+    FROZEN(3, 1820, 10.0F, 3.0F, 15, ItemRegistry.frozen_gem.get());
     private final int harvestLevel;
     private final int maxUses;
     private final float efficiency;

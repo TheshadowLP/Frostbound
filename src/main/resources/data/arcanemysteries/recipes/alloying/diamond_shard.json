@@ -3,7 +3,7 @@
     "cookingtime": 300,
     "ingredients": [
         {
-            "item": "arcanemysteries:diamond_powder"
+            "item": "arcanemysteries:diamond_dust"
         },
         {
             "item": "minecraft:amethyst_shard"

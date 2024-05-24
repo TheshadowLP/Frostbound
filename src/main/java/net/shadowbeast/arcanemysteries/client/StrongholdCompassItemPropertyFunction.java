@@ -16,18 +16,15 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-
 @OnlyIn(Dist.CLIENT)
 public class StrongholdCompassItemPropertyFunction implements ClampedItemPropertyFunction {
     public static final int DEFAULT_ROTATION = 0;
     private final StrongholdCompassItemPropertyFunction.CompassWobble wobble = new CompassWobble();
     private final StrongholdCompassItemPropertyFunction.CompassWobble wobbleRandom = new CompassWobble();
     public final net.minecraft.client.renderer.item.CompassItemPropertyFunction.CompassTarget compassTarget;
-
     public StrongholdCompassItemPropertyFunction(StrongholdCompassItemPropertyFunction.CompassTarget pCompassTarget) {
         this.compassTarget = (CompassItemPropertyFunction.CompassTarget) pCompassTarget;
     }
-
     public float unclampedCall(@NotNull ItemStack pStack, @Nullable ClientLevel pLevel, @Nullable LivingEntity pEntity, int pSeed) {
         Entity entity = (Entity)(pEntity != null ? pEntity : pStack.getEntityRepresentation());
         if (entity == null) {
@@ -37,22 +34,18 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
             return pLevel == null ? 0.0F : this.getCompassRotation(pStack, pLevel, pSeed, entity);
         }
     }
-
     private float getCompassRotation(ItemStack pStack, ClientLevel pLevel, int pSeed, Entity pEntity) {
         GlobalPos globalpos = this.compassTarget.getPos(pLevel, pStack, pEntity);
         long i = pLevel.getGameTime();
         return !this.isValidCompassTargetPos(pEntity, globalpos) ? this.getRandomlySpinningRotation(pSeed, i) : this.getRotationTowardsCompassTarget(pEntity, i, globalpos.pos());
     }
-
     private float getRandomlySpinningRotation(int pSeed, long pTicks) {
         if (this.wobbleRandom.shouldUpdate(pTicks)) {
             this.wobbleRandom.update(pTicks, Math.random());
         }
-
         double d0 = this.wobbleRandom.rotation + (double)((float)this.hash(pSeed) / (float)Integer.MAX_VALUE);
         return Mth.positiveModulo((float)d0, 1.0F);
     }
-
     private float getRotationTowardsCompassTarget(Entity pEntity, long pTicks, BlockPos pPos) {
         double d0 = this.getAngleFromEntityToPos(pEntity, pPos);
         double d1 = this.getWrappedVisualRotationY(pEntity);
@@ -61,54 +54,43 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
                 if (this.wobble.shouldUpdate(pTicks)) {
                     this.wobble.update(pTicks, 0.5D - (d1 - 0.25D));
                 }
-
                 double d3 = d0 + this.wobble.rotation;
                 return Mth.positiveModulo((float)d3, 1.0F);
             }
         }
-
         double d2 = 0.5D - (d1 - 0.25D - d0);
         return Mth.positiveModulo((float)d2, 1.0F);
     }
-
     @Nullable
     private ClientLevel tryFetchLevelIfMissing(Entity pEntity, @Nullable ClientLevel pLevel) {
         return pLevel == null && pEntity.level() instanceof ClientLevel ? (ClientLevel)pEntity.level() : pLevel;
     }
-
     private boolean isValidCompassTargetPos(Entity pEntity, @Nullable GlobalPos pPos) {
         return pPos != null && pPos.dimension() == pEntity.level().dimension() && !(pPos.pos().distToCenterSqr(pEntity.position()) < (double)1.0E-5F);
     }
-
     private double getAngleFromEntityToPos(@NotNull Entity pEntity, BlockPos pPos) {
         Vec3 vec3 = Vec3.atCenterOf(pPos);
         return Math.atan2(vec3.z() - pEntity.getZ(), vec3.x() - pEntity.getX()) / (double)((float)Math.PI * 2F);
     }
-
     private double getWrappedVisualRotationY(@NotNull Entity pEntity) {
         return Mth.positiveModulo((double)(pEntity.getVisualRotationYInDegrees() / 360.0F), 1.0D);
     }
-
     private int hash(int pValue) {
         return pValue * 1327217883;
     }
-
     @OnlyIn(Dist.CLIENT)
     public interface CompassTarget {
         @Nullable
         GlobalPos getPos(ClientLevel pLevel, ItemStack pStack, Entity pEntity);
     }
-
     @OnlyIn(Dist.CLIENT)
     static class CompassWobble {
         double rotation;
         private double deltaRotation;
         private long lastUpdateTick;
-
         boolean shouldUpdate(long pTicks) {
             return this.lastUpdateTick != pTicks;
         }
-
         void update(long pTicks, double pRotation) {
             this.lastUpdateTick = pTicks;
             double d0 = pRotation - this.rotation;

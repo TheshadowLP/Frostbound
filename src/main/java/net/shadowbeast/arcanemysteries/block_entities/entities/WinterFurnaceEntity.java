@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.arcanemysteries.block_entities.menu.WinterFurnaceMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.WinterFurnaceRecipe;
-import net.shadowbeast.arcanemysteries.entity.ModBlockEntities;
+import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -98,7 +98,6 @@ public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
                 pMap.put(holder.value(), pBurnTime);
             }
         }
-
     }
     private static void add(Map<Item, Integer> pMap, @NotNull ItemLike pItem, int pBurnTime) {
         Item item = pItem.asItem();
@@ -111,7 +110,7 @@ public class WinterFurnaceEntity extends AbstractFurnaceBlockEntity {
         }
     }
     public WinterFurnaceEntity(BlockPos pPos, BlockState pBlockState){
-        super(ModBlockEntities.WINTER_FURNACE_ENTITY.get(), pPos, pBlockState, WinterFurnaceRecipe.Type.INSTANCE);
+        super(EntityRegistry.WINTER_FURNACE_ENTITY.get(), pPos, pBlockState, WinterFurnaceRecipe.Type.INSTANCE);
     }
     @Override
     protected @NotNull Component getDefaultName() {

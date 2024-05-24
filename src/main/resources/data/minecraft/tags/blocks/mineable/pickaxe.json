@@ -55,23 +55,6 @@
     "arcanemysteries:steel_bars",
     "arcanemysteries:titanium_bars",
 
-    "arcanemysteries:end_lantern",
-
-    "arcanemysteries:copper_brick",
-    "arcanemysteries:exposed_copper_brick",
-    "arcanemysteries:oxidized_copper_brick",
-    "arcanemysteries:weathered_copper_brick",
-    "arcanemysteries:waxed_copper_brick",
-    "arcanemysteries:waxed_exposed_copper_brick",
-    "arcanemysteries:waxed_oxidized_copper_brick",
-    "arcanemysteries:waxed_weathered_copper_brick",
-    "arcanemysteries:cut_copper_brick",
-    "arcanemysteries:exposed_cut_copper_brick",
-    "arcanemysteries:oxidized_cut_copper_brick",
-    "arcanemysteries:weathered_cut_copper_brick",
-    "arcanemysteries:waxed_cut_copper_brick",
-    "arcanemysteries:waxed_exposed_cut_copper_brick",
-    "arcanemysteries:waxed_oxidized_cut_copper_brick",
-    "arcanemysteries:waxed_weathered_cut_copper_brick"
+    "arcanemysteries:end_lantern"
   ]
 }

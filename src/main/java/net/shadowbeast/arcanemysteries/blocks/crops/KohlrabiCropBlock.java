@@ -5,13 +5,11 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.shadowbeast.arcanemysteries.items.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 //Credits for Kohlrabi textures to Kaupenjoe, in future custom texture will be added
@@ -19,17 +17,17 @@ public class KohlrabiCropBlock extends CropBlock {
     public static final int MAX_AGE = 6;
     private static final VoxelShape[] SHAPE_BY_AGE;
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 6);
-    public KohlrabiCropBlock(BlockBehaviour.Properties pProperties) {
+    public KohlrabiCropBlock(Properties pProperties) {
         super(pProperties);
     }
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
         return SHAPE_BY_AGE[this.getAge(pState)];
     }
-    @Override
-    protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.KOHLRABI_SEEDS.get();
-    }
+    //@Override
+   // protected @NotNull ItemLike getBaseSeedId() {
+    //    return ItemRegistry.KOHLRABI_SEEDS.get();
+   // }
     @Override
     public @NotNull IntegerProperty getAgeProperty() {
         return AGE;

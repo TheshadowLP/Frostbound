@@ -22,7 +22,6 @@ public class SulfuricTNTBlock extends Block {
     public SulfuricTNTBlock(Properties properties) {
         super(properties);
     }
-
     @Override
     public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack handItem = pPlayer.getItemInHand(pHand);
@@ -34,7 +33,6 @@ public class SulfuricTNTBlock extends Block {
             return InteractionResult.FAIL;
         }
     }
-
     @Override
     public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
         level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);

@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.shadowbeast.arcanemysteries.entity.custom.ModSignBlockEntity;
+import net.shadowbeast.arcanemysteries.entities.signs.EntitySignBlock;
 import org.jetbrains.annotations.NotNull;
 
 public class ModWallSignBlock extends WallSignBlock {
@@ -14,6 +14,6 @@ public class ModWallSignBlock extends WallSignBlock {
     }
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
-        return new ModSignBlockEntity(pPos, pState);
+        return new EntitySignBlock(pPos, pState);
     }
 }

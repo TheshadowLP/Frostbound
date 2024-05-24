@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.arcanemysteries.block_entities.entities.CrusherBlockEntity;
-import net.shadowbeast.arcanemysteries.block_entities.slot.ModResultSlot;
-import net.shadowbeast.arcanemysteries.blocks.ModBlocks;
+import net.shadowbeast.arcanemysteries.block_entities.slot.ResultSlotMod;
+import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 public class CrusherMenu extends AbstractContainerMenu {
@@ -22,7 +22,7 @@ public class CrusherMenu extends AbstractContainerMenu {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
     public CrusherMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.CRUSHER_MENU.get(), pContainerId);
+        super(MenuTypesMod.CRUSHER_MENU.get(), pContainerId);
         checkContainerSize(inv, 3);
         blockEntity = ((CrusherBlockEntity) entity);
         this.level = inv.player.level();
@@ -36,7 +36,7 @@ public class CrusherMenu extends AbstractContainerMenu {
                     CrusherBlockEntity.CrusherSlot.SHREDBLADE_SLOT, 26, 46));
             this.addSlot(new SlotItemHandler(handler,
                     CrusherBlockEntity.CrusherSlot.INPUT_SLOT, 80, 17));
-            this.addSlot(new ModResultSlot(handler,
+            this.addSlot(new ResultSlotMod(handler,
                     CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 80, 55));
         });
         addDataSlots(data);
@@ -62,6 +62,7 @@ public class CrusherMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+
     // @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
