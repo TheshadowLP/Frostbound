@@ -1,0 +1,10 @@
+{
+  "type": "arcanemysteries:winter_furnace",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "arcanemysteries:frozen_stone_bricks"
+  },
+  "result": "minecraft:stone_bricks"
+}

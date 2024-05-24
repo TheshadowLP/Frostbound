@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "arcanemysteries:block/crusher",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "arcanemysteries:block/crusher"
+        },
+        "facing=south": {
+            "model": "arcanemysteries:block/crusher",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "arcanemysteries:block/crusher",
+            "y": 270
+        }
+    }
+}

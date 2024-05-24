@@ -1,0 +1,15 @@
+{
+    "type": "arcanemysteries:alloying",
+    "cookingtime": 300,
+    "ingredients": [
+        {
+            "item": "arcanemysteries:diamond_powder"
+        },
+        {
+            "item": "minecraft:amethyst_shard"
+        }
+    ],
+    "output": {
+        "item": "arcanemysteries:diamond_shard"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "arcanemysteries:alloying",
+    "cookingtime": 375,
+    "ingredients": [
+        {
+            "item": "arcanemysteries:bauxite"
+        },
+        {
+            "tag": "minecraft:coals"
+        }
+    ],
+    "output": {
+        "item": "arcanemysteries:aluminium_ingot"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "arcanemysteries:silver_powder"
+  },
+  "result": "arcanemysteries:silver_nugget"
+}

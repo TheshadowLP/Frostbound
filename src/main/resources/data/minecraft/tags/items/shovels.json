@@ -1,14 +1,14 @@
 {
   "values": [
-    "projectshadow:aquanium_shovel",
-    "projectshadow:copper_shovel",
-    "projectshadow:enderium_shovel",
-    "projectshadow:luminite_shovel",
-    "projectshadow:platinum_shovel",
-    "projectshadow:silver_shovel",
-    "projectshadow:steel_shovel",
-    "projectshadow:titanium_shovel",
-    "projectshadow:firerite_shovel",
-    "projectshadow:frozen_shovel"
+    "arcanemysteries:aquanium_shovel",
+    "arcanemysteries:copper_shovel",
+    "arcanemysteries:enderium_shovel",
+    "arcanemysteries:luminite_shovel",
+    "arcanemysteries:platinum_shovel",
+    "arcanemysteries:silver_shovel",
+    "arcanemysteries:steel_shovel",
+    "arcanemysteries:titanium_shovel",
+    "arcanemysteries:firerite_shovel",
+    "arcanemysteries:frozen_shovel"
   ]
 }

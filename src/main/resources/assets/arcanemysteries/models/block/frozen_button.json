@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/button",
+    "textures": {
+        "texture": "arcanemysteries:block/frozen_planks"
+    }
+}

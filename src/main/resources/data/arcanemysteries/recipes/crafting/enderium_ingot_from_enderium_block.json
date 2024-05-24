@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "enderium_ingot",
+  "ingredients": [
+    {
+      "item": "arcanemysteries:enderium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "arcanemysteries:enderium_ingot"
+  }
+}

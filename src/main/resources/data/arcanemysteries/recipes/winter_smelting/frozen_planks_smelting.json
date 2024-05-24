@@ -1,0 +1,10 @@
+{
+  "type": "arcanemysteries:winter_furnace",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "arcanemysteries:frozen_planks"
+  },
+  "result": "minecraft:oak_planks"
+}

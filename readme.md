@@ -8,7 +8,7 @@
 
 # Where to find?
 Arcane Mysteries - Secrets of the World is **ONLY** found on
-[CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/projectshadow)
+[CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/arcanemysteries)
 or our **OFFICIAL** [GitHub](https://github.com/TheshadowLP/Forge-Shadow-1.20.1).
 Anywhere else is not official, and not us. Only download using the above links. <br>
 **Arcane Mysteries - Secrets of the World Distribution does allow 3rd parties.**

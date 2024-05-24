@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes":  "minecraft:snowy_plains",
-  "features": "projectshadow:frozen_stone",
-  "step": "top_layer_modification"
-}

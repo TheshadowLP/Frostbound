@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "aquanium_ingot",
+  "key": {
+    "#": {
+      "item": "arcanemysteries:aquanium_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "arcanemysteries:aquanium_ingot"
+  }
+}

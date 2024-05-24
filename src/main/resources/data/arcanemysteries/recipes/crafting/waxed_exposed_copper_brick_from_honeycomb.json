@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_copper_brick",
+  "ingredients": [
+    {
+      "item": "arcanemysteries:exposed_copper_brick"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:waxed_exposed_copper_brick"
+  }
+}

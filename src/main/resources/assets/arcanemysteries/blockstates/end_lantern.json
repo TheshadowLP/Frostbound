@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "hanging=false": {
+            "model": "arcanemysteries:block/end_lantern"
+        },
+        "hanging=true": {
+            "model": "arcanemysteries:block/end_lantern_hanging"
+        }
+    }
+}

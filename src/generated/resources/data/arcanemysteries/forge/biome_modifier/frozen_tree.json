@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_snowy",
+  "features": "arcanemysteries:frozen_tree",
+  "step": "vegetal_decoration"
+}

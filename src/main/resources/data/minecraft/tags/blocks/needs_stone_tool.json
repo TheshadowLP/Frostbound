@@ -1,27 +1,27 @@
 {
   "values": [
-    "projectshadow:bone_ore",
-    "projectshadow:sand_aquanium_ore",
-    "projectshadow:silver_ore",
-    "projectshadow:sulfur_ore",
+    "arcanemysteries:bone_ore",
+    "arcanemysteries:sand_aquanium_ore",
+    "arcanemysteries:silver_ore",
+    "arcanemysteries:sulfur_ore",
 
-    "projectshadow:bauxite",
+    "arcanemysteries:bauxite",
 
-    "projectshadow:copper_brick",
-    "projectshadow:exposed_copper_brick",
-    "projectshadow:oxidized_copper_brick",
-    "projectshadow:weathered_copper_brick",
-    "projectshadow:waxed_copper_brick",
-    "projectshadow:waxed_exposed_copper_brick",
-    "projectshadow:waxed_oxidized_copper_brick",
-    "projectshadow:waxed_weathered_copper_brick",
-    "projectshadow:cut_copper_brick",
-    "projectshadow:exposed_cut_copper_brick",
-    "projectshadow:oxidized_cut_copper_brick",
-    "projectshadow:weathered_cut_copper_brick",
-    "projectshadow:waxed_cut_copper_brick",
-    "projectshadow:waxed_exposed_cut_copper_brick",
-    "projectshadow:waxed_oxidized_cut_copper_brick",
-    "projectshadow:waxed_weathered_cut_copper_brick"
+    "arcanemysteries:copper_brick",
+    "arcanemysteries:exposed_copper_brick",
+    "arcanemysteries:oxidized_copper_brick",
+    "arcanemysteries:weathered_copper_brick",
+    "arcanemysteries:waxed_copper_brick",
+    "arcanemysteries:waxed_exposed_copper_brick",
+    "arcanemysteries:waxed_oxidized_copper_brick",
+    "arcanemysteries:waxed_weathered_copper_brick",
+    "arcanemysteries:cut_copper_brick",
+    "arcanemysteries:exposed_cut_copper_brick",
+    "arcanemysteries:oxidized_cut_copper_brick",
+    "arcanemysteries:weathered_cut_copper_brick",
+    "arcanemysteries:waxed_cut_copper_brick",
+    "arcanemysteries:waxed_exposed_cut_copper_brick",
+    "arcanemysteries:waxed_oxidized_cut_copper_brick",
+    "arcanemysteries:waxed_weathered_cut_copper_brick"
   ]
 }

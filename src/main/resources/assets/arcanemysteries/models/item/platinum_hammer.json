@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "arcanemysteries:item/platinum_hammer_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "arcanemysteries:item/platinum_hammer_2d"
+    },
+    "ground": {
+      "parent": "arcanemysteries:item/platinum_hammer_2d"
+    },
+    "fixed": {
+      "parent": "arcanemysteries:item/platinum_hammer_2d"
+    }
+  }
+}

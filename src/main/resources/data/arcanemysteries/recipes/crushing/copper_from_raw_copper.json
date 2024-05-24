@@ -1,0 +1,13 @@
+{
+  "type": "arcanemysteries:crushing",
+  "cookingtime": 300,
+  "ingredient": [
+    {
+      "item": "minecraft:raw_copper"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:copper_powder",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "arcanemysteries:crushing",
+  "ingredient": [
+    {
+      "item": "arcanemysteries:platinum_ingot"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:platinum_powder",
+    "count": 9
+  }
+}

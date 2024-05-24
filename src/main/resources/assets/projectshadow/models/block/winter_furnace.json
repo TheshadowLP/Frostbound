@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "projectshadow:block/winter_furnace_front",
-    "side": "projectshadow:block/winter_furnace_side",
-    "top": "projectshadow:block/winter_furnace_top"
-  }
-}

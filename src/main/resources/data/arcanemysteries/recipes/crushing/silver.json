@@ -1,0 +1,12 @@
+{
+  "type": "arcanemysteries:crushing",
+  "ingredient": [
+    {
+      "item": "arcanemysteries:silver_ingot"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:silver_powder",
+    "count": 9
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "projectshadow:block/bricked_purpur_pillar_top",
-    "side": "projectshadow:block/bricked_purpur_pillar"
-  }
-}

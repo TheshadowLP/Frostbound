@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "titanium_ingot",
+  "ingredients": [
+    {
+      "item": "arcanemysteries:titanium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "arcanemysteries:titanium_ingot"
+  }
+}

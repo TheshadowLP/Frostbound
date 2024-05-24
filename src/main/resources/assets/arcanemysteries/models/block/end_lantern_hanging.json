@@ -1,0 +1,7 @@
+{
+    "render_type": "minecraft:translucent",
+    "parent": "minecraft:block/template_hanging_lantern",
+    "textures": {
+        "lantern": "arcanemysteries:block/end_lantern"
+    }
+}

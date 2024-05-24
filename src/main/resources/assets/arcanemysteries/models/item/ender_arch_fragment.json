@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "arcanemysteries:item/ender_arch_fragment"
+  }
+}

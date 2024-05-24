@@ -1,14 +1,14 @@
 {
   "values": [
-    "projectshadow:aquanium_sword",
-    "projectshadow:copper_sword",
-    "projectshadow:enderium_sword",
-    "projectshadow:luminite_sword",
-    "projectshadow:platinum_sword",
-    "projectshadow:silver_sword",
-    "projectshadow:steel_sword",
-    "projectshadow:titanium_sword",
-    "projectshadow:firerite_sword",
-    "projectshadow:frozen_sword"
+    "arcanemysteries:aquanium_sword",
+    "arcanemysteries:copper_sword",
+    "arcanemysteries:enderium_sword",
+    "arcanemysteries:luminite_sword",
+    "arcanemysteries:platinum_sword",
+    "arcanemysteries:silver_sword",
+    "arcanemysteries:steel_sword",
+    "arcanemysteries:titanium_sword",
+    "arcanemysteries:firerite_sword",
+    "arcanemysteries:frozen_sword"
   ]
 }

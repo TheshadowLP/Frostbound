@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_side",
-  "render_type": "translucent",
-  "textures": {
-    "edge": "projectshadow:block/end_glass_pane_top",
-    "pane": "projectshadow:block/end_glass"
-  }
-}

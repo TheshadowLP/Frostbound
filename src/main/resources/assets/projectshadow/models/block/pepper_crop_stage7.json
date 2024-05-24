@@ -1,7 +1,0 @@
-{
-  "parent": "projectshadow:block/cross_crop",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "crop": "projectshadow:block/pepper_crop_stage7"
-  }
-}

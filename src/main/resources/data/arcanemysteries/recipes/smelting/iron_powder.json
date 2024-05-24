@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "arcanemysteries:iron_powder"
+  },
+  "result": "minecraft:iron_nugget"
+}

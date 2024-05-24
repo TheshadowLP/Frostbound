@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_mountain",
+  "features": "arcanemysteries:luminite_ore",
+  "step": "underground_ores"
+}

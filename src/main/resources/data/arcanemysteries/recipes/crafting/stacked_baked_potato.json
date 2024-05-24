@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 350,
+  "experience": 0.45,
+  "ingredient": {
+    "item": "arcanemysteries:stacked_potato"
+  },
+  "result": "arcanemysteries:stacked_baked_potato"
+}

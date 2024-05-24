@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "projectshadow:block/green_target_top",
-    "side": "projectshadow:block/green_target_side"
-  }
-}

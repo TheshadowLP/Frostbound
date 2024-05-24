@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "projectshadow:item/steel_hammer"
-  }
-}

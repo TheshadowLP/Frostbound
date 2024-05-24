@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "arcanemysteries:block/frozen_gem_block"
+        }
+    }
+}

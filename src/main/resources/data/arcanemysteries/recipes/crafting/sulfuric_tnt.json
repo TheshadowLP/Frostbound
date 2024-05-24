@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:gunpowder"
+    },
+    "E": {
+      "item": "minecraft:tnt"
+    },
+    "#": {
+      "item": "arcanemysteries:sulfur"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    },
+    "P": {
+      "item": "arcanemysteries:sulfur_powder"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#E#",
+    "SPS"
+  ],
+  "result": {
+    "item": "arcanemysteries:sulfuric_tnt"
+  }
+}

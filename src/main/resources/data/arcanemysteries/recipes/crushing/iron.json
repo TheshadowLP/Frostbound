@@ -1,0 +1,12 @@
+{
+  "type": "arcanemysteries:crushing",
+  "ingredient": [
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:iron_powder",
+    "count": 9
+  }
+}

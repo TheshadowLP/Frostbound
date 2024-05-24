@@ -1,0 +1,13 @@
+{
+  "type": "arcanemysteries:crushing",
+  "cookingtime": 300,
+  "ingredient": [
+    {
+      "item": "minecraft:raw_iron"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:iron_powder",
+    "count": 9
+  }
+}

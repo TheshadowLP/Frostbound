@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "arcanemysteries:silver_stick"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "arcanemysteries:iron_powder"
+    },
+    "D": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    " PD",
+    "X#P",
+    "#X "
+  ],
+  "result": {
+    "item": "arcanemysteries:levitation_staff"
+  }
+}

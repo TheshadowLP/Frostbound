@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "firerite_gem",
+  "ingredients": [
+    {
+      "item": "arcanemysteries:firerite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "arcanemysteries:firerite_gem"
+  }
+}

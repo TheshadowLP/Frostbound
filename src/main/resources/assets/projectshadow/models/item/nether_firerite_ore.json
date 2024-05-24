@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "projectshadow:block/nether_firerite_ore"
-  }
-}

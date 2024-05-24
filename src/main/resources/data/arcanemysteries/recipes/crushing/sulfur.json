@@ -1,0 +1,12 @@
+{
+  "type": "arcanemysteries:crushing",
+  "ingredient": [
+    {
+      "item": "arcanemysteries:sulfur"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:sulfur_powder",
+    "count": 3
+  }
+}

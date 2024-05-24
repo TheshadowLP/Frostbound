@@ -1,0 +1,10 @@
+{
+  "type": "arcanemysteries:winter_furnace",
+  "category": "misc",
+  "cookingtime": 1500,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "arcanemysteries:frozen_wood"
+  },
+  "result": "minecraft:oak_wood"
+}

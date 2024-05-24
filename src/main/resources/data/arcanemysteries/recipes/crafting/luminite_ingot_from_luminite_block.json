@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "luminite_ingot",
+  "ingredients": [
+    {
+      "item": "arcanemysteries:luminite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "arcanemysteries:luminite_ingot"
+  }
+}

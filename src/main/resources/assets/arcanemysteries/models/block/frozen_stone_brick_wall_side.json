@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+        "wall": "arcanemysteries:block/frozen_stone_bricks"
+    }
+}

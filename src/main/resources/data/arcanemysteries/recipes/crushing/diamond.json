@@ -1,0 +1,13 @@
+{
+  "type": "arcanemysteries:crushing",
+  "cookingtime": 350,
+  "ingredient": [
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:diamond_powder",
+    "count": 3
+  }
+}

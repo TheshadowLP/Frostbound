@@ -1,14 +1,14 @@
 {
   "values": [
-    "projectshadow:aquanium_pickaxe",
-    "projectshadow:copper_pickaxe",
-    "projectshadow:enderium_pickaxe",
-    "projectshadow:luminite_pickaxe",
-    "projectshadow:platinum_pickaxe",
-    "projectshadow:silver_pickaxe",
-    "projectshadow:steel_pickaxe",
-    "projectshadow:titanium_pickaxe",
-    "projectshadow:firerite_pickaxe",
-    "projectshadow:frozen_pickaxe"
+    "arcanemysteries:aquanium_pickaxe",
+    "arcanemysteries:copper_pickaxe",
+    "arcanemysteries:enderium_pickaxe",
+    "arcanemysteries:luminite_pickaxe",
+    "arcanemysteries:platinum_pickaxe",
+    "arcanemysteries:silver_pickaxe",
+    "arcanemysteries:steel_pickaxe",
+    "arcanemysteries:titanium_pickaxe",
+    "arcanemysteries:firerite_pickaxe",
+    "arcanemysteries:frozen_pickaxe"
   ]
 }

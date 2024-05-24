@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:copper_ingot"
+    },
+    "#": {
+      "item": "minecraft:copper_block"
+    }
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "item": "arcanemysteries:copper_brick",
+    "count": 2
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "arcanemysteries:item/frozen_chest_boat"
+  }
+}

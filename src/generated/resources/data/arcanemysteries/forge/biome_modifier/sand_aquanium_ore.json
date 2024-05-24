@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_ocean",
+  "features": "arcanemysteries:sand_aquanium_ore",
+  "step": "underground_ores"
+}

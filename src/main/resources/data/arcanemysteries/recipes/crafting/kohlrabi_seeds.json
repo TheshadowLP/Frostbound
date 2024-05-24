@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "arcanemysteries:kohlrabi"
+    }
+  ],
+  "result": {
+    "item": "arcanemysteries:kohlrabi_seeds"
+  }
+}

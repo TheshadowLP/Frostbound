@@ -1,10 +1,10 @@
 {
   "values": [
-    "projectshadow:enderium_end_ore",
-    "projectshadow:nether_firerite_ore",
+    "arcanemysteries:enderium_end_ore",
+    "arcanemysteries:nether_firerite_ore",
 
-    "projectshadow:enderium_block",
-    "projectshadow:end_obsidian",
-    "projectshadow:bedrock"
+    "arcanemysteries:enderium_block",
+    "arcanemysteries:end_obsidian",
+    "arcanemysteries:bedrock"
   ]
 }

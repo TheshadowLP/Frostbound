@@ -1,14 +1,14 @@
 {
   "values": [
-    "projectshadow:aquanium_axe",
-    "projectshadow:copper_axe",
-    "projectshadow:enderium_axe",
-    "projectshadow:luminite_axe",
-    "projectshadow:platinum_axe",
-    "projectshadow:silver_axe",
-    "projectshadow:steel_axe",
-    "projectshadow:titanium_axe",
-    "projectshadow:firerite_axe",
-    "projectshadow:frozen_axe"
+    "arcanemysteries:aquanium_axe",
+    "arcanemysteries:copper_axe",
+    "arcanemysteries:enderium_axe",
+    "arcanemysteries:luminite_axe",
+    "arcanemysteries:platinum_axe",
+    "arcanemysteries:silver_axe",
+    "arcanemysteries:steel_axe",
+    "arcanemysteries:titanium_axe",
+    "arcanemysteries:firerite_axe",
+    "arcanemysteries:frozen_axe"
   ]
 }

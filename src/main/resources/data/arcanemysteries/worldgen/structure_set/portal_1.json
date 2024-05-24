@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "arcanemysteries:portal_1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 164121136474,
+
+    "spacing": 20,
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}

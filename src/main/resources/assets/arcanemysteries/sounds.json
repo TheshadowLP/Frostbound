@@ -1,0 +1,14 @@
+{
+  "milking_sound_bottle": {
+    "subtitle": "sounds.arcanemysteries.milking_sound_bottle",
+    "sounds": [
+      "arcanemysteries:milking_sound_bottle"
+    ]
+  },
+  "levitation_staff": {
+    "subtitle": "sounds.arcanemysteries.levitation_staff",
+    "sounds": [
+      "arcanemysteries:levitation_staff"
+    ]
+  }
+}
