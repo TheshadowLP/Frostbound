@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "projectshadow:item/ice_staff"
+    "layer0": "arcanemysteries:item/ice_staff"
   }
 }

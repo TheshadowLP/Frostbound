@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.items.custom;
+package net.shadowbeast.arcanemysteries.items.custom;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

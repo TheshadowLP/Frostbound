@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.temprature;
+package net.shadowbeast.arcanemysteries.temprature;
 
 public class ClientTemperatureData {
     private static int playerTemperature;

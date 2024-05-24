@@ -1,14 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "projectshadow:item/ender_elytra"
+    "layer0": "arcanemysteries:item/ender_elytra"
   },
   "overrides": [
     {
       "predicate": {
         "broken": 1
       },
-      "model": "projectshadow:item/broken_ender_elytra"
+      "model": "arcanemysteries:item/broken_ender_elytra"
     }
   ]
 }

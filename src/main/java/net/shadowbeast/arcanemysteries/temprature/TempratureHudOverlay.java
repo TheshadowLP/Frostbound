@@ -1,24 +1,24 @@
-package net.shadowbeast.projectshadow.temprature;
+package net.shadowbeast.arcanemysteries.temprature;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
-import net.shadowbeast.projectshadow.ProjectShadow;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 
 public class TempratureHudOverlay {
-    private static final ResourceLocation FILLED_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation FILLED_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/full_temp_meter.png");
-    private static final ResourceLocation ONE_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation ONE_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/1_temp_meter.png");
-    private static final ResourceLocation TWO_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation TWO_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/2_temp_meter.png");
-    private static final ResourceLocation THREE_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation THREE_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/3_temp_meter.png");
-    private static final ResourceLocation FOUR_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation FOUR_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/4_temp_meter.png");
-    private static final ResourceLocation FIVE_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation FIVE_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/5_temp_meter.png");
-    private static final ResourceLocation EMPTY_TEMPRATURE = new ResourceLocation(ProjectShadow.MOD_ID,
+    private static final ResourceLocation EMPTY_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/temprature/empty_temp_meter.png");
 
 

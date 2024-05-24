@@ -1,8 +1,7 @@
-package net.shadowbeast.projectshadow.items.custom;
+package net.shadowbeast.arcanemysteries.items.custom;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.ElytraModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -18,14 +17,13 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.PlayerModelPart;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.shadowbeast.projectshadow.items.ModItems;
+import net.shadowbeast.arcanemysteries.items.ModItems;
 
 @OnlyIn(Dist.CLIENT)
 public class EnderElytraLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
-    private static final ResourceLocation WINGS_LOCATION = new ResourceLocation("projectshadow/textures/entity/ender_elytra.png");
+    private static final ResourceLocation WINGS_LOCATION = new ResourceLocation("arcanemysteries/textures/entity/ender_elytra.png");
     private final EnderElytraModel<T> elytraModel;
 
     public EnderElytraLayer(RenderLayerParent<T, M> pRenderer, EntityModelSet pModelSet) {

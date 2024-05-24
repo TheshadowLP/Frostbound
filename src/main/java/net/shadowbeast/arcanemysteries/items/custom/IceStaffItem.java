@@ -1,19 +1,17 @@
-package net.shadowbeast.projectshadow.items.custom;
+package net.shadowbeast.arcanemysteries.items.custom;
 
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.shadowbeast.projectshadow.entity.custom.IceBeamProjectileEntity;
-import net.shadowbeast.projectshadow.items.ModItems;
-import net.shadowbeast.projectshadow.particle.ModParticles;
+import net.shadowbeast.arcanemysteries.entity.custom.IceBeamProjectileEntity;
+import net.shadowbeast.arcanemysteries.items.ModItems;
+import net.shadowbeast.arcanemysteries.particle.ModParticles;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,9 +56,9 @@ public class IceStaffItem extends Item {
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.ice_staff.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.arcanemysteries.ice_staff.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.projectshadow.shift_for_info"));
+            pTooltipComponents.add(Component.translatable("tooltip.arcanemysteries.shift_for_info"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }

@@ -1,4 +1,4 @@
-package net.shadowbeast.projectshadow.items.custom;
+package net.shadowbeast.arcanemysteries.items.custom;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.AgeableListModel;

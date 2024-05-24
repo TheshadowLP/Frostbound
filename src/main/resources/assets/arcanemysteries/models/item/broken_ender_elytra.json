@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "arcanemysteries:item/broken_ender_elytra"
+  }
+}
