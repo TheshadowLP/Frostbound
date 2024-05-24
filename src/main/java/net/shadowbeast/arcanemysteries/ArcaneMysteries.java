@@ -35,6 +35,7 @@ import net.shadowbeast.arcanemysteries.fluid.ModFluidTypes;
 import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.items.ModItems;
 import net.shadowbeast.arcanemysteries.items.custom.ModItemProperties;
+import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.particle.ModParticles;
 import net.shadowbeast.arcanemysteries.sound.ModSounds;
 import net.shadowbeast.arcanemysteries.util.ModWoodTypes;
@@ -67,7 +68,9 @@ public class ArcaneMysteries {
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
     }
-    private void commonSetup(final FMLCommonSetupEvent event) {}
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(ModMessages::register);
+    }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

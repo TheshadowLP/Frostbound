@@ -21,10 +21,12 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.camel.CamelAi;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
@@ -42,7 +44,7 @@ import net.minecraft.world.phys.Vec3;
 import javax.annotation.Nullable;
 
 public class YakEntity extends AbstractHorse implements PlayerRideableJumping, RiderShieldingMount, Saddleable {
-    public static final Ingredient TEMPTATION_ITEM = Ingredient.of(Items.CACTUS);
+    public static final Ingredient TEMPTATION_ITEM = Ingredient.of(Items.WHEAT);
     public static final int DASH_COOLDOWN_TICKS = 55;
     public static final int MAX_HEAD_Y_ROT = 30;
     private static final float RUNNING_SPEED_BONUS = 0.1F;
@@ -91,7 +93,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return createBaseHorseAttributes().add(Attributes.MAX_HEALTH, 32.0D).add(Attributes.MOVEMENT_SPEED, (double)0.09F).add(Attributes.JUMP_STRENGTH, (double)0.42F);
+        return createBaseHorseAttributes().add(Attributes.MAX_HEALTH, 32.0D).add(Attributes.MOVEMENT_SPEED, 0.09F).add(Attributes.JUMP_STRENGTH, (double)0.0F);
     }
 
     protected void defineSynchedData() {
@@ -110,6 +112,14 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     }
 
     protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 2.0D));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.25D, TEMPTATION_ITEM, false));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
 
     public EntityDimensions getDimensions(Pose pPose) {
@@ -243,7 +253,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     protected void executeRidersJump(float pPlayerJumpPendingScale, Vec3 pTravelVector) {
         double d0 = this.getAttributeValue(Attributes.JUMP_STRENGTH) * (double)this.getBlockJumpFactor() + (double)this.getJumpBoostPower();
         this.addDeltaMovement(this.getLookAngle().multiply(1.0D, 0.0D, 1.0D).normalize().scale((double)(22.2222F * pPlayerJumpPendingScale) * this.getAttributeValue(Attributes.MOVEMENT_SPEED) * (double)this.getBlockSpeedFactor()).add(0.0D, (double)(1.4285F * pPlayerJumpPendingScale) * d0, 0.0D));
-        this.dashCooldown = 55;
+        this.dashCooldown = 30;
         this.setDashing(true);
         this.hasImpulse = true;
     }
@@ -370,16 +380,9 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         return false;
     }
 
-    /**
-     * Returns {@code true} if the mob is currently able to mate with the specified mob.
-     */
-    public boolean canMate(Animal pOtherAnimal) {
-        return false;
-    }
-
     @Nullable
-    public Camel getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return EntityType.CAMEL.create(pLevel);
+    public Cow getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
+        return EntityType.COW.create(pLevel);
     }
 
     @Nullable
@@ -459,7 +462,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
      * Returns the Y offset from the entity's position for any entity riding this one.
      */
     public double getPassengersRidingOffset() {
-        return (double)(this.getDimensions(this.isCamelSitting() ? Pose.SITTING : Pose.STANDING).height - (this.isBaby() ? 0.35F : 0.6F));
+        return (double)(this.getDimensions(Pose.STANDING).height - (this.isBaby() ? 0.35F : 0.6F));
     }
 
     /**

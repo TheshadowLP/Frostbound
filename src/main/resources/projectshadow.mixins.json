@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.shadowbeast.arcanemysteries.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "arcanemysteries.refmap.json",
+  "mixins": [
+    "EntityMixin"
+  ],
+  "client": [
+    "LocalPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
