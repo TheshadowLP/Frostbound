@@ -10,10 +10,7 @@ import net.shadowbeast.arcanemysteries.enums.ArmorStats;
 import net.shadowbeast.arcanemysteries.enums.ToolStats;
 import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
 import net.shadowbeast.arcanemysteries.items.*;
-import net.shadowbeast.arcanemysteries.items.armor.ArmorAquanium;
-import net.shadowbeast.arcanemysteries.items.armor.ArmorEnderium;
-import net.shadowbeast.arcanemysteries.items.armor.ArmorFirerite;
-import net.shadowbeast.arcanemysteries.items.armor.ArmorSteel;
+import net.shadowbeast.arcanemysteries.items.armor.*;
 import net.shadowbeast.arcanemysteries.sorting.IceBeam;
 
 import java.util.function.Supplier;
@@ -235,10 +232,10 @@ public class ItemRegistry {
                    firerite_leggings = registerItem("firerite_leggings", () -> ArmorFirerite.getInstance(ArmorItem.Type.LEGGINGS)),
                    firerite_boots = registerItem("firerite_boots", () -> ArmorFirerite.getInstance(ArmorItem.Type.BOOTS)),
 
-            frozen_helmet = registerItem("frozen_helmet", () -> new ItemArmor(ArmorStats.FROZEN, ArmorItem.Type.HELMET)),
-                   frozen_chestplate = registerItem("frozen_chestplate", () -> new ItemArmor(ArmorStats.FROZEN, ArmorItem.Type.CHESTPLATE)),
-                   frozen_leggings = registerItem("frozen_leggings", () -> new ItemArmor(ArmorStats.FROZEN, ArmorItem.Type.LEGGINGS)),
-                   frozen_boots = registerItem("frozen_boots", () -> new ItemArmor(ArmorStats.FROZEN, ArmorItem.Type.BOOTS)),
+            frozen_helmet = registerItem("frozen_helmet", () -> ArmorFrozen.getInstance(ArmorItem.Type.HELMET)),
+                   frozen_chestplate = registerItem("frozen_chestplate", () -> ArmorFrozen.getInstance(ArmorItem.Type.CHESTPLATE)),
+                   frozen_leggings = registerItem("frozen_leggings", () -> ArmorFrozen.getInstance(ArmorItem.Type.LEGGINGS)),
+                   frozen_boots = registerItem("frozen_boots", () -> ArmorFrozen.getInstance(ArmorItem.Type.BOOTS)),
 
             copper_helmet = registerItem("copper_helmet", () -> new ItemArmor(ArmorStats.COPPER, ArmorItem.Type.HELMET)),
                    copper_chestplate = registerItem("copper_chestplate", () -> new ItemArmor(ArmorStats.COPPER, ArmorItem.Type.CHESTPLATE)),
