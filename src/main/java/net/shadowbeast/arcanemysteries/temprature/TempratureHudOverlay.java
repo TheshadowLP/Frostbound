@@ -19,6 +19,7 @@ public class TempratureHudOverlay {
             "textures/temprature/5_temp_meter.png");
     private static final ResourceLocation EMPTY_TEMPRATURE = new ResourceLocation(ArcaneMysteries.MODID,
             "textures/temprature/empty_temp_meter.png");
+
     public static final IGuiOverlay HUD_TEMPRATURE = ((gui, poseStack, partialTick, width, height) -> {
         int x = width  - 350;
         int y = height - 34;
