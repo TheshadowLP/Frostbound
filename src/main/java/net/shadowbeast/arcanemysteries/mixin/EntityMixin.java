@@ -1,26 +1,47 @@
 package net.shadowbeast.arcanemysteries.mixin;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
+import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
+import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
-    @Shadow protected abstract void checkFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos);
+    @Shadow
+    public abstract void resetFallDistance();
 
-    @Shadow public abstract void resetFallDistance();
+    @Shadow
+    public float fallDistance;
+    Entity entity = ((Entity) (Object) this);
 
-    @Unique
-    Entity entity = ((Entity)(Object)this);
-    @Redirect(method = "move", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;checkFallDamage(DZLnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)V"))
-    private void cancelFallDamage(Entity instance, double pY, boolean pOnGround, BlockState pState, BlockPos pPos) {
-        resetFallDistance();
-        this.checkFallDamage(0, true, Blocks.AIR.defaultBlockState(), pPos);
+    @Inject(method = "checkFallDamage", at = @At(value = "HEAD"))
+    private void cancelFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos, CallbackInfo ci) {
+        AtomicBoolean levitationTagged = new AtomicBoolean(false);
+        if (this.entity instanceof ServerPlayer player) {
+            player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
+                levitationTagged.set(levitationTag.isLevitationTagged());
+            });
+        }
+        if (levitationTagged.get()) {
+            if (pOnGround && this.fallDistance > 0.0F) {
+                if (entity instanceof ServerPlayer player) {
+                    player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
+                        resetFallDistance();
+                        levitationTag.setLevitationTagged(false);
+                        MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
+                    });
+                }
+            }
+        }
     }
 }

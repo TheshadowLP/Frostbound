@@ -64,7 +64,8 @@ public class ItemTeleportationStaff extends Item{
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {return false;}
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, @NotNull TooltipFlag flagIn) {
-        tooltip.add(LocalizeUtils.i18n("tooltip.teleport_respawn_point"));
-        tooltip.add(LocalizeUtils.usesRemaining(stack.getMaxDamage() - stack.getDamageValue()));
+        tooltip.add(LocalizeUtils.i18n("tooltip.teleport_respawn_point").copy().withStyle(ChatFormatting.GOLD));
+        int uses = stack.getMaxDamage() - stack.getDamageValue();
+        tooltip.add(LocalizeUtils.usesRemaining(uses).copy().withStyle(uses > (stack.getMaxDamage() / 2) ? ChatFormatting.GREEN : uses > (stack.getMaxDamage() / 4) ? ChatFormatting.YELLOW : ChatFormatting.RED));
     }
 }

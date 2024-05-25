@@ -248,7 +248,8 @@ public class ItemRegistry {
             ice_beam = registerItem("ice_beam", () -> new IceBeam(new Item.Properties())),
 
             //EGGS
-            dungeon_ice_spawn_egg = registerItem("dungeon_ice_spawn_egg", () -> new ForgeSpawnEggItem(EntityRegistry.DUNGEON_ICE, 0x34dbeb, 0xFFFFFF, new Item.Properties()));
+            dungeon_ice_spawn_egg = registerItem("dungeon_ice_spawn_egg", () -> new ForgeSpawnEggItem(EntityRegistry.DUNGEON_ICE, 0x34dbeb, 0xFFFFFF, new Item.Properties())),
+            yak_spawn_egg = registerItem("yak_spawn_egg", () -> new ForgeSpawnEggItem(EntityRegistry.YAK, 2367000, 1183757, new Item.Properties()));
 
     private static RegistryObject<Item> registerItem(String registryId) {
         return ITEMS.register(registryId, ItemMod::new);

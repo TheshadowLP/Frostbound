@@ -125,16 +125,4 @@ public class EventRegistry {
             }
         }
     }
-
-    @SubscribeEvent
-    public static void onLandWithLevitationTag(LivingFallEvent event) {
-        if(!event.getEntity().level().isClientSide()) {
-            if(event.getEntity() instanceof ServerPlayer player) {
-                player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
-                    levitationTag.setLevitationTagged(false);
-                    MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
-                });
-            }
-        }
-    }
 }

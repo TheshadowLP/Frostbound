@@ -1,5 +1,6 @@
 package net.shadowbeast.arcanemysteries.items;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -62,7 +63,9 @@ public class ItemLevitationStaff extends Item{
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {return false;}
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, @NotNull TooltipFlag flagIn) {
-        tooltip.add(LocalizeUtils.i18n("tooltip.levitation"));
-        tooltip.add(LocalizeUtils.usesRemaining(stack.getMaxDamage() - stack.getDamageValue()));
+        tooltip.add(LocalizeUtils.i18n("tooltip.levitation").copy().withStyle(ChatFormatting.GOLD));
+
+        int uses = stack.getMaxDamage() - stack.getDamageValue();
+        tooltip.add(LocalizeUtils.usesRemaining(uses).copy().withStyle(uses > (stack.getMaxDamage() / 2) ? ChatFormatting.GREEN : uses > (stack.getMaxDamage() / 4) ? ChatFormatting.YELLOW : ChatFormatting.RED));
     }
 }
