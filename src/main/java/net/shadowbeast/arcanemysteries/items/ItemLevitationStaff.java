@@ -26,7 +26,7 @@ public class ItemLevitationStaff extends Item{
 
         if (pPlayer instanceof Player) {
             if (!pPlayer.getAbilities().instabuild){
-                pPlayer.getCooldowns().addCooldown(this, 0);}
+                pPlayer.getCooldowns().addCooldown(this, 300);}
             if(pLevel.isClientSide()){
                 for (int i = 5; i < 20; i++) {
                     double x = pPlayer.getX() + (pLevel.random.nextDouble() - 0.5) * 2;
