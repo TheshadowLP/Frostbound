@@ -5,7 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "arcanemysteries.refmap.json",
   "mixins": [
-    "EntityMixin",
+    "EntityMixin"
   ],
   "client": [
     "LocalPlayerMixin"
