@@ -21,18 +21,15 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
     public static final int SECOND_PART_LEFT_X = 106;
     public static final int THIRD_PART_X = 85;
     public static final int THIRD_PART_Y = 46;
-
     public AlloyFurnaceScreen(AlloyFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
-
     @Override
     public void render(@NotNull GuiGraphics pPoseStack, int mouseX, int mouseY, float delta) {
         renderBackground(pPoseStack);
         super.render(pPoseStack, mouseX, mouseY, delta);
         renderTooltip(pPoseStack, mouseX, mouseY);
     }
-
     @Override
     protected void renderBg(@NotNull GuiGraphics guiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);

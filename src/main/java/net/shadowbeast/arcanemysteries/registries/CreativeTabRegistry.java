@@ -244,7 +244,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.AQUANIUM_INGOT.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
                         //pOutput.accept(ItemRegistry.END_GOLD_INGOT.get()); //TODO
-                        pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
+                        pOutput.accept(ItemRegistry.ENDER_INGOT.get());
 
                         pOutput.accept(ItemRegistry.SILVER_DUST.get());
                         pOutput.accept(ItemRegistry.GOLD_DUST.get());
