@@ -28,7 +28,7 @@ public class EntityChestBoat extends ChestBoat {
     @Override
     public @NotNull Item getDropItem() {
         if (Objects.requireNonNull(getModVariant()) == EntityBoat.Type.FROZEN) {
-            return ItemRegistry.frozen_chest_boat.get();
+            return ItemRegistry.FROZEN_CHEST_BOAT.get();
         }
         return super.getDropItem();
     }

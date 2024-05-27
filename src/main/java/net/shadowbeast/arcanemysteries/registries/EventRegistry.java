@@ -20,7 +20,6 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -29,7 +28,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
-import net.shadowbeast.arcanemysteries.items.ItemHammer;
+import net.shadowbeast.arcanemysteries.items.tools.ItemHammer;
 import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
 import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
@@ -71,7 +70,7 @@ public class EventRegistry {
                 Player player = event.getEntity();
                 if (interactionStack.is(Items.GLASS_BOTTLE)) {
                     player.playSound(SoundRegistry.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
-                    ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ItemRegistry.milk_bottle.get().getDefaultInstance());
+                    ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ItemRegistry.MILK_BOTTLE.get().getDefaultInstance());
                     player.setItemInHand(event.getHand(), milkBottleStack);
                 }
             }

@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.items;
+package net.shadowbeast.arcanemysteries.items.armor;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.ArmorItem;

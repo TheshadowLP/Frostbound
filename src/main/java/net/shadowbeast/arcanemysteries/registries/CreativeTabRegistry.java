@@ -31,8 +31,8 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.FROZEN_TRAPDOOR.get());
                         pOutput.accept(ModBlocks.FROZEN_PRESSURE_PLATE.get());
                         pOutput.accept(ModBlocks.FROZEN_BUTTON.get());
-                        pOutput.accept(ItemRegistry.frozen_sign.get());
-                        pOutput.accept(ItemRegistry.frozen_hanging_sign.get());
+                        pOutput.accept(ItemRegistry.FROZEN_SIGN.get());
+                        pOutput.accept(ItemRegistry.FROZEN_HANGING_SIGN.get());
                         pOutput.accept(ModBlocks.FROZEN_SAPLING.get());
                         pOutput.accept(ModBlocks.FROZEN_LEAVES.get());
 
@@ -105,249 +105,249 @@ public class CreativeTabRegistry {
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = TAB.register("combat",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.enderium_sword.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.ENDERIUM_SWORD.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.combat"))
                     .displayItems((pParameters, pOutput) ->{
-                        pOutput.accept(ItemRegistry.silver_sword.get());
-                        pOutput.accept(ItemRegistry.copper_sword.get());
-                        pOutput.accept(ItemRegistry.platinum_sword.get());
-                        pOutput.accept(ItemRegistry.steel_sword.get());
-                        pOutput.accept(ItemRegistry.titanium_sword.get());
-                        pOutput.accept(ItemRegistry.luminite_sword.get());
-                        pOutput.accept(ItemRegistry.aquanium_sword.get());
-                        pOutput.accept(ItemRegistry.frozen_sword.get());
-                        pOutput.accept(ItemRegistry.firerite_sword.get());
-                        pOutput.accept(ItemRegistry.enderium_sword.get());
-                        pOutput.accept(ItemRegistry.bedrock_sword.get());
+                        pOutput.accept(ItemRegistry.SILVER_SWORD.get());
+                        pOutput.accept(ItemRegistry.COPPER_SWORD.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_SWORD.get());
+                        pOutput.accept(ItemRegistry.STEEL_SWORD.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_SWORD.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_SWORD.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_SWORD.get());
+                        pOutput.accept(ItemRegistry.FROZEN_SWORD.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_SWORD.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_SWORD.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_SWORD.get());
 
-                        pOutput.accept(ItemRegistry.silver_axe.get());
-                        pOutput.accept(ItemRegistry.copper_axe.get());
-                        pOutput.accept(ItemRegistry.platinum_axe.get());
-                        pOutput.accept(ItemRegistry.steel_axe.get());
-                        pOutput.accept(ItemRegistry.titanium_axe.get());
-                        pOutput.accept(ItemRegistry.luminite_axe.get());
-                        pOutput.accept(ItemRegistry.aquanium_axe.get());
-                        pOutput.accept(ItemRegistry.frozen_axe.get());
-                        pOutput.accept(ItemRegistry.firerite_axe.get());
-                        pOutput.accept(ItemRegistry.enderium_axe.get());
-                        pOutput.accept(ItemRegistry.bedrock_axe.get());
+                        pOutput.accept(ItemRegistry.SILVER_AXE.get());
+                        pOutput.accept(ItemRegistry.COPPER_AXE.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_AXE.get());
+                        pOutput.accept(ItemRegistry.STEEL_AXE.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_AXE.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_AXE.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_AXE.get());
+                        pOutput.accept(ItemRegistry.FROZEN_AXE.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_AXE.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_AXE.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_AXE.get());
 
-                        pOutput.accept(ItemRegistry.silver_hammer.get());
-                        pOutput.accept(ItemRegistry.platinum_hammer.get());
-                        pOutput.accept(ItemRegistry.steel_hammer.get());
-                        pOutput.accept(ItemRegistry.titanium_hammer.get());
+                        pOutput.accept(ItemRegistry.SILVER_HAMMER.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_HAMMER.get());
+                        pOutput.accept(ItemRegistry.STEEL_HAMMER.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_HAMMER.get());
 
-                        pOutput.accept(ItemRegistry.heal_staff.get());
-                        pOutput.accept(ItemRegistry.levitation_staff.get());
-                        pOutput.accept(ItemRegistry.teleportation_staff.get());
+                        pOutput.accept(ItemRegistry.HEAL_STAFF.get());
+                        pOutput.accept(ItemRegistry.LEVITATION_STAFF.get());
+                        pOutput.accept(ItemRegistry.TELEPORTATION_STAFF.get());
 
-                        pOutput.accept(ItemRegistry.silver_shield.get());
-                        pOutput.accept(ItemRegistry.gold_shield.get());
-                        pOutput.accept(ItemRegistry.copper_shield.get());
-                        pOutput.accept(ItemRegistry.platinum_shield.get());
-                        pOutput.accept(ItemRegistry.steel_shield.get());
-                        pOutput.accept(ItemRegistry.titanium_shield.get());
-                        pOutput.accept(ItemRegistry.luminite_shield.get());
-                        pOutput.accept(ItemRegistry.aquanium_shield.get());
-                        pOutput.accept(ItemRegistry.frozen_shield.get());
-                        pOutput.accept(ItemRegistry.firerite_shield.get());
-                        pOutput.accept(ItemRegistry.enderium_shield.get());
+                        pOutput.accept(ItemRegistry.SILVER_SHIELD.get());
+                        pOutput.accept(ItemRegistry.GOLD_SHIELD.get());
+                        pOutput.accept(ItemRegistry.COPPER_SHIELD.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_SHIELD.get());
+                        pOutput.accept(ItemRegistry.STEEL_SHIELD.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_SHIELD.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_SHIELD.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_SHIELD.get());
+                        pOutput.accept(ItemRegistry.FROZEN_SHIELD.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_SHIELD.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_SHIELD.get());
 
-                        pOutput.accept(ItemRegistry.silver_helmet.get());
-                        pOutput.accept(ItemRegistry.silver_chestplate.get());
-                        pOutput.accept(ItemRegistry.silver_leggings.get());
-                        pOutput.accept(ItemRegistry.silver_boots.get());
+                        pOutput.accept(ItemRegistry.SILVER_HELMET.get());
+                        pOutput.accept(ItemRegistry.SILVER_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.SILVER_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.SILVER_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.copper_helmet.get());
-                        pOutput.accept(ItemRegistry.copper_chestplate.get());
-                        pOutput.accept(ItemRegistry.copper_leggings.get());
-                        pOutput.accept(ItemRegistry.copper_boots.get());
+                        pOutput.accept(ItemRegistry.COPPER_HELMET.get());
+                        pOutput.accept(ItemRegistry.COPPER_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.COPPER_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.COPPER_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.platinum_helmet.get());
-                        pOutput.accept(ItemRegistry.platinum_chestplate.get());
-                        pOutput.accept(ItemRegistry.platinum_leggings.get());
-                        pOutput.accept(ItemRegistry.platinum_boots.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_HELMET.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.steel_helmet.get());
-                        pOutput.accept(ItemRegistry.steel_chestplate.get());
-                        pOutput.accept(ItemRegistry.steel_leggings.get());
-                        pOutput.accept(ItemRegistry.steel_boots.get());
+                        pOutput.accept(ItemRegistry.STEEL_HELMET.get());
+                        pOutput.accept(ItemRegistry.STEEL_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.STEEL_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.STEEL_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.titanium_helmet.get());
-                        pOutput.accept(ItemRegistry.titanium_chestplate.get());
-                        pOutput.accept(ItemRegistry.titanium_leggings.get());
-                        pOutput.accept(ItemRegistry.titanium_boots.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_HELMET.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.luminite_helmet.get());
-                        pOutput.accept(ItemRegistry.luminite_chestplate.get());
-                        pOutput.accept(ItemRegistry.luminite_leggings.get());
-                        pOutput.accept(ItemRegistry.luminite_boots.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_HELMET.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.aquanium_helmet.get());
-                        pOutput.accept(ItemRegistry.aquanium_chestplate.get());
-                        pOutput.accept(ItemRegistry.aquanium_leggings.get());
-                        pOutput.accept(ItemRegistry.aquanium_boots.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_HELMET.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.frozen_helmet.get());
-                        pOutput.accept(ItemRegistry.frozen_chestplate.get());
-                        pOutput.accept(ItemRegistry.frozen_leggings.get());
-                        pOutput.accept(ItemRegistry.frozen_boots.get());
+                        pOutput.accept(ItemRegistry.FROZEN_HELMET.get());
+                        pOutput.accept(ItemRegistry.FROZEN_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.FROZEN_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.FROZEN_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.firerite_helmet.get());
-                        pOutput.accept(ItemRegistry.firerite_chestplate.get());
-                        pOutput.accept(ItemRegistry.firerite_leggings.get());
-                        pOutput.accept(ItemRegistry.firerite_boots.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_HELMET.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.enderium_helmet.get());
-                        pOutput.accept(ItemRegistry.enderium_chestplate.get());
-                        pOutput.accept(ItemRegistry.enderium_leggings.get());
-                        pOutput.accept(ItemRegistry.enderium_boots.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_HELMET.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_CHESTPLATE.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_LEGGINGS.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_BOOTS.get());
                         //pOutput.accept(ItemRegistry.ENDER_ELYTRA.get()); //TODO
 
-                        pOutput.accept(ItemRegistry.mud_ball.get());
+                        pOutput.accept(ItemRegistry.MUD_BALL.get());
                         //pOutput.accept(ItemRegistry.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
                         //pOutput.accept(ItemRegistry.ICE_BEAM.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = TAB.register("ingredients",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.ender_ingot.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.ENDER_INGOT.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.ingredients"))
                     .displayItems((pParameters, pOutput) ->{
-                        pOutput.accept(ItemRegistry.raw_silver.get());
-                        pOutput.accept(ItemRegistry.raw_platinum.get());
-                        pOutput.accept(ItemRegistry.raw_titanium.get());
-                        pOutput.accept(ItemRegistry.raw_luminite.get());
-                        pOutput.accept(ItemRegistry.raw_enderium.get());
-                        pOutput.accept(ItemRegistry.sulfur.get());
-                        pOutput.accept(ItemRegistry.bedrock_chunk.get());
+                        pOutput.accept(ItemRegistry.RAW_SILVER.get());
+                        pOutput.accept(ItemRegistry.RAW_PLATINUM.get());
+                        pOutput.accept(ItemRegistry.RAW_TITANIUM.get());
+                        pOutput.accept(ItemRegistry.RAW_LUMINITE.get());
+                        pOutput.accept(ItemRegistry.RAW_ENDERIUM.get());
+                        pOutput.accept(ItemRegistry.SULFUR.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_CHUNK.get());
 
-                        pOutput.accept(ItemRegistry.frozen_gem.get());
-                        pOutput.accept(ItemRegistry.firerite_gem.get());
-                        pOutput.accept(ItemRegistry.ruby.get());
-                        pOutput.accept(ItemRegistry.aquanium_shard.get());
-                        pOutput.accept(ItemRegistry.diamond_shard.get());
+                        pOutput.accept(ItemRegistry.FROZEN_GEM.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_GEM.get());
+                        pOutput.accept(ItemRegistry.RUBY.get());
+                        pOutput.accept(ItemRegistry.SHARD.get());
+                        pOutput.accept(ItemRegistry.DIAMOND_SHARD.get());
 
-                        pOutput.accept(ItemRegistry.silver_nugget.get());
-                        pOutput.accept(ItemRegistry.copper_nugget.get());
-                        pOutput.accept(ItemRegistry.platinum_nugget.get());
-                        pOutput.accept(ItemRegistry.steel_nugget.get());
-                        pOutput.accept(ItemRegistry.titanium_nugget.get());
-                        pOutput.accept(ItemRegistry.luminite_nugget.get());
-                        pOutput.accept(ItemRegistry.aquanium_nugget.get());
-                        pOutput.accept(ItemRegistry.enderium_nugget.get());
+                        pOutput.accept(ItemRegistry.SILVER_NUGGET.get());
+                        pOutput.accept(ItemRegistry.COPPER_NUGGET.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_NUGGET.get());
+                        pOutput.accept(ItemRegistry.STEEL_NUGGET.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_NUGGET.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_NUGGET.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_NUGGET.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_NUGGET.get());
 
-                        pOutput.accept(ItemRegistry.aluminium_ingot.get());
-                        pOutput.accept(ItemRegistry.silver_ingot.get());
-                        pOutput.accept(ItemRegistry.platinum_ingot.get());
-                        pOutput.accept(ItemRegistry.steel_ingot.get());
-                        pOutput.accept(ItemRegistry.titanium_ingot.get());
-                        pOutput.accept(ItemRegistry.luminite_ingot.get());
-                        pOutput.accept(ItemRegistry.aquanium_ingot.get());
-                        pOutput.accept(ItemRegistry.enderium_ingot.get());
+                        pOutput.accept(ItemRegistry.ALUMINIUM_INGOT.get());
+                        pOutput.accept(ItemRegistry.SILVER_INGOT.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_INGOT.get());
+                        pOutput.accept(ItemRegistry.STEEL_INGOT.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_INGOT.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_INGOT.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_INGOT.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
                         //pOutput.accept(ItemRegistry.END_GOLD_INGOT.get()); //TODO
-                        pOutput.accept(ItemRegistry.enderium_ingot.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
 
-                        pOutput.accept(ItemRegistry.silver_dust.get());
-                        pOutput.accept(ItemRegistry.gold_dust.get());
-                        pOutput.accept(ItemRegistry.copper_dust.get());
-                        pOutput.accept(ItemRegistry.iron_dust.get());
-                        pOutput.accept(ItemRegistry.platinum_dust.get());
-                        pOutput.accept(ItemRegistry.titanium_dust.get());
-                        pOutput.accept(ItemRegistry.diamond_dust.get());
-                        pOutput.accept(ItemRegistry.sulfur_dust.get());
-                        pOutput.accept(ItemRegistry.ender_pearl_dust.get());
+                        pOutput.accept(ItemRegistry.SILVER_DUST.get());
+                        pOutput.accept(ItemRegistry.GOLD_DUST.get());
+                        pOutput.accept(ItemRegistry.COPPER_DUST.get());
+                        pOutput.accept(ItemRegistry.IRON_DUST.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_DUST.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_DUST.get());
+                        pOutput.accept(ItemRegistry.DIAMOND_DUST.get());
+                        pOutput.accept(ItemRegistry.SULFUR_DUST.get());
+                        pOutput.accept(ItemRegistry.ENDER_PEARL_DUST.get());
 
-                        pOutput.accept(ItemRegistry.silver_stick.get());
-                        pOutput.accept(ItemRegistry.gold_stick.get());
+                        pOutput.accept(ItemRegistry.SILVER_STICK.get());
+                        pOutput.accept(ItemRegistry.GOLD_STICK.get());
 
-                        pOutput.accept(ItemRegistry.iron_plate.get());
-                        pOutput.accept(ItemRegistry.iron_saw_blade.get());
-                        pOutput.accept(ItemRegistry.platinum_saw_blade.get());
-                        pOutput.accept(ItemRegistry.diamond_saw_blade.get());
-                        pOutput.accept(ItemRegistry.titanium_saw_blade.get());
-                        pOutput.accept(ItemRegistry.ender_arch_fragment.get());
-                        pOutput.accept(ItemRegistry.ender_arch.get());
+                        pOutput.accept(ItemRegistry.IRON_PLATE.get());
+                        pOutput.accept(ItemRegistry.IRON_SAW_BLADE.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_SAW_BLADE.get());
+                        pOutput.accept(ItemRegistry.DIAMOND_SAW_BLADE.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_SAW_BLADE.get());
+                        pOutput.accept(ItemRegistry.ENDER_ARCH_FRAGMENT.get());
+                        pOutput.accept(ItemRegistry.ENDER_ARCH.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TOOLS = TAB.register("tools",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.aquanium_pickaxe.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.AQUANIUM_PICKAXE.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.tools"))
                     .displayItems((pParameters, pOutput) ->{
-                        pOutput.accept(ItemRegistry.silver_shovel.get());
-                        pOutput.accept(ItemRegistry.silver_pickaxe.get());
-                        pOutput.accept(ItemRegistry.silver_axe.get());
-                        pOutput.accept(ItemRegistry.silver_hoe.get());
-                        pOutput.accept(ItemRegistry.silver_hammer.get());
+                        pOutput.accept(ItemRegistry.SILVER_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.SILVER_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.SILVER_AXE.get());
+                        pOutput.accept(ItemRegistry.SILVER_HOE.get());
+                        pOutput.accept(ItemRegistry.SILVER_HAMMER.get());
 
-                        pOutput.accept(ItemRegistry.copper_shovel.get());
-                        pOutput.accept(ItemRegistry.copper_pickaxe.get());
-                        pOutput.accept(ItemRegistry.copper_axe.get());
-                        pOutput.accept(ItemRegistry.copper_hoe.get());
+                        pOutput.accept(ItemRegistry.COPPER_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.COPPER_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.COPPER_AXE.get());
+                        pOutput.accept(ItemRegistry.COPPER_HOE.get());
 
-                        pOutput.accept(ItemRegistry.platinum_shovel.get());
-                        pOutput.accept(ItemRegistry.platinum_pickaxe.get());
-                        pOutput.accept(ItemRegistry.platinum_axe.get());
-                        pOutput.accept(ItemRegistry.platinum_hoe.get());
-                        pOutput.accept(ItemRegistry.platinum_hammer.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_AXE.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_HOE.get());
+                        pOutput.accept(ItemRegistry.PLATINUM_HAMMER.get());
 
-                        pOutput.accept(ItemRegistry.steel_shovel.get());
-                        pOutput.accept(ItemRegistry.steel_pickaxe.get());
-                        pOutput.accept(ItemRegistry.steel_axe.get());
-                        pOutput.accept(ItemRegistry.steel_hoe.get());
-                        pOutput.accept(ItemRegistry.steel_hammer.get());
+                        pOutput.accept(ItemRegistry.STEEL_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.STEEL_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.STEEL_AXE.get());
+                        pOutput.accept(ItemRegistry.STEEL_HOE.get());
+                        pOutput.accept(ItemRegistry.STEEL_HAMMER.get());
 
-                        pOutput.accept(ItemRegistry.titanium_shovel.get());
-                        pOutput.accept(ItemRegistry.titanium_pickaxe.get());
-                        pOutput.accept(ItemRegistry.titanium_axe.get());
-                        pOutput.accept(ItemRegistry.titanium_hoe.get());
-                        pOutput.accept(ItemRegistry.titanium_hammer.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_AXE.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_HOE.get());
+                        pOutput.accept(ItemRegistry.TITANIUM_HAMMER.get());
 
-                        pOutput.accept(ItemRegistry.luminite_shovel.get());
-                        pOutput.accept(ItemRegistry.luminite_pickaxe.get());
-                        pOutput.accept(ItemRegistry.luminite_axe.get());
-                        pOutput.accept(ItemRegistry.luminite_hoe.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_AXE.get());
+                        pOutput.accept(ItemRegistry.LUMINITE_HOE.get());
 
-                        pOutput.accept(ItemRegistry.aquanium_shovel.get());
-                        pOutput.accept(ItemRegistry.aquanium_pickaxe.get());
-                        pOutput.accept(ItemRegistry.aquanium_axe.get());
-                        pOutput.accept(ItemRegistry.aquanium_hoe.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_AXE.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_HOE.get());
 
-                        pOutput.accept(ItemRegistry.frozen_shovel.get());
-                        pOutput.accept(ItemRegistry.frozen_pickaxe.get());
-                        pOutput.accept(ItemRegistry.frozen_axe.get());
-                        pOutput.accept(ItemRegistry.frozen_hoe.get());
+                        pOutput.accept(ItemRegistry.FROZEN_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.FROZEN_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.FROZEN_AXE.get());
+                        pOutput.accept(ItemRegistry.FROZEN_HOE.get());
 
-                        pOutput.accept(ItemRegistry.firerite_shovel.get());
-                        pOutput.accept(ItemRegistry.firerite_pickaxe.get());
-                        pOutput.accept(ItemRegistry.firerite_axe.get());
-                        pOutput.accept(ItemRegistry.firerite_hoe.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_AXE.get());
+                        pOutput.accept(ItemRegistry.FIRERITE_HOE.get());
 
-                        pOutput.accept(ItemRegistry.enderium_shovel.get());
-                        pOutput.accept(ItemRegistry.enderium_pickaxe.get());
-                        pOutput.accept(ItemRegistry.enderium_axe.get());
-                        pOutput.accept(ItemRegistry.enderium_hoe.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_AXE.get());
+                        pOutput.accept(ItemRegistry.ENDERIUM_HOE.get());
 
-                        pOutput.accept(ItemRegistry.bedrock_shovel.get());
-                        pOutput.accept(ItemRegistry.bedrock_pickaxe.get());
-                        pOutput.accept(ItemRegistry.bedrock_axe.get());
-                        pOutput.accept(ItemRegistry.bedrock_hoe.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_SHOVEL.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_PICKAXE.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_AXE.get());
+                        pOutput.accept(ItemRegistry.BEDROCK_HOE.get());
 
                         //pOutput.accept(ItemRegistry.END_LAVA_BUCKET.get()); //TODO
                         //pOutput.accept(ItemRegistry.MOLTEN_SULFUR_BUCKET.get()); //TODO
 
-                        pOutput.accept(ItemRegistry.frozen_boat.get());
-                        pOutput.accept(ItemRegistry.frozen_chest_boat.get());
+                        pOutput.accept(ItemRegistry.FROZEN_BOAT.get());
+                        pOutput.accept(ItemRegistry.FROZEN_CHEST_BOAT.get());
                         //pOutput.accept(ItemRegistry.STRONGHOLD_COMPASS.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> DRINKS = TAB.register("drinks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.milk_bottle.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.MILK_BOTTLE.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.drinks"))
                     .displayItems((pParameters, pOutput) ->{
-                        pOutput.accept(ItemRegistry.kohlrabi.get());
-                        pOutput.accept(ItemRegistry.pepper.get());
-                        pOutput.accept(ItemRegistry.stacked_potato.get());
-                        pOutput.accept(ItemRegistry.stacked_baked_potato.get());
-                        pOutput.accept(ItemRegistry.kohlrabi_seeds.get());
-                        pOutput.accept(ItemRegistry.pepper_seeds.get());
-                        pOutput.accept(ItemRegistry.milk_bottle.get());
+                        pOutput.accept(ItemRegistry.KOHLRABI.get());
+                        pOutput.accept(ItemRegistry.PEPPER.get());
+                        pOutput.accept(ItemRegistry.STACKED_POTATO.get());
+                        pOutput.accept(ItemRegistry.STACKED_BAKED_POTATO.get());
+                        pOutput.accept(ItemRegistry.KOHLRABI_SEEDS.get());
+                        pOutput.accept(ItemRegistry.PEPPER_SEEDS.get());
+                        pOutput.accept(ItemRegistry.MILK_BOTTLE.get());
                     }).build());
 
 }

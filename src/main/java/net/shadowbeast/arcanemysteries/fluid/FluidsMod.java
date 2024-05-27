@@ -21,7 +21,7 @@ public class FluidsMod {
             .slopeFindDistance(4)
             .levelDecreasePerBlock(1)
             .block(ModBlocks.END_LAVA_BLOCK)
-            .bucket(ItemRegistry.end_lava_bucket)
+            .bucket(ItemRegistry.END_LAVA_BUCKET)
             .tickRate(30)
             .explosionResistance(100.0F);
 }

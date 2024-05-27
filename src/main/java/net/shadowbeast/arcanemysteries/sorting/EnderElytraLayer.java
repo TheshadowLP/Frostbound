@@ -58,7 +58,7 @@ public class EnderElytraLayer<T extends LivingEntity, M extends EntityModel<T>> 
         }
     }
     public boolean shouldRender(ItemStack stack, T entity) {
-        return stack.getItem() == ItemRegistry.ender_elytra.get();
+        return stack.getItem() == ItemRegistry.ENDER_ELYTRA.get();
     }
     public ResourceLocation getElytraTexture(ItemStack stack, T entity) {
         return WINGS_LOCATION;

@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.items;
+package net.shadowbeast.arcanemysteries.items.tools;
 
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Tier;

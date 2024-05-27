@@ -10,6 +10,6 @@ import java.util.Set;
 public class WinterFurnaceRecipeBookComponent extends AbstractFurnaceRecipeBookComponent {
     @Override
     protected @NotNull Set<Item> getFuelItems() {
-        return Set.of(ItemRegistry.steel_ingot.get(), Items.COPPER_INGOT,Items.IRON_INGOT);
+        return Set.of(ItemRegistry.STEEL_INGOT.get(), Items.COPPER_INGOT,Items.IRON_INGOT);
     }
 }

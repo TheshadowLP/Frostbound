@@ -33,7 +33,7 @@ public class EntityBoat extends Boat {
     @Override
     public @NotNull Item getDropItem() {
         if (Objects.requireNonNull(getModVariant()) == Type.FROZEN) {
-            return ItemRegistry.frozen_boat.get();
+            return ItemRegistry.FROZEN_BOAT.get();
         }
         return super.getDropItem();
     }

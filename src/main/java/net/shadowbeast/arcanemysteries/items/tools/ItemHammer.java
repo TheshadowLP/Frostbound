@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.items;
+package net.shadowbeast.arcanemysteries.items.tools;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

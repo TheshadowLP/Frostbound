@@ -143,7 +143,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
         Item item = entity.itemHandler.getStackInSlot(CrusherSlot.SHREDBLADE_SLOT).getItem();
 
         // New Saws Go Here
-        return item == ItemRegistry.iron_saw_blade.get() || item == ItemRegistry.platinum_saw_blade.get() || item == ItemRegistry.diamond_saw_blade.get() || item == ItemRegistry.titanium_saw_blade.get();
+        return item == ItemRegistry.IRON_SAW_BLADE.get() || item == ItemRegistry.PLATINUM_SAW_BLADE.get() || item == ItemRegistry.DIAMOND_SAW_BLADE.get() || item == ItemRegistry.TITANIUM_SAW_BLADE.get();
     }
     private void craftItem() {
         Level level = this.level;

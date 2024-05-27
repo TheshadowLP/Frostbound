@@ -33,6 +33,6 @@ public class EntityIceBeam extends ThrowableItemProjectile {
     }
     @Override
     protected @NotNull Item getDefaultItem() {
-        return ItemRegistry.ice_beam.get();
+        return ItemRegistry.ICE_BEAM.get();
     }
 }

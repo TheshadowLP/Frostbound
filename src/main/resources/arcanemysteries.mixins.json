@@ -5,9 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "arcanemysteries.refmap.json",
   "mixins": [
-    "EntityMixin"
+    "EntityMixin",
+    "ItemStackMixin"
   ],
   "client": [
+    "GuiMixin",
     "LocalPlayerMixin"
   ],
   "injectors": {

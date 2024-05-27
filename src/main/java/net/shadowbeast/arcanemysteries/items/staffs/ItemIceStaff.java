@@ -1,5 +1,6 @@
-package net.shadowbeast.arcanemysteries.items;
+package net.shadowbeast.arcanemysteries.items.staffs;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -15,10 +16,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ItemIceStaff extends Item{
+public class ItemIceStaff extends ItemStaff {
+
     public ItemIceStaff() {
-        super(new Properties().durability(26));
+        super(26);
     }
+
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide) {
@@ -32,26 +35,15 @@ public class ItemIceStaff extends Item{
         }
         return InteractionResultHolder.success(player.getItemInHand(hand));
     }
+
     @Override
-    public boolean isEnchantable(@NotNull ItemStack pStack) {
-        return false;
+    String tooltip() {
+        return "ice";
     }
+
     @Override
-    public boolean isRepairable(@NotNull ItemStack stack) {
-        return false;
-    }
-    @Override
-    public boolean isValidRepairItem(@NotNull ItemStack pStack, @NotNull ItemStack pRepairCandidate) {
-        return false;
-    }
-    @Override
-    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-        return false;
-    }
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, @NotNull TooltipFlag flagIn) {
-        tooltip.add(LocalizeUtils.i18n("tooltip.ice"));
-        tooltip.add(LocalizeUtils.usesRemaining(stack.getMaxDamage() - stack.getDamageValue()));
+    public ChatFormatting color() {
+        return ChatFormatting.BLUE;
     }
 }
 
