@@ -79,15 +79,25 @@ public class EventRegistry {
     @SubscribeEvent
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-        ItemStack enchantedBook = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
-        if(event.getType() == VillagerProfession.LIBRARIAN) {
+        ItemStack iceAspect = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
+        ItemStack treeCapitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.TREECAPITATOR.get(), 1));
+        if (event.getType() == VillagerProfession.LIBRARIAN) {
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(Items.EMERALD, 30),
-                    enchantedBook,
+                    new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
+                    iceAspect,
                     2, 8, 0.02f
             ));
+            if (event.getType() == VillagerProfession.LIBRARIAN) {
+                trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
+                        new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
+                        treeCapitator,
+                        2, 8, 0.02f
+                ));
+            }
         }
     }
+
+
 
     @SubscribeEvent
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {

@@ -89,6 +89,8 @@ public class ArcaneMysteries {
             MenuScreens.register(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
+            MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.TREECAPITATOR.get());
+
 
             event.enqueueWork(() -> {
             });
