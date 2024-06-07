@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ItemTeleportationStaff extends ItemStaff {
 
     public ItemTeleportationStaff() {
-        super(8); // 8
+        super(8, "teleport_respawn_point", ChatFormatting.AQUA);
     }
 
     @Override
@@ -49,15 +49,5 @@ public class ItemTeleportationStaff extends ItemStaff {
             }
         }
         return InteractionResultHolder.fail(player.getItemInHand(hand));
-    }
-
-    @Override
-    String tooltip() {
-        return "teleport_respawn_point";
-    }
-
-    @Override
-    public ChatFormatting color() {
-        return ChatFormatting.AQUA;
     }
 }

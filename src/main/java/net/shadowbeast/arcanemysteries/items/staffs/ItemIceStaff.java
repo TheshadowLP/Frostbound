@@ -19,7 +19,7 @@ import java.util.List;
 public class ItemIceStaff extends ItemStaff {
 
     public ItemIceStaff() {
-        super(26);
+        super(26, "ice", ChatFormatting.BLUE);
     }
 
     @Override
@@ -34,16 +34,6 @@ public class ItemIceStaff extends ItemStaff {
             level.addFreshEntity(projectile);
         }
         return InteractionResultHolder.success(player.getItemInHand(hand));
-    }
-
-    @Override
-    String tooltip() {
-        return "ice";
-    }
-
-    @Override
-    public ChatFormatting color() {
-        return ChatFormatting.BLUE;
     }
 }
 

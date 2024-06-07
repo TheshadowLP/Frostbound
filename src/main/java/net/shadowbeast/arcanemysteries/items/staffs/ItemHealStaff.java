@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 public class ItemHealStaff extends ItemStaff {
 
     public ItemHealStaff() {
-        super(10);
+        super(10, "healing", ChatFormatting.LIGHT_PURPLE);
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
@@ -41,15 +41,5 @@ public class ItemHealStaff extends ItemStaff {
             pPlayer.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1f, 1f);
         }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
-    }
-
-    @Override
-    String tooltip() {
-        return "healing";
-    }
-
-    @Override
-    public ChatFormatting color() {
-        return ChatFormatting.LIGHT_PURPLE;
     }
 }

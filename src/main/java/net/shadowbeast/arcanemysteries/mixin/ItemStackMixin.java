@@ -18,7 +18,7 @@ public class ItemStackMixin {
     @Redirect(method = "getDisplayName", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Rarity;getStyleModifier()Ljava/util/function/UnaryOperator;"), remap = false)
     private UnaryOperator<Style> cancelFallDamage(Rarity rarity) {
         if(itemStack.getItem() instanceof ItemStaff staff) {
-            return style -> style.withColor(staff.color());
+            return style -> style.withColor(staff.color);
         }
         return rarity.getStyleModifier();
     }
@@ -26,7 +26,7 @@ public class ItemStackMixin {
     @Redirect(method = "getTooltipLines", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Rarity;getStyleModifier()Ljava/util/function/UnaryOperator;"), remap = false)
     private UnaryOperator<Style> cancelFallDamag(Rarity rarity) {
         if(itemStack.getItem() instanceof ItemStaff staff) {
-            return style -> style.withColor(staff.color());
+            return style -> style.withColor(staff.color);
         }
         return rarity.getStyleModifier();
     }

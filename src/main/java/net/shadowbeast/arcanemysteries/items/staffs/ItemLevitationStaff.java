@@ -21,7 +21,7 @@ import java.util.List;
 public class ItemLevitationStaff extends ItemStaff {
 
     public ItemLevitationStaff() {
-        super(18);
+        super(18, "levitation", ChatFormatting.YELLOW);
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
@@ -53,15 +53,5 @@ public class ItemLevitationStaff extends ItemStaff {
             pPlayer.playSound(SoundRegistry.LEVITATION_STAFF.get(), 1f, 1f);
         }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
-    }
-
-    @Override
-    String tooltip() {
-        return "levitation";
-    }
-
-    @Override
-    public ChatFormatting color() {
-        return ChatFormatting.YELLOW;
     }
 }
