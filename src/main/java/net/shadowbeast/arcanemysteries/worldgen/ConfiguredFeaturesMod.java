@@ -84,7 +84,7 @@ public class ConfiguredFeaturesMod {
         register(context, BIG_FROZEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.FROZEN_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(ModBlocks.FROZEN_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2,3), UniformInt.of(0,2), UniformInt.of(1,2)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
 
     }
-    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(ArcaneMysteries.MODID, name));
+    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(ArcaneMysteries.MOD_ID, name));
     }
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {context.register(key, new ConfiguredFeature<>(feature, configuration));
     }

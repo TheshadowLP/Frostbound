@@ -15,12 +15,10 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.block.crusher.CrusherBlock;
 import net.shadowbeast.arcanemysteries.block_entities.block.furnace.AlloyFurnaceBlock;
 import net.shadowbeast.arcanemysteries.block_entities.block.furnace.WinterFurnaceBlock;
@@ -34,11 +32,11 @@ import net.shadowbeast.arcanemysteries.worldgen.tree.FrozenTreeGrower;
 
 import java.util.function.Supplier;
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
+@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
+    public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
 
     // Block Entities

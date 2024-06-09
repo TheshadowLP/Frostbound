@@ -97,7 +97,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     public static class Serializer implements RecipeSerializer<AlloyFurnaceRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ArcaneMysteries.MODID, "alloying");
+                new ResourceLocation(ArcaneMysteries.MOD_ID, "alloying");
         @Override
         public @NotNull AlloyFurnaceRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));

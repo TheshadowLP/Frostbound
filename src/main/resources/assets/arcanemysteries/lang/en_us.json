@@ -1,5 +1,5 @@
 {
-  "message.failure_to_teleport": "You don't have a respawn Point",
+  "message.failure_to_teleport": "You don't have a respawn point",
 
   "tooltip.teleport_respawn_point": "Teleports to the respawn point",
   "tooltip.uses": "%s Uses Remaining",

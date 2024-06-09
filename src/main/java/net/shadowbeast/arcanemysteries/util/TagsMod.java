@@ -16,14 +16,14 @@ public class TagsMod {
         public static final TagKey<Item> ALLOYING_FUEL_MEDIUM = tag("alloying_fuel_medium");
         public static final TagKey<Item> ALLOYING_FUEL_SMALL = tag("alloying_fuel_small");
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(new ResourceLocation(ArcaneMysteries.MODID, name));
+            return ItemTags.create(new ResourceLocation(ArcaneMysteries.MOD_ID, name));
         }
     }
     public static class Blocks {
         public static final TagKey<Block> FROZEN_LOGS = tag("frozen_logs");
         public static final TagKey<Block> NEEDS_BEDROCK_TOOL = tag("needs_bedrock_tool");
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(new ResourceLocation(ArcaneMysteries.MODID, name));
+            return BlockTags.create(new ResourceLocation(ArcaneMysteries.MOD_ID, name));
         }
     }
 }

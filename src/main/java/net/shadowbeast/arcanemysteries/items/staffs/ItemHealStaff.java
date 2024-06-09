@@ -10,12 +10,14 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+
 public class ItemHealStaff extends ItemStaff {
 
     public ItemHealStaff() {
-        super(10, "healing", ChatFormatting.LIGHT_PURPLE);
+        super(10, "healing", Rarity.create("red", ChatFormatting.RED));
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {

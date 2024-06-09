@@ -3,13 +3,11 @@
   "minVersion": "0.8",
   "package": "net.shadowbeast.arcanemysteries.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "arcanemysteries.refmap.json",
+  "refmap": "arcanemysteries.mixins.refmap.json",
   "mixins": [
-    "EntityMixin",
-    "ItemStackMixin"
+    "EntityMixin"
   ],
   "client": [
-    "GuiMixin",
     "LocalPlayerMixin"
   ],
   "injectors": {

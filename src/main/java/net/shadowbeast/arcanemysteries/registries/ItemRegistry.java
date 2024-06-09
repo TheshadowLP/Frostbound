@@ -19,10 +19,10 @@ import net.shadowbeast.arcanemysteries.sorting.IceBeam;
 
 import java.util.function.Supplier;
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
 public class ItemRegistry {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final RegistryObject<Item>
             //FOOD
             KOHLRABI = registerItem("kohlrabi", () -> new ItemModFood(FoodListRegistry.KOHLRABI)),

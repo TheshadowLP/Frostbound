@@ -10,10 +10,10 @@ import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
 public class FluidsMod {
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MODID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MOD_ID);
     public static final RegistryObject<FlowingFluid> END_LAVA_FLUID = FLUIDS.register("end_lava_fluid", () -> new ForgeFlowingFluid.Source(FluidsMod.END_LAVA_PROPERTIES));
     public static final RegistryObject<FlowingFluid> END_LAVA_FLOWING = FLUIDS.register("end_lava_flow", () -> new ForgeFlowingFluid.Flowing(FluidsMod.END_LAVA_PROPERTIES));
     public static final ForgeFlowingFluid.Properties END_LAVA_PROPERTIES = new ForgeFlowingFluid.Properties(

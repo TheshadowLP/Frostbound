@@ -33,10 +33,10 @@ import net.shadowbeast.arcanemysteries.util.WoodTypesMod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(ArcaneMysteries.MODID)
+@Mod(ArcaneMysteries.MOD_ID)
 public class ArcaneMysteries {
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final String MODID = "arcanemysteries";
+    public static final String MOD_ID = "arcanemysteries";
     public ArcaneMysteries() {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
 

@@ -27,7 +27,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class ArcaneMysteriesJEI implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
-        return new ResourceLocation(ArcaneMysteries.MODID, "jei_plugin");
+        return new ResourceLocation(ArcaneMysteries.MOD_ID, "jei_plugin");
     }
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {

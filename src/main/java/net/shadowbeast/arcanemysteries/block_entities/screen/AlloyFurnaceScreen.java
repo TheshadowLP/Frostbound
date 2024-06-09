@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(ArcaneMysteries.MODID, "textures/gui/fusion_furnace_gui.png");
+            new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/fusion_furnace_gui.png");
     private static final int FIRST_PART_X = 67;
     private static final int FIRST_PART_Y = 40;
     private static final int SECOND_PART_RIGHT_X = 70;

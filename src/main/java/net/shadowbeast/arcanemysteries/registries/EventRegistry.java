@@ -39,7 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Mod.EventBusSubscriber(modid = ArcaneMysteries.MODID)
+@Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID)
 public class EventRegistry {
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
     @SubscribeEvent
@@ -103,7 +103,7 @@ public class EventRegistry {
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
         if(event.getObject() instanceof Player) {
             if(!event.getObject().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).isPresent()) {
-                event.addCapability(new ResourceLocation(ArcaneMysteries.MODID, "properties"), new PlayerLevitationTagProvider());
+                event.addCapability(new ResourceLocation(ArcaneMysteries.MOD_ID, "properties"), new PlayerLevitationTagProvider());
             }
         }
     }

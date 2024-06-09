@@ -16,7 +16,7 @@ import net.shadowbeast.arcanemysteries.particle.FeatherParticles;
 import net.shadowbeast.arcanemysteries.registries.ParticleRegistry;
 import net.shadowbeast.arcanemysteries.temprature.TempratureHudOverlay;
 
-@Mod.EventBusSubscriber(modid = ArcaneMysteries.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EventClientBusEvents {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {

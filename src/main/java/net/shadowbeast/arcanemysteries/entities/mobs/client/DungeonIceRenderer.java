@@ -14,6 +14,6 @@ public class DungeonIceRenderer extends MobRenderer<DungeonIceEntity, DungeonIce
     }
     @Override
     public @NotNull ResourceLocation getTextureLocation(@NotNull DungeonIceEntity pEntity) {
-        return new ResourceLocation(ArcaneMysteries.MODID, "textures/entity/dungeonice.png");
+        return new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/entity/dungeonice.png");
     }
 }

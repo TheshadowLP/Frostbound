@@ -8,7 +8,7 @@ import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 
 import java.util.Properties;
 
-@Mod.EventBusSubscriber(modid = ArcaneMysteries.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     private static final Properties defaultValues = new Properties();

@@ -117,6 +117,6 @@ public class BiomeModifiersMod {
 
     }
     private static @NotNull ResourceKey<BiomeModifier> registerKey(String name) {
-        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(ArcaneMysteries.MODID, name));
+        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(ArcaneMysteries.MOD_ID, name));
     }
 }

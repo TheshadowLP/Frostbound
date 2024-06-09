@@ -23,7 +23,7 @@ public class BoatModRenderer extends BoatRenderer {
     public BoatModRenderer(EntityRendererProvider.Context pContext, boolean pChestBoat) {
         super(pContext, pChestBoat);
         this.boatResources = Stream.of(EntityBoat.Type.values()).collect(ImmutableMap.toImmutableMap((type) -> type,
-                (type) -> Pair.of(new ResourceLocation(ArcaneMysteries.MODID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat))));
+                (type) -> Pair.of(new ResourceLocation(ArcaneMysteries.MOD_ID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat))));
     }
     private static String getTextureLocation(EntityBoat.Type pType, boolean pChestBoat) {
         return pChestBoat ? "textures/entity/chest_boat/" + pType.getName() + ".png" : "textures/entity/boat/" + pType.getName() + ".png";
@@ -40,7 +40,7 @@ public class BoatModRenderer extends BoatRenderer {
         return createLocation("chest_boat/" + pType.getName());
     }
     private static ModelLayerLocation createLocation(String pPath) {
-        return new ModelLayerLocation(new ResourceLocation(ArcaneMysteries.MODID, pPath), "main");
+        return new ModelLayerLocation(new ResourceLocation(ArcaneMysteries.MOD_ID, pPath), "main");
     }
     public @NotNull Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(@NotNull Boat boat) {
         if(boat instanceof EntityBoat modBoat) {

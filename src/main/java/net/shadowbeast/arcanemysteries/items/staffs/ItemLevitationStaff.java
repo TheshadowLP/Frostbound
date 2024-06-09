@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import net.shadowbeast.arcanemysteries.networking.packet.AddLevitationTagC2SPacket;
@@ -21,7 +22,7 @@ import java.util.List;
 public class ItemLevitationStaff extends ItemStaff {
 
     public ItemLevitationStaff() {
-        super(18, "levitation", ChatFormatting.YELLOW);
+        super(18, "levitation", Rarity.UNCOMMON);
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {

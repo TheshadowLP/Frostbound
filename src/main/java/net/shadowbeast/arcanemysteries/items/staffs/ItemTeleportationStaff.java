@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.server.command.TextComponentHelper;
 import net.shadowbeast.arcanemysteries.util.teleport.DimensionTeleporter;
@@ -21,7 +22,7 @@ import java.util.Objects;
 public class ItemTeleportationStaff extends ItemStaff {
 
     public ItemTeleportationStaff() {
-        super(8, "teleport_respawn_point", ChatFormatting.AQUA);
+        super(8, "teleport_respawn_point", Rarity.RARE);
     }
 
     @Override

@@ -21,8 +21,8 @@ import org.jetbrains.annotations.NotNull;
 
 @MethodsReturnNonnullByDefault
 public class CrushingCategory implements IRecipeCategory<CrusherRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MODID, "crushing");
-    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MODID,
+    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MOD_ID, "crushing");
+    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/gui/crusher_gui.png");
     public static final RecipeType<CrusherRecipe> CRUSHER_RECIPE_TYPE = new RecipeType<>(UID, CrusherRecipe.class);
     private final IDrawable background;

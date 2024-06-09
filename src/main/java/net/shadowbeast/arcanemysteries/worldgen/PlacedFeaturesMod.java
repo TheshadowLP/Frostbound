@@ -59,7 +59,7 @@ public class PlacedFeaturesMod {
         register(context, FROZEN_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.FROZEN_KEY), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), ModBlocks.FROZEN_SAPLING.get()));
         register(context, BIG_FROZEN_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.BIG_FROZEN_KEY), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), ModBlocks.FROZEN_SAPLING.get()));
     }
-    private static ResourceKey<PlacedFeature> registerKey(String name) {return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(ArcaneMysteries.MODID, name));
+    private static ResourceKey<PlacedFeature> registerKey(String name) {return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(ArcaneMysteries.MOD_ID, name));
     }
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }

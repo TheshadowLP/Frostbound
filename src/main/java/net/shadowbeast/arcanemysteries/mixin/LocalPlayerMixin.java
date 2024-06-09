@@ -22,7 +22,7 @@ public abstract class LocalPlayerMixin {
     @Shadow public abstract float getJumpRidingScale();
     @Shadow private float jumpRidingScale;
     @Inject(method = "aiStep", at = @At(value = "TAIL"))
-    private void customBar(CallbackInfo ci) {
+    private void makeBarSlower(CallbackInfo ci) {
         PlayerRideableJumping playerrideablejumping = this.jumpableVehicle();
         if (playerrideablejumping instanceof YakEntity yak) {
             boolean flag = this.input.jumping;

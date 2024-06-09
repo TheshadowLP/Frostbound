@@ -19,11 +19,11 @@ import net.shadowbeast.arcanemysteries.entities.projectile.EntityMudBall;
 import net.shadowbeast.arcanemysteries.entities.signs.EntityHangingSignBlock;
 import net.shadowbeast.arcanemysteries.entities.signs.EntitySignBlock;
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
+@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EntityRegistry {
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MODID);
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
     public static final RegistryObject<EntityType<EntityMudBall>> MUDBALL_PROJECTILE =
             ENTITIES.register("mudball_projectile",
                     () -> EntityType.Builder.<EntityMudBall>of(EntityMudBall::new, MobCategory.MISC)

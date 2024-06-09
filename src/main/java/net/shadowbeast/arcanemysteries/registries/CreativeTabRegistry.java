@@ -8,12 +8,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
 @SuppressWarnings("unused")
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MODID)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MOD_ID)
 public class CreativeTabRegistry {
-    public static final DeferredRegister<CreativeModeTab> TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+    public static final DeferredRegister<CreativeModeTab> TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final RegistryObject<CreativeModeTab> BLOCKS = TAB.register("blocks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.END_OBSIDIAN.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.blocks"))

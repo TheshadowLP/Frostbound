@@ -22,8 +22,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class AlloyingCategory implements IRecipeCategory<AlloyFurnaceRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MODID, "alloying");
-    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MODID,
+    public static final ResourceLocation UID = new ResourceLocation(ArcaneMysteries.MOD_ID, "alloying");
+    public static final ResourceLocation TEXTURES = new ResourceLocation(ArcaneMysteries.MOD_ID,
             "textures/gui/fusion_furnace_gui.png");
     public static final RecipeType<AlloyFurnaceRecipe> ALLOY_FURNACE_RECIPE_TYPE =
             new RecipeType<>(UID, AlloyFurnaceRecipe.class);

@@ -13,11 +13,11 @@ import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.particle.FeatherParticles;
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
-@Mod.EventBusSubscriber(modid = ArcaneMysteries.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ParticleRegistry {
-    public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MODID);
+    public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
     public static final RegistryObject<SimpleParticleType> FEATHER_PARTICLES = PARTICLES.register("feather_particles", () -> new SimpleParticleType(false));
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent public static void registerFactories(RegisterParticleProvidersEvent event) {

@@ -87,7 +87,7 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
     public static class Serializer implements RecipeSerializer<CrusherRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ArcaneMysteries.MODID,"crushing");
+                new ResourceLocation(ArcaneMysteries.MOD_ID,"crushing");
         @Override
         public @NotNull CrusherRecipe fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));

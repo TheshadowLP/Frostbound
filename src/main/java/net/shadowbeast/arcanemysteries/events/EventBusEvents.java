@@ -11,7 +11,7 @@ import net.shadowbeast.arcanemysteries.client.ModelLayers;
 import net.shadowbeast.arcanemysteries.entities.mobs.custom.DungeonIceEntity;
 import net.shadowbeast.arcanemysteries.entities.mobs.custom.YakEntity;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
-@Mod.EventBusSubscriber(modid = ArcaneMysteries.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {

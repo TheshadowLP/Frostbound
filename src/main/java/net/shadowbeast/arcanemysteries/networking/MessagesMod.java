@@ -18,7 +18,7 @@ public class MessagesMod {
     }
     public static void register() {
         SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(new ResourceLocation(ArcaneMysteries.MODID, "messages"))
+                .named(new ResourceLocation(ArcaneMysteries.MOD_ID, "messages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)

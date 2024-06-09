@@ -1,12 +1,12 @@
 package net.shadowbeast.arcanemysteries.items.staffs;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.util.LocalizeUtils;
@@ -18,12 +18,10 @@ import java.util.List;
 public abstract class ItemStaff extends Item {
 
     public final String tooltip;
-    public final ChatFormatting color;
 
-    public ItemStaff(int durability, String tooltip, ChatFormatting color) {
-        super(new Properties().durability(durability));
+    public ItemStaff(int durability, String tooltip, Rarity rarity) {
+        super(new Properties().durability(durability).rarity(rarity));
         this.tooltip = tooltip;
-        this.color = color;
     }
 
     @Override
@@ -36,6 +34,7 @@ public abstract class ItemStaff extends Item {
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {return false;}
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> itemTooltip, @NotNull TooltipFlag flagIn) {
+        itemTooltip.add(Component.empty());
         itemTooltip.add(LocalizeUtils.i18n("tooltip." + tooltip));
         int uses = stack.getMaxDamage() - stack.getDamageValue();
 

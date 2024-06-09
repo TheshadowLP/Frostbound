@@ -33,7 +33,7 @@ public enum ArmorStats implements ArmorMaterial {
     ArmorStats(@Nullable String customTextureLocation, @Nullable String name, int headArmor, int chestArmor, int legsArmor, int feetArmor, float toughness, float resistance, int durability, int enchantability, @Nullable SoundEvent equipSound, @Nullable Ingredient repairIngredient) {
         String nonnullName = name == null ? toString().toLowerCase() : name;
         textureLocation = customTextureLocation == null ? "ps_" + nonnullName + "armor" : customTextureLocation;
-        this.name = ArcaneMysteries.MODID + ":" + nonnullName;
+        this.name = ArcaneMysteries.MOD_ID + ":" + nonnullName;
         this.headArmor = headArmor;
         this.chestArmor = chestArmor;
         this.legsArmor = legsArmor;

@@ -6,12 +6,12 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MODID;
+import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 public class SoundRegistry {
-    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MODID);
+    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
     public static final RegistryObject<SoundEvent> MILKING_SOUND_BOTTLE = registerSoundEvents("milking_sound_bottle");
     public static final RegistryObject<SoundEvent> LEVITATION_STAFF = registerSoundEvents("levitation_staff");
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
-        return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, name)));
+        return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, name)));
     }
 }
