@@ -40,7 +40,7 @@ public class EntityRegistry {
                     .sized(2.3f, 4.3f).build("ice_beam_projectile"));
     public static final RegistryObject<EntityType<YakEntity>> YAK =
             ENTITIES.register("yak", () -> EntityType.Builder.of(YakEntity::new, MobCategory.MISC)
-                    .sized(2.3f, 4.3f).build("yak"));
+                    .sized(1.3f, 1.3f).build("yak"));
     public static final RegistryObject<EntityType<EntityBoat>> MOD_BOAT =
             ENTITIES.register("mod_boat", () -> EntityType.Builder.<EntityBoat>of(EntityBoat::new, MobCategory.MISC)
                     .sized(1.375f, 0.5625f).build("mod_boat"));
