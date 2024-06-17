@@ -102,6 +102,7 @@ public class ArcaneMysteries {
             EntityRenderers.register(EntityRegistry.ICE_BEAM_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(EntityRegistry.MOD_BOAT.get(), pContext -> new BoatModRenderer(pContext, false));
             EntityRenderers.register(EntityRegistry.MOD_CHEST_BOAT.get(), pContext -> new BoatModRenderer(pContext, true));
+            EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
             ItemModProperties.addCustomItemProperties();
         }
 
