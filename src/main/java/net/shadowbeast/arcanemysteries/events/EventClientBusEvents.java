@@ -37,6 +37,6 @@ public class EventClientBusEvents {
 
     @SubscribeEvent
     public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
-        event.registerAboveAll("thirst", TempratureHudOverlay.HUD_TEMPRATURE);
+        event.registerAboveAll("thirst", TempratureHudOverlay.HUD_TEMPERATURE);
     }
 }
