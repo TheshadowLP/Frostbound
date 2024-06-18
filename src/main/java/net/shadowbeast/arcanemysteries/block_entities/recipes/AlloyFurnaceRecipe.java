@@ -109,8 +109,8 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         public void toNetwork(FriendlyByteBuf buf, AlloyFurnaceRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
 
-            for (Ingredient ing : recipe.getIngredients()) {
-                ing.toNetwork(buf);
+            for (Ingredient ingredient : recipe.getIngredients()) {
+                ingredient.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
             buf.writeVarInt(recipe.cookingTime);
