@@ -73,7 +73,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     public static boolean isFuelItem(ItemStack itemStack) { return itemStack.is(TagsMod.Items.ALLOYING_FUEL); }
-    
+
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) { setChanged(); }
