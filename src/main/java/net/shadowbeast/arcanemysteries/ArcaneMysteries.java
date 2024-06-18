@@ -70,18 +70,14 @@ public class ArcaneMysteries {
         //ModRecipes.register(modEventBus);
         //ModMenuTypes.register(modEventBus);
         //EnchantmentsRegistry.register(modEventBus);
-        //  ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((Minecraft mcInstance, Screen returnTo) -> new ConfigScreen(returnTo)));
+        //ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((Minecraft mcInstance, Screen returnTo) -> new ConfigScreen(returnTo)));
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::addCreative);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-
-        event.enqueueWork(MessagesMod::register);
-    }
+    private void commonSetup(final FMLCommonSetupEvent event) { event.enqueueWork(MessagesMod::register); }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
@@ -93,8 +89,6 @@ public class ArcaneMysteries {
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
-
-
             event.enqueueWork(() -> {
             });
         }
