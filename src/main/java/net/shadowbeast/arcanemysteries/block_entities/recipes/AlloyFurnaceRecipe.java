@@ -27,9 +27,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
     public final static int DEFAULT_COOK_TIME = 260;
-    private final double experience;
+    private final float experience;
     protected final int cookingTime;
-    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, int cookingTime, double experience) {
+    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, int cookingTime, float experience) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
@@ -60,6 +60,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     public @NotNull ItemStack getResultItem(RegistryAccess registryAccess) { return output.copy(); }
     @Override
     public @NotNull ResourceLocation getId() { return id; }
+
+    public float getExperience() { return experience; }
+
     @Override
     public @NotNull RecipeSerializer<?> getSerializer() { return Serializer.INSTANCE; }
     @Override
@@ -82,18 +85,17 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         @Override
         public @NotNull AlloyFurnaceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-
-            int experience = GsonHelper.getAsInt(pSerializedRecipe, "experience");
+            float experience = GsonHelper.getAsFloat(pSerializedRecipe, "experience");
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+            for (int idx = 0; idx < inputs.size(); idx++) {
+                inputs.set(idx, Ingredient.fromJson(ingredients.get(idx)));
             }
+            int cookingTime = GsonHelper.getAsInt(pSerializedRecipe, "cookingtime", DEFAULT_COOK_TIME);
 
-            int i = GsonHelper.getAsInt(pSerializedRecipe, "cookingtime", DEFAULT_COOK_TIME);
-            return new AlloyFurnaceRecipe(pRecipeId, output, inputs, i, experience);
+            return new AlloyFurnaceRecipe(pRecipeId, output, inputs, cookingTime, experience);
         }
         @Override
         public @Nullable AlloyFurnaceRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
@@ -102,7 +104,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
             ItemStack output = buf.readItem();
             int i = buf.readVarInt();
-            double experience = buf.readDouble();
+            float experience = buf.readFloat();
             return new AlloyFurnaceRecipe(id, output, inputs, i, experience);
         }
         @Override
@@ -114,7 +116,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             }
             buf.writeItemStack(recipe.getResultItem(), false);
             buf.writeVarInt(recipe.cookingTime);
-            buf.writeDouble(recipe.experience);
+            buf.writeFloat(recipe.experience);
         }
     }
 }

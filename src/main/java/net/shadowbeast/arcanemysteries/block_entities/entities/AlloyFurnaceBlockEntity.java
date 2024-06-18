@@ -46,7 +46,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int maxProgress = 260;
     private int fuel = 0;
     private int maxFuel = 4000;
-    private double experience = 0;
+    private float experience = 0.0f;
 
     private enum FuelTypes {
         SMALL, MEDIUM, LARGE, NONE
@@ -61,7 +61,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
 
     public static boolean isFuelItem(ItemStack itemStack) { return itemStack.is(TagsMod.Items.ALLOYING_FUEL); }
-
 
     public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(EntityRegistry.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -125,7 +124,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         tag.put("inventory", itemHandler.serializeNBT());
         tag.putInt("progress", progress);
         tag.putInt("fuel", fuel);
-        tag.putDouble("experience", experience);
+        tag.putFloat("experience", experience);
         super.saveAdditional(tag);
     }
 
@@ -135,13 +134,13 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("progress");
         fuel = nbt.getInt("fuel");
-        experience = nbt.getDouble("experience");
+        experience = nbt.getFloat("experience");
     }
 
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(i, itemHandler.getStackInSlot(i));
+        for (int idx = 0; idx < itemHandler.getSlots(); idx++) {
+            inventory.setItem(idx, itemHandler.getStackInSlot(idx));
         }
         assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
@@ -172,6 +171,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 assert level != null;
                 level.playSeededSound(null, pPos.getX() + 0.5, pPos.getY() + 0.5, pPos.getZ() + 0.5,
                         SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.1F, 1.0F, 16);
+
             }
         } else {
             resetProgress();
@@ -268,13 +268,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
             setItem(match.get().getResultItem().getItem(), AlloyFurnaceSlot.OUTPUT_SLOT, this.itemHandler, match.get().getResultItem().getCount());
             this.fuel -= 200;
-
+            this.experience += getRecipe().map(AlloyFurnaceRecipe::getExperience).orElse(0.0f);
             this.resetProgress();
         }
     }
-    private static void clearItem(int Slot,  ItemStackHandler handler) {
-        handler.extractItem(Slot, 1, false);
-    }
+
+    private static void clearItem(int Slot,  ItemStackHandler handler) { handler.extractItem(Slot, 1, false); }
 
     private static void setItem( Item pItem, int Slot,  ItemStackHandler handler, int count) {
         handler.setStackInSlot(Slot, new ItemStack(pItem,
