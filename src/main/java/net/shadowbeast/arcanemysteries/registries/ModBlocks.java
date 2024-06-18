@@ -88,7 +88,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
     //END BLOCKS
-    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> {return 14;}).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> 14).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> END_STONE_PILLAR = registerBlock("end_stone_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> TILED_END_STONE_BRICKS = registerBlock("tiled_end_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_END_STONE = registerBlock("polished_end_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("deprecation")
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     boolean icy;
     public ModFlammableRotatedPillarBlock(Properties pProperties, boolean pIsIcy) {
