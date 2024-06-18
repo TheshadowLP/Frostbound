@@ -4,16 +4,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ToolAction;
-//import net.shadowbeast.arcanemysteries.registries.BlockRegistry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     boolean icy;

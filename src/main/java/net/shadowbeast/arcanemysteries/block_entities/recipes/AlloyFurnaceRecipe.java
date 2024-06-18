@@ -12,8 +12,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.FurnaceBlock;
-import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.util.TagsMod;
 import net.shadowbeast.arcanemysteries.util.jei.category.AlloyingCategory;

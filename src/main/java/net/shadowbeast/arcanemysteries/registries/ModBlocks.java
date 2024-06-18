@@ -29,7 +29,6 @@ import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
 import net.shadowbeast.arcanemysteries.util.WoodTypesMod;
 import net.shadowbeast.arcanemysteries.worldgen.tree.FrozenTreeGrower;
 
-
 import java.util.function.Supplier;
 
 import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;

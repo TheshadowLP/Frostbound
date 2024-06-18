@@ -9,7 +9,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 
-
 import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
 public class FluidsMod {

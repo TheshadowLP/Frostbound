@@ -29,10 +29,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.items.tools.ItemHammer;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
+import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
+import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
