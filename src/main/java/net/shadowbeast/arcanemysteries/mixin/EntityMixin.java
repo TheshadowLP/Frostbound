@@ -9,6 +9,7 @@ import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -22,19 +23,20 @@ public abstract class EntityMixin {
 
     @Shadow
     public float fallDistance;
-    Entity entity = ((Entity) (Object) this);
+    @Unique
+    Entity forge_Shadow_1_20_1$entity = ((Entity) (Object) this);
 
     @Inject(method = "checkFallDamage", at = @At(value = "HEAD"))
     private void cancelFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos, CallbackInfo ci) {
         AtomicBoolean levitationTagged = new AtomicBoolean(false);
-        if (this.entity instanceof ServerPlayer player) {
+        if (this.forge_Shadow_1_20_1$entity instanceof ServerPlayer player) {
             player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
                 levitationTagged.set(levitationTag.isLevitationTagged());
             });
         }
         if (levitationTagged.get()) {
             if (pOnGround && this.fallDistance > 0.0F) {
-                if (entity instanceof ServerPlayer player) {
+                if (forge_Shadow_1_20_1$entity instanceof ServerPlayer player) {
                     player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
                         resetFallDistance();
                         levitationTag.setLevitationTagged(false);
