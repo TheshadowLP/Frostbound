@@ -10,16 +10,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
-import net.minecraft.world.level.Level;
 
-
-public class TreeCapitatorEnchantment extends Enchantment {
-    protected TreeCapitatorEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
+@SuppressWarnings("deprecation")
+public class ChopperEnchantment extends Enchantment {
+    protected ChopperEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
         super(pRarity, pCategory, pApplicableSlots);
     }
     @Override

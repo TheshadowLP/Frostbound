@@ -2,10 +2,7 @@ package net.shadowbeast.arcanemysteries.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
 import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
@@ -20,22 +17,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
-    public EntityMixin(EntityType<?> pEntityType, Level pLevel) {
-    }
-
     @Shadow
     public abstract void resetFallDistance();
 
     @Shadow
     public float fallDistance;
-    @Shadow public boolean isInPowderSnow;
-
-    @Shadow public abstract DamageSources damageSources();
-
-    @Shadow public abstract boolean isSpectator();
-
-    @Shadow public abstract boolean canFreeze();
-
     Entity entity = ((Entity) (Object) this);
 
     @Inject(method = "checkFallDamage", at = @At(value = "HEAD"))

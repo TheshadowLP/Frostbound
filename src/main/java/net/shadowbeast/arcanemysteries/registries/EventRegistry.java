@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
@@ -15,11 +16,16 @@ import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -29,10 +35,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.items.tools.ItemHammer;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
+import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
+import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -80,7 +86,7 @@ public class EventRegistry {
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         ItemStack iceAspect = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
-        ItemStack treeCapitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.TREECAPITATOR.get(), 1));
+        ItemStack treeCapitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.CHOPPER.get(), 1));
         if (event.getType() == VillagerProfession.LIBRARIAN) {
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
@@ -112,9 +118,7 @@ public class EventRegistry {
     public static void onPlayerCloned(PlayerEvent.Clone event) {
         if(event.isWasDeath()) {
             event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(oldStore -> {
-                event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(newStore -> {
-                    newStore.copyFrom(oldStore);
-                });
+                event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(newStore -> newStore.copyFrom(oldStore));
             });
         }
     }
@@ -133,5 +137,39 @@ public class EventRegistry {
                 });
             }
         }
+    }
+    @SubscribeEvent
+    public static void onItemPickup(EntityItemPickupEvent event) {
+        Player player = event.getEntity();
+        if (hasMagnetismEnchant(player)) {
+            double distance = player.distanceTo(event.getItem());
+            if (distance <= 7) {
+                event.setCanceled(true);
+                event.getItem().kill();
+                player.getInventory().add(event.getItem().getItem());
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        Player player = event.player;
+        if (hasMagnetismEnchant(player)) {
+            double range = 7.0D;
+            Vec3 playerPos = player.position();
+            List<ItemEntity> itemsInRange = player.level().getEntitiesOfClass(ItemEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+            for (ItemEntity item : itemsInRange) {
+                Vec3 direction = playerPos.subtract(item.position()).normalize().scale(0.1); // scale the direction to control speed
+                item.setDeltaMovement(item.getDeltaMovement().add(direction));
+            }
+        }
+    }
+
+    private static boolean hasMagnetismEnchant(Player player) {
+        for (ItemStack item : player.getInventory().armor) {
+            if (EnchantmentHelper.getEnchantments(item).containsKey(EnchantmentsRegistry.MAGNETISM.get())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

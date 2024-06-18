@@ -15,8 +15,12 @@ public class EnchantmentsRegistry {
             ENCHANTMENTS.register("ice_aspect",
                     () -> new IceAspectEnchantment(Enchantment.Rarity.UNCOMMON,
                             EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
-    public static RegistryObject<Enchantment> TREECAPITATOR =
-            ENCHANTMENTS.register("treecapitator",
-                    () -> new TreeCapitatorEnchantment(Enchantment.Rarity.UNCOMMON,
+    public static RegistryObject<Enchantment> CHOPPER =
+            ENCHANTMENTS.register("chopper",
+                    () -> new ChopperEnchantment(Enchantment.Rarity.UNCOMMON,
                             EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+    public static RegistryObject<Enchantment> MAGNETISM =
+            ENCHANTMENTS.register("magnetism",
+                    () -> new MagnetismEnchant(Enchantment.Rarity.UNCOMMON,
+                            EnchantmentCategory.ARMOR_FEET, EquipmentSlot.FEET));
 }

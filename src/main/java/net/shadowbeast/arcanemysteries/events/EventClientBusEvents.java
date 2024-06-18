@@ -12,8 +12,8 @@ import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.client.ModelLayers;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceModel;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakModel;
-import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.particle.FeatherParticles;
+import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ParticleRegistry;
 import net.shadowbeast.arcanemysteries.temprature.TempratureHudOverlay;
 
@@ -37,6 +37,6 @@ public class EventClientBusEvents {
 
     @SubscribeEvent
     public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
-        event.registerAboveAll("thirst", TempratureHudOverlay.HUD_TEMPRATURE);
+        event.registerAboveAll("thirst", TempratureHudOverlay.HUD_TEMPERATURE);
     }
 }

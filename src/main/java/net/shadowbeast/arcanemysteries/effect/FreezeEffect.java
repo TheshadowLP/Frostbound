@@ -5,8 +5,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.shadowbeast.arcanemysteries.registries.EffectsRegistry;
 
-import java.util.Objects;
-
 public class FreezeEffect extends MobEffect {
     public FreezeEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);

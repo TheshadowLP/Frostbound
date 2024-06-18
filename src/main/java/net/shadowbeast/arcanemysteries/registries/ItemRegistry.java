@@ -26,6 +26,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item>
             //FOOD
             KOHLRABI = registerItem("kohlrabi", () -> new ItemModFood(FoodListRegistry.KOHLRABI)),
+            RAW_YAK_MEAT = registerItem("raw_yak_meat", ()-> new ItemModFood(FoodListRegistry.RAW_YAK_MEAT)),
+            COOKED_YAK_MEAT = registerItem("cooked_yak_meat", ()-> new ItemModFood(FoodListRegistry.COOKED_YAK_MEAT)),
             PEPPER = registerItem("pepper", () -> new ItemModFood(FoodListRegistry.PEPPER)),
             STACKED_POTATO = registerItem("stacked_potato", () -> new ItemModFood(FoodListRegistry.STACKED_POTATO)),
             STACKED_BAKED_POTATO = registerItem("stacked_baked_potato", () -> new ItemModFood(FoodListRegistry.STACKED_BAKED_POTATO)),

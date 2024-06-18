@@ -12,7 +12,8 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlockEntity;
 import net.shadowbeast.arcanemysteries.block_entities.slot.ResultSlotMod;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
-import org.jetbrains.annotations.NotNull;;import static net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlockEntity.isFuelItem;
+import org.jetbrains.annotations.NotNull;
+import static net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlockEntity.isFuelItem;
 
 public class AlloyFurnaceMenu extends AbstractContainerMenu {
     private final AlloyFurnaceBlockEntity blockEntity;

@@ -348,6 +348,8 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.KOHLRABI_SEEDS.get());
                         pOutput.accept(ItemRegistry.PEPPER_SEEDS.get());
                         pOutput.accept(ItemRegistry.MILK_BOTTLE.get());
+                        pOutput.accept(ItemRegistry.RAW_YAK_MEAT.get());
+                        pOutput.accept(ItemRegistry.COOKED_YAK_MEAT.get());
                     }).build());
 
 }

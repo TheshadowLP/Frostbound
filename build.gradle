@@ -65,6 +65,11 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
+    repositories {
+        maven {
+            url "https://cursemaven.com"
+        }
+    }
 }
 
 dependencies {
@@ -76,6 +81,9 @@ dependencies {
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+
+    // https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer/files/5057220
+    runtimeOnly(fg.deobf("curse.maven:project-240630:5057220"))
 }
 
 tasks.named('processResources', ProcessResources).configure {

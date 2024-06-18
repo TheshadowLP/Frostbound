@@ -1,6 +1,5 @@
 package net.shadowbeast.arcanemysteries.items.staffs;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
