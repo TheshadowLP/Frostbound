@@ -1,6 +1,7 @@
 {
     "type": "arcanemysteries:alloying",
     "cookingtime": 375,
+    "experience": 0.3,
     "ingredients": [
         {
             "item": "arcanemysteries:bauxite"
@@ -10,6 +11,6 @@
         }
     ],
     "output": {
-        "item": "arcanemysteries:aluminium_ingot"
+        "item": "arcanemysteries:aluminium_ingot",
     }
 }

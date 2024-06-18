@@ -1,6 +1,7 @@
 {
     "type": "arcanemysteries:alloying",
     "cookingtime": 300,
+    "experience": 0.3,
     "ingredients": [
         {
             "item": "arcanemysteries:diamond_dust"
@@ -10,6 +11,6 @@
         }
     ],
     "output": {
-        "item": "arcanemysteries:diamond_shard"
+        "item": "arcanemysteries:diamond_shard",
     }
 }
