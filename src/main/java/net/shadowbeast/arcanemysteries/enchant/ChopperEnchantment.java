@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-
+@SuppressWarnings("deprecation")
 public class ChopperEnchantment extends Enchantment {
     protected ChopperEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
         super(pRarity, pCategory, pApplicableSlots);
