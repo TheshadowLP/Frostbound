@@ -56,20 +56,9 @@ public class ArcaneMysteries {
         EntityRegistry.ENTITIES.register(bus);
         EntityRegistry.BLOCK_ENTITIES.register(bus);
 
-        //delete
         ModBlocks.BLOCKS.register(bus);
         ModBlocks.BLOCK_ITEMS.register(bus);
-        //ModItems.register(modEventBus);
-        //CreativeTabs.register(modEventBus);
-        //EffectsRegistry.register(modEventBus);
-        //ParticlesRegistry.register(modEventBus);
-        //EntityRegistry.register(modEventBus);
-        //FluidsMod.register(modEventBus);
-        //ModSounds.register(modEventBus);
-        //FluidTypesMod.register(modEventBus);
-        //ModRecipes.register(modEventBus);
-        //ModMenuTypes.register(modEventBus);
-        //EnchantmentsRegistry.register(modEventBus);
+        // keep for future, this was a pain - wolfieboy09
         //ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((Minecraft mcInstance, Screen returnTo) -> new ConfigScreen(returnTo)));
 
         bus.addListener(this::commonSetup);
