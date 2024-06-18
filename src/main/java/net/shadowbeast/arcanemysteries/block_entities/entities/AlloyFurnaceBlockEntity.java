@@ -40,15 +40,24 @@ import static net.shadowbeast.arcanemysteries.block_entities.block.furnace.Alloy
 
 @ParametersAreNonnullByDefault
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
+    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    public final ContainerData data;
+    private int progress = 0;
+    private int maxProgress = 260;
+    private int fuel = 0;
+    private int maxFuel = 4000;
+
+    private enum FuelTypes {
+        SMALL, MEDIUM, LARGE, NONE
+    }
+
     public static class AlloyFurnaceSlot {
         public static final int FUEL_SLOT = 0;
         public static final int INPUT_SLOT_1 = 1;
         public static final int INPUT_SLOT_2 = 2;
         public static final int OUTPUT_SLOT = 3;
     }
-    private enum FuelTypes {
-        SMALL, MEDIUM, LARGE, NONE
-    }
+
     private static FuelTypes getFuelItemTypeInSlot(AlloyFurnaceBlockEntity entity) {
         int fuelSlot = AlloyFurnaceSlot.FUEL_SLOT;
         ItemStack stackSlot = entity.itemHandler.getStackInSlot(fuelSlot);
@@ -62,17 +71,14 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             return FuelTypes.NONE;
         }
     }
+
     public static boolean isFuelItem(ItemStack itemStack) { return itemStack.is(TagsMod.Items.ALLOYING_FUEL); }
+    
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) { setChanged(); }
     };
-    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-    public final ContainerData data;
-    private int progress = 0;
-    private int maxProgress = 260;
-    private int fuel = 0;
-    private int maxFuel = 4000;
+
     public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(EntityRegistry.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -102,11 +108,13 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     public @NotNull Component getDisplayName() {
         return Component.translatable("block.arcanemysteries.alloy_furnace");
     }
+
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId,  Inventory pInventory,  Player pPlayer) {
         return new AlloyFurnaceMenu(pContainerId, pInventory, this, this.data);
     }
+
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
