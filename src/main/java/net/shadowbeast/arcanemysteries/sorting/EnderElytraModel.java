@@ -10,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
 public class EnderElytraModel<T extends LivingEntity> extends AgeableListModel<T> {
@@ -30,15 +31,15 @@ public class EnderElytraModel<T extends LivingEntity> extends AgeableListModel<T
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
 
-    protected Iterable<ModelPart> headParts() {
+    protected @NotNull Iterable<ModelPart> headParts() {
         return ImmutableList.of();
     }
 
-    protected Iterable<ModelPart> bodyParts() {
+    protected @NotNull Iterable<ModelPart> bodyParts() {
         return ImmutableList.of(this.leftWing, this.rightWing);
     }
 
-    public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+    public void setupAnim(@NotNull T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
         float f = 0.2617994F;
         float f1 = -0.2617994F;
         float f2 = 0.0F;
