@@ -27,7 +27,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
     public final static int DEFAULT_COOK_TIME = 260;
-    int experience;
+    private static int experience;
     protected final int cookingTime;
     public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, int cookingTime, int experience) {
         this.id = id;
@@ -103,7 +103,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
 
             ItemStack output = buf.readItem();
             int i = buf.readVarInt();
-            return new AlloyFurnaceRecipe(id, output, inputs, i);
+            return new AlloyFurnaceRecipe(id, output, inputs, i, experience);
         }
         @Override
         public void toNetwork(FriendlyByteBuf buf, AlloyFurnaceRecipe recipe) {
