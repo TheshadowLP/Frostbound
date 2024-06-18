@@ -27,9 +27,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
     public final static int DEFAULT_COOK_TIME = 260;
-    private static int experience;
+    private final double experience;
     protected final int cookingTime;
-    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, int cookingTime, int experience) {
+    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, int cookingTime, double experience) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
@@ -100,9 +100,9 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
-
             ItemStack output = buf.readItem();
             int i = buf.readVarInt();
+            double experience = buf.readDouble();
             return new AlloyFurnaceRecipe(id, output, inputs, i, experience);
         }
         @Override
@@ -114,6 +114,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             }
             buf.writeItemStack(recipe.getResultItem(), false);
             buf.writeVarInt(recipe.cookingTime);
+            buf.writeDouble(recipe.experience);
         }
     }
 }
