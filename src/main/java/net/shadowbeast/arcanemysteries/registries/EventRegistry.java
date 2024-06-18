@@ -80,7 +80,7 @@ public class EventRegistry {
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         ItemStack iceAspect = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
-        ItemStack treeCapitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.TREECAPITATOR.get(), 1));
+        ItemStack treeCapitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.CHOPPER.get(), 1));
         if (event.getType() == VillagerProfession.LIBRARIAN) {
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),

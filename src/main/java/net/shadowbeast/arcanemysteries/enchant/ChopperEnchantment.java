@@ -18,8 +18,8 @@ import java.util.Stack;
 import net.minecraft.world.level.Level;
 
 
-public class TreeCapitatorEnchantment extends Enchantment {
-    protected TreeCapitatorEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
+public class ChopperEnchantment extends Enchantment {
+    protected ChopperEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
         super(pRarity, pCategory, pApplicableSlots);
     }
     @Override
