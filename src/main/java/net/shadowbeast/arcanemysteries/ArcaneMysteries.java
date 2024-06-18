@@ -37,6 +37,7 @@ import org.apache.logging.log4j.Logger;
 public class ArcaneMysteries {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "arcanemysteries";
+    public static float DEF_TEMP = 37.0F;
     public ArcaneMysteries() {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -76,7 +77,9 @@ public class ArcaneMysteries {
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+
         event.enqueueWork(MessagesMod::register);
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
