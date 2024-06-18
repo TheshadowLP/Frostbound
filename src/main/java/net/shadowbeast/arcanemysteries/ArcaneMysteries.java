@@ -77,6 +77,7 @@ public class ArcaneMysteries {
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.CHOPPER.get());
+            MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
 
 
             event.enqueueWork(() -> {
