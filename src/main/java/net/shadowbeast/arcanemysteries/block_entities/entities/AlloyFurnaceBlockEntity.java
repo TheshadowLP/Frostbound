@@ -46,6 +46,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int maxProgress = 260;
     private int fuel = 0;
     private int maxFuel = 4000;
+    private double experience = 0;
 
     private enum FuelTypes {
         SMALL, MEDIUM, LARGE, NONE
@@ -58,26 +59,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         public static final int OUTPUT_SLOT = 3;
     }
 
-    private static FuelTypes getFuelItemTypeInSlot(AlloyFurnaceBlockEntity entity) {
-        int fuelSlot = AlloyFurnaceSlot.FUEL_SLOT;
-        ItemStack stackSlot = entity.itemHandler.getStackInSlot(fuelSlot);
-        if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_SMALL)) {
-            return FuelTypes.SMALL;
-        } else if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_MEDIUM)) {
-            return FuelTypes.MEDIUM;
-        } else if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_LARGE)) {
-            return FuelTypes.LARGE;
-        } else {
-            return FuelTypes.NONE;
-        }
-    }
 
     public static boolean isFuelItem(ItemStack itemStack) { return itemStack.is(TagsMod.Items.ALLOYING_FUEL); }
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
-        @Override
-        protected void onContentsChanged(int slot) { setChanged(); }
-    };
 
     public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(EntityRegistry.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -117,7 +101,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     @Nonnull
     @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap,@Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             return lazyItemHandler.cast();
         }
@@ -137,19 +121,21 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
-    protected void saveAdditional( CompoundTag tag) {
+    protected void saveAdditional(CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("alloy_furnace.progress", progress);
-        tag.putInt("alloy_furnace.fuel", fuel);
+        tag.putInt("progress", progress);
+        tag.putInt("fuel", fuel);
+        tag.putDouble("experience", experience);
         super.saveAdditional(tag);
     }
 
     @Override
-    public void load( CompoundTag nbt) {
+    public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("alloy_furnace.progress");
-        fuel = nbt.getInt("alloy_furnace.fuel");
+        progress = nbt.getInt("progress");
+        fuel = nbt.getInt("fuel");
+        experience = nbt.getDouble("experience");
     }
 
     public void drops() {
@@ -197,6 +183,40 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         setChanged(pLevel, pPos, pState);
     }
 
+
+    public boolean hasFuelInSlot() { return !itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).isEmpty(); }
+    public boolean hasEnoughFuel() { return this.fuel >= 200; }
+
+    // The land of all the private functions
+
+    private static FuelTypes getFuelItemTypeInSlot(AlloyFurnaceBlockEntity entity) {
+        int fuelSlot = AlloyFurnaceSlot.FUEL_SLOT;
+        ItemStack stackSlot = entity.itemHandler.getStackInSlot(fuelSlot);
+        if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_SMALL)) {
+            return FuelTypes.SMALL;
+        } else if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_MEDIUM)) {
+            return FuelTypes.MEDIUM;
+        } else if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_LARGE)) {
+            return FuelTypes.LARGE;
+        } else {
+            return FuelTypes.NONE;
+        }
+    }
+
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
+        @Override
+        protected void onContentsChanged(int slot) { setChanged(); }
+    };
+    private boolean hasRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+        return getRecipe().isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, getRecipe().get().getResultItem())
+                && hasEnoughFuel();
+    }
+
     private @NotNull Optional<AlloyFurnaceRecipe> getRecipe() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
@@ -204,8 +224,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
         assert level != null;
-        return level.getRecipeManager()
-                .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
+        return level.getRecipeManager().getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
     }
     private void addFuelTime(int addedFuelTime, boolean isLava) {
         if(canAddFuelTime(addedFuelTime)) {
@@ -218,19 +237,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean canAddFuelTime(int addedFuelTime) { return this.maxFuel - this.fuel >= addedFuelTime; }
-    
-    public boolean hasFuelInSlot() { return !itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).isEmpty(); }
-    
-    private boolean hasRecipe() {
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
-        }
-        return getRecipe().isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, getRecipe().get().getResultItem())
-                && hasEnoughFuel();
-    }
-    
+
     private boolean hasLavaBucketInFuelSlot() {
         return this.itemHandler.getStackInSlot(AlloyFurnaceSlot.FUEL_SLOT).getItem() == Items.LAVA_BUCKET;
     }
@@ -244,8 +251,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         }
     }
     
-    public boolean hasEnoughFuel() { return this.fuel >= 200; }
-    
+
     private void craftItem() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
