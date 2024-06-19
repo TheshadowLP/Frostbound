@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-        "end": "arcanemysteries:block/green_target_top",
-        "side": "arcanemysteries:block/green_target_side"
-    }
-}
