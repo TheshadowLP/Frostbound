@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.sorting;
+package net.shadowbeast.arcanemysteries.items;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -12,8 +12,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-public class EnderElytraItem extends Item implements Equipable {
-    public EnderElytraItem(Item.Properties pProperties) {
+public class ItemEnderElytra extends Item implements Equipable {
+    public ItemEnderElytra(Item.Properties pProperties) {
         super(pProperties);
         DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
     }

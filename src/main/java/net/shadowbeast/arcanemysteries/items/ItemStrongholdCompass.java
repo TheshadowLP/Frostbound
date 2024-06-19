@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.sorting;
+package net.shadowbeast.arcanemysteries.items;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CompassItem;
@@ -10,8 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class StrongholdCompass extends CompassItem {
-    public StrongholdCompass(Properties builder) {
+public class ItemStrongholdCompass extends CompassItem {
+    public ItemStrongholdCompass(Properties builder) {
         super(builder);
     }
     @Override

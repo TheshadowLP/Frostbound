@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.sorting;
+package net.shadowbeast.arcanemysteries.client;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.AgeableListModel;

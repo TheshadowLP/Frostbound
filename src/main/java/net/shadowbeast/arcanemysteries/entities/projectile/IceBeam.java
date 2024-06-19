@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.sorting;
+package net.shadowbeast.arcanemysteries.entities.projectile;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

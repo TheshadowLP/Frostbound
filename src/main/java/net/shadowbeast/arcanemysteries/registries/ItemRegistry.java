@@ -15,7 +15,7 @@ import net.shadowbeast.arcanemysteries.items.staffs.ItemHealStaff;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemLevitationStaff;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemTeleportationStaff;
 import net.shadowbeast.arcanemysteries.items.tools.*;
-import net.shadowbeast.arcanemysteries.sorting.IceBeam;
+import net.shadowbeast.arcanemysteries.entities.projectile.IceBeam;
 
 import java.util.function.Supplier;
 
