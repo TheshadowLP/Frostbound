@@ -339,6 +339,8 @@ public class CreativeTabRegistry {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ItemRegistry.RAW_GOAT_MUTTON.get());
                         pOutput.accept(ItemRegistry.COOKED_GOAT_MUTTON.get());
+                        pOutput.accept(ItemRegistry.RAW_YAK_MEAT.get());
+                        pOutput.accept(ItemRegistry.COOKED_YAK_MEAT.get());
                         pOutput.accept(ItemRegistry.KOHLRABI.get());
                         pOutput.accept(ItemRegistry.PEPPER.get());
                         pOutput.accept(ItemRegistry.STACKED_POTATO.get());
@@ -346,7 +348,5 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.KOHLRABI_SEEDS.get());
                         pOutput.accept(ItemRegistry.PEPPER_SEEDS.get());
                         pOutput.accept(ItemRegistry.MILK_BOTTLE.get());
-                        pOutput.accept(ItemRegistry.RAW_YAK_MEAT.get());
-                        pOutput.accept(ItemRegistry.COOKED_YAK_MEAT.get());
                     }).build());
 }
