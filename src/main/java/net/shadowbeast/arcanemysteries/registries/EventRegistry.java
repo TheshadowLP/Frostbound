@@ -41,10 +41,12 @@ import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag
 import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@ParametersAreNonnullByDefault
 @Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID)
 public class EventRegistry {
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
@@ -86,7 +88,7 @@ public class EventRegistry {
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         ItemStack iceAspect = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
-        ItemStack treeCapitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.CHOPPER.get(), 1));
+        ItemStack tree_capitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.CHOPPER.get(), 1));
         if (event.getType() == VillagerProfession.LIBRARIAN) {
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
@@ -96,7 +98,7 @@ public class EventRegistry {
             if (event.getType() == VillagerProfession.LIBRARIAN) {
                 trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
                         new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
-                        treeCapitator,
+                        tree_capitator,
                         2, 8, 0.02f
                 ));
             }
@@ -117,9 +119,7 @@ public class EventRegistry {
     @SubscribeEvent
     public static void onPlayerCloned(PlayerEvent.Clone event) {
         if(event.isWasDeath()) {
-            event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(oldStore -> {
-                event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(newStore -> newStore.copyFrom(oldStore));
-            });
+            event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(oldStore -> event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(newStore -> newStore.copyFrom(oldStore)));
         }
     }
 
@@ -132,9 +132,7 @@ public class EventRegistry {
     public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
         if(!event.getLevel().isClientSide()) {
             if(event.getEntity() instanceof ServerPlayer player) {
-                player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
-                    MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
-                });
+                player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player));
             }
         }
     }
