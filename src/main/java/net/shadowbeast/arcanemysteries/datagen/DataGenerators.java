@@ -20,10 +20,8 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-<<<<<<< HEAD
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
 
-=======
         generator.addProvider(event.includeServer(), new RecipeGenerator(packOutput));
         generator.addProvider(event.includeServer(), LootTableGenerator.create(packOutput));
 
@@ -38,6 +36,5 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new PoiTypeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new WorldGenGenerator(packOutput, lookupProvider));
->>>>>>> origin/main
     }
 }
