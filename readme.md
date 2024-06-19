@@ -36,7 +36,7 @@ Optional Dependencies:
 **CrownSheep** - Texture Artist & Programmer <br>
 **Paulanerpaul** - Thinker of Ideas <br>
 **luhcartimods** - Programmer <br>
-**small_chubby** - Programmer
+**small_chubby** - Programmer <br>
 **never** - Texture Artist
 
 # Contributors
