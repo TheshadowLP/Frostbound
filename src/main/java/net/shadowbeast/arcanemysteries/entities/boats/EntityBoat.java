@@ -11,9 +11,9 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
+import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -56,7 +56,7 @@ public class EntityBoat extends Boat {
         }
     }
     public enum Type implements StringRepresentable {
-        FROZEN(Blocks.STONE, "frozen"); //TODO FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
+        FROZEN(ModBlocks.FROZEN_PLANKS.get(), "frozen");
         private final String name;
         private final Block planks;
         @SuppressWarnings("deprecation")

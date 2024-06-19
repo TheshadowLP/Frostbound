@@ -341,6 +341,8 @@ public class CreativeTabRegistry {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.MILK_BOTTLE.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.drinks"))
                     .displayItems((pParameters, pOutput) ->{
+                        pOutput.accept(ItemRegistry.RAW_GOAT_MUTTON.get());
+                        pOutput.accept(ItemRegistry.COOKED_GOAT_MUTTON.get());
                         pOutput.accept(ItemRegistry.KOHLRABI.get());
                         pOutput.accept(ItemRegistry.PEPPER.get());
                         pOutput.accept(ItemRegistry.STACKED_POTATO.get());
