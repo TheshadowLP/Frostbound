@@ -82,10 +82,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.BAUXITE.get());
                         pOutput.accept(ModBlocks.BEDROCK.get());
 
-                        pOutput.accept(ModBlocks.BLUE_TARGET.get());
-                        pOutput.accept(ModBlocks.BLACK_TARGET.get());
-                        pOutput.accept(ModBlocks.GREEN_TARGET.get());
-                        pOutput.accept(ModBlocks.YELLOW_TARGET.get());
                         pOutput.accept(ModBlocks.END_LANTERN.get());
                         //pOutput.accept(ModBlocks.END_OBSIDIAN.get()); //TODO
                         //pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get()); //TODO
@@ -331,7 +327,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.BEDROCK_HOE.get());
 
                         //pOutput.accept(ItemRegistry.END_LAVA_BUCKET.get()); //TODO
-                        //pOutput.accept(ItemRegistry.MOLTEN_SULFUR_BUCKET.get()); //TODO
+                        pOutput.accept(ItemRegistry.MOLTEN_SULFUR_BUCKET.get()); //TODO
 
                         pOutput.accept(ItemRegistry.FROZEN_BOAT.get());
                         pOutput.accept(ItemRegistry.FROZEN_CHEST_BOAT.get());
@@ -343,6 +339,8 @@ public class CreativeTabRegistry {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ItemRegistry.RAW_GOAT_MUTTON.get());
                         pOutput.accept(ItemRegistry.COOKED_GOAT_MUTTON.get());
+                        pOutput.accept(ItemRegistry.RAW_YAK_MEAT.get());
+                        pOutput.accept(ItemRegistry.COOKED_YAK_MEAT.get());
                         pOutput.accept(ItemRegistry.KOHLRABI.get());
                         pOutput.accept(ItemRegistry.PEPPER.get());
                         pOutput.accept(ItemRegistry.STACKED_POTATO.get());
@@ -350,8 +348,5 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.KOHLRABI_SEEDS.get());
                         pOutput.accept(ItemRegistry.PEPPER_SEEDS.get());
                         pOutput.accept(ItemRegistry.MILK_BOTTLE.get());
-                        pOutput.accept(ItemRegistry.RAW_YAK_MEAT.get());
-                        pOutput.accept(ItemRegistry.COOKED_YAK_MEAT.get());
                     }).build());
-
 }
