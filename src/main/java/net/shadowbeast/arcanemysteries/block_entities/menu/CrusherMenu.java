@@ -37,7 +37,7 @@ public class CrusherMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler,
                     CrusherBlockEntity.CrusherSlot.INPUT_SLOT, 80, 17));
             this.addSlot(new ResultSlotMod(handler,
-                    CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 80, 55));
+                    CrusherBlockEntity.CrusherSlot.OUTPUT_SLOT, 80, 55, data));
         });
         addDataSlots(data);
     }
