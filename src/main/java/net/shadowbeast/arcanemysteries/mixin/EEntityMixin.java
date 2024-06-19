@@ -1,7 +1,9 @@
 package net.shadowbeast.arcanemysteries.mixin;
 
 import net.minecraft.commands.CommandSource;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.Nameable;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
@@ -16,6 +18,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(Entity.class)
 public abstract class EEntityMixin extends net.minecraftforge.common.capabilities.CapabilityProvider<Entity> implements Nameable, EntityAccess, CommandSource, IForgeEntity, IRoastedEntity {
@@ -40,7 +44,47 @@ public abstract class EEntityMixin extends net.minecraftforge.common.capabilitie
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void init_inject(CallbackInfo info) {
-
+        this.entityData.define(DATA_TICKS_ROASTED, 0);
     }
+
+    @Inject(method = "saveWithoutId", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getUUID()Ljava/util/UUID;"), locals = LocalCapture.CAPTURE_FAILHARD)
+    public void saveWithoutId_inject(CompoundTag pCompound, CallbackInfoReturnable<CompoundTag> cir) {
+        int i = this.getTicksRoasted();
+        if (i > 0) {
+            pCompound.putInt("TicksRoasted", this.getTicksRoasted());
+        }
+    }
+
+    @Inject(method = "load", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;setTicksFrozen(I)V"), locals = LocalCapture.CAPTURE_FAILHARD)
+    public void load_inject(CompoundTag pCompound, CallbackInfo ci) {
+        this.setTicksRoasted(pCompound.getInt("TicksRoasted"));
+    }
+
+    @Override
+    public int getTicksRoasted() {
+        return this.entityData.get(DATA_TICKS_ROASTED);
+    }
+
+    @Override
+    public void setTicksRoasted(int pTicksFrozen) {
+        this.entityData.set(DATA_TICKS_ROASTED, pTicksFrozen);
+    }
+
+    @Override
+    public float getPercentRoasted() {
+        int i = this.getTicksRequiredToRoast();
+        return (float)Math.min(this.getTicksRoasted(), i) / (float)i;
+    }
+
+    @Override
+    public boolean isFullyRoasted() {
+        return this.getTicksRoasted() >= this.getTicksRequiredToRoast();
+    }
+
+    @Override
+    public boolean canRoast() {
+        return !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES);
+    }
+
 
 }
