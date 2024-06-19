@@ -63,6 +63,10 @@ public abstract class LivingEntityMixin extends EEntityMixin {
 
 
 
+    /**
+     * @author everyone
+     * @reason why do we need this
+     */
     @Overwrite
     public boolean canFreeze() {
         if (this.isSpectator()) {

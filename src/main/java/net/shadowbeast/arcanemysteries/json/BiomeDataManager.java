@@ -40,8 +40,7 @@ public class BiomeDataManager implements IResourceReloadListener<Map<ResourceLoc
                         BiomeJsonHolder biomeData = new BiomeJsonHolder(blockId, object);
                         drinkMap.put(blockId, biomeData);
                     }
-                } catch (Exception e) {
-                }
+                } catch (Exception ignored) {}
             }
 
             return drinkMap;
