@@ -32,6 +32,8 @@ public class ItemRegistry {
             STACKED_POTATO = registerItem("stacked_potato", () -> new ItemModFood(FoodListRegistry.STACKED_POTATO)),
             STACKED_BAKED_POTATO = registerItem("stacked_baked_potato", () -> new ItemModFood(FoodListRegistry.STACKED_BAKED_POTATO)),
             MILK_BOTTLE = registerItem("milk_bottle", ItemMilkBottle::new),
+            RAW_GOAT_MUTTON = registerItem("raw_goat_mutton", () -> new ItemModFood(FoodListRegistry.RAW_GOAT_MUTTON)),
+            COOKED_GOAT_MUTTON = registerItem("cooked_goat_mutton", () -> new ItemModFood(FoodListRegistry.COOKED_GOAT_MUTTON)),
 
             //SEEDS
             KOHLRABI_SEEDS = registerItem("kohlrabi_seeds", () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(),new Item.Properties())),
