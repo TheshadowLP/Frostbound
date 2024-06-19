@@ -74,7 +74,7 @@ public abstract class LivingEntityMixin extends EEntityMixin {
         } else {
             if ((LivingEntity)(Object)this instanceof Player) {
                 TemperatureData data = EStats.getTemperatureStats((LivingEntity)(Object)this);
-                return data.getTemperatureLevel() < TUtil.firstCold((Player)(Object)this) && super.canFreeze();
+                return data.getTemperatureLevel() < TUtil.firstCold((Player) (Object) this) && super.canFreeze();
             } else {
                 boolean flag = !this.getItemBySlot(EquipmentSlot.HEAD).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.CHEST).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.LEGS).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.FEET).is(ItemTags.FREEZE_IMMUNE_WEARABLES);
                 return flag && super.canFreeze();

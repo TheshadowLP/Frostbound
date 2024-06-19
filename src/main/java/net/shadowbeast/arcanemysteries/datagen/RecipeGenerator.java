@@ -9,9 +9,11 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.function.Consumer;
 
+@ParametersAreNonnullByDefault
 public class RecipeGenerator extends RecipeProvider implements IConditionBuilder {
     //private static final List<ItemLike>
 
