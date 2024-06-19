@@ -10,7 +10,7 @@
 Arcane Mysteries - Secrets of the World is **ONLY** found on
 [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/arcanemysteries)
 or our **OFFICIAL** [GitHub](https://github.com/TheshadowLP/Forge-Shadow-1.20.1).
-Anywhere else is not official, and not us. Only download using the above links. <br>
+Anywhere else is not official, and not us. Refrain from downloading from other sources than the above links. <br>
 **Arcane Mysteries - Secrets of the World Distribution does allow 3rd parties.**
 
 # About the Mod
@@ -28,15 +28,16 @@ Optional Dependencies:
 # Developers
 **Shadowbeast_lp** - Project Owner <br>
 **Wolfieboy09** - Programmer <br>
-**Okamiz** - Texture Maker <br>
+**Okamiz** - Texture Artist <br>
 **mckeith_1776** - Programmer <br>
 **siepert** - Programmer <br>
-**Tejty** - Texture Maker <br>
-**Cebularz** - Texture Maker & Programmer <br>
-**CrownSheep** - Texture Maker & Programmer <br>
+**Tejty** - Texture Artist <br>
+**Cebularz** - Texture Artist & Programmer <br>
+**CrownSheep** - Texture Artist & Programmer <br>
 **Paulanerpaul** - Thinker of Ideas <br>
-**luhcartimods** - Programmer
-
+**luhcartimods** - Programmer <br>
+**small_chubby** - Programmer
+**never** - Texture Artist
 
 # Contributors
 **TheUnknownDad** - Created the Alloy Furnace Texture & Model
