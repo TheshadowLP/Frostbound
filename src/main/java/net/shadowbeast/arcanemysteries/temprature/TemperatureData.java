@@ -3,22 +3,20 @@ package net.shadowbeast.arcanemysteries.temprature;
 import com.google.common.collect.Maps;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
-import net.shadowbeast.arcanemysteries.api.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
+import net.shadowbeast.arcanemysteries.api.TemperatureModifierSetEvent;
 import net.shadowbeast.arcanemysteries.registries.EffectsRegistry;
 import net.shadowbeast.arcanemysteries.temprature.util.*;
 
-import java.util.Arrays;
 import java.util.Map;
 
 public class TemperatureData extends ClientTick {

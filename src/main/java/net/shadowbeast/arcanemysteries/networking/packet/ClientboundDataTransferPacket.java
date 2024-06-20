@@ -8,7 +8,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.json.DataMaps;
-import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.JsonHolder;
 

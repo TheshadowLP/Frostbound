@@ -1,12 +1,12 @@
 package net.shadowbeast.arcanemysteries.util;
 /* Code Provided By StreoWalker */
 
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 public class BiomeJsonHolder implements JsonHolder {
     private static final Marker BLOCK_TEMPERATURE_DATA = MarkerManager.getMarker("BLOCK_TEMPERATURE_DATA");

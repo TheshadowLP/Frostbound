@@ -8,7 +8,10 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
-import net.shadowbeast.arcanemysteries.util.*;
+import net.shadowbeast.arcanemysteries.util.GuiRenderer;
+import net.shadowbeast.arcanemysteries.util.OverlayCollector;
+import net.shadowbeast.arcanemysteries.util.ScreenHelper;
+import net.shadowbeast.arcanemysteries.util.SetupClient;
 
 public class ArcaneMysteriesClient extends SetupClient {
     @Override

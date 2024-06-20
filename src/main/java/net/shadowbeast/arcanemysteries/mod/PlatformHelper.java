@@ -1,14 +1,13 @@
 package net.shadowbeast.arcanemysteries.mod;
 
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.ChunkEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.shadowbeast.arcanemysteries.util.insert.Inserts;
-import net.minecraftforge.event.entity.living.LivingEvent;
 public class PlatformHelper
 {
     public static boolean isClientInstance() {

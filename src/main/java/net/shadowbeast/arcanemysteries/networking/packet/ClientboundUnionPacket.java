@@ -1,10 +1,5 @@
 package net.shadowbeast.arcanemysteries.networking.packet;
 
-import java.util.function.Supplier;
-import java.util.concurrent.Callable;
-
-import org.apache.commons.lang3.mutable.MutableBoolean;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.FriendlyByteBuf;
@@ -16,6 +11,10 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.simple.SimpleChannel;
+import org.apache.commons.lang3.mutable.MutableBoolean;
+
+import java.util.concurrent.Callable;
+import java.util.function.Supplier;
 
 public abstract class ClientboundUnionPacket extends BasePacket {
 

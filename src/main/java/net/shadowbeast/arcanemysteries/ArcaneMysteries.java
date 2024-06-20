@@ -5,8 +5,6 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -24,10 +22,13 @@ import net.shadowbeast.arcanemysteries.block_entities.screen.AlloyFurnaceScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.CrusherScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.WinterFurnaceScreen;
 import net.shadowbeast.arcanemysteries.client.BoatModRenderer;
+import net.shadowbeast.arcanemysteries.config.Config;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
 import net.shadowbeast.arcanemysteries.events.ArcaneEvents;
+import net.shadowbeast.arcanemysteries.fluid.FluidTypesMod;
+import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
 import net.shadowbeast.arcanemysteries.interfaces.ReloadListener;
 import net.shadowbeast.arcanemysteries.interfaces.ReloadListeners;
 import net.shadowbeast.arcanemysteries.items.ItemModProperties;
@@ -37,11 +38,8 @@ import net.shadowbeast.arcanemysteries.json.EntityTemperatureDataManager;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
 import net.shadowbeast.arcanemysteries.mod.MinecraftMod;
 import net.shadowbeast.arcanemysteries.mod.PlatformHelper;
-import net.shadowbeast.arcanemysteries.registries.*;
-import net.shadowbeast.arcanemysteries.config.Config;
-import net.shadowbeast.arcanemysteries.fluid.FluidTypesMod;
-import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
+import net.shadowbeast.arcanemysteries.registries.*;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
 import net.shadowbeast.arcanemysteries.util.ServerSegment;
@@ -52,8 +50,6 @@ import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import terrablender.api.SurfaceRuleManager;
-
-import static net.shadowbeast.arcanemysteries.events.ArcaneEvents.addReload;
 
 @Mod(ArcaneMysteries.MOD_ID)
 public class ArcaneMysteries extends MinecraftMod {

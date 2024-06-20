@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.interfaces.util.IRealisticEntity;
-import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 import org.spongepowered.asm.mixin.Mixin;
 
 

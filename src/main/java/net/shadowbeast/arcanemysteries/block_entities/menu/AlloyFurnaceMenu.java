@@ -13,6 +13,7 @@ import net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlock
 import net.shadowbeast.arcanemysteries.block_entities.slot.ResultSlotMod;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 import org.jetbrains.annotations.NotNull;
+
 import static net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlockEntity.isFuelItem;
 
 public class AlloyFurnaceMenu extends AbstractContainerMenu {
