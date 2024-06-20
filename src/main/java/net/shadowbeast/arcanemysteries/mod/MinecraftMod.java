@@ -2,6 +2,7 @@ package net.shadowbeast.arcanemysteries.mod;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.simple.SimpleChannel;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
 import net.shadowbeast.arcanemysteries.util.ServerSegment;
 import net.shadowbeast.arcanemysteries.util.SetupClient;
@@ -12,7 +13,7 @@ import java.util.function.Supplier;
 
 public class MinecraftMod implements ForgeMod
 {
-    private String modid;
+    private String mod_id;
 
     private LoadType loadType;
 
@@ -34,7 +35,7 @@ public class MinecraftMod implements ForgeMod
             }
             return LoadType.CLIENT;
         }
-        if (clientSegment != null && serverSegment != null) {
+        if (clientSegment != null) {
             this.serverSegment = serverSegment.get();
             this.serverSegment.setOwner(this);
             if (PlatformHelper.isClientInstance()) {
@@ -43,15 +44,15 @@ public class MinecraftMod implements ForgeMod
             }
             return LoadType.BOTH;
         }
-        System.err.println(this.modid + " does not have any segments attached. This will cause errors");
+        ArcaneMysteries.LOGGER.error("{} does not have any segments attached. This will cause errors!", this.mod_id);
         return null;
     }
 
-    public MinecraftMod(String modid, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment, boolean shouldLoadMod) {
-        this.modid = modid;
+    public MinecraftMod(String mod_id, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment, boolean shouldLoadMod) {
+        this.mod_id = mod_id;
         this.loadType = getEnv(clientSegment, serverSegment);
         if (shouldLoadMod ) {
-
+            //FIXME no empty if statements
             if (PlatformHelper.isClientInstance()){}
         }
     }
@@ -66,20 +67,20 @@ public class MinecraftMod implements ForgeMod
         return this.loadType;
     }
 
-    public String getModid() {
-        return this.modid;
+    public String getMod_id() {
+        return this.mod_id;
     }
 
     public Logger getLogger() {
-        return LogManager.getLogger(this.modid);
+        return LogManager.getLogger(this.mod_id);
     }
 
     public ResourceLocation location(String name) {
-        return new ResourceLocation(this.modid, name);
+        return new ResourceLocation(this.mod_id, name);
     }
 
     public String locationString(String name) {
-        return this.modid + ":" + this.modid;
+        return this.mod_id + ":" + this.mod_id;
     }
 
     public SetupClient getClientSegment() {

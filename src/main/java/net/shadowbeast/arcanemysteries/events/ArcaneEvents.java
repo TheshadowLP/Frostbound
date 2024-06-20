@@ -24,6 +24,9 @@ import net.shadowbeast.arcanemysteries.temprature.util.TemperatureModifier;
 import net.shadowbeast.arcanemysteries.temprature.util.TemperatureQuery;
 import net.shadowbeast.arcanemysteries.util.MathHelper;
 import org.apache.commons.lang3.mutable.MutableInt;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 
 @Mod.EventBusSubscriber
@@ -41,25 +44,24 @@ public class ArcaneEvents
             if (!DataMaps.Server.syncedClients.containsKey(player.getUUID()))
                 DataMaps.Server.syncedClients.put(player.getUUID(), false);
             if (!DataMaps.Server.syncedClients.get(player.getUUID())) {
-                System.out.println("Syncing All Data To Client ("+player.getDisplayName().getString()+")");
+                ArcaneMysteries.LOGGER.info("Syncing all data to client ({})", player.getDisplayName().getString());
                 MutableInt a = new MutableInt(0);
 
                 MutableInt f = new MutableInt(0);
-
-                System.out.println("Syncing Biome Data");
+                ArcaneMysteries.LOGGER.info("Syncing biome data");
                 MutableInt i = new MutableInt(0);
                 DataMaps.Server.biome.forEach((key, value) -> {
                     new ClientboundDataTransferPacket(key, value, i.getValue() == 0).send(player);
                     i.increment();;
                 });
-                System.out.println("Done syncing "+i+" biomes");
+                ArcaneMysteries.LOGGER.info("Done syncing {} biomes", i);
                 DataMaps.Server.syncedClients.put(player.getUUID(), true);
             }
         }
     }
 
     public static void updateEnvTemperature(LivingEntity living) {
-        if (living != null && living instanceof ServerPlayer player) {
+        if (living instanceof ServerPlayer player) {
             if (player.isAlive()) {
                 for (ResourceLocation queryId : TemperatureQuery.queries.keySet()) {
                     double queryValue = TemperatureQuery.queries.get(queryId).getA().run(player, EStats.getTemperatureStats(player).getTemperatureLevel(), player.level(), player.blockPosition(), true);
@@ -68,11 +70,10 @@ public class ArcaneEvents
             }
         }
     }
-    @SuppressWarnings("deprecation")
     public static double getExactTemperature(Level world, BlockPos pos, TempType type) {
         float skyLight = world.getChunkSource().getLightEngine().getLayerListener(LightLayer.SKY).getLightValue(pos);
         float gameTime = world.getDayTime() % 24000L;
-        gameTime = gameTime/(200/3);
+        gameTime = gameTime/((float) 200 /3);
         gameTime = (float) Math.sin(Math.toRadians(gameTime));
 
         switch (type) {
@@ -85,9 +86,8 @@ public class ArcaneEvents
                 else return -1.0F * sunIntensity;
 
             case BIOME:
-                float biomeTemp = (TUtil.getTemperature(world.getBiome(pos), pos)*2)-2;
 
-                return biomeTemp;
+                return (TUtil.getTemperature(world.getBiome(pos), pos)*2)-2;
             case SHADE:
                 return ((skyLight / 7.5F) - 1);
 
@@ -119,7 +119,7 @@ public class ArcaneEvents
         }
     }
 
-    public static double getBlendedTemperature(Level world, BlockPos mainPos, BlockPos blendPos, TempType type) {
+    public static double getBlendedTemperature(Level world, @NotNull BlockPos mainPos, BlockPos blendPos, TempType type) {
         float distance = (float) Math.sqrt(mainPos.distSqr(blendPos));// 2 - 10 - 0
         if (distance <= 5.0D) {
             float blendRatio0 = distance / 5.0F;   // 0.2 - 1.0 - 0.0
@@ -138,8 +138,8 @@ public class ArcaneEvents
         for (int x = -rangeInBlocks; x <= rangeInBlocks; x++) {
             for (int y = -rangeInBlocks; y <= rangeInBlocks; y++) {
                 for (int z = -rangeInBlocks; z <= rangeInBlocks; z++) {
-                    if (mode == TempMode.BLEND)temp+=getBlendedTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), pos, type);
-                    else if (mode == TempMode.NORMAL)temp+=getExactTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), type);
+                    if (mode == TempMode.BLEND)temp+= (float) getBlendedTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), pos, type);
+                    else if (mode == TempMode.NORMAL)temp+= (float) getExactTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), type);
                     tempAmount++;
                 }
             }
@@ -161,7 +161,7 @@ public class ArcaneEvents
     }
 
     public static void addReload(LevelAccessor lvl) {
-        System.out.println("Start Resistering Temperature Queries");
+        ArcaneMysteries.LOGGER.info("Started registering temperature queries");
         for (TempType type : TempType.values()) {
             TemperatureQuery.registerQuery("arcanemysteries:"+type.getName(), TemperatureModifier.ContributingFactor.ENVIRONMENTAL, (player, temp, level, pos, applyTemp)-> {
                 double temperature;
@@ -181,17 +181,19 @@ public class ArcaneEvents
             return snow;
         });
         TemperatureQuery.registerQuery("arcanemysteries:chilled_effect", TemperatureModifier.ContributingFactor.INTERNAL, (player, temp, level, pos, applyTemp)->{
+            assert player != null;
             if (player.hasEffect(EffectsRegistry.CHILLED.get()))
-                return -(0.05F * (float)(player.getEffect(EffectsRegistry.CHILLED.get()).getAmplifier() + 1));
+                return -(0.05F * (float)(Objects.requireNonNull(player.getEffect(EffectsRegistry.CHILLED.get())).getAmplifier() + 1));
             else
                 return 0;
         });
         TemperatureQuery.registerQuery("arcanemysteries:heated_effect", TemperatureModifier.ContributingFactor.INTERNAL, (player, temp, level, pos, applyTemp)->{
+            assert player != null;
             if (player.hasEffect(EffectsRegistry.HEATED.get()))
-                return +(0.05F * (float)(player.getEffect(EffectsRegistry.HEATED.get()).getAmplifier() + 1));
+                return +(0.05F * (float)(Objects.requireNonNull(player.getEffect(EffectsRegistry.HEATED.get())).getAmplifier() + 1));
             else
                 return 0;
         });
-        System.out.println("Done Resistering Temperature Queries");
+        ArcaneMysteries.LOGGER.info("Completed registering temperature queries");
     }
 }

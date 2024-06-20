@@ -13,6 +13,7 @@ import net.shadowbeast.arcanemysteries.util.JsonHolder;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
     private ResourceLocation stat;
@@ -30,7 +31,7 @@ public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
         super(byteBuf, ArcaneMysteries.getInstance().channel);
         this.stat = byteBuf.readResourceLocation();
         String cl = byteBuf.readUtf();
-        this.settings = JsonHolder.deserialize(byteBuf.readNbt(), JsonHolder.HOLD.get(cl));
+        this.settings = JsonHolder.deserialize(Objects.requireNonNull(byteBuf.readNbt()), Objects.requireNonNull(JsonHolder.HOLD.get(cl)));
         this.clear = byteBuf.readBoolean();
     }
 
@@ -47,11 +48,10 @@ public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
     public boolean handleOnClient(LocalPlayer sender) {
         if (settings instanceof BiomeJsonHolder) {
             if (this.clear) {
-                System.out.println("Clearing Client Side Biome Data");
+                ArcaneMysteries.LOGGER.info("Clearing client side biome data");
                 DataMaps.Client.biome = ImmutableMap.of();
             }
-            Map<ResourceLocation,BiomeJsonHolder> statMap = new HashMap<>();
-            statMap.putAll(DataMaps.Client.biome);
+            Map<ResourceLocation, BiomeJsonHolder> statMap = new HashMap<>(DataMaps.Client.biome);
             statMap.put(stat, (BiomeJsonHolder) settings);
             DataMaps.Client.biome = ImmutableMap.copyOf(statMap);
         }
