@@ -9,7 +9,7 @@ public interface ForgeMod {
     }
 
 
-    String getModid();
+    String getMod_id();
 
 }
 

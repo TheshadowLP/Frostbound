@@ -60,7 +60,6 @@ public class ArcaneMysteries extends MinecraftMod {
     public static EntityTemperatureDataManager entityManager = new EntityTemperatureDataManager();
     public static BiomeDataManager biomeManager = new BiomeDataManager();
     private final ReloadListeners reloadListeners = new ReloadListeners(){
-
         @Override
         public void listenTo(ReloadListener paramReloadListener) {
             paramReloadListener.id();
