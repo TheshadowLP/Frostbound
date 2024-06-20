@@ -8,6 +8,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.networking.packet.AddLevitationTagC2SPacket;
+import net.shadowbeast.arcanemysteries.networking.packet.ClientboundDataTransferPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundStatsPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
 
@@ -43,10 +44,13 @@ public class MessagesMod {
                 .encoder(AddLevitationTagC2SPacket::toBytes)
                 .consumerMainThread(AddLevitationTagC2SPacket::handle)
                 .add();
+
+
     }
     public static void registerPackets() {
         int id = 0;
         INSTANCE.registerMessage(id++, ClientboundStatsPacket.class, ClientboundStatsPacket::encode, ClientboundStatsPacket::new, ClientboundStatsPacket::message);
+        INSTANCE.registerMessage(id++, ClientboundDataTransferPacket.class, ClientboundDataTransferPacket::encode, ClientboundDataTransferPacket::new, ClientboundDataTransferPacket::message);
     }
     public static <MSG> void sendToServer(MSG message) {
         INSTANCE.sendToServer(message);

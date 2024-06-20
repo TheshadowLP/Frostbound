@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -19,6 +20,8 @@ import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.enums.TempMode;
 import net.shadowbeast.arcanemysteries.json.DataMaps;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
+import net.shadowbeast.arcanemysteries.networking.packet.ClientboundDataTransferPacket;
+import net.shadowbeast.arcanemysteries.networking.packet.ClientboundStatsPacket;
 import net.shadowbeast.arcanemysteries.registries.EffectsRegistry;
 import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
@@ -26,11 +29,40 @@ import net.shadowbeast.arcanemysteries.temprature.util.TUtil;
 import net.shadowbeast.arcanemysteries.temprature.util.TemperatureModifier;
 import net.shadowbeast.arcanemysteries.temprature.util.TemperatureQuery;
 import net.shadowbeast.arcanemysteries.util.MathHelper;
+import org.apache.commons.lang3.mutable.MutableInt;
 
 
 @Mod.EventBusSubscriber
 public class ArcaneEvents
 {
+
+    public static void desyncClient(Player player) {
+        if (!player.level().isClientSide && DataMaps.Server.syncedClients.containsKey(player.getUUID()) ) {
+            DataMaps.Server.syncedClients.put(player.getUUID(), false);
+        }
+    }
+    public static void sendToClient(LivingEntity living) {
+        if (living != null && !living.level().isClientSide && living instanceof ServerPlayer player) {
+            new ClientboundStatsPacket(player).send(player);
+            if (!DataMaps.Server.syncedClients.containsKey(player.getUUID()))
+                DataMaps.Server.syncedClients.put(player.getUUID(), false);
+            if (!DataMaps.Server.syncedClients.get(player.getUUID())) {
+                System.out.println("Syncing All Data To Client ("+player.getDisplayName().getString()+")");
+                MutableInt a = new MutableInt(0);
+
+                MutableInt f = new MutableInt(0);
+
+                System.out.println("Syncing Biome Data");
+                MutableInt i = new MutableInt(0);
+                DataMaps.Server.biome.forEach((key, value) -> {
+                    new ClientboundDataTransferPacket(key, value, i.getValue() == 0).send(player);
+                    i.increment();;
+                });
+                System.out.println("Done syncing "+i+" biomes");
+                DataMaps.Server.syncedClients.put(player.getUUID(), true);
+            }
+        }
+    }
 
     public static void updateEnvTemperature(LivingEntity living) {
         if (living != null && living instanceof ServerPlayer player) {

@@ -2,6 +2,7 @@ package net.shadowbeast.arcanemysteries.mod;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.simple.SimpleChannel;
+import net.shadowbeast.arcanemysteries.util.InsertCollector;
 import net.shadowbeast.arcanemysteries.util.ServerSegment;
 import net.shadowbeast.arcanemysteries.util.SetupClient;
 import org.apache.logging.log4j.LogManager;
@@ -54,7 +55,7 @@ public class MinecraftMod implements ForgeMod
             if (PlatformHelper.isClientInstance()){}
         }
     }
-
+    public void registerInserts(InsertCollector collector) {}
 
 
     public MinecraftMod(String modid, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment) {

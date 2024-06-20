@@ -36,14 +36,17 @@ import net.shadowbeast.arcanemysteries.json.DataMaps;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureDataManager;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
 import net.shadowbeast.arcanemysteries.mod.MinecraftMod;
+import net.shadowbeast.arcanemysteries.mod.PlatformHelper;
 import net.shadowbeast.arcanemysteries.registries.*;
 import net.shadowbeast.arcanemysteries.config.Config;
 import net.shadowbeast.arcanemysteries.fluid.FluidTypesMod;
 import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
+import net.shadowbeast.arcanemysteries.util.InsertCollector;
 import net.shadowbeast.arcanemysteries.util.ServerSegment;
 import net.shadowbeast.arcanemysteries.util.WoodTypesMod;
+import net.shadowbeast.arcanemysteries.util.insert.Inserts;
 import net.shadowbeast.arcanemysteries.world.biome.ModSurfaceRules;
 import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
 import org.apache.logging.log4j.LogManager;
@@ -102,17 +105,15 @@ public class ArcaneMysteries extends MinecraftMod {
         reloadListeners.listenTo(entityManager);
         reloadListeners.listenTo(biomeManager);
         event.enqueueWork(MessagesMod::register);
+        MessagesMod.registerPackets();
+        PlatformHelper.handleEvents();
         event.enqueueWork(()->{
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
     }
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        for (ServerLevel level : event.getServer().getAllLevels()) {
-            if (level.dimension() == Level.OVERWORLD || level.dimension() == Level.NETHER || level.dimension() == Level.END) {
-                addReload(level);
-            }
-        }
+
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -141,6 +142,15 @@ public class ArcaneMysteries extends MinecraftMod {
         }
 
     }
+
+    @Override
+    public void registerInserts(InsertCollector collector) {
+        collector.addInsert(Inserts.LEVEL_LOAD,ArcaneEvents::addReload);
+        collector.addInsert(Inserts.LIVING_TICK,ArcaneEvents::sendToClient);
+        collector.addInsert(Inserts.LOGGED_OUT, ArcaneEvents::desyncClient);
+        collector.addInsert(Inserts.LIVING_TICK, ArcaneEvents::updateEnvTemperature);
+    }
+
     public static void registerEntityTemperatures(ResourceLocation location, EntityTemperatureJsonHolder drinkData) {
         DataMaps.Server.entityTemperature.put(location, drinkData);
     }
