@@ -26,33 +26,31 @@ import net.shadowbeast.arcanemysteries.util.MathHelper;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
 
 @Mod.EventBusSubscriber
-public class ArcaneEvents
-{
-
+@ParametersAreNonnullByDefault
+public class ArcaneEvents {
     public static void desyncClient(Player player) {
         if (!player.level().isClientSide && DataMaps.Server.syncedClients.containsKey(player.getUUID()) ) {
             DataMaps.Server.syncedClients.put(player.getUUID(), false);
         }
     }
     public static void sendToClient(LivingEntity living) {
-        if (living != null && !living.level().isClientSide && living instanceof ServerPlayer player) {
+        if (!living.level().isClientSide && living instanceof ServerPlayer player) {
             new ClientboundStatsPacket(player).send(player);
             if (!DataMaps.Server.syncedClients.containsKey(player.getUUID()))
                 DataMaps.Server.syncedClients.put(player.getUUID(), false);
             if (!DataMaps.Server.syncedClients.get(player.getUUID())) {
                 ArcaneMysteries.LOGGER.info("Syncing all data to client ({})", player.getDisplayName().getString());
-                MutableInt a = new MutableInt(0);
 
-                MutableInt f = new MutableInt(0);
                 ArcaneMysteries.LOGGER.info("Syncing biome data");
                 MutableInt i = new MutableInt(0);
                 DataMaps.Server.biome.forEach((key, value) -> {
                     new ClientboundDataTransferPacket(key, value, i.getValue() == 0).send(player);
-                    i.increment();;
+                    i.increment(); // doing i++ does a funny wierd error
                 });
                 ArcaneMysteries.LOGGER.info("Done syncing {} biomes", i);
                 DataMaps.Server.syncedClients.put(player.getUUID(), true);
@@ -70,7 +68,7 @@ public class ArcaneEvents
             }
         }
     }
-    public static double getExactTemperature(Level world, BlockPos pos, TempType type) {
+    public static double getExactTemperature(@NotNull Level world, BlockPos pos, TempType type) {
         float skyLight = world.getChunkSource().getLightEngine().getLayerListener(LightLayer.SKY).getLightValue(pos);
         float gameTime = world.getDayTime() % 24000L;
         gameTime = gameTime/((float) 200 /3);
@@ -99,10 +97,10 @@ public class ArcaneEvents
     private enum TempType {
         BIOME("biome", 7, false), BLOCK("block", 9, true), ENTITY("entity", 9, true), SHADE("shade", 200, true), SUN("sun", 200, true);
 
-        String name;
-        double reductionAmount;
-        boolean usingExact;
-        private TempType(String name, double reductionAmountIn, boolean usingExactIn) {
+        final String name;
+        final double reductionAmount;
+        final boolean usingExact;
+        TempType(String name, double reductionAmountIn, boolean usingExactIn) {
             this.reductionAmount = reductionAmountIn;
             this.usingExact = usingExactIn;
             this.name = name;
@@ -138,15 +136,15 @@ public class ArcaneEvents
         for (int x = -rangeInBlocks; x <= rangeInBlocks; x++) {
             for (int y = -rangeInBlocks; y <= rangeInBlocks; y++) {
                 for (int z = -rangeInBlocks; z <= rangeInBlocks; z++) {
-                    if (mode == TempMode.BLEND)temp+= (float) getBlendedTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), pos, type);
-                    else if (mode == TempMode.NORMAL)temp+= (float) getExactTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), type);
+                    if (mode == TempMode.BLEND) temp += (float) getBlendedTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), pos, type);
+                    else if (mode == TempMode.NORMAL) temp += (float) getExactTemperature(world, new BlockPos(pos.getX()+x, pos.getY()+y, pos.getZ()+z), type);
                     tempAmount++;
                 }
             }
         }
         return temp/((float)tempAmount);
     }
-    @SuppressWarnings("deprecation")
+
     public static boolean isSnowingAt(Level world, BlockPos position) {
         if (!world.isRaining()) {
             return false;
