@@ -1,6 +1,7 @@
 package net.shadowbeast.arcanemysteries.registries;
 
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -83,7 +84,6 @@ public class ItemRegistry {
             PLATINUM_SAW_BLADE = registerItem("platinum_saw_blade", () -> new ItemSawBlade(43)), //Divide max by 9
             TITANIUM_SAW_BLADE = registerItem("titanium_saw_blade", () -> new ItemSawBlade(36)), //Divide max by 9
             DIAMOND_SAW_BLADE = registerItem("diamond_saw_blade", () -> new ItemSawBlade(57)), //Divide max by 9
-            STRONGHOLD_COMPASS = registerItem("stronghold_compass",() -> new Item(new Item.Properties().stacksTo(1))),
 
             //DUSTS
             COPPER_DUST = registerItem("copper_dust"),
@@ -254,6 +254,9 @@ public class ItemRegistry {
             MOLTEN_SULFUR_BUCKET = registerItem("molten_sulfur_bucket"),  //TODO
             END_LAVA_BUCKET = registerItem("end_lava_bucket", () -> new BucketItem(FluidsMod.END_LAVA_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
             ICE_BEAM = registerItem("ice_beam", () -> new IceBeam(new Item.Properties())),
+                STRONGHOLD_COMPASS = registerItem("stronghold_compass",
+                        ()-> new ItemStrongholdCompass(new Item.Properties().stacksTo(1))),
+
 
             //EGGS
             DUNGEON_ICE_SPAWN_EGG = registerItem("dungeon_ice_spawn_egg", () -> new ForgeSpawnEggItem(EntityRegistry.DUNGEON_ICE, 0x34dbeb, 0xFFFFFF, new Item.Properties())),

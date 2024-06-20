@@ -5,9 +5,12 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +27,7 @@ import net.shadowbeast.arcanemysteries.client.BoatModRenderer;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
+import net.shadowbeast.arcanemysteries.events.ArcaneEvents;
 import net.shadowbeast.arcanemysteries.interfaces.ReloadListener;
 import net.shadowbeast.arcanemysteries.interfaces.ReloadListeners;
 import net.shadowbeast.arcanemysteries.items.ItemModProperties;
@@ -31,12 +35,14 @@ import net.shadowbeast.arcanemysteries.json.BiomeDataManager;
 import net.shadowbeast.arcanemysteries.json.DataMaps;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureDataManager;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
+import net.shadowbeast.arcanemysteries.mod.MinecraftMod;
 import net.shadowbeast.arcanemysteries.registries.*;
 import net.shadowbeast.arcanemysteries.config.Config;
 import net.shadowbeast.arcanemysteries.fluid.FluidTypesMod;
 import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
+import net.shadowbeast.arcanemysteries.util.ServerSegment;
 import net.shadowbeast.arcanemysteries.util.WoodTypesMod;
 import net.shadowbeast.arcanemysteries.world.biome.ModSurfaceRules;
 import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
@@ -44,8 +50,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import terrablender.api.SurfaceRuleManager;
 
+import static net.shadowbeast.arcanemysteries.events.ArcaneEvents.addReload;
+
 @Mod(ArcaneMysteries.MOD_ID)
-public class ArcaneMysteries {
+public class ArcaneMysteries extends MinecraftMod {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "arcanemysteries";
     public static float DEF_TEMP = 37.0F;
@@ -60,6 +68,7 @@ public class ArcaneMysteries {
         }
     };
     public ArcaneMysteries() {
+        super("arcanemysteries", ArcaneMysteriesClient::new, ServerSegment::new);
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
         //BlockRegistry.BLOCKS.register(bus);
@@ -89,12 +98,21 @@ public class ArcaneMysteries {
     }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+
         reloadListeners.listenTo(entityManager);
         reloadListeners.listenTo(biomeManager);
         event.enqueueWork(MessagesMod::register);
         event.enqueueWork(()->{
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
+    }
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+        for (ServerLevel level : event.getServer().getAllLevels()) {
+            if (level.dimension() == Level.OVERWORLD || level.dimension() == Level.NETHER || level.dimension() == Level.END) {
+                addReload(level);
+            }
+        }
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -107,7 +125,6 @@ public class ArcaneMysteries {
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
-
 
             event.enqueueWork(() -> {
             });

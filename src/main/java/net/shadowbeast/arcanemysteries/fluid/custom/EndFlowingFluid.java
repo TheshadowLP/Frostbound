@@ -27,7 +27,10 @@ public abstract class EndFlowingFluid extends ForgeFlowingFluid {
             BlockPos adjacentPos = pos.relative(direction);
             FluidState adjacentFluidState = world.getFluidState(adjacentPos);
             if (adjacentFluidState.isSource() && adjacentFluidState.getType() == Fluids.WATER) {
-                world.setBlockAndUpdate(pos, ModBlocks.END_OBSIDIAN.get().defaultBlockState());
+                if (world.getBlockState(pos).getBlock() != ModBlocks.END_OBSIDIAN.get()) {
+                    world.setBlockAndUpdate(pos, ModBlocks.END_OBSIDIAN.get().defaultBlockState());
+                }
+                break;
             }
         }
     }

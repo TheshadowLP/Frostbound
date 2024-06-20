@@ -1,7 +1,10 @@
 package net.shadowbeast.arcanemysteries.temprature;
 
+import com.google.common.collect.Maps;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.shadowbeast.arcanemysteries.api.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -10,13 +13,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.MinecraftForge;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.registries.EffectsRegistry;
-import net.shadowbeast.arcanemysteries.temprature.util.ClientTick;
-import net.shadowbeast.arcanemysteries.temprature.util.EStats;
-import net.shadowbeast.arcanemysteries.temprature.util.TUtil;
+import net.shadowbeast.arcanemysteries.temprature.util.*;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class TemperatureData extends ClientTick {
 
@@ -25,6 +28,8 @@ public class TemperatureData extends ClientTick {
     private int temperatureTimer;
     private double targetTemperature = 0;
     private int hypTimer = 0;
+    private Map<ResourceLocation, TemperatureModifier> temperatureModifiers = Maps.newHashMap();
+    private Map<TemperatureModifier.ContributingFactor,Double> factors = Maps.newHashMap();
 
     public TemperatureData()
     {
@@ -148,6 +153,39 @@ public class TemperatureData extends ClientTick {
         }
     }
 
+    public void addModifier(TemperatureModifier modifier) {
+        if (!temperatureModifiers.containsKey(modifier.getId())) {
+            temperatureModifiers.put(modifier.getId(), modifier);
+        }
+    }
+
+    public TemperatureModifier getOrCreateModifier(ResourceLocation location) {
+        if (!temperatureModifiers.containsKey(location)) {
+            addModifier(new TemperatureModifier(location, 0));
+        }
+        return temperatureModifiers.get(location);
+    }
+    public static void setTemperatureModifier(LivingEntity entity, String id, double value, TemperatureModifier.ContributingFactor factor) {
+        setTemperatureModifier(entity, new ResourceLocation(id), value, factor);
+    }
+
+    public static void setTemperatureModifier(LivingEntity entity, ResourceLocation id, double value, TemperatureModifier.ContributingFactor factor) {
+        TemperatureData temp = EStats.getTemperatureStats(entity);
+        TemperatureModifier mod = getTemperatureModifer(entity, new TemperatureModifier(id, value, factor));
+        temp.getOrCreateModifier(id).setMod(mod.getMod()).setFactor(mod.getFactor());
+        temp.save(entity);;
+    }
+
+    public static TemperatureModifier getTemperatureModifer(LivingEntity entity, TemperatureModifier originalModifier)
+    {
+        TemperatureModifierSetEvent event = new TemperatureModifierSetEvent(originalModifier);
+        if (MinecraftForge.EVENT_BUS.post(event))
+        {
+            return originalModifier.setMod(0);
+        }
+        return event.getModifier();
+    }
+
     /**
      * Reads the water data for the player.
      */
@@ -158,6 +196,15 @@ public class TemperatureData extends ClientTick {
             this.temperatureTimer = compound.getInt("temperatureTickTimer");
             this.displayTemperature = compound.getDouble("displayTemperature");
             this.hypTimer = compound.getInt("hypTimer");
+            ListTag modifiers = compound.getList("modifiers", NBTHelper.NbtType.CompoundNBT);
+            Map<ResourceLocation,TemperatureModifier> temperatureModifiers = Maps.newHashMap();
+            for(int i = 0; i < modifiers.size(); i++) {
+                CompoundTag nbt = modifiers.getCompound(i);
+                TemperatureModifier modifier = new TemperatureModifier();
+                modifier.read(nbt);
+                temperatureModifiers.put(modifier.getId(), modifier);
+            }
+            this.temperatureModifiers = temperatureModifiers;
         }
     }
 
@@ -171,6 +218,9 @@ public class TemperatureData extends ClientTick {
         compound.putDouble("displayTemperature", this.displayTemperature);
         compound.putInt("hypTimer", this.hypTimer);
         ListTag modifiers = new ListTag();
+        for(TemperatureModifier modifier : temperatureModifiers.values()) {
+            modifiers.add(modifier.write(new CompoundTag()));
+        }
         compound.put("modifiers", modifiers);
     }
 

@@ -11,7 +11,10 @@
     "PlayerMixin"
   ],
   "client": [
+    "client.GuiMixin",
+    "client.AbstractClientPlayerMixin",
     "LocalPlayerMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1
