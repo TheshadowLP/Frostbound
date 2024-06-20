@@ -49,6 +49,7 @@ import net.shadowbeast.arcanemysteries.world.biome.ModSurfaceRules;
 import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import terrablender.api.SurfaceRuleManager;
 
 @Mod(ArcaneMysteries.MOD_ID)
@@ -66,7 +67,7 @@ public class ArcaneMysteries extends MinecraftMod {
         }
     };
     public ArcaneMysteries() {
-        super("arcanemysteries", ArcaneMysteriesClient::new, ServerSegment::new);
+        super(MOD_ID, ArcaneMysteriesClient::new, ServerSegment::new);
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
         //BlockRegistry.BLOCKS.register(bus);
@@ -94,7 +95,7 @@ public class ArcaneMysteries extends MinecraftMod {
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-    private void commonSetup(final FMLCommonSetupEvent event)
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event)
     {
 
         reloadListeners.listenTo(entityManager);
@@ -114,7 +115,7 @@ public class ArcaneMysteries extends MinecraftMod {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(@NotNull FMLClientSetupEvent event) {
             MenuScreens.register(MenuTypesMod.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
             MenuScreens.register(MenuTypesMod.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
@@ -139,7 +140,7 @@ public class ArcaneMysteries extends MinecraftMod {
     }
 
     @Override
-    public void registerInserts(InsertCollector collector) {
+    public void registerInserts(@NotNull InsertCollector collector) {
         collector.addInsert(Inserts.LEVEL_LOAD,ArcaneEvents::addReload);
         collector.addInsert(Inserts.LIVING_TICK,ArcaneEvents::sendToClient);
         collector.addInsert(Inserts.LOGGED_OUT, ArcaneEvents::desyncClient);

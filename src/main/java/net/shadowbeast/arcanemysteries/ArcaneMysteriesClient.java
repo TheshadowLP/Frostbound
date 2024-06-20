@@ -35,15 +35,15 @@ public class ArcaneMysteriesClient extends SetupClient {
         return null;
     }
 
-    @SuppressWarnings("resource")
-    public static void renderTemperature(Gui gui, ScreenHelper.ScreenOffset position, Player playerentity, GuiRenderer renderer, boolean forgeOverlay) {
+    public static void renderTemperature(Gui gui, ScreenHelper.ScreenOffset position, Player playerEntity, GuiRenderer renderer, boolean forgeOverlay) {
         Minecraft minecraft = Minecraft.getInstance();
         int x = ScreenHelper.getXOffset(position, minecraft) + 80;
         int y = ScreenHelper.getYOffset(position, minecraft) + 90;
         Minecraft.getInstance().getProfiler().push("temperature");
-        double displayTemp = EStats.getTemperatureStats(playerentity).getDisplayTemperature();
+        double displayTemp = EStats.getTemperatureStats(playerEntity).getDisplayTemperature();
         //For Numbers
-        String s = EStats.getTemperatureStats(playerentity).getCelcius()+" °C";
+        String s = EStats.getTemperatureStats(playerEntity).getCelcius() + " °C";
+        assert Minecraft.getInstance().gameMode != null;
         if (Minecraft.getInstance().gameMode.hasExperience()) {
 
                 if (displayTemp >= 1) {
