@@ -78,7 +78,7 @@ public abstract class LivingEntityMixin extends EEntityMixin {
                 }
             }
 
-            this.setSecondsOnFire(5);
+            this.hurt(this.damageSources().hotFloor(),amount);
         }
     }
 

@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.Nameable;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -41,6 +42,8 @@ public abstract class EEntityMixin extends net.minecraftforge.common.capabilitie
     @Shadow public DamageSources damageSources() {return null;}
 
     @Shadow public abstract void setSecondsOnFire(int pSeconds);
+
+    @Shadow public abstract boolean hurt(DamageSource pSource, float pAmount);
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void init_inject(CallbackInfo info) {

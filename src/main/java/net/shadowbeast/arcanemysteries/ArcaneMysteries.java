@@ -141,4 +141,11 @@ public class ArcaneMysteries {
     public static void registerBiomeTemperatures(ResourceLocation location, BiomeJsonHolder biomeData) {
         DataMaps.Server.biome.put(location, biomeData);
     }
+
+    public static ArcaneMysteries getInstance(){
+        return instance;
+    }
+    public ResourceLocation location(String name) {
+        return new ResourceLocation(MOD_ID, name);
+    }
 }
