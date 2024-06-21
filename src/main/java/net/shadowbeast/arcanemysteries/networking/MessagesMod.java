@@ -10,10 +10,8 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.server.ServerLifecycleHooks;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.networking.packet.AddLevitationTagC2SPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundDataTransferPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundStatsPacket;
-import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
 @Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID)
 public class MessagesMod {
 
@@ -40,22 +38,22 @@ public class MessagesMod {
                 .consumerMainThread(ClientboundStatsPacket::message)
                 .add();
 
-        NETWORK_WRAPPER.messageBuilder(AddLevitationTagC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(AddLevitationTagC2SPacket::new)
-                .encoder(AddLevitationTagC2SPacket::toBytes)
-                .consumerMainThread(AddLevitationTagC2SPacket::handle)
-                .add();
+//        NETWORK_WRAPPER.messageBuilder(AddLevitationTagC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+//                .decoder(AddLevitationTagC2SPacket::new)
+//                .encoder(AddLevitationTagC2SPacket::toBytes)
+//                .consumerMainThread(AddLevitationTagC2SPacket::handle)
+//                .add();
 
         NETWORK_WRAPPER.messageBuilder(ClientboundDataTransferPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(ClientboundDataTransferPacket::new)
                 .encoder(ClientboundDataTransferPacket::encode)
                 .consumerMainThread(ClientboundDataTransferPacket::message)
                 .add();
-        NETWORK_WRAPPER.messageBuilder(LevitationDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(LevitationDataSyncS2CPacket::new)
-                .encoder(LevitationDataSyncS2CPacket::toBytes)
-                .consumerMainThread(LevitationDataSyncS2CPacket::handle)
-                .add();
+//        NETWORK_WRAPPER.messageBuilder(LevitationDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+//                .decoder(LevitationDataSyncS2CPacket::new)
+//                .encoder(LevitationDataSyncS2CPacket::toBytes)
+//                .consumerMainThread(LevitationDataSyncS2CPacket::handle)
+//                .add();
     }
 
     public static <MSG> void sendMSGToServer(MSG message) {

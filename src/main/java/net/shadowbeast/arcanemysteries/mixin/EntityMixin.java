@@ -28,18 +28,18 @@ public abstract class EntityMixin {
     private void cancelFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos, CallbackInfo ci) {
         AtomicBoolean levitationTagged = new AtomicBoolean(false);
         if (this.entity instanceof ServerPlayer player) {
-            player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
-                levitationTagged.set(levitationTag.isLevitationTagged());
-            });
+//            player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
+//                levitationTagged.set(levitationTag.isLevitationTagged());
+//            });
         }
         if (levitationTagged.get()) {
             if (pOnGround && this.fallDistance > 0.0F) {
                 if (entity instanceof ServerPlayer player) {
-                    player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
-                        resetFallDistance();
-                        levitationTag.setLevitationTagged(false);
-                        MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
-                    });
+//                    player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
+//                        resetFallDistance();
+//                        levitationTag.setLevitationTagged(false);
+//                        MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
+//                    });
                 }
             }
         }
