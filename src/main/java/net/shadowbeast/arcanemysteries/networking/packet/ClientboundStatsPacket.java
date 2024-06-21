@@ -17,9 +17,7 @@ public class ClientboundStatsPacket extends ClientboundUnionPacket {
         this.stats = statsIn;
     }
 
-    public ClientboundStatsPacket(final ServerPlayer player){
-        this(EStats.getModNBT(player));
-    }
+    public ClientboundStatsPacket(final ServerPlayer player){ this(EStats.getModNBT(player)); }
 
     public ClientboundStatsPacket(FriendlyByteBuf byteBuf) {
         super(byteBuf, MessagesMod.INSTANCE);
