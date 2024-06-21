@@ -4,8 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.json.DataMaps;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;

@@ -2,8 +2,6 @@ package net.shadowbeast.arcanemysteries.items;
 
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 public class ItemModProperties {
     public static void addCustomItemProperties() {

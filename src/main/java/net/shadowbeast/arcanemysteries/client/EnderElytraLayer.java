@@ -17,8 +17,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.PlayerModelPart;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 
 public class EnderElytraLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {

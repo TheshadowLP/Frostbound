@@ -7,8 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 
-import java.util.function.Supplier;
-
 public class TemperatureCommand
 {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {

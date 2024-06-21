@@ -3,8 +3,6 @@ package net.shadowbeast.arcanemysteries.json;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 
 import java.util.Map;
