@@ -139,28 +139,32 @@ public class EventRegistry {
     @SubscribeEvent
     public static void onItemPickup(EntityItemPickupEvent event) {
         Player player = event.getEntity();
-        if (hasMagnetismEnchant(player)) {
+        int level = getMagnetismLevel(player);
+        if (level > 0) {
             double distance = player.distanceTo(event.getItem());
-            if (distance <= 7) {
+            if (distance <= 3.0D * level) {
                 event.setCanceled(true);
                 event.getItem().kill();
                 player.getInventory().add(event.getItem().getItem());
             }
         }
     }
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         Player player = event.player;
-        if (hasMagnetismEnchant(player)) {
-            double range = 7.0D;
+        int level = getMagnetismLevel(player);
+        if (level > 0) {
+            double range = 3.0D * level;
             Vec3 playerPos = player.position();
             List<ItemEntity> itemsInRange = player.level().getEntitiesOfClass(ItemEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
             for (ItemEntity item : itemsInRange) {
-                Vec3 direction = playerPos.subtract(item.position()).normalize().scale(0.1); // scale the direction to control speed
+                Vec3 direction = playerPos.subtract(item.position()).normalize().scale(0.1);
                 item.setDeltaMovement(item.getDeltaMovement().add(direction));
             }
         }
     }
+
 
     private static boolean hasMagnetismEnchant(Player player) {
         for (ItemStack item : player.getInventory().armor) {
@@ -170,4 +174,14 @@ public class EventRegistry {
         }
         return false;
     }
+
+    private static int getMagnetismLevel(Player player) {
+        for (ItemStack item : player.getInventory().armor) {
+            if (EnchantmentHelper.getEnchantments(item).containsKey(EnchantmentsRegistry.MAGNETISM.get())) {
+                return EnchantmentHelper.getItemEnchantmentLevel(EnchantmentsRegistry.MAGNETISM.get(), item);
+            }
+        }
+        return 0;
+    }
+
 }
