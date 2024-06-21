@@ -32,7 +32,7 @@ public abstract class GuiMixin {
     private @Nullable Player getCameraPlayer() {return null;}
 
     @Shadow
-    protected void renderTextureOverlay(GuiGraphics guiGraphics, ResourceLocation resourceLocation, float p_168710_) {}
+    protected void renderTextureOverlay(GuiGraphics guiGraphics, ResourceLocation resourceLocation, float alpha) {}
 
     @Shadow
     protected int screenWidth;
@@ -44,7 +44,7 @@ public abstract class GuiMixin {
 
 
     @Inject(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;pushPose()V"))
-    public void hotbarColor(float p_283031_, @NotNull GuiGraphics guiGraphics, CallbackInfo ci) {
+    public void hotbarColor(float partialTick, @NotNull GuiGraphics guiGraphics, CallbackInfo ci) {
         Player playerEntity = this.getCameraPlayer();
 
         double displayTemp = EStats.getTemperatureStats(playerEntity).getDisplayTemperature();
@@ -57,7 +57,7 @@ public abstract class GuiMixin {
     }
 
     @Inject(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;popPose()V"))
-    public void resetHotbarColor(float p_283031_, @NotNull GuiGraphics guiGraphics, CallbackInfo ci) {
+    public void resetHotbarColor(float partialTick, @NotNull GuiGraphics guiGraphics, CallbackInfo ci) {
         guiGraphics.setColor(1f, 1f, 1f, 1f);
     }
 
