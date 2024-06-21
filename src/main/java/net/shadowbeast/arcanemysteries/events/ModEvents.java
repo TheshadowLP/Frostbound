@@ -8,16 +8,18 @@ import net.minecraftforge.registries.RegistryBuilder;
 import net.shadowbeast.arcanemysteries.core.ArcaneRegistries;
 import net.shadowbeast.arcanemysteries.temprature.condition.TemperatureChangeCondition;
 import net.shadowbeast.arcanemysteries.temprature.condition.TemperatureChangeConditions;
+import org.jetbrains.annotations.NotNull;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents {
     private static final int MAX_VARIANT = Integer.MAX_VALUE - 1;
 
     @SubscribeEvent
-    public static void registerParticles(final RegisterEvent event) {
+    public static void registerParticles(final @NotNull RegisterEvent event) {
        event.register(ArcaneRegistries.CONDITION, TemperatureChangeConditions::registerAll);
    }
     @SubscribeEvent
-    public static void registerSurviveRegistries(final NewRegistryEvent event) {
+    public static void registerSurviveRegistries(final @NotNull NewRegistryEvent event) {
         event.create(new RegistryBuilder<TemperatureChangeCondition<?>>().setName(ArcaneRegistries.CONDITION.location()).setMaxID(MAX_VARIANT));
     }
 }
