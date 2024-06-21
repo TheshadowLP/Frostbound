@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -24,6 +25,7 @@ import net.shadowbeast.arcanemysteries.block_entities.screen.AlloyFurnaceScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.CrusherScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.WinterFurnaceScreen;
 import net.shadowbeast.arcanemysteries.client.BoatModRenderer;
+import net.shadowbeast.arcanemysteries.client.command.TemperatureCommand;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
@@ -46,6 +48,7 @@ import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
 import net.shadowbeast.arcanemysteries.util.ServerSegment;
 import net.shadowbeast.arcanemysteries.util.WoodTypesMod;
+import net.shadowbeast.arcanemysteries.util.insert.InsertSystem;
 import net.shadowbeast.arcanemysteries.util.insert.Inserts;
 import net.shadowbeast.arcanemysteries.world.biome.ModSurfaceRules;
 import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
@@ -63,13 +66,7 @@ public class ArcaneMysteries extends MinecraftMod {
     private static ArcaneMysteries instance;
     public static EntityTemperatureDataManager entityManager = new EntityTemperatureDataManager();
     public static BiomeDataManager biomeManager = new BiomeDataManager();
-    private final ReloadListeners reloadListeners = new ReloadListeners(){
-
-        @Override
-        public void listenTo(ReloadListener paramReloadListener) {
-            paramReloadListener.id();
-        }
-    };
+    private final ReloadListeners reloadListeners = ReloadListener::id;
     public ArcaneMysteries() {
         super("arcanemysteries", ArcaneMysteriesClient::new, ServerSegment::new);
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -101,19 +98,19 @@ public class ArcaneMysteries extends MinecraftMod {
     }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        MessagesMod.register();
+        ArcaneMysteriesClient.register();
+        event.enqueueWork(() -> {
+            registerInserts(InsertSystem.instance);
 
-        reloadListeners.listenTo(entityManager);
-        reloadListeners.listenTo(biomeManager);
-        event.enqueueWork(MessagesMod::register);
-        MessagesMod.registerPackets();
-        PlatformHelper.handleEvents();
-        event.enqueueWork(()->{
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
+            reloadListeners.listenTo(entityManager);
+            reloadListeners.listenTo(biomeManager);
         });
     }
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
+    public void onServerStarting(ServerStartingEvent event)
+    {
+        PlatformHelper.handleEvents();
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -141,6 +138,10 @@ public class ArcaneMysteries extends MinecraftMod {
             ItemModProperties.addCustomItemProperties();
         }
 
+    }
+    @SubscribeEvent
+    public void onRegisterCommands(RegisterCommandsEvent event) {
+        TemperatureCommand.register(event.getDispatcher());
     }
 
     @Override

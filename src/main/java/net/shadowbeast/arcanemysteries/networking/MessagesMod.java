@@ -15,7 +15,7 @@ import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPa
 public class MessagesMod {
     public static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation("arcanemysteries", "main"),
+            new ResourceLocation(ArcaneMysteries.MOD_ID, "main"),
             () -> PROTOCOL_VERSION,
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
@@ -26,25 +26,29 @@ public class MessagesMod {
         return packetId++;
     }
     public static void register() {
-        SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(new ResourceLocation(ArcaneMysteries.MOD_ID, "messages"))
-                .networkProtocolVersion(() -> "1.0")
-                .clientAcceptedVersions(s -> true)
-                .serverAcceptedVersions(s -> true)
-                .simpleChannel();
+        INSTANCE.messageBuilder(ClientboundStatsPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ClientboundStatsPacket::new)
+                .encoder(ClientboundStatsPacket::encode)
+                .consumerMainThread(ClientboundStatsPacket::message)
+                .add();
 
-        INSTANCE.registerMessage(id(), LevitationDataSyncS2CPacket.class,
-                LevitationDataSyncS2CPacket::toBytes,
-                LevitationDataSyncS2CPacket::new,
-                LevitationDataSyncS2CPacket::handle
-        );
-
-        net.messageBuilder(AddLevitationTagC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+        INSTANCE.messageBuilder(AddLevitationTagC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(AddLevitationTagC2SPacket::new)
                 .encoder(AddLevitationTagC2SPacket::toBytes)
                 .consumerMainThread(AddLevitationTagC2SPacket::handle)
                 .add();
 
+        INSTANCE.messageBuilder(ClientboundDataTransferPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ClientboundDataTransferPacket::new)
+                .encoder(ClientboundDataTransferPacket::encode)
+                .consumerMainThread(ClientboundDataTransferPacket::message)
+                .add();
+
+        INSTANCE.messageBuilder(LevitationDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(LevitationDataSyncS2CPacket::new)
+                .encoder(LevitationDataSyncS2CPacket::toBytes)
+                .consumerMainThread(LevitationDataSyncS2CPacket::handle)
+                .add();
 
     }
     public static void registerPackets() {

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class InsertSystem implements InsertCollector {
-    public static InsertSystem instance = new InsertSystem();
+    public static final InsertSystem instance = new InsertSystem();
 
     private static final Map<InsertHandler<? extends InsertHandler.Insert>, List<? extends InsertHandler.Insert>> INSERTS = new HashMap<>();
 

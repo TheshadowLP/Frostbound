@@ -7,10 +7,15 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.common.MinecraftForge;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 import net.shadowbeast.arcanemysteries.util.*;
 
 public class ArcaneMysteriesClient extends SetupClient {
+    public static void register(){
+        System.out.println("Regiastered client");
+        MinecraftForge.EVENT_BUS.register(new ArcaneMysteriesClient());
+    }
     @Override
     public void setupGuiOverlays(OverlayCollector collector) {
         collector.register("temperature", OverlayCollector.Order.END, (gui, renderer, width, height)->{

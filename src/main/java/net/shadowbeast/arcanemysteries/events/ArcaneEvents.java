@@ -65,7 +65,7 @@ public class ArcaneEvents
     }
 
     public static void updateEnvTemperature(LivingEntity living) {
-        if (living != null && living instanceof ServerPlayer player) {
+        if (living instanceof ServerPlayer player) {
             if (player.isAlive()) {
                 for (ResourceLocation queryId : TemperatureQuery.queries.keySet()) {
                     double queryValue = TemperatureQuery.queries.get(queryId).getA().run(player, EStats.getTemperatureStats(player).getTemperatureLevel(), player.level(), player.blockPosition(), true);
