@@ -16,7 +16,7 @@ public class ModEvents
     @SubscribeEvent
     public static void registerParticlesz(final RegisterEvent event)
    {
-       event.register(ArcaneRegistries.CONDITION, (helper) -> TemperatureChangeConditions.registerAll(helper));
+       event.register(ArcaneRegistries.CONDITION, TemperatureChangeConditions::registerAll);
    }
     @SubscribeEvent
     public static void registerSurviveRegistries(final NewRegistryEvent event) {
