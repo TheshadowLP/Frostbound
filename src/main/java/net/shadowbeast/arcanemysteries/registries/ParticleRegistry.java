@@ -2,8 +2,6 @@ package net.shadowbeast.arcanemysteries.registries;
 
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,7 +17,7 @@ import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 public class ParticleRegistry {
     public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
     public static final RegistryObject<SimpleParticleType> FEATHER_PARTICLES = PARTICLES.register("feather_particles", () -> new SimpleParticleType(false));
-    @OnlyIn(Dist.CLIENT)
+
     @SubscribeEvent public static void registerFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ParticleRegistry.FEATHER_PARTICLES.get(), FeatherParticles.Provider::new);
     }

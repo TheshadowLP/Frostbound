@@ -17,11 +17,11 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.PlayerModelPart;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 
-@OnlyIn(Dist.CLIENT)
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
 public class EnderElytraLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
     private static final ResourceLocation WINGS_LOCATION = new ResourceLocation("arcanemysteries/textures/entity/ender_elytra.png");
     private final EnderElytraModel<T> elytraModel;
@@ -35,8 +35,7 @@ public class EnderElytraLayer<T extends LivingEntity, M extends EntityModel<T>> 
         ItemStack itemstack = pLivingEntity.getItemBySlot(EquipmentSlot.CHEST);
         if (shouldRender(itemstack, pLivingEntity)) {
             ResourceLocation resourcelocation;
-            if (pLivingEntity instanceof AbstractClientPlayer) {
-                AbstractClientPlayer abstractclientplayer = (AbstractClientPlayer)pLivingEntity;
+            if (pLivingEntity instanceof AbstractClientPlayer abstractclientplayer) {
                 if (abstractclientplayer.isElytraLoaded() && abstractclientplayer.getElytraTextureLocation() != null) {
                     resourcelocation = abstractclientplayer.getElytraTextureLocation();
                 } else if (abstractclientplayer.isCapeLoaded() && abstractclientplayer.getCloakTextureLocation() != null && abstractclientplayer.isModelPartShown(PlayerModelPart.CAPE)) {

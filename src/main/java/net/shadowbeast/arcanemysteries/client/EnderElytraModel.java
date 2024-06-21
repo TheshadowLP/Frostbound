@@ -8,11 +8,8 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
-@OnlyIn(Dist.CLIENT)
 public class EnderElytraModel<T extends LivingEntity> extends AgeableListModel<T> {
     private final ModelPart rightWing;
     private final ModelPart leftWing;

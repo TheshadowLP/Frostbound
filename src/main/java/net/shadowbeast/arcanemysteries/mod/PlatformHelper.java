@@ -8,8 +8,11 @@ import net.minecraftforge.event.level.ChunkEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.shadowbeast.arcanemysteries.util.insert.Inserts;
-public class PlatformHelper
-{
+
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
+public class PlatformHelper {
     public static boolean isClientInstance() {
         return FMLEnvironment.dist.isClient();
     }

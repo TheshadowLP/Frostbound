@@ -16,7 +16,7 @@ import net.shadowbeast.arcanemysteries.util.SetupClient;
 
 public class ArcaneMysteriesClient extends SetupClient {
     public static void register(){
-        System.out.println("Regiastered client");
+        ArcaneMysteries.LOGGER.info("Client Registered");
         MinecraftForge.EVENT_BUS.register(new ArcaneMysteriesClient());
     }
     @Override
@@ -47,10 +47,9 @@ public class ArcaneMysteriesClient extends SetupClient {
         Minecraft.getInstance().getProfiler().push("temperature");
         double displayTemp = EStats.getTemperatureStats(playerEntity).getDisplayTemperature();
         //For Numbers
-        String s = EStats.getTemperatureStats(playerEntity).getCelcius() + " °C";
+        String s = EStats.getTemperatureStats(playerEntity).getCelsius() + " °C";
         assert Minecraft.getInstance().gameMode != null;
         if (Minecraft.getInstance().gameMode.hasExperience()) {
-
                 if (displayTemp >= 1) {
                     renderer.drawString(s, x, y, ChatFormatting.GOLD.getColor(), false);
                 } else if (displayTemp <= -1) {
@@ -59,7 +58,6 @@ public class ArcaneMysteriesClient extends SetupClient {
                     renderer.drawString(s, x, y, ChatFormatting.GRAY.getColor(), false);
                 }
             }
-
         Minecraft.getInstance().getProfiler().pop();
     }
 }

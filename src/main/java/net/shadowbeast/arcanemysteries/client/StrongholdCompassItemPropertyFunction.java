@@ -12,7 +12,9 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
+@ParametersAreNonnullByDefault
 public class StrongholdCompassItemPropertyFunction implements ClampedItemPropertyFunction {
     private static final int DEFAULT_ROTATION = 0;
     private final CompassWobble wobble = new CompassWobble();
@@ -24,13 +26,18 @@ public class StrongholdCompassItemPropertyFunction implements ClampedItemPropert
     }
 
     @Override
-    public float unclampedCall(@NotNull ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed) {
+    public float unclampedCall(@NotNull ItemStack stack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity entity, int seed) {
         Entity effectiveEntity = entity != null ? entity : stack.getEntityRepresentation();
         if (effectiveEntity == null) {
             return 0.0F;
         } else {
-            level = tryFetchLevelIfMissing(effectiveEntity, level);
-            return level == null ? 0.0F : getCompassRotation(stack, level, seed, effectiveEntity);
+            ClientLevel level = tryFetchLevelIfMissing(effectiveEntity, clientLevel);
+            if (level == null) {
+                return 0.0F;
+            } else {
+                assert clientLevel != null;
+                return getCompassRotation(stack, clientLevel, seed, effectiveEntity);
+            }
         }
     }
 

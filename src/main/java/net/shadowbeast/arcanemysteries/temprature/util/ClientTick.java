@@ -4,8 +4,6 @@ import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Random;
 
@@ -28,14 +26,12 @@ public abstract class ClientTick {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void baseClientTick(AbstractClientPlayer player) {
         if (shouldTick()) {
             clientTick(player);
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void clientTick(AbstractClientPlayer player) {
 
     }

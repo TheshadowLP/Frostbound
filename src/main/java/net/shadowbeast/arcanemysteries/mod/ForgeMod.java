@@ -7,8 +7,6 @@ public interface ForgeMod {
     default IEventBus eventBus() {
         return FMLJavaModLoadingContext.get().getModEventBus();
     }
-
-
     String getMod_id();
 
 }
