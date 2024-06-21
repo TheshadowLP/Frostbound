@@ -7,32 +7,47 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Gui.class)
-public abstract class GuiMixin
-{
+public abstract class GuiMixin {
+    @Final
+    @Shadow
+    protected Minecraft minecraft;
 
+    @Shadow @Final
+    protected RandomSource random;
 
-    @Shadow public Minecraft minecraft;
-    @Shadow @Final public RandomSource random;
-    @Shadow public Player getCameraPlayer() {return null;}
-    @Shadow public void renderTextureOverlay(GuiGraphics p_282304_, ResourceLocation p_168709_, float p_168710_) {}
-    @Shadow public int screenWidth;
-    @Shadow public int screenHeight;
+    @Contract(pure = true)
+    @Shadow
+    private @Nullable Player getCameraPlayer() {return null;}
+
+    @Shadow
+    protected void renderTextureOverlay(GuiGraphics guiGraphics, ResourceLocation resourceLocation, float p_168710_) {}
+
+    @Shadow
+    protected int screenWidth;
+
+    @Shadow
+    protected int screenHeight;
+
     @Shadow protected int tickCount;
 
 
     @Inject(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;pushPose()V"))
-    public void hotbarColor(float p_283031_, GuiGraphics guiGraphics, CallbackInfo ci) {
-        Player playerentity = this.getCameraPlayer();
+    public void hotbarColor(float p_283031_, @NotNull GuiGraphics guiGraphics, CallbackInfo ci) {
+        Player playerEntity = this.getCameraPlayer();
 
-        double displayTemp = EStats.getTemperatureStats(playerentity).getDisplayTemperature();
+        double displayTemp = EStats.getTemperatureStats(playerEntity).getDisplayTemperature();
 
         float heatTemp = (float) (1.0F - displayTemp);
         float coldTemp = (float) (1.0F + displayTemp);
@@ -41,13 +56,12 @@ public abstract class GuiMixin
 
     }
 
-
     @Inject(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;popPose()V"))
-    public void resetHotbarColor(float p_283031_, GuiGraphics guiGraphics, CallbackInfo ci) {
+    public void resetHotbarColor(float p_283031_, @NotNull GuiGraphics guiGraphics, CallbackInfo ci) {
         guiGraphics.setColor(1f, 1f, 1f, 1f);
     }
-    public Minecraft getMinecraftInstance() {
-        return minecraft;
-    }
+
+    @Unique
+    public Minecraft arcaneMysteries$getMinecraftInstance() { return minecraft; }
 
 }
