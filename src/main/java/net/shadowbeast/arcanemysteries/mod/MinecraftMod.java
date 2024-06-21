@@ -13,9 +13,9 @@ import java.util.function.Supplier;
 
 public class MinecraftMod implements ForgeMod
 {
-    private String mod_id;
+    private final String mod_id;
 
-    private LoadType loadType;
+    private final LoadType loadType;
 
     private SetupClient clientSegment;
 
@@ -59,8 +59,8 @@ public class MinecraftMod implements ForgeMod
     public void registerInserts(InsertCollector collector) {}
 
 
-    public MinecraftMod(String modid, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment) {
-        this(modid, clientSegment, serverSegment, true);
+    public MinecraftMod(String mod_id, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment) {
+        this(mod_id, clientSegment, serverSegment, true);
     }
 
     public LoadType getLoadType() {

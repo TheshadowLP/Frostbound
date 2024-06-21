@@ -1,5 +1,6 @@
 package net.shadowbeast.arcanemysteries;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -10,6 +11,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -51,6 +53,7 @@ import net.shadowbeast.arcanemysteries.util.insert.Inserts;
 import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 @Mod(ArcaneMysteries.MOD_ID)
 public class ArcaneMysteries extends MinecraftMod {
@@ -62,8 +65,9 @@ public class ArcaneMysteries extends MinecraftMod {
     public static BiomeDataManager biomeManager = new BiomeDataManager();
     private final ReloadListeners reloadListeners = ReloadListener::id;
     public ArcaneMysteries() {
-        super("arcanemysteries", ArcaneMysteriesClient::new, ServerSegment::new);
-        var bus = FMLJavaModLoadingContext.get().getModEventBus();
+        super(MOD_ID, ArcaneMysteriesClient::new, ServerSegment::new);
+        var idk = Minecraft.getInstance();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
         //BlockRegistry.BLOCKS.register(bus);
         //BlockRegistry.BLOCK_ITEMS.register(bus);
@@ -90,8 +94,7 @@ public class ArcaneMysteries extends MinecraftMod {
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         MessagesMod.register();
         ArcaneMysteriesClient.register();
         event.enqueueWork(() -> {
@@ -109,16 +112,14 @@ public class ArcaneMysteries extends MinecraftMod {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(@NotNull FMLClientSetupEvent event) {
             MenuScreens.register(MenuTypesMod.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
             MenuScreens.register(MenuTypesMod.CRUSHER_MENU.get(), CrusherScreen::new);
             MenuScreens.register(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
-
-            event.enqueueWork(() -> {
-            });
+            event.enqueueWork(() -> {});
         }
         @SubscribeEvent
         public static void registerRenderers(FMLClientSetupEvent event) {
@@ -133,12 +134,12 @@ public class ArcaneMysteries extends MinecraftMod {
 
     }
     @SubscribeEvent
-    public void onRegisterCommands(RegisterCommandsEvent event) {
+    public void onRegisterCommands(@NotNull RegisterCommandsEvent event) {
         TemperatureCommand.register(event.getDispatcher());
     }
 
     @Override
-    public void registerInserts(InsertCollector collector) {
+    public void registerInserts(@NotNull InsertCollector collector) {
         collector.addInsert(Inserts.LEVEL_LOAD,ArcaneEvents::addReload);
         collector.addInsert(Inserts.LIVING_TICK,ArcaneEvents::sendToClient);
         collector.addInsert(Inserts.LOGGED_OUT, ArcaneEvents::desyncClient);
