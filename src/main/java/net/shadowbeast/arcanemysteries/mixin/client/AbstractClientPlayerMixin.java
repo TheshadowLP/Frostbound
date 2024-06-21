@@ -19,6 +19,6 @@ public abstract class AbstractClientPlayerMixin extends Player implements IReali
     public void tick() {
         super.tick();
         AbstractClientPlayer player = (AbstractClientPlayer)(Object)this;
-        ArcaneMysteries$getTemperatureData().baseClientTick(player);
+        getTemperatureData().baseClientTick(player);
     }
 }

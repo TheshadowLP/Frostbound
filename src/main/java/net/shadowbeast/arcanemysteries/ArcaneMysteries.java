@@ -37,7 +37,7 @@ import net.shadowbeast.arcanemysteries.json.EntityTemperatureDataManager;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
 import net.shadowbeast.arcanemysteries.mod.MinecraftMod;
 import net.shadowbeast.arcanemysteries.mod.PlatformHelper;
-import net.shadowbeast.arcanemysteries.networking.MessagesMod;
+import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.registries.*;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
@@ -87,8 +87,8 @@ public class ArcaneMysteries extends MinecraftMod {
     }
     private void commonSetup(final @NotNull FMLCommonSetupEvent event)
     {
-        MessagesMod.registerPackets();
         ArcaneMysteriesClient.register();
+        ModMessages.registerPackets();
         event.enqueueWork(() -> {
             registerInserts(InsertSystem.instance);
 

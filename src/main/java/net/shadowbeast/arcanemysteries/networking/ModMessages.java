@@ -10,7 +10,7 @@ import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundDataTransferPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundStatsPacket;
 
-public class MessagesMod {
+public class ModMessages {
     public static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(ArcaneMysteries.MOD_ID, "main"),

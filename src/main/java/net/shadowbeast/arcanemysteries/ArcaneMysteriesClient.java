@@ -31,7 +31,6 @@ public class ArcaneMysteriesClient extends SetupClient {
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
 
                 renderTemperature(gui, ScreenHelper.ScreenOffset.TOP, player, renderer, true);
-
         });
     }
 
