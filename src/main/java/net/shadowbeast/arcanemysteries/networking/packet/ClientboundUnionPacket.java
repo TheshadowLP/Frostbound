@@ -14,9 +14,11 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
+@ParametersAreNonnullByDefault
 public abstract class ClientboundUnionPacket extends BasePacket {
 
     public ClientboundUnionPacket(SimpleChannel channel) {
@@ -33,7 +35,10 @@ public abstract class ClientboundUnionPacket extends BasePacket {
         if (shouldRun()) {
             NetworkEvent.Context context = contextSupplier.get();
             context.enqueueWork(() -> wasHandled.setValue(
-                    DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> (Callable<Boolean>) () -> handleOnClient(Minecraft.getInstance().player))
+                    DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> () -> {
+                        assert Minecraft.getInstance().player != null;
+                        return handleOnClient(Minecraft.getInstance().player);
+                    })
             ));
             context.setPacketHandled(true);
 

@@ -10,10 +10,12 @@ import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.JsonHolder;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+@ParametersAreNonnullByDefault
 public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
     private final ResourceLocation stat;
     private final JsonHolder settings;
