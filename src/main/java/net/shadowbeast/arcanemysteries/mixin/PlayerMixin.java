@@ -8,6 +8,7 @@ import net.shadowbeast.arcanemysteries.interfaces.util.IRealisticEntity;
 import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -24,13 +25,14 @@ public abstract class PlayerMixin extends LivingEntity implements IRealisticEnti
         EStats.addStatsOnSpawn((Player) (Object) this);
 
         if (!this.level().isClientSide) {
-            getTemperatureData().baseTick((Player) (Object) this);
+            ArcaneMysteries$getTemperatureData().baseTick((Player) (Object) this);
 
         }
     }
 
 
-    public TemperatureData getTemperatureData(){
+    @Unique
+    public TemperatureData ArcaneMysteries$getTemperatureData(){
         return EStats.getTemperatureStats((Player)(Object)this);
     }
 }

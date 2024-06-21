@@ -4,7 +4,7 @@ import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 
 public interface IRealisticEntity {
 
-    public TemperatureData getTemperatureData();
+    public TemperatureData ArcaneMysteries$getTemperatureData();
 
 
 }
