@@ -47,7 +47,7 @@ public class ArcaneMysteriesClient extends SetupClient {
         Minecraft.getInstance().getProfiler().push("temperature");
         double displayTemp = EStats.getTemperatureStats(playerEntity).getDisplayTemperature();
         //For Numbers
-        String s = EStats.getTemperatureStats(playerEntity).getCelcius() + " °C";
+        String s = EStats.getTemperatureStats(playerEntity).getCelsius() + " °C";
         assert Minecraft.getInstance().gameMode != null;
         if (Minecraft.getInstance().gameMode.hasExperience()) {
 

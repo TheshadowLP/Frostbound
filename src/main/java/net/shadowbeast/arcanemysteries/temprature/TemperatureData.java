@@ -9,13 +9,12 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.api.TemperatureModifierSetEvent;
 import net.shadowbeast.arcanemysteries.registries.EffectsRegistry;
 import net.shadowbeast.arcanemysteries.temprature.util.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -42,7 +41,7 @@ public class TemperatureData extends ClientTick {
         this.temperatureLevel = Math.min(this.temperatureLevel-coldLevel,max);
     }
 
-    private boolean addTemperature(ServerPlayer player, double temperature) {
+    private boolean addTemperature(@NotNull ServerPlayer player, double temperature) {
 
             if (player.gameMode.isSurvival()) {
                 double defaultT = 20;
@@ -151,7 +150,7 @@ public class TemperatureData extends ClientTick {
         }
     }
 
-    public void addModifier(TemperatureModifier modifier) {
+    public void addModifier(@NotNull TemperatureModifier modifier) {
         if (!temperatureModifiers.containsKey(modifier.getId())) {
             temperatureModifiers.put(modifier.getId(), modifier);
         }
@@ -187,7 +186,7 @@ public class TemperatureData extends ClientTick {
     /**
      * Reads the water data for the player.
      */
-    public void read(CompoundTag compound) {
+    public void read(@NotNull CompoundTag compound) {
         if (compound.contains("temperatureLevel", 99)) {
             this.temperatureLevel = compound.getDouble("temperatureLevel");
             this.targetTemperature = compound.getDouble("targetTemperature");
@@ -232,13 +231,13 @@ public class TemperatureData extends ClientTick {
     /**
      * Get the player's temperature level rounded to 2 decimal places.
      */
-    public float getCelcius() {
+    public float getCelsius() {
         int temp = (int) (this.temperatureLevel*100);
         return ((float)temp) / 100.0F;
     }
 
     public float getFahrenheit() {
-        float rawFTemp = (getCelcius() * (9.0F/5.0F)) + 32.0F;
+        float rawFTemp = (getCelsius() * (9.0F/5.0F)) + 32.0F;
         int fTemp = (int) (rawFTemp*100);
         return ((float)fTemp) / 100.0F;
     }
