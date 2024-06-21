@@ -54,6 +54,7 @@ import net.shadowbeast.arcanemysteries.world.biome.ModSurfaceRules;
 import net.shadowbeast.arcanemysteries.world.biome.ModTerraBlenderAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import terrablender.api.SurfaceRuleManager;
 
 import static net.shadowbeast.arcanemysteries.events.ArcaneEvents.addReload;
@@ -95,7 +96,7 @@ public class ArcaneMysteries extends MinecraftMod {
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-    private void commonSetup(final FMLCommonSetupEvent event)
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event)
     {
         MessagesMod.registerPackets();
         ArcaneMysteriesClient.register();
