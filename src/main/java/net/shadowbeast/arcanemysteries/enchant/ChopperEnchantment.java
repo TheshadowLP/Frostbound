@@ -25,7 +25,7 @@ public class ChopperEnchantment extends Enchantment {
     }
     @Override
     public int getMinCost(int pEnchantmentLevel) {
-        return 10 + 20 * (pEnchantmentLevel - 1);
+        return 5 + 10 * (pEnchantmentLevel - 1);
     }
     @Override
     public int getMaxCost(int pEnchantmentLevel) {
@@ -70,6 +70,5 @@ public class ChopperEnchantment extends Enchantment {
     public boolean canApplyAtEnchantingTable(ItemStack stack) {
         return stack.getItem() instanceof AxeItem;
     }
-
 }
 
