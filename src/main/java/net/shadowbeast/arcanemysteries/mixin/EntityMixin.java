@@ -38,7 +38,7 @@ public abstract class EntityMixin {
                     player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
                         resetFallDistance();
                         levitationTag.setLevitationTagged(false);
-                        MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
+                        MessagesMod.sendMSGToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
                     });
                 }
             }

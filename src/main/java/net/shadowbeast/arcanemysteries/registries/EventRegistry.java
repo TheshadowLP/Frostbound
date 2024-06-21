@@ -132,7 +132,7 @@ public class EventRegistry {
     public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
         if(!event.getLevel().isClientSide()) {
             if(event.getEntity() instanceof ServerPlayer player) {
-                player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player));
+                player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> MessagesMod.sendMSGToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player));
             }
         }
     }

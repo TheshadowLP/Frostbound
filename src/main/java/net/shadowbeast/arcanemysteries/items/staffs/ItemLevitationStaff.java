@@ -46,7 +46,7 @@ public class ItemLevitationStaff extends ItemStaff {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, livingEntity.isShiftKeyDown() ? 8 : 15, 20, false, false));
                     }
                 }
-                MessagesMod.sendToServer(new AddLevitationTagC2SPacket());
+                MessagesMod.sendMSGToServer(new AddLevitationTagC2SPacket());
                 pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                         player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
             }

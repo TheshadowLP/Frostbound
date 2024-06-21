@@ -66,14 +66,12 @@ public class BiomeJsonHolder implements JsonHolder {
                                 altitude_level_modifierIn = Pair.of(altitude_level_modifierIn.getFirst(), sea.get("lower").getAsFloat());
                                 stopWorking();
                             }
-                        } catch (ClassCastException e) {
-                        } catch (NumberFormatException e) {
+                        } catch (ClassCastException | NumberFormatException e) {
                         }
                     }
                     stopWorking();
                 }
-            } catch (ClassCastException e) {
-            } catch (NumberFormatException e) {
+            } catch (ClassCastException | NumberFormatException e) {
             }
         }
 
