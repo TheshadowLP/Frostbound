@@ -6,8 +6,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
 
-public abstract class TemperatureChangeInstance
-{
+public abstract class TemperatureChangeInstance {
     public float temperature;
 
     public TemperatureChangeInstance(float temp)
@@ -24,8 +23,7 @@ public abstract class TemperatureChangeInstance
     }
 
     @Nullable
-    public Component getAdditionalInfo()
-    {
+    public Component getAdditionalInfo() {
         return null;
     }
 

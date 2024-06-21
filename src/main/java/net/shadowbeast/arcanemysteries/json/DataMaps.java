@@ -8,8 +8,7 @@ import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import java.util.Map;
 import java.util.UUID;
 
-public class DataMaps
-{
+public class DataMaps {
     public static class Server {
         public static final Map<UUID, Boolean> syncedClients = Maps.newHashMap();
         public static final Map<ResourceLocation, EntityTemperatureJsonHolder> entityTemperature = Maps.newHashMap();
