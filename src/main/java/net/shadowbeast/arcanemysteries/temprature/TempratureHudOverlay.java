@@ -27,8 +27,8 @@ public class TempratureHudOverlay {
         int y = height - 34;
         poseStack.blit(EMPTY_TEMPERATURE, x, y,0,0,16,32,
                 16,32);
-        poseStack.blit(FULL_TEMPERATURE_NO_GLASS, x, y,0,0,16,5,
-                16,5);
+        poseStack.blit(FULL_TEMPERATURE_NO_GLASS, x, y, 0, 5, 16, 32,
+                16, 32);
 
 //        RenderSystem.setShaderTexture(0, EMPTY_TEMPERATURE);
 //        for (int i = 0; i < 10; i++) {

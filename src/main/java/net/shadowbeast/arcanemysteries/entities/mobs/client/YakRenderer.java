@@ -9,7 +9,7 @@ import net.shadowbeast.arcanemysteries.entities.mobs.custom.YakEntity;
 import org.jetbrains.annotations.NotNull;
 public class YakRenderer extends MobRenderer<YakEntity, YakModel<YakEntity>> {
     public YakRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new YakModel<>(pContext.bakeLayer(ModelLayers.YAK)), 0.2f);
+        super(pContext, new YakModel<>(pContext.bakeLayer(ModelLayers.YAK)), 0.7F);
     }
 
     @Override

@@ -22,11 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin extends EEntityMixin {
-
-    public LivingEntityMixin(EntityType<?> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
+public abstract class LivingEntityMixin extends EntityMixin{
 
     @Shadow public abstract ItemStack getItemBySlot(EquipmentSlot pSlot);
     @Shadow
@@ -127,6 +123,4 @@ public abstract class LivingEntityMixin extends EEntityMixin {
             }
         }
     }
-
-
 }

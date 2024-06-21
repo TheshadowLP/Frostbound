@@ -4,8 +4,6 @@ import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.PlayerRideableJumping;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.entities.mobs.custom.YakEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -44,11 +42,11 @@ public abstract class LocalPlayerMixin {
                     this.jumpRidingScale = 0.0F;
                 } else if (flag) {
                     ++this.jumpRidingTicks;
-                    if (this.jumpRidingTicks < 46) {
-                        this.jumpRidingScale = (float)this.jumpRidingTicks * 0.03F;
+                    if (this.jumpRidingTicks < 67) {
+                        this.jumpRidingScale = (float)this.jumpRidingTicks * 0.02F;
                     } else {
-                        this.jumpRidingTicks = 46;
-                        this.jumpRidingScale = 10;
+                        this.jumpRidingTicks = 67;
+                        this.jumpRidingScale = 1;
                     }
                 }
             } else {
