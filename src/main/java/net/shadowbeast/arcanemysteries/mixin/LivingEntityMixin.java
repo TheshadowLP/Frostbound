@@ -51,7 +51,7 @@ public abstract class LivingEntityMixin extends EntityMixin{
 
     @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;tryAddFrost()V"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void aiStep_inject_2(CallbackInfo ci) {
-        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.arcaneMysteries$isFullyRoasted() && this.arcaneMysteries$canRoast()) {
+        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.arcaneMysteries$isFullyRoasted() && this.canRoast()) {
             int j = this.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? 5 : 1;
 
             float amount = (float)j;
@@ -108,16 +108,16 @@ public abstract class LivingEntityMixin extends EntityMixin{
     }
 
     @Override
-    public boolean arcaneMysteries$canRoast() {
+    public boolean canRoast() {
         if (this.isSpectator()) {
             return false;
         } else {
             if ((LivingEntity)(Object)this instanceof Player) {
                 TemperatureData data = EStats.getTemperatureStats((LivingEntity)(Object)this);
-                return data.getTemperatureLevel() > TUtil.firstHeat((Player)(Object)this) && super.arcaneMysteries$canRoast();
+                return data.getTemperatureLevel() > TUtil.firstHeat((Player)(Object)this) && super.canRoast();
             } else {
                 boolean flag = !this.getItemBySlot(EquipmentSlot.HEAD).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.CHEST).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.LEGS).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.FEET).is(ItemTags.FREEZE_IMMUNE_WEARABLES);
-                return flag && super.arcaneMysteries$canRoast();
+                return flag && super.canRoast();
             }
         }
     }

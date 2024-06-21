@@ -49,7 +49,7 @@ public class ItemLevitationStaff extends ItemStaff {
             pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer,
                     player1 -> pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand()));
         }
-        ((IFallDamageCancelable) pPlayer).setArcaneMysteries$cancelFallDamage(true);
+        ((IFallDamageCancelable) pPlayer).setCancelFallDamage(true);
         pLevel.playSound(null, pPlayer.blockPosition(), SoundRegistry.LEVITATION_STAFF.get(), SoundSource.PLAYERS, 1f, 1f);
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }

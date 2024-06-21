@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.arcanemysteries.interfaces.util.IFallDamageCancelable;
 import net.shadowbeast.arcanemysteries.interfaces.util.IRoastedEntity;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -28,7 +29,7 @@ public abstract class EntityMixin implements IRoastedEntity, IFallDamageCancelab
     Entity arcaneMysteries$entity = ((Entity) (Object) this);
 
     @Unique
-    boolean arcaneMysteries$cancelFallDamage = false;
+    boolean cancelFallDamage = false;
 
     @Shadow
     public float fallDistance;
@@ -71,59 +72,59 @@ public abstract class EntityMixin implements IRoastedEntity, IFallDamageCancelab
 
     @Inject(method = "saveWithoutId", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getUUID()Ljava/util/UUID;"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void saveWithoutId_inject(CompoundTag pCompound, CallbackInfoReturnable<CompoundTag> cir) {
-        int i = this.arcaneMysteries$getTicksRoasted();
+        int i = this.getTicksRoasted();
         if (i > 0) {
-            pCompound.putInt("TicksRoasted", this.arcaneMysteries$getTicksRoasted());
+            pCompound.putInt("TicksRoasted", this.getTicksRoasted());
         }
     }
 
     @Inject(method = "load", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;setTicksFrozen(I)V"), locals = LocalCapture.CAPTURE_FAILHARD)
-    public void load_inject(CompoundTag pCompound, CallbackInfo ci) {
-        this.arcaneMysteries$setTicksRoasted(pCompound.getInt("TicksRoasted"));
+    public void load_inject(@NotNull CompoundTag pCompound, CallbackInfo ci) {
+        this.setTicksRoasted(pCompound.getInt("TicksRoasted"));
     }
 
     @Override
-    public int arcaneMysteries$getTicksRoasted() {
+    public int getTicksRoasted() {
         return this.entityData.get(DATA_TICKS_ROASTED);
     }
 
     @Override
-    public void arcaneMysteries$setTicksRoasted(int pTicksFrozen) {
+    public void setTicksRoasted(int pTicksFrozen) {
         this.entityData.set(DATA_TICKS_ROASTED, pTicksFrozen);
     }
 
     @Override
-    public void setArcaneMysteries$cancelFallDamage(boolean arcaneMysteries$cancelFallDamage) {
-        this.arcaneMysteries$cancelFallDamage = arcaneMysteries$cancelFallDamage;
+    public void setCancelFallDamage(boolean cancelFallDamage) {
+        this.cancelFallDamage = cancelFallDamage;
     }
 
     @Override
-    public boolean isArcaneMysteries$cancelFallDamage() {
-        return this.arcaneMysteries$cancelFallDamage;
+    public boolean cancelFallDamage() {
+        return this.cancelFallDamage;
     }
 
     @Override
-    public float arcaneMysteries$getPercentRoasted() {
+    public float getPercentRoasted() {
         int i = this.getTicksRequiredToRoast();
-        return (float) Math.min(this.arcaneMysteries$getTicksRoasted(), i) / (float) i;
+        return (float) Math.min(this.getTicksRoasted(), i) / (float) i;
     }
 
     @Override
     public boolean arcaneMysteries$isFullyRoasted() {
-        return this.arcaneMysteries$getTicksRoasted() >= this.getTicksRequiredToRoast();
+        return this.getTicksRoasted() >= this.getTicksRequiredToRoast();
     }
 
     @Override
-    public boolean arcaneMysteries$canRoast() {
+    public boolean canRoast() {
         return !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES);
     }
 
     @Inject(method = "checkFallDamage", at = @At(value = "HEAD"))
     private void cancelFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos, CallbackInfo ci) {
-        if (isArcaneMysteries$cancelFallDamage()) {
+        if (cancelFallDamage()) {
             if (pOnGround && this.fallDistance > 0.0F) {
                 resetFallDistance();
-                setArcaneMysteries$cancelFallDamage(false);
+                setCancelFallDamage(false);
             }
         }
     }
