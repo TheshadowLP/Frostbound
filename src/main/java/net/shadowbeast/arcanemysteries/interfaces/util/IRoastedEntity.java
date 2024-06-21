@@ -11,12 +11,12 @@ public interface IRoastedEntity
     int ROAST_HURT_FREQUENCY = 40;
     EntityDataAccessor<Integer> DATA_TICKS_ROASTED = SynchedEntityData.defineId(Entity.class, EntityDataSerializers.INT);
 
-    int getTicksRoasted();
-    void setTicksRoasted(int pTicksFrozen);
-    float getPercentRoasted();
-    boolean isFullyRoasted();
+    int arcaneMysteries$getTicksRoasted();
+    void arcaneMysteries$setTicksRoasted(int pTicksFrozen);
+    float arcaneMysteries$getPercentRoasted();
+    boolean arcaneMysteries$isFullyRoasted();
 
-    default boolean canRoast() {
+    default boolean arcaneMysteries$canRoast() {
         return true;
     }
 

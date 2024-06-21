@@ -3,12 +3,10 @@ package net.shadowbeast.arcanemysteries.mixin;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 import net.shadowbeast.arcanemysteries.temprature.util.TUtil;
@@ -53,7 +51,7 @@ public abstract class LivingEntityMixin extends EntityMixin{
 
     @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;tryAddFrost()V"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void aiStep_inject_2(CallbackInfo ci) {
-        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.isFullyRoasted() && this.canRoast()) {
+        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.arcaneMysteries$isFullyRoasted() && this.arcaneMysteries$canRoast()) {
             int j = this.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? 5 : 1;
 
             float amount = (float)j;
@@ -110,16 +108,16 @@ public abstract class LivingEntityMixin extends EntityMixin{
     }
 
     @Override
-    public boolean canRoast() {
+    public boolean arcaneMysteries$canRoast() {
         if (this.isSpectator()) {
             return false;
         } else {
             if ((LivingEntity)(Object)this instanceof Player) {
                 TemperatureData data = EStats.getTemperatureStats((LivingEntity)(Object)this);
-                return data.getTemperatureLevel() > TUtil.firstHeat((Player)(Object)this) && super.canRoast();
+                return data.getTemperatureLevel() > TUtil.firstHeat((Player)(Object)this) && super.arcaneMysteries$canRoast();
             } else {
                 boolean flag = !this.getItemBySlot(EquipmentSlot.HEAD).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.CHEST).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.LEGS).is(ItemTags.FREEZE_IMMUNE_WEARABLES) && !this.getItemBySlot(EquipmentSlot.FEET).is(ItemTags.FREEZE_IMMUNE_WEARABLES);
-                return flag && super.canRoast();
+                return flag && super.arcaneMysteries$canRoast();
             }
         }
     }

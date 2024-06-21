@@ -30,7 +30,7 @@ public class ClientboundStatsPacket extends ClientboundUnionPacket {
     }
 
     @Override
-    public boolean handleOnClient(LocalPlayer sender) {
+    public boolean handleOnClient(@NotNull LocalPlayer sender) {
         assert Minecraft.getInstance().player != null;
         EStats.setModNBT(this.stats, Minecraft.getInstance().player);
         return true;
