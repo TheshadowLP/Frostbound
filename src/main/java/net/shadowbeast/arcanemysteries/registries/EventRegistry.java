@@ -149,7 +149,10 @@ public class EventRegistry {
             }
         }
     }
-
+    /**
+     * <b>This method triggred every tick</b>
+     * <p>It checks the level of the Magnetism enchantment on the players boots. If the level is greater than 0, it calculates the range from the enchantment level, then looks for any item entities in the area. If there is a item in range it calculates a direction vector pointing from the item to the player, normalizes and scales this vector, and adds it to the item's current movement vector, fancy smancy code talk but it bassically sends it to the player</p>
+     */
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         Player player = event.player;
@@ -164,17 +167,10 @@ public class EventRegistry {
             }
         }
     }
-
-
-    private static boolean hasMagnetismEnchant(Player player) {
-        for (ItemStack item : player.getInventory().armor) {
-            if (EnchantmentHelper.getEnchantments(item).containsKey(EnchantmentsRegistry.MAGNETISM.get())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
+    /**
+     * <b>This method checks the level of the Magnetism enchantment on the players boots</b>
+     * <p>@return The level of the Magnetism enchantment if they have it, otherwise returns null/0</p>
+     */
     private static int getMagnetismLevel(Player player) {
         for (ItemStack item : player.getInventory().armor) {
             if (EnchantmentHelper.getEnchantments(item).containsKey(EnchantmentsRegistry.MAGNETISM.get())) {
@@ -183,5 +179,4 @@ public class EventRegistry {
         }
         return 0;
     }
-
 }
