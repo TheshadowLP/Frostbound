@@ -85,13 +85,11 @@ public class EventRegistry {
                     iceAspect,
                     2, 8, 0.02f
             ));
-            if (event.getType() == VillagerProfession.LIBRARIAN) {
-                trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                        new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
-                        chopperBook,
-                        2, 8, 0.02f
-                ));
-            }
+            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
+                    chopperBook,
+                    2, 8, 0.02f
+            ));
         }
     }
 
