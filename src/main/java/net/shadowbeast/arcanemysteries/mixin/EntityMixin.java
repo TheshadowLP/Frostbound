@@ -3,13 +3,11 @@ package net.shadowbeast.arcanemysteries.mixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.arcanemysteries.interfaces.util.IFallDamageCancelable;
@@ -17,6 +15,7 @@ import net.shadowbeast.arcanemysteries.interfaces.util.IRoastedEntity;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -25,9 +24,11 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin implements IRoastedEntity, IFallDamageCancelable {
-    Entity entity = ((Entity) (Object) this);
+    @Unique
+    Entity arcaneMysteries$entity = ((Entity) (Object) this);
 
-    boolean cancelFallDamage = false;
+    @Unique
+    boolean arcaneMysteries$cancelFallDamage = false;
 
     @Shadow
     public float fallDistance;
@@ -70,59 +71,59 @@ public abstract class EntityMixin implements IRoastedEntity, IFallDamageCancelab
 
     @Inject(method = "saveWithoutId", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getUUID()Ljava/util/UUID;"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void saveWithoutId_inject(CompoundTag pCompound, CallbackInfoReturnable<CompoundTag> cir) {
-        int i = this.getTicksRoasted();
+        int i = this.arcaneMysteries$getTicksRoasted();
         if (i > 0) {
-            pCompound.putInt("TicksRoasted", this.getTicksRoasted());
+            pCompound.putInt("TicksRoasted", this.arcaneMysteries$getTicksRoasted());
         }
     }
 
     @Inject(method = "load", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;setTicksFrozen(I)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void load_inject(CompoundTag pCompound, CallbackInfo ci) {
-        this.setTicksRoasted(pCompound.getInt("TicksRoasted"));
+        this.arcaneMysteries$setTicksRoasted(pCompound.getInt("TicksRoasted"));
     }
 
     @Override
-    public int getTicksRoasted() {
+    public int arcaneMysteries$getTicksRoasted() {
         return this.entityData.get(DATA_TICKS_ROASTED);
     }
 
     @Override
-    public void setTicksRoasted(int pTicksFrozen) {
+    public void arcaneMysteries$setTicksRoasted(int pTicksFrozen) {
         this.entityData.set(DATA_TICKS_ROASTED, pTicksFrozen);
     }
 
     @Override
-    public void setCancelFallDamage(boolean cancelFallDamage) {
-        this.cancelFallDamage = cancelFallDamage;
+    public void setArcaneMysteries$cancelFallDamage(boolean arcaneMysteries$cancelFallDamage) {
+        this.arcaneMysteries$cancelFallDamage = arcaneMysteries$cancelFallDamage;
     }
 
     @Override
-    public boolean isCancelFallDamage() {
-        return this.cancelFallDamage;
+    public boolean isArcaneMysteries$cancelFallDamage() {
+        return this.arcaneMysteries$cancelFallDamage;
     }
 
     @Override
-    public float getPercentRoasted() {
+    public float arcaneMysteries$getPercentRoasted() {
         int i = this.getTicksRequiredToRoast();
-        return (float) Math.min(this.getTicksRoasted(), i) / (float) i;
+        return (float) Math.min(this.arcaneMysteries$getTicksRoasted(), i) / (float) i;
     }
 
     @Override
-    public boolean isFullyRoasted() {
-        return this.getTicksRoasted() >= this.getTicksRequiredToRoast();
+    public boolean arcaneMysteries$isFullyRoasted() {
+        return this.arcaneMysteries$getTicksRoasted() >= this.getTicksRequiredToRoast();
     }
 
     @Override
-    public boolean canRoast() {
+    public boolean arcaneMysteries$canRoast() {
         return !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES);
     }
 
     @Inject(method = "checkFallDamage", at = @At(value = "HEAD"))
     private void cancelFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos, CallbackInfo ci) {
-        if (isCancelFallDamage()) {
+        if (isArcaneMysteries$cancelFallDamage()) {
             if (pOnGround && this.fallDistance > 0.0F) {
                 resetFallDistance();
-                setCancelFallDamage(false);
+                setArcaneMysteries$cancelFallDamage(false);
             }
         }
     }
