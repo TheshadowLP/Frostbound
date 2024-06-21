@@ -9,10 +9,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlockEntity;
 import net.shadowbeast.arcanemysteries.block_entities.slot.ResultSlotMod;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 import org.jetbrains.annotations.NotNull;
+
 import static net.shadowbeast.arcanemysteries.block_entities.entities.AlloyFurnaceBlockEntity.isFuelItem;
 
 public class AlloyFurnaceMenu extends AbstractContainerMenu {
@@ -92,7 +94,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 return ItemStack.EMPTY;
             }
         } else {
-            System.out.println("Invalid slotIndex:" + index);
+            ArcaneMysteries.LOGGER.warn("Invalid slotIndex: {}", index);
             return ItemStack.EMPTY;
         }
         if (sourceStack.getCount() == 0) {

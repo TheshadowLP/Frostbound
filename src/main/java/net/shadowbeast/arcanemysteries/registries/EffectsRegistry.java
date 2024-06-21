@@ -2,14 +2,11 @@ package net.shadowbeast.arcanemysteries.registries;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.effect.Depreciated_Hyperthermia;
-import net.shadowbeast.arcanemysteries.effect.Depreciated_Hypothermia;
 import net.shadowbeast.arcanemysteries.effect.FreezeEffect;
 import net.shadowbeast.arcanemysteries.effect.MobEffectS;
 

@@ -1,6 +1,10 @@
 package net.shadowbeast.arcanemysteries.enchant;
 
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
@@ -8,10 +12,9 @@ public class MagnetismEnchant extends Enchantment {
     protected MagnetismEnchant(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
         super(pRarity, pCategory, pApplicableSlots);
     }
-
     @Override
     public int getMinCost(int pEnchantmentLevel) {
-        return 10 + 20 * (pEnchantmentLevel - 1);
+        return 5 + 10 * (pEnchantmentLevel - 1);
     }
     @Override
     public int getMaxCost(int pEnchantmentLevel) {
@@ -19,6 +22,11 @@ public class MagnetismEnchant extends Enchantment {
     }
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 3;
+    }
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+        Item item = stack.getItem();
+        return item instanceof ArmorItem && ((ArmorItem) item).getEquipmentSlot() == EquipmentSlot.FEET;
     }
 }

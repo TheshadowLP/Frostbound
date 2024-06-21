@@ -5,7 +5,6 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.world.biome.ModBiomes;
 

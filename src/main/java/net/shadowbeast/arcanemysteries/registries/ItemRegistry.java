@@ -1,12 +1,12 @@
 package net.shadowbeast.arcanemysteries.registries;
 
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.arcanemysteries.entities.boats.EntityBoat;
+import net.shadowbeast.arcanemysteries.entities.projectile.IceBeam;
 import net.shadowbeast.arcanemysteries.enums.ArmorStats;
 import net.shadowbeast.arcanemysteries.enums.ToolStats;
 import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
@@ -16,7 +16,6 @@ import net.shadowbeast.arcanemysteries.items.staffs.ItemHealStaff;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemLevitationStaff;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemTeleportationStaff;
 import net.shadowbeast.arcanemysteries.items.tools.*;
-import net.shadowbeast.arcanemysteries.entities.projectile.IceBeam;
 
 import java.util.function.Supplier;
 

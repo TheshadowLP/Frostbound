@@ -1,7 +1,10 @@
 package net.shadowbeast.arcanemysteries.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;

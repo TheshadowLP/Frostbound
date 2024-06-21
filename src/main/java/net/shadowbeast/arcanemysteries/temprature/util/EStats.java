@@ -6,22 +6,25 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
-public class EStats
-{
+
+public class EStats {
     public static String temperatureStatsID = "TemperatureStats";
 
-    public static TemperatureData getTemperatureStats(LivingEntity entity) {
+    public static @NotNull TemperatureData getTemperatureStats(LivingEntity entity) {
         TemperatureData stats = new TemperatureData();
         if(entity != null) {
-            if (getModNBT(entity) != null && getModNBT(entity).contains(temperatureStatsID, 10)) {
+            getModNBT(entity);
+            if (getModNBT(entity).contains(temperatureStatsID, 10)) {
                 stats.read(getModNBT(entity).getCompound(temperatureStatsID));
                 return stats;
             }
         }
         return stats;
     }
-    public static void setTemperatureStats(Entity entity, TemperatureData temperatureStats) {
+    public static void setTemperatureStats(Entity entity, @NotNull TemperatureData temperatureStats) {
         CompoundTag compound2 = new CompoundTag();
         temperatureStats.write(compound2);
         getModNBT(entity).put(temperatureStatsID, compound2);
@@ -39,26 +42,28 @@ public class EStats
             }
         }
     }
-    private static String append(String string) {
+    @Contract(pure = true)
+    private static @NotNull String append(String string) {
         return ArcaneMysteries.MOD_ID+":"+string;
     }
 
-    public static String getModDataString() {
+    @Contract(pure = true)
+    public static @NotNull String getModDataString() {
         return ArcaneMysteries.MOD_ID+":PlayerData";
     }
 
-    public static CompoundTag getModNBT(Entity entity) {
+    public static @NotNull CompoundTag getModNBT(@NotNull Entity entity) {
         return entity.getPersistentData().getCompound(getModDataString());
     }
 
-    public static CompoundTag getOrCreateModNBT(Entity entity) {
+    public static @NotNull CompoundTag getOrCreateModNBT(@NotNull Entity entity) {
         if (!entity.getPersistentData().contains(getModDataString(), 10)) {
             entity.getPersistentData().put(getModDataString(), new CompoundTag());
         }
         return entity.getPersistentData().getCompound(getModDataString());
     }
 
-    public static void setModNBT(CompoundTag nbt, Entity entity) {
+    public static void setModNBT(CompoundTag nbt, @NotNull Entity entity) {
         entity.getPersistentData().put(getModDataString(), nbt);
     }
 }
