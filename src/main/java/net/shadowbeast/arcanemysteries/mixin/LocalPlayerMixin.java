@@ -42,11 +42,11 @@ public abstract class LocalPlayerMixin {
                     this.jumpRidingScale = 0.0F;
                 } else if (flag) {
                     ++this.jumpRidingTicks;
-                    if (this.jumpRidingTicks < 46) {
-                        this.jumpRidingScale = (float)this.jumpRidingTicks * 0.03F;
+                    if (this.jumpRidingTicks < 67) {
+                        this.jumpRidingScale = (float)this.jumpRidingTicks * 0.02F;
                     } else {
-                        this.jumpRidingTicks = 46;
-                        this.jumpRidingScale = 10;
+                        this.jumpRidingTicks = 67;
+                        this.jumpRidingScale = 1;
                     }
                 }
             } else {

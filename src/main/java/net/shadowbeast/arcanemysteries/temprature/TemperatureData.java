@@ -37,7 +37,7 @@ public class TemperatureData extends ClientTick {
     public void addHeat(float heatLevel, double max){
         this.temperatureLevel = Math.min(this.temperatureLevel+heatLevel,max);
     }
-    public void addCOld(float coldLevel, double max){
+    public void addCold(float coldLevel, double max){
         this.temperatureLevel = Math.min(this.temperatureLevel-coldLevel,max);
     }
 

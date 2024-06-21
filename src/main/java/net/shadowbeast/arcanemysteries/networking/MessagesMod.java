@@ -7,10 +7,8 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.networking.packet.AddLevitationTagC2SPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundDataTransferPacket;
 import net.shadowbeast.arcanemysteries.networking.packet.ClientboundStatsPacket;
-import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
 
 public class MessagesMod {
     public static final String PROTOCOL_VERSION = "1";
@@ -32,31 +30,16 @@ public class MessagesMod {
                 .consumerMainThread(ClientboundStatsPacket::message)
                 .add();
 
-        INSTANCE.messageBuilder(AddLevitationTagC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(AddLevitationTagC2SPacket::new)
-                .encoder(AddLevitationTagC2SPacket::toBytes)
-                .consumerMainThread(AddLevitationTagC2SPacket::handle)
-                .add();
-
         INSTANCE.messageBuilder(ClientboundDataTransferPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ClientboundDataTransferPacket::new)
                 .encoder(ClientboundDataTransferPacket::encode)
                 .consumerMainThread(ClientboundDataTransferPacket::message)
                 .add();
-
-        INSTANCE.messageBuilder(LevitationDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(LevitationDataSyncS2CPacket::new)
-                .encoder(LevitationDataSyncS2CPacket::toBytes)
-                .consumerMainThread(LevitationDataSyncS2CPacket::handle)
-                .add();
-
     }
     public static void registerPackets() {
         int id = 0;
         INSTANCE.registerMessage(id++, ClientboundStatsPacket.class, ClientboundStatsPacket::encode, ClientboundStatsPacket::new, ClientboundStatsPacket::message);
         INSTANCE.registerMessage(id++, ClientboundDataTransferPacket.class, ClientboundDataTransferPacket::encode, ClientboundDataTransferPacket::new, ClientboundDataTransferPacket::message);
-        INSTANCE.registerMessage(id++, AddLevitationTagC2SPacket.class, AddLevitationTagC2SPacket::toBytes, AddLevitationTagC2SPacket::new, AddLevitationTagC2SPacket::handle);
-        INSTANCE.registerMessage(id++, LevitationDataSyncS2CPacket.class, LevitationDataSyncS2CPacket::toBytes, LevitationDataSyncS2CPacket::new, LevitationDataSyncS2CPacket::handle);
     }
     public static <MSG> void sendToServer(MSG message) {
         INSTANCE.sendToServer(message);

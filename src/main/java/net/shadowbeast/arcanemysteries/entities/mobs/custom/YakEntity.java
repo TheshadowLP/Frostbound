@@ -46,16 +46,6 @@ import javax.annotation.Nullable;
 
 public class YakEntity extends AbstractHorse implements PlayerRideableJumping, RiderShieldingMount, Saddleable {
     public static final Ingredient TEMPTATION_ITEM = Ingredient.of(Items.WHEAT);
-    public static final int DASH_COOLDOWN_TICKS = 55;
-    public static final int MAX_HEAD_Y_ROT = 30;
-    private static final float RUNNING_SPEED_BONUS = 0.1F;
-    private static final float DASH_VERTICAL_MOMENTUM = 1.4285F;
-    private static final float DASH_HORIZONTAL_MOMENTUM = 22.2222F;
-    private static final int DASH_MINIMUM_DURATION_TICKS = 5;
-    private static final int SITDOWN_DURATION_TICKS = 40;
-    private static final int STANDUP_DURATION_TICKS = 52;
-    private static final int IDLE_MINIMAL_DURATION_TICKS = 80;
-    private static final float SITTING_HEIGHT_DIFFERENCE = 1.43F;
     public static final EntityDataAccessor<Boolean> DASH = SynchedEntityData.defineId(YakEntity.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Long> LAST_POSE_CHANGE_TICK = SynchedEntityData.defineId(YakEntity.class, EntityDataSerializers.LONG);
     public final AnimationState sitAnimationState = new AnimationState();
@@ -120,6 +110,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height - 0.25F;
     }
+
     public double getRiderShieldingHeight() {
         return 0.5D;
     }
@@ -226,7 +217,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     }
     protected void executeRidersJump(float pPlayerJumpPendingScale, @NotNull Vec3 pTravelVector) {
         double d0 = this.getAttributeValue(Attributes.JUMP_STRENGTH) * (double)this.getBlockJumpFactor() + (double)this.getJumpBoostPower();
-        this.addDeltaMovement(this.getLookAngle().multiply(1.0D, 0.0D, 1.0D).normalize().scale((double)(22.2222F * pPlayerJumpPendingScale) * this.getAttributeValue(Attributes.MOVEMENT_SPEED) * (double)this.getBlockSpeedFactor()).add(0.0D, (double)(1.4285F * pPlayerJumpPendingScale) * d0, 0.0D));
+        this.addDeltaMovement(this.getLookAngle().multiply(1.0D, 0.0D, 1.0D).normalize().scale( 5 + (double)(22.2222F * pPlayerJumpPendingScale) * this.getAttributeValue(Attributes.MOVEMENT_SPEED) * (double)this.getBlockSpeedFactor()).add(0.0D, (double)(1.4285F * pPlayerJumpPendingScale) * d0, 0.0D));
         this.dashCooldown = 30;
         this.setDashing(true);
         this.hasImpulse = true;
@@ -407,7 +398,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
      * Returns the Y offset from the entity's position for any entity riding this one.
      */
     public double getPassengersRidingOffset() {
-        return (double)(this.getDimensions(Pose.STANDING).height - (this.isBaby() ? 0.35F : 0.6F));
+        return this.getDimensions(Pose.STANDING).height - 0.3;
     }
     /**
      * Applies this entity's orientation to another entity. Used to update passenger orientation.

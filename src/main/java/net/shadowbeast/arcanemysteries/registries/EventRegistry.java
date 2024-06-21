@@ -2,10 +2,8 @@ package net.shadowbeast.arcanemysteries.registries;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -21,12 +19,8 @@ import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
@@ -35,10 +29,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.items.tools.ItemHammer;
-import net.shadowbeast.arcanemysteries.networking.MessagesMod;
-import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -88,7 +78,7 @@ public class EventRegistry {
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         ItemStack iceAspect = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
-        ItemStack tree_capitator = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.CHOPPER.get(), 1));
+        ItemStack chopperBook = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.CHOPPER.get(), 1));
         if (event.getType() == VillagerProfession.LIBRARIAN) {
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
@@ -98,44 +88,13 @@ public class EventRegistry {
             if (event.getType() == VillagerProfession.LIBRARIAN) {
                 trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
                         new ItemStack(Items.EMERALD, pRandom.nextInt(12) + 36),
-                        tree_capitator,
+                        chopperBook,
                         2, 8, 0.02f
                 ));
             }
         }
     }
 
-
-
-    @SubscribeEvent
-    public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
-        if(event.getObject() instanceof Player) {
-            if(!event.getObject().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).isPresent()) {
-                event.addCapability(new ResourceLocation(ArcaneMysteries.MOD_ID, "properties"), new PlayerLevitationTagProvider());
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void onPlayerCloned(PlayerEvent.Clone event) {
-        if(event.isWasDeath()) {
-            event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(oldStore -> event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(newStore -> newStore.copyFrom(oldStore)));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
-        event.register(PlayerLevitationTag.class);
-    }
-
-    @SubscribeEvent
-    public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
-        if(!event.getLevel().isClientSide()) {
-            if(event.getEntity() instanceof ServerPlayer player) {
-                player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player));
-            }
-        }
-    }
     @SubscribeEvent
     public static void onItemPickup(EntityItemPickupEvent event) {
         Player player = event.getEntity();
