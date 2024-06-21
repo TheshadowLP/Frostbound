@@ -2,6 +2,7 @@ package net.shadowbeast.arcanemysteries.util.insert;
 
 import com.google.common.collect.Lists;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ public class InsertSystem implements InsertCollector {
 
     private static final Map<InsertHandler<? extends InsertHandler.Insert>, List<? extends InsertHandler.Insert>> INSERTS = new HashMap<>();
 
-    protected static <T extends InsertHandler.Insert> List<T> getInserts(InsertHandler<T> handler) {
+    protected static <T extends InsertHandler.Insert> @NotNull List<T> getInserts(InsertHandler<T> handler) {
         if (!INSERTS.containsKey(handler))
             return new ArrayList<>();
         return (List<T>) Lists.newArrayList(INSERTS.get(handler));
