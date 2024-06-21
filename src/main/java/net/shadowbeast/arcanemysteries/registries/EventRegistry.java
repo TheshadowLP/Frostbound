@@ -150,8 +150,8 @@ public class EventRegistry {
         }
     }
     /**
-     * <b>This method triggred every tick</b>
-     * <p>It checks the level of the Magnetism enchantment on the players boots. If the level is greater than 0, it calculates the range from the enchantment level, then looks for any item entities in the area. If there is a item in range it calculates a direction vector pointing from the item to the player, normalizes and scales this vector, and adds it to the item's current movement vector, fancy smancy code talk but it bassically sends it to the player</p>
+     * It checks the level of the Magnetism enchantment on the players boots. If the level is greater than 0, it calculates the range from the enchantment level, then looks for any item entities in the area. If there is a item in range it calculates a direction vector pointing from the item to the player, normalizes and scales this vector, and adds it to the item's current movement vector, fancy smancy code talk, but it basically sends it to the player
+     * @apiNote This method is triggered every tick
      */
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
