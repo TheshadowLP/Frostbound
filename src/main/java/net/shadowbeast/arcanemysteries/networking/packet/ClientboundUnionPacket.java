@@ -48,13 +48,9 @@ public abstract class ClientboundUnionPacket extends BasePacket {
         }
     }
 
-    public boolean verifyIfHandled() {
-        return false;
-    }
+    public boolean verifyIfHandled() { return false; }
 
-    public boolean shouldRun() {
-        return true;
-    }
+    public boolean shouldRun() { return true; }
 
     public void send(ServerPlayer playerEntity) {
         this.channel.sendTo(this, playerEntity.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
