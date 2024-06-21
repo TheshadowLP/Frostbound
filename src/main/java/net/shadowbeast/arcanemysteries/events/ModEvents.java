@@ -9,17 +9,15 @@ import net.shadowbeast.arcanemysteries.core.ArcaneRegistries;
 import net.shadowbeast.arcanemysteries.temprature.condition.TemperatureChangeCondition;
 import net.shadowbeast.arcanemysteries.temprature.condition.TemperatureChangeConditions;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModEvents 
-{
-    private static final int MAX_VARINT = Integer.MAX_VALUE - 1;
+public class ModEvents {
+    private static final int MAX_VARIANT = Integer.MAX_VALUE - 1;
 
     @SubscribeEvent
-    public static void registerParticlesz(final RegisterEvent event)
-   {
+    public static void registerParticles(final RegisterEvent event) {
        event.register(ArcaneRegistries.CONDITION, TemperatureChangeConditions::registerAll);
    }
     @SubscribeEvent
     public static void registerSurviveRegistries(final NewRegistryEvent event) {
-        event.create(new RegistryBuilder<TemperatureChangeCondition<?>>().setName(ArcaneRegistries.CONDITION.location()).setMaxID(MAX_VARINT));
+        event.create(new RegistryBuilder<TemperatureChangeCondition<?>>().setName(ArcaneRegistries.CONDITION.location()).setMaxID(MAX_VARIANT));
     }
 }
