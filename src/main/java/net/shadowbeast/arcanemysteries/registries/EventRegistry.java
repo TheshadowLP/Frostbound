@@ -168,9 +168,10 @@ public class EventRegistry {
         }
     }
     /**
-     * <b>This method checks the level of the Magnetism enchantment on the players boots</b>
-     * <p>@return The level of the Magnetism enchantment if they have it, otherwise returns null/0</p>
+     * This method checks the level of the Magnetism enchantment on the players boots
+     * @return The level of the Magnetism enchantment if they have it, otherwise returns null/0
      */
+    @SuppressWarnings("depreciation")
     private static int getMagnetismLevel(Player player) {
         for (ItemStack item : player.getInventory().armor) {
             if (EnchantmentHelper.getEnchantments(item).containsKey(EnchantmentsRegistry.MAGNETISM.get())) {
