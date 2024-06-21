@@ -102,8 +102,7 @@ public class ArcaneMysteries extends MinecraftMod {
         });
     }
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
+    public void onServerStarting(ServerStartingEvent event) {
         PlatformHelper.handleEvents();
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}

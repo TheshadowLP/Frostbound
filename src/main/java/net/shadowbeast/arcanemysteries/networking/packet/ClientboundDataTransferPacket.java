@@ -8,15 +8,16 @@ import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.json.DataMaps;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.JsonHolder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
 public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
-    private ResourceLocation stat;
-    private JsonHolder settings;
-    private boolean clear;
+    private final ResourceLocation stat;
+    private final JsonHolder settings;
+    private final boolean clear;
 
     public ClientboundDataTransferPacket(final ResourceLocation statIn, final JsonHolder settingsIn, final boolean clear) {
         super(ArcaneMysteries.getInstance().channel);
@@ -34,7 +35,7 @@ public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
     }
 
     @Override
-    public void encode(final FriendlyByteBuf byteBuf) {
+    public void encode(final @NotNull FriendlyByteBuf byteBuf) {
         byteBuf.writeResourceLocation(this.stat);
         byteBuf.writeUtf(this.settings.getClass().descriptorString());
         byteBuf.writeNbt(this.settings.serialize());
