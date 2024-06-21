@@ -48,20 +48,9 @@ public class MinecraftMod implements ForgeMod
         return null;
     }
 
-    public MinecraftMod(String mod_id, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment, boolean shouldLoadMod) {
-        this.mod_id = mod_id;
-        this.loadType = getEnv(clientSegment, serverSegment);
-        if (shouldLoadMod ) {
-            //FIXME no empty if statements
-            if (PlatformHelper.isClientInstance()){}
-        }
-    }
     public void registerInserts(InsertCollector collector) {}
 
 
-    public MinecraftMod(String modid, Supplier<SetupClient> clientSegment, Supplier<ServerSegment> serverSegment) {
-        this(modid, clientSegment, serverSegment, true);
-    }
 
     public LoadType getLoadType() {
         return this.loadType;

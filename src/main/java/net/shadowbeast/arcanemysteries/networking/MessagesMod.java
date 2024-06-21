@@ -55,6 +55,8 @@ public class MessagesMod {
         int id = 0;
         INSTANCE.registerMessage(id++, ClientboundStatsPacket.class, ClientboundStatsPacket::encode, ClientboundStatsPacket::new, ClientboundStatsPacket::message);
         INSTANCE.registerMessage(id++, ClientboundDataTransferPacket.class, ClientboundDataTransferPacket::encode, ClientboundDataTransferPacket::new, ClientboundDataTransferPacket::message);
+        INSTANCE.registerMessage(id++, AddLevitationTagC2SPacket.class, AddLevitationTagC2SPacket::toBytes, AddLevitationTagC2SPacket::new, AddLevitationTagC2SPacket::handle);
+        INSTANCE.registerMessage(id++, LevitationDataSyncS2CPacket.class, LevitationDataSyncS2CPacket::toBytes, LevitationDataSyncS2CPacket::new, LevitationDataSyncS2CPacket::handle);
     }
     public static <MSG> void sendToServer(MSG message) {
         INSTANCE.sendToServer(message);

@@ -24,10 +24,10 @@ public class BiomeDataManager implements IResourceReloadListener<Map<ResourceLoc
         return CompletableFuture.supplyAsync(() -> {
             Map<ResourceLocation, BiomeJsonHolder> drinkMap = new HashMap<>();
 
-            for (Map.Entry<ResourceLocation, Resource> resource : manager.listResources("survive_modifiers/biomes", (s) -> s.toString().endsWith(".json")).entrySet()) {
+            for (Map.Entry<ResourceLocation, Resource> resource : manager.listResources("arcanemysteries_modifiers/biomes", (s) -> s.toString().endsWith(".json")).entrySet()) {
                 ResourceLocation blockId = new ResourceLocation(
                         resource.getKey().getNamespace(),
-                        resource.getKey().getPath().replace("survive_modifiers/biomes/", "").replace(".json", "")
+                        resource.getKey().getPath().replace("arcanemysteries_modifiers/biomes/", "").replace(".json", "")
                 );
 
                 if (!ForgeRegistries.BIOMES.containsKey(blockId)) {

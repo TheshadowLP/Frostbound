@@ -102,13 +102,11 @@ public class TemperatureData extends ClientTick {
         double tempLocation = this.temperatureLevel - ArcaneMysteries.DEF_TEMP;
         if (tempLocation > 0) {
             double maxTemp = 0.0D;
-            double div = tempLocation / maxTemp;
-            this.displayTemperature = Mth.clamp(div, 0, 1.0D+(28.0D/63.0D));
+            this.displayTemperature = Mth.clamp(tempLocation, 0, 1.0D+(28.0D/63.0D));
         }
         if (tempLocation < 0) {
             double maxTemp = 0.0D;
-            double div = tempLocation / maxTemp;
-            this.displayTemperature = Mth.clamp(div, -1.0D-(28.0D/63.0D), 0);
+            this.displayTemperature = Mth.clamp(tempLocation, -1.0D-(28.0D/63.0D), 0);
         }
 
         if(!(player.isCreative() || player.isSpectator())) {

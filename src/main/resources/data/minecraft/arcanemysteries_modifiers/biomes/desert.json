@@ -1,0 +1,18 @@
+{
+	"temperature": 2.0,
+	"wetness_modifier": 0.8,
+	"sun_intensity": 8.0,
+	"altitude_level_modifier": {
+		"upper": 1.0,
+		"lower": 1.0
+	},
+	"season_modifier": 
+	{
+		"arcanemysteries:dry_begin": 0.1,
+		"arcanemysteries:dry_midst": 0.2,
+		"arcanemysteries:dry_close": 0.1,
+		"arcanemysteries:wet_begin": -0.1,
+		"arcanemysteries:wet_midst": -0.2,
+		"arcanemysteries:wet_close": -0.1
+	}
+}

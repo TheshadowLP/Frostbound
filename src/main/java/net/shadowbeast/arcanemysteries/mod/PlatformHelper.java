@@ -23,7 +23,7 @@ public class PlatformHelper
 
     private static void onWorldLoad(ChunkEvent.Load event) {
         if (event.getLevel() instanceof ServerLevel) {
-            Inserts.LEVEL_LOAD.insert((ServerLevel) event.getLevel());
+            Inserts.LEVEL_LOAD.insert(event.getLevel());
         }
     }
 
