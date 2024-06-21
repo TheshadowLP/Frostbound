@@ -44,7 +44,6 @@ public class ClientboundDataTransferPacket extends ClientboundUnionPacket{
     }
 
     @Override
-    @OnlyIn(Dist.CLIENT)
     public boolean handleOnClient(LocalPlayer sender) {
         if (settings instanceof BiomeJsonHolder) {
             if (this.clear) {

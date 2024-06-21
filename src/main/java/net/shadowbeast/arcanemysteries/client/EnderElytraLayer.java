@@ -21,7 +21,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 
-@OnlyIn(Dist.CLIENT)
 public class EnderElytraLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
     private static final ResourceLocation WINGS_LOCATION = new ResourceLocation("arcanemysteries/textures/entity/ender_elytra.png");
     private final EnderElytraModel<T> elytraModel;

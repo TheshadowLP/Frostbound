@@ -243,7 +243,6 @@ public class TemperatureData extends ClientTick {
         return ((float)fTemp) / 100.0F;
     }
 
-    @OnlyIn(Dist.CLIENT)
     public double getDisplayTemperature() {
         return displayTemperature;
     }

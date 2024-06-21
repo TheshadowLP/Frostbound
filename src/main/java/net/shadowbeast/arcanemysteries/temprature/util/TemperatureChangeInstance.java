@@ -25,7 +25,6 @@ public abstract class TemperatureChangeInstance
         return temperature;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Nullable
     public Component getAdditionalInfo()
     {

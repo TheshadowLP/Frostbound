@@ -17,7 +17,7 @@ public class DataMaps
         public static final Map<ResourceLocation, EntityTemperatureJsonHolder> entityTemperature = Maps.newHashMap();
         public static final Map<ResourceLocation, BiomeJsonHolder> biome = Maps.newHashMap();
     }
-    @OnlyIn(Dist.CLIENT)
+
     public static class Client {
         public static ImmutableMap<ResourceLocation, EntityTemperatureJsonHolder> entityTemperature = ImmutableMap.of();
         public static ImmutableMap<ResourceLocation, BiomeJsonHolder> biome = ImmutableMap.of();

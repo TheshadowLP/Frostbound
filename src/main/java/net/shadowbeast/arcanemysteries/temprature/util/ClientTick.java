@@ -28,14 +28,12 @@ public abstract class ClientTick {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void baseClientTick(AbstractClientPlayer player) {
         if (shouldTick()) {
             clientTick(player);
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void clientTick(AbstractClientPlayer player) {
 
     }
