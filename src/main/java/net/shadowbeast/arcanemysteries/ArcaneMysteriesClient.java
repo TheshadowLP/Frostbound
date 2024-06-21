@@ -58,7 +58,6 @@ public class ArcaneMysteriesClient extends SetupClient {
                     renderer.drawString(s, x, y, ChatFormatting.GRAY.getColor(), false);
                 }
             }
-
         Minecraft.getInstance().getProfiler().pop();
     }
 }

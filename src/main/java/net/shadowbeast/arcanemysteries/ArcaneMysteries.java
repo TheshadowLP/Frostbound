@@ -66,11 +66,10 @@ public class ArcaneMysteries extends MinecraftMod {
     private final ReloadListeners reloadListeners = ReloadListener::id;
     public ArcaneMysteries() {
         super(MOD_ID, ArcaneMysteriesClient::new, ServerSegment::new);
-        var idk = Minecraft.getInstance();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
-        //BlockRegistry.BLOCKS.register(bus);
-        //BlockRegistry.BLOCK_ITEMS.register(bus);
+        // BlockRegistry.BLOCKS.register(bus);
+        // BlockRegistry.BLOCK_ITEMS.register(bus);
         ItemRegistry.ITEMS.register(bus);
         CreativeTabRegistry.TAB.register(bus);
         SoundRegistry.SOUNDS.register(bus);
