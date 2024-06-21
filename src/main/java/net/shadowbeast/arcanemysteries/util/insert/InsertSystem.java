@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("unchecked")
 public class InsertSystem implements InsertCollector {
     public static final InsertSystem instance = new InsertSystem();
 
