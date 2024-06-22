@@ -13,10 +13,12 @@ public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     private static final Properties defaultValues = new Properties();
     private static final ForgeConfigSpec.BooleanValue tempSystem = BUILDER
-            .comment("Weather Hot Potatoes do damage")
-            .define("bakedPotatoesDoDamage", true);
+            .comment("If the temperature system is enabled or not")
+            .define("tempSystem", true);
+
     public static final ForgeConfigSpec SPEC = BUILDER.build();
     public static boolean TEMPERATURE_SYSTEM_ENABLED;
+
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event) {
         TEMPERATURE_SYSTEM_ENABLED = tempSystem.get();

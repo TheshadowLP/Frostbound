@@ -63,7 +63,6 @@ public class ArcaneMysteries extends MinecraftMod {
     private final ReloadListeners reloadListeners = ReloadListener::id;
     public ArcaneMysteries() {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         instance = this;
         //BlockRegistry.BLOCKS.register(bus);
         //BlockRegistry.BLOCK_ITEMS.register(bus);
@@ -89,6 +88,7 @@ public class ArcaneMysteries extends MinecraftMod {
         bus.addListener(this::addCreative);
 
         MinecraftForge.EVENT_BUS.register(this);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
