@@ -24,6 +24,7 @@ import net.shadowbeast.arcanemysteries.block_entities.screen.CrusherScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.WinterFurnaceScreen;
 import net.shadowbeast.arcanemysteries.client.BoatModRenderer;
 import net.shadowbeast.arcanemysteries.client.command.TemperatureCommand;
+import net.shadowbeast.arcanemysteries.config.Config;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
@@ -39,7 +40,7 @@ import net.shadowbeast.arcanemysteries.json.EntityTemperatureDataManager;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
 import net.shadowbeast.arcanemysteries.mod.MinecraftMod;
 import net.shadowbeast.arcanemysteries.mod.PlatformHelper;
-import net.shadowbeast.arcanemysteries.networking.MessagesMod;
+import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.registries.*;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
@@ -62,6 +63,7 @@ public class ArcaneMysteries extends MinecraftMod {
     private final ReloadListeners reloadListeners = ReloadListener::id;
     public ArcaneMysteries() {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         instance = this;
         //BlockRegistry.BLOCKS.register(bus);
         //BlockRegistry.BLOCK_ITEMS.register(bus);
@@ -94,7 +96,7 @@ public class ArcaneMysteries extends MinecraftMod {
 
         event.enqueueWork(() -> {
             registerInserts(InsertSystem.instance);
-            MessagesMod.registerPackets();
+            ModMessages.registerPackets();
             reloadListeners.listenTo(entityManager);
             reloadListeners.listenTo(biomeManager);
         });
