@@ -1,44 +1,130 @@
 package net.shadowbeast.arcanemysteries.mixin;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-
+import net.shadowbeast.arcanemysteries.interfaces.util.IFallDamageCancelable;
+import net.shadowbeast.arcanemysteries.interfaces.util.IRoastedEntity;
+import org.jetbrains.annotations.NotNull;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.concurrent.atomic.AtomicBoolean;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(Entity.class)
-public abstract class EntityMixin {
+public abstract class EntityMixin implements IRoastedEntity, IFallDamageCancelable {
+    @Unique
+    Entity entity = ((Entity) (Object) this);
+
+    @Unique
+    boolean cancelFallDamage = false;
+
+    @Shadow
+    public float fallDistance;
+
     @Shadow
     public abstract void resetFallDistance();
 
     @Shadow
-    public float fallDistance;
-    Entity entity = ((Entity) (Object) this);
+    @Final
+    protected SynchedEntityData entityData;
+    @Shadow
+    public boolean isInPowderSnow;
+    @Shadow
+    public int tickCount;
+
+    @Shadow
+    public boolean canFreeze() {
+        return false;
+    } // its either true or false, and is never happy
+
+    @Shadow
+    public abstract boolean hurt(DamageSource pSource, float pAmount);
+
+    @Shadow
+    public abstract EntityType<?> getType();
+
+    @Shadow
+    public abstract DamageSources damageSources();
+
+    @Shadow
+    public abstract boolean isSpectator();
+
+    @Shadow
+    public abstract Level level();
+
+    @Inject(method = "<init>", at = @At("TAIL"))
+    public void init_inject(CallbackInfo info) {
+        this.entityData.define(DATA_TICKS_ROASTED, 0);
+    }
+
+    @Inject(method = "saveWithoutId", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getUUID()Ljava/util/UUID;"), locals = LocalCapture.CAPTURE_FAILHARD)
+    public void saveWithoutId_inject(CompoundTag pCompound, CallbackInfoReturnable<CompoundTag> cir) {
+        int i = this.getTicksRoasted();
+        if (i > 0) {
+            pCompound.putInt("TicksRoasted", this.getTicksRoasted());
+        }
+    }
+
+    @Inject(method = "load", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;setTicksFrozen(I)V"), locals = LocalCapture.CAPTURE_FAILHARD)
+    public void load_inject(@NotNull CompoundTag pCompound, CallbackInfo ci) {
+        this.setTicksRoasted(pCompound.getInt("TicksRoasted"));
+    }
+
+    @Override
+    public int getTicksRoasted() {
+        return this.entityData.get(DATA_TICKS_ROASTED);
+    }
+
+    @Override
+    public void setTicksRoasted(int pTicksFrozen) {
+        this.entityData.set(DATA_TICKS_ROASTED, pTicksFrozen);
+    }
+
+    @Override
+    public void setCancelFallDamage(boolean cancelFallDamage) {
+        this.cancelFallDamage = cancelFallDamage;
+    }
+
+    @Override
+    public boolean cancelFallDamage() {
+        return this.cancelFallDamage;
+    }
+
+    @Override
+    public float getPercentRoasted() {
+        int i = this.getTicksRequiredToRoast();
+        return (float) Math.min(this.getTicksRoasted(), i) / (float) i;
+    }
+
+    @Override
+    public boolean isFullyRoasted() {
+        return this.getTicksRoasted() >= this.getTicksRequiredToRoast();
+    }
+
+    @Override
+    public boolean canRoast() {
+        return !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES);
+    }
 
     @Inject(method = "checkFallDamage", at = @At(value = "HEAD"))
     private void cancelFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos, CallbackInfo ci) {
-        AtomicBoolean levitationTagged = new AtomicBoolean(false);
-        if (this.entity instanceof ServerPlayer player) {
-//            player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
-//                levitationTagged.set(levitationTag.isLevitationTagged());
-//            });
-        }
-        if (levitationTagged.get()) {
+        if (cancelFallDamage()) {
             if (pOnGround && this.fallDistance > 0.0F) {
-                if (entity instanceof ServerPlayer player) {
-//                    player.getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(levitationTag -> {
-//                        resetFallDistance();
-//                        levitationTag.setLevitationTagged(false);
-//                        MessagesMod.sendToPlayer(new LevitationDataSyncS2CPacket(levitationTag.isLevitationTagged()), player);
-//                    });
-                }
+                resetFallDistance();
+                setCancelFallDamage(false);
             }
         }
     }

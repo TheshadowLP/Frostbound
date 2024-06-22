@@ -5,14 +5,15 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "arcanemysteries.mixins.refmap.json",
   "mixins": [
+    "CowMixin",
     "EntityMixin",
     "LivingEntityMixin",
     "PlayerMixin"
   ],
   "client": [
-    "client.GuiMixin",
+    "LocalPlayerMixin",
     "client.AbstractClientPlayerMixin",
-    "LocalPlayerMixin"
+    "client.GuiMixin"
   ],
   "injectors": {
     "defaultRequire": 1

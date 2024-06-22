@@ -14,7 +14,7 @@ public interface IRoastedEntity
     int getTicksRoasted();
     void setTicksRoasted(int pTicksFrozen);
     float getPercentRoasted();
-    boolean arcaneMysteries$isFullyRoasted();
+    boolean isFullyRoasted();
 
     default boolean canRoast() {
         return true;

@@ -22,11 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin extends EEntityMixin{
-
-    public LivingEntityMixin(EntityType<?> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
+public abstract class LivingEntityMixin extends EntityMixin {
 
     @Shadow public abstract ItemStack getItemBySlot(EquipmentSlot pSlot);
     @Shadow
@@ -57,7 +53,7 @@ public abstract class LivingEntityMixin extends EEntityMixin{
 
     @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;tryAddFrost()V"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void aiStep_inject_2(CallbackInfo ci) {
-        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.arcaneMysteries$isFullyRoasted() && this.canRoast()) {
+        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.isFullyRoasted() && this.canRoast()) {
             int j = this.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? 5 : 1;
 
             float amount = (float)j;

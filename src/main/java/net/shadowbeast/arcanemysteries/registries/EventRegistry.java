@@ -61,20 +61,6 @@ public class EventRegistry {
         }
     }
     @SubscribeEvent
-    public static void milkCow(@NotNull PlayerInteractEvent.EntityInteract event) {
-        if (event.getTarget() instanceof LivingEntity targetEntity) {
-            if (targetEntity instanceof Cow) {
-                ItemStack interactionStack = event.getItemStack();
-                Player player = event.getEntity();
-                if (interactionStack.is(Items.GLASS_BOTTLE)) {
-                    player.playSound(SoundRegistry.MILKING_SOUND_BOTTLE.get(), SoundSource.BLOCKS.ordinal(), 1);
-                    ItemStack milkBottleStack = ItemUtils.createFilledResult(interactionStack, player, ItemRegistry.MILK_BOTTLE.get().getDefaultInstance());
-                    player.setItemInHand(event.getHand(), milkBottleStack);
-                }
-            }
-        }
-    }
-    @SubscribeEvent
     public static void addVillagerTrade(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         ItemStack iceAspect = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentsRegistry.ICE_ASPECT.get(), 1));
