@@ -13,7 +13,7 @@ public class ClientboundStatsPacket extends ClientboundUnionPacket {
     private final CompoundTag stats;
 
     public ClientboundStatsPacket(final CompoundTag statsIn) {
-        super(MessagesMod.NETWORK_WRAPPER);
+        super(MessagesMod.INSTANCE);
         this.stats = statsIn;
     }
 
@@ -22,7 +22,7 @@ public class ClientboundStatsPacket extends ClientboundUnionPacket {
     }
 
     public ClientboundStatsPacket(FriendlyByteBuf byteBuf) {
-        super(byteBuf, MessagesMod.NETWORK_WRAPPER);
+        super(byteBuf, MessagesMod.INSTANCE);
         this.stats = byteBuf.readNbt();
     }
 

@@ -14,7 +14,6 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
-import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
 public abstract class ClientboundUnionPacket extends BasePacket {
@@ -33,7 +32,10 @@ public abstract class ClientboundUnionPacket extends BasePacket {
         if (shouldRun()) {
             NetworkEvent.Context context = contextSupplier.get();
             context.enqueueWork(() -> wasHandled.setValue(
-                    DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> (Callable<Boolean>) () -> handleOnClient(Minecraft.getInstance().player))
+                    DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> () -> {
+                        assert Minecraft.getInstance().player != null;
+                        return handleOnClient(Minecraft.getInstance().player);
+                    })
             ));
             context.setPacketHandled(true);
 
@@ -43,13 +45,9 @@ public abstract class ClientboundUnionPacket extends BasePacket {
         }
     }
 
-    public boolean verifyIfHandled() {
-        return false;
-    }
+    public boolean verifyIfHandled() { return false; }
 
-    public boolean shouldRun() {
-        return true;
-    }
+    public boolean shouldRun() { return true; }
 
     public void send(ServerPlayer playerEntity) {
         this.channel.sendTo(this, playerEntity.connection.connection, NetworkDirection.PLAY_TO_CLIENT);

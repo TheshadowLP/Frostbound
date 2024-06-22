@@ -3,12 +3,10 @@ package net.shadowbeast.arcanemysteries.mixin;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 import net.shadowbeast.arcanemysteries.temprature.util.TUtil;
@@ -57,7 +55,7 @@ public abstract class LivingEntityMixin extends EEntityMixin{
 
     @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;tryAddFrost()V"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void aiStep_inject_2(CallbackInfo ci) {
-        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.isFullyRoasted() && this.canRoast()) {
+        if (!this.level().isClientSide && this.tickCount % 40 == 0 && this.arcaneMysteries$isFullyRoasted() && this.canRoast()) {
             int j = this.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? 5 : 1;
 
             float amount = (float)j;
