@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.client;
+package net.shadowbeast.arcanemysteries.elytra;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.AgeableListModel;

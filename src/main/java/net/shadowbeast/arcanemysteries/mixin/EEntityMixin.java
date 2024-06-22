@@ -71,10 +71,6 @@ public abstract class EEntityMixin extends net.minecraftforge.common.capabilitie
         return (float)Math.min(this.getTicksRoasted(), i) / (float)i;
     }
 
-    @Override
-    public boolean isFullyRoasted() {
-        return this.getTicksRoasted() >= this.getTicksRequiredToRoast();
-    }
 
     @Override
     public boolean canRoast() {

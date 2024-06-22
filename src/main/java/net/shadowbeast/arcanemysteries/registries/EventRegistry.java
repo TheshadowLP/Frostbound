@@ -94,8 +94,11 @@ public class EventRegistry {
             }
         }
     }
-
-    @SubscribeEvent
+    /**
+     * This method is triggered when an item is picked up by a player.
+     * It checks if the player has a certain level of magnetism and if the item is within a certain distance.
+     * If both conditions are met, the item is added directly to the player's inventory.
+     */
     public static void onItemPickup(EntityItemPickupEvent event) {
         Player player = event.getEntity();
         int level = getMagnetismLevel(player);
@@ -109,7 +112,14 @@ public class EventRegistry {
         }
     }
     /**
-     * It checks the level of the Magnetism enchantment on the players boots. If the level is greater than 0, it calculates the range from the enchantment level, then looks for any item entities in the area. If there is a item in range it calculates a direction vector pointing from the item to the player, normalizes and scales this vector, and adds it to the item's current movement vector, fancy smancy code talk, but it basically sends it to the player
+     * It checks the level of the Magnetism enchantment on the players boots. If the level is greater than 0, it calculates the range from the enchantment level, base = 3, + 3 for every level, then looks for any item entities in the area. If there is a item in range it calculates a direction vector pointing from the item to the player, normalizes and scales this vector, and adds it to the item's current movement vector, fancy smancy code talk, but it basically sends it to the player
+     * <br></br>
+     * <br></br>
+     * <b>Formulas:</b>
+     * <p>range = 3.0 * Level</p>
+     * <p>direction = 0.1 * (playerPos - itemPos)</p>
+     * <p>newMovement = oldMovement + direction</p>
+     * <p>formula = newMovement = oldMovement + 0.1 * (playerPos - itemPos)</p>
      * @apiNote This method is triggered every tick
      */
     @SubscribeEvent
