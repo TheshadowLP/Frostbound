@@ -8,15 +8,15 @@ import org.jetbrains.annotations.NotNull;
 public class ConfigScreen extends Screen {
     private final Screen previous;
     public ConfigScreen(Screen previous) {
-        super(Component.literal("Arcane Mysteries Configuration"));
+        super(Component.translatable("config.arcanemysteries.config_screen_title"));
         this.previous = previous;
     }
     @Override
     protected void init() {
         // Do NOT touch the width. That took way to long to figure out
-        // this.addRenderableWidget(CycleButton.onOffBuilder(Config.bakedPotatoesDoDamage)
-        //        .create(this.width / 2 - 75, this.height / 4, 155, 20,
-        //                Component.literal("Baked Potatoes Do Damage"), (button, value) -> Config.bakedPotatoesDoDamage = value));
+        this.addRenderableWidget(CycleButton.onOffBuilder(Config.TEMPERATURE_SYSTEM_ENABLED)
+                .create(this.width / 2 - 75, this.height / 4, 155, 20,
+                        Component.translatable("config.arcanemysteries.temperature_system"), (button, value) -> Config.TEMPERATURE_SYSTEM_ENABLED = value));
     }
     @Override
     public void onClose() {

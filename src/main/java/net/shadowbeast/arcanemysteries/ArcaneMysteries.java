@@ -90,10 +90,7 @@ public class ArcaneMysteries extends MinecraftMod {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    private void commonSetup(final @NotNull FMLCommonSetupEvent event)
-    {
-
-
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             registerInserts(InsertSystem.instance);
             ModMessages.registerPackets();
@@ -101,13 +98,10 @@ public class ArcaneMysteries extends MinecraftMod {
             reloadListeners.listenTo(biomeManager);
         });
     }
-    private void clientSetup(final FMLClientSetupEvent event) {
-    }
+    private void clientSetup(final FMLClientSetupEvent event) {}
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
+    public void onServerStarting(ServerStartingEvent event) {}
 
-    }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
@@ -121,9 +115,7 @@ public class ArcaneMysteries extends MinecraftMod {
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
             PlatformHelper.handleEvents();
 
-            event.enqueueWork(() -> {
-
-            });
+            event.enqueueWork(() -> {});
         }
         @SubscribeEvent
         public static void registerRenderers(FMLClientSetupEvent event) {
