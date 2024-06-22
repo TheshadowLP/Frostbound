@@ -11,9 +11,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -39,7 +37,7 @@ import net.shadowbeast.arcanemysteries.json.EntityTemperatureDataManager;
 import net.shadowbeast.arcanemysteries.json.EntityTemperatureJsonHolder;
 import net.shadowbeast.arcanemysteries.mod.MinecraftMod;
 import net.shadowbeast.arcanemysteries.mod.PlatformHelper;
-import net.shadowbeast.arcanemysteries.networking.MessagesMod;
+import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.registries.*;
 import net.shadowbeast.arcanemysteries.util.BiomeJsonHolder;
 import net.shadowbeast.arcanemysteries.util.InsertCollector;
@@ -94,7 +92,7 @@ public class ArcaneMysteries extends MinecraftMod {
 
         event.enqueueWork(() -> {
             registerInserts(InsertSystem.instance);
-            MessagesMod.registerPackets();
+            ModMessages.registerPackets();
             reloadListeners.listenTo(entityManager);
             reloadListeners.listenTo(biomeManager);
         });

@@ -5,7 +5,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
-import net.shadowbeast.arcanemysteries.networking.MessagesMod;
+import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,7 +13,7 @@ public class ClientboundStatsPacket extends ClientboundUnionPacket {
     private final CompoundTag stats;
 
     public ClientboundStatsPacket(final CompoundTag statsIn) {
-        super(MessagesMod.INSTANCE);
+        super(ModMessages.INSTANCE);
         this.stats = statsIn;
     }
 
@@ -22,7 +22,7 @@ public class ClientboundStatsPacket extends ClientboundUnionPacket {
     }
 
     public ClientboundStatsPacket(FriendlyByteBuf byteBuf) {
-        super(byteBuf, MessagesMod.INSTANCE);
+        super(byteBuf, ModMessages.INSTANCE);
         this.stats = byteBuf.readNbt();
     }
 
