@@ -223,7 +223,7 @@ public class TemperatureData extends ClientTick {
      * Get the player's temperature level.
      */
     public double getTemperatureLevel() {
-        return this.temperatureLevel;
+        return temperatureLevel;
     }
 
     /**

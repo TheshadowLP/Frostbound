@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
-import net.shadowbeast.arcanemysteries.networking.packet.AddLevitationTagC2SPacket;
 import net.shadowbeast.arcanemysteries.registries.ParticleRegistry;
 import net.shadowbeast.arcanemysteries.registries.SoundRegistry;
 import org.jetbrains.annotations.NotNull;

@@ -25,26 +25,22 @@ public class MessagesMod {
     static {
         NETWORK_WRAPPER = NetworkRegistry.ChannelBuilder
                 .named(new ResourceLocation(ArcaneMysteries.MOD_ID, "main_channel"))
-                .clientAcceptedVersions(PROTOCOL_VERSION::equals)
-                .serverAcceptedVersions(PROTOCOL_VERSION::equals)
                 .networkProtocolVersion(() -> PROTOCOL_VERSION)
+                .clientAcceptedVersions(s -> true)
+                .serverAcceptedVersions(s -> true)
                 .simpleChannel();
     }
 
     public static void registerPackets() {
-        NETWORK_WRAPPER.messageBuilder(ClientboundStatsPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+        ArcaneMysteries.LOGGER.info("Registering Packets");
+        NETWORK_WRAPPER.messageBuilder(ClientboundStatsPacket.class, packetId++, NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ClientboundStatsPacket::new)
                 .encoder(ClientboundStatsPacket::encode)
                 .consumerMainThread(ClientboundStatsPacket::message)
                 .add();
 
-//        NETWORK_WRAPPER.messageBuilder(AddLevitationTagC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-//                .decoder(AddLevitationTagC2SPacket::new)
-//                .encoder(AddLevitationTagC2SPacket::toBytes)
-//                .consumerMainThread(AddLevitationTagC2SPacket::handle)
-//                .add();
 
-        NETWORK_WRAPPER.messageBuilder(ClientboundDataTransferPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+        NETWORK_WRAPPER.messageBuilder(ClientboundDataTransferPacket.class,packetId++, NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ClientboundDataTransferPacket::new)
                 .encoder(ClientboundDataTransferPacket::encode)
                 .consumerMainThread(ClientboundDataTransferPacket::message)

@@ -86,19 +86,22 @@ public class ArcaneMysteries extends MinecraftMod {
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::addCreative);
+
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
     private void commonSetup(final @NotNull FMLCommonSetupEvent event)
     {
-        MessagesMod.registerPackets();
-        ArcaneMysteriesClient.register();
+
+
         event.enqueueWork(() -> {
             registerInserts(InsertSystem.instance);
-
+            MessagesMod.registerPackets();
             reloadListeners.listenTo(entityManager);
             reloadListeners.listenTo(biomeManager);
         });
+    }
+    private void clientSetup(final FMLClientSetupEvent event) {
     }
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)

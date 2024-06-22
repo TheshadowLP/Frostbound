@@ -36,9 +36,7 @@ import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.items.tools.ItemHammer;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
-import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTag;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -110,22 +108,18 @@ public class EventRegistry {
     @SubscribeEvent
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
         if(event.getObject() instanceof Player) {
-            if(!event.getObject().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).isPresent()) {
-                event.addCapability(new ResourceLocation(ArcaneMysteries.MOD_ID, "properties"), new PlayerLevitationTagProvider());
-            }
+
         }
     }
 
     @SubscribeEvent
     public static void onPlayerCloned(PlayerEvent.Clone event) {
         if(event.isWasDeath()) {
-            event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(oldStore -> event.getOriginal().getCapability(PlayerLevitationTagProvider.PLAYER_THIRST).ifPresent(newStore -> newStore.copyFrom(oldStore)));
         }
     }
 
     @SubscribeEvent
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
-        event.register(PlayerLevitationTag.class);
     }
 
     @SubscribeEvent

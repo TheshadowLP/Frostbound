@@ -5,6 +5,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.shadowbeast.arcanemysteries.temprature.TemperatureData;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 
 public class TemperatureCommand

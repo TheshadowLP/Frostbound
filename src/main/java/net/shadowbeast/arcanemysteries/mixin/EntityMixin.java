@@ -5,8 +5,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.arcanemysteries.networking.MessagesMod;
-import net.shadowbeast.arcanemysteries.networking.packet.LevitationDataSyncS2CPacket;
-import net.shadowbeast.arcanemysteries.util.levitation_staff.PlayerLevitationTagProvider;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

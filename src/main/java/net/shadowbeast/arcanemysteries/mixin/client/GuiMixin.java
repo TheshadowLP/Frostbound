@@ -6,6 +6,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.temprature.util.EStats;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -52,6 +53,7 @@ public abstract class GuiMixin {
         float heatTemp = (float) (1.0F - displayTemp);
         float coldTemp = (float) (1.0F + displayTemp);
         float whiteTemp = (float) ((1.0F - Math.abs(displayTemp))/2 + 0.5F);
+        ArcaneMysteries.LOGGER.info(displayTemp);
         guiGraphics.setColor(coldTemp, whiteTemp, heatTemp, 1.0F);
 
     }
