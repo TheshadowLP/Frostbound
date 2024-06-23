@@ -5,10 +5,10 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "arcanemysteries.mixins.refmap.json",
   "mixins": [
-    "EntityMixin",
-    "BeforeServerStartMixin"
+    "EntityMixin"
   ],
   "client": [
+    "BeforeServerStartMixin",
     "LocalPlayerMixin"
   ],
   "injectors": {
