@@ -25,6 +25,7 @@ import net.shadowbeast.arcanemysteries.block_entities.screen.WinterFurnaceScreen
 import net.shadowbeast.arcanemysteries.client.BoatModRenderer;
 import net.shadowbeast.arcanemysteries.client.command.TemperatureCommand;
 import net.shadowbeast.arcanemysteries.config.Config;
+import net.shadowbeast.arcanemysteries.enchant.ChopperEnchantment;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
@@ -112,6 +113,7 @@ public class ArcaneMysteries extends MinecraftMod {
             MenuScreens.register(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
+            MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.CHOPPER.get());
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
             PlatformHelper.handleEvents();
 
