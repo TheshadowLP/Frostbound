@@ -48,7 +48,7 @@ public class EntityMudBall extends ThrowableItemProjectile {
             return;
         }
         if (hitEntity instanceof LivingEntity livingHitEntity) {
-            livingHitEntity.addEffect(new MobEffectInstance(EffectsRegistry.MUD_EFFECT.get(), 250, 0));
+            //livingHitEntity.addEffect(new MobEffectInstance(EffectsRegistry.MUD_EFFECT.get(), 250, 0));
         }
     }
 

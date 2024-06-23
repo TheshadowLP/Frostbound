@@ -20,9 +20,9 @@ public class MudOverlay {
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public static void onRenderGuiPre(RenderGuiEvent.Pre event) {
         Player player = Minecraft.getInstance().player;
-        if (player != null && player.hasEffect(EffectsRegistry.MUD_EFFECT.get())) {
-            renderMudOverlay(event);
-        }
+//        if (player != null && player.hasEffect(EffectsRegistry.MUD_EFFECT.get())) {
+//            renderMudOverlay(event);
+//        }
     }
 
     private static void renderMudOverlay(RenderGuiEvent.Pre event) {
