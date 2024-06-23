@@ -8,10 +8,8 @@ import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class ResultSlotMod extends SlotItemHandler {
-    private final ContainerData containerData;
     public ResultSlotMod(IItemHandler itemHandler, int index, int xPosition, int yPosition, ContainerData containerData) {
         super(itemHandler, index, xPosition, yPosition);
-        this.containerData = containerData;
     }
     @Override
     public boolean mayPlace(@NotNull ItemStack stack) { return false; }

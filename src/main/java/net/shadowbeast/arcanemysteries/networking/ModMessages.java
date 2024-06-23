@@ -2,15 +2,13 @@ package net.shadowbeast.arcanemysteries.networking;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.networking.packet.ClientboundDataTransferPacket;
-import net.shadowbeast.arcanemysteries.networking.packet.ClientboundStatsPacket;
+import net.shadowbeast.arcanemysteries.networking.packet.*;
 
-public class MessagesMod {
+public class ModMessages {
     public static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(ArcaneMysteries.MOD_ID, "main"),
@@ -24,22 +22,16 @@ public class MessagesMod {
         return packetId++;
     }
     public static void register() {
-        INSTANCE.messageBuilder(ClientboundStatsPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(ClientboundStatsPacket::new)
-                .encoder(ClientboundStatsPacket::encode)
-                .consumerMainThread(ClientboundStatsPacket::message)
-                .add();
 
-        INSTANCE.messageBuilder(ClientboundDataTransferPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(ClientboundDataTransferPacket::new)
-                .encoder(ClientboundDataTransferPacket::encode)
-                .consumerMainThread(ClientboundDataTransferPacket::message)
-                .add();
     }
-    public static void registerPackets() {
+    public static void registerPackets(){
         int id = 0;
-        INSTANCE.registerMessage(id++, ClientboundStatsPacket.class, ClientboundStatsPacket::encode, ClientboundStatsPacket::new, ClientboundStatsPacket::message);
-        INSTANCE.registerMessage(id++, ClientboundDataTransferPacket.class, ClientboundDataTransferPacket::encode, ClientboundDataTransferPacket::new, ClientboundDataTransferPacket::message);
+        INSTANCE.registerMessage(id++, TemperatureSyncPacket.class,TemperatureSyncPacket::encode,TemperatureSyncPacket::decode,TemperatureSyncPacket::handle);
+        INSTANCE.registerMessage(id++, TempModifiersSyncPacket.class,TempModifiersSyncPacket::encode,TempModifiersSyncPacket::decode,TempModifiersSyncPacket::handle);
+        INSTANCE.registerMessage(id++, SyncForgeDataMessage.class,SyncForgeDataMessage::encode,SyncForgeDataMessage::decode,SyncForgeDataMessage::handle);
+        INSTANCE.registerMessage(id++, SyncConfigSettingsMessage.class, SyncConfigSettingsMessage::encode,SyncConfigSettingsMessage::decode,SyncConfigSettingsMessage::handle);
+        INSTANCE.registerMessage(id++, SyncPreferredUnitsMessage.class,SyncPreferredUnitsMessage::encode,SyncPreferredUnitsMessage::decode,SyncPreferredUnitsMessage::handle);
+        INSTANCE.registerMessage(id++, ClientConfigAskMessage.class,ClientConfigAskMessage::encode,ClientConfigAskMessage::decode,ClientConfigAskMessage::handle);
     }
     public static <MSG> void sendToServer(MSG message) {
         INSTANCE.sendToServer(message);

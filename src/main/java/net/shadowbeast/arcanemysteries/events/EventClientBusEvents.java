@@ -15,7 +15,6 @@ import net.shadowbeast.arcanemysteries.entities.mobs.client.YakModel;
 import net.shadowbeast.arcanemysteries.particle.FeatherParticles;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ParticleRegistry;
-import net.shadowbeast.arcanemysteries.temprature.TempratureHudOverlay;
 
 @Mod.EventBusSubscriber(modid = ArcaneMysteries.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EventClientBusEvents {
@@ -37,6 +36,6 @@ public class EventClientBusEvents {
 
     @SubscribeEvent
     public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
-        event.registerAboveAll("thirst", TempratureHudOverlay.HUD_TEMPERATURE);
+
     }
 }
