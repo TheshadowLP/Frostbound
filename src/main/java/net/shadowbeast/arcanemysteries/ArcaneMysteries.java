@@ -90,7 +90,6 @@ public class ArcaneMysteries {
             event.dataPackRegistry(ArcaneRegistries.ENTITY_SPAWN_BIOME_DATA, SpawnBiomeData.CODEC);
         });
         MinecraftForge.EVENT_BUS.register(this);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
     private void commonSetup(final @NotNull FMLCommonSetupEvent event)
     {

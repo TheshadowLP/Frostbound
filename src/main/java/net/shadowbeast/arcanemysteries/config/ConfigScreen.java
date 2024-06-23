@@ -1,32 +1,76 @@
 package net.shadowbeast.arcanemysteries.config;
 
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.CycleButton;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
-import org.jetbrains.annotations.NotNull;
-public class ConfigScreen extends Screen {
-    private final Screen previous;
-    public ConfigScreen(Screen previous) {
-        super(Component.translatable("config.arcanemysteries.config_screen_title"));
-        this.previous = previous;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ScreenEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.shadowbeast.arcanemysteries.client.gui.AbstractConfigPage;
+import net.shadowbeast.arcanemysteries.core.ClientSettingConfig;
+import net.shadowbeast.arcanemysteries.networking.ModMessages;
+import net.shadowbeast.arcanemysteries.networking.packet.SyncConfigSettingsMessage;
+import net.shadowbeast.arcanemysteries.networking.packet.SyncPreferredUnitsMessage;
+import net.shadowbeast.arcanemysteries.temprature.Temperature;
+import net.shadowbeast.arcanemysteries.util.MathHelper;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+@Mod.EventBusSubscriber(value = Dist.CLIENT)
+public class ConfigScreen
+{
+    public static final int TITLE_HEIGHT = 16;
+    public static final int BOTTOM_BUTTON_HEIGHT_OFFSET = 26;
+    public static final int OPTION_SIZE = 25;
+    public static final int BOTTOM_BUTTON_WIDTH = 150;
+
+    public static Minecraft MC = Minecraft.getInstance();
+
+    public static DecimalFormat TWO_PLACES = new DecimalFormat("#.##");
+
+    public static boolean IS_MOUSE_DOWN = false;
+    public static int MOUSE_X = 0;
+    public static int MOUSE_Y = 0;
+
+    static List<Function<Screen, AbstractConfigPage>> PAGES = new ArrayList<>(Arrays.asList());
+    public static int FIRST_PAGE = 0;
+    public static int LAST_PAGE = PAGES.size() - 1;
+    public static int CURRENT_PAGE = 0;
+
+    public static final Supplier<Integer> SHIFT_AMOUNT = () -> Screen.hasShiftDown() && Screen.hasControlDown() ? 100 : Screen.hasShiftDown() ? 10 : 1;
+
+    public static Screen getPage(int index, Screen parentScreen)
+    {   return PAGES.get(MathHelper.clamp(index, FIRST_PAGE, LAST_PAGE)).apply(parentScreen);
     }
-    @Override
-    protected void init() {
-        // Do NOT touch the width. That took way to long to figure out
-        this.addRenderableWidget(CycleButton.onOffBuilder(Config.TEMPERATURE_SYSTEM_ENABLED)
-                .create(this.width / 2 - 75, this.height / 4, 155, 20,
-                        Component.translatable("config.arcanemysteries.temperature_system"), (button, value) -> Config.TEMPERATURE_SYSTEM_ENABLED = value));
+
+    public static void saveConfig()
+    {
+        if (Minecraft.getInstance().player != null)
+        {
+            if (!MC.isLocalServer())
+                ModMessages.INSTANCE.sendToServer(new SyncConfigSettingsMessage());
+            else ConfigSettings.saveValues();
+            ModMessages.INSTANCE.sendToServer(new SyncPreferredUnitsMessage(ConfigSettings.CELSIUS.get() ? Temperature.Units.C : Temperature.Units.F));
+        }
+        else ConfigSettings.saveValues();
+        ClientSettingConfig.getInstance().writeAndSave();
     }
-    @Override
-    public void onClose() {
-        assert this.minecraft != null;
-        this.minecraft.setScreen(previous);
+
+    @SubscribeEvent
+    public static void onClicked(ScreenEvent.MouseButtonPressed event)
+    {
+
     }
-    @Override
-    public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
-        this.renderDirtBackground(pGuiGraphics);
-        pGuiGraphics.drawCenteredString(this.font, this.title, this.width / 2, 15, 0xFFFFFF);
-        super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+
+    @SubscribeEvent
+    public static void onReleased(ScreenEvent.MouseButtonReleased event)
+    {
+
     }
 }

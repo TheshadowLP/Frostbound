@@ -1,18 +1,14 @@
 package net.shadowbeast.arcanemysteries.config;
+
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
-
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.dimension.DimensionType;
@@ -21,24 +17,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.api.insulation.Insulation;
-import net.shadowbeast.arcanemysteries.codec.requierment.EntityRequirement;
-import net.shadowbeast.arcanemysteries.codec.requierment.ItemRequirement;
-import net.shadowbeast.arcanemysteries.codec.requierment.NbtRequirement;
 import net.shadowbeast.arcanemysteries.core.*;
 import net.shadowbeast.arcanemysteries.core.data.SpawnBiomeData;
 import net.shadowbeast.arcanemysteries.temprature.Temperature;
 import net.shadowbeast.arcanemysteries.util.DynamicHolder;
-import net.shadowbeast.arcanemysteries.util.MathHelper;
-import net.shadowbeast.arcanemysteries.util.WorldHelper;
 import net.shadowbeast.arcanemysteries.util.helper.RegistryHelper;
-import net.shadowbeast.arcanemysteries.util.nbt.NBTHelper;
 import org.joml.Vector2i;
 import oshi.util.tuples.Triplet;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -595,7 +583,7 @@ public class ConfigSettings {
             if (registryAccess != null) {
                 ConfigRegistryHandler.collectConfigRegistries(registryAccess);
             } else {
-                ArcaneMysteries.LOGGER.warn("Loading Cold Sweat config settings without loading registries. This is normal during startup.");
+                ArcaneMysteries.LOGGER.warn("Loading Arcane Mysteries config settings without loading registries. This is normal during startup.");
             }
         }
     }
