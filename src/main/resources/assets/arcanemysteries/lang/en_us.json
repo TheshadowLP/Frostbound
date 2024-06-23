@@ -1,5 +1,7 @@
 {
   "message.failure_to_teleport": "You don't have a respawn point",
+  "config.arcanemysteries.config_screen_title": "Arcane Mysteries Configuration",
+  "config.arcanemysteries.temperature_system": "Temperature System Enabled",
 
   "tooltip.teleport_respawn_point": "Teleports to the respawn point",
   "tooltip.uses": "%s Uses Remaining",
@@ -37,6 +39,7 @@
   "mob.arcanemysteries.dungeonice": "Dungeon Ice",
 
   "effect.arcanemysteries.freeze": "Freeze",
+  "effect.arcanemysteries.mud_effect": "Muddy",
 
   "fluid_type.arcanemysteries.end_lava_fluid": "End Lava Fluid",
 

@@ -6,9 +6,12 @@
   "refmap": "arcanemysteries.mixins.refmap.json",
   "mixins": [
     "EntityMixin",
-    "BeforeServerStartMixin"
+    "LivingEntityMixin",
+    "PlayerMixin"
   ],
   "client": [
+    "client.GuiMixin",
+    "client.AbstractClientPlayerMixin",
     "LocalPlayerMixin"
   ],
   "injectors": {

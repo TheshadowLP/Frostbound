@@ -1,4 +1,4 @@
-package net.shadowbeast.arcanemysteries.items;
+package net.shadowbeast.arcanemysteries.elytra;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -30,22 +30,24 @@ public class ItemEnderElytra extends Item implements Equipable {
         return this.swapWithEquipmentSlot(this, pLevel, pPlayer, pHand);
     }
 
-    @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
-        return ElytraItem.isFlyEnabled(stack);
+        return isFlyEnabled(stack);
     }
 
-    @Override
     public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
         if (!entity.level().isClientSide) {
             int nextFlightTick = flightTicks + 1;
             if (nextFlightTick % 10 == 0) {
                 if (nextFlightTick % 20 == 0) {
-                    stack.hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(EquipmentSlot.CHEST));
+                    stack.hurtAndBreak(1, entity, (e) -> {
+                        e.broadcastBreakEvent(EquipmentSlot.CHEST);
+                    });
                 }
+
                 entity.gameEvent(GameEvent.ELYTRA_GLIDE);
             }
         }
+
         return true;
     }
 
