@@ -66,8 +66,9 @@ public class ChopperEnchantment extends Enchantment {
             }
         }
     }
+
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+    public boolean canEnchant(ItemStack stack) {
         return stack.getItem() instanceof AxeItem;
     }
 }

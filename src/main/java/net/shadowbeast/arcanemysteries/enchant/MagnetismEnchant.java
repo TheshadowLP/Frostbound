@@ -23,9 +23,10 @@ public class MagnetismEnchant extends Enchantment {
     public int getMaxLevel() {
         return 3;
     }
+
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack) {
-        Item item = stack.getItem();
+    public boolean canEnchant(ItemStack pStack) {
+        Item item = pStack.getItem();
         return item instanceof ArmorItem && ((ArmorItem) item).getEquipmentSlot() == EquipmentSlot.FEET;
     }
 }
