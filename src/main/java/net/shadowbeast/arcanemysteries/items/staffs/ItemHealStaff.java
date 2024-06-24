@@ -28,7 +28,8 @@ public class ItemHealStaff extends ItemStaff {
             pPlayer.getCooldowns().addCooldown(this, 900);
 
         if (!pLevel.isClientSide()) {
-            for (int i = 0; i < pPlayer.getRandom().nextIntBetweenInclusive(5, 10); i++) {
+            int heartsToFill = (int) (pPlayer.getMaxHealth() - pPlayer.getHealth());
+            for (int i = 0; i < heartsToFill + pPlayer.getRandom().nextIntBetweenInclusive(2, 8); i++) {
                 double d0 = pPlayer.getRandom().nextGaussian() * 0.02D;
                 double d1 = pPlayer.getRandom().nextGaussian() * 0.02D;
                 double d2 = pPlayer.getRandom().nextGaussian() * 0.02D;
