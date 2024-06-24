@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "arcanemysteries:levitation_staff"
+    },
+    "title": "Wingardium Leviosa",
+    "description": "It's Leviosa, Not Leviosaaa!",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "item": {
+          "items": [
+            "arcanemysteries:levitation_staff"
+          ]
+        }
+      }
+    }
+  }
+}
