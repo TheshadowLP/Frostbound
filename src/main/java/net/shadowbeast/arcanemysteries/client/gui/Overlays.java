@@ -15,6 +15,7 @@ import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.config.ConfigSettings;
 import net.shadowbeast.arcanemysteries.temprature.Temperature;
 import net.shadowbeast.arcanemysteries.temprature.caps.TemperatureCap;
@@ -26,23 +27,23 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Overlays
 {
-    public static final ResourceLocation BODY_TEMP_GAUGE = new ResourceLocation("arcanemysteries:textures/gui/overlay/body_temp_gauge.png");
-    public static final ResourceLocation BODY_TEMP_GAUGE_HC = new ResourceLocation("arcanemysteries:textures/gui/overlay/body_temp_gauge_hc.png");
-    public static final ResourceLocation WORLD_TEMP_GAUGE = new ResourceLocation("arcanemysteries:textures/gui/overlay/world_temp_gauge.png");
-    public static final ResourceLocation WORLD_TEMP_GAUGE_HC = new ResourceLocation("arcanemysteries:textures/gui/overlay/world_temp_gauge_hc.png");
-    public static final ResourceLocation VAGUE_TEMP_GAUGE = new ResourceLocation("arcanemysteries:textures/gui/overlay/vague_temp_gauge.png");
-    public static final ResourceLocation VAGUE_TEMP_GAUGE_HC = new ResourceLocation("arcanemysteries:textures/gui/overlay/vague_temp_gauge_hc.png");
+    public static final ResourceLocation BODY_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge.png");
+    public static final ResourceLocation BODY_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge_hc.png");
+    public static final ResourceLocation WORLD_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/world_temp_gauge.png");
+    public static final ResourceLocation WORLD_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/world_temp_gauge_hc.png");
+    public static final ResourceLocation VAGUE_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/vague_temp_gauge.png");
+    public static final ResourceLocation VAGUE_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/vague_temp_gauge_hc.png");
 
-    public static final ResourceLocation BAR_TEXTURE_1 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_1.png");
-    public static final ResourceLocation BAR_TEXTURE_2 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_2.png");
-    public static final ResourceLocation BAR_TEXTURE_3 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_3.png");
-    public static final ResourceLocation BAR_TEXTURE_4 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_4.png");
-    public static final ResourceLocation BAR_TEXTURE_5 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_5.png");
-    public static final ResourceLocation BAR_TEXTURE_6 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_6.png");
-    public static final ResourceLocation BAR_TEXTURE_7 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_7.png");
-    public static final ResourceLocation BAR_TEXTURE_8 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_8.png");
-    public static final ResourceLocation BAR_TEXTURE_9 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_9.png");
-    public static final ResourceLocation BAR_TEXTURE_10 = new ResourceLocation("arcanemysteries:textures/gui/overlay/bar_texture_10.png");
+    public static final ResourceLocation BAR_TEXTURE_1 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_1.png");
+    public static final ResourceLocation BAR_TEXTURE_2 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_2.png");
+    public static final ResourceLocation BAR_TEXTURE_3 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_3.png");
+    public static final ResourceLocation BAR_TEXTURE_4 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_4.png");
+    public static final ResourceLocation BAR_TEXTURE_5 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_5.png");
+    public static final ResourceLocation BAR_TEXTURE_6 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_6.png");
+    public static final ResourceLocation BAR_TEXTURE_7 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_7.png");
+    public static final ResourceLocation BAR_TEXTURE_8 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_8.png");
+    public static final ResourceLocation BAR_TEXTURE_9 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_9.png");
+    public static final ResourceLocation BAR_TEXTURE_10 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_10.png");
 
 
     public static final Supplier<ResourceLocation> BODY_TEMP_GAUGE_LOCATION  = () ->
