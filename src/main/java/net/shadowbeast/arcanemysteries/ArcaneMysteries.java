@@ -29,8 +29,8 @@ import net.shadowbeast.arcanemysteries.core.data.*;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
-import net.shadowbeast.arcanemysteries.fluid.FluidTypesMod;
-import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
+import net.shadowbeast.arcanemysteries.fluid.ModFluidTypes;
+import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.items.ItemModProperties;
 import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.registries.*;
@@ -59,8 +59,8 @@ public class ArcaneMysteries {
         EffectsRegistry.EFFECTS.register(bus);
         RecipesMod.SERIALIZERS.register(bus);
         EnchantmentsRegistry.ENCHANTMENTS.register(bus);
-        FluidsMod.FLUIDS.register(bus);
-        FluidTypesMod.FLUID_TYPES.register(bus);
+        ModFluids.FLUIDS.register(bus);
+        ModFluidTypes.FLUID_TYPES.register(bus);
         MenuTypesMod.MENUS.register(bus);
         EntityRegistry.ENTITIES.register(bus);
         EntityRegistry.BLOCK_ENTITIES.register(bus);
@@ -90,10 +90,14 @@ public class ArcaneMysteries {
     }
     private void commonSetup(final @NotNull FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            CriteriaTriggerRegistry.registerCriteriaTriggers();
+        });
         ModMessages.registerPackets();
         ConfigSettings.load(null);
     }
-    private void soclientSetup(final FMLClientSetupEvent event) {
+    private void clientSetup(final FMLClientSetupEvent event) {
+
     }
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)

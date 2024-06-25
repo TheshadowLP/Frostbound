@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "arcanemysteries.mixins.refmap.json",
   "mixins": [
+    "CowMixin",
     "EntityMixin",
     "XPBarMixin"
   ],

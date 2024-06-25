@@ -10,7 +10,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -18,13 +17,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.LavaFluid;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
+import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
-import net.shadowbeast.arcanemysteries.util.TagsMod;
+import net.shadowbeast.arcanemysteries.util.ModTags;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -36,11 +33,11 @@ public abstract class EndFlowingFluid extends ForgeFlowingFluid {
     }
 
     public Fluid getFlowing() {
-        return FluidsMod.END_LAVA_FLOWING.get();
+        return ModFluids.END_LAVA_FLOWING.get();
     }
 
     public Fluid getSource() {
-        return FluidsMod.END_LAVA_FLUID.get();
+        return ModFluids.END_LAVA_FLUID.get();
     }
 
     public Item getBucket() {
@@ -140,7 +137,7 @@ public abstract class EndFlowingFluid extends ForgeFlowingFluid {
     }
 
     public boolean isSame(Fluid pFluid) {
-        return pFluid == FluidsMod.END_LAVA_FLUID.get() || pFluid == FluidsMod.END_LAVA_FLOWING.get();
+        return pFluid == ModFluids.END_LAVA_FLUID.get() || pFluid == ModFluids.END_LAVA_FLOWING.get();
     }
 
     public int getDropOff(LevelReader pLevel) {
@@ -175,7 +172,7 @@ public abstract class EndFlowingFluid extends ForgeFlowingFluid {
     protected void spreadTo(LevelAccessor pLevel, BlockPos pPos, BlockState pBlockState, Direction pDirection, FluidState pFluidState) {
         if (pDirection == Direction.DOWN) {
             FluidState fluidstate = pLevel.getFluidState(pPos);
-            if (this.is(TagsMod.END_LAVA) && fluidstate.is(FluidTags.WATER)) {
+            if (this.is(ModTags.END_LAVA) && fluidstate.is(FluidTags.WATER)) {
                 if (pBlockState.getBlock() instanceof LiquidBlock) {
                     pLevel.setBlock(pPos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(pLevel, pPos, pPos, Blocks.STONE.defaultBlockState()), 3);
                 }

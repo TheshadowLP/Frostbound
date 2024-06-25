@@ -13,12 +13,12 @@ import net.shadowbeast.arcanemysteries.registries.ModBlocks;
 
 import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
-public class FluidsMod {
+public class ModFluids {
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MOD_ID);
-    public static final RegistryObject<FlowingFluid> END_LAVA_FLUID = FLUIDS.register("end_lava_fluid", () -> new EndFlowingFluid.Source(FluidsMod.END_LAVA_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> END_LAVA_FLOWING = FLUIDS.register("end_lava_flow", () -> new EndFlowingFluid.Flowing(FluidsMod.END_LAVA_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> END_LAVA_FLUID = FLUIDS.register("end_lava_fluid", () -> new EndFlowingFluid.Source(ModFluids.END_LAVA_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> END_LAVA_FLOWING = FLUIDS.register("end_lava_flow", () -> new EndFlowingFluid.Flowing(ModFluids.END_LAVA_PROPERTIES));
     public static final ForgeFlowingFluid.Properties END_LAVA_PROPERTIES = new EndFlowingFluid.Properties(
-            FluidTypesMod.END_LAVA_FLUID_TYPE, END_LAVA_FLUID, END_LAVA_FLOWING)
+            ModFluidTypes.END_LAVA_FLUID_TYPE, END_LAVA_FLUID, END_LAVA_FLOWING)
             .slopeFindDistance(4)
             .levelDecreasePerBlock(1)
             .block(ModBlocks.END_LAVA_BLOCK)

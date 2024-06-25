@@ -25,7 +25,7 @@ import net.shadowbeast.arcanemysteries.block_entities.block.furnace.WinterFurnac
 import net.shadowbeast.arcanemysteries.blocks.crops.KohlrabiCropBlock;
 import net.shadowbeast.arcanemysteries.blocks.crops.PepperCropBlock;
 import net.shadowbeast.arcanemysteries.blocks.custom.*;
-import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
+import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.util.WoodTypesMod;
 import net.shadowbeast.arcanemysteries.worldgen.tree.FrozenTreeGrower;
 
@@ -140,7 +140,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BEDROCK = registerBlock("bedrock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(13.0F, 3600000.0F).requiresCorrectToolForDrops()));
 
     //FLUIDS
-    public static final RegistryObject<EndLavaBlock> END_LAVA_BLOCK = BLOCKS.register("end_lava_block", () -> new EndLavaBlock(FluidsMod.END_LAVA_FLUID.get(), BlockBehaviour.Properties.copy(Blocks.LAVA).noCollission().noOcclusion().noLootTable()));
+    public static final RegistryObject<EndLavaBlock> END_LAVA_BLOCK = BLOCKS.register("end_lava_block", () -> new EndLavaBlock(ModFluids.END_LAVA_FLUID.get(), BlockBehaviour.Properties.copy(Blocks.LAVA).noCollission().noOcclusion().noLootTable()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         return registerBlock(name, block, Rarity.COMMON);

@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-public class TagsMod {
+public class ModTags {
     public static final TagKey<Fluid> END_LAVA = create("end_lava");
     public static class Items {
         public static final TagKey<Item> FROZEN_LOGS = tag("frozen_logs");

@@ -4,13 +4,14 @@
       "item": "arcanemysteries:levitation_staff"
     },
     "title": "Wingardium Leviosa",
-    "description": "It's Leviosa, Not Leviosaaa!",
+    "description": "Use the levitation staff for the first time",
     "show_toast": true,
     "announce_to_chat": true
   },
+  "parent": "arcanemysteries:root",
   "criteria": {
     "requirement": {
-      "trigger": "minecraft:item_durability_changed",
+      "trigger": "arcanemysteries:using_staff",
       "conditions": {
         "item": {
           "items": [

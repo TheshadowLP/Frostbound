@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "crafting_table": {
+      "conditions": {},
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "arcanemysteries:textures/gui/advancements/backgrounds/ender_pearl_block.png",
+    "description": {
+      "translate": "advancements.story.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "arcanemysteries:frozen_log"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.title"
+    }
+  }
+}

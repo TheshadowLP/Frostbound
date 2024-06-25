@@ -23,7 +23,6 @@ public class ItemHealStaff extends ItemStaff {
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
-
         if (!pPlayer.getAbilities().instabuild)
             pPlayer.getCooldowns().addCooldown(this, 900);
 

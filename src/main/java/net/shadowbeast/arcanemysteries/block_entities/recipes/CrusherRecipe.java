@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.util.TagsMod;
+import net.shadowbeast.arcanemysteries.util.ModTags;
 import net.shadowbeast.arcanemysteries.util.jei.category.CrushingCategory;
 import org.jetbrains.annotations.NotNull;
 
@@ -70,7 +70,7 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
     public Ingredient getFuelItem() {
-        return Ingredient.of(TagsMod.Items.SAW_BLADES);
+        return Ingredient.of(ModTags.Items.SAW_BLADES);
     }
     public int getCookingTime() {
         return this.cookingTime;

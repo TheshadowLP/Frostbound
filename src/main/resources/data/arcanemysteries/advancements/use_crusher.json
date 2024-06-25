@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "item": "arcanemysteries:crusher"
+    },
+    "title": "You're crushing it!",
+    "description": "Use the crusher for the first time",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "arcanemysteries:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "arcanemysteries:use_crusher",
+      "conditions": {}
+    }
+  }
+}

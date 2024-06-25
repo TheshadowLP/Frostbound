@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "item": "arcanemysteries:milk_bottle"
+    },
+    "title": "Milkman",
+    "description": "Milk a cow using a glass bottle",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "arcanemysteries:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "arcanemysteries:milk_cow_with_bottle",
+      "conditions": {}
+    }
+  }
+}
