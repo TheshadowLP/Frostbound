@@ -96,8 +96,7 @@ public class ArcaneMysteries {
     private void clientSetup(final FMLClientSetupEvent event) {
     }
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
+    public void onServerStarting(ServerStartingEvent event) {
 
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
@@ -110,6 +109,7 @@ public class ArcaneMysteries {
             MenuScreens.register(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
+            MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.CHOPPER.get());
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.MAGNETISM.get());
 
             event.enqueueWork(() -> {
