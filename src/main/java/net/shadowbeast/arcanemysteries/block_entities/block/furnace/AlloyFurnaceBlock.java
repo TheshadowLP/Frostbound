@@ -57,8 +57,6 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
         if (pState.getValue(ACTIVE)) {
             float radius = 0.2f;
-            double xE;
-            double zE;
             double x;
             double z;
             for (int i = 0; i <= 360; i += 45) {
