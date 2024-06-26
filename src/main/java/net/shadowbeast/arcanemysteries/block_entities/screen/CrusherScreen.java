@@ -6,9 +6,12 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
+import net.shadowbeast.arcanemysteries.registries.CriteriaTriggerRegistry;
 import org.jetbrains.annotations.NotNull;
 
 public class CrusherScreen extends AbstractContainerScreen<CrusherMenu> {

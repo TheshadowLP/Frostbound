@@ -23,12 +23,12 @@ public class ItemHealStaff extends ItemStaff {
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
-
         if (!pPlayer.getAbilities().instabuild)
             pPlayer.getCooldowns().addCooldown(this, 900);
 
         if (!pLevel.isClientSide()) {
-            for (int i = 0; i < pPlayer.getRandom().nextIntBetweenInclusive(5, 10); i++) {
+            int heartsToFill = (int) (pPlayer.getMaxHealth() - pPlayer.getHealth());
+            for (int i = 0; i < heartsToFill + pPlayer.getRandom().nextIntBetweenInclusive(2, 8); i++) {
                 double d0 = pPlayer.getRandom().nextGaussian() * 0.02D;
                 double d1 = pPlayer.getRandom().nextGaussian() * 0.02D;
                 double d2 = pPlayer.getRandom().nextGaussian() * 0.02D;

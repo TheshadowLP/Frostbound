@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -23,6 +24,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
+import net.shadowbeast.arcanemysteries.registries.CriteriaTriggerRegistry;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -31,6 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
+    Player advancementPlayer;
     public static class CrusherSlot {
         public static final int INPUT_SLOT = 0;
         public static final int SHREDBLADE_SLOT = 1;
@@ -74,6 +77,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory, @NotNull Player pPlayer) {
+        advancementPlayer = pPlayer;
         return new CrusherMenu(pContainerId, pInventory, this, this.data);
     }
     @Nonnull
@@ -109,11 +113,12 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
         if(hasRecipe(this)) {
             Level level = this.level;
+            if(advancementPlayer != null)
+                CriteriaTriggerRegistry.USE_CRUSHER.trigger((ServerPlayer) advancementPlayer);
             SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
             for (int i = 0; i < itemHandler.getSlots(); i++) {
                 inventory.setItem(i, itemHandler.getStackInSlot(i));
             }
-            assert level != null;
             this.maxProgress = level.getRecipeManager()
                     .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCookingTime).orElse(AlloyFurnaceRecipe.DEFAULT_COOK_TIME);
             this.progress++;

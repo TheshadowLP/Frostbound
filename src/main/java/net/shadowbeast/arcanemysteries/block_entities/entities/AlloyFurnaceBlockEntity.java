@@ -27,7 +27,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.arcanemysteries.block_entities.menu.AlloyFurnaceMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
-import net.shadowbeast.arcanemysteries.util.TagsMod;
+import net.shadowbeast.arcanemysteries.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
@@ -60,7 +60,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
 
-    public static boolean isFuelItem(ItemStack itemStack) { return itemStack.is(TagsMod.Items.ALLOYING_FUEL); }
+    public static boolean isFuelItem(ItemStack itemStack) { return itemStack.is(ModTags.Items.ALLOYING_FUEL); }
 
     public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(EntityRegistry.ALLOY_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -192,11 +192,11 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private static FuelTypes getFuelItemTypeInSlot(AlloyFurnaceBlockEntity entity) {
         int fuelSlot = AlloyFurnaceSlot.FUEL_SLOT;
         ItemStack stackSlot = entity.itemHandler.getStackInSlot(fuelSlot);
-        if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_SMALL)) {
+        if (stackSlot.is(ModTags.Items.ALLOYING_FUEL_SMALL)) {
             return FuelTypes.SMALL;
-        } else if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_MEDIUM)) {
+        } else if (stackSlot.is(ModTags.Items.ALLOYING_FUEL_MEDIUM)) {
             return FuelTypes.MEDIUM;
-        } else if (stackSlot.is(TagsMod.Items.ALLOYING_FUEL_LARGE)) {
+        } else if (stackSlot.is(ModTags.Items.ALLOYING_FUEL_LARGE)) {
             return FuelTypes.LARGE;
         } else {
             return FuelTypes.NONE;

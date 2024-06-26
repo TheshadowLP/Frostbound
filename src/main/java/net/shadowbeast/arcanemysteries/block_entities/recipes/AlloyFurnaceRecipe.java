@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.util.TagsMod;
+import net.shadowbeast.arcanemysteries.util.ModTags;
 import net.shadowbeast.arcanemysteries.util.jei.category.AlloyingCategory;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,7 +68,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     @Override
     public @NotNull RecipeType<?> getType() { return Type.INSTANCE; }
     public ItemStack getResultItem() { return output.copy(); }
-    public Ingredient getFuelItem() { return Ingredient.of(TagsMod.Items.ALLOYING_FUEL); }
+    public Ingredient getFuelItem() { return Ingredient.of(ModTags.Items.ALLOYING_FUEL); }
     public int getCookingTime() { return this.cookingTime; }
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         private Type() { }

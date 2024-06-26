@@ -11,7 +11,7 @@ import org.joml.Vector3f;
 
 import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
-public class FluidTypesMod {
+public class ModFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, MOD_ID);
     public static final ResourceLocation END_LAVA_STILL_RL = new ResourceLocation(MOD_ID, "block/end_lava_still");
     public static final ResourceLocation END_LAVA_FLOWING_RL = new ResourceLocation(MOD_ID, "block/end_lava_flow");

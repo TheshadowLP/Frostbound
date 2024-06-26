@@ -1,4 +1,6 @@
 {
+  "advancements.title": "Arcane Mysteries",
+
   "message.failure_to_teleport": "You don't have a respawn point",
   "config.arcanemysteries.config_screen_title": "Arcane Mysteries Configuration",
   "config.arcanemysteries.temperature_system": "Temperature System Enabled",

@@ -129,7 +129,7 @@ public abstract class AbstractConfigPage extends Screen
      * @param dynamicLabel A supplier that returns the label of the button. The label is updated when the button is pressed.
      * @param onClick The action to perform when the button is pressed.
      * @param requireOP Whether the button should be disabled if the player is not OP.
-     * @param setsCustomDifficulty Sets Cold Sweat's difficulty to custom when pressed, if true.
+     * @param setsCustomDifficulty
      * @param clientside Whether the button is clientside only (renders the clientside icon).
      * @param tooltip The tooltip of the button when hovered.
      */
@@ -190,7 +190,7 @@ public abstract class AbstractConfigPage extends Screen
      * @param onEdited The action to perform when the input is changed.
      * @param onInit The action to perform when the input is initialized (when the screen is created).
      * @param requireOP Whether the input should be disabled if the player is not OP.
-     * @param setsCustomDifficulty Sets Cold Sweat's difficulty to custom when edited, if true.
+     * @param setsCustomDifficulty
      * @param clientside Whether the input is clientside only.
      * @param tooltip The tooltip of the input when hovered.
      */
@@ -284,7 +284,7 @@ public abstract class AbstractConfigPage extends Screen
      * @param upDownPressed The action to perform when the up or down button is pressed. -1 for up, 1 for down.
      * @param reset The action to perform when the reset button is pressed.
      * @param requireOP Whether the panel should be disabled if the player is not OP.
-     * @param setsCustomDifficulty Sets Cold Sweat's difficulty to custom when edited, if true.
+     * @param setsCustomDifficulty
      * @param clientside Whether the panel is clientside only (renders the clientside icon).
      * @param tooltip The tooltip of the panel when hovered.
      */

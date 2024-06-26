@@ -9,7 +9,7 @@
       "item": "minecraft:blast_furnace"
     },
     "X": {
-      "item": "arcanemysteries:iron_plate"
+      "tag": "forge:plates/iron"
     }
   },
   "pattern": [

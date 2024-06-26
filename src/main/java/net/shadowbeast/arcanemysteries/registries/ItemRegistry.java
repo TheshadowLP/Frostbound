@@ -9,7 +9,7 @@ import net.shadowbeast.arcanemysteries.entities.boats.EntityBoat;
 import net.shadowbeast.arcanemysteries.entities.projectile.IceBeam;
 import net.shadowbeast.arcanemysteries.enums.ArmorStats;
 import net.shadowbeast.arcanemysteries.enums.ToolStats;
-import net.shadowbeast.arcanemysteries.fluid.FluidsMod;
+import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.items.*;
 import net.shadowbeast.arcanemysteries.items.armor.*;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemHealStaff;
@@ -251,7 +251,7 @@ public class ItemRegistry {
 
             //MISC
             MOLTEN_SULFUR_BUCKET = registerItem("molten_sulfur_bucket"),  //TODO
-            END_LAVA_BUCKET = registerItem("end_lava_bucket", () -> new BucketItem(FluidsMod.END_LAVA_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
+            END_LAVA_BUCKET = registerItem("end_lava_bucket", () -> new BucketItem(ModFluids.END_LAVA_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
             ICE_BEAM = registerItem("ice_beam", () -> new IceBeam(new Item.Properties())),
                 STRONGHOLD_COMPASS = registerItem("stronghold_compass",
                         ()-> new ItemStrongholdCompass(new Item.Properties().stacksTo(1))),
