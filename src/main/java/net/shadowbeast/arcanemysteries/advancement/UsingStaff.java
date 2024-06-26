@@ -7,21 +7,25 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemStaff;
+import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
 public class UsingStaff extends SimpleCriterionTrigger<UsingStaff.TriggerInstance> {
     static final ResourceLocation ID = new ResourceLocation(ArcaneMysteries.MOD_ID,"using_staff");
 
-    public ResourceLocation getId() {
+    public @NotNull ResourceLocation getId() {
         return ID;
     }
 
-    public UsingStaff.TriggerInstance createInstance(JsonObject pJson, ContextAwarePredicate pPredicate, DeserializationContext pDeserializationContext) {
+    public UsingStaff.@NotNull TriggerInstance createInstance(JsonObject pJson, ContextAwarePredicate pPredicate, DeserializationContext pDeserializationContext) {
         ItemPredicate itempredicate = ItemPredicate.fromJson(pJson.get("item"));
         return new UsingStaff.TriggerInstance(pPredicate, itempredicate);
     }
 
     public void trigger(ServerPlayer pPlayer, ItemStaff pItem) {
-        this.trigger(pPlayer, (p_163870_) -> p_163870_.matches(pItem.getDefaultInstance()));
+        this.trigger(pPlayer, (triggerInstance) -> triggerInstance.matches(pItem.getDefaultInstance()));
     }
 
     public static class TriggerInstance extends AbstractCriterionTriggerInstance {
@@ -36,7 +40,7 @@ public class UsingStaff extends SimpleCriterionTrigger<UsingStaff.TriggerInstanc
             return this.item.matches(pItem);
         }
 
-        public JsonObject serializeToJson(SerializationContext pConditions) {
+        public @NotNull JsonObject serializeToJson(SerializationContext pConditions) {
             JsonObject jsonobject = super.serializeToJson(pConditions);
             jsonobject.add("item", this.item.serializeToJson());
             return jsonobject;
