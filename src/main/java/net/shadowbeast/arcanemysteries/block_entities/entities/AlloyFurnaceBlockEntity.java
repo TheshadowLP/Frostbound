@@ -1,9 +1,14 @@
 package net.shadowbeast.arcanemysteries.block_entities.entities;
 
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
@@ -24,6 +29,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.menu.AlloyFurnaceMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
@@ -39,6 +45,7 @@ import java.util.Random;
 import static net.shadowbeast.arcanemysteries.block_entities.block.furnace.AlloyFurnaceBlock.ACTIVE;
 
 @ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     public final ContainerData data;
@@ -102,7 +109,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap,@Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
+            return this.lazyItemHandler.cast();
         }
         return super.getCapability(cap, side);
     }
@@ -110,37 +117,61 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     @Override
     public void onLoad() {
         super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
+        this.lazyItemHandler = LazyOptional.of(() -> this.itemHandler);
     }
 
     @Override
     public void invalidateCaps()  {
         super.invalidateCaps();
-        lazyItemHandler.invalidate();
+        this.lazyItemHandler.invalidate();
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
-        tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("progress", progress);
-        tag.putInt("fuel", fuel);
-        tag.putFloat("experience", experience);
         super.saveAdditional(tag);
+        CompoundTag data = new CompoundTag();
+        data.put("Inventory", this.itemHandler.serializeNBT());
+        data.putInt("Progress", this.progress);
+        data.putInt("Fuel", this.fuel);
+        data.putFloat("Experience", this.experience);
+        tag.put(ArcaneMysteries.MOD_ID, data);
     }
 
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
-        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("progress");
-        fuel = nbt.getInt("fuel");
-        experience = nbt.getFloat("experience");
+        CompoundTag data = nbt.getCompound(ArcaneMysteries.MOD_ID);
+        if (data.isEmpty()) return;
+
+        if (data.contains("Inventory", Tag.TAG_COMPOUND)) {
+            this.itemHandler.deserializeNBT(nbt.getCompound("Inventory"));
+        }
+        if (data.contains("Progress", Tag.TAG_INT)) {
+            this.progress = nbt.getInt("Progress");
+        }
+        if (data.contains("Fuel", Tag.TAG_INT)) {
+            this.fuel = nbt.getInt("Fuel");
+        }
+        if (data.contains("Experience", Tag.TAG_FLOAT)) {
+            this.experience = nbt.getFloat("Experience");
+        }
     }
 
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbt = super.getUpdateTag();
+        saveAdditional(nbt);
+        return nbt;
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {return ClientboundBlockEntityDataPacket.create(this); }
+
     public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int idx = 0; idx < itemHandler.getSlots(); idx++) {
-            inventory.setItem(idx, itemHandler.getStackInSlot(idx));
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int idx = 0; idx < this.itemHandler.getSlots(); idx++) {
+            inventory.setItem(idx, this.itemHandler.getStackInSlot(idx));
         }
         assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
@@ -207,6 +238,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         @Override
         protected void onContentsChanged(int slot) { setChanged(); }
     };
+
     private boolean hasRecipe() {
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
         for (int i = 0; i < this.itemHandler.getSlots(); i++) {

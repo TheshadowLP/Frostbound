@@ -1,9 +1,14 @@
 package net.shadowbeast.arcanemysteries.block_entities.entities;
 
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -21,6 +26,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
@@ -31,7 +37,11 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     Player advancementPlayer;
     public static class CrusherSlot {
@@ -65,15 +75,11 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
                     case 1 -> CrusherBlockEntity.this.maxProgress = value;
                 }
             }
-            public int getCount() {
-                return 2;
-            }
+            public int getCount() { return 2; }
         };
     }
     @Override
-    public @NotNull Component getDisplayName() {
-        return Component.translatable("block.arcanemysteries.crusher");
-    }
+    public @NotNull Component getDisplayName() { return Component.translatable("block.arcanemysteries.crusher"); }
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory, @NotNull Player pPlayer) {
@@ -84,41 +90,66 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
+            return this.lazyItemHandler.cast();
         }
         return super.getCapability(cap, side);
     }
     @Override
     public void onLoad() {
         super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
+        this.lazyItemHandler = LazyOptional.of(() -> this.itemHandler);
     }
     @Override
     public void invalidateCaps()  {
         super.invalidateCaps();
-        lazyItemHandler.invalidate();
+        this.lazyItemHandler.invalidate();
     }
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
-        tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("crushing.progress", progress);
         super.saveAdditional(tag);
+        CompoundTag data = new CompoundTag();
+        data.put("Inventory", this.itemHandler.serializeNBT());
+        data.putInt("Progress", this.progress);
+        tag.put(ArcaneMysteries.MOD_ID, data);
     }
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
-        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("crushing.progress");
+        CompoundTag data = nbt.getCompound(ArcaneMysteries.MOD_ID);
+        if (data.isEmpty()) return;
+
+        if (data.contains("Inventory", Tag.TAG_COMPOUND)) {
+            this.itemHandler.deserializeNBT(nbt.getCompound("Inventory"));
+
+        }
+
+        if (data.contains("Progress", Tag.TAG_INT)) {
+            this.progress = nbt.getInt("Progress");
+        }
     }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbt = super.getUpdateTag();
+        saveAdditional(nbt);
+        return nbt;
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {return ClientboundBlockEntityDataPacket.create(this); }
+
+
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
         if(hasRecipe(this)) {
             Level level = this.level;
             if(advancementPlayer != null)
                 CriteriaTriggerRegistry.USE_CRUSHER.trigger((ServerPlayer) advancementPlayer);
-            SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-            for (int i = 0; i < itemHandler.getSlots(); i++) {
-                inventory.setItem(i, itemHandler.getStackInSlot(i));
+            SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+            for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+                inventory.setItem(i, this.itemHandler.getStackInSlot(i));
             }
+            assert level != null;
             this.maxProgress = level.getRecipeManager()
                     .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCookingTime).orElse(AlloyFurnaceRecipe.DEFAULT_COOK_TIME);
             this.progress++;
