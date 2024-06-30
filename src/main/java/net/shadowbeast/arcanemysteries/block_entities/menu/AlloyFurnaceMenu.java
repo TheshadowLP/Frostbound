@@ -50,9 +50,9 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
         });
         addDataSlots(data);
     }
-    public boolean isCrafting() {
-        return data.get(0) > 0;
-    }
+
+    public boolean isCrafting() { return data.get(0) > 0; }
+
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress

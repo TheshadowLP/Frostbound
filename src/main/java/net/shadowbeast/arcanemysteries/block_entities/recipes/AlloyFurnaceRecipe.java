@@ -79,6 +79,7 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         List<AlloyFurnaceRecipe> alloyFurnaceRecipes = recipeManager.getAllRecipesFor(Type.INSTANCE);
         registration.addRecipes(AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE, alloyFurnaceRecipes);
     }
+
     public static class Serializer implements RecipeSerializer<AlloyFurnaceRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(ArcaneMysteries.MOD_ID, "alloying");
