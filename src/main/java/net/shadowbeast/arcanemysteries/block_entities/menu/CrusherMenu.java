@@ -23,7 +23,7 @@ public class CrusherMenu extends AbstractContainerMenu {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
     public CrusherMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(MenuTypesMod.CRUSHER_MENU.get(), pContainerId);
+        super(ModMenuTypes.CRUSHER_MENU.get(), pContainerId);
         checkContainerSize(inv, 3);
         blockEntity = ((CrusherBlockEntity) entity);
         this.level = inv.player.level();

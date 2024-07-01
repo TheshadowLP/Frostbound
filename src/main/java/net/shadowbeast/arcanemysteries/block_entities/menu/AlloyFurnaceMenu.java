@@ -25,7 +25,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
     public AlloyFurnaceMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(MenuTypesMod.ALLOY_FURNACE_MENU.get(), pContainerId);
+        super(ModMenuTypes.ALLOY_FURNACE_MENU.get(), pContainerId);
         checkContainerSize(inv, 4);
         blockEntity = ((AlloyFurnaceBlockEntity) entity);
         this.level = inv.player.level();
@@ -56,7 +56,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 31; // This is the height in pixels of your arrow
+        int progressArrowSize = 16; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }

@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 
-public class MenuTypesMod {
+public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
     public static final RegistryObject<MenuType<AlloyFurnaceMenu>> ALLOY_FURNACE_MENU =
             registerMenuType(AlloyFurnaceMenu::new, "alloy_furnace_menu");

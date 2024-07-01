@@ -17,7 +17,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DataPackRegistryEvent;
-import net.shadowbeast.arcanemysteries.block_entities.menu.MenuTypesMod;
+import net.shadowbeast.arcanemysteries.block_entities.menu.ModMenuTypes;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.RecipesMod;
 import net.shadowbeast.arcanemysteries.block_entities.screen.AlloyFurnaceScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.CrusherScreen;
@@ -61,7 +61,7 @@ public class ArcaneMysteries {
         EnchantmentsRegistry.ENCHANTMENTS.register(bus);
         ModFluids.FLUIDS.register(bus);
         ModFluidTypes.FLUID_TYPES.register(bus);
-        MenuTypesMod.MENUS.register(bus);
+        ModMenuTypes.MENUS.register(bus);
         EntityRegistry.ENTITIES.register(bus);
         EntityRegistry.BLOCK_ENTITIES.register(bus);
         AttributeInit.ATTRIBUTES.register(bus);
@@ -108,9 +108,9 @@ public class ArcaneMysteries {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            MenuScreens.register(MenuTypesMod.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
-            MenuScreens.register(MenuTypesMod.CRUSHER_MENU.get(), CrusherScreen::new);
-            MenuScreens.register(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
+            MenuScreens.register(ModMenuTypes.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
+            MenuScreens.register(ModMenuTypes.CRUSHER_MENU.get(), CrusherScreen::new);
+            MenuScreens.register(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceScreen::new);
             EntityRenderers.register(EntityRegistry.DUNGEON_ICE.get(), DungeonIceRenderer::new);
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);
             MinecraftForge.EVENT_BUS.register(EnchantmentsRegistry.CHOPPER.get());
