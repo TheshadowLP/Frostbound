@@ -6,7 +6,6 @@ import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoader;
 import net.minecraftforge.fml.common.Mod;
-import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ModAttributes;
 
 import static net.shadowbeast.arcanemysteries.temprature.util.EntityTempManager.TEMPERATURE_ENABLED_ENTITIES;

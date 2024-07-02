@@ -1,6 +1,5 @@
 package net.shadowbeast.arcanemysteries.api;
 
-import com.mojang.datafixers.types.Func;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.Cancelable;

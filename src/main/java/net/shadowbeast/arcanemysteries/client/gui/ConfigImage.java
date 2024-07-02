@@ -1,7 +1,7 @@
 package net.shadowbeast.arcanemysteries.client.gui;
 
-import net.minecraft.client.gui.components.ImageWidget;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.ImageWidget;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarratedElementType;

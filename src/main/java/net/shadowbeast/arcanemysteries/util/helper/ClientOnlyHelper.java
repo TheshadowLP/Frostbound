@@ -3,7 +3,6 @@ package net.shadowbeast.arcanemysteries.util.helper;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.EntityBoundSoundInstance;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.game.ServerboundSetCreativeModeSlotPacket;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -12,8 +11,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.shadowbeast.arcanemysteries.client.gui.ConfigPageOne;
-
-import java.util.HashMap;
 
 /**
  * This class is an abstraction layer for some methods in client-oriented classes

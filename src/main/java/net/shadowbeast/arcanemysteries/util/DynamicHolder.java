@@ -3,11 +3,11 @@ package net.shadowbeast.arcanemysteries.util;
 
 import net.minecraft.nbt.CompoundTag;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
+import net.shadowbeast.arcanemysteries.config.ConfigSettings;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import net.shadowbeast.arcanemysteries.config.ConfigSettings;
 /**
  * Contains a value that updates as needed (usually when a player interacts with the config screen). <br>
  * If added to {@link ConfigSettings#CONFIG_SETTINGS}, it will be synced to the client.

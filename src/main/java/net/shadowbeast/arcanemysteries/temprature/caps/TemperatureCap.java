@@ -4,7 +4,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.shadowbeast.arcanemysteries.config.ConfigSettings;
 import net.shadowbeast.arcanemysteries.temprature.Temperature;
-import net.shadowbeast.arcanemysteries.temprature.interfaces.ITemperature;
 
 public class TemperatureCap extends AbsTemperatureCapability
 {
