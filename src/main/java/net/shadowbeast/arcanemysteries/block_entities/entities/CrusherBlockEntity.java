@@ -26,7 +26,6 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
@@ -59,6 +58,8 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     public final ContainerData data;
     private int progress = 0;
     private int maxProgress = 200;
+    private float experience = 0.0f;
+
     public  CrusherBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(EntityRegistry.CRUSHER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -107,24 +108,25 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
         super.saveAdditional(tag);
-        CompoundTag data = new CompoundTag();
-        data.put("Inventory", this.itemHandler.serializeNBT());
-        data.putInt("Progress", this.progress);
-        tag.put(ArcaneMysteries.MOD_ID, data);
+        tag.put("Inventory", this.itemHandler.serializeNBT());
+        tag.putInt("Progress", this.progress);
+        tag.putFloat("Experience", this.experience);
     }
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
-        CompoundTag data = nbt.getCompound(ArcaneMysteries.MOD_ID);
-        if (data.isEmpty()) return;
+        if (nbt.isEmpty()) return;
 
-        if (data.contains("Inventory", Tag.TAG_COMPOUND)) {
+        if (nbt.contains("Inventory", Tag.TAG_COMPOUND)) {
             this.itemHandler.deserializeNBT(nbt.getCompound("Inventory"));
-
         }
 
-        if (data.contains("Progress", Tag.TAG_INT)) {
+        if (nbt.contains("Progress", Tag.TAG_INT)) {
             this.progress = nbt.getInt("Progress");
+        }
+
+        if (nbt.contains("Experience", Tag.TAG_FLOAT)) {
+            this.experience = nbt.getFloat("Experience");
         }
     }
 
@@ -151,7 +153,7 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
             }
             assert level != null;
             this.maxProgress = level.getRecipeManager()
-                    .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCookingTime).orElse(AlloyFurnaceRecipe.DEFAULT_COOK_TIME);
+                    .getRecipeFor(CrusherRecipe.Type.INSTANCE, inventory, level).map(CrusherRecipe::getCrushingTime).orElse(AlloyFurnaceRecipe.DEFAULT_COOK_TIME);
             this.progress++;
             setChanged(pLevel, pPos, pState);
             if(this.progress > this.maxProgress) {

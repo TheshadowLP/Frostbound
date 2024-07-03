@@ -1,6 +1,6 @@
 {
   "type": "arcanemysteries:crushing",
-  "cookingtime": 350,
+  "crushingTime": 350,
   "ingredient": [
     {
       "item": "minecraft:diamond"
