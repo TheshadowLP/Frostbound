@@ -7,6 +7,7 @@
   "mixins": [
     "CowMixin",
     "EntityMixin",
+    "ServerPlayerMixin",
     "XPBarMixin"
   ],
   "client": [
