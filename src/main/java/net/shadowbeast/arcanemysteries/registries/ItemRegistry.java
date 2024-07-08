@@ -110,8 +110,8 @@ public class ItemRegistry {
             LEVITATION_STAFF = registerItem("levitation_staff", ItemLevitationStaff::new),
             ENDER_ELYTRA = registerItem("ender_elytra",() -> new ElytraItem(new Item.Properties().durability(10).rarity(Rarity.RARE))),
 
-                //HAMMERS
-                PLATINUM_HAMMER = registerItem("platinum_hammer", () -> new ItemHammer(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020))),
+            //HAMMERS
+            PLATINUM_HAMMER = registerItem("platinum_hammer", () -> new ItemHammer(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020))),
             SILVER_HAMMER = registerItem("silver_hammer", () -> new ItemHammer(ToolStats.SILVER,5F,-3.4F, new Item.Properties().durability(420))),
             STEEL_HAMMER = registerItem("steel_hammer", () -> new ItemHammer(ToolStats.STEEL,6F,-3.4F, new Item.Properties().durability(1654))),
             TITANIUM_HAMMER = registerItem("titanium_hammer", () -> new ItemHammer(ToolStats.TITANIUM,6F,-3.4F, new Item.Properties().durability(2240))),
