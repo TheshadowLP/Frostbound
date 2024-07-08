@@ -75,7 +75,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
-                        pOutput.accept(ModBlocks.END_GOLD_ORE.get()); //TODO
+                        //pOutput.accept(ModBlocks.END_GOLD_ORE.get()); //TODO
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
@@ -83,8 +83,8 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.BEDROCK.get());
 
                         pOutput.accept(ModBlocks.END_LANTERN.get());
-                        pOutput.accept(ModBlocks.END_OBSIDIAN.get()); //TODO
-                        pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get()); //TODO
+                        //pOutput.accept(ModBlocks.END_OBSIDIAN.get()); //TODO
+                        //pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get()); //TODO
                         pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
                         pOutput.accept(ModBlocks.TILED_END_STONE_BRICKS.get());
                         pOutput.accept(ModBlocks.POLISHED_END_STONE.get());
@@ -198,7 +198,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.ENDERIUM_CHESTPLATE.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_LEGGINGS.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_BOOTS.get());
-                        pOutput.accept(ItemRegistry.ENDER_ELYTRA.get()); //TODO
+                        //pOutput.accept(ItemRegistry.ENDER_ELYTRA.get()); //TODO
 
                         pOutput.accept(ItemRegistry.MUD_BALL.get());
                         //pOutput.accept(ItemRegistry.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
@@ -239,7 +239,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.LUMINITE_INGOT.get());
                         pOutput.accept(ItemRegistry.AQUANIUM_INGOT.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
-                        pOutput.accept(ItemRegistry.END_GOLD_INGOT.get()); //TODO
+                        //pOutput.accept(ItemRegistry.END_GOLD_INGOT.get()); //TODO
                         pOutput.accept(ItemRegistry.ENDER_INGOT.get());
 
                         pOutput.accept(ItemRegistry.SILVER_DUST.get());
@@ -326,12 +326,12 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.BEDROCK_AXE.get());
                         pOutput.accept(ItemRegistry.BEDROCK_HOE.get());
 
-                        pOutput.accept(ItemRegistry.END_LAVA_BUCKET.get()); //TODO
-                        pOutput.accept(ItemRegistry.MOLTEN_SULFUR_BUCKET.get()); //TODO
+                        //pOutput.accept(ItemRegistry.END_LAVA_BUCKET.get()); //TODO
+                        //pOutput.accept(ItemRegistry.MOLTEN_SULFUR_BUCKET.get()); //TODO
 
                         pOutput.accept(ItemRegistry.FROZEN_BOAT.get());
                         pOutput.accept(ItemRegistry.FROZEN_CHEST_BOAT.get());
-                        pOutput.accept(ItemRegistry.STRONGHOLD_COMPASS.get()); //TODO
+                        //pOutput.accept(ItemRegistry.STRONGHOLD_COMPASS.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> DRINKS = TAB.register("drinks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.MILK_BOTTLE.get()))
