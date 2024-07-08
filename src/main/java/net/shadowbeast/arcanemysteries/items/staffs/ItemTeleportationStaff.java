@@ -26,7 +26,7 @@ public class ItemTeleportationStaff extends ItemStaff {
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level world, @NotNull Player player, @NotNull InteractionHand hand){
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player player, @NotNull InteractionHand hand){
         if (!world.isClientSide) {
             if (player instanceof ServerPlayer) {
                 BlockPos respawnPos = ((ServerPlayer) player).getRespawnPosition();
@@ -39,7 +39,9 @@ public class ItemTeleportationStaff extends ItemStaff {
                     }
                     player.level().playSound(null, player.blockPosition(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS);
                     player.playNotifySound(SoundEvents.ALLAY_THROW, SoundSource.PLAYERS, 0.8f, 1f);
-                    player.getCooldowns().addCooldown(stack.getItem(), 160);
+                    if (!player.getAbilities().instabuild)
+                        player.getCooldowns().addCooldown(this, 160);
+                    //player.getCooldowns().addCooldown(stack.getItem(), 160);
                     return InteractionResultHolder.success(player.getItemInHand(hand));
                 } else {
                     MutableComponent message = TextComponentHelper.createComponentTranslation(player, "message.failure_to_teleport");

@@ -28,6 +28,8 @@ public class ItemLevitationStaff extends ItemStaff {
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
+        if (!pPlayer.getAbilities().instabuild)
+            pPlayer.getCooldowns().addCooldown(this, 120);
         if(!pLevel.isClientSide)
             CriteriaTriggerRegistry.USING_STAFF.trigger((ServerPlayer) pPlayer, this);
         if (!pLevel.isClientSide()) {
