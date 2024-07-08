@@ -15,10 +15,10 @@ public class WinterFurnaceMenu extends AbstractFurnaceMenu {
         this(pContainerId, pPlayerInventory);
     }
     public WinterFurnaceMenu(int pContainerId, Inventory pPlayerInventory, Container container, ContainerData data) {
-        super(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory, container, data);
+        super(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory, container, data);
     }
     public WinterFurnaceMenu(int pContainerId, Inventory pPlayerInventory) {
-        super(MenuTypesMod.WINTER_FURNACE_MENU.get(), WinterFurnaceRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory);
+        super(ModMenuTypes.WINTER_FURNACE_MENU.get(), WinterFurnaceRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory);
     }
     @Override
     protected boolean isFuel(@NotNull ItemStack pStack) {

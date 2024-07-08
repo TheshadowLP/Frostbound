@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
 import net.shadowbeast.arcanemysteries.block_entities.menu.AlloyFurnaceMenu;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
-import net.shadowbeast.arcanemysteries.block_entities.menu.MenuTypesMod;
+import net.shadowbeast.arcanemysteries.block_entities.menu.ModMenuTypes;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.screen.AlloyFurnaceScreen;
@@ -56,9 +56,9 @@ public class ArcaneMysteriesJEI implements IModPlugin {
     }
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-        registration.addRecipeTransferHandler(CrusherMenu.class, MenuTypesMod.CRUSHER_MENU.get(),
+        registration.addRecipeTransferHandler(CrusherMenu.class, ModMenuTypes.CRUSHER_MENU.get(),
                 CrushingCategory.CRUSHER_RECIPE_TYPE, 0, 3, 3, 36);
-        registration.addRecipeTransferHandler(AlloyFurnaceMenu.class, MenuTypesMod.ALLOY_FURNACE_MENU.get(),
+        registration.addRecipeTransferHandler(AlloyFurnaceMenu.class, ModMenuTypes.ALLOY_FURNACE_MENU.get(),
                 AlloyingCategory.ALLOY_FURNACE_RECIPE_TYPE, 0, 3, 3, 36);
     }
 }

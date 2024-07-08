@@ -3,7 +3,6 @@ package net.shadowbeast.arcanemysteries.temprature.util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Equipable;
@@ -12,9 +11,7 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.shadowbeast.arcanemysteries.config.ConfigSettings;
 import net.shadowbeast.arcanemysteries.config.Insulator;
-import net.shadowbeast.arcanemysteries.util.MathHelper;
 import net.shadowbeast.arcanemysteries.util.nbt.NBTHelper;
 
 import javax.annotation.Nullable;

@@ -1,6 +1,6 @@
 {
   "type": "arcanemysteries:crushing",
-  "cookingtime": 250,
+  "crushingTime": 250,
   "ingredient": [
     {
       "item": "minecraft:ender_pearl"

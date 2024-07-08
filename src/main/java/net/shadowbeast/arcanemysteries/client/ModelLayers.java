@@ -3,7 +3,6 @@ package net.shadowbeast.arcanemysteries.client;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.shadowbeast.arcanemysteries.ArcaneMysteries;
-import net.shadowbeast.arcanemysteries.elytra.EnderElytraLayer;
 
 public class ModelLayers {
     public static final ModelLayerLocation FROZEN_BOAT_LAYER = new ModelLayerLocation(

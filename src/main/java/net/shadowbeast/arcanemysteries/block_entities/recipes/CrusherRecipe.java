@@ -24,12 +24,15 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
     private final ItemStack output;
     private final ResourceLocation id;
     public final static int DEFAULT_COOK_TIME = 200;
-    protected final int cookingTime;
-    public CrusherRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> inputItems, int cookingTime) {
+    public final static float DEFAULT_EXPERIENCE = 0.0f;
+    private final float experience;
+    protected final int crushingTime;
+    public CrusherRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> inputItems, int crushingTime, float experience) {
         this.inputItems = inputItems;
         this.output = output;
         this.id = id;
-        this.cookingTime = cookingTime;
+        this.crushingTime = crushingTime;
+        this.experience = experience;
     }
     @Override
     public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
@@ -72,8 +75,8 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
     public Ingredient getFuelItem() {
         return Ingredient.of(ModTags.Items.SAW_BLADES);
     }
-    public int getCookingTime() {
-        return this.cookingTime;
+    public int getCrushingTime() {
+        return this.crushingTime;
     }
     public static class Type implements RecipeType<CrusherRecipe> {
         private Type() { }
@@ -96,8 +99,9 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-            int i = GsonHelper.getAsInt(json, "cookingtime", DEFAULT_COOK_TIME);
-            return new CrusherRecipe(id, output, inputs, i);
+            int i = GsonHelper.getAsInt(json, "crushingTime", DEFAULT_COOK_TIME);
+            float experience = GsonHelper.getAsFloat(json, "experience", DEFAULT_EXPERIENCE);
+            return new CrusherRecipe(id, output, inputs, i, experience);
         }
         @Override
         public CrusherRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
@@ -105,7 +109,8 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
             ItemStack output = buf.readItem();
             int i = buf.readVarInt();
-            return new CrusherRecipe(id, output, inputs, i);
+            float experience = buf.readFloat();
+            return new CrusherRecipe(id, output, inputs, i, experience);
         }
         @Override
         public void toNetwork(FriendlyByteBuf buf, CrusherRecipe recipe) {
@@ -115,7 +120,8 @@ public class CrusherRecipe implements Recipe<SimpleContainer> {
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
-            buf.writeVarInt(recipe.cookingTime);
+            buf.writeVarInt(recipe.crushingTime);
+            buf.writeFloat(recipe.experience);
         }
     }
 }

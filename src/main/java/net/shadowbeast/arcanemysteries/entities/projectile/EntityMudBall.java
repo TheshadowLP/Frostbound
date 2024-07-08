@@ -16,7 +16,6 @@ import net.minecraft.world.phys.HitResult;
 import net.shadowbeast.arcanemysteries.registries.EffectsRegistry;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
-import net.shadowbeast.arcanemysteries.registries.ParticleRegistry;
 import org.jetbrains.annotations.NotNull;
 
 public class EntityMudBall extends ThrowableItemProjectile {

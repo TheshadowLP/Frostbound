@@ -1,6 +1,6 @@
 {
   "type": "arcanemysteries:crushing",
-  "cookingtime": 300,
+  "crushingTime": 300,
   "ingredient": [
     {
       "item": "minecraft:raw_copper"
