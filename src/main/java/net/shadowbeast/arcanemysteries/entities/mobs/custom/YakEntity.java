@@ -1,6 +1,7 @@
 package net.shadowbeast.arcanemysteries.entities.mobs.custom;
 
 import com.google.common.annotations.VisibleForTesting;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -13,6 +14,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -36,10 +38,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
+import net.shadowbeast.arcanemysteries.entities.mobs.custom.variant.YakVariant;
+import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -48,6 +53,8 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     public static final Ingredient TEMPTATION_ITEM = Ingredient.of(Items.WHEAT);
     public static final EntityDataAccessor<Boolean> DASH = SynchedEntityData.defineId(YakEntity.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Long> LAST_POSE_CHANGE_TICK = SynchedEntityData.defineId(YakEntity.class, EntityDataSerializers.LONG);
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
+            SynchedEntityData.defineId(YakEntity.class, EntityDataSerializers.INT);
     public final AnimationState sitAnimationState = new AnimationState();
     public final AnimationState sitPoseAnimationState = new AnimationState();
     public final AnimationState sitUpAnimationState = new AnimationState();
@@ -63,21 +70,23 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         groundpathnavigation.setCanFloat(true);
         groundpathnavigation.setCanWalkOverFences(true);
     }
-    public void addAdditionalSaveData(CompoundTag pCompound) {
-        super.addAdditionalSaveData(pCompound);
-        pCompound.putLong("LastPoseTick", this.entityData.get(LAST_POSE_CHANGE_TICK));
+    public void addAdditionalSaveData(CompoundTag nbt) {
+        super.addAdditionalSaveData(nbt);
+        nbt.putLong("LastPoseTick", this.entityData.get(LAST_POSE_CHANGE_TICK));
+        nbt.putInt("Variant", this.getTypeVariant());
     }
     /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
      */
-    public void readAdditionalSaveData(CompoundTag pCompound) {
-        super.readAdditionalSaveData(pCompound);
-        long i = pCompound.getLong("LastPoseTick");
+    public void readAdditionalSaveData(CompoundTag nbt) {
+        super.readAdditionalSaveData(nbt);
+        long i = nbt.getLong("LastPoseTick");
         if (i < 0L) {
             this.setPose(Pose.SITTING);
         }
 
         this.resetLastPoseChangeTick(i);
+        this.entityData.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
     }
     public static AttributeSupplier.Builder createAttributes() {
         return createBaseHorseAttributes().add(Attributes.MAX_HEALTH, 32.0D).add(Attributes.MOVEMENT_SPEED, 0.09F).add(Attributes.JUMP_STRENGTH, (double)0.0F);
@@ -86,11 +95,45 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         super.defineSynchedData();
         this.entityData.define(DASH, false);
         this.entityData.define(LAST_POSE_CHANGE_TICK, 0L);
+        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
     }
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         this.resetLastPoseChangeTickToFullStand(pLevel.getLevel().getGameTime());
+        YakVariant variant = pickYakVariantFromChance();
+        setVariant(variant);
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
+
+    public YakVariant pickYakVariantFromChance() {
+        double rand = this.random.nextDouble(); // Generate a random number between 0.0 and 1.0
+
+        double blackProbability = 0.6;
+        double brownProbability = 0.25;
+        double grayProbability = 0.05;
+
+        if (rand < blackProbability) {
+            return YakVariant.BLACK; // 60%
+        } else if (rand < blackProbability + brownProbability) {
+            return YakVariant.BROWN; // 25%
+        } else if (rand < blackProbability + brownProbability + grayProbability) {
+            return YakVariant.GRAY; // 5%
+        } else {
+            return YakVariant.WHITE; // 10%
+        }
+    }
+
+    public YakVariant getVariant() {
+        return YakVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    private int getTypeVariant() {
+        return this.entityData.get(DATA_ID_TYPE_VARIANT);
+    }
+
+    private void setVariant(YakVariant variant) {
+        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+    
     protected Brain.@NotNull Provider<Camel> brainProvider() {
         return CamelAi.brainProvider();
     }
@@ -104,9 +147,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
-    public @NotNull EntityDimensions getDimensions(@NotNull Pose pPose) {
-        return pPose == Pose.SITTING ? SITTING_DIMENSIONS.scale(this.getScale()) : super.getDimensions(pPose);
-    }
+
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height - 0.25F;
     }
@@ -114,6 +155,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     public double getRiderShieldingHeight() {
         return 0.5D;
     }
+
     /**
      * Called to update the entity's position/logic.
      */
@@ -125,19 +167,12 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         if (this.dashCooldown > 0) {
             --this.dashCooldown;
             if (this.dashCooldown == 0) {
-                this.level().playSound((Player)null, this.blockPosition(), SoundEvents.CAMEL_DASH_READY, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                this.level().playSound(null, this.blockPosition(), SoundEvents.CAMEL_DASH_READY, SoundSource.NEUTRAL, 1.0F, 1.0F);
             }
         }
         if (this.level().isClientSide()) {
             this.setupAnimationStates();
         }
-        if (this.refuseToMove()) {
-            this.clampHeadRotationToBody(this, 30.0F);
-        }
-        if (this.isCamelSitting() && this.isInWater()) {
-            this.standUpInstantly();
-        }
-
     }
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
@@ -174,50 +209,24 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
 
         this.walkAnimation.update(f, 0.2F);
     }
-    public void travel(@NotNull Vec3 pTravelVector) {
-        if (this.refuseToMove() && this.onGround()) {
-            this.setDeltaMovement(this.getDeltaMovement().multiply(0.0D, 1.0D, 0.0D));
-            pTravelVector = pTravelVector.multiply(0.0D, 1.0D, 0.0D);
-        }
 
-        super.travel(pTravelVector);
-    }
-
-    protected void tickRidden(@NotNull Player pPlayer, @NotNull Vec3 pTravelVector) {
-        super.tickRidden(pPlayer, pTravelVector);
-        if (pPlayer.zza > 0.0F && this.isCamelSitting() && !this.isInPoseTransition()) {
-            this.standUp();
-        }
-
-    }
-    public boolean refuseToMove() {
-        return this.isCamelSitting() || this.isInPoseTransition();
-    }
     protected float getRiddenSpeed(Player pPlayer) {
         float f = pPlayer.isSprinting() && this.getJumpCooldown() == 0 ? 0.1F : 0.0F;
-        return (float)this.getAttributeValue(Attributes.MOVEMENT_SPEED) + f;
-    }
-    protected @NotNull Vec2 getRiddenRotation(@NotNull LivingEntity pEntity) {
-        return this.refuseToMove() ? new Vec2(this.getXRot(), this.getYRot()) : super.getRiddenRotation(pEntity);
+        return (float)this.getAttributeValue(Attributes.MOVEMENT_SPEED);
     }
 
-    protected @NotNull Vec3 getRiddenInput(@NotNull Player pPlayer, @NotNull Vec3 pTravelVector) {
-        return this.refuseToMove() ? Vec3.ZERO : super.getRiddenInput(pPlayer, pTravelVector);
-    }
-    public boolean canJump() {
-        return !this.refuseToMove() && super.canJump();
-    }
     public void onPlayerJump(int pJumpPower) {
         if (this.isSaddled() && this.dashCooldown <= 0 && this.onGround()) {
             super.onPlayerJump(pJumpPower);
         }
     }
+
     public boolean canSprint() {
         return true;
     }
+
     protected void executeRidersJump(float pPlayerJumpPendingScale, @NotNull Vec3 pTravelVector) {
-        double d0 = this.getAttributeValue(Attributes.JUMP_STRENGTH) * (double)this.getBlockJumpFactor() + (double)this.getJumpBoostPower();
-        this.addDeltaMovement(this.getLookAngle().multiply(1.0D, 0.0D, 1.0D).normalize().scale( 5 + (double)(22.2222F * pPlayerJumpPendingScale) * this.getAttributeValue(Attributes.MOVEMENT_SPEED) * (double)this.getBlockSpeedFactor()).add(0.0D, (double)(1.4285F * pPlayerJumpPendingScale) * d0, 0.0D));
+        this.addDeltaMovement(this.getLookAngle().multiply(1.0D, 0.0D, 1.0D).normalize().scale(this.getAttributeValue(Attributes.MOVEMENT_SPEED)));
         this.dashCooldown = 30;
         this.setDashing(true);
         this.hasImpulse = true;
@@ -225,9 +234,11 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     public boolean isDashing() {
         return this.entityData.get(DASH);
     }
+
     public void setDashing(boolean pDashing) {
         this.entityData.set(DASH, pDashing);
     }
+
     public boolean isPanicking() {
         return this.getBrain().checkMemory(MemoryModuleType.IS_PANICKING, MemoryStatus.VALUE_PRESENT);
     }
@@ -235,20 +246,26 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         this.playSound(SoundEvents.CAMEL_DASH, 1.0F, 1.0F);
         this.setDashing(true);
     }
+
     public void handleStopJump() {
     }
+
     public int getJumpCooldown() {
         return this.dashCooldown;
     }
+
     protected SoundEvent getAmbientSound() {
         return SoundEvents.CAMEL_AMBIENT;
     }
+
     protected SoundEvent getDeathSound() {
         return SoundEvents.CAMEL_DEATH;
     }
+
     protected SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.CAMEL_HURT;
     }
+
     protected void playStepSound(BlockPos pPos, BlockState pBlock) {
         if (pBlock.getSoundType(level(), pPos, this) == SoundType.SAND) {
             this.playSound(SoundEvents.CAMEL_STEP_SAND, 1.0F, 1.0F);
@@ -256,6 +273,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
             this.playSound(SoundEvents.CAMEL_STEP, 1.0F, 1.0F);
         }
     }
+
     /**
      * Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on
      * the animal type)
@@ -263,6 +281,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     public boolean isFood(@NotNull ItemStack pStack) {
         return TEMPTATION_ITEM.test(pStack);
     }
+
     public @NotNull InteractionResult mobInteract(Player pPlayer, @NotNull InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         if (pPlayer.isSecondaryUseActive() && !this.isBaby()) {
@@ -283,12 +302,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
             }
         }
     }
-    protected void onLeashDistance(float pDistance) {
-        if (pDistance > 6.0F && this.isCamelSitting() && !this.isInPoseTransition()) {
-            this.standUp();
-        }
 
-    }
     protected boolean handleEating(@NotNull Player pPlayer, @NotNull ItemStack pStack) {
         if (!this.isFood(pStack)) {
             return false;
@@ -321,25 +335,16 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
             }
         }
     }
-    protected boolean canPerformRearing() {
-        return false;
-    }
+
     @Nullable
-    public Cow getBreedOffspring(@NotNull ServerLevel pLevel, @NotNull AgeableMob pOtherParent) {
-        return EntityType.COW.create(pLevel);
+    public YakEntity getBreedOffspring(@NotNull ServerLevel pLevel, @NotNull AgeableMob pOtherParent) {
+        return EntityRegistry.YAK.get().create(pLevel);
     }
     @Nullable
     protected SoundEvent getEatingSound() {
         return SoundEvents.CAMEL_EAT;
     }
-    /**
-     * Deals damage to the entity. This will take the armor of the entity into consideration before damaging the health
-     * bar.
-     */
-    protected void actuallyHurt(@NotNull DamageSource pDamageSource, float pDamageAmount) {
-        this.standUpInstantly();
-        super.actuallyHurt(pDamageSource, pDamageAmount);
-    }
+
     protected void positionRider(@NotNull Entity pPassenger, @NotNull MoveFunction pCallback) {
         int i = this.getPassengers().indexOf(pPassenger);
         if (i >= 0) {
@@ -354,11 +359,12 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
                     f += 0.2F;
                 }
             }
-            Vec3 vec3 = (new Vec3(0.0D, 0.0D, (double)f)).yRot(-this.yBodyRot * ((float)Math.PI / 180F));
+            Vec3 vec3 = (new Vec3(0.0D, 0.0D, f - 0.25)).yRot(-this.yBodyRot * ((float)Math.PI / 180F));
             pCallback.accept(pPassenger, this.getX() + vec3.x, this.getY() + (double)f1, this.getZ() + vec3.z);
             this.clampRotation(pPassenger);
         }
     }
+
     private double getBodyAnchorAnimationYOffset(boolean pSitting, float pPartialTick) {
         double d0 = this.getPassengersRidingOffset();
         float f = this.getScale() * 1.43F;
@@ -386,7 +392,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         }
 
         if (flag1 && !flag) {
-            d0 += (double)f2;
+            d0 += f2;
         }
 
         return d0;
@@ -398,7 +404,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
      * Returns the Y offset from the entity's position for any entity riding this one.
      */
     public double getPassengersRidingOffset() {
-        return this.getDimensions(Pose.STANDING).height - 0.3;
+        return this.getDimensions(Pose.STANDING).height;
     }
     /**
      * Applies this entity's orientation to another entity. Used to update passenger orientation.
@@ -407,8 +413,8 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         if (this.getControllingPassenger() != pEntityToUpdate) {
             this.clampRotation(pEntityToUpdate);
         }
-
     }
+
     private void clampRotation(Entity pEntity) {
         pEntity.setYBodyRot(this.getYRot());
         float f = pEntity.getYRot();
@@ -419,19 +425,19 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         pEntity.setYRot(f3);
         pEntity.setYHeadRot(f3);
     }
-    private void clampHeadRotationToBody(Entity pEntity, float p_265541_) {
+
+    private void clampHeadRotationToBody(Entity pEntity, float max) {
         float f = pEntity.getYHeadRot();
         float f1 = Mth.wrapDegrees(this.yBodyRot - f);
-        float f2 = Mth.clamp(Mth.wrapDegrees(this.yBodyRot - f), -p_265541_, p_265541_);
+        float f2 = Mth.clamp(Mth.wrapDegrees(this.yBodyRot - f), -max, max);
         float f3 = f + f1 - f2;
         pEntity.setYHeadRot(f3);
     }
+
     public int getMaxHeadYRot() {
-        return 30;
+        return 20;
     }
-    protected boolean canAddPassenger(@NotNull Entity pPassenger) {
-        return this.getPassengers().size() <= 2;
-    }
+
     /**
      * For vehicles, the first passenger is generally considered the controller and "drives" the vehicle. For example,
      * Pigs, Horses, and Boats are generally "steered" by the controlling passenger.
@@ -446,6 +452,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         }
         return null;
     }
+
     protected void sendDebugPackets() {
         super.sendDebugPackets();
         DebugPackets.sendEntityBrain(this);
@@ -453,9 +460,11 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     public boolean isCamelSitting() {
         return this.entityData.get(LAST_POSE_CHANGE_TICK) < 0L;
     }
+
     public boolean isCamelVisuallySitting() {
         return this.getPoseTime() < 0L != this.isCamelSitting();
     }
+
     public boolean isInPoseTransition() {
         long i = this.getPoseTime();
         return i < (long)(this.isCamelSitting() ? 40 : 52);
@@ -463,24 +472,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     private boolean isVisuallySittingDown() {
         return this.isCamelSitting() && this.getPoseTime() < 40L && this.getPoseTime() >= 0L;
     }
-    public void sitDown() {
-        if (!this.isCamelSitting()) {
-            this.playSound(SoundEvents.CAMEL_SIT, 1.0F, 1.0F);
-            this.setPose(Pose.SITTING);
-            this.resetLastPoseChangeTick(-this.level().getGameTime());
-        }
-    }
-    public void standUp() {
-        if (this.isCamelSitting()) {
-            this.playSound(SoundEvents.CAMEL_STAND, 1.0F, 1.0F);
-            this.setPose(Pose.STANDING);
-            this.resetLastPoseChangeTick(this.level().getGameTime());
-        }
-    }
-    public void standUpInstantly() {
-        this.setPose(Pose.STANDING);
-        this.resetLastPoseChangeTickToFullStand(this.level().getGameTime());
-    }
+
     @VisibleForTesting
     public void resetLastPoseChangeTick(long pLastPoseChangeTick) {
         this.entityData.set(LAST_POSE_CHANGE_TICK, pLastPoseChangeTick);
@@ -500,9 +492,11 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
         }
         super.onSyncedDataUpdated(pKey);
     }
+
     public boolean isTamed() {
         return true;
     }
+
     public void openCustomInventoryScreen(Player pPlayer) {
         if (!this.level().isClientSide) {
             pPlayer.openHorseInventory(this, this.inventory);
