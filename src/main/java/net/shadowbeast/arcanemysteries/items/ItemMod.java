@@ -14,7 +14,7 @@ public class ItemMod extends Item {
         super(properties);
     }
     public ItemMod(Rarity rarity) {
-        super(new Properties().rarity(rarity));} //TODO delet after finishing if no usage
+        super(new Properties().rarity(rarity));} //TODO delete after finishing if no usage
     public ItemMod(boolean hasGlint) {
         super(props);
         this.hasGlint = hasGlint;
