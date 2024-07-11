@@ -18,7 +18,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DataPackRegistryEvent;
 import net.shadowbeast.arcanemysteries.block_entities.menu.ModMenuTypes;
-import net.shadowbeast.arcanemysteries.block_entities.recipes.RecipesMod;
+import net.shadowbeast.arcanemysteries.block_entities.recipes.ModRecipes;
 import net.shadowbeast.arcanemysteries.block_entities.screen.AlloyFurnaceScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.CrusherScreen;
 import net.shadowbeast.arcanemysteries.block_entities.screen.WinterFurnaceScreen;
@@ -57,7 +57,7 @@ public class ArcaneMysteries {
         SoundRegistry.SOUNDS.register(bus);
         ParticleRegistry.PARTICLES.register(bus);
         EffectsRegistry.EFFECTS.register(bus);
-        RecipesMod.SERIALIZERS.register(bus);
+        ModRecipes.SERIALIZERS.register(bus);
         EnchantmentsRegistry.ENCHANTMENTS.register(bus);
         ModFluids.FLUIDS.register(bus);
         ModFluidTypes.FLUID_TYPES.register(bus);
