@@ -3,6 +3,7 @@ package net.shadowbeast.arcanemysteries.config;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.shadowbeast.arcanemysteries.temprature.temp.BlockTemp;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Map;
@@ -25,7 +26,7 @@ public abstract class BlockTempConfig extends BlockTemp
         return true;
     }
 
-    public boolean comparePredicates(BlockTempConfig other)
+    public boolean comparePredicates(@NotNull BlockTempConfig other)
     {   return predicates.keySet().equals(other.predicates.keySet());
     }
 
