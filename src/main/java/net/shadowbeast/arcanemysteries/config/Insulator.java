@@ -1,5 +1,6 @@
 package net.shadowbeast.arcanemysteries.config;
 
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.resources.ResourceLocation;
@@ -11,9 +12,12 @@ import net.shadowbeast.arcanemysteries.codec.requierment.ItemRequirement;
 import net.shadowbeast.arcanemysteries.util.AttributeModifierMap;
 import net.shadowbeast.arcanemysteries.util.nbt.NbtSerializable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashMap;
 import java.util.Map;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public record Insulator(Insulation insulation, Insulation.Slot slot, ItemRequirement data,
                         EntityRequirement predicate, AttributeModifierMap attributes,
                         Map<ResourceLocation, Double> immuneTempModifiers) implements NbtSerializable
