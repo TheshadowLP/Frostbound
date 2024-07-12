@@ -322,5 +322,7 @@
   "block.arcanemysteries.tiled_purpur_pillar": "Tiled Purpur Pillar",
   "block.arcanemysteries.runic_purpur": "Runic Purpur",
   "block.arcanemysteries.end_glass": "End Glass",
-  "block.arcanemysteries.end_glass_pane": "End Glass Pane"
+  "block.arcanemysteries.end_glass_pane": "End Glass Pane",
+
+  "arcanemysteries.config.title": "Arcane Mysteries Config Menu"
 }
