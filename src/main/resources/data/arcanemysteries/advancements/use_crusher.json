@@ -3,8 +3,12 @@
     "icon": {
       "item": "arcanemysteries:crusher"
     },
-    "title": "You're crushing it!",
-    "description": "Use the crusher for the first time",
+    "title": {
+      "translate": "advancements.arcanemysteries.use_crasher.title"
+    },
+    "description": {
+      "translate": "advancements.arcanemysteries.use_crasher.description"
+    },
     "show_toast": true,
     "announce_to_chat": true
   },

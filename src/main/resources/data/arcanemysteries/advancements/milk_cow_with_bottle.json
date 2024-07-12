@@ -3,8 +3,12 @@
     "icon": {
       "item": "arcanemysteries:milk_bottle"
     },
-    "title": "Milkman",
-    "description": "Milk a cow using a glass bottle",
+    "title": {
+      "translate": "advancements.arcanemysteries.milk_cow.title"
+    },
+    "description": {
+      "translate": "advancements.arcanemysteries.milk_cow.description"
+    },
     "show_toast": true,
     "announce_to_chat": true
   },

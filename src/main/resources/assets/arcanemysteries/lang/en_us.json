@@ -45,6 +45,13 @@
 
   "fluid_type.arcanemysteries.end_lava_fluid": "End Lava Fluid",
 
+  "advancements.arcanemysteries.milk_cow.title": "Milkman",
+  "advancements.arcanemysteries.milk_cow.description": "Milk a cow using a glass bottle",
+  "advancements.arcanemysteries.use_crasher.title": "You're crushing it!",
+  "advancements.arcanemysteries.use_crasher.description": "Use the crusher for the first time",
+  "advancements.arcanemysteries.use_levitation_staff.title": "Wingardium Leviosa",
+  "advancements.arcanemysteries.use_levitation_staff.description": "Use the levitation staff for the first time",
+
   "item.minecraft.baked_potato": "Hot Baked Potato",
   "item.arcanemysteries.raw_goat_mutton": "Raw Goat Mutton",
   "item.arcanemysteries.cooked_goat_mutton": "Cooked Goat Mutton",
