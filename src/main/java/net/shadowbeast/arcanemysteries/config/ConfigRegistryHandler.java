@@ -3,6 +3,7 @@ package net.shadowbeast.arcanemysteries.config;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -32,8 +33,10 @@ import net.shadowbeast.arcanemysteries.temprature.Temperature;
 import net.shadowbeast.arcanemysteries.temprature.temp.BlockTemp;
 import net.shadowbeast.arcanemysteries.util.MathHelper;
 import net.shadowbeast.arcanemysteries.util.helper.RegistryHelper;
+import org.jetbrains.annotations.NotNull;
 import oshi.util.tuples.Triplet;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.File;
 import java.io.FileReader;
 import java.nio.file.Path;
@@ -43,8 +46,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@MethodsReturnNonnullByDefault
 public class ConfigRegistryHandler
 {
+
     public static void collectConfigRegistries(RegistryAccess registries)
     {
         if (registries == null)
@@ -85,7 +90,7 @@ public class ConfigRegistryHandler
         logRegistryLoaded(String.format("Loaded %s entity spawn biomes", spawnBiomes.size()), spawnBiomes);
     }
 
-    private static void logRegistryLoaded(String message, Set<?> registry)
+    private static void logRegistryLoaded(String message, @NotNull Set<?> registry)
     {
         if (registry.isEmpty())
         {   message += ".";
@@ -106,7 +111,7 @@ public class ConfigRegistryHandler
         }
     }
 
-    private static void addBlockTempConfigs(Set<Holder<BlockTempData>> blockTemps)
+    private static void addBlockTempConfigs(@NotNull Set<Holder<BlockTempData>> blockTemps)
     {
         blockTemps.forEach(holder ->
         {
@@ -164,7 +169,7 @@ public class ConfigRegistryHandler
         });
     }
 
-    private static void addBiomeTempConfigs(Set<Holder<BiomeTempData>> biomeTemps, RegistryAccess registryAccess)
+    private static void addBiomeTempConfigs(@NotNull Set<Holder<BiomeTempData>> biomeTemps, RegistryAccess registryAccess)
     {
         biomeTemps.forEach(holder ->
         {
@@ -186,7 +191,7 @@ public class ConfigRegistryHandler
         });
     }
 
-    private static void addDimensionTempConfigs(Set<Holder<DimensionTempData>> dimensionTemps, RegistryAccess registryAccess)
+    private static void addDimensionTempConfigs(@NotNull Set<Holder<DimensionTempData>> dimensionTemps, RegistryAccess registryAccess)
     {
         dimensionTemps.forEach(holder ->
         {
@@ -206,7 +211,7 @@ public class ConfigRegistryHandler
         });
     }
 
-    private static void addStructureTempConfigs(Set<Holder<StructureTempData>> structureTemps, RegistryAccess registryAccess)
+    private static void addStructureTempConfigs(@NotNull Set<Holder<StructureTempData>> structureTemps, RegistryAccess registryAccess)
     {
         structureTemps.forEach(holder ->
         {
@@ -224,7 +229,7 @@ public class ConfigRegistryHandler
         });
     }
 
-    private static void addSpawnBiomeConfigs(Set<Holder<SpawnBiomeData>> spawnBiomes, RegistryAccess registryAccess)
+    private static void addSpawnBiomeConfigs(@NotNull Set<Holder<SpawnBiomeData>> spawnBiomes, RegistryAccess registryAccess)
     {
         spawnBiomes.forEach(holder ->
         {
@@ -235,7 +240,7 @@ public class ConfigRegistryHandler
         });
     }
 
-    private static <T> Set<Holder<T>> parseConfigData(ResourceKey<Registry<T>> registry, Codec<T> codec)
+    private static <T> Set<Holder<T>> parseConfigData(@NotNull ResourceKey<Registry<T>> registry, Codec<T> codec)
     {
         Set<Holder<T>> output = new HashSet<>();
 
@@ -263,7 +268,7 @@ public class ConfigRegistryHandler
         return output;
     }
 
-    private static List<File> findFilesRecursive(File directory)
+    private static List<File> findFilesRecursive(@NotNull File directory)
     {
         List<File> files = new ArrayList<>();
         File[] filesInDirectory = directory.listFiles();
@@ -272,8 +277,9 @@ public class ConfigRegistryHandler
         }
         for (File file : filesInDirectory)
         {
-            if (file.isDirectory())
-            {   files.addAll(findFilesRecursive(file));
+            if (file.isDirectory()) {
+                // recursive call
+                files.addAll(findFilesRecursive(file));
             }
             else
             {   files.add(file);

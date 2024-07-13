@@ -275,9 +275,9 @@ public abstract class AbstractConfigPage extends Screen
 
         // Mark this space as used
         if (side == Side.LEFT)
-            this.leftSideLength += ConfigScreen.OPTION_SIZE * 1.2;
+            this.leftSideLength += (int) (ConfigScreen.OPTION_SIZE * 1.2);
         else
-            this.rightSideLength += ConfigScreen.OPTION_SIZE * 1.2;
+            this.rightSideLength += (int) (ConfigScreen.OPTION_SIZE * 1.2);
     }
 
     /**
@@ -398,9 +398,9 @@ public abstract class AbstractConfigPage extends Screen
 
         // Add height to the list
         if (side == Side.LEFT)
-            this.leftSideLength += ConfigScreen.OPTION_SIZE * 1.2;
+            this.leftSideLength += (int) (ConfigScreen.OPTION_SIZE * 1.2);
         else
-            this.rightSideLength += ConfigScreen.OPTION_SIZE * 1.2;
+            this.rightSideLength += (int) (ConfigScreen.OPTION_SIZE * 1.2);
     }
 
     protected void addSliderButton(String id, Side side, Component label, double minVal, double maxVal,
@@ -408,7 +408,7 @@ public abstract class AbstractConfigPage extends Screen
                                    boolean requireOP, boolean clientside,
                                    Component... tooltip)
     {
-        boolean shouldBeActive = !requireOP || this.minecraft.player == null || this.minecraft.player.hasPermissions(2);
+        boolean shouldBeActive = !requireOP || Objects.requireNonNull(this.minecraft).player == null || Objects.requireNonNull(this.minecraft.player).hasPermissions(2);
         int buttonX = this.width / 2;
         int xOffset = side == Side.LEFT ? -179 : 56;
         int buttonY = this.height / 4 - 8 + (side == Side.LEFT ? leftSideLength : rightSideLength);
@@ -511,7 +511,7 @@ public abstract class AbstractConfigPage extends Screen
 
         if (this.sectionTwoTitle() != null)
         {   // Section 2 Title
-            graphics.drawString(this.font, this.sectionTwoTitle(), this.width / 2 + 32, this.height / 4 - 28, 16777215, true);
+            graphics.drawString(this.font, Objects.requireNonNull(this.sectionTwoTitle()), this.width / 2 + 32, this.height / 4 - 28, 16777215, true);
 
             // Section 2 Divider
             graphics.blit(TEXTURE, this.width / 2 + 34, this.height / 4 - 16, 255, 0, 1, 154);
