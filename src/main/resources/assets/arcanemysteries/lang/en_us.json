@@ -1,5 +1,11 @@
 {
   "advancements.title": "Arcane Mysteries",
+  "advancements.arcanemysteries.milk_cow.title": "Milkman",
+  "advancements.arcanemysteries.milk_cow.description": "Milk a cow using a glass bottle",
+  "advancements.arcanemysteries.use_crasher.title": "You're crushing it!",
+  "advancements.arcanemysteries.use_crasher.description": "Use the crusher for the first time",
+  "advancements.arcanemysteries.use_levitation_staff.title": "Wingardium Leviosa",
+  "advancements.arcanemysteries.use_levitation_staff.description": "Use the levitation staff for the first time",
 
   "message.failure_to_teleport": "You don't have a respawn point",
   "config.arcanemysteries.config_screen_title": "Arcane Mysteries Configuration",
@@ -44,13 +50,6 @@
   "effect.arcanemysteries.mud_effect": "Muddy",
 
   "fluid_type.arcanemysteries.end_lava_fluid": "End Lava Fluid",
-
-  "advancements.arcanemysteries.milk_cow.title": "Milkman",
-  "advancements.arcanemysteries.milk_cow.description": "Milk a cow using a glass bottle",
-  "advancements.arcanemysteries.use_crasher.title": "You're crushing it!",
-  "advancements.arcanemysteries.use_crasher.description": "Use the crusher for the first time",
-  "advancements.arcanemysteries.use_levitation_staff.title": "Wingardium Leviosa",
-  "advancements.arcanemysteries.use_levitation_staff.description": "Use the levitation staff for the first time",
 
   "item.minecraft.baked_potato": "Hot Baked Potato",
   "item.arcanemysteries.raw_goat_mutton": "Raw Goat Mutton",
@@ -331,5 +330,31 @@
   "block.arcanemysteries.end_glass": "End Glass",
   "block.arcanemysteries.end_glass_pane": "End Glass Pane",
 
-  "arcanemysteries.config.title": "Arcane Mysteries Config Menu"
+  "arcanemysteries.config.title": "Arcane Mysteries Config Menu",
+
+  "arcanemysteries.config.section.difficulty": "Temperature Settings",
+  "arcanemysteries.config.units.name": "Temperature Unit",
+  "arcanemysteries.config.units.desc": "Temperature Unit that shows in game.",
+  "arcanemysteries.config.fahrenheit.name": "Fº",
+  "arcanemysteries.config.celsius.name": "Cº",
+  "arcanemysteries.config.celsius.desc": "The Temperature Unit",
+  "arcanemysteries.config.clientside_warning": "WARNING: This change is ONLY on single player.",
+  "arcanemysteries.config.max_temperature.name": "Max Temperature",
+  "arcanemysteries.config.max_temperature.desc": "The max temperature that you can get to it.",
+  "arcanemysteries.config.min_temperature.name": "Min Temperature",
+  "arcanemysteries.config.min_temperature.desc": "The min temperature that you can get to it.",
+  "arcanemysteries.config.temp_damage.name": "Temperature Damage",
+  "arcanemysteries.config.temp_damage.desc": "Damage when your temperature is too low or high.",
+  "arcanemysteries.config.temperature_rate.name": "Temperature Rate",
+  "arcanemysteries.config.temperature_rate.desc": "PLACEHOLDER BECAUSE IDK WHAT IS THIS",
+
+  "arcanemysteries.config.section.temperature_details": "Temperature Settings",
+  "arcanemysteries.config.ice_resistance.name": "Ice Resistance Enabled",
+  "arcanemysteries.config.ice_resistance.desc": "Is the full set effect (Ice Resistance) enabled or not",
+  "arcanemysteries.config.fire_resistance.name": "Fire Resistance Enabled",
+  "arcanemysteries.config.fire_resistance.desc": "Is the full set effect (Fire Resistance) enabled or not",
+  "arcanemysteries.config.require_thermometer.name": "Require Thermometer",
+  "arcanemysteries.config.require_thermometer.desc": "Is required thermometer or not",
+  "arcanemysteries.config.damage_scaling.name": "Damage Scale",
+  "arcanemysteries.config.damage_scaling.desc": "PLACEHOLDER BECAUSE IDK WHAT IS THIS"
 }
