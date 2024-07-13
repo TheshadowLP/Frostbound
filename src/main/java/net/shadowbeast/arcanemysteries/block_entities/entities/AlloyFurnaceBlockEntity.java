@@ -129,32 +129,20 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     @Override
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
-        CompoundTag data = new CompoundTag();
-        data.put("Inventory", this.itemHandler.serializeNBT());
-        data.putInt("Progress", this.progress);
-        data.putInt("Fuel", this.fuel);
-        data.putFloat("Experience", this.experience);
-        tag.put(ArcaneMysteries.MOD_ID, data);
+        tag.put("Inventory", this.itemHandler.serializeNBT());
+        tag.putInt("Progress", this.progress);
+        tag.putInt("Fuel", this.fuel);
+        tag.putFloat("Experience", this.experience);
     }
 
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
-        CompoundTag data = nbt.getCompound(ArcaneMysteries.MOD_ID);
-        if (data.isEmpty()) return;
-
-        if (data.contains("Inventory", Tag.TAG_COMPOUND)) {
-            this.itemHandler.deserializeNBT(nbt.getCompound("Inventory"));
-        }
-        if (data.contains("Progress", Tag.TAG_INT)) {
-            this.progress = nbt.getInt("Progress");
-        }
-        if (data.contains("Fuel", Tag.TAG_INT)) {
-            this.fuel = nbt.getInt("Fuel");
-        }
-        if (data.contains("Experience", Tag.TAG_FLOAT)) {
-            this.experience = nbt.getFloat("Experience");
-        }
+        if (nbt.isEmpty()) return;
+        this.itemHandler.deserializeNBT(nbt.getCompound("Inventory"));
+        this.progress = nbt.getInt("Progress");
+        this.fuel = nbt.getInt("Fuel");
+        this.experience = nbt.getFloat("Experience");
     }
 
     @Override
