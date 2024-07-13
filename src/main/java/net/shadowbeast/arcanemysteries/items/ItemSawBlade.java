@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 public class ItemSawBlade extends Item {
-    int maxDamage;
+    public int maxDamage;
     public ItemSawBlade(int maxDamage) {
         super(new Properties().stacksTo(1));
         this.maxDamage = maxDamage;

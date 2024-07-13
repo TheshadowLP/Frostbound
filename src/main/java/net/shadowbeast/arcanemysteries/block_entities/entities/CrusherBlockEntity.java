@@ -29,6 +29,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.shadowbeast.arcanemysteries.block_entities.menu.CrusherMenu;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.AlloyFurnaceRecipe;
 import net.shadowbeast.arcanemysteries.block_entities.recipes.CrusherRecipe;
+import net.shadowbeast.arcanemysteries.items.ItemSawBlade;
 import net.shadowbeast.arcanemysteries.registries.CriteriaTriggerRegistry;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
@@ -204,9 +205,10 @@ public class CrusherBlockEntity extends BlockEntity implements MenuProvider {
 
                 assert damage != null;
 
-                newDamage.putInt("Damage", damage.getInt("Damage") + 1);
-                if (damage.getInt("Damage") + 1 > 256) {
+                if (damage.getInt("Damage") + 1 >= ((ItemSawBlade) stack.getItem()).maxDamage) {
                     clearItem(1, this.itemHandler);
+                } else {
+                    newDamage.putInt("Damage", damage.getInt("Damage") + 1);
                 }
             }
             clearItem(CrusherSlot.INPUT_SLOT, this.itemHandler);
