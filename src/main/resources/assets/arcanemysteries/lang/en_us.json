@@ -41,7 +41,6 @@
   "enchantment.arcanemysteries.chopper": "Chopper",
   "enchantment.arcanemysteries.magnetism": "Magnetism",
 
-
   "tag.arcanemysteries.frozen_logs": "Frozen Logs",
 
   "mob.arcanemysteries.dungeonice": "Dungeon Ice",
@@ -329,6 +328,7 @@
   "block.arcanemysteries.runic_purpur": "Runic Purpur",
   "block.arcanemysteries.end_glass": "End Glass",
   "block.arcanemysteries.end_glass_pane": "End Glass Pane",
+  "block.arcanemysteries.aquanium_shard_block": "Block of Aquanium Shard",
 
   "arcanemysteries.config.title": "Arcane Mysteries Config Menu",
 

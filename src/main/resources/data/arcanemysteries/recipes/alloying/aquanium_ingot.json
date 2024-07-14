@@ -1,0 +1,16 @@
+{
+  "type": "arcanemysteries:alloying",
+  "cookingtime": 350,
+  "experience": 0.3,
+  "ingredients": [
+    {
+      "item": "arcanemysteries:aluminium_ingot"
+    },
+    {
+      "item": "arcanemysteries:aquanium_shard"
+    }
+  ],
+  "output": {
+    "item": "arcanemysteries:aquanium_ingot"
+  }
+}

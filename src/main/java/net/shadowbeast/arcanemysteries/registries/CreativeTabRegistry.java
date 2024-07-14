@@ -98,6 +98,8 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
                         pOutput.accept(ModBlocks.END_GLASS.get());
                         pOutput.accept(ModBlocks.END_GLASS_PANE.get());
+
+                        pOutput.accept(ModBlocks.AQUANIUM_SHARD_BLOCK.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = TAB.register("combat",

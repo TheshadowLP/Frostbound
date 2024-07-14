@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 270,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "arcanemysteries:raw_yak_meat"
+  },
+  "result": "arcanemysteries:cooked_yak_meat"
+}

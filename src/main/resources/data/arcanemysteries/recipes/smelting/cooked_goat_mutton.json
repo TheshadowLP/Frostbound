@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 130,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "arcanemysteries:raw_goat_mutton"
+  },
+  "result": "arcanemysteries:cooked_goat_mutton"
+}

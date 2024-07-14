@@ -47,4 +47,8 @@ public class ItemMilkBottle extends Item{
     public @NotNull SoundEvent getEatingSound() {
         return SoundEvents.GENERIC_DRINK;
     }
+    @Override
+    public boolean isEnchantable(@NotNull ItemStack pStack) {return false;}
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {return false;}
 }

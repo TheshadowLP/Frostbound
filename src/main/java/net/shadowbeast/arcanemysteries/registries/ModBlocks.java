@@ -80,6 +80,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SULFUR_BlOCK = registerBlock("sulfur_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,3.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TITANIUM_BlOCK = registerBlock("titanium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
+    //RAW ORES
+    public static final RegistryObject<Block> AQUANIUM_SHARD_BLOCK = registerBlock("aquanium_shard_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+
     //NATURAL BLOCKS
     public static final RegistryObject<Block> FROZEN_STONE = registerBlock("frozen_stone", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7F,6.0F)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICKS = registerBlock("frozen_stone_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).strength(1.7F,6.0F).requiresCorrectToolForDrops()));
