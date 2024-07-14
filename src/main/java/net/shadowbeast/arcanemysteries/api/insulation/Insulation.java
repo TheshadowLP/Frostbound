@@ -4,6 +4,8 @@ import com.mojang.serialization.Codec;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.StringRepresentable;
 import net.shadowbeast.arcanemysteries.util.nbt.NbtSerializable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -29,7 +31,7 @@ public abstract class Insulation implements NbtSerializable
      * This method does not modify the input list
      * @return A sorted list of insulation items.
      */
-    public static List<Insulation> sort(List<Insulation> pairs)
+    public static @NotNull List<Insulation> sort(List<Insulation> pairs)
     {
         List<Insulation> newPairs = new ArrayList<>(pairs);
         newPairs.sort(Comparator.comparingDouble(pair ->
@@ -60,7 +62,7 @@ public abstract class Insulation implements NbtSerializable
         return newPairs;
     }
 
-    public static Insulation deserialize(CompoundTag tag)
+    public static @Nullable Insulation deserialize(@NotNull CompoundTag tag)
     {
         if (tag.contains("cold") && tag.contains("heat"))
         {   return new StaticInsulation(tag.getDouble("cold"), tag.getDouble("heat"));
@@ -86,11 +88,11 @@ public abstract class Insulation implements NbtSerializable
         public static final Codec<Slot> CODEC = Codec.STRING.xmap(Slot::byName, Slot::getSerializedName);
 
         @Override
-        public String getSerializedName()
+        public @NotNull String getSerializedName()
         {   return name;
         }
 
-        public static Slot byName(String name)
+        public static @NotNull Slot byName(String name)
         {   for (Slot type : values())
         {   if (type.name.equals(name))
         {   return type;

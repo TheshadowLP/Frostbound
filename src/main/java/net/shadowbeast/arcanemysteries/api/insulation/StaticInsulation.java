@@ -5,6 +5,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.nbt.CompoundTag;
 import net.shadowbeast.arcanemysteries.util.MathHelper;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class StaticInsulation extends Insulation
         this.heat = heat;
     }
 
-    public StaticInsulation(Pair<? extends Number, ? extends Number> pair)
+    public StaticInsulation(@NotNull Pair<? extends Number, ? extends Number> pair)
     {   this(pair.getFirst().doubleValue(), pair.getSecond().doubleValue());
     }
 
@@ -93,7 +95,8 @@ public class StaticInsulation extends Insulation
         return tag;
     }
 
-    public static StaticInsulation deserialize(CompoundTag tag)
+    @Contract("_ -> new")
+    public static @NotNull StaticInsulation deserialize(@NotNull CompoundTag tag)
     {   return new StaticInsulation(tag.getDouble("cold"), tag.getDouble("heat"));
     }
 }
