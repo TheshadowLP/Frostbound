@@ -4,6 +4,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.nbt.CompoundTag;
 import net.shadowbeast.arcanemysteries.util.MathHelper;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +96,8 @@ public class AdaptiveInsulation extends Insulation
         return tag;
     }
 
-    public static AdaptiveInsulation deserialize(CompoundTag tag)
+    @Contract("_ -> new")
+    public static @NotNull AdaptiveInsulation deserialize(@NotNull CompoundTag tag)
     {   return new AdaptiveInsulation(tag.getDouble("insulation"), tag.getDouble("factor"), tag.getDouble("speed"));
     }
 }

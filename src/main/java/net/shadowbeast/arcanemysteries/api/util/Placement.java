@@ -2,6 +2,8 @@ package net.shadowbeast.arcanemysteries.api.util;
 
 
 import net.shadowbeast.arcanemysteries.api.temperature.TempModifier;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Predicate;
 
@@ -10,7 +12,8 @@ public record Placement(Mode mode, Order order, Predicate<TempModifier> predicat
     public static final Placement AFTER_LAST = Placement.of(Mode.AFTER, Order.LAST, mod -> true);
     public static final Placement BEFORE_FIRST = Placement.of(Mode.BEFORE, Order.FIRST, mod -> true);
 
-    public static Placement of(Mode mode, Order order, Predicate<TempModifier> predicate)
+    @Contract("_, _, _ -> new")
+    public static @NotNull Placement of(Mode mode, Order order, Predicate<TempModifier> predicate)
     {
         return new Placement(mode, order, predicate);
     }
@@ -44,7 +47,7 @@ public record Placement(Mode mode, Order order, Predicate<TempModifier> predicat
         // Disallow duplicate TempModifiers only if they have the same NBT
         EXACT;
 
-        public static boolean check(Duplicates policy, TempModifier modA, TempModifier modB)
+        public static boolean check(@NotNull Duplicates policy, TempModifier modA, TempModifier modB)
         {
             return switch (policy)
             {
