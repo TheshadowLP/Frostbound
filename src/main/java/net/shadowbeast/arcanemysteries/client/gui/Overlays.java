@@ -1,13 +1,10 @@
 package net.shadowbeast.arcanemysteries.client.gui;
+
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.GameType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
@@ -29,32 +26,11 @@ public class Overlays
 {
     public static final ResourceLocation BODY_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge.png");
     public static final ResourceLocation BODY_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge_hc.png");
-    public static final ResourceLocation WORLD_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/world_temp_gauge.png");
-    public static final ResourceLocation WORLD_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/world_temp_gauge_hc.png");
-    public static final ResourceLocation VAGUE_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/vague_temp_gauge.png");
-    public static final ResourceLocation VAGUE_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/vague_temp_gauge_hc.png");
-
-    public static final ResourceLocation BAR_TEXTURE_1 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_1.png");
-    public static final ResourceLocation BAR_TEXTURE_2 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_2.png");
-    public static final ResourceLocation BAR_TEXTURE_3 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_3.png");
-    public static final ResourceLocation BAR_TEXTURE_4 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_4.png");
-    public static final ResourceLocation BAR_TEXTURE_5 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_5.png");
-    public static final ResourceLocation BAR_TEXTURE_6 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_6.png");
-    public static final ResourceLocation BAR_TEXTURE_7 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_7.png");
-    public static final ResourceLocation BAR_TEXTURE_8 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_8.png");
-    public static final ResourceLocation BAR_TEXTURE_9 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_9.png");
-    public static final ResourceLocation BAR_TEXTURE_10 = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/bar_texture_10.png");
 
 
     public static final Supplier<ResourceLocation> BODY_TEMP_GAUGE_LOCATION  = () ->
             ConfigSettings.HIGH_CONTRAST.get() ? BODY_TEMP_GAUGE_HC
                     : BODY_TEMP_GAUGE;
-    public static final Supplier<ResourceLocation> WORLD_TEMP_GAUGE_LOCATION = () ->
-            ConfigSettings.HIGH_CONTRAST.get() ? WORLD_TEMP_GAUGE_HC
-                    : WORLD_TEMP_GAUGE;
-    public static final Supplier<ResourceLocation> VAGUE_TEMP_GAUGE_LOCATION = () ->
-            ConfigSettings.HIGH_CONTRAST.get() ? VAGUE_TEMP_GAUGE_HC
-                    : VAGUE_TEMP_GAUGE;
 
     // Stuff for world temperature
     public static double WORLD_TEMP = 0;
@@ -71,64 +47,6 @@ public class Overlays
     public static int BODY_ICON = 0;
     public static int PREV_BODY_ICON = 0;
     public static double BODY_TEMP_SEVERITY = 0;
-
-    public static IGuiOverlay WORLD_TEMP_OVERLAY = (gui, graphics, partialTick, width, height) -> {
-        PoseStack poseStack = graphics.pose();
-        Font font = Minecraft.getInstance().font;
-        LocalPlayer player = Minecraft.getInstance().player;
-
-        if (player != null && ADVANCED_WORLD_TEMP) {
-            // Determine which bar texture to use based on temperature severity
-            ResourceLocation barTexture = determineBarTexture(WORLD_TEMP, MIN_TEMP, MAX_TEMP);
-
-            // Get the temperature severity
-            int severity = getWorldSeverity(WORLD_TEMP, MIN_TEMP, MAX_TEMP);
-
-            if (severity >= 0 && severity < 10) {
-                gui.setupOverlayRenderState(true, false);
-
-                poseStack.pushPose();
-                RenderSystem.enableBlend();
-                RenderSystem.defaultBlendFunc();
-                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                RenderSystem.setShader(GameRenderer::getPositionTexShader);
-
-                // Render frame
-                graphics.blit(barTexture,
-                        (width / 2) + 92 + ConfigSettings.WORLD_GAUGE_POS.get().x(),
-                        height - 19 + ConfigSettings.WORLD_GAUGE_POS.get().y(), 0, 64 - severity * 16, 25, 16, 25, 144);
-
-                RenderSystem.disableBlend();
-
-                // Render text
-                String tempText = String.format("%.1f°C", WORLD_TEMP); // Example format
-                int textWidth = font.width(tempText);
-                int textX = (width / 2) + 105 - textWidth + ConfigSettings.WORLD_GAUGE_POS.get().x();
-                int textY = height - 15 + ConfigSettings.WORLD_GAUGE_POS.get().y();
-                //font.draw(graphics, tempText, textX, textY, 0xFFFFFF); // White color
-
-                poseStack.popPose();
-            }
-        }
-    };
-
-    private static ResourceLocation determineBarTexture(double temp, double min, double max) {
-        // Example logic: Select bar texture based on severity
-        int severity = getWorldSeverity(temp, min, max);
-        return switch (severity) {
-            case 0 -> BAR_TEXTURE_1;
-            case 1 -> BAR_TEXTURE_2;
-            case 2 -> BAR_TEXTURE_3;
-            case 3 -> BAR_TEXTURE_4;
-            case 4 -> BAR_TEXTURE_5;
-            case 5 -> BAR_TEXTURE_6;
-            case 6 -> BAR_TEXTURE_7;
-            case 7 -> BAR_TEXTURE_8;
-            case 8 -> BAR_TEXTURE_9;
-            case 9 -> BAR_TEXTURE_10;
-            default -> BAR_TEXTURE_1;
-        };
-    }
 
 
     public static IGuiOverlay BODY_TEMP_OVERLAY = (gui, graphics, partialTick, width, height) ->
@@ -218,53 +136,11 @@ public class Overlays
         }
     };
 
-    public static IGuiOverlay VAGUE_TEMP_OVERLAY = (gui, graphics, partialTick, width, height) ->
-    {
-        PoseStack poseStack = graphics.pose();
-        Minecraft mc = Minecraft.getInstance();
-        Player player = mc.player;
-        if (player != null && !ADVANCED_WORLD_TEMP && mc.gameMode.getPlayerMode() != GameType.SPECTATOR
-                && !mc.options.hideGui && ConfigSettings.WORLD_GAUGE_ENABLED.get() && gui.shouldDrawSurvivalElements())
-        {
-            gui.setupOverlayRenderState(true, false);
-
-            // Get player world temperature
-            double temp = Temperature.convert(WORLD_TEMP, ConfigSettings.CELSIUS.get() ? Temperature.Units.C : Temperature.Units.F, Temperature.Units.MC, true);
-            // Get the temperature severity
-            int severity = getWorldSeverity(temp, MIN_TEMP, MAX_TEMP);
-            int renderOffset = MathHelper.clamp(severity, -1, 1) * 2;
-
-            poseStack.pushPose();
-            RenderSystem.enableBlend();
-            RenderSystem.defaultBlendFunc();
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
-
-            int bobLevel = Math.min(Math.abs(((int) BODY_TEMP_SEVERITY)), 3);
-            int threatOffset = !ConfigSettings.ICON_BOBBING.get()
-                    ? 0
-                    : bobLevel == 2
-                    ? ICON_BOB
-                    : bobLevel == 3
-                    ? Minecraft.getInstance().cameraEntity.tickCount % 2
-                    : 0;
-
-            // Render frame
-            graphics.blit(VAGUE_TEMP_GAUGE_LOCATION.get(),
-                    (width / 2) - 8 + ConfigSettings.BODY_ICON_POS.get().x(),
-                    height - 50 + ConfigSettings.BODY_ICON_POS.get().y() - renderOffset - threatOffset,
-                    0, 64 - severity * 16, 16, 16, 16, 144);
-
-            RenderSystem.disableBlend();
-            poseStack.popPose();
-        }
-    };
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiOverlaysEvent event)
-    {   event.registerBelow(VanillaGuiOverlay.CHAT_PANEL.id(), "world_temp", WORLD_TEMP_OVERLAY);
+    {   //event.registerBelow(VanillaGuiOverlay.CHAT_PANEL.id(), "world_temp", WORLD_TEMP_OVERLAY);
         event.registerBelow(VanillaGuiOverlay.CHAT_PANEL.id(), "body_temp", BODY_TEMP_OVERLAY);
-        event.registerBelow(VanillaGuiOverlay.CHAT_PANEL.id(), "vague_temp", VAGUE_TEMP_OVERLAY);
     }
 
     @Mod.EventBusSubscriber(value = Dist.CLIENT)

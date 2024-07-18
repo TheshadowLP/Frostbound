@@ -160,7 +160,6 @@ public class TempModifierInit
         event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "underground"), UndergroundTempModifier::new);
         event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "armor"), ArmorInsulationTempModifier::new);
         event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "mount"), MountTemp::new);
-        event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "waterskin"), WaterskinTempModifier::new);
         event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "water"), WaterTempModifier::new);
         event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "freezing"), FreezingTempModifier::new);
         event.register(new ResourceLocation(ArcaneMysteries.MOD_ID, "on_fire"), FireTempModifier::new);
