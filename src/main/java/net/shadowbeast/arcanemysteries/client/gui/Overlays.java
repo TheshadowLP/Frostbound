@@ -25,7 +25,7 @@ import java.util.function.Supplier;
 public class Overlays
 {
     public static final ResourceLocation BODY_TEMP_GAUGE = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge.png");
-    public static final ResourceLocation BODY_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge_hc.png");
+    public static final ResourceLocation BODY_TEMP_GAUGE_HC = new ResourceLocation(ArcaneMysteries.MOD_ID, "textures/gui/overlay/body_temp_gauge.png");
 
 
     public static final Supplier<ResourceLocation> BODY_TEMP_GAUGE_LOCATION  = () ->
