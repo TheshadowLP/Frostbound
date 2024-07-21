@@ -9,7 +9,7 @@
     "announce_to_chat": false,
     "background": "arcanemysteries:textures/gui/advancements/backgrounds/ender_pearl_block.png",
     "description": {
-      "translate": "advancements.story.root.description"
+      "translate": "advancements.arcanemysteries.root.description"
     },
     "frame": "task",
     "hidden": false,
@@ -18,7 +18,7 @@
     },
     "show_toast": false,
     "title": {
-      "translate": "advancements.title"
+      "translate": "advancements.arcanemysteries.root.title"
     }
   }
 }

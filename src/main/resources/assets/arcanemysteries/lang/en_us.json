@@ -1,5 +1,6 @@
 {
-  "advancements.title": "Arcane Mysteries",
+  "advancements.arcanemysteries.root.title": "Arcane Mysteries",
+  "advancements.arcanemysteries.root.description": "The beginning of your journey",
   "advancements.arcanemysteries.milk_cow.title": "Milkman",
   "advancements.arcanemysteries.milk_cow.description": "Milk a cow using a glass bottle",
   "advancements.arcanemysteries.use_crasher.title": "You're crushing it!",

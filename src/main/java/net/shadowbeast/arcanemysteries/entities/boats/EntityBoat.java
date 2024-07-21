@@ -1,16 +1,26 @@
 package net.shadowbeast.arcanemysteries.entities.boats;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.ByIdMap;
+import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.IceBlock;
+import net.minecraft.world.level.block.WaterlilyBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.shadowbeast.arcanemysteries.registries.EntityRegistry;
 import net.shadowbeast.arcanemysteries.registries.ItemRegistry;
 import net.shadowbeast.arcanemysteries.registries.ModBlocks;
@@ -32,17 +42,29 @@ public class EntityBoat extends Boat {
     }
     @Override
     public @NotNull Item getDropItem() {
-        if (Objects.requireNonNull(getModVariant()) == Type.FROZEN) {
+        if (getModVariant() == Type.FROZEN) {
             return ItemRegistry.FROZEN_BOAT.get();
         }
         return super.getDropItem();
     }
+
+    public float getGroundFriction() {
+        if (getModVariant() == Type.FROZEN) {
+            return Math.max(super.getGroundFriction(), Blocks.ICE.getFriction() - 0.045f);
+        }
+
+        return super.getGroundFriction();
+    }
+
+
     public void setVariant(Type pVariant) {
         this.entityData.set(DATA_ID_TYPE, pVariant.ordinal());
     }
+
     public Type getModVariant() {
         return Type.byId(this.entityData.get(DATA_ID_TYPE));
     }
+
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, Type.FROZEN.ordinal());
