@@ -15,7 +15,7 @@ import static net.shadowbeast.arcanemysteries.ArcaneMysteries.MOD_ID;
 public class CreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final RegistryObject<CreativeModeTab> BLOCKS = TAB.register("blocks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.END_OBSIDIAN.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.STRONGHOLD_COMPASS.get()))
                     .title(Component.translatable("creativetab.arcanemysteries.blocks"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.FROZEN_LOG.get());
@@ -83,19 +83,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.BEDROCK.get());
 
                         pOutput.accept(ModBlocks.END_LANTERN.get());
-                        //pOutput.accept(ModBlocks.END_OBSIDIAN.get()); //TODO
-                        //pOutput.accept(ModBlocks.DRAGON_SCALE_BLOCK.get()); //TODO
-                        pOutput.accept(ModBlocks.END_STONE_PILLAR.get());
-                        pOutput.accept(ModBlocks.TILED_END_STONE_BRICKS.get());
-                        pOutput.accept(ModBlocks.POLISHED_END_STONE.get());
-                        pOutput.accept(ModBlocks.RUNIC_END_STONE_BRICKS.get());
-                        pOutput.accept(ModBlocks.CHISELED_PURPUR.get());
-                        pOutput.accept(ModBlocks.POLISHED_PURPUR.get());
-                        pOutput.accept(ModBlocks.BRICKED_PURPUR.get());
-                        pOutput.accept(ModBlocks.BRICKED_PURPUR_PILLAR.get());
-                        pOutput.accept(ModBlocks.TILED_PURPUR.get());
-                        pOutput.accept(ModBlocks.TILED_PURPUR_PILLAR.get());
-                        pOutput.accept(ModBlocks.RUNIC_PURPUR.get());
                         pOutput.accept(ModBlocks.END_GLASS.get());
                         pOutput.accept(ModBlocks.END_GLASS_PANE.get());
 

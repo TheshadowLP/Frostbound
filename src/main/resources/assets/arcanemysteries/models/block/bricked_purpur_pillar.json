@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-        "end": "arcanemysteries:block/bricked_purpur_pillar_top",
-        "side": "arcanemysteries:block/bricked_purpur_pillar"
-    }
-}
