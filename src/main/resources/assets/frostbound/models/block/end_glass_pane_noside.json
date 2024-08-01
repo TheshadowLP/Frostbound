@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/template_glass_pane_noside",
+    "render_type": "translucent",
+    "textures": {
+        "edge": "frostbound:block/end_glass_pane_top",
+        "pane": "frostbound:block/end_glass"
+    }
+}

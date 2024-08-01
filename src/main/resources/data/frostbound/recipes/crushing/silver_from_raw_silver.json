@@ -1,0 +1,13 @@
+{
+  "type": "frostbound:crushing",
+  "crushingTime": 300,
+  "ingredient": [
+    {
+      "item": "frostbound:raw_silver"
+    }
+  ],
+  "result": {
+    "item": "frostbound:silver_dust",
+    "count": 9
+  }
+}

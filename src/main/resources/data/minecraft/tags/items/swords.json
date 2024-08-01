@@ -1,14 +1,14 @@
 {
   "values": [
-    "arcanemysteries:aquanium_sword",
-    "arcanemysteries:copper_sword",
-    "arcanemysteries:enderium_sword",
-    "arcanemysteries:luminite_sword",
-    "arcanemysteries:platinum_sword",
-    "arcanemysteries:silver_sword",
-    "arcanemysteries:steel_sword",
-    "arcanemysteries:titanium_sword",
-    "arcanemysteries:firerite_sword",
-    "arcanemysteries:frozen_sword"
+    "frostbound:aquanium_sword",
+    "frostbound:copper_sword",
+    "frostbound:enderium_sword",
+    "frostbound:luminite_sword",
+    "frostbound:platinum_sword",
+    "frostbound:silver_sword",
+    "frostbound:steel_sword",
+    "frostbound:titanium_sword",
+    "frostbound:firerite_sword",
+    "frostbound:frozen_sword"
   ]
 }

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "frostbound:block/steel_block"
+        }
+    }
+}

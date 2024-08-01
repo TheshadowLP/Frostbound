@@ -1,9 +1,9 @@
 {
   "values": [
-    "arcanemysteries:bone_ore",
-    "arcanemysteries:sand_aquanium_ore",
-    "arcanemysteries:silver_ore",
+    "frostbound:bone_ore",
+    "frostbound:sand_aquanium_ore",
+    "frostbound:silver_ore",
 
-    "arcanemysteries:bauxite"
+    "frostbound:bauxite"
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "milking_sound_bottle": {
+    "subtitle": "sounds.frostbound.milking_sound_bottle",
+    "sounds": [
+      "frostbound:milking_sound_bottle"
+    ]
+  },
+  "levitation_staff": {
+    "subtitle": "sounds.frostbound.levitation_staff",
+    "sounds": [
+      "frostbound:levitation_staff"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "luminite_ingot",
+  "key": {
+    "#": {
+      "item": "frostbound:luminite_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "frostbound:luminite_ingot"
+  }
+}

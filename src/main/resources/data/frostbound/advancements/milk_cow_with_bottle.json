@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "frostbound:milk_bottle"
+    },
+    "title": {
+      "translate": "advancements.frostbound.milk_cow.title"
+    },
+    "description": {
+      "translate": "advancements.frostbound.milk_cow.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "frostbound:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "frostbound:milk_cow_with_bottle",
+      "conditions": {}
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/orientable",
-    "textures": {
-        "front": "arcanemysteries:block/winter_furnace_front",
-        "side": "arcanemysteries:block/winter_furnace_side",
-        "top": "arcanemysteries:block/winter_furnace_top"
-    }
-}

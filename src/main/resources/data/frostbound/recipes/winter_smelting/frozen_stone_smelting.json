@@ -1,0 +1,10 @@
+{
+  "type": "frostbound:winter_furnace",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "frostbound:frozen_stone"
+  },
+  "result": "minecraft:stone"
+}

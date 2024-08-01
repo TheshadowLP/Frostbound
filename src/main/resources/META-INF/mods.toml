@@ -3,7 +3,7 @@ loaderVersion="${loader_version_range}"
 license="${mod_license}"
 issueTrackerURL="https://github.com/TheshadowLP/Forge-Shadow-1.20.1/issues"
 [[mods]]
-modId="arcanemysteries"
+modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
@@ -13,13 +13,13 @@ logoFile="icon.png"
 authors="${mod_authors}"
 
 description='''${mod_description}'''
-[[dependencies.arcanemysteries]]
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
     versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.arcanemysteries]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
     versionRange="${minecraft_version_range}"

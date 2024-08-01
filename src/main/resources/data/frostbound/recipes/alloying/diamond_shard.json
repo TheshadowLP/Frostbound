@@ -1,0 +1,16 @@
+{
+    "type": "frostbound:alloying",
+    "cookingtime": 300,
+    "experience": 0.3,
+    "ingredients": [
+        {
+            "item": "frostbound:diamond_dust"
+        },
+        {
+            "item": "minecraft:amethyst_shard"
+        }
+    ],
+    "output": {
+        "item": "frostbound:diamond_shard"
+    }
+}

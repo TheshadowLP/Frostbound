@@ -39,7 +39,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "arcanemysteries:raw_goat_mutton"
+          "name": "frostbound:raw_goat_mutton"
         }
       ],
       "rolls": 1.0

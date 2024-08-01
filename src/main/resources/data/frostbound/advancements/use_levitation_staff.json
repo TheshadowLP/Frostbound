@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "frostbound:levitation_staff"
+    },
+    "title": {
+    "translate": "advancements.frostbound.use_levitation_staff.title"
+  },
+  "description": {
+    "translate": "advancements.frostbound.use_levitation_staff.description"
+  },
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "frostbound:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "frostbound:using_staff",
+      "conditions": {
+        "item": {
+          "items": [
+            "frostbound:levitation_staff"
+          ]
+        }
+      }
+    }
+  }
+}

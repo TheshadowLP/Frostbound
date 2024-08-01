@@ -1,22 +1,22 @@
 {
   "values": [
-    "arcanemysteries:aquanium_ore",
-    "arcanemysteries:deepslate_luminite_ore",
-    "arcanemysteries:frozen_gem_ore",
-    "arcanemysteries:luminite_ore",
-    "arcanemysteries:platinum_ore",
-    "arcanemysteries:titanium_ore",
-    "arcanemysteries:ender_pearl_block",
+    "frostbound:aquanium_ore",
+    "frostbound:deepslate_luminite_ore",
+    "frostbound:frozen_gem_ore",
+    "frostbound:luminite_ore",
+    "frostbound:platinum_ore",
+    "frostbound:titanium_ore",
+    "frostbound:ender_pearl_block",
 
-    "arcanemysteries:aquanium_block",
-    "arcanemysteries:firerite_block",
-    "arcanemysteries:frozen_gem_block",
-    "arcanemysteries:luminite_block",
-    "arcanemysteries:platinum_block",
-    "arcanemysteries:silver_block",
-    "arcanemysteries:steel_block",
-    "arcanemysteries:titanium_block",
+    "frostbound:aquanium_block",
+    "frostbound:firerite_block",
+    "frostbound:frozen_gem_block",
+    "frostbound:luminite_block",
+    "frostbound:platinum_block",
+    "frostbound:silver_block",
+    "frostbound:steel_block",
+    "frostbound:titanium_block",
 
-    "arcanemysteries:aquanium_shard_block"
+    "frostbound:aquanium_shard_block"
   ]
 }

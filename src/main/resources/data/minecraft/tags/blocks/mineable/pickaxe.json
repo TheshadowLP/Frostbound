@@ -1,38 +1,38 @@
 {
   "values": [
-    "arcanemysteries:aquanium_ore",
-    "arcanemysteries:bone_ore",
-    "arcanemysteries:deepslate_luminite_ore",
-    "arcanemysteries:enderium_end_ore",
-    "arcanemysteries:frozen_gem_ore",
-    "arcanemysteries:luminite_ore",
-    "arcanemysteries:nether_firerite_ore",
-    "arcanemysteries:platinum_ore",
-    "arcanemysteries:silver_ore",
-    "arcanemysteries:titanium_ore",
+    "frostbound:aquanium_ore",
+    "frostbound:bone_ore",
+    "frostbound:deepslate_luminite_ore",
+    "frostbound:enderium_end_ore",
+    "frostbound:frozen_gem_ore",
+    "frostbound:luminite_ore",
+    "frostbound:nether_firerite_ore",
+    "frostbound:platinum_ore",
+    "frostbound:silver_ore",
+    "frostbound:titanium_ore",
 
-    "arcanemysteries:bauxite",
+    "frostbound:bauxite",
 
-    "arcanemysteries:platinum_block",
-    "arcanemysteries:steel_block",
-    "arcanemysteries:titanium_block",
-    "arcanemysteries:aquanium_block",
-    "arcanemysteries:silver_block",
-    "arcanemysteries:enderium_block",
-    "arcanemysteries:frozen_gem_block",
-    "arcanemysteries:ender_pearl_block",
+    "frostbound:platinum_block",
+    "frostbound:steel_block",
+    "frostbound:titanium_block",
+    "frostbound:aquanium_block",
+    "frostbound:silver_block",
+    "frostbound:enderium_block",
+    "frostbound:frozen_gem_block",
+    "frostbound:ender_pearl_block",
 
-    "arcanemysteries:aquanium_shard_block",
+    "frostbound:aquanium_shard_block",
 
-    "arcanemysteries:frozen_stone",
-    "arcanemysteries:frozen_cobblestone",
-    "arcanemysteries:frozen_stone_bricks",
-    "arcanemysteries:frozen_stone_brick_wall",
+    "frostbound:frozen_stone",
+    "frostbound:frozen_cobblestone",
+    "frostbound:frozen_stone_bricks",
+    "frostbound:frozen_stone_brick_wall",
 
-    "arcanemysteries:alloy_furnace",
-    "arcanemysteries:winter_furnace",
-    "arcanemysteries:crusher",
+    "frostbound:alloy_furnace",
+    "frostbound:winter_furnace",
+    "frostbound:crusher",
 
-    "arcanemysteries:end_lantern"
+    "frostbound:end_lantern"
   ]
 }

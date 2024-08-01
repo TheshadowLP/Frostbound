@@ -1,14 +1,14 @@
 {
   "values": [
-    "arcanemysteries:aquanium_shovel",
-    "arcanemysteries:copper_shovel",
-    "arcanemysteries:enderium_shovel",
-    "arcanemysteries:luminite_shovel",
-    "arcanemysteries:platinum_shovel",
-    "arcanemysteries:silver_shovel",
-    "arcanemysteries:steel_shovel",
-    "arcanemysteries:titanium_shovel",
-    "arcanemysteries:firerite_shovel",
-    "arcanemysteries:frozen_shovel"
+    "frostbound:aquanium_shovel",
+    "frostbound:copper_shovel",
+    "frostbound:enderium_shovel",
+    "frostbound:luminite_shovel",
+    "frostbound:platinum_shovel",
+    "frostbound:silver_shovel",
+    "frostbound:steel_shovel",
+    "frostbound:titanium_shovel",
+    "frostbound:firerite_shovel",
+    "frostbound:frozen_shovel"
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.shadowbeast.frostbound.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "frostbound.mixins.refmap.json",
+  "mixins": [
+    "CowMixin",
+    "EntityMixin",
+    "ServerPlayerMixin",
+    "XPBarMixin"
+  ],
+  "client": [
+    "BeforeServerStartMixin",
+    "LocalPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "aquanium_shard",
+  "ingredients": [
+    {
+      "item": "frostbound:aquanium_shard_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "frostbound:aquanium_shard"
+  }
+}

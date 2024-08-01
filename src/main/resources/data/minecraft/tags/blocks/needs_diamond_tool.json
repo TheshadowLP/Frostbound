@@ -1,8 +1,8 @@
 {
   "values": [
-    "arcanemysteries:enderium_end_ore",
-    "arcanemysteries:nether_firerite_ore",
+    "frostbound:enderium_end_ore",
+    "frostbound:nether_firerite_ore",
 
-    "arcanemysteries:enderium_block"
+    "frostbound:enderium_block"
   ]
 }

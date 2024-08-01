@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "frostbound:kohlrabi"
+    }
+  ],
+  "result": {
+    "item": "frostbound:kohlrabi_seeds"
+  }
+}

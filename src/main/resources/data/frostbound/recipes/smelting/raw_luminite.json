@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 250,
+  "experience": 0.8,
+  "ingredient": {
+    "item": "frostbound:raw_luminite"
+  },
+  "result": "frostbound:luminite_ingot"
+}

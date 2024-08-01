@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "compass",
+  "pattern": [
+    "beb",
+    "pcp",
+    "#a#"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:ender_eye"
+    },
+    "c": {
+      "item": "minecraft:compass"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    },
+    "p": {
+      "item": "minecraft:ender_pearl"
+    },
+    "#": {
+      "item": "frostbound:ender_pearl_dust"
+    },
+    "a": {
+      "item": "frostbound:ender_ingot"
+    }
+  },
+  "result": {
+    "item": "frostbound:stronghold_compass"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "frostbound:block/nether_firerite_ore"
+        }
+    }
+}

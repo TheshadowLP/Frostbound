@@ -1,14 +1,14 @@
 {
   "values": [
-    "arcanemysteries:aquanium_hoe",
-    "arcanemysteries:copper_hoe",
-    "arcanemysteries:enderium_hoe",
-    "arcanemysteries:luminite_hoe",
-    "arcanemysteries:platinum_hoe",
-    "arcanemysteries:silver_hoe",
-    "arcanemysteries:steel_hoe",
-    "arcanemysteries:titanium_hoe",
-    "arcanemysteries:firerite_hoe",
-    "arcanemysteries:frozen_hoe"
+    "frostbound:aquanium_hoe",
+    "frostbound:copper_hoe",
+    "frostbound:enderium_hoe",
+    "frostbound:luminite_hoe",
+    "frostbound:platinum_hoe",
+    "frostbound:silver_hoe",
+    "frostbound:steel_hoe",
+    "frostbound:titanium_hoe",
+    "frostbound:firerite_hoe",
+    "frostbound:frozen_hoe"
   ]
 }

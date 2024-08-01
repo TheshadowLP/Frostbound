@@ -1,0 +1,12 @@
+{
+  "type": "frostbound:crushing",
+  "ingredient": [
+    {
+      "item": "frostbound:titanium_ingot"
+    }
+  ],
+  "result": {
+    "item": "frostbound:titanium_dust",
+    "count": 9
+  }
+}

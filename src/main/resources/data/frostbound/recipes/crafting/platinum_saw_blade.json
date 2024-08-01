@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "frostbound:platinum_ingot"
+    },
+    "#": {
+      "item": "frostbound:iron_plate"
+    }
+  },
+  "pattern": [
+    " X ",
+    "X#X",
+    " X "
+  ],
+  "result": {
+    "count": 1,
+    "item": "frostbound:platinum_saw_blade"
+  }
+}

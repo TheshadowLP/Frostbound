@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "frostbound:silver_stick"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "frostbound:iron_dust"
+    },
+    "D": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    " PD",
+    "X#P",
+    "#X "
+  ],
+  "result": {
+    "item": "frostbound:levitation_staff"
+  }
+}

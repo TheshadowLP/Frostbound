@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 240,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "frostbound:raw_goat_mutton"
+  },
+  "result": "frostbound:cooked_goat_mutton"
+}

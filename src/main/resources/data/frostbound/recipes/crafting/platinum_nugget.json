@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "frostbound:platinum_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "frostbound:platinum_nugget"
+  }
+}

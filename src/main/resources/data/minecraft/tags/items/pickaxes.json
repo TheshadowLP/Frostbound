@@ -1,14 +1,14 @@
 {
   "values": [
-    "arcanemysteries:aquanium_pickaxe",
-    "arcanemysteries:copper_pickaxe",
-    "arcanemysteries:enderium_pickaxe",
-    "arcanemysteries:luminite_pickaxe",
-    "arcanemysteries:platinum_pickaxe",
-    "arcanemysteries:silver_pickaxe",
-    "arcanemysteries:steel_pickaxe",
-    "arcanemysteries:titanium_pickaxe",
-    "arcanemysteries:firerite_pickaxe",
-    "arcanemysteries:frozen_pickaxe"
+    "frostbound:aquanium_pickaxe",
+    "frostbound:copper_pickaxe",
+    "frostbound:enderium_pickaxe",
+    "frostbound:luminite_pickaxe",
+    "frostbound:platinum_pickaxe",
+    "frostbound:silver_pickaxe",
+    "frostbound:steel_pickaxe",
+    "frostbound:titanium_pickaxe",
+    "frostbound:firerite_pickaxe",
+    "frostbound:frozen_pickaxe"
   ]
 }

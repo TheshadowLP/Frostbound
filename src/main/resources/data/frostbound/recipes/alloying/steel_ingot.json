@@ -1,0 +1,16 @@
+{
+    "type": "frostbound:alloying",
+    "cookingtime": 450,
+    "experience": 0.3,
+    "ingredients": [
+        {
+            "tag": "minecraft:coals"
+        },
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    ],
+    "output": {
+        "item": "frostbound:steel_ingot"
+    }
+}

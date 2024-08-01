@@ -1,0 +1,13 @@
+{
+  "type": "frostbound:crushing",
+  "crushingTime": 300,
+  "ingredient": [
+    {
+      "item": "frostbound:raw_platinum"
+    }
+  ],
+  "result": {
+    "item": "frostbound:platinum_dust",
+    "count": 9
+  }
+}

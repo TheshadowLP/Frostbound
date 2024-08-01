@@ -1,14 +1,14 @@
 {
   "values": [
-    "arcanemysteries:aquanium_axe",
-    "arcanemysteries:copper_axe",
-    "arcanemysteries:enderium_axe",
-    "arcanemysteries:luminite_axe",
-    "arcanemysteries:platinum_axe",
-    "arcanemysteries:silver_axe",
-    "arcanemysteries:steel_axe",
-    "arcanemysteries:titanium_axe",
-    "arcanemysteries:firerite_axe",
-    "arcanemysteries:frozen_axe"
+    "frostbound:aquanium_axe",
+    "frostbound:copper_axe",
+    "frostbound:enderium_axe",
+    "frostbound:luminite_axe",
+    "frostbound:platinum_axe",
+    "frostbound:silver_axe",
+    "frostbound:steel_axe",
+    "frostbound:titanium_axe",
+    "frostbound:firerite_axe",
+    "frostbound:frozen_axe"
   ]
 }

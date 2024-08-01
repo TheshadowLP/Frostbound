@@ -1,0 +1,18 @@
+{
+	"temperature": 2.0,
+	"wetness_modifier": 0.8,
+	"sun_intensity": 8.0,
+	"altitude_level_modifier": {
+		"upper": 1.0,
+		"lower": 1.0
+	},
+	"season_modifier": 
+	{
+		"frostbound:dry_begin": 0.1,
+		"frostbound:dry_midst": 0.2,
+		"frostbound:dry_close": 0.1,
+		"frostbound:wet_begin": -0.1,
+		"frostbound:wet_midst": -0.2,
+		"frostbound:wet_close": -0.1
+	}
+}

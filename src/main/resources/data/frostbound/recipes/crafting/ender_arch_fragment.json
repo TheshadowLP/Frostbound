@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "frostbound:ender_pearl_dust"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "#": {
+      "item": "frostbound:diamond_shard"
+    }
+  },
+  "pattern": [
+    " # ",
+    "XEX",
+    " # "
+  ],
+  "result": {
+    "item": "frostbound:ender_arch_fragment"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "frostbound:item/stacked_baked_potato"
+  }
+}

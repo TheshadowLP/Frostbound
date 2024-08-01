@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "arcanemysteries:item/stronghold_compass_31"
-  }
-}

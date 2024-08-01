@@ -1,0 +1,10 @@
+{
+  "type": "frostbound:winter_furnace",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "frostbound:stripped_frozen_wood"
+  },
+  "result": "minecraft:stripped_oak_wood"
+}

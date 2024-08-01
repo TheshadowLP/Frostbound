@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "frostbound:block/frozen_slab"
+        },
+        "type=double": {
+            "model": "frostbound:block/frozen_planks"
+        },
+        "type=top": {
+            "model": "frostbound:block/frozen_slab_top"
+        }
+    }
+}

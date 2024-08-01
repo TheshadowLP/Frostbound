@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 150,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "frostbound:raw_yak_meat"
+  },
+  "result": "frostbound:cooked_yak_meat"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:mud"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "frostbound:mud_ball"
+  }
+}

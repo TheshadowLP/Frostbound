@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 80,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "frostbound:raw_yak_meat"
+  },
+  "result": "frostbound:cooked_yak_meat"
+}

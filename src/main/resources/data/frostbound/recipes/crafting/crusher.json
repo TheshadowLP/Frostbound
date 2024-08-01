@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "X": {
+      "item": "frostbound:iron_plate"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone_slab"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "#SI",
+    "#XI",
+    "#SI"
+  ],
+  "result": {
+    "item": "frostbound:crusher"
+  }
+}

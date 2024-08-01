@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "hanging=false": {
+            "model": "frostbound:block/end_lantern"
+        },
+        "hanging=true": {
+            "model": "frostbound:block/end_lantern_hanging"
+        }
+    }
+}

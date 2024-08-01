@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "frostbound:platinum_dust"
+  },
+  "result": "frostbound:platinum_nugget"
+}

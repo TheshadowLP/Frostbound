@@ -1,0 +1,13 @@
+{
+  "type": "frostbound:crushing",
+  "crushingTime": 350,
+  "ingredient": [
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "frostbound:diamond_dust",
+    "count": 3
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "frostbound:crusher"
+    },
+    "title": {
+      "translate": "advancements.frostbound.use_crasher.title"
+    },
+    "description": {
+      "translate": "advancements.frostbound.use_crasher.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "frostbound:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "frostbound:use_crusher",
+      "conditions": {}
+    }
+  }
+}

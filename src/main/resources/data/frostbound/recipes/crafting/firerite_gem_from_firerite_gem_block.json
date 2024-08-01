@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "firerite_gem",
+  "ingredients": [
+    {
+      "item": "frostbound:firerite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "frostbound:firerite_gem"
+  }
+}

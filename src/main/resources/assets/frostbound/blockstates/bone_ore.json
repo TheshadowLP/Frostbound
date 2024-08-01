@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "frostbound:block/bone_ore"
+        }
+    }
+}
