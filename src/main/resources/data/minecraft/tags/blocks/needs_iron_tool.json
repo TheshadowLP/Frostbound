@@ -5,9 +5,7 @@
     "arcanemysteries:frozen_gem_ore",
     "arcanemysteries:luminite_ore",
     "arcanemysteries:platinum_ore",
-    "arcanemysteries:ruby_ore",
     "arcanemysteries:titanium_ore",
-    "arcanemysteries:end_gold_ore",
     "arcanemysteries:ender_pearl_block",
 
     "arcanemysteries:aquanium_block",
@@ -15,17 +13,10 @@
     "arcanemysteries:frozen_gem_block",
     "arcanemysteries:luminite_block",
     "arcanemysteries:platinum_block",
-    "arcanemysteries:ruby_block",
     "arcanemysteries:silver_block",
     "arcanemysteries:steel_block",
-    "arcanemysteries:sulfur_block",
     "arcanemysteries:titanium_block",
 
-    "arcanemysteries:aquanium_shard_block",
-
-    "arcanemysteries:copper_bars",
-    "arcanemysteries:platinum_bars",
-    "arcanemysteries:steel_bars",
-    "arcanemysteries:titanium_bars"
+    "arcanemysteries:aquanium_shard_block"
   ]
 }

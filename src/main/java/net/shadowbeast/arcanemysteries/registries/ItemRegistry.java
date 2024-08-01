@@ -6,10 +6,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.arcanemysteries.entities.boats.EntityBoat;
-import net.shadowbeast.arcanemysteries.entities.projectile.IceBeam;
 import net.shadowbeast.arcanemysteries.enums.ArmorStats;
 import net.shadowbeast.arcanemysteries.enums.ToolStats;
-import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.items.*;
 import net.shadowbeast.arcanemysteries.items.armor.*;
 import net.shadowbeast.arcanemysteries.items.staffs.ItemHealStaff;
@@ -45,11 +43,9 @@ public class ItemRegistry {
             RAW_TITANIUM = registerItem("raw_titanium"),
             RAW_LUMINITE = registerItem("raw_luminite"),
             RAW_ENDERIUM = registerItem("raw_enderium"),
-            SULFUR = registerItem("sulfur"),
             AQUANIUM_INGOT = registerItem("aquanium_ingot"),
             ENDER_INGOT = registerItem("ender_ingot"),
             ENDERIUM_INGOT = registerItem("enderium_ingot"),
-            END_GOLD_INGOT = registerItem("end_gold_ingot"),
             LUMINITE_INGOT = registerItem("luminite_ingot"),
             PLATINUM_INGOT = registerItem("platinum_ingot"),
             SILVER_INGOT = registerItem("silver_ingot"),
@@ -66,12 +62,10 @@ public class ItemRegistry {
             TITANIUM_NUGGET = registerItem("titanium_nugget"),
 
             //SHARDS
-            RUBY = registerItem("ruby"),
             FIRERITE_GEM = registerItem("firerite_gem"),
             FROZEN_GEM = registerItem("frozen_gem"),
-            SHARD = registerItem("aquanium_shard"),
+            AQUANIUM_SHARD = registerItem("aquanium_shard"),
             DIAMOND_SHARD = registerItem("diamond_shard"),
-            BEDROCK_CHUNK = registerItem("bedrock_chunk"),
 
             //TECH STUFF
             ENDER_ARCH = registerItem("ender_arch"),
@@ -92,7 +86,6 @@ public class ItemRegistry {
             IRON_DUST = registerItem("iron_dust"),
             PLATINUM_DUST = registerItem("platinum_dust"),
             SILVER_DUST = registerItem("silver_dust"),
-            SULFUR_DUST = registerItem("sulfur_dust"),
             TITANIUM_DUST = registerItem("titanium_dust"),
 
             //PROJECTILES
@@ -140,7 +133,6 @@ public class ItemRegistry {
             FIRERITE_SWORD = registerItem("firerite_sword", () -> new ItemModSword(ToolStats.FIRERITE)),
             FROZEN_SWORD = registerItem("frozen_sword", () -> new ItemModSword(ToolStats.FROZEN)),
             COPPER_SWORD = registerItem("copper_sword", () -> new ItemModSword(ToolStats.COPPER)),
-            BEDROCK_SWORD = registerItem("bedrock_sword", () -> new ItemModSword(ToolStats.BEDROCK)),
 
             //TOOLS
             AQUANIUM_SHOVEL = registerItem("aquanium_shovel", () -> new ItemModShovel(ToolStats.AQUANIUM)),
@@ -192,11 +184,6 @@ public class ItemRegistry {
                     COPPER_PICKAXE = registerItem("copper_pickaxe", () -> new ItemModPickaxe(ToolStats.COPPER)),
                     COPPER_AXE = registerItem("copper_axe", () -> new ItemModAxe(ToolStats.COPPER, -2.9F)), //TODO SPEED AND DAMAGE MODIFIER
                     COPPER_HOE = registerItem("copper_hoe", () -> new ItemModHoe(ToolStats.COPPER, -2.9F)),
-
-            BEDROCK_SHOVEL = registerItem("bedrock_shovel", () -> new ItemModShovel(ToolStats.BEDROCK)),
-                    BEDROCK_PICKAXE = registerItem("bedrock_pickaxe", () -> new ItemModPickaxe(ToolStats.BEDROCK)),
-                    BEDROCK_AXE = registerItem("bedrock_axe", () -> new ItemModAxe(ToolStats.BEDROCK, -2.9F)), //TODO SPEED AND DAMAGE MODIFIER
-                    BEDROCK_HOE = registerItem("bedrock_hoe", () -> new ItemModHoe(ToolStats.BEDROCK, -2.9F)),
 
             //ARMOR
             AQUANIUM_HELMET = registerItem("aquanium_helmet", () -> ArmorAquanium.getInstance(ArmorItem.Type.HELMET)),
@@ -250,11 +237,7 @@ public class ItemRegistry {
                    COPPER_BOOTS = registerItem("copper_boots", () -> new ItemArmor(ArmorStats.COPPER, ArmorItem.Type.BOOTS)),
 
             //MISC
-            MOLTEN_SULFUR_BUCKET = registerItem("molten_sulfur_bucket"),  //TODO
-            END_LAVA_BUCKET = registerItem("end_lava_bucket", () -> new BucketItem(ModFluids.END_LAVA_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
-            ICE_BEAM = registerItem("ice_beam", () -> new IceBeam(new Item.Properties())),
-                STRONGHOLD_COMPASS = registerItem("stronghold_compass",
-                        ()-> new ItemStrongholdCompass(new Item.Properties().stacksTo(1))),
+            STRONGHOLD_COMPASS = registerItem("stronghold_compass", ()-> new ItemStrongholdCompass(new Item.Properties().stacksTo(1))),
 
 
             //EGGS

@@ -42,18 +42,9 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.FROZEN_COBBLESTONE_WALL.get());
                         pOutput.accept(ModBlocks.FROZEN_STONE_BRICK_WALL.get());
 
-                        pOutput.accept(ModBlocks.COPPER_BARS.get());
-                        pOutput.accept(ModBlocks.PLATINUM_BARS.get());
-                        pOutput.accept(ModBlocks.STEEL_BARS.get());
-                        pOutput.accept(ModBlocks.TITANIUM_BARS.get());
-
                         pOutput.accept(ModBlocks.WINTER_FURNACE.get());
                         pOutput.accept(ModBlocks.ALLOY_FURNACE.get());
                         pOutput.accept(ModBlocks.CRUSHER.get());
-                        pOutput.accept(ModBlocks.SULFURIC_TNT.get());
-
-                        pOutput.accept(ModBlocks.RUBY_BlOCK.get());
-                        pOutput.accept(ModBlocks.SULFUR_BlOCK.get());
                         pOutput.accept(ModBlocks.SILVER_BlOCK.get());
                         pOutput.accept(ModBlocks.PLATINUM_BlOCK.get());
                         pOutput.accept(ModBlocks.STEEL_BlOCK.get());
@@ -66,7 +57,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
 
                         pOutput.accept(ModBlocks.BONE_ORE.get());
-                        pOutput.accept(ModBlocks.SULFUR_ORE.get());
                         pOutput.accept(ModBlocks.SILVER_ORE.get());
                         pOutput.accept(ModBlocks.PLATINUM_ORE.get());
                         pOutput.accept(ModBlocks.TITANIUM_ORE.get());
@@ -75,12 +65,9 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
                         pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
-                        //pOutput.accept(ModBlocks.END_GOLD_ORE.get()); //TODO
-                        pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.BAUXITE.get());
-                        pOutput.accept(ModBlocks.BEDROCK.get());
 
                         pOutput.accept(ModBlocks.END_LANTERN.get());
                         pOutput.accept(ModBlocks.END_GLASS.get());
@@ -103,7 +90,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.FROZEN_SWORD.get());
                         pOutput.accept(ItemRegistry.FIRERITE_SWORD.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_SWORD.get());
-                        pOutput.accept(ItemRegistry.BEDROCK_SWORD.get());
 
                         pOutput.accept(ItemRegistry.SILVER_AXE.get());
                         pOutput.accept(ItemRegistry.COPPER_AXE.get());
@@ -115,7 +101,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.FROZEN_AXE.get());
                         pOutput.accept(ItemRegistry.FIRERITE_AXE.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_AXE.get());
-                        pOutput.accept(ItemRegistry.BEDROCK_AXE.get());
 
                         pOutput.accept(ItemRegistry.SILVER_HAMMER.get());
                         pOutput.accept(ItemRegistry.PLATINUM_HAMMER.get());
@@ -202,13 +187,10 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.RAW_TITANIUM.get());
                         pOutput.accept(ItemRegistry.RAW_LUMINITE.get());
                         pOutput.accept(ItemRegistry.RAW_ENDERIUM.get());
-                        pOutput.accept(ItemRegistry.SULFUR.get());
-                        pOutput.accept(ItemRegistry.BEDROCK_CHUNK.get());
 
                         pOutput.accept(ItemRegistry.FROZEN_GEM.get());
                         pOutput.accept(ItemRegistry.FIRERITE_GEM.get());
-                        pOutput.accept(ItemRegistry.RUBY.get());
-                        pOutput.accept(ItemRegistry.SHARD.get());
+                        pOutput.accept(ItemRegistry.AQUANIUM_SHARD.get());
                         pOutput.accept(ItemRegistry.DIAMOND_SHARD.get());
 
                         pOutput.accept(ItemRegistry.SILVER_NUGGET.get());
@@ -228,7 +210,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.LUMINITE_INGOT.get());
                         pOutput.accept(ItemRegistry.AQUANIUM_INGOT.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
-                        //pOutput.accept(ItemRegistry.END_GOLD_INGOT.get()); //TODO
                         pOutput.accept(ItemRegistry.ENDER_INGOT.get());
 
                         pOutput.accept(ItemRegistry.SILVER_DUST.get());
@@ -237,8 +218,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.IRON_DUST.get());
                         pOutput.accept(ItemRegistry.PLATINUM_DUST.get());
                         pOutput.accept(ItemRegistry.TITANIUM_DUST.get());
-                        pOutput.accept(ItemRegistry.DIAMOND_DUST.get());
-                        pOutput.accept(ItemRegistry.SULFUR_DUST.get());
+                        pOutput.accept(ItemRegistry.DIAMOND_DUST.get());;
                         pOutput.accept(ItemRegistry.ENDER_PEARL_DUST.get());
 
                         pOutput.accept(ItemRegistry.SILVER_STICK.get());
@@ -309,14 +289,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.ENDERIUM_PICKAXE.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_AXE.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_HOE.get());
-
-                        pOutput.accept(ItemRegistry.BEDROCK_SHOVEL.get());
-                        pOutput.accept(ItemRegistry.BEDROCK_PICKAXE.get());
-                        pOutput.accept(ItemRegistry.BEDROCK_AXE.get());
-                        pOutput.accept(ItemRegistry.BEDROCK_HOE.get());
-
-                        //pOutput.accept(ItemRegistry.END_LAVA_BUCKET.get()); //TODO
-                        //pOutput.accept(ItemRegistry.MOLTEN_SULFUR_BUCKET.get()); //TODO
 
                         pOutput.accept(ItemRegistry.FROZEN_BOAT.get());
                         pOutput.accept(ItemRegistry.FROZEN_CHEST_BOAT.get());

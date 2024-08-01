@@ -14,7 +14,6 @@ import net.shadowbeast.arcanemysteries.entities.boats.EntityBoat;
 import net.shadowbeast.arcanemysteries.entities.boats.EntityChestBoat;
 import net.shadowbeast.arcanemysteries.entities.mobs.custom.DungeonIceEntity;
 import net.shadowbeast.arcanemysteries.entities.mobs.custom.YakEntity;
-import net.shadowbeast.arcanemysteries.entities.projectile.EntityIceBeam;
 import net.shadowbeast.arcanemysteries.entities.projectile.EntityMudBall;
 import net.shadowbeast.arcanemysteries.entities.signs.EntityHangingSignBlock;
 import net.shadowbeast.arcanemysteries.entities.signs.EntitySignBlock;
@@ -35,9 +34,6 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<DungeonIceEntity>> DUNGEON_ICE =
             ENTITIES.register("dungeonice", () -> EntityType.Builder.of(DungeonIceEntity::new, MobCategory.MISC)
                     .sized(2.3f, 4.3f).build("dungeonice"));
-    public static final RegistryObject<EntityType<EntityIceBeam>> ICE_BEAM_PROJECTILE =
-            ENTITIES.register("ice_beam_projectile", () -> EntityType.Builder.<EntityIceBeam>of(EntityIceBeam::new, MobCategory.MISC)
-                    .sized(2.3f, 4.3f).build("ice_beam_projectile"));
     public static final RegistryObject<EntityType<YakEntity>> YAK =
             ENTITIES.register("yak", () -> EntityType.Builder.of(YakEntity::new, MobCategory.MISC)
                     .sized(1.3f, 1.3f).build("yak"));

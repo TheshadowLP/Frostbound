@@ -3,8 +3,6 @@
     "arcanemysteries:enderium_end_ore",
     "arcanemysteries:nether_firerite_ore",
 
-    "arcanemysteries:enderium_block",
-    "arcanemysteries:end_obsidian",
-    "arcanemysteries:bedrock"
+    "arcanemysteries:enderium_block"
   ]
 }

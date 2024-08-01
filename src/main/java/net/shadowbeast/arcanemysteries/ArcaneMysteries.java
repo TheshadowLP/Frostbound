@@ -29,8 +29,6 @@ import net.shadowbeast.arcanemysteries.core.data.*;
 import net.shadowbeast.arcanemysteries.enchant.EnchantmentsRegistry;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.DungeonIceRenderer;
 import net.shadowbeast.arcanemysteries.entities.mobs.client.YakRenderer;
-import net.shadowbeast.arcanemysteries.fluid.ModFluidTypes;
-import net.shadowbeast.arcanemysteries.fluid.ModFluids;
 import net.shadowbeast.arcanemysteries.items.ItemModProperties;
 import net.shadowbeast.arcanemysteries.networking.ModMessages;
 import net.shadowbeast.arcanemysteries.registries.*;
@@ -59,8 +57,6 @@ public class ArcaneMysteries {
         EffectsRegistry.EFFECTS.register(bus);
         ModRecipes.SERIALIZERS.register(bus);
         EnchantmentsRegistry.ENCHANTMENTS.register(bus);
-        ModFluids.FLUIDS.register(bus);
-        ModFluidTypes.FLUID_TYPES.register(bus);
         ModMenuTypes.MENUS.register(bus);
         EntityRegistry.ENTITIES.register(bus);
         EntityRegistry.BLOCK_ENTITIES.register(bus);
@@ -124,7 +120,6 @@ public class ArcaneMysteries {
         public static void registerRenderers(FMLClientSetupEvent event) {
             Sheets.addWoodType(WoodTypesMod.FROZEN);
             EntityRenderers.register(EntityRegistry.MUDBALL_PROJECTILE.get(), ThrownItemRenderer::new);
-            EntityRenderers.register(EntityRegistry.ICE_BEAM_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(EntityRegistry.MOD_BOAT.get(), pContext -> new BoatModRenderer(pContext, false));
             EntityRenderers.register(EntityRegistry.MOD_CHEST_BOAT.get(), pContext -> new BoatModRenderer(pContext, true));
             EntityRenderers.register(EntityRegistry.YAK.get(), YakRenderer::new);

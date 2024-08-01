@@ -35,10 +35,8 @@ public class ConfiguredFeaturesMod {
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUMINITE_ORE_KEY = registerKey("luminite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_FIRERITE_ORE_KEY = registerKey("nether_firerite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PLATINUM_ORE_KEY = registerKey("platinum_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAND_AQUANIUM_ORE_KEY = registerKey("sand_aquanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_ORE_KEY = registerKey("silver_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfur_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TITANIUM_ORE_KEY = registerKey("titanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BAUXITE_KEY = registerKey("bauxite");
     public static final ResourceKey<ConfiguredFeature<?, ?>>FROZEN_STONE_KEY = registerKey("frozen_stone_key");
@@ -57,10 +55,8 @@ public class ConfiguredFeaturesMod {
         List<OreConfiguration.TargetBlockState> FrozenGemOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.FROZEN_GEM_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> NetherFireriteOre = List.of(OreConfiguration.target(netherrackReplaceabeles, ModBlocks.NETHER_FIRERITE_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> PlatinumOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.PLATINUM_ORE.get().defaultBlockState()));
-        List<OreConfiguration.TargetBlockState> RubyOre = List.of(OreConfiguration.target(deepslateReplaceabeles, ModBlocks.RUBY_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> SandAquaniumOre = List.of(OreConfiguration.target(sandReplaceabeles, ModBlocks.SAND_AQUANIUM_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> SilverOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SILVER_ORE.get().defaultBlockState()));
-        List<OreConfiguration.TargetBlockState> SulfurOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SULFUR_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> TitaniumOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.TITANIUM_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> FrozenStone = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.FROZEN_STONE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabeles, ModBlocks.FROZEN_STONE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> Bauxite = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.BAUXITE.get().defaultBlockState()));
@@ -73,10 +69,8 @@ public class ConfiguredFeaturesMod {
         register(context, FROZEN_GEM_ORE_KEY, Feature.ORE, new OreConfiguration(FrozenGemOre, 5));
         register(context, NETHER_FIRERITE_ORE_KEY, Feature.ORE, new OreConfiguration(NetherFireriteOre, 5));
         register(context, PLATINUM_ORE_KEY, Feature.ORE, new OreConfiguration(PlatinumOre, 10));
-        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(RubyOre, 4));
         register(context, SAND_AQUANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(SandAquaniumOre, 6));
         register(context, SILVER_ORE_KEY, Feature.ORE, new OreConfiguration(SilverOre, 11));
-        register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(SulfurOre, 7));
         register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(TitaniumOre, 6));
         register(context, FROZEN_STONE_KEY, Feature.ORE, new OreConfiguration(FrozenStone, 64));
 
