@@ -78,7 +78,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                     case 1 -> AlloyFurnaceBlockEntity.this.maxProgress;
                     case 2 -> AlloyFurnaceBlockEntity.this.fuel;
                     case 3 -> AlloyFurnaceBlockEntity.this.maxFuel;
-                    default -> 0;
+                    default -> throw new UnsupportedOperationException("Unexpected index: " + index);
                 };
             }
             public void set(int index, int value) {
