@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_taiga",
+  "features": "frostbound:frozen_gem_ore",
+  "step": "underground_ores"
+}

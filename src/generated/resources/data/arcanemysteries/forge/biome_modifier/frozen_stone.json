@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#forge:is_snowy",
-  "features": "arcanemysteries:frozen_stone",
-  "step": "top_layer_modification"
-}

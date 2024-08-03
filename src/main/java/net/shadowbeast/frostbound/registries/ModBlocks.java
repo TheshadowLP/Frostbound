@@ -80,8 +80,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROZEN_COBBLESTONE_WALL = registerBlock("frozen_cobblestone_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
-    //END BLOCKS
-    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> 14).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    //FROZEN BLOCKS
     public static final RegistryObject<Block> END_STONE_PILLAR = registerBlock("end_stone_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> TILED_END_STONE_BRICKS = registerBlock("tiled_end_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_END_STONE = registerBlock("polished_end_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
@@ -98,6 +97,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENDER_PEARL_BLOCK = registerBlock("ender_pearl_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> END_GLASS = registerBlock("end_glass", ()-> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn((state, reader, pos, type) -> false).isRedstoneConductor((state, reader, pos) -> false).isSuffocating((state, reader, pos) -> false).isViewBlocking((state, reader, pos) -> false)));
     public static final RegistryObject<Block> END_GLASS_PANE = registerBlock("end_glass_pane", ()->  new IronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+    public static final RegistryObject<EndLanternBlock> END_LANTERN = registerBlock("end_lantern", ()-> new EndLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_152677_) -> 14).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     //SIGNS
     public static final RegistryObject<Block> FROZEN_SIGN = BLOCKS.register("frozen_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), WoodTypesMod.FROZEN));
