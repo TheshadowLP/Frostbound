@@ -154,6 +154,7 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
     /**
      * Called to update the entity's position/logic.
      */
+    @Override
     public void tick() {
         super.tick();
         if (this.isDashing() && this.dashCooldown < 50 && (this.onGround() || this.isInWater() || this.isPassenger())) {
@@ -169,40 +170,26 @@ public class YakEntity extends AbstractHorse implements PlayerRideableJumping, R
             this.setupAnimationStates();
         }
     }
+
     private void setupAnimationStates() {
-        if (this.idleAnimationTimeout <= 0) {
+        if(this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
             this.idleAnimationState.start(this.tickCount);
         } else {
             --this.idleAnimationTimeout;
         }
-        if (this.isCamelVisuallySitting()) {
-            this.sitUpAnimationState.stop();
-            this.dashAnimationState.stop();
-            if (this.isVisuallySittingDown()) {
-                this.sitAnimationState.startIfStopped(this.tickCount);
-                this.sitPoseAnimationState.stop();
-            } else {
-                this.sitAnimationState.stop();
-                this.sitPoseAnimationState.startIfStopped(this.tickCount);
-            }
-        } else {
-            this.sitAnimationState.stop();
-            this.sitPoseAnimationState.stop();
-            this.dashAnimationState.animateWhen(this.isDashing(), this.tickCount);
-            this.sitUpAnimationState.animateWhen(this.isInPoseTransition() && this.getPoseTime() >= 0L, this.tickCount);
-        }
-
     }
+
+    @Override
     protected void updateWalkAnimation(float pPartialTick) {
         float f;
-        if (this.getPose() == Pose.STANDING && !this.dashAnimationState.isStarted()) {
-            f = Math.min(pPartialTick * 6.0F, 1.0F);
+        if(this.getPose() == Pose.STANDING) {
+            f = Math.min(pPartialTick * 6F, 1f);
         } else {
-            f = 0.0F;
+            f = 0f;
         }
 
-        this.walkAnimation.update(f, 0.2F);
+        this.walkAnimation.update(f, 0.2f);
     }
 
     protected float getRiddenSpeed(Player pPlayer) {
