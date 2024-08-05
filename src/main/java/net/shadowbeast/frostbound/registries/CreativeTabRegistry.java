@@ -74,6 +74,13 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.END_GLASS_PANE.get());
 
                         pOutput.accept(ModBlocks.AQUANIUM_SHARD_BLOCK.get());
+                        pOutput.accept(ModBlocks.FROZEN_CRACKED_STONE_TILED_BRICKS.get());
+                        pOutput.accept(ModBlocks.FROZEN_CRACKED_STONE_TILES.get());
+                        pOutput.accept(ModBlocks.FROZEN_CRACKED_POLISHED_STONE.get());
+                        pOutput.accept(ModBlocks.FROZEN_STONE_PILLAR.get());
+                        pOutput.accept(ModBlocks.FROZEN_STONE_TILES.get());
+                        pOutput.accept(ModBlocks.FROZEN_POLISHED_STONE.get());
+                        pOutput.accept(ModBlocks.FROZEN_RUNIC_STONE_BRICKS.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = TAB.register("combat",
@@ -172,11 +179,9 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.ENDERIUM_CHESTPLATE.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_LEGGINGS.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_BOOTS.get());
-                        //pOutput.accept(ItemRegistry.ENDER_ELYTRA.get()); //TODO
 
                         pOutput.accept(ItemRegistry.MUD_BALL.get());
                         //pOutput.accept(ItemRegistry.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
-                        //pOutput.accept(ItemRegistry.ICE_BEAM.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = TAB.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.ENDER_INGOT.get()))

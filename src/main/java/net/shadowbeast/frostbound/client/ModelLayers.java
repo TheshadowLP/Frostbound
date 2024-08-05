@@ -13,6 +13,4 @@ public class ModelLayers {
             new ResourceLocation(Frostbound.MOD_ID, "dungeonice_layer"), "main");
     public static final ModelLayerLocation YAK = new ModelLayerLocation(
             new ResourceLocation(Frostbound.MOD_ID, "yak_layer"), "main");
-    public static final ModelLayerLocation ENDER_ELYTRA = new ModelLayerLocation(
-            new ResourceLocation(Frostbound.MOD_ID, "ender_elytra"), "left_wing");
 }

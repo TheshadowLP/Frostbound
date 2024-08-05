@@ -81,19 +81,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROZEN_STONE_BRICK_WALL = registerBlock("frozen_stone_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
     //FROZEN BLOCKS
-    public static final RegistryObject<Block> END_STONE_PILLAR = registerBlock("end_stone_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
-    public static final RegistryObject<Block> TILED_END_STONE_BRICKS = registerBlock("tiled_end_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE_BRICKS)));
-    public static final RegistryObject<Block> POLISHED_END_STONE = registerBlock("polished_end_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
-    public static final RegistryObject<Block> RUNIC_END_STONE_BRICKS = registerBlock("runic_end_stone_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE_BRICKS)));
-    public static final RegistryObject<Block> CHISELED_PURPUR = registerBlock("chiseled_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> POLISHED_PURPUR = registerBlock("polished_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> BRICKED_PURPUR = registerBlock("bricked_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> BRICKED_PURPUR_PILLAR = registerBlock("bricked_purpur_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> TILED_PURPUR = registerBlock("tiled_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> TILED_PURPUR_PILLAR = registerBlock("tiled_purpur_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> RUNIC_PURPUR = registerBlock("runic_purpur", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
-    public static final RegistryObject<Block> DRAGON_SCALE_BLOCK = registerBlock("dragon_scale_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
-    public static final RegistryObject<Block> END_OBSIDIAN = registerBlock("end_obsidian", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FROZEN_CRACKED_STONE_TILED_BRICKS = registerBlock("frozen_cracked_stone_tiled_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_CRACKED_STONE_TILES = registerBlock("frozen_cracked_stone_tiles", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_CRACKED_POLISHED_STONE = registerBlock("frozen_cracked_polished_stone", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_STONE_PILLAR = registerBlock("frozen_stone_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(ModBlocks.FROZEN_STONE_BRICKS.get())));
+    public static final RegistryObject<Block> FROZEN_STONE_TILES = registerBlock("frozen_stone_tiles", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_POLISHED_STONE = registerBlock("frozen_polished_stone", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_RUNIC_STONE_BRICKS = registerBlock("frozen_runic_stone_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+
     public static final RegistryObject<Block> ENDER_PEARL_BLOCK = registerBlock("ender_pearl_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> END_GLASS = registerBlock("end_glass", ()-> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn((state, reader, pos, type) -> false).isRedstoneConductor((state, reader, pos) -> false).isSuffocating((state, reader, pos) -> false).isViewBlocking((state, reader, pos) -> false)));
     public static final RegistryObject<Block> END_GLASS_PANE = registerBlock("end_glass_pane", ()->  new IronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
