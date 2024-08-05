@@ -101,7 +101,6 @@ public class ItemRegistry {
             HEAL_STAFF = registerItem("heal_staff", ItemHealStaff::new),
             TELEPORTATION_STAFF = registerItem("teleportation_staff", ItemTeleportationStaff::new),
             LEVITATION_STAFF = registerItem("levitation_staff", ItemLevitationStaff::new),
-            ENDER_ELYTRA = registerItem("ender_elytra",() -> new ElytraItem(new Item.Properties().durability(10).rarity(Rarity.RARE))),
 
             //HAMMERS
             PLATINUM_HAMMER = registerItem("platinum_hammer", () -> new ItemHammer(ToolStats.PLATINUM,6F,-3.4F, new Item.Properties().durability(1020))),

@@ -179,11 +179,9 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.ENDERIUM_CHESTPLATE.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_LEGGINGS.get());
                         pOutput.accept(ItemRegistry.ENDERIUM_BOOTS.get());
-                        //pOutput.accept(ItemRegistry.ENDER_ELYTRA.get()); //TODO
 
                         pOutput.accept(ItemRegistry.MUD_BALL.get());
                         //pOutput.accept(ItemRegistry.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
-                        //pOutput.accept(ItemRegistry.ICE_BEAM.get()); //TODO
                     }).build());
     public static final RegistryObject<CreativeModeTab> INGREDIENTS = TAB.register("ingredients",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.ENDER_INGOT.get()))
