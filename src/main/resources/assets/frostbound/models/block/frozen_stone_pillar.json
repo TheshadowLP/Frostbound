@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "frostbound:block/frozen_stone_pillar_top",
-    "side": "frostbound:block/frozen_stone_pillar"
+    "side": "frostbound:block/frozen_stone_pillar_horizontal"
   }
 }
