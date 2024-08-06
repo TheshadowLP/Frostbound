@@ -12,8 +12,7 @@ import net.shadowbeast.frostbound.worldgen.dimension.FrostboundDimension;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider
-{
+public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.BIOME, ModBiomes::boostrap)
             .add(Registries.LEVEL_STEM, FrostboundDimension::bootstrapStem)

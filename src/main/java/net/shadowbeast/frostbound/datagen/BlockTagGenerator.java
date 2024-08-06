@@ -9,12 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
-
 public class BlockTagGenerator extends BlockTagsProvider {
     public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, Frostbound.MOD_ID, existingFileHelper);
     }
-
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
     }

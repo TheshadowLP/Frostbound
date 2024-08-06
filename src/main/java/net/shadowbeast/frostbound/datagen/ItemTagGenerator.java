@@ -10,13 +10,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
-
 public class ItemTagGenerator extends ItemTagsProvider {
     public ItemTagGenerator(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture,
                             CompletableFuture<TagLookup<Block>> lookupCompletableFuture, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, completableFuture, lookupCompletableFuture, Frostbound.MOD_ID, existingFileHelper);
     }
-
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
     }
