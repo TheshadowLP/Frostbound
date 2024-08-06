@@ -19,8 +19,7 @@ public enum ArmorStats implements ArmorMaterial {
     LUMINITE(3, 6, 8, 3, 0, 0, 33, 11, ARMOR_EQUIP_DIAMOND, ToolStats.LUMINITE.getRepairIngredient()),
     AQUANIUM(3, 6, 8, 3, 0, 0, 33, 12, ARMOR_EQUIP_DIAMOND, ToolStats.AQUANIUM.getRepairIngredient()),
     FROZEN(3, 6, 8, 3, 2, 0.1F, 33, 13, ARMOR_EQUIP_DIAMOND, ToolStats.FROZEN.getRepairIngredient()),
-    FIRERITE(3, 6, 8, 3, 2, 0.1F, 33, 13, ARMOR_EQUIP_DIAMOND, ToolStats.FIRERITE.getRepairIngredient()),
-    ENDERIUM(3, 6, 8, 3, 3, 0.1F, 37, 15, ARMOR_EQUIP_NETHERITE, ToolStats.ENDERIUM.getRepairIngredient());
+    FIRERITE(3, 6, 8, 3, 2, 0.1F, 33, 13, ARMOR_EQUIP_DIAMOND, ToolStats.FIRERITE.getRepairIngredient());
 
     final String textureLocation, name;
     final SoundEvent equipSound;

@@ -11,7 +11,6 @@ public enum ToolStats implements Tier {
     PLATINUM(2, 510, 6.0F, 2.0F, 14, ItemRegistry.PLATINUM_INGOT.get()),
     TITANIUM(2, 1120, 6.0F, 2.0F, 15, ItemRegistry.TITANIUM_INGOT.get()),
     SILVER(0, 210, 12.0F, 2.0F, 20, ItemRegistry.SILVER_INGOT.get()),
-    ENDERIUM(5, 2530, 11.0F, 5.0F, 15, ItemRegistry.ENDERIUM_INGOT.get()),
     COPPER(2, 185, 8.0F, 2.0F, 15, Items.COPPER_INGOT),
     LUMINITE(3, 1720, 9.0F, 3.0F, 10, ItemRegistry.LUMINITE_INGOT.get()),
     AQUANIUM(4, 2210, 10.0F, 4.0F, 15, ItemRegistry.AQUANIUM_INGOT.get()),

@@ -72,7 +72,6 @@ public class ModBiomes
                 .build();
     }
 
-
     public static ResourceKey<Biome> register(String name) {
         return ResourceKey.create(Registries.BIOME, new ResourceLocation(Frostbound.MOD_ID, name));
     }

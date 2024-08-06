@@ -19,7 +19,6 @@ public class BiomeModifiersMod {
     public static final ResourceKey<BiomeModifier> ADD_BIG_FROZEN_TREE = registerKey("big_frozen_tree");
     public static final ResourceKey<BiomeModifier> ADD_AQUANIUM_ORE = registerKey("aquanium_ore");
     public static final ResourceKey<BiomeModifier> ADD_BONE_ORE = registerKey("bone_ore");
-    public static final ResourceKey<BiomeModifier> ADD_ENDERIUM_END_ORE = registerKey("enderium_end_ore");
     public static final ResourceKey<BiomeModifier> ADD_FROZEN_GEM_ORE = registerKey("frozen_gem_ore");
     public static final ResourceKey<BiomeModifier> ADD_LUMINITE_ORE = registerKey("luminite_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_FIRERITE_ORE = registerKey("nether_firerite_ore");
@@ -47,11 +46,6 @@ public class BiomeModifiersMod {
         context.register(ADD_BONE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(PlacedFeaturesMod.BONE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
-
-        context.register(ADD_ENDERIUM_END_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_END),
-                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeaturesMod.ENDERIUM_END_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_FROZEN_GEM_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

@@ -42,10 +42,8 @@ public class ItemRegistry {
             RAW_PLATINUM = registerItem("raw_platinum"),
             RAW_TITANIUM = registerItem("raw_titanium"),
             RAW_LUMINITE = registerItem("raw_luminite"),
-            RAW_ENDERIUM = registerItem("raw_enderium"),
             AQUANIUM_INGOT = registerItem("aquanium_ingot"),
             ENDER_INGOT = registerItem("ender_ingot"),
-            ENDERIUM_INGOT = registerItem("enderium_ingot"),
             LUMINITE_INGOT = registerItem("luminite_ingot"),
             PLATINUM_INGOT = registerItem("platinum_ingot"),
             SILVER_INGOT = registerItem("silver_ingot"),
@@ -54,7 +52,6 @@ public class ItemRegistry {
             ALUMINIUM_INGOT = registerItem("aluminium_ingot"),
             AQUANIUM_NUGGET = registerItem("aquanium_nugget"),
             COPPER_NUGGET = registerItem("copper_nugget"),
-            ENDERIUM_NUGGET = registerItem("enderium_nugget"),
             LUMINITE_NUGGET = registerItem("luminite_nugget"),
             PLATINUM_NUGGET = registerItem("platinum_nugget"),
             SILVER_NUGGET = registerItem("silver_nugget"),
@@ -110,7 +107,6 @@ public class ItemRegistry {
 
             //SHIELDS
             AQUANIUM_SHIELD = registerItem("aquanium_shield", () -> new ShieldItem(new Item.Properties().durability(1105))),
-            ENDERIUM_SHIELD = registerItem("enderium_shield", () -> new ShieldItem(new Item.Properties().durability(1265))),
             LUMINITE_SHIELD = registerItem("luminite_shield", () -> new ShieldItem(new Item.Properties().durability(860))),
             PLATINUM_SHIELD = registerItem("platinum_shield", () -> new ShieldItem(new Item.Properties().durability(225))),
             SILVER_SHIELD = registerItem("silver_shield", () -> new ShieldItem(new Item.Properties().durability(210))),
@@ -123,7 +119,6 @@ public class ItemRegistry {
 
             //SWORDS
             AQUANIUM_SWORD = registerItem("aquanium_sword", () -> new ItemModSword(ToolStats.AQUANIUM)),
-            ENDERIUM_SWORD = registerItem("enderium_sword", () -> new ItemModSword(ToolStats.ENDERIUM)),
             LUMINITE_SWORD = registerItem("luminite_sword", () -> new ItemModSword(ToolStats.LUMINITE)),
             PLATINUM_SWORD = registerItem("platinum_sword", () -> new ItemModSword(ToolStats.PLATINUM)),
             SILVER_SWORD = registerItem("silver_sword", () -> new ItemModSword(ToolStats.SILVER)),
@@ -138,11 +133,6 @@ public class ItemRegistry {
                     AQUANIUM_PICKAXE = registerItem("aquanium_pickaxe", () -> new ItemModPickaxe(ToolStats.AQUANIUM)),
                     AQUANIUM_AXE = registerItem("aquanium_axe", () -> new ItemModAxe(ToolStats.AQUANIUM, -2.9F)), //TODO SPEED AND DAMAGE MODIFIER
                     AQUANIUM_HOE = registerItem("aquanium_hoe", () -> new ItemModHoe(ToolStats.AQUANIUM, -2.9F)),
-
-                    ENDERIUM_SHOVEL = registerItem("enderium_shovel", () -> new ItemModShovel(ToolStats.ENDERIUM)),
-                    ENDERIUM_PICKAXE = registerItem("enderium_pickaxe", () -> new ItemModPickaxe(ToolStats.ENDERIUM)),
-                    ENDERIUM_AXE = registerItem("enderium_axe", () -> new ItemModAxe(ToolStats.ENDERIUM, -2.9F)), //TODO SPEED AND DAMAGE MODIFIER
-                    ENDERIUM_HOE = registerItem("enderium_hoe", () -> new ItemModHoe(ToolStats.ENDERIUM, -2.9F)),
 
             LUMINITE_SHOVEL = registerItem("luminite_shovel", () -> new ItemModShovel(ToolStats.LUMINITE)),
                     LUMINITE_PICKAXE = registerItem("luminite_pickaxe", () -> new ItemModPickaxe(ToolStats.LUMINITE)),
@@ -189,11 +179,6 @@ public class ItemRegistry {
                     AQUANIUM_CHESTPLATE = registerItem("aquanium_chestplate", () -> ArmorAquanium.getInstance(ArmorItem.Type.CHESTPLATE)),
                     AQUANIUM_LEGGINGS = registerItem("aquanium_leggings", () -> ArmorAquanium.getInstance(ArmorItem.Type.LEGGINGS)),
                     AQUANIUM_BOOTS = registerItem("aquanium_boots", () -> ArmorAquanium.getInstance(ArmorItem.Type.BOOTS)),
-
-            ENDERIUM_HELMET = registerItem("enderium_helmet", () -> ArmorEnderium.getInstance(ArmorItem.Type.HELMET)),
-                    ENDERIUM_CHESTPLATE = registerItem("enderium_chestplate", () -> ArmorEnderium.getInstance(ArmorItem.Type.CHESTPLATE)),
-                    ENDERIUM_LEGGINGS = registerItem("enderium_leggings", () -> ArmorEnderium.getInstance(ArmorItem.Type.LEGGINGS)),
-                    ENDERIUM_BOOTS = registerItem("enderium_boots", () -> ArmorEnderium.getInstance(ArmorItem.Type.BOOTS)),
 
             LUMINITE_HELMET = registerItem("luminite_helmet", () -> new ItemArmor(ArmorStats.LUMINITE, ArmorItem.Type.HELMET)),
                     LUMINITE_CHESTPLATE = registerItem("luminite_chestplate", () -> new ItemArmor(ArmorStats.LUMINITE, ArmorItem.Type.CHESTPLATE)),

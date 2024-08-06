@@ -53,7 +53,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.AQUANIUM_BlOCK.get());
                         pOutput.accept(ModBlocks.FROZEN_GEM_BlOCK.get());
                         pOutput.accept(ModBlocks.FIRERITE_BlOCK.get());
-                        pOutput.accept(ModBlocks.ENDERIUM_BlOCK.get());
                         pOutput.accept(ModBlocks.ENDER_PEARL_BLOCK.get());
 
                         pOutput.accept(ModBlocks.BONE_ORE.get());
@@ -64,7 +63,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.FROZEN_GEM_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_FIRERITE_ORE.get());
-                        pOutput.accept(ModBlocks.ENDERIUM_END_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE.get());
                         pOutput.accept(ModBlocks.SAND_AQUANIUM_ORE.get());
                         pOutput.accept(ModBlocks.BAUXITE.get());
@@ -84,7 +82,7 @@ public class CreativeTabRegistry {
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = TAB.register("combat",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.ENDERIUM_SWORD.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.TITANIUM_AXE.get()))
                     .title(Component.translatable("creativetab.frostbound.combat"))
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ItemRegistry.SILVER_SWORD.get());
@@ -96,7 +94,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.AQUANIUM_SWORD.get());
                         pOutput.accept(ItemRegistry.FROZEN_SWORD.get());
                         pOutput.accept(ItemRegistry.FIRERITE_SWORD.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_SWORD.get());
 
                         pOutput.accept(ItemRegistry.SILVER_AXE.get());
                         pOutput.accept(ItemRegistry.COPPER_AXE.get());
@@ -107,7 +104,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.AQUANIUM_AXE.get());
                         pOutput.accept(ItemRegistry.FROZEN_AXE.get());
                         pOutput.accept(ItemRegistry.FIRERITE_AXE.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_AXE.get());
 
                         pOutput.accept(ItemRegistry.SILVER_HAMMER.get());
                         pOutput.accept(ItemRegistry.PLATINUM_HAMMER.get());
@@ -128,7 +124,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.AQUANIUM_SHIELD.get());
                         pOutput.accept(ItemRegistry.FROZEN_SHIELD.get());
                         pOutput.accept(ItemRegistry.FIRERITE_SHIELD.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_SHIELD.get());
 
                         pOutput.accept(ItemRegistry.SILVER_HELMET.get());
                         pOutput.accept(ItemRegistry.SILVER_CHESTPLATE.get());
@@ -175,11 +170,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.FIRERITE_LEGGINGS.get());
                         pOutput.accept(ItemRegistry.FIRERITE_BOOTS.get());
 
-                        pOutput.accept(ItemRegistry.ENDERIUM_HELMET.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_CHESTPLATE.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_LEGGINGS.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_BOOTS.get());
-
                         pOutput.accept(ItemRegistry.MUD_BALL.get());
                         //pOutput.accept(ItemRegistry.DUNGEON_ICE_SPAWN_EGG.get()); //TODO
                     }).build());
@@ -191,7 +181,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.RAW_PLATINUM.get());
                         pOutput.accept(ItemRegistry.RAW_TITANIUM.get());
                         pOutput.accept(ItemRegistry.RAW_LUMINITE.get());
-                        pOutput.accept(ItemRegistry.RAW_ENDERIUM.get());
 
                         pOutput.accept(ItemRegistry.FROZEN_GEM.get());
                         pOutput.accept(ItemRegistry.FIRERITE_GEM.get());
@@ -205,7 +194,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.TITANIUM_NUGGET.get());
                         pOutput.accept(ItemRegistry.LUMINITE_NUGGET.get());
                         pOutput.accept(ItemRegistry.AQUANIUM_NUGGET.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_NUGGET.get());
 
                         pOutput.accept(ItemRegistry.ALUMINIUM_INGOT.get());
                         pOutput.accept(ItemRegistry.SILVER_INGOT.get());
@@ -214,7 +202,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.TITANIUM_INGOT.get());
                         pOutput.accept(ItemRegistry.LUMINITE_INGOT.get());
                         pOutput.accept(ItemRegistry.AQUANIUM_INGOT.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_INGOT.get());
                         pOutput.accept(ItemRegistry.ENDER_INGOT.get());
 
                         pOutput.accept(ItemRegistry.SILVER_DUST.get());
@@ -289,11 +276,6 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.FIRERITE_PICKAXE.get());
                         pOutput.accept(ItemRegistry.FIRERITE_AXE.get());
                         pOutput.accept(ItemRegistry.FIRERITE_HOE.get());
-
-                        pOutput.accept(ItemRegistry.ENDERIUM_SHOVEL.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_PICKAXE.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_AXE.get());
-                        pOutput.accept(ItemRegistry.ENDERIUM_HOE.get());
 
                         pOutput.accept(ItemRegistry.FROZEN_BOAT.get());
                         pOutput.accept(ItemRegistry.FROZEN_CHEST_BOAT.get());
