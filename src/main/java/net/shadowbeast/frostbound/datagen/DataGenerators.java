@@ -25,7 +25,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ItemModelGenerator(packOutput, existingFileHelper));
         generator.addProvider(event.includeServer(), new LootModifierGenerator(packOutput));
         generator.addProvider(event.includeServer(), new PoiTypeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new WorldGenGenerator(packOutput, lookupProvider));
         BlockTagGenerator blockTagsProvider = new BlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ItemTagGenerator(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
