@@ -67,8 +67,6 @@ public class YakModel<T extends Entity> extends HierarchicalModel<T> {
 
         this.animateWalk(YakAnimationDefinitions.WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.animate(((YakEntity) entity).idleAnimationState, YakAnimationDefinitions.IDLE, ageInTicks, 1f);
-
-        System.out.println("Entity moving: " + ((YakEntity) entity).isPanicking() + ", limbSwing: " + limbSwing + ", limbSwingAmount: " + limbSwingAmount);
     }
 
 
