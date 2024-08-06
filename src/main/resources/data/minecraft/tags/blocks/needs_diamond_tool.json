@@ -1,8 +1,5 @@
 {
   "values": [
-    "frostbound:enderium_end_ore",
-    "frostbound:nether_firerite_ore",
-
-    "frostbound:enderium_block"
+    "frostbound:nether_firerite_ore"
   ]
 }

@@ -30,7 +30,6 @@ public class ConfiguredFeaturesMod {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_FROZEN_KEY = registerKey("big_frozen_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AQUANIUM_ORE_KEY = registerKey("aquanium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BONE_ORE_KEY = registerKey("bone_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ENDERIUM_END_ORE_ORE_KEY = registerKey("enderium_end_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_GEM_ORE_KEY = registerKey("frozen_gem_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUMINITE_ORE_KEY = registerKey("luminite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_FIRERITE_ORE_KEY = registerKey("nether_firerite_ore");
@@ -51,7 +50,6 @@ public class ConfiguredFeaturesMod {
         List<OreConfiguration.TargetBlockState> AquaniumOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.AQUANIUM_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> BoneOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.BONE_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> LuminiteOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.LUMINITE_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_LUMINITE_ORE.get().defaultBlockState()));
-        List<OreConfiguration.TargetBlockState> EnderiumEndOre = List.of(OreConfiguration.target(endReplaceabeles, ModBlocks.ENDERIUM_END_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> FrozenGemOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.FROZEN_GEM_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> NetherFireriteOre = List.of(OreConfiguration.target(netherrackReplaceabeles, ModBlocks.NETHER_FIRERITE_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> PlatinumOre = List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.PLATINUM_ORE.get().defaultBlockState()));
@@ -65,7 +63,6 @@ public class ConfiguredFeaturesMod {
         register(context, BAUXITE_KEY, Feature.ORE, new OreConfiguration(Bauxite, 40));
         register(context, BONE_ORE_KEY, Feature.ORE, new OreConfiguration(BoneOre, 9));
         register(context, LUMINITE_ORE_KEY, Feature.ORE, new OreConfiguration(LuminiteOre, 6));
-        register(context, ENDERIUM_END_ORE_ORE_KEY, Feature.ORE, new OreConfiguration(EnderiumEndOre, 3));
         register(context, FROZEN_GEM_ORE_KEY, Feature.ORE, new OreConfiguration(FrozenGemOre, 5));
         register(context, NETHER_FIRERITE_ORE_KEY, Feature.ORE, new OreConfiguration(NetherFireriteOre, 5));
         register(context, PLATINUM_ORE_KEY, Feature.ORE, new OreConfiguration(PlatinumOre, 10));

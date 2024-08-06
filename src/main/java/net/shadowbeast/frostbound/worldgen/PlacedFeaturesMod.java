@@ -25,7 +25,6 @@ public class PlacedFeaturesMod {
     public static final ResourceKey<PlacedFeature> BIG_FROZEN_PLACED_KEY = registerKey("big_frozen_tree");
     public static final ResourceKey<PlacedFeature> AQUANIUM_ORE_PLACED_KEY = registerKey("aquanium_ore");
     public static final ResourceKey<PlacedFeature> BONE_ORE_PLACED_KEY = registerKey("bone_ore");
-    public static final ResourceKey<PlacedFeature> ENDERIUM_END_ORE_PLACED_KEY = registerKey("enderium_end_ore");
     public static final ResourceKey<PlacedFeature> FROZEN_GEM_ORE_PLACED_KEY = registerKey("frozen_gem_ore");
     public static final ResourceKey<PlacedFeature> LUMINITE_ORE_PLACED_KEY = registerKey("luminite_ore");
     public static final ResourceKey<PlacedFeature> NETHER_FIRERITE_ORE_PLACED_KEY = registerKey("nether_firerite_ore");
@@ -42,7 +41,6 @@ public class PlacedFeaturesMod {
         register(context, AQUANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.AQUANIUM_ORE_KEY), OrePlacementMod.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(35))));
         register(context, BAUXITE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.BAUXITE_KEY), OrePlacementMod.rareOrePlacement(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(50))));
         register(context, BONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.BONE_ORE_KEY), OrePlacementMod.commonOrePlacement(15, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(15))));
-        register(context, ENDERIUM_END_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.ENDERIUM_END_ORE_ORE_KEY), OrePlacementMod.commonOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.absolute(70))));
         register(context, FROZEN_GEM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.FROZEN_GEM_ORE_KEY), OrePlacementMod.commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(15), VerticalAnchor.absolute(35))));
         register(context, LUMINITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.LUMINITE_ORE_KEY), OrePlacementMod.commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(-30), VerticalAnchor.absolute(20))));
         register(context, NETHER_FIRERITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesMod.NETHER_FIRERITE_ORE_KEY), OrePlacementMod.commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(75), VerticalAnchor.absolute(100))));

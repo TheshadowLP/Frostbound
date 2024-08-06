@@ -49,7 +49,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BONE_ORE = registerBlock("bone_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DEEPSLATE_LUMINITE_ORE = registerBlock("deepslate_luminite_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE).strength(4.5F,3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ENDERIUM_END_ORE = registerBlock("enderium_end_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS).strength(5.2F,4.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FROZEN_GEM_ORE = registerBlock("frozen_gem_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(4.7F,3.8F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> LUMINITE_ORE = registerBlock("luminite_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> NETHER_FIRERITE_ORE = registerBlock("nether_firerite_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(5.0F,4.3F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()));
@@ -61,7 +60,6 @@ public class ModBlocks {
 
     //ORES BLOCKS
     public static final RegistryObject<Block> AQUANIUM_BlOCK = registerBlock("aquanium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> ENDERIUM_BlOCK = registerBlock("enderium_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(9.0F,12.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FIRERITE_BlOCK = registerBlock("firerite_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FROZEN_GEM_BlOCK = registerBlock("frozen_gem_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> LUMINITE_BlOCK = registerBlock("luminite_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0F,6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
