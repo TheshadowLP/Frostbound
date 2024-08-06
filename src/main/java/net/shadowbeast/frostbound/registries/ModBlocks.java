@@ -86,6 +86,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROZEN_STONE_TILES = registerBlock("frozen_stone_tiles", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
     public static final RegistryObject<Block> FROZEN_POLISHED_STONE = registerBlock("frozen_polished_stone", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
     public static final RegistryObject<Block> FROZEN_RUNIC_STONE_BRICKS = registerBlock("frozen_runic_stone_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_CHISELED_STONE_BRICKS = registerBlock("frozen_chiseled_stone_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_COBBLED_DEEPSLATE = registerBlock("frozen_cobbled_deepslate", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE)));
+    public static final RegistryObject<Block> FROZEN_CRACKED_STONE_BRICKS = registerBlock("frozen_cracked_stone_bricks", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> FROZEN_DEEPSLATE = registerBlock("frozen_deepslate", ()-> new IcyBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
+    public static final RegistryObject<Block> FROZEN_DIRT = registerBlock("frozen_dirt", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 
     public static final RegistryObject<Block> ENDER_PEARL_BLOCK = registerBlock("ender_pearl_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> END_GLASS = registerBlock("end_glass", ()-> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn((state, reader, pos, type) -> false).isRedstoneConductor((state, reader, pos) -> false).isSuffocating((state, reader, pos) -> false).isViewBlocking((state, reader, pos) -> false)));

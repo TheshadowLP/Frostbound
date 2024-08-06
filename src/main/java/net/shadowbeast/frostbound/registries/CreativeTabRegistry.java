@@ -79,6 +79,11 @@ public class CreativeTabRegistry {
                         pOutput.accept(ModBlocks.FROZEN_STONE_TILES.get());
                         pOutput.accept(ModBlocks.FROZEN_POLISHED_STONE.get());
                         pOutput.accept(ModBlocks.FROZEN_RUNIC_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.FROZEN_CHISELED_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.FROZEN_COBBLED_DEEPSLATE.get());
+                        pOutput.accept(ModBlocks.FROZEN_CRACKED_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.FROZEN_DEEPSLATE.get());
+                        pOutput.accept(ModBlocks.FROZEN_DIRT.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> COMBAT = TAB.register("combat",
