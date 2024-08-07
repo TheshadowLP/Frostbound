@@ -1,4 +1,4 @@
-package net.shadowbeast.frostbound.world.biome;
+package net.shadowbeast.frostbound.worldgen.world.biome;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

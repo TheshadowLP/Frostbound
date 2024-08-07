@@ -1,4 +1,4 @@
-package net.shadowbeast.frostbound.world.biome;
+package net.shadowbeast.frostbound.worldgen.world.biome;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
