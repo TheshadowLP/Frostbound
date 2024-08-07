@@ -16,6 +16,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.frostbound.Frostbound;
+import net.shadowbeast.frostbound.items.ItemMod;
+import net.shadowbeast.frostbound.registries.ItemRegistry;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.LinkedHashMap;
@@ -40,7 +42,54 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
     @Override
     protected void registerModels() {
+
+        trimmedArmorItem(ItemRegistry.AQUANIUM_BOOTS);
+        trimmedArmorItem(ItemRegistry.AQUANIUM_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.AQUANIUM_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.AQUANIUM_HELMET);
+
+        trimmedArmorItem(ItemRegistry.LUMINITE_BOOTS);
+        trimmedArmorItem(ItemRegistry.LUMINITE_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.LUMINITE_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.LUMINITE_HELMET);
+
+        trimmedArmorItem(ItemRegistry.SILVER_BOOTS);
+        trimmedArmorItem(ItemRegistry.SILVER_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.SILVER_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.SILVER_HELMET);
+
+        trimmedArmorItem(ItemRegistry.STEEL_BOOTS);
+        trimmedArmorItem(ItemRegistry.STEEL_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.STEEL_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.STEEL_HELMET);
+
+        trimmedArmorItem(ItemRegistry.TITANIUM_BOOTS);
+        trimmedArmorItem(ItemRegistry.TITANIUM_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.TITANIUM_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.TITANIUM_HELMET);
+
+        trimmedArmorItem(ItemRegistry.PLATINUM_BOOTS);
+        trimmedArmorItem(ItemRegistry.PLATINUM_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.PLATINUM_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.PLATINUM_HELMET);
+
+        trimmedArmorItem(ItemRegistry.COPPER_BOOTS);
+        trimmedArmorItem(ItemRegistry.COPPER_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.COPPER_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.COPPER_HELMET);
+
+        trimmedArmorItem(ItemRegistry.FIRERITE_BOOTS);
+        trimmedArmorItem(ItemRegistry.FIRERITE_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.FIRERITE_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.FIRERITE_HELMET);
+
+        trimmedArmorItem(ItemRegistry.FROZEN_BOOTS);
+        trimmedArmorItem(ItemRegistry.FROZEN_LEGGINGS);
+        trimmedArmorItem(ItemRegistry.FROZEN_CHESTPLATE);
+        trimmedArmorItem(ItemRegistry.FROZEN_HELMET);
+
     }
+
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
         final String MOD_ID = Frostbound.MOD_ID;
 
