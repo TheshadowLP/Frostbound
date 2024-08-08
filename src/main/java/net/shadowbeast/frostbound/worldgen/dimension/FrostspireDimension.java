@@ -16,13 +16,14 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.shadowbeast.frostbound.Frostbound;
+import net.shadowbeast.frostbound.worldgen.world.biome.ModBiomes;
 
 import java.util.List;
 import java.util.OptionalLong;
 
-public class FrostboundDimension {
-    public static final ResourceKey<LevelStem> FROSTDIM_KEY = ResourceKey.create(Registries.LEVEL_STEM,
-            new ResourceLocation(Frostbound.MOD_ID, "frostdim_key"));
+public class FrostspireDimension {
+    public static final ResourceKey<LevelStem> FROSTSPIRE = ResourceKey.create(Registries.LEVEL_STEM,
+            new ResourceLocation(Frostbound.MOD_ID, "frostspire"));
     public static final ResourceKey<Level> FROSTDIM_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
             new ResourceLocation(Frostbound.MOD_ID, "frostdim_level_key"));
     public static final ResourceKey<DimensionType> FROSTDIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
@@ -56,13 +57,12 @@ public class FrostboundDimension {
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(Pair.of(
-                                Climate.parameters(0.3F, 0.6F, 0.1F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN)),
-                                Pair.of(Climate.parameters(0.4F, 0.3F, 0.2F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.DARK_FOREST))
+                                Climate.parameters(0.3F, 0.6F, 0.1F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.TUNDRA))
                         ))),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(FrostboundDimension.FROSTDIM_TYPE), noiseBasedChunkGenerator);
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(FrostspireDimension.FROSTDIM_TYPE), noiseBasedChunkGenerator);
 
-        context.register(FROSTDIM_KEY, stem);
+        context.register(FROSTSPIRE, stem);
     }
 }

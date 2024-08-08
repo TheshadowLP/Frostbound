@@ -1,5 +1,5 @@
-// 1.20.1	2024-08-07T12:00:04.2616012	Registries
-a240251634d7a92d6a628f51cf6234f579d3b750 data/frostbound/dimension/frostdim_key.json
+// 1.20.1	2024-08-08T16:07:53.7316199	Registries
+6c9ee7debb91ea710943a2c5467a2de0c3cbae27 data/frostbound/dimension/frostspire.json
 e241e971aacde6f4d0236c622c99d6c9caeb981e data/frostbound/dimension_type/frostdim_type.json
 f495d4b5f0fc5e1c5f45362a994b57f7b8dc6f84 data/frostbound/forge/biome_modifier/aquanium_ore.json
 f48cdc7a34590333fbb36a2f0e6101fd75e80d57 data/frostbound/forge/biome_modifier/bauxite.json
@@ -14,7 +14,7 @@ e487cb468da978665cd167f4dc39a820ac9d1ce9 data/frostbound/forge/biome_modifier/ne
 a58d752b0b212bd4fa035584ffc3328785dc0182 data/frostbound/forge/biome_modifier/sand_aquanium_ore.json
 6952112459626921e3802d4cf01371b23c204afa data/frostbound/forge/biome_modifier/silver_ore.json
 4354ccd833d135b2dd15d8b48e16182a23f7d232 data/frostbound/forge/biome_modifier/titanium_ore.json
-f9b555a3e8f999fc3a32d8e5b2ddc56acae7b79e data/frostbound/worldgen/biome/snow_artic_biome.json
+07658cf5ee5e8b3c7708f2637f9e89e6f76f1fd0 data/frostbound/worldgen/biome/tundra.json
 e371dfd36d5906122a84c46dd48bd2d52235b152 data/frostbound/worldgen/configured_feature/aquanium_ore.json
 1a71223d62301180083bc7ac017636740614d343 data/frostbound/worldgen/configured_feature/bauxite.json
 c62a405720ce8b1434b649f94fa99939836a8172 data/frostbound/worldgen/configured_feature/big_frozen_tree.json

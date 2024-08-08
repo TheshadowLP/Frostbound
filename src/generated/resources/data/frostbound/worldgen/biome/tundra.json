@@ -9,23 +9,15 @@
   "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 12638463,
-    "grass_color": 12638463,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "frostbound:milking_sound_bottle"
-    },
-    "sky_color": 3197208,
-    "water_color": 12638463,
-    "water_fog_color": 12638463
+    "sky_color": 8103167,
+    "water_color": 4020182,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -34,8 +26,7 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "minecraft:forest_rock"
+      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:monster_room",
@@ -79,8 +70,7 @@
     [
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
-      "minecraft:patch_large_fern",
-      "minecraft:trees_plains",
+      "minecraft:trees_old_growth_spruce_taiga",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",

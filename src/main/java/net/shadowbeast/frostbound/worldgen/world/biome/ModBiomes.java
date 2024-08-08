@@ -13,13 +13,12 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.shadowbeast.frostbound.Frostbound;
 import net.shadowbeast.frostbound.registries.EntityRegistry;
 import net.shadowbeast.frostbound.registries.SoundRegistry;
-
 public class ModBiomes
 {
-    public static final ResourceKey<Biome> SNOW_ARTIC_BIOME = register("snow_artic_biome");
+    public static final ResourceKey<Biome> TUNDRA = register("tundra");
 
     public static void boostrap(BootstapContext<Biome> context) {
-        context.register(SNOW_ARTIC_BIOME, snow_artic_biome(context));
+        context.register(TUNDRA, tundra(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -31,10 +30,9 @@ public class ModBiomes
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    public static Biome snow_artic_biome(BootstapContext<Biome> context) {
+    public static Biome tundra(BootstapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityRegistry.YAK.get(), 2, 3, 5));
-
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
@@ -43,13 +41,11 @@ public class ModBiomes
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addFerns(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addExtraGold(biomeBuilder);
 
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA);
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
@@ -61,14 +57,14 @@ public class ModBiomes
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
-                        .waterColor(12638463)
-                        .waterFogColor(12638463)
-                        .skyColor(0x30c918)
-                        .grassColorOverride(12638463)
-                        .foliageColorOverride(12638463)
+                        .waterColor(4020182)
+                        .waterFogColor(329011)
                         .fogColor(12638463)
-                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        .backgroundMusic(Musics.createGameMusic(SoundRegistry.MILKING_SOUND_BOTTLE.getHolder().get())).build())
+                        .skyColor(8103167)
+                        //.grassColorOverride(12638463)
+                        //.foliageColorOverride(12638463)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
+                        //.backgroundMusic(Musics.createGameMusic(SoundRegistry.MILKING_SOUND_BOTTLE.getHolder().get()))
                 .build();
     }
 
