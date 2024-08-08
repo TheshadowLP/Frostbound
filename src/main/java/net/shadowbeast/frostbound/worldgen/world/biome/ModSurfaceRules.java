@@ -7,14 +7,14 @@ import net.shadowbeast.frostbound.registries.ModBlocks;
 
 public class ModSurfaceRules
 {
-    private static final SurfaceRules.RuleSource FROZEN_DIRT = makeStateRule(ModBlocks.FROZEN_DIRT.get());
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel,
-                GRASS_BLOCK), FROZEN_DIRT);
+                GRASS_BLOCK), DIRT);
 
         return SurfaceRules.sequence(
                 SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.TUNDRA),
