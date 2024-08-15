@@ -20,11 +20,10 @@ import net.shadowbeast.frostbound.util.jei.category.AlloyingCategory;
 import net.shadowbeast.frostbound.util.jei.category.CrushingCategory;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-
 @JeiPlugin
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class ArcaneMysteriesJEI implements IModPlugin {
+public class FrostboundJEI implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
         return new ResourceLocation(Frostbound.MOD_ID, "jei_plugin");
