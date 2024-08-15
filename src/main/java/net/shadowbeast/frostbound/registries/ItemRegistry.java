@@ -1,5 +1,6 @@
 package net.shadowbeast.frostbound.registries;
 
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -36,6 +37,7 @@ public class ItemRegistry {
             //SEEDS
             KOHLRABI_SEEDS = registerItem("kohlrabi_seeds", () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(),new Item.Properties())),
             PEPPER_SEEDS = registerItem("pepper_seeds", () -> new ItemNameBlockItem(ModBlocks.PEPPER_CROP.get(),new Item.Properties())),
+            CLOUD_BERRIES = registerItem("cloud_berries", () -> new ItemNameBlockItem(ModBlocks.CLOUD_BERRY_BUSH.get(), new Item.Properties().food(FoodListRegistry.CLOUD_BERRIES))),
 
             //ORES
             RAW_SILVER = registerItem("raw_silver"),

@@ -298,6 +298,7 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistry.PEPPER.get());
                         pOutput.accept(ItemRegistry.STACKED_POTATO.get());
                         pOutput.accept(ItemRegistry.STACKED_BAKED_POTATO.get());
+                        pOutput.accept(ItemRegistry.CLOUD_BERRIES.get());
                         pOutput.accept(ItemRegistry.KOHLRABI_SEEDS.get());
                         pOutput.accept(ItemRegistry.PEPPER_SEEDS.get());
                         pOutput.accept(ItemRegistry.MILK_BOTTLE.get());

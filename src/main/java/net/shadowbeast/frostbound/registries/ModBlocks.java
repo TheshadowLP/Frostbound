@@ -21,6 +21,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.shadowbeast.frostbound.block_entities.block.crusher.CrusherBlock;
 import net.shadowbeast.frostbound.block_entities.block.furnace.AlloyFurnaceBlock;
 import net.shadowbeast.frostbound.block_entities.block.furnace.WinterFurnaceBlock;
+import net.shadowbeast.frostbound.blocks.crops.CloudberryBush;
 import net.shadowbeast.frostbound.blocks.crops.KohlrabiCropBlock;
 import net.shadowbeast.frostbound.blocks.crops.PepperCropBlock;
 import net.shadowbeast.frostbound.blocks.custom.*;
@@ -44,6 +45,7 @@ public class ModBlocks {
     //CROPS
     public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop", () -> new KohlrabiCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
     public static final RegistryObject<Block> PEPPER_CROP = BLOCKS.register("pepper_crop", () -> new PepperCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> CLOUD_BERRY_BUSH = BLOCKS.register("cloud_berry_bush", () -> new CloudberryBush(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
 
     //ORES
     public static final RegistryObject<Block> AQUANIUM_ORE = registerBlock("aquanium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).strength(3.0F,3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));

@@ -6,6 +6,7 @@ import net.minecraft.world.food.FoodProperties;
 
 @SuppressWarnings("deprecation")
 public class FoodListRegistry {
+    public static final FoodProperties CLOUD_BERRIES = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.7F).build(); //TODO Balance
     public static final FoodProperties KOHLRABI = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.7F).build();
     public static final FoodProperties PEPPER = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.5F).effect(new MobEffectInstance(MobEffects.HUNGER,200,0),0.3F).build();
     public static final FoodProperties RAW_GOAT_MUTTON = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.5F).effect(new MobEffectInstance(EffectsRegistry.FREEZE.get(),150,0),0.3F).build(); //TODO Balance
