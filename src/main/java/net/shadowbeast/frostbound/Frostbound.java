@@ -48,8 +48,6 @@ public class Frostbound {
     public Frostbound() {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
-        //BlockRegistry.BLOCKS.register(bus);
-        //BlockRegistry.BLOCK_ITEMS.register(bus);
         ItemRegistry.ITEMS.register(bus);
         CreativeTabRegistry.TAB.register(bus);
         SoundRegistry.SOUNDS.register(bus);
