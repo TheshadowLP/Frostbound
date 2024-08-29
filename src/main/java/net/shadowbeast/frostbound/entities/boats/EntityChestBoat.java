@@ -8,6 +8,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.shadowbeast.frostbound.registries.EntityRegistry;
 import net.shadowbeast.frostbound.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +33,15 @@ public class EntityChestBoat extends ChestBoat {
         }
         return super.getDropItem();
     }
+
+    public float getGroundFriction() {
+        if (getModVariant() == EntityBoat.Type.FROZEN) {
+            return Math.max(super.getGroundFriction(), Blocks.ICE.getFriction() - 0.045f);
+        }
+
+        return super.getGroundFriction();
+    }
+
     public void setVariant(EntityBoat.Type pVariant) {
         this.entityData.set(DATA_ID_TYPE, pVariant.ordinal());
     }
